@@ -6,7 +6,7 @@ This repo contains the build environment and code to generate and upload the Sta
 
 ### S3 Bucket creation
 
-[Terraform](https://www.terraform.io/intro) is used to deploy the S3 Bucket where the website is hosted. If on a feature branch you will want to edit the name of the S3 bucket to be unique.
+[Terraform](https://www.terraform.io/intro) is used to deploy the S3 Bucket where the website is hosted. The S3 bucket will be suffixed with the currently checked-out gt branch name.
 
 Fetch your AWS credentials and export them to the terminal. Then:
 
