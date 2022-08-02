@@ -22,7 +22,7 @@ terraform apply \
 You will first need to install the [Pelican](https://docs.getpelican.com/en/latest/index.html) static website generator:
 
 ```shell
-pipenv synv
+pipenv sync
 ```
 
 With [markdown](https://www.markdownguide.org/basic-syntax) content in the `content/` directory, you should now be able to generate the HTML output with:
