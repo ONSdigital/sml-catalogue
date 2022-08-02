@@ -8,7 +8,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-S3_BUCKET=sml-catalogue-dev
+S3_BUCKET=sml-catalogue-$(shell git branch --show-current)
 
 
 DEBUG ?= 0

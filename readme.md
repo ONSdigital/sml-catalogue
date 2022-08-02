@@ -13,7 +13,8 @@ Fetch your AWS credentials and export them to the terminal. Then:
 ```shell
 cd terraform
 terraform init
-terraform apply
+terraform apply \
+  -var "suffix=`git branch --show-current`"
 ```
 
 ### Make the site
@@ -24,7 +25,7 @@ You will first need to install the [Pelican](https://docs.getpelican.com/en/late
 pipenv synv
 ```
 
-With content in the `content/` directory, you should now be able to generate the HTML output with:
+With [markdown](https://www.markdownguide.org/basic-syntax) content in the `content/` directory, you should now be able to generate the HTML output with:
 
 ```shell
 pipenv run make devserver
