@@ -2,15 +2,90 @@
 
 {% set pageConfig = { 
     "title": "Statistical Methods Library Catalogue",
-    "wide": true,
     "header": {
         "title": 'Statistical Methods Library Catalogue',
         "orgLogoHref": '#0',
         "titleLogoHref": '#0'
+    },
+    "mainCol":{
+      "columns":12,
+      "classes": "ons-u-mt-m"
+    },
+    "breadcrumbs":{
+      "id":"breadcrumbs",
+      "ariaLabel":"breadcrumbs",
+      "itemsList":[
+        {
+          "url": '/',
+          "id": "back",
+          "text": 'Back',
+          "attributes": {
+              "data-attribute": "Example attribute"
+          }
+        }
+      ]
     }
+
   } %}
 
-{%- block pageContent %}
-<h1>{{ page.title }}</h1>
+  
+{%- block main %}
+ 
+<h2 class="ons-u-mt-no">Method: {{ page.title }}</h2>
+<h3> Method summary </h3>
 {{ page.content }}
-{% endblock pageContent -%}
+
+<h3> Contact details for this method </h3>
+{{ page.contact_details}}
+
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% set metadata = ["Access type", "Expert group", "Theme", "Author", "Method classification", "Status", "Programming language", "Code available?"] %}
+{% set items = [] %}
+{% for item in metadata %}
+{% do
+  items.append(
+    {
+        "term": item,
+        "descriptions": [
+            {
+                "description": page["method_"+item|replace(" ","_")|replace("?","")|lower]
+            }
+        ]
+    }
+  )
+%}
+{% endfor %}
+<hr class="ons-u-mb-m">
+{{
+  onsMetadata({
+      "classes": "ons-u-mb-no ",
+      "metadataLabel": "Method information",
+      "termCol": "3",
+      "descriptionCol": "9",
+      "itemsList": items
+  })
+}}
+<hr class="ons-u-mb-m">
+
+<h3>GitHub resources</h3>
+{% if page.code_link %}
+{% from "components/external-link/_macro.njk" import onsExternalLink %}
+{{
+  onsExternalLink({
+    "url":page.code_link,
+    "linkText":"Go to code"
+  })
+}}
+&nbsp;
+{% endif %}
+{% if page.specification_link %}
+{% from "components/external-link/_macro.njk" import onsExternalLink %}
+{{
+  onsExternalLink({
+    "url":page.code_link,
+    "linkText":"Go to specification"
+  })
+}}
+{% endif %}
+
+{% endblock main -%}
