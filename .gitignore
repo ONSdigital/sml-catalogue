@@ -133,3 +133,5 @@ dmypy.json
 *.tfstate
 
 output/*
+theme/templates/components
+theme/templates/layout
