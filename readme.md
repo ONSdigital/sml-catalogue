@@ -17,22 +17,30 @@ terraform apply \
   -var "suffix=`git branch --show-current`"
 ```
 
+### Fetch ONS Design System
+
+Download the release of the ONS Design System, and unpack them into the correct location with this command:
+
+```shell
+./get_design_system.sh
+```
+
 ### Make the site
 
-You will first need to install the [Pelican](https://docs.getpelican.com/en/latest/index.html) static website generator:
+You will first need to install the python dependencies, including [Frozen-flask](https://pythonhosted.org/Frozen-Flask/), the static website generator:
 
 ```shell
 pipenv sync
 ```
 
-With [markdown](https://www.markdownguide.org/basic-syntax) content in the `content/` directory, you should now be able to generate the HTML output with:
+With [Jsonnet](https://jsonnet.org/learning/getting_started.html) content in the `content/` directory, you should now be able to run the Flask demo server:
 
 ```shell
-pipenv run make devserver
+pipenv run flask --app sml_builder --debug run
 ```
 
-If this all goes well with no errors, you should now be able to navigate to [https//:localhost:8000](https//:localhost:8000) to view the site. And if that all looks good, you can now upload to the S3 bucket (assuming you still have valid AWS credentials exported to the terminal):
+If this all goes well with no errors, you should now be able to navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to view the site. And if that all looks good, you can now upload to the S3 bucket (assuming you still have valid AWS credentials exported to the terminal):
 
 ```shell
-pipenv run make s3_upload
+aws s3 sync output s3://sml-catalogue-$`git branch --show-current` --acl public-read --delete
 ```

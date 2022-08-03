@@ -49,22 +49,21 @@
  
 <h2 class="ons-u-mt-no">Method: {{ page.title }}</h2>
 <h3> Method summary </h3>
-{{ page.content }}
+{{ page.description }}
 
 <h3> Contact details for this method </h3>
 {{ page.contact_details}}
 
 {% from "components/metadata/_macro.njk" import onsMetadata %}
-{% set metadata = ["Access type", "Expert group", "Theme", "Author", "Method classification", "Status", "Programming language", "Code available?"] %}
 {% set items = [] %}
-{% for item in metadata %}
+{% for item in page.method_metadata %}
 {% do
   items.append(
     {
         "term": item,
         "descriptions": [
             {
-                "description": page["method_"+item|replace(" ","_")|replace("?","")|lower]
+                "description": page.method_metadata[item]
             }
         ]
     }
