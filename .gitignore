@@ -134,5 +134,5 @@ dmypy.json
 *.tfstate.backup
 
 output/*
-theme/templates/components
-theme/templates/layout
+sml_builder/templates/components
+sml_builder/templates/layout

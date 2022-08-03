@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 pelican = {extras = ["markdown"], version = "~=4.8.0"}
+frozen-flask = "*"
+jsonnet = "*"
 
 [dev-packages]
 
