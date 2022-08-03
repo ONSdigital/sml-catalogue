@@ -131,6 +131,7 @@ dmypy.json
 .terraform
 .terraform.lock.hcl
 *.tfstate
+*.tfstate.backup
 
 output/*
 theme/templates/components
