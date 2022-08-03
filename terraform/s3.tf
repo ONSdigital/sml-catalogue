@@ -14,3 +14,7 @@ resource "aws_s3_bucket_website_configuration" "sml-catalogue" {
     suffix = "index.html"
   }
 }
+
+output "website_url" {
+  value = "http://${aws_s3_bucket_website_configuration.sml-catalogue.website_endpoint}/"
+}
