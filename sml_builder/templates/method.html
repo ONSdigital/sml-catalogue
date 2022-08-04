@@ -17,10 +17,10 @@
  
 <h2 class="ons-u-mt-no">Method: {{ page.title }}</h2>
 <h3> Method summary </h3>
-{{ page.description }}
+{{ page.description | paras }}
 
 <h3> Contact details for this method </h3>
-{{ page.contact_details}}
+{{ page.contact_details }}
 
 {% from "components/metadata/_macro.njk" import onsMetadata %}
 {% set items = [] %}
