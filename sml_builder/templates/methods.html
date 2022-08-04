@@ -1,0 +1,33 @@
+{% extends "core.html" %}
+{%- block main %}
+ 
+<h2 class="ons-u-mt-no">All methods</h2>
+{% from "components/table/_macro.njk" import onsTable %}
+{{
+  onsTable({
+    "variants": 'sortable',
+    "sortBy": "Sort by",
+    "ariaAsc": "ascending",
+    "ariaDesc": "descending",
+    "ths": [
+      {
+        "value": "Name"
+      },
+      {
+        "value": "Theme"
+      },
+      {
+        "value": "Expert group"
+      },
+      {
+        "value": "Languages"
+      },
+      {
+        "value": "Status"
+      },
+    ],
+    "trs": page.rows
+  })
+}}
+
+{% endblock main -%}

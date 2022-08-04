@@ -1,0 +1,3 @@
+variable "suffix" {
+  type = string
+}
