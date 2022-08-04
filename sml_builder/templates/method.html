@@ -1,50 +1,5 @@
-{% extends "layout/_template.njk" %}
+{% extends "core.html" %}
 
-{% set pageConfig = { 
-    "title": "Statistical Methods Library Catalogue",
-    "header": {
-        "title": 'Statistical Methods Library Catalogue',
-        "orgLogoHref": '#0',
-        "titleLogoHref": '#0'
-    },
-    "mainCol":{
-      "columns":12,
-      "classes": "ons-u-mt-m"
-    },
-    "breadcrumbs":{
-      "id":"breadcrumbs",
-      "ariaLabel":"breadcrumbs",
-      "itemsList":[
-        {
-          "url": '/',
-          "id": "back",
-          "text": 'Back',
-          "attributes": {
-              "data-attribute": "Example attribute"
-          }
-        }
-      ]
-    },
-    "footer": {
-      "OGLLink": true,
-      "legal": [
-        {
-          "itemsList": [
-            {
-              "text": 'Contact us',
-              "url": '#0'
-            },
-            {
-              "text": 'Cookies and privacy',
-              "url": '#0'
-            }
-          ]
-        }
-      ]
-    }
-  } %}
-
-  
 {%- block main %}
  
 <h2 class="ons-u-mt-no">Method: {{ page.title }}</h2>
