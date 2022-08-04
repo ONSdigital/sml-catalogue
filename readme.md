@@ -42,5 +42,5 @@ pipenv run flask --app sml_builder --debug run
 If this all goes well with no errors, you should now be able to navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to view the site. And if that all looks good, you can now upload to the S3 bucket (assuming you still have valid AWS credentials exported to the terminal):
 
 ```shell
-aws s3 sync output s3://sml-catalogue-$`git branch --show-current` --acl public-read --delete
+aws s3 sync build s3://sml-catalogue-`git branch --show-current` --acl public-read --delete
 ```
