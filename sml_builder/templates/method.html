@@ -1,5 +1,18 @@
 {% extends "core.html" %}
-
+{% set breadcrumbs = {
+  "id":"breadcrumbs",
+  "ariaLabel":"breadcrumbs",
+  "itemsList":[
+    {
+      "url": url_for("display_methods"),
+      "id": "back",
+      "text": 'Back',
+      "attributes": {
+          "data-attribute": "Example attribute"
+      }
+    }
+  ]
+} %}
 {%- block main %}
  
 <h2 class="ons-u-mt-no">Method: {{ page.title }}</h2>

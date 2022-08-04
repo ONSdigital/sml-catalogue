@@ -48,5 +48,5 @@ pipenv run python freeze.py
 And finally, upload to the S3 bucket (assuming you still have valid AWS credentials exported to the terminal):
 
 ```shell
-aws s3 sync build s3://sml-catalogue-`git branch --show-current` --acl public-read --delete
+aws s3 sync build s3://sml-catalogue-`git branch --show-current` --acl public-read --delete --content-type "text/html"
 ```

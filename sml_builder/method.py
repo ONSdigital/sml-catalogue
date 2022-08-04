@@ -12,7 +12,7 @@ def display_method(method):
     )
 
 
-@app.route("/")
+@app.route("/methods")
 def display_methods():
     methods = []
     methods_dir = "./content/methods"

@@ -4,26 +4,26 @@
     "title": "Statistical Methods Library Catalogue",
     "header": {
         "title": 'Statistical Methods Library Catalogue',
-        "orgLogoHref": '#0',
-        "titleLogoHref": '#0'
+        "orgLogoHref": 'https://www.ons.gov.uk',
+        "titleLogoHref": '/'
     },
     "mainCol":{
       "columns":12,
       "classes": "ons-u-mt-m"
     },
-    "breadcrumbs":{
-      "id":"breadcrumbs",
-      "ariaLabel":"breadcrumbs",
-      "itemsList":[
-        {
-          "url": '/',
-          "id": "back",
-          "text": 'Back',
-          "attributes": {
-              "data-attribute": "Example attribute"
-          }
-        }
-      ]
+    "breadcrumbs": breadcrumbs,
+    "navigation": {
+        "id": "main-navigation",
+        "itemsList": [
+        {"url": url_for("index"),
+        "title": "Home"},
+        {"url": url_for("display_methods"),
+        "title": "Methods catalogue"},
+        {"url": url_for("help"),
+        "title": "Help centre"},
+        {"url": url_for("resources"),
+        "title": "Useful resources"},
+        ]
     },
     "footer": {
       "OGLLink": true,

@@ -10,3 +10,9 @@ app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
 app.config["FREEZER_DESTINATION"] = "../build"
 
 import sml_builder.method
+import sml_builder.page
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
