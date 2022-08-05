@@ -11,10 +11,7 @@ This repo contains the build environment and code to generate and upload the Sta
 Fetch your AWS credentials and export them to the terminal. Then:
 
 ```shell
-cd terraform
-terraform init
-terraform apply \
-  -var "suffix=`git branch --show-current`"
+./terraform.sh
 ```
 
 ### Fetch ONS Design System

@@ -18,6 +18,12 @@ def index():
     return render_template("index.html")
 
 
+@app.errorhandler(404)
+@app.route("/page-not-found")
+def page_not_found(e=None):
+    return render_template("404.html"), 404 if e else 200
+
+
 @app.template_filter("paras")
 def string_to_paragraph(value):
     """Wraps passed string in <p> tags and converts newlines to <p> pairs"""

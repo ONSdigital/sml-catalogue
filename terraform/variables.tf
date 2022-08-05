@@ -1,3 +1,0 @@
-variable "suffix" {
-  type = string
-}
