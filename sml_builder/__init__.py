@@ -11,6 +11,7 @@ app.config["FREEZER_DESTINATION"] = "../build"
 
 import sml_builder.method
 import sml_builder.page
+import sml_builder.glossary
 
 
 @app.route("/")
