@@ -13,11 +13,11 @@
 } -%}
 {%- block main -%}
  
-<h2 class="ons-u-mt-no">Method: {{ page.title }}</h2>
-<h3> Method summary </h3>
+<h1 class="ons-u-mt-no">Method: {{ page.title }}</h1>
+<h2> Method summary </h2>
 {{ page.description | paras }}
 
-<h3> Contact details for this method </h3>
+<h2> Contact details for this method </h2>
 {{ page.contact_details }}
 
 {% from "components/metadata/_macro.njk" import onsMetadata %}
@@ -48,7 +48,7 @@
 }}
 <hr class="ons-u-mb-m">
 
-<h3>GitHub resources</h3>
+<h2>GitHub resources</h2>
 {% if page.code_link %}
 {% from "components/external-link/_macro.njk" import onsExternalLink %}
 {{
