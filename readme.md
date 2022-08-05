@@ -36,7 +36,7 @@ With [Jsonnet](https://jsonnet.org/learning/getting_started.html) content in the
 pipenv run flask --app sml_builder --debug run
 ```
 
-If this all goes well with no errors, you should now be able to navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to view the site. And if that all looks good, you can now "freeze" the site, renderng it to HTML with:
+If this all goes well with no errors, you should now be able to navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to view the site. And if that all looks good, you can now "freeze" the site, rendering it to HTML with:
 
 ```shell
 pipenv run python freeze.py
