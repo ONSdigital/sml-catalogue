@@ -1,6 +1,6 @@
-# SML Catalogue
+# SML Portal
 
-This repo contains the build environment and code to generate and upload the Statistical Methods Library (SML) Catalogue website.
+This repo contains the build environment and code to generate and upload the Statistical Methods Library (SML) Portal website.
 
 ## Build and deploy
 
@@ -11,10 +11,7 @@ This repo contains the build environment and code to generate and upload the Sta
 Fetch your AWS credentials and export them to the terminal. Then:
 
 ```shell
-cd terraform
-terraform init
-terraform apply \
-  -var "suffix=`git branch --show-current`"
+./terraform.sh
 ```
 
 ### Fetch ONS Design System
@@ -48,5 +45,5 @@ pipenv run python freeze.py
 And finally, upload to the S3 bucket (assuming you still have valid AWS credentials exported to the terminal):
 
 ```shell
-aws s3 sync build s3://sml-catalogue-`git branch --show-current` --acl public-read --delete
+aws s3 sync build s3://sml-portal-`git branch --show-current` --acl public-read --delete --content-type "text/html"
 ```

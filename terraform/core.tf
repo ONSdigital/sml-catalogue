@@ -10,6 +10,7 @@ provider "aws" {
       "ons:owner:contact"       = "Phil Bambridge"
       "ons:owner:team"          = "SPP CMT"
       "ons:application:name"    = "SML Catalogue"
+      "ons:deployment"          = terraform.workspace
     }
   }
 }
@@ -22,13 +23,14 @@ terraform {
     }
   }
 
-  backend "local" {
-    path = "sml-catalogue.tfstate"
-  }
+  # backend "local" {
+  #   path = "sml-catalogue.tfstate"
+  # }
 
-  #   backend "s3" {
-  #     bucket = "sml-catalogue-state"
-  #     key    = "sml-catalogue.tfstate"
-  #     region = "eu-west-2"
-  #   }
+  backend "s3" {
+    bucket               = "statistical-methods-library-tf-state"
+    key                  = "sml-portal.tfstate"
+    region               = "eu-west-2"
+    workspace_key_prefix = "workspace"
+  }
 }

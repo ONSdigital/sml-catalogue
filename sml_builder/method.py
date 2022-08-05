@@ -12,7 +12,7 @@ def display_method(method):
     )
 
 
-@app.route("/")
+@app.route("/methods")
 def display_methods():
     methods = []
     methods_dir = "./content/methods"
@@ -27,6 +27,7 @@ def display_methods():
                     {"value": method["method_metadata"]["Theme"]},
                     {"value": method["method_metadata"]["Expert group"]},
                     {"value": method["method_metadata"]["Programming language"]},
+                    {"value": method["method_metadata"]["Access type"]},
                     {"value": method["method_metadata"]["Status"]},
                 ]
             }

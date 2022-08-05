@@ -12,8 +12,8 @@
     'Programming language': 'Python',
     'Code available?': 'Yes',
   },
-  specification_link: 'www.example.com',
-  code_link: 'www.example.com',
+  specification_link: 'https://www.github.com',
+  code_link: 'https://www.github.com',
   description: |||
     Short example summary description of the method provided here.
     Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt

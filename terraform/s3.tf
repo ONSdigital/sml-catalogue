@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "sml-catalogue" {
-  bucket = "sml-catalogue-${var.suffix}"
+  bucket = "sml-portal-${terraform.workspace}"
 }
 
 resource "aws_s3_bucket_acl" "sml-catalogue" {
@@ -12,6 +12,10 @@ resource "aws_s3_bucket_website_configuration" "sml-catalogue" {
 
   index_document {
     suffix = "index.html"
+  }
+
+  error_document {
+    key = "page-not-found"
   }
 }
 

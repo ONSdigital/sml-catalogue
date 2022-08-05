@@ -1,29 +1,30 @@
 {% extends "layout/_template.njk" %}
-
+{%- if page_title -%} {%- set page_title_value = page_title + ' - Statistical Methods Library Portal' -%} {%- else -%} {%- set page_title_value = 'Statistical Methods Library Portal' -%} {%- endif -%}
 {% set pageConfig = { 
-    "title": "Statistical Methods Library Catalogue",
+    "title": page_title_value,
     "header": {
-        "title": 'Statistical Methods Library Catalogue',
-        "orgLogoHref": '#0',
-        "titleLogoHref": '#0'
+        "title": 'Statistical Methods Library Portal',
+        "orgLogoHref": 'https://www.ons.gov.uk',
+        "titleLogoHref": '/'
     },
     "mainCol":{
       "columns":12,
       "classes": "ons-u-mt-m"
     },
-    "breadcrumbs":{
-      "id":"breadcrumbs",
-      "ariaLabel":"breadcrumbs",
-      "itemsList":[
-        {
-          "url": '/',
-          "id": "back",
-          "text": 'Back',
-          "attributes": {
-              "data-attribute": "Example attribute"
-          }
-        }
-      ]
+    "breadcrumbs": breadcrumbs,
+    "navigation": {
+        "id": "main-navigation",
+        "itemsList": [
+        {"url": url_for("index"),
+        "title": "Home"},
+        {"url": url_for("display_methods"),
+        "title": "Methods catalogue"},
+        {"url": url_for("help"),
+        "title": "Help centre"},
+        {"url": url_for("resources"),
+        "title": "Useful resources"},
+        ],
+        "currentPath": current_path
     },
     "footer": {
       "OGLLink": true,

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, g, abort, escape
+from flask import Flask, render_template, request, g, abort, escape, Markup
 
 app = Flask(__name__)
 
@@ -10,3 +10,22 @@ app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
 app.config["FREEZER_DESTINATION"] = "../build"
 
 import sml_builder.method
+import sml_builder.page
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+@app.errorhandler(404)
+@app.route("/page-not-found")
+def page_not_found(e=None):
+    return render_template("404.html"), 404 if e else 200
+
+
+@app.template_filter("paras")
+def string_to_paragraph(value):
+    """Wraps passed string in <p> tags and converts newlines to <p> pairs"""
+    body = escape(value).replace("\n", Markup("</p><p>"))
+    return Markup(f"<p>{body}</p>")
