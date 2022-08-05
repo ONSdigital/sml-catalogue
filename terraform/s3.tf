@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "sml-catalogue" {
-  bucket = "sml-portal-${terraform.workspace}"
+  bucket        = "sml-portal-${terraform.workspace}"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_acl" "sml-catalogue" {
