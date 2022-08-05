@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "sml-catalogue" {
-  bucket = "sml-catalogue-${var.suffix}"
+  bucket = "sml-portal-${var.suffix}"
 }
 
 resource "aws_s3_bucket_acl" "sml-catalogue" {
