@@ -11,8 +11,10 @@ This repo contains the build environment and code to generate and upload the Sta
 Fetch your AWS credentials and export them to the terminal. Then:
 
 ```shell
-./terraform.sh
+./terraform.sh apply
 ```
+
+This command will output the URL for your new site, and will have the form `https://xxxxxxx.cloudfront.net/`.
 
 ### Fetch ONS Design System
 
@@ -45,5 +47,19 @@ pipenv run python freeze.py
 And finally, upload to the S3 bucket (assuming you still have valid AWS credentials exported to the terminal):
 
 ```shell
-aws s3 sync build s3://sml-portal-`git branch --show-current` --acl public-read --delete --content-type "text/html"
+aws s3 sync build s3://sml-portal-`git branch --show-current` --delete --content-type "text/html"
 ```
+
+## Destroying your site
+
+When you have merged, or have otherwise fiinished with your feature branch, you will want to delete the deployed site. Simply run:
+
+```shell
+./terraform.sh destroy
+```
+
+## Troubleshooting
+
+* __Access denied message when trying to reach CloudFront URL__
+  * One common cause of this error message is not having uploaded your site yet.
+  * Are you coming from a non-UK IP address, possbly due to a VPN being active? If so, switch this off and try again. Geographical restrictions are in place.
