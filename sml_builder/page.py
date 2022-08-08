@@ -12,4 +12,4 @@ def help():
 
 @app.route("/resources")
 def resources():
-    return "resources"
+    return render_template("about.html")
