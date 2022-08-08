@@ -1,7 +1,7 @@
 {
   term: 'Example term',
-  hash: 'example-term',
   letter: 'E',
+  related: ['Another example term', 'An example term'],
   meaning: |||
     Example of glossary content in 'E'
     Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt

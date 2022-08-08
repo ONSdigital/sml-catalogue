@@ -32,6 +32,13 @@
             {%- if term.letter == letter -%}
                 <h3><a name="{{ term.hash }}"></a>{{ term.term }}</h3>
                 {{ term.meaning | paras }}
+                {%- if term.related -%}
+                    <div><strong>See also: </strong>
+                    {% for related in term.related %}
+                        <a href="#{{ related  | convert_name }}">{{ related }}</a>{{ ", " if not loop.last else "" }}
+                    {%- endfor -%}
+                    </div>
+                {%- endif -%}
             {%- endif -%}
         {%- endfor -%}
 

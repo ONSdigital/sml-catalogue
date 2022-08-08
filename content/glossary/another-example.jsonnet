@@ -1,7 +1,7 @@
 {
   term: 'Another example term',
-  hash: 'another-example-term',
   letter: 'A',
+  related: ['An example term'],
   meaning: |||
     Another example of glossary content in 'A'
     Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt
