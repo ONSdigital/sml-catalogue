@@ -26,7 +26,7 @@
                         "text": "How to find and view methods?"
                     },
                     {
-                        "url": url_for("guidance",category="information", sub_category="methods_request"),
+                        "url": url_for("guidance",category="information", sub_category="method_request"),
                         "text": "How to submit a method request?"
                     },
                     {
@@ -38,14 +38,29 @@
             {{ onsCard({
                 "id": "title2",
                 "textId": "text2",
+                "title": "Access(and usage)",
+                "itemsList": [
+                    {
+                        "url": url_for("guidance",category="access", sub_category="run_method"),
+                        "text": "How to run a method?"
+                    },
+                    {
+                        "url": url_for("guidance",category="access", sub_category="method_specification_code"),
+                        "text": "How to access method specification and code?"
+                    }
+                ]
+            }) }}
+            {{ onsCard({
+                "id": "title2",
+                "textId": "text2",
                 "title": "Feedback",
                 "itemsList": [
                     {
-                        "url": "#0",
+                        "url": url_for("guidance",category="feedback", sub_category="report_bug"),
                         "text": "How to report a code defect or bug?"
                     },
                     {
-                        "url": "#0",
+                        "url": url_for("guidance",category="feedback", sub_category="provide_feedback"),
                         "text": "How to provid feedback?"
                     }
                 ]
@@ -56,7 +71,7 @@
                 "title": "Support",
                 "itemsList": [
                     {
-                        "url": "#0",
+                        "url": url_for("guidance",category="support", sub_category="get_support"),
                         "text": "How to get suport?"
                     }
                 ]
