@@ -33,3 +33,30 @@ def display_methods():
             }
         )
     return render_template("methods.html", page={"rows": methods})
+
+
+@app.route("/help-centre")
+def help_centre():
+    return render_template("help-centre.html")
+
+
+@app.route("/help-centre/<category>/<sub_category>")
+def guidance(category=None, sub_category=None):
+    guidances = []
+    categories = []
+    methods_dir = "./content/help_centre"
+    guidances_content = loads(evaluate_file(f"{methods_dir}/{sub_category}.jsonnet"))
+    for guide in guidances_content["guidances"]:
+        guidances.append({"text": guide})
+    for category in guidances_content["categories"]:
+        categories.append(
+            {"title": "Section 1", "url": "#section-1"},
+        )
+    return render_template(
+        "guidance-category.html",
+        data={
+            "overview_text": guidances_content["header3"],
+            "guidances": guidances,
+            "current_path": request.base_url,
+        },
+    )

@@ -1,0 +1,79 @@
+{%- extends "core.html" -%}
+{% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
+{% from "components/label/_macro.njk" import onsLabel %}
+{% from "components/lists/_macro.njk" import onsList %}
+
+
+{%- set page_title = "Help centre" -%}
+{%- set current_path = url_for("help_centre") -%}
+{%- block main -%}
+<h2>Help Centre</h2>
+<p>Specific 'how to' categories</p>
+<hr style="margin-bottom:  2rem;">
+<h3>{{data.overview_text}}</h3>
+        {{
+            onsList({
+                "itemsList": [{"text": 'You can find and view methods within the methods catalogue'}, {"text": 'Content here from SML can be added.... '}]
+            })
+        }}
+        <div style="float: right;">
+            <hr style="margin-bottom:  1rem;">
+            <h3>Other 'how to' list categories</h3>
+            <div class="ons-field ons-grid__col">
+                {{
+                onsLabel({
+                    "id": "label",
+                    "for": "section-menu",
+                    "text": "Other 'how to' list categories"
+                })
+                }}
+                {{
+                    onsSectionNavigation({
+                        "variants": "vertical",
+                        "id": "section-menu",
+                        "currentPath": data.current_path,
+                        "itemsList": [
+                        {
+                            "title": "Information",
+                            "url": "#section-2",
+                            "anchors": [
+                                {
+                                    "title": "How to find and view methods?",
+                                    "url": url_for("guidance",category="information", sub_category="view_methods")
+                                },                    
+                                {
+                                    "title": "How to submit a method request?",
+                                    "url": url_for("guidance",category="information", sub_category="methods_request")
+                                },                    
+                                {
+                                    "title": "What are the coding standards?",
+                                    "url": url_for("guidance",category="information", sub_category="coding_standards")
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Access",
+                            "url": "#0"
+                        },
+                        {
+                            "title": "Feedback",
+                            "url": "#0"
+                        },
+                            {
+                                "title": "support",
+                                "url": "#0"
+                
+                            }
+                        ]
+                    })
+                }}
+            <hr style="margin-bottom:  1rem;">
+
+            </div>
+            <hr style="margin-bottom:  1rem;">
+            </div>
+      
+
+
+
+{%- endblock main-%}

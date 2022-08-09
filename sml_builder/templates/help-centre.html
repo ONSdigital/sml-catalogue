@@ -1,0 +1,98 @@
+{%- extends "core.html" -%}
+{% from "components/card/_macro.njk" import onsCard %}
+{% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
+{% from "components/label/_macro.njk" import onsLabel %}
+
+{%- set page_title = "Help centre" -%}
+{%- set current_path = url_for("help_centre") -%}
+{%- block main -%}
+<h2>Help Centre</h2>
+<p> Navigate a variety of 'how to' categories,as well as make contact for feedback and support.</p>
+<hr style="margin-bottom:  2rem;">
+<h3>'How to' and guidance categories</h3>
+<div class="ons-container">
+    
+    <div class="ons-grid ons-grid--column@xxs@s">
+       
+        <div class="ons-grid__col ons-col-6@m">
+            {{ onsCard({
+                "id": "title1",
+                "textId": "text1",
+                "title": "Information",
+                "variants": "bare",
+                "itemsList": [
+                    {
+                        "url": url_for("guidance",category="information", sub_category="view_methods"),
+                        "text": "How to find and view methods?"
+                    },
+                    {
+                        "url": url_for("guidance",category="information", sub_category="methods_request"),
+                        "text": "How to submit a method request?"
+                    },
+                    {
+                        "url": url_for("guidance",category="information", sub_category="coding_standards"),
+                        "text": "What are the coding standards?"
+                    }
+                ]
+            }) }}
+            {{ onsCard({
+                "id": "title2",
+                "textId": "text2",
+                "title": "Feedback",
+                "itemsList": [
+                    {
+                        "url": "#0",
+                        "text": "How to report a code defect or bug?"
+                    },
+                    {
+                        "url": "#0",
+                        "text": "How to provid feedback?"
+                    }
+                ]
+            }) }}
+            {{ onsCard({
+                "id": "title3",
+                "textId": "text3",
+                "title": "Support",
+                "itemsList": [
+                    {
+                        "url": "#0",
+                        "text": "How to get suport?"
+                    }
+                ]
+            }) }}
+        </div>
+        <div style="float: right;">
+            <hr style="margin-bottom:  1rem;">
+            <div class="ons-field ons-grid__col">
+                {{
+                onsLabel({
+                    "id": "label",
+                    "for": "section-menu",
+                    "text": "Explore:"
+                })
+                }}
+                {{
+                    onsSectionNavigation({
+                        "variants": "vertical",
+                        "id": "section-menu",
+                        "currentPath": "#section-2",
+                        "itemsList": [
+                            {
+                                "title": "Methods catalogue",
+                                "url": url_for("display_methods")
+                
+                            }
+                        ]
+                    })
+                }}
+            </div>
+            <hr style="margin-bottom:  1rem;">
+            </div>
+           
+
+    </div>
+
+</div>
+
+{%- endblock main-%}

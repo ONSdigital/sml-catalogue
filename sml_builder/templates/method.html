@@ -1,25 +1,13 @@
-{%- extends "core.html" -%}
-{%- set page_title = page.title -%}
-{%- set current_path = url_for("display_methods") -%}
-{%- set breadcrumbs = {
-  "id":"breadcrumbs",
-  "ariaLabel":"breadcrumbs",
-  "itemsList":[
-    {
-      "url": url_for("display_methods"),
-      "id": "back",
-      "text": 'Back',
-    }
-  ]
-} -%}
-{%- block main -%}
- 
-<h1 class="ons-u-mt-no">Method: {{ page.title }}</h1>
-<h2> Method summary </h2>
-{{ page.description | paras }}
+{% extends "core.html" %}
 
-<h2> Contact details for this method </h2>
-{{ page.contact_details }}
+{%- block main %}
+ 
+<h2 class="ons-u-mt-no">Method: {{ page.title }}</h2>
+<h3> Method summary </h3>
+{{ page.description }}
+
+<h3> Contact details for this method </h3>
+{{ page.contact_details}}
 
 {% from "components/metadata/_macro.njk" import onsMetadata %}
 {% set items = [] %}
@@ -49,7 +37,7 @@
 }}
 <hr class="ons-u-mb-m">
 
-<h2>GitHub resources</h2>
+<h3>GitHub resources</h3>
 {% if page.code_link %}
 {% from "components/external-link/_macro.njk" import onsExternalLink %}
 {{
