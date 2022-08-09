@@ -13,3 +13,8 @@ def help():
 @app.route("/resources")
 def resources():
     return render_template("about.html")
+
+
+@app.route("/cookies")
+def cookies_page():
+    return render_template("cookies.html")
