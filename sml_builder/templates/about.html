@@ -1,0 +1,86 @@
+{% extends "core.html" %}
+{% from "components/lists/_macro.njk" import onsList %}
+{% set mainCols=8 %}
+{%- set current_path = url_for("resources") -%}
+{% set asideCol =  {
+    "position": "after",
+    "colClasses": "ons-u-mt-l ons-u-mb-l"
+  }
+%}
+{%- block main %}
+
+
+
+ 
+<h1 class="ons-u-mt-no">About the Statistical Methods Library</h1>
+<h2>What is the Statistical Methods Library?</h2>
+<p>A central library containing statistical methods for consistent reproducible statistical methods used within the Office for National Statistics (ONS)</p>
+<h2>Future vision and missions:</h2>
+{{
+    onsList({
+        "itemsList": [
+            {
+                "text": 'Standardise best practice methods across government departments'
+            },
+            {
+                "text": 'For the platform to be agnostic, so it may be used from anywhere and accessible across all digital platforms.'
+            }
+        ]
+    })
+}}
+
+
+
+<h2>Current objectives:</h2>
+{{
+    onsList({
+        "itemsList": [
+        
+            {
+                "text": 'To act as a shared single point of reference for best practice methods and share methods across government departments'
+            },
+            {
+                "text": 'To continuously update methods based on peer reviews, facts and user feedback'
+            }
+        ]
+    })
+}}
+<h2>Further information:</h2>
+<p>
+A central library for approved statistical methods for use within the ONS and wider public sector. [OR (1) A central library for assured statistical methods for use within the ONS and wider public sector. (2) A central library for governed statistical methods for use within the ONS and wider public sector].
+</p><p>
+The library ensures that official statistical outputs are fully transparent. Such transparency provides proportionate governance and assurance processes, including statistical production and analysis/exploration through peer reviews. Additionally, continuous improvement is facilitated from such reviews and user feedback, i.e. method change requests and/or new method requests.
+</p><p>
+Through this library the ONS shares methods of best practice with other government departments. Providing comprehensive statistical method documentation, including but not limited to: (i) catalogue of methods; (ii) method codes and specifications; (iiii) how-to guidance; and (iv) contact details for help and support.
+</p>{% endblock main -%}
+
+{% block aside %}
+    {% from "components/related-content/_macro.njk" import onsRelatedContent %}
+    {{
+        onsRelatedContent({
+            "ariaLabel": 'Related content',
+            "rows": [
+                {
+                    "id": 'explore-more',
+                    "title": 'Explore more',
+                    "itemsList": [
+                        {
+                            "text": 'Help centre',
+                            "url": url_for("help")
+                        },
+                        {
+                            "text": 'Useful resources',
+                            "url": url_for("resources")
+                        },
+                        {
+                            "text": 'Methods catalogue',
+                            "url": url_for("display_methods")
+                        }
+                    ]
+                }
+            ]
+
+        })
+    }}
+{% endblock %}
+
