@@ -5,16 +5,25 @@
 
 {%- set page_title = "Help centre" -%}
 {%- set current_path = url_for("help_centre") -%}
-{%- block main -%}
+{% set mainCols=9%}
+{% set asideCol =  {
+    "position": "after",
+    "colClasses": "ons-u-mt-l ons-u-mb-l"
+  }
+%}
+{% block preMain %}
 <h2>Help Centre</h2>
 <p> Navigate a variety of 'how to' categories,as well as make contact for feedback and support.</p>
 <hr style="margin-bottom:  2rem;">
+{% endblock %}
+{%- block main -%}
+
 <h3>'How to' and guidance categories</h3>
 <div class="ons-container">
     
     <div class="ons-grid ons-grid--column@xxs@s">
        
-        <div class="ons-grid__col ons-col-6@m">
+        <div class="ons-grid__col ons-col-8@m">
             {{ onsCard({
                 "id": "title1",
                 "textId": "text1",
@@ -77,33 +86,7 @@
                 ]
             }) }}
         </div>
-        <div style="float: right;">
-            <hr style="margin-bottom:  1rem;">
-            <div class="ons-field ons-grid__col">
-                {{
-                onsLabel({
-                    "id": "label",
-                    "for": "section-menu",
-                    "text": "Explore:"
-                })
-                }}
-                {{
-                    onsSectionNavigation({
-                        "variants": "vertical",
-                        "id": "section-menu",
-                        "currentPath": "#section-2",
-                        "itemsList": [
-                            {
-                                "title": "Methods catalogue",
-                                "url": url_for("display_methods")
-                
-                            }
-                        ]
-                    })
-                }}
-            </div>
-            <hr style="margin-bottom:  1rem;">
-            </div>
+
            
 
     </div>
@@ -111,3 +94,30 @@
 </div>
 
 {%- endblock main-%}
+{% block aside %}
+    <hr style="margin-bottom:  1rem;">
+    <div class="ons-field ons-grid__col">
+        {{
+        onsLabel({
+            "id": "label",
+            "for": "section-menu",
+            "text": "Explore:"
+        })
+        }}
+        {{
+            onsSectionNavigation({
+                "variants": "vertical",
+                "id": "section-menu",
+                "currentPath": "#section-2",
+                "itemsList": [
+                    {
+                        "title": "Methods catalogue",
+                        "url": url_for("display_methods")
+        
+                    }
+                ]
+            })
+        }}
+    </div>
+    <hr style="margin-bottom:  1rem;">
+    {% endblock %}

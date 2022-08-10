@@ -2,16 +2,25 @@
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {% from "components/label/_macro.njk" import onsLabel %}
 {% from "components/lists/_macro.njk" import onsList %}
-
+{% set mainCols=8 %}
+{% set asideCol =  {
+    "position": "after",
+    "colClasses": "ons-u-mt-l ons-u-mb-l"
+  }
+%}
 
 {%- set page_title = "Help centre" -%}
 {%- set current_path = url_for("help_centre") -%}
-{%- block main -%}
+{% block preMain %}
 <h2>Help Centre</h2>
 <p>Specific 'how to' categories</p>
 <hr style="margin-bottom:  2rem;">
+{% endblock %}
+
+{%- block main -%}
+
 {%for key,values in data.guidances.items() %}
-<div style="display:inline-block;width:70%">
+<div>
     <h3>{{data.overview_text}}</h3>
 
     {% if 'no_description' != key %}
@@ -24,8 +33,9 @@
     }}
 </div>
 {% endfor %}
-<div style="display:inline-block;float: right;width:30%">
-    <hr style="margin-top: 0px;margin-bottom: 1.5em;border: 0.2em solid #206095;">
+{%- endblock main-%}
+{% block aside %}
+<hr style="margin-top: 0px;margin-bottom: 1.5em;border: 0.2em solid #206095;">
     {{
     onsLabel({
         "id": "label",
@@ -148,5 +158,4 @@
     }}
     <hr style="margin-bottom:  1rem;">
 </div>
-
-{%- endblock main-%}
+{% endblock %}
