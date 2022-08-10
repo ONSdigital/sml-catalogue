@@ -10,9 +10,10 @@
 <h2>Help Centre</h2>
 <p>Specific 'how to' categories</p>
 <hr style="margin-bottom:  2rem;">
-<h3>{{data.overview_text}}</h3>
 {%for key,values in data.guidances.items() %}
-<div>
+<div style="display:inline-block;width:70%">
+    <h3>{{data.overview_text}}</h3>
+
     {% if 'no_description' != key %}
     <p><strong>{{key}}</strong></p>
     {% endif %}
@@ -23,7 +24,8 @@
     }}
 </div>
 {% endfor %}
-<div style="float: right;">
+<div style="display:inline-block;float: right;width:30%">
+    <hr style="margin-top: 0px;margin-bottom: 1.5em;border: 0.2em solid #206095;">
     {{
     onsLabel({
         "id": "label",
