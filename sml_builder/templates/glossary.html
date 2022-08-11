@@ -2,33 +2,21 @@
 {%- set page_title = "Library glossary" -%}
 {%- set current_path = url_for("resources") -%}
 
-    {%- block head -%}
-    <style>
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: #206095;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 4px;
-}
-
-#myBtn:hover {
-  background-color: #555;
-}
-    </style>
-    {%- endblock head -%}
+{%- block head -%}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/sml.css') }}" media="all" type="text/css">
+{%- endblock head -%}
 
 {%- block main -%}
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    {%- from "components/button/_macro.njk" import onsButton -%}
+    {{
+        onsButton({
+            "text": 'Top',
+            "title": 'Go to top',
+            "id": 'topBtn',
+            "iconType": 'arrow-next'
+        })
+    }}
 
     <h1 class="ons-u-mt-no">Library glossary</h1>
 
@@ -57,15 +45,17 @@
 
         {%- for term in page.glossary -%}
             {%- if term.letter == letter -%}
-                <h3><a name="{{ term.hash }}"></a>{{ term.term }}</h3>
-                {{ term.meaning | paras }}
-                {%- if term.related -%}
-                    <div><strong>See also: </strong>
-                    {% for related in term.related %}
-                        <a href="#{{ related  | convert_name }}">{{ related }}</a>{{ ", " if not loop.last else "" }}
-                    {%- endfor -%}
-                    </div>
-                {%- endif -%}
+                <div class="ons-u-mb-l">
+                    <h3><a name="{{ term.hash }}"></a>{{ term.term }}</h3>
+                    {{ term.meaning | paras }}
+                    {%- if term.related -%}
+                        <p><strong>See also: </strong>
+                        {% for related in term.related %}
+                            <a href="#{{ related  | convert_name }}">{{ related }}</a>{{ ", " if not loop.last else "" }}
+                        {%- endfor -%}
+                        </p>
+                    {%- endif -%}
+                </div>
             {%- endif -%}
         {%- endfor -%}
 
@@ -75,25 +65,5 @@
 {% endblock main -%}
 
 {%- block scripts -%}
-<script>
-//Get the button
-var mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-</script>
+    <script type=text/javascript src="{{ url_for('static',filename='js/sml.js') }}"></script>
 {%- endblock scripts -%}
