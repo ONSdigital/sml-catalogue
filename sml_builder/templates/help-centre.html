@@ -5,7 +5,7 @@
 
 {%- set page_title = "Help centre" -%}
 {%- set current_path = url_for("help_centre") -%}
-{% set mainCols=9%}
+{% set mainCols=8%}
 {% set asideCol =  {
     "position": "after",
     "colClasses": "ons-u-mt-l ons-u-mb-l"
@@ -14,7 +14,7 @@
 {% block preMain %}
 <h2>Help Centre</h2>
 <p> Navigate a variety of 'how to' categories,as well as make contact for feedback and support.</p>
-<hr style="margin-bottom:  2rem;">
+<hr style="margin-bottom:  0.5rem;">
 {% endblock %}
 {%- block main -%}
 
@@ -23,7 +23,7 @@
     
     <div class="ons-grid ons-grid--column@xxs@s">
        
-        <div class="ons-grid__col ons-col-8@m">
+        <div class="ons-grid__col ons-col-11@m">
             {{ onsCard({
                 "id": "title1",
                 "textId": "text1",
@@ -31,15 +31,15 @@
                 "variants": "bare",
                 "itemsList": [
                     {
-                        "url": url_for("guidance",category="information", sub_category="view_methods"),
+                        "url": url_for("guidances",category="information", sub_category="view_methods"),
                         "text": "How to find and view methods?"
                     },
                     {
-                        "url": url_for("guidance",category="information", sub_category="method_request"),
+                        "url": url_for("guidances",category="information", sub_category="method_request"),
                         "text": "How to submit a method request?"
                     },
                     {
-                        "url": url_for("guidance",category="information", sub_category="coding_standards"),
+                        "url": url_for("guidances",category="information", sub_category="coding_standards"),
                         "text": "What are the coding standards?"
                     }
                 ]
@@ -50,11 +50,11 @@
                 "title": "Access(and usage)",
                 "itemsList": [
                     {
-                        "url": url_for("guidance",category="access", sub_category="run_method"),
+                        "url": url_for("guidances",category="access", sub_category="run_method"),
                         "text": "How to run a method?"
                     },
                     {
-                        "url": url_for("guidance",category="access", sub_category="method_specification_code"),
+                        "url": url_for("guidances",category="access", sub_category="method_specification_code"),
                         "text": "How to access method specification and code?"
                     }
                 ]
@@ -65,11 +65,11 @@
                 "title": "Feedback",
                 "itemsList": [
                     {
-                        "url": url_for("guidance",category="feedback", sub_category="report_bug"),
+                        "url": url_for("guidances",category="feedback", sub_category="report_bug"),
                         "text": "How to report a code defect or bug?"
                     },
                     {
-                        "url": url_for("guidance",category="feedback", sub_category="provide_feedback"),
+                        "url": url_for("guidances",category="feedback", sub_category="provide_feedback"),
                         "text": "How to provid feedback?"
                     }
                 ]
@@ -80,7 +80,7 @@
                 "title": "Support",
                 "itemsList": [
                     {
-                        "url": url_for("guidance",category="support", sub_category="get_support"),
+                        "url": url_for("guidances",category="support", sub_category="get_support"),
                         "text": "How to get suport?"
                     }
                 ]
@@ -95,7 +95,7 @@
 
 {%- endblock main-%}
 {% block aside %}
-    <hr style="margin-bottom:  1rem;">
+    <hr style="margin-bottom: 1rem;">
     <div class="ons-field ons-grid__col">
         {{
         onsLabel({
@@ -119,5 +119,5 @@
             })
         }}
     </div>
-    <hr style="margin-bottom:  1rem;">
+    <hr style="margin-top:  0.5rem;">
     {% endblock %}

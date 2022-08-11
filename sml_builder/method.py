@@ -41,17 +41,18 @@ def help_centre():
 
 
 @app.route("/help-centre/<category>/<sub_category>")
-def guidance(category=None, sub_category=None):
+def guidances(category=None, sub_category=None):
     guidances = []
     # methods_dir = "./content/help_centre/guidances"
     # guidances_content = loads(evaluate_file(f"{methods_dir}/{sub_category}.jsonnet"))
     guidances_content = loads(evaluate_file("./content/help_centre/guidances.jsonnet"))
-
+    print(request.base_url)
     return render_template(
-        "guidance-category.html",
+        "guidances.html",
         data={
             "overview_text": guidances_content[sub_category]["header3"],
             "guidances": guidances_content[sub_category]["guidances"],
             "current_path": "#" + str(category),
+            # "current_path": request.base_url,
         },
     )

@@ -1,6 +1,8 @@
+local help = import 'help_centre.libsonnet';
+
 {
    "view_methods":{
-      "header3":"Information: How to find and view methods?",
+      "header3": help['information'].label + ":" + help['information'].subcategories[0].label,
       "guidances":{
          "no_description":[
             {
@@ -13,7 +15,7 @@
       }
    },
    "method_request":{
-      "header3":"Information: How to submit a method request?",
+      "header3": help['information'].label + ":" + help['information'].subcategories[1].label,
       "guidances":{
          "How to make a method request:":[
             {
@@ -34,7 +36,7 @@
       }
    },
    "coding_standards":{
-      "header3":"Information: How to access the coding standards",
+      "header3": help['information'].label + ":" + help['information'].subcategories[2].label,
       "guidances":{
          "no_description":[
             {
@@ -47,7 +49,7 @@
       }
    },
       "run_method":{
-      "header3":"Access: How to run a method",
+      "header3": help['access'].label + ":" + help['access'].subcategories[0].label,
       "guidances":{
          "How to run a method locally:":[
             {
@@ -68,7 +70,7 @@
       }
    },
    "method_specification_code":{
-      "header3":"Access: How to access method specification and code",
+      "header3": help['access'].label + ":" + help['access'].subcategories[1].label,
       "guidances":{
          "Accessing 'public' method specification and code":[
             {
@@ -95,7 +97,7 @@
       }
    },
     "report_bug":{
-      "header3":"Feedback: How to report a code defect or bug",
+      "header3": help['feedback'].label + ":" + help['feedback'].subcategories[0].label,
       "guidances":{
          "no_description":[
             {
@@ -108,7 +110,7 @@
       }
    },
    "provide_feedback":{
-      "header3":"Feedback: How to provide Statistical Method Library feedback",
+      "header3": help['feedback'].label + ":" + help['feedback'].subcategories[1].label,
       "guidances":{
          "no_description":[
             {
@@ -121,7 +123,7 @@
       }
    },
    "get_support":{
-      "header3":"Feedback: How to get suuport",
+      "header3": help['support'].label + ":" + help['support'].subcategories[0].label,
       "guidances":{
          "Who to contact to ask for support with a method":[
             {

@@ -14,13 +14,13 @@
 {% block preMain %}
 <h2>Help Centre</h2>
 <p>Specific 'how to' categories</p>
-<hr style="margin-bottom:  2rem;">
+<hr style="margin-bottom:  0.5rem;">
 {% endblock %}
 
 {%- block main -%}
 
 {%for key,values in data.guidances.items() %}
-<div>
+<div class="ons-grid__col ons-col-11@m">
     <h3>{{data.overview_text}}</h3>
 
     {% if 'no_description' != key %}
@@ -55,15 +55,15 @@
                 "anchors": [
                     {
                         "title": "How to find and view methods?",
-                        "url": url_for("guidance",category="information", sub_category="view_methods")
+                        "url": url_for("guidances",category="information", sub_category="view_methods")
                     },                    
                     {
                         "title": "How to submit a method request?",
-                        "url": url_for("guidance",category="information", sub_category="method_request")
+                        "url": url_for("guidances",category="information", sub_category="method_request")
                     },                    
                     {
                         "title": "What are the coding standards?",
-                        "url": url_for("guidance",category="information", sub_category="coding_standards")
+                        "url": url_for("guidances",category="information", sub_category="coding_standards")
                     }
                 ]
             },
@@ -73,11 +73,11 @@
                 "anchors": [
                     {
                         "title": "How to run a method?",
-                        "url":url_for("guidance",category="access", sub_category="run_method")
+                        "url":url_for("guidances",category="access", sub_category="run_method")
                     },                    
                     {
                         "title": "How to access method specification and code?",
-                        "url": url_for("guidance",category="access", sub_category="method_specification_code")
+                        "url": url_for("guidances",category="access", sub_category="method_specification_code")
                     }
                 ]
             },
@@ -87,11 +87,11 @@
                 "anchors": [
                     {
                         "title": "How to report a code defect or bug?",
-                        "url": url_for("guidance",category="feedback", sub_category="report_bug"),
+                        "url": url_for("guidances",category="feedback", sub_category="report_bug"),
                     },                    
                     {
                         "title": "How to provid feedback?",
-                        "url": url_for("guidance",category="feedback", sub_category="provide_feedback")
+                        "url": url_for("guidances",category="feedback", sub_category="provide_feedback")
                     }
                 ]
             },
@@ -101,7 +101,7 @@
                     "anchors": [
                     {
                         "title": "How to get support?",
-                        "url": url_for("guidance",category="support", sub_category="get_support")
+                        "url": url_for("guidances",category="support", sub_category="get_support")
                     }
                 ]
     
@@ -109,7 +109,7 @@
             ]
         })
     }}
-    <hr style="margin-bottom:  1rem;">
+    <hr style="margin-top:  0.5rem;">
     {{
         onsLabel({
             "id": "userful-resources",
@@ -125,7 +125,7 @@
             "itemsList": [
             {
                 "title": "About this library",
-                "url": "#aboutthis",
+                "url": url_for("resources"),
             },
             {
                 "title": "Library glossary",
@@ -134,7 +134,7 @@
             ]
         })
     }}
-    <hr style="margin-bottom:  1rem;">
+    <hr style="margin-top:  0.5rem;">
     {{
         onsLabel({
             "id": "ethod-catalogue",
@@ -156,6 +156,6 @@
         ]
         })
     }}
-    <hr style="margin-bottom:  1rem;">
+    <hr style="margin-top:  1rem;">
 </div>
 {% endblock %}
