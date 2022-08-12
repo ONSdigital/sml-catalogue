@@ -27,13 +27,19 @@ def help_centre():
 
 @app.route("/help/<sub_category>")
 def guidances(sub_category=None):
-    guidances = []
-    categories = []
-    # methods_dir = "./content/help_centre/guidances"
-    # guidances_content = loads(evaluate_file(f"{methods_dir}/{sub_category}.jsonnet"))
     guidances_content = loads(evaluate_file("./content/help_centre/guidances.jsonnet"))
-    content = loads(evaluate_file("./content/help_centre/help_centre.libsonnet"))
-    for category in content["categories"]:
+    instructions = []
+    for guidance in guidances_content[sub_category]["guidances"]:
+        instructions.append(
+            (
+                guidance["description"],
+                [{"text": detail} for detail in guidance["details"]],
+            )
+        )
+    categories = []
+
+    help_content = loads(evaluate_file("./content/help_centre/help_centre.libsonnet"))
+    for category in help_content["categories"]:
         current = "#0"
         category_anchors = []
         for sub in category["subcategories"]:
@@ -58,7 +64,7 @@ def guidances(sub_category=None):
         "guidances.html",
         data={
             "overview_text": guidances_content[sub_category]["header3"],
-            "guidances": guidances_content[sub_category]["guidances"],
+            "guidances_content": instructions,
             "current_path": request.path,
             "categories": categories,
         },
