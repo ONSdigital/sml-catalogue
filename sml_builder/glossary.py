@@ -25,5 +25,5 @@ def display_glossary():
         nav_options_list.append(letter_value)
 
     nav_options = sorted(list(set(nav_options_list)))
-    glossary = sorted(glossary_list, key=lambda d: d['term'])
+    glossary = sorted(glossary_list, key=lambda d: d['term'].lower())
     return render_template("glossary.html", page={"glossary": glossary, "nav_options": nav_options})
