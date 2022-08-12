@@ -1,5 +1,5 @@
 from os import listdir
-from flask import request, render_template, redirect, url_for, abort, g
+from flask import render_template, url_for
 from json import loads
 from _jsonnet import evaluate_file
 from sml_builder import app
@@ -33,26 +33,3 @@ def display_methods():
             }
         )
     return render_template("methods.html", page={"rows": methods})
-
-
-@app.route("/help-centre")
-def help_centre():
-    return render_template("help-centre.html")
-
-
-@app.route("/help-centre/<category>/<sub_category>")
-def guidances(category=None, sub_category=None):
-    guidances = []
-    # methods_dir = "./content/help_centre/guidances"
-    # guidances_content = loads(evaluate_file(f"{methods_dir}/{sub_category}.jsonnet"))
-    guidances_content = loads(evaluate_file("./content/help_centre/guidances.jsonnet"))
-    print(request.base_url)
-    return render_template(
-        "guidances.html",
-        data={
-            "overview_text": guidances_content[sub_category]["header3"],
-            "guidances": guidances_content[sub_category]["guidances"],
-            "current_path": "#" + str(category),
-            # "current_path": request.base_url,
-        },
-    )

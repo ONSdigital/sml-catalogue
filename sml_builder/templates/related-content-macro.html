@@ -1,0 +1,33 @@
+{% from "components/related-content/_macro.njk" import onsRelatedContent %}
+
+{% macro sml_portal_related_content() %}
+{{ onsRelatedContent({
+    "ariaLabel": 'Related content',
+    "rows": [
+        {
+            "id": 'userful-resources',
+            "title": "Useful resources",
+            "itemsList": [
+                {
+                    "text":"About this library",
+                    "url": url_for("resources")
+                },
+                {
+                    "text": "Library glossary",
+                    "url": "#glossary"
+                }
+            ]
+        },
+        {
+            "id": 'explore-methods',
+            "title": "Explore",
+            "itemsList": [
+                {
+                    "text": "Methods catalogue",
+                    "url":  url_for("display_methods")
+                }
+            ]
+        }
+    ]
+}) }}
+{% endmacro %}

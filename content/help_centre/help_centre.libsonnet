@@ -1,5 +1,5 @@
 {
-   "information" : {
+   "categories" : [{
         "name":"information",
         "label":"Information",
         "subcategories":[
@@ -17,7 +17,7 @@
             }
         ]
     },
-     "access"  : {
+     {
         "name":"access",
         "label":"Access (and usage)",
         "subcategories":[
@@ -26,17 +26,17 @@
                 "label": "How to run a method?"
             },
             {
-                "name":"access_specification",
+                "name":"access_specification_code",
                 "label": "How to access a method specification and code?"
             }
         ]
     },
-   "feedback" :{
+   {
         "name":"feedback",
         "label":"Feedback",
         "subcategories":[
             {
-                "name":"bug_report",
+                "name":"report_bug",
                 "label": "How to report a code defect or bug?"
             },
             {
@@ -45,7 +45,7 @@
             }
         ]
     },
- "support" :  {
+  {
         "name":"support",
         "label":"Support",
         "subcategories":[
@@ -55,4 +55,5 @@
             }
         ]
     }
+]
 }

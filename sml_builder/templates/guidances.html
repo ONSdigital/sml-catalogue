@@ -2,6 +2,9 @@
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {% from "components/label/_macro.njk" import onsLabel %}
 {% from "components/lists/_macro.njk" import onsList %}
+
+{% import "related-content-macro.html" as macros %}
+
 {% set mainCols=8 %}
 {% set asideCol =  {
     "position": "after",
@@ -11,18 +14,11 @@
 
 {%- set page_title = "Help centre" -%}
 {%- set current_path = url_for("help_centre") -%}
-{% block preMain %}
-<h2>Help Centre</h2>
-<p>Specific 'how to' categories</p>
-<hr style="margin-bottom:  0.5rem;">
-{% endblock %}
 
 {%- block main -%}
-
-{%for key,values in data.guidances.items() %}
 <div class="ons-grid__col ons-col-11@m">
-    <h3>{{data.overview_text}}</h3>
-
+<h3>{{data.overview_text}}</h3>
+{%for key,values in data.guidances.items() %}
     {% if 'no_description' != key %}
     <p><strong>{{key}}</strong></p>
     {% endif %}
@@ -31,15 +27,15 @@
             "itemsList": values
         })
     }}
-</div>
 {% endfor %}
+</div>
 {%- endblock main-%}
 {% block aside %}
-<hr style="margin-top: 0px;margin-bottom: 1.5em;border: 0.2em solid #206095;">
     {{
     onsLabel({
         "id": "label",
         "for": "section-menu",
+        "classes" : "ons-related-content",
         "text": "Other 'how to' list categories"
     })
     }}
@@ -48,114 +44,11 @@
             "variants": "vertical",
             "id": "help-centre-section",
             "currentPath": data.current_path,
-            "itemsList": [
-            {
-                "title": "Information",
-                "url": "#information",
-                "anchors": [
-                    {
-                        "title": "How to find and view methods?",
-                        "url": url_for("guidances",category="information", sub_category="view_methods")
-                    },                    
-                    {
-                        "title": "How to submit a method request?",
-                        "url": url_for("guidances",category="information", sub_category="method_request")
-                    },                    
-                    {
-                        "title": "What are the coding standards?",
-                        "url": url_for("guidances",category="information", sub_category="coding_standards")
-                    }
-                ]
-            },
-            {
-                "title": "Access",
-                "url": "#access",
-                "anchors": [
-                    {
-                        "title": "How to run a method?",
-                        "url":url_for("guidances",category="access", sub_category="run_method")
-                    },                    
-                    {
-                        "title": "How to access method specification and code?",
-                        "url": url_for("guidances",category="access", sub_category="method_specification_code")
-                    }
-                ]
-            },
-            {
-                "title": "Feedback",
-                "url": "#feedback",
-                "anchors": [
-                    {
-                        "title": "How to report a code defect or bug?",
-                        "url": url_for("guidances",category="feedback", sub_category="report_bug"),
-                    },                    
-                    {
-                        "title": "How to provid feedback?",
-                        "url": url_for("guidances",category="feedback", sub_category="provide_feedback")
-                    }
-                ]
-            },
-                {
-                    "title": "Support",
-                    "url": "#support",
-                    "anchors": [
-                    {
-                        "title": "How to get support?",
-                        "url": url_for("guidances",category="support", sub_category="get_support")
-                    }
-                ]
-    
-                }
-            ]
+            "itemsList": data.categories
         })
     }}
-    <hr style="margin-top:  0.5rem;">
-    {{
-        onsLabel({
-            "id": "userful-resources",
-            "for": "useful-resources-section",
-            "text": "Useful resources"
-        })
-        }}
-    {{
-        onsSectionNavigation({
-            "variants": "vertical",
-            "id": "useful-resources-section",
-            "currentPath": data.current_path,
-            "itemsList": [
-            {
-                "title": "About this library",
-                "url": url_for("resources"),
-            },
-            {
-                "title": "Library glossary",
-                "url": "#glossary",
-            }
-            ]
-        })
-    }}
-    <hr style="margin-top:  0.5rem;">
-    {{
-        onsLabel({
-            "id": "ethod-catalogue",
-            "for": "method-catalogue-section",
-            "text": "Explore"
-        })
-        }}
-    {{
-        onsSectionNavigation({
-            "variants": "vertical",
-            "id": "method-catalogue-section",
-            "currentPath": data.current_path,
-            "itemsList": [
-            {
-                "title": "Methods catalogue",
-                "url": url_for("display_methods")
 
-            }
-        ]
-        })
-    }}
-    <hr style="margin-top:  1rem;">
+    {{macros.sml_portal_related_content()}}
+
 </div>
 {% endblock %}

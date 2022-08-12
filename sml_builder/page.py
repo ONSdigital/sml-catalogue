@@ -1,10 +1,68 @@
-from flask import render_template
+from flask import render_template, request, url_for
 from sml_builder import app
+from json import loads
+from _jsonnet import evaluate_file
 
 
 @app.route("/help")
-def help():
-    return "help"
+def help_centre():
+    categories = []
+    content = loads(evaluate_file("./content/help_centre/help_centre.libsonnet"))
+    for category in content["categories"]:
+        categories.append(
+            {
+                "name": category["label"],
+                "subcategories": [
+                    {
+                        "url": url_for("guidances", sub_category=sub_category["name"]),
+                        "text": sub_category["label"],
+                    }
+                    for sub_category in category["subcategories"]
+                ],
+            }
+        )
+
+    return render_template("help.html", help_categories=categories)
+
+
+@app.route("/help/<sub_category>")
+def guidances(sub_category=None):
+    guidances = []
+    categories = []
+    # methods_dir = "./content/help_centre/guidances"
+    # guidances_content = loads(evaluate_file(f"{methods_dir}/{sub_category}.jsonnet"))
+    guidances_content = loads(evaluate_file("./content/help_centre/guidances.jsonnet"))
+    content = loads(evaluate_file("./content/help_centre/help_centre.libsonnet"))
+    for category in content["categories"]:
+        current = "#0"
+        category_anchors = []
+        for sub in category["subcategories"]:
+            path = url_for("guidances", sub_category=sub["name"])
+            category_anchors.append(
+                {
+                    "url": path,
+                    "title": sub["label"],
+                }
+            )
+            if path == request.path:
+                current = path
+
+        categories.append(
+            {
+                "title": category["label"],
+                "url": current,
+                "anchors": category_anchors,
+            }
+        )
+    return render_template(
+        "guidances.html",
+        data={
+            "overview_text": guidances_content[sub_category]["header3"],
+            "guidances": guidances_content[sub_category]["guidances"],
+            "current_path": request.path,
+            "categories": categories,
+        },
+    )
 
 
 @app.route("/resources")

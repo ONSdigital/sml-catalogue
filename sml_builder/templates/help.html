@@ -1,0 +1,48 @@
+{%- extends "core.html" -%}
+{% from "components/card/_macro.njk" import onsCard %}
+{% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
+{% from "components/label/_macro.njk" import onsLabel %}
+
+{% import "related-content-macro.html" as macros %}
+
+{%- set page_title = "Help centre" -%}
+{%- set current_path = url_for("help_centre") -%}
+{% set mainCols=8%}
+{% set asideCol =  {
+    "position": "after",
+    "colClasses": "ons-u-mt-l ons-u-mb-l"
+  }
+%}
+{% block preMain %}
+<h2>Help Centre</h2>
+<p> Navigate a variety of 'how to' categories,as well as make contact for feedback and support.</p>
+<hr style="margin-bottom:  0.5rem;">
+{% endblock %}
+{%- block main -%}
+
+<h3>'How to' and guidance categories</h3>
+<div class="ons-container">
+    
+    <div class="ons-grid ons-grid--column@xxs@s">
+       
+        <div class="ons-grid__col ons-col-11@m">
+            {%for category in help_categories %}
+                {{ onsCard({
+                "id": category.name,
+                "title": category.name,
+                "itemsList": category.subcategories
+            }) }}
+            {% endfor%}
+        </div>
+    </div>
+
+</div>
+
+{%- endblock main-%}
+{% block aside %}
+<div class="ons-field ons-grid__col">
+       
+    {{macros.sml_portal_related_content()}}
+        
+</div>
+{% endblock %}

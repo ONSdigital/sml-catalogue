@@ -2,7 +2,7 @@ local help = import 'help_centre.libsonnet';
 
 {
    "view_methods":{
-      "header3": help['information'].label + ":" + help['information'].subcategories[0].label,
+      "header3": help['categories'][0].label + ": " + help['categories'][0].subcategories[0].label,
       "guidances":{
          "no_description":[
             {
@@ -14,8 +14,8 @@ local help = import 'help_centre.libsonnet';
          ]
       }
    },
-   "method_request":{
-      "header3": help['information'].label + ":" + help['information'].subcategories[1].label,
+   "methods_request":{
+      "header3": help['categories'][0].label + ": " + help['categories'][0].subcategories[1].label,
       "guidances":{
          "How to make a method request:":[
             {
@@ -36,7 +36,7 @@ local help = import 'help_centre.libsonnet';
       }
    },
    "coding_standards":{
-      "header3": help['information'].label + ":" + help['information'].subcategories[2].label,
+      "header3": help['categories'][0].label + ": " + help['categories'][0].subcategories[2].label,
       "guidances":{
          "no_description":[
             {
@@ -48,8 +48,8 @@ local help = import 'help_centre.libsonnet';
          ]
       }
    },
-      "run_method":{
-      "header3": help['access'].label + ":" + help['access'].subcategories[0].label,
+      "run_a_method":{
+      "header3": help['categories'][1].label + ":" + help['categories'][1].subcategories[0].label,
       "guidances":{
          "How to run a method locally:":[
             {
@@ -69,8 +69,8 @@ local help = import 'help_centre.libsonnet';
          ]
       }
    },
-   "method_specification_code":{
-      "header3": help['access'].label + ":" + help['access'].subcategories[1].label,
+   "access_specification_code":{
+      "header3": help['categories'][1].label + ":" + help['categories'][1].subcategories[1].label,
       "guidances":{
          "Accessing 'public' method specification and code":[
             {
@@ -97,7 +97,7 @@ local help = import 'help_centre.libsonnet';
       }
    },
     "report_bug":{
-      "header3": help['feedback'].label + ":" + help['feedback'].subcategories[0].label,
+      "header3": help['categories'][2].label + ":" + help['categories'][2].subcategories[0].label,
       "guidances":{
          "no_description":[
             {
@@ -110,7 +110,7 @@ local help = import 'help_centre.libsonnet';
       }
    },
    "provide_feedback":{
-      "header3": help['feedback'].label + ":" + help['feedback'].subcategories[1].label,
+      "header3": help['categories'][2].label + ":" + help['categories'][2].subcategories[1].label,
       "guidances":{
          "no_description":[
             {
@@ -122,8 +122,8 @@ local help = import 'help_centre.libsonnet';
          ]
       }
    },
-   "get_support":{
-      "header3": help['support'].label + ":" + help['support'].subcategories[0].label,
+   "support":{
+      "header3": help['categories'][3].label + ":" + help['categories'][3].subcategories[0].label,
       "guidances":{
          "Who to contact to ask for support with a method":[
             {
