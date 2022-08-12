@@ -23,7 +23,7 @@ local help = import "help_centre.libsonnet";
                "Instructions on how to use BAW and information about who can submit a method and the method governance process(whatever content SML team need to add …)",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"BAW":"/"}
+            "hyper_link":{}
          },
          {
             "description":"How to change or update an existing method:",
@@ -31,7 +31,7 @@ local help = import "help_centre.libsonnet";
                "Instructions on how to use BAW and information about who can submit a method and the method governance process(whatever content SML team need to add …)",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"BAW":"/"}
+            "hyper_link":{}
          }    
       ]
    },
@@ -79,7 +79,7 @@ local help = import "help_centre.libsonnet";
                "SML team to make content and developer to add here...",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"GitHubRepo":"https://github.com/"}
+            "hyper_link":{"GitHubRepo":"/"}
          },
          {
             "description":'Accessing "internal" method specification and code',
@@ -88,7 +88,7 @@ local help = import "help_centre.libsonnet";
                "SML team to make content and developer to add here...",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{}
+            "hyper_link":{"link_here":"/"}
          }
       ]
    },
@@ -101,7 +101,7 @@ local help = import "help_centre.libsonnet";
                "Instructions and a link_here (whatever SML team need to add in and let the developers know the content...)",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"link_here":""}
+            "hyper_link":{"link_here":"/"}
          }
       ]
    },
@@ -114,7 +114,7 @@ local help = import "help_centre.libsonnet";
                "Instructions and a link_here (whatever SML team need to add in and let the developers know the content...)",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"link_here":""}
+            "hyper_link":{"link_here":"/"}
          }
       ]
    },
@@ -128,7 +128,7 @@ local help = import "help_centre.libsonnet";
                "Conditions of support from Miro board(shoudl be used and added here...)",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"link_here":""}
+            "hyper_link":{"link_here":"/"}
          }
       ]
    }

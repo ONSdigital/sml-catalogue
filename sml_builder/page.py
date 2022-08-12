@@ -2,6 +2,7 @@ from flask import render_template, request, url_for
 from sml_builder import app
 from json import loads
 from _jsonnet import evaluate_file
+import re
 
 
 @app.route("/help")
@@ -30,24 +31,34 @@ def guidances(sub_category=None):
     guidances_content = loads(evaluate_file("./content/help_centre/guidances.jsonnet"))
     instructions = []
     for guidance in guidances_content[sub_category]["guidances"]:
+        guidance_items = []
+        for detail in guidance["details"]:
+            hyperlink_text = detail
+            if guidance["hyper_link"]:
+                for key, value in guidance["hyper_link"].items():
+                    hyperlink_text = re.sub(
+                        key,
+                        f"<a href='{value}' >{key}</a>",
+                        detail,
+                    )
+            guidance_items.append({"text": hyperlink_text})
         instructions.append(
             (
                 guidance["description"],
-                [{"text": detail} for detail in guidance["details"]],
+                guidance_items,
             )
         )
     categories = []
-
     help_content = loads(evaluate_file("./content/help_centre/help_centre.libsonnet"))
     for category in help_content["categories"]:
         current = "#0"
         category_anchors = []
-        for sub in category["subcategories"]:
-            path = url_for("guidances", sub_category=sub["name"])
+        for sub_cat in category["subcategories"]:
+            path = url_for("guidances", sub_category=sub_cat["name"])
             category_anchors.append(
                 {
                     "url": path,
-                    "title": sub["label"],
+                    "title": sub_cat["label"],
                 }
             )
             if path == request.path:
