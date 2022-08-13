@@ -4,15 +4,15 @@
         "label":"Information",
         "subcategories":[
             {
-                "name":"view_methods",
+                "name":"view-methods",
                 "label": "How to find and view methods?"
             },
             {
-                "name":"methods_request",
+                "name":"methods-request",
                 "label": "How to submit a method request?"
             },
             {
-                "name":"coding_standards",
+                "name":"coding-standards",
                 "label": "What are the coding standards?"
             }
         ]
@@ -22,11 +22,11 @@
         "label":"Access (and usage)",
         "subcategories":[
             {
-                "name":"run_a_method",
+                "name":"run-a-method",
                 "label": "How to run a method?"
             },
             {
-                "name":"access_specification_code",
+                "name":"access-specification-code",
                 "label": "How to access a method specification and code?"
             }
         ]
@@ -36,11 +36,11 @@
         "label":"Feedback",
         "subcategories":[
             {
-                "name":"report_bug",
+                "name":"report-bug",
                 "label": "How to report a code defect or bug?"
             },
             {
-                "name":"provide_feedback",
+                "name":"provide-feedback",
                 "label": "How to provide feedback?"
             }
         ]

@@ -5,33 +5,30 @@
 
 {% import "related-content-macro.html" as macros %}
 
-{% set mainCols=8 %}
+{% set mainCols = 8 %}
 {% set asideCol =  {
     "position": "after",
     "colClasses": "ons-u-mt-l ons-u-mb-l"
   }
 %}
 {%- set page_title = "Help centre" -%}
-{%- set current_path = url_for("help_centre") -%}
 
 {%- block main -%}
-<div class="ons-grid__col ons-col-11@m">
-<h3>{{data.overview_text}}</h3>
-{%for guidance in data.guidances_content %}
+    <h1>{{data.overview_text}}</h1>
+    {% for guidance in data.guidances_content %}
 
-    {% if guidance[0] %}
-    <p><strong>{{guidance[0]}}</strong></p>
-    {% endif %}
-    {{
-        onsList({
-            "itemsList": guidance[1]
-        })
-    }}
+        {% if guidance[0] %}
+        <p><strong>{{guidance[0]}}</strong></p>
+        {% endif %}
+        {{
+            onsList({
+                "itemsList": guidance[1]
+            })
+        }}
+    {% endfor %}
 
-{% endfor %}
-
-</div>
 {%- endblock main-%}
+
 {% block aside %}
     {{
     onsLabel({
@@ -39,7 +36,7 @@
         "for": "section-menu",
         "classes" : "ons-related-content",
         "text": "Other 'how to' list categories"
-    })
+        })
     }}
     {{
         onsSectionNavigation({
@@ -49,8 +46,6 @@
             "itemsList": data.categories
         })
     }}
-
     {{macros.sml_portal_related_content()}}
 
-</div>
 {% endblock %}

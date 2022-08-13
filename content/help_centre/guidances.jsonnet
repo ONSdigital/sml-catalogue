@@ -1,20 +1,20 @@
 local help = import "help_centre.libsonnet";
 
 {
-   "view_methods":{
+   [help["categories"][0].subcategories[0].name]:{
       "header3": help["categories"][0].label + ": " + help["categories"][0].subcategories[0].label,
       "guidances":[
          {
             "description":null,
             "details":[
-               "You can find and view methods within the method_catalogue",
+               "You can find and view methods within the method catalogue",
                "Content here from SML can be added.... "
             ],
-            "hyper_link":{"method_catalogue":"/methods"}
+            "hyper_link":{"method catalogue":"/methods"}
          }
       ]
    },
-   "methods_request":{
+   [help["categories"][0].subcategories[1].name]:{
       "header3": help["categories"][0].label + ": " + help["categories"][0].subcategories[1].label,
       "guidances":[
          {
@@ -35,41 +35,41 @@ local help = import "help_centre.libsonnet";
          }    
       ]
    },
-   "coding_standards":{
+   [help["categories"][0].subcategories[2].name]:{
       "header3": help["categories"][0].label + ": " + help["categories"][0].subcategories[2].label,
       "guidances":[
          {
             "description":null,
             "details":[
-               "Need DST input. link_here...",
+               "Need DST input. link here...",
                "Content here from SML team. This can be added by developers.... For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"link_here":"/"}
+            "hyper_link":{"link here":"/"}
          }  
       ]
    },
-   "run_a_method":{
+   [help["categories"][1].subcategories[0].name]:{
       "header3": help["categories"][1].label + ":" + help["categories"][1].subcategories[0].label,
       "guidances":[
          {
             "description":"How to run a method locally:",
             "details":[
-               "Instructions and a link_here (whatever SML team need to add in and let the developers know the content...)",
+               "Instructions and a link here (whatever SML team need to add in and let the developers know the content...)",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"link_here":"/"}
+            "hyper_link":{"link here":"/"}
          },
          {
             "description":"How to run a method in IDS:",
             "details":[
-               "Instructions and a link_here (whatever SML team need to add in and let the developers know the content...)",
+               "Instructions and a link here (whatever SML team need to add in and let the developers know the content...)",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"link_here":"/"}
+            "hyper_link":{"link here":"/"}
          }
       ]
    },
-   "access_specification_code":{
+   [help["categories"][1].subcategories[1].name]:{
       "header3": help["categories"][1].label + ":" + help["categories"][1].subcategories[1].label,
       "guidances":[
          {
@@ -88,47 +88,47 @@ local help = import "help_centre.libsonnet";
                "SML team to make content and developer to add here...",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"link_here":"/"}
+            "hyper_link":{"link here":"/"}
          }
       ]
    },
-   "report_bug":{
+   [help["categories"][2].subcategories[0].name]:{
       "header3": help["categories"][2].label + ":" + help["categories"][2].subcategories[0].label,
       "guidances":[
          {
             "description":null,
             "details":[
-               "Instructions and a link_here (whatever SML team need to add in and let the developers know the content...)",
+               "Instructions and a link here (whatever SML team need to add in and let the developers know the content...)",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"link_here":"/"}
+            "hyper_link":{"link here":"/"}
          }
       ]
    },
-   "provide_feedback":{
+   [help["categories"][2].subcategories[1].name]:{
       "header3": help["categories"][2].label + ":" + help["categories"][2].subcategories[1].label,
       "guidances":[
           {
             "description":null,
             "details":[
-               "Instructions and a link_here (whatever SML team need to add in and let the developers know the content...)",
+               "Instructions and a link here (whatever SML team need to add in and let the developers know the content...)",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"link_here":"/"}
+            "hyper_link":{"link here":"/"}
          }
       ]
    },
-   "support":{
+   [help["categories"][3].subcategories[0].name]:{
       "header3": help["categories"][3].label + ":" + help["categories"][3].subcategories[0].label,
       "guidances":[
          {
             "description": "Who to contact to ask for support with a method",
             "details":[
-               "Instructions and a link_here (whatever SML team need to add in and let the developers know the content...)",
+               "Instructions and a link here (whatever SML team need to add in and let the developers know the content...)",
                "Conditions of support from Miro board(shoudl be used and added here...)",
                "For any reviews of the content added ( or to be pasted here in UI ...)"
             ],
-            "hyper_link":{"link_here":"/"}
+            "hyper_link":{"link here":"/"}
          }
       ]
    }
