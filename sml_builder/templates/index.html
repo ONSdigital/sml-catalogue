@@ -1,7 +1,33 @@
 {% extends "core.html" %}
 {%- set current_path = url_for("index") -%}
-{%- block main %}
- 
-<h1 class="ons-u-mt-no">Discover Methods used by the Office for National Statistics</h1>
+{% from "components/hero/_macro.njk" import onsHero %}
+{% set mainCols=12 %}
 
-{% endblock main -%}
+{%- block pageContent %}
+{% from "components/hero/_macro.njk" import onsHero %}
+{{
+    onsHero({
+        "title": 'Discover Methods used by the Office for National Statistics',
+        "button": {
+            "url": url_for("display_methods"),
+            "text": 'Find methods'
+        },
+        "wide":True
+    })
+}}
+  <div class="ons-page__container ons-container ">
+    <div class="ons-grid">
+      <div class="ons-grid__col ons-col-4@m ">
+        <div class="ons-pl-grid-col"><h1>Methods catalogue</h1></div>
+      </div>
+      <div class="ons-grid__col ons-col-4@m ">
+        <div class="ons-pl-grid-col"><h1>Help centre</h1></div>
+      </div>
+      <div class="ons-grid__col ons-col-4@m ">
+        <div class="ons-pl-grid-col"><h1>Useful resources</h1></div>
+      </div>
+    </div>
+  </div>
+{% endblock pageContent%}
+
+
