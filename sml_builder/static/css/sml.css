@@ -7,6 +7,11 @@
   z-index: 99;
 }
 
+#topBtn.footer-visible {
+  position: absolute;
+  bottom: 0px
+}
+
 #topBtn svg {
   transform: rotate(-90deg);
 }

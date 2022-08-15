@@ -11,10 +11,12 @@
     {%- from "components/button/_macro.njk" import onsButton -%}
     {{
         onsButton({
-            "text": 'Top',
+            "text": 'Back to top',
             "title": 'Go to top',
             "id": 'topBtn',
-            "iconType": 'arrow-next'
+            "url": "#",
+            "iconType": 'arrow-next',
+            "variants": ['secondary']
         })
     }}
 
