@@ -14,5 +14,4 @@ function scrollFunction() {
   } else {
     mybutton.style.display = "none";
   }
-  console.log(mybutton.getBoundingClientRect().bottom)
 }
