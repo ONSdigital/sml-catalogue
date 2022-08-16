@@ -78,8 +78,18 @@
                 "id": 'title3',
                 "textId": 'text3',
                 "title": 'Useful resources',
-                "url": url_for("resources"),
-                "text": 'More library features'
+                "url": none,
+                "text": '',
+                "itemsList": [
+                    {
+                        "url": url_for("about"),
+                        "text": 'About this site'
+                    },
+                    {
+                        "url": url_for("display_glossary"),
+                        "text": 'Glossary'
+                    }
+                ]
             }) }}
         </div>
 
