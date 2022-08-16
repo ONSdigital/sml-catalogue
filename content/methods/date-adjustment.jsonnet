@@ -7,7 +7,6 @@
     'Expert group': null,
     Theme: null,
     Author: 'ONS',
-    'Method Classification': null,
     Status: 'Complete',
     'Programming language': 'Python/Pandas',
     'Code available?': 'Yes',

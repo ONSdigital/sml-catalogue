@@ -4,11 +4,10 @@
   contact_details: 'Editing.and.Imputation.expert.group@ons.gov.uk',
   method_metadata: {
     'Access type': 'Internal',
-    'Expert group': 'Methodology - Editing & Imputation',
+    'Expert group': 'Editing & Imputation',
     Theme: 'Imputation',
     Author: 'ONS',
-    'Method Classification': 'Imputation',
-    Status: 'Partially tested',
+    Status: 'In development',
     'Programming language': 'Python/PySpark',
     'Code available?': 'Yes',
   },
