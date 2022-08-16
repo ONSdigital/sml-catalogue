@@ -4,6 +4,8 @@ from json import loads
 from _jsonnet import evaluate_file
 from sml_builder import app
 
+status_class = {"Partially implemented": "pending", "Complete": "success"}
+
 
 @app.route("/method/<method>")
 def display_method(method):
@@ -28,7 +30,9 @@ def display_methods():
                     {"value": method["method_metadata"]["Expert group"]},
                     {"value": method["method_metadata"]["Programming language"]},
                     {"value": method["method_metadata"]["Access type"]},
-                    {"value": method["method_metadata"]["Status"]},
+                    {
+                        "value": f'<span class="ons-status ons-status--{status_class.get(method["method_metadata"]["Status"], "info")}">{method["method_metadata"]["Status"]}</span>'
+                    },
                 ]
             }
         )
