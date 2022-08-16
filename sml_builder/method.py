@@ -7,7 +7,7 @@ from sml_builder import app
 status_class = {
     "In development": "pending",
     "Complete": "success",
-    "Approved for development": "info",
+    "Approved for development": "dead",
 }
 
 
@@ -23,22 +23,18 @@ def display_methods():
     methods_dir = "./content/methods"
     for file in listdir(methods_dir):
         method = loads(evaluate_file(f"{methods_dir}/{file}"))
+
         methods.append(
             {
-                "tds": [
-                    {
-                        "value": f'<a href="{url_for("display_method", method=file.split(".")[0])}">{method["title"]}</a>'
-                    },
-                    {"value": method["method_metadata"]["Theme"]},
-                    {"value": method["method_metadata"]["Expert group"]},
-                    {"value": method["method_metadata"]["Programming language"]},
-                    {"value": method["method_metadata"]["Access type"]},
-                    {"value": statusify(method["method_metadata"]["Status"])},
-                ]
+                "id": file.split(".")[0],
+                "title": method["title"],
+                "theme": method["method_metadata"]["Theme"],
+                "exp_group": method["method_metadata"]["Expert group"],
+                "language": method["method_metadata"]["Programming language"],
+                "access": method["method_metadata"]["Access type"],
+                "status": method["method_metadata"]["Status"],
             }
         )
-    return render_template("methods.html", page={"rows": methods})
-
-
-def statusify(status):
-    return f'<span class="ons-status ons-status--{status_class.get(status, "info")}">{status}</span>'
+    return render_template(
+        "methods.html", page={"rows": methods}, status_class=status_class
+    )
