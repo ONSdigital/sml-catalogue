@@ -70,7 +70,7 @@ resource "aws_cloudfront_distribution" "sml-catalogue" {
 }
 
 resource "aws_cloudfront_response_headers_policy" "noindex" {
-  name = "noindex-headers-policy"
+  name = "noindex-headers-policy-${terraform.workspace}"
 
   custom_headers_config {
     items {
