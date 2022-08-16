@@ -8,7 +8,7 @@
         "titleLogoHref": '/'
     },
     "mainCol":{
-      "columns":12,
+      "columns": mainCols if mainCols else 12,
       "classes": "ons-u-mt-m"
     },
     "breadcrumbs": breadcrumbs,
@@ -32,17 +32,24 @@
         {
           "itemsList": [
             {
-              "text": 'Contact us',
+              "text": 'Cookies',
               "url": '#0'
             },
             {
-              "text": 'Cookies and privacy',
+              "text": 'Accessibility statement',
               "url": '#0'
+            },
+            {
+              "text": 'Privacy and Data Protection',
+              "url": url_for('privacy_and_data_protection')
             }
           ]
         }
       ]
-    }
-  } %}
+    },
+
+    "asideCol":asideCol,
+  }
+ %}
   {%- block main -%}
   {%- endblock main -%}

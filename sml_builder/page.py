@@ -1,7 +1,4 @@
-from os import listdir
-from flask import request, render_template, redirect, url_for, abort, g
-from json import loads
-from _jsonnet import evaluate_file
+from flask import render_template
 from sml_builder import app
 
 
@@ -12,4 +9,9 @@ def help():
 
 @app.route("/resources")
 def resources():
-    return "resources"
+    return render_template("about.html")
+
+
+@app.route("/privacy-and-data-protection")
+def privacy_and_data_protection():
+    return render_template("content/privacy.html")
