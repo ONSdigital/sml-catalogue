@@ -4,7 +4,7 @@ from json import loads
 from _jsonnet import evaluate_file
 from sml_builder import app
 
-status_class = {"Partially implemented": "pending", "Complete": "success"}
+status_class = {"Prototype": "pending", "Complete": "success"}
 
 
 @app.route("/method/<method>")
