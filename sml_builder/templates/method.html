@@ -25,7 +25,7 @@
 {% for item in page.method_metadata %}
 {% set description = page.method_metadata[item] %}
   {% if item == "Status" %}
-    {% set description = '<span class="ons-status ons-status--' + status_class.get(status, "info") + '">' + description + '</span>' %}
+    {% set description = '<span class="ons-status ons-status--' + status_class.get(description, "info") + '">' + description + '</span>' %}
   {% endif %}
 
 {% do
