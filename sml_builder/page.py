@@ -7,8 +7,8 @@ def help():
     return "help"
 
 
-@app.route("/resources")
-def resources():
+@app.route("/resources/about")
+def about():
     return render_template("about.html")
 
 
