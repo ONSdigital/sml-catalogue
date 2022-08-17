@@ -4,7 +4,7 @@ from json import loads
 from _jsonnet import evaluate_file
 from sml_builder import app
 
-status_class = {
+STATUS_CLASS = {
     "In development": "pending",
     "Complete": "success",
     "Approved for development": "dead",
@@ -14,7 +14,7 @@ status_class = {
 @app.route("/method/<method>")
 def display_method(method):
     page_data = loads(evaluate_file(f"./content/methods/{method}.jsonnet"))
-    return render_template("method.html", page=page_data, status_class=status_class)
+    return render_template("method.html", page=page_data, status_class=STATUS_CLASS)
 
 
 @app.route("/methods")
@@ -36,5 +36,5 @@ def display_methods():
             }
         )
     return render_template(
-        "methods.html", page={"rows": methods}, status_class=status_class
+        "methods.html", page={"rows": methods}, status_class=STATUS_CLASS
     )
