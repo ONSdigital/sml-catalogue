@@ -54,11 +54,18 @@ def guidances(category, sub_category):
     escaped_text = escape(text)
     print(markdown.markdown(escaped_text))
     body = Markup(markdown.markdown(escaped_text))
+
+    expanded_category = request.args.get("expanded_category", category)
+    help_centre_nav = _help_centre_nav(expanded_category, category, sub_category)
+
     return render_template(
         "help_category.html",
         body=body,
         category_label=category_label,
         sub_category_label=sub_category_label,
+        category=category,
+        sub_category=sub_category,
+        nav=help_centre_nav,
     )
     guidances_content = loads(evaluate_file("./content/help_centre/guidances.jsonnet"))
     instructions = []
@@ -128,6 +135,40 @@ def _get_category_labels(selected_category, selected_sub_category):
                 f"The sub category {selected_sub_category} was not found in the category '{selected_category}'"
             )
     raise Exception(f"The category '{selected_category}' was not found")
+
+
+def _help_centre_nav(
+    expanded_category,
+    current_category,
+    current_subcategory,
+):
+    with open("./content/help_centre/help_centre.json") as help_contents_file:
+        contents = load(help_contents_file)
+    return [
+        {
+            "title": category["label"],
+            "url": url_for(
+                "guidances",
+                category=current_category,
+                sub_category=current_subcategory,
+                expanded_category=category["name"],
+            ),
+            "anchors": [
+                {
+                    "title": sub_category["label"],
+                    "url": url_for(
+                        "guidances",
+                        category=category["name"],
+                        sub_category=sub_category["name"],
+                    ),
+                }
+                for sub_category in category["subcategories"]
+            ]
+            if category["name"] == expanded_category
+            else None,
+        }
+        for category in contents["categories"]
+    ]
 
 
 def _page_not_found(error):

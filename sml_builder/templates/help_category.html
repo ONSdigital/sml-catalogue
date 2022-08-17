@@ -21,48 +21,15 @@
 {%- endblock main-%}
 
 {% block aside %}
-<h2 class="ons-related-content__title ons-u-fs-r--b ons-u-mb-xs">Help centre</h2>
-<p>Specific 'how to' categories</p>
+<h2 class="ons-related-content__title ons-u-fs-r--b ons-u-mb-xs">Other 'how to' list categories</h2>
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {{
     onsSectionNavigation({
         "variants": "vertical",
         "id": "section-menu",
-        "currentPath": "#section-2",
+        "currentPath": url_for("guidances", category=category, sub_category=sub_category, expanded_category=category),
         "classes": "ons-related-content",
-        "itemsList": [
-            {
-                "title": "Section 1",
-                "url": "#section-1"
-
-            },
-            {
-                "title": "Section 2",
-                "url": "#section-2",
-                "anchors": [
-                    {
-                        "title": "Sub section 1",
-                        "url": "#sub-section-1"
-                    },                    
-                    {
-                        "title": "Sub section 2",
-                        "url": "#sub-section-2"
-                    },                    
-                    {
-                        "title": "Sub section 3",
-                        "url": "#sub-section-3"
-                    }
-                ]
-            },
-            {
-                "title": "Section 3",
-                "url": "#0"
-            },
-            {
-                "title": "Section 4",
-                "url": "#0"
-            }
-        ]
+        "itemsList": nav
     })
 }}
 
