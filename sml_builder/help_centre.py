@@ -5,7 +5,7 @@ import markdown
 from os import listdir
 
 
-@app.route("/help")
+@app.route("/help/")
 def help_centre(category=None):
     categories = []
     with open("./content/help_centre/help_centre.json") as help_contents_file:
@@ -34,8 +34,9 @@ def help_centre(category=None):
     )
 
 
-@app.route("/help/<category>/<sub_category>")
-def guidances(category, sub_category):
+@app.route("/help/<category>/<sub_category>/")
+@app.route("/help/<category>/<sub_category>/<expanded_category>")
+def guidances(category, sub_category, expanded_category=None):
 
     try:
         category_label, sub_category_label = _get_category_labels(
@@ -52,10 +53,9 @@ def guidances(category, sub_category):
     except OSError as e:
         _page_not_found(e)
     escaped_text = escape(text)
-    print(markdown.markdown(escaped_text))
     body = Markup(markdown.markdown(escaped_text))
-
-    expanded_category = request.args.get("expanded_category", category)
+    if expanded_category is None:
+        expanded_category = category
     help_centre_nav = _help_centre_nav(expanded_category, category, sub_category)
 
     return render_template(
