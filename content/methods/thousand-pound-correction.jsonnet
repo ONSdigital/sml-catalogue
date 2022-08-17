@@ -4,8 +4,8 @@
   contact_details: null,
   method_metadata: {
     'Access type': 'Internal',
-    'Expert group': null,
-    Theme: null,
+    'Expert group': 'Editing & Imputation',
+    Theme: 'Editing',
     Author: 'ONS',
     Status: 'Approved for development',
     'Programming language': 'Python/Pandas',

@@ -14,7 +14,14 @@
   specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/sample_design_and_estimation/estimation/ht_estimation.rst',
   code_link: 'https://github.com/ONSdigital/statistical-methods-library/blob/main/statistical_methods_library/estimation.py',
   description: |||
-    This specification covers expansion estimation and ratio estimation.
+    Sampling in business surveys is often done using stratified simple random sampling
+    without replacement. The largest businesses are usually selected with certainty.
+    This SML method uses two approaches for estimating totals in such cases.
+    The Horvitz-Thompson estimator in this case is known as a stratified expansion estimator,
+    which is the simplest method used. We also use a combined ratio estimator. This is
+    appropriate where there is a linear relationship through the origin between the target
+    variable and an auxiliary variable we know for all units, and the scatter about the line
+    increases with the size of the auxiliary variable.
   |||,
 
 }
