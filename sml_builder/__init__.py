@@ -31,5 +31,5 @@ def page_not_found(e=None):
 @app.template_filter("paras")
 def string_to_paragraph(value):
     """Wraps passed string in <p> tags and converts newlines to <p> pairs"""
-    body = escape(value).replace("\n", Markup("</p><p>"))
+    body = escape(value).replace("\n\n", Markup("</p><p>"))
     return Markup(f"<p>{body}</p>")

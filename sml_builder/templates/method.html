@@ -23,13 +23,18 @@
 {% from "components/metadata/_macro.njk" import onsMetadata %}
 {% set items = [] %}
 {% for item in page.method_metadata %}
+{% set description = page.method_metadata[item] %}
+  {% if item == "Status" %}
+    {% set description = '<span class="ons-status ons-status--' + status_class.get(description, "info") + '">' + description + '</span>' %}
+  {% endif %}
+
 {% do
   items.append(
     {
         "term": item,
         "descriptions": [
             {
-                "description": page.method_metadata[item]
+                "description": description or "<em>n/a</em>"
             }
         ]
     }

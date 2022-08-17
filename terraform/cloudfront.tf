@@ -70,7 +70,7 @@ resource "aws_cloudfront_distribution" "sml-catalogue" {
 }
 
 resource "aws_cloudfront_response_headers_policy" "noindex" {
-  name = "noindex-headers-policy"
+  name = "noindex-headers-policy-${terraform.workspace}"
 
   custom_headers_config {
     items {
@@ -86,4 +86,8 @@ resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 
 output "website_url" {
   value = "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
+}
+
+output "cloudfront_id" {
+  value = aws_cloudfront_distribution.sml-catalogue.id
 }

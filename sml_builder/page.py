@@ -5,8 +5,8 @@ from _jsonnet import evaluate_file
 import re
 
 
-@app.route("/resources")
-def resources():
+@app.route("/resources/about")
+def about():
     return render_template("about.html")
 
 

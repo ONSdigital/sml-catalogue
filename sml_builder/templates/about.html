@@ -1,7 +1,7 @@
 {% extends "core.html" %}
 {% from "components/lists/_macro.njk" import onsList %}
 {% set mainCols=8 %}
-{%- set current_path = url_for("resources") -%}
+{%- set current_path = url_for("help") -%}
 {% set asideCol =  {
     "position": "after",
     "colClasses": "ons-u-mt-l ons-u-mb-l"
@@ -69,8 +69,8 @@ Through this library the ONS shares methods of best practice with other governme
                             "url": url_for("help_centre")
                         },
                         {
-                            "text": 'Useful resources',
-                            "url": url_for("resources")
+                            "text": 'Glossary',
+                            "url": url_for("display_glossary")
                         },
                         {
                             "text": 'Methods catalogue',

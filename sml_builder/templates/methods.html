@@ -32,35 +32,51 @@
     can be found within the library's glossary</p>
 {% endcall %}
 {% from "components/table/_macro.njk" import onsTable %}
+{% set methodsTable = {
+  "variants": 'sortable',
+  "tableClasses": "ons-u-mt-m",
+  "sortBy": "Sort by",
+  "ariaAsc": "ascending",
+  "ariaDesc": "descending",
+  "ths": [
+    {
+      "value": "Name"
+    },
+    {
+      "value": "Theme"
+    },
+    {
+      "value": "Expert group"
+    },
+    {
+      "value": "Languages"
+    },
+    {
+      "value": "Access"
+    },
+    {
+      "value": "Status"
+    },
+  ]
+} %}
+{% set methodsTableRows = [] %}
+{% for row in page.rows %}
+  {% do methodsTableRows.append({
+    "tds": [
+      {
+          "value": '<a href="' + url_for("display_method", method=row.id) + '">' + row.title + '</a>'
+      },
+      {"value": row.theme},
+      {"value": row.exp_group},
+      {"value": row.language},
+      {"value": row.access},
+      {"value": '<span class="ons-status ons-status--' + status_class.get(row.status, "info") + '">' + row.status + '</span>'},
+    ]
+  }) %}
+{% endfor %}
+{% do methodsTable.update({"trs": methodsTableRows}) %}
 {{
-  onsTable({
-    "variants": 'sortable',
-    "tableClasses": "ons-u-mt-m",
-    "sortBy": "Sort by",
-    "ariaAsc": "ascending",
-    "ariaDesc": "descending",
-    "ths": [
-      {
-        "value": "Name"
-      },
-      {
-        "value": "Theme"
-      },
-      {
-        "value": "Expert group"
-      },
-      {
-        "value": "Languages"
-      },
-      {
-        "value": "Access"
-      },
-      {
-        "value": "Status"
-      },
-    ],
-    "trs": page.rows
-  })
+  onsTable(methodsTable)
 }}
 
 {% endblock main -%}

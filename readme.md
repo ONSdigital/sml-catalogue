@@ -38,21 +38,15 @@ With [Jsonnet](https://jsonnet.org/learning/getting_started.html) content in the
 pipenv run flask --app sml_builder --debug run
 ```
 
-If this all goes well with no errors, you should now be able to navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to view the site. And if that all looks good, you can now "freeze" the site, rendering it to HTML with:
+If this all goes well with no errors, you should now be able to navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to view the site. And if that all looks good, you can now "freeze" the site, rendering it to HTML, and uploading it to AWS. You will need to have valid AWS credentials exported to the shell for the target environment.
 
 ```shell
-pipenv run python freeze.py
-```
-
-And finally, upload to the S3 bucket (assuming you still have valid AWS credentials exported to the terminal):
-
-```shell
-aws s3 sync build s3://sml-portal-`git branch --show-current` --delete --content-type "text/html"
+./freeze-n-load.sh
 ```
 
 ## Destroying your site
 
-When you have merged, or have otherwise fiinished with your feature branch, you will want to delete the deployed site. Simply run:
+When you have merged, or have otherwise finished with your feature branch, you will want to delete the deployed site. Simply run:
 
 ```shell
 ./terraform.sh destroy
