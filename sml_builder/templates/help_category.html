@@ -1,0 +1,72 @@
+{%- extends "core.html" -%}
+{% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
+{% from "components/label/_macro.njk" import onsLabel %}
+{% from "components/lists/_macro.njk" import onsList %}
+
+{% import "related-content-macro.html" as macros %}
+
+{% set mainCols = 8 %}
+{% set asideCol =  {
+    "position": "after",
+    "colClasses": "ons-u-mt-l ons-u-mb-l ons-related-content"
+  }
+%}
+{%- set page_title = "Help centre" -%}
+
+{%- block main -%}
+
+    <h2>{{category_label}}: {{sub_category_label}}</h2>
+    {{body}}
+
+{%- endblock main-%}
+
+{% block aside %}
+<h2 class="ons-related-content__title ons-u-fs-r--b ons-u-mb-xs">Help centre</h2>
+<p>Specific 'how to' categories</p>
+{% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
+{{
+    onsSectionNavigation({
+        "variants": "vertical",
+        "id": "section-menu",
+        "currentPath": "#section-2",
+        "classes": "ons-related-content",
+        "itemsList": [
+            {
+                "title": "Section 1",
+                "url": "#section-1"
+
+            },
+            {
+                "title": "Section 2",
+                "url": "#section-2",
+                "anchors": [
+                    {
+                        "title": "Sub section 1",
+                        "url": "#sub-section-1"
+                    },                    
+                    {
+                        "title": "Sub section 2",
+                        "url": "#sub-section-2"
+                    },                    
+                    {
+                        "title": "Sub section 3",
+                        "url": "#sub-section-3"
+                    }
+                ]
+            },
+            {
+                "title": "Section 3",
+                "url": "#0"
+            },
+            {
+                "title": "Section 4",
+                "url": "#0"
+            }
+        ]
+    })
+}}
+
+
+
+{{macros.sml_portal_related_content()}}
+{% endblock %}

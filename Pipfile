@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 frozen-flask = "*"
 jsonnet = "*"
+markdown = "*"
 
 [dev-packages]
 
