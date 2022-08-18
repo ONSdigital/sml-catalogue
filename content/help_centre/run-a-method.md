@@ -1,8 +1,6 @@
-How to run a method locally:
+1. Go to GitHub repository page (linked to from method's details page in the catalogue), and click on "Releases". Find the release you want, noting any warnings or information about that version.
+2. Download the `.whl` (wheel) file.
+3. On the command line run `pip install C:\download-location\some-file.whl` where that path represents the locatin on your computer that you downloaded the file.
+4. You should now have the method available to import into your python code.
 
-- Instructions and a [link here](/) (whatever SML team need to add in and let the developers know the content...)
-- For any reviews of the content added ( or to be pasted here in UI ...)
-
-How to run a method in IDS:
-- Instructions and a [link here](/) (whatever SML team need to add in and let the developers know the content...)
-- For any reviews of the content added ( or to be pasted here in UI ...)
+Specific instructions on using the method will be found within the git repository for that method.
