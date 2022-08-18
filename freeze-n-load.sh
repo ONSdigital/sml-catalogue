@@ -11,7 +11,10 @@ pipenv run python freeze.py
 echo "done"
 
 echo -n "Uploading to S3 bucket..."
-aws s3 sync build s3://sml-portal-`git branch --show-current` --delete --content-type "text/html"
+aws s3 sync build s3://sml-portal-`git branch --show-current` --delete \
+  --content-type "text/html" --exclude "*.css"
+aws s3 sync build s3://sml-portal-`git branch --show-current` --delete \
+  --exclude "*" --include "*.css"
 echo "done"
 
 echo -n "Invalidating CloudFront cache..."
