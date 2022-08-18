@@ -2,10 +2,9 @@ from flask import abort, render_template, request, url_for, Markup, escape
 from json import load
 from sml_builder import app
 import markdown
-from os import listdir
 
 
-@app.route("/help/")
+@app.route("/help-centre/index")
 def help_centre(category=None):
     categories = []
     with open("./content/help_centre/help_centre.json") as help_contents_file:
@@ -33,10 +32,9 @@ def help_centre(category=None):
     )
 
 
-@app.route("/help/<category>/")
-@app.route("/help/<category>/<sub_category>/")
+@app.route("/help-centre/<category>/index")
+@app.route("/help-centre/<category>/<sub_category>")
 def guidances(category, sub_category=None):
-
     try:
         category_label, sub_category_label, sub_category = _get_category_labels(
             category, sub_category
@@ -53,7 +51,7 @@ def guidances(category, sub_category=None):
         _page_not_found(e)
     escaped_text = escape(text)
     body = Markup(markdown.markdown(escaped_text))
-    help_centre_nav = _help_centre_nav(category, sub_category)
+    help_centre_nav = _help_centre_nav(category)
 
     return render_template(
         "help_category.html",
@@ -90,7 +88,6 @@ def _get_category_labels(selected_category, selected_sub_category):
 
 def _help_centre_nav(
     current_category,
-    current_subcategory,
 ):
     with open("./content/help_centre/help_centre.json") as help_contents_file:
         contents = load(help_contents_file)
