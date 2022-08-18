@@ -20,7 +20,6 @@ def help_centre(category=None):
                             "guidances",
                             category=category["name"],
                             sub_category=sub_category["name"],
-                            expanded_category=category["name"],
                         ),
                         "text": sub_category["label"],
                     }
@@ -34,12 +33,12 @@ def help_centre(category=None):
     )
 
 
+@app.route("/help/<category>/")
 @app.route("/help/<category>/<sub_category>/")
-@app.route("/help/<category>/<sub_category>/<expanded_category>")
-def guidances(category, sub_category, expanded_category=None):
+def guidances(category, sub_category=None):
 
     try:
-        category_label, sub_category_label = _get_category_labels(
+        category_label, sub_category_label, sub_category = _get_category_labels(
             category, sub_category
         )
     except Exception as e:
@@ -54,9 +53,7 @@ def guidances(category, sub_category, expanded_category=None):
         _page_not_found(e)
     escaped_text = escape(text)
     body = Markup(markdown.markdown(escaped_text))
-    if expanded_category is None:
-        expanded_category = category
-    help_centre_nav = _help_centre_nav(expanded_category, category, sub_category)
+    help_centre_nav = _help_centre_nav(category, sub_category)
 
     return render_template(
         "help_category.html",
@@ -67,58 +64,6 @@ def guidances(category, sub_category, expanded_category=None):
         sub_category=sub_category,
         nav=help_centre_nav,
     )
-    guidances_content = loads(evaluate_file("./content/help_centre/guidances.jsonnet"))
-    instructions = []
-    for guidance in guidances_content[sub_category]["guidances"]:
-        guidance_items = []
-        for detail in guidance["details"]:
-            hyperlink_text = detail
-            if guidance["hyper_link"]:
-                for key, value in guidance["hyper_link"].items():
-                    hyperlink_text = re.sub(
-                        key,
-                        f"<a href='{value}' >{key}</a>",
-                        detail,
-                    )
-            guidance_items.append({"text": hyperlink_text})
-        instructions.append(
-            (
-                guidance["description"],
-                guidance_items,
-            )
-        )
-    categories = []
-    help_content = loads(evaluate_file("./content/help_centre/help_centre.libsonnet"))
-    for category in help_content["categories"]:
-        current = "#0"
-        category_anchors = []
-        for sub_cat in category["subcategories"]:
-            path = url_for("guidances", sub_category=sub_cat["name"])
-            category_anchors.append(
-                {
-                    "url": path,
-                    "title": sub_cat["label"],
-                }
-            )
-            if path == request.path:
-                current = path
-
-        categories.append(
-            {
-                "title": category["label"],
-                "url": current,
-                "anchors": category_anchors,
-            }
-        )
-    return render_template(
-        "guidances.html",
-        data={
-            "overview_text": guidances_content[sub_category]["header3"],
-            "guidances_content": instructions,
-            "current_path": request.path,
-            "categories": categories,
-        },
-    )
 
 
 def _get_category_labels(selected_category, selected_sub_category):
@@ -127,10 +72,16 @@ def _get_category_labels(selected_category, selected_sub_category):
     for category in contents["categories"]:
         if category["name"] == selected_category:
             category_label = category["label"]
+            if selected_sub_category == None:
+                return (
+                    category_label,
+                    category["subcategories"][0]["label"],
+                    category["subcategories"][0]["name"],
+                )
             for sub_category in category["subcategories"]:
                 if sub_category["name"] == selected_sub_category:
                     sub_category_label = sub_category["label"]
-                    return category_label, sub_category_label
+                    return category_label, sub_category_label, selected_sub_category
             raise Exception(
                 f"The sub category {selected_sub_category} was not found in the category '{selected_category}'"
             )
@@ -138,7 +89,6 @@ def _get_category_labels(selected_category, selected_sub_category):
 
 
 def _help_centre_nav(
-    expanded_category,
     current_category,
     current_subcategory,
 ):
@@ -149,9 +99,7 @@ def _help_centre_nav(
             "title": category["label"],
             "url": url_for(
                 "guidances",
-                category=current_category,
-                sub_category=current_subcategory,
-                expanded_category=category["name"],
+                category=category["name"],
             ),
             "anchors": [
                 {
@@ -164,7 +112,7 @@ def _help_centre_nav(
                 }
                 for sub_category in category["subcategories"]
             ]
-            if category["name"] == expanded_category
+            if category["name"] == current_category
             else None,
         }
         for category in contents["categories"]

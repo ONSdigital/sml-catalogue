@@ -7,15 +7,15 @@
 
 {%- set page_title = "Help centre" -%}
 {%- set current_path = url_for("help_centre") -%}
-{% set mainCols = 8%}
+{% set mainCols = 7 %}
 {% set asideCol =  {
     "position": "after",
-    "colClasses": "ons-u-mt-l ons-u-mb-l"
+    "colClasses": "ons-u-mt-l ons-u-mb-l ons-push-1@m"
   }
 %}
 
 {%- block main -%}
-    <h1>'How to' and guidance categories</h1>
+    <h1>Help centre</h1>
     {% for category in help_categories %}
         {{ onsCard({
         "id": category.name,

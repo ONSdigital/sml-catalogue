@@ -5,17 +5,18 @@
 
 {% import "related-content-macro.html" as macros %}
 
-{% set mainCols = 8 %}
+{% set mainCols = 7 %}
 {% set asideCol =  {
     "position": "after",
-    "colClasses": "ons-u-mt-l ons-u-mb-l ons-related-content"
+    "colClasses": "ons-u-mt-l ons-u-mb-l ons-related-content ons-push-1@m"
   }
 %}
 {%- set page_title = "Help centre" -%}
-
+{%- set current_path = url_for("help_centre") -%}
 {%- block main -%}
-
-    <h2>{{category_label}}: {{sub_category_label}}</h2>
+  <h1>Help centre</h1>
+    <h2>{{category_label}}</h2>
+    <h3>{{sub_category_label}}</h3>
     {{body}}
 
 {%- endblock main-%}
