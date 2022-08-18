@@ -19,6 +19,7 @@ echo "done"
 
 echo -n "Invalidating CloudFront cache..."
 pushd terraform
+export TF_WORKSPACE=`git branch --show-current`
 aws cloudfront create-invalidation --distribution-id `terraform output -raw cloudfront_id` --paths "/*" > /dev/null
 popd
 echo "done"
