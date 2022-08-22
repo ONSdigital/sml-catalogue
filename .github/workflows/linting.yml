@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: pip install pylint
-      - run: ls ${{ github.workspace }}
+      - run: |
+        ls ${{ github.workspace }}
       - run: cd ${{ github.workspace }}/sml_builder && pylint .
       - run: echo "🍏 This job's status is ${{ job.status }}."
