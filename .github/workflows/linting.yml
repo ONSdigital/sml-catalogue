@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: pip install pylint
+      - name: List files in the repository
       - run: |
         ls ${{ github.workspace }}
       - run: cd ${{ github.workspace }}/sml_builder && pylint .
