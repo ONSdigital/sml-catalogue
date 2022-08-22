@@ -1,4 +1,4 @@
 pip install pipenv
-pip install pyenv
+apt-get install pyenv
 pipenv sync --dev
 apt-get install terraform
