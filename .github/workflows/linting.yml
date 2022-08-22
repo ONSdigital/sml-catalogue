@@ -1,0 +1,9 @@
+name: Linting
+on: [push]
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pip install pylint
+      - run: pylint ${{ github.workspace }}/sml_builder
+      - run: echo "🍏 This job's status is ${{ job.status }}."
