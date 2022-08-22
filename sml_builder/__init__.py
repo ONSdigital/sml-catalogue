@@ -1,3 +1,4 @@
+import re
 from flask import Flask, render_template, request, g, abort, escape, Markup
 
 app = Flask(__name__)
@@ -11,6 +12,8 @@ app.config["FREEZER_DESTINATION"] = "../build"
 
 import sml_builder.method
 import sml_builder.page
+import sml_builder.glossary
+import sml_builder.utils
 
 
 @app.route("/")
@@ -27,5 +30,5 @@ def page_not_found(e=None):
 @app.template_filter("paras")
 def string_to_paragraph(value):
     """Wraps passed string in <p> tags and converts newlines to <p> pairs"""
-    body = escape(value).replace("\n", Markup("</p><p>"))
+    body = escape(value).replace("\n\n", Markup("</p><p>"))
     return Markup(f"<p>{body}</p>")

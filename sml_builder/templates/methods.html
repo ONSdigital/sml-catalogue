@@ -4,35 +4,79 @@
 {%- block main -%}
  
 <h1 class="ons-u-mt-no">All methods</h1>
+<p>Here you may discover statistical methods used by the Office for National Statistics.</p>
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% call onsPanel({}) %}
+  <p>Codes and specification permission</p>
+  <ul>
+    <li>Public methods’ access can only be requested ONS employees</li>
+    <li>Internal methods' access can be requested by: (i) all ONS employees and; (ii) external individuals</li>
+    <li>Private methods’ access can only be requested by ONS employees</li>
+  </ul>
+{% endcall %}
+
+<h2 class="ons-u-mt-m">Catalogue table of methods:</h2>
+
+{% from "components/collapsible/_macro.njk" import onsCollapsible %}
+{% call onsCollapsible({
+      "id": "collapsible",
+      "title": "What are method themes and expert groups?"
+}) %}
+<p>Method are sorted in hierarchical order with expert groups as the top level.
+  For example, within an expert group are different themes, and within the themes
+  are different methods.</p>
+
+  <p>To find out what an expert or method group is or their individual descriptions
+    can be found within the library's glossary</p>
+{% endcall %}
 {% from "components/table/_macro.njk" import onsTable %}
+{% set methodsTable = {
+  "variants": 'sortable',
+  "tableClasses": "ons-u-mt-m",
+  "sortBy": "Sort by",
+  "ariaAsc": "ascending",
+  "ariaDesc": "descending",
+  "ths": [
+    {
+      "value": "Name"
+    },
+    {
+      "value": "Theme"
+    },
+    {
+      "value": "Expert group"
+    },
+    {
+      "value": "Languages"
+    },
+    {
+      "value": "Access"
+    },
+    {
+      "value": "Status"
+    },
+  ]
+} %}
+{% set methodsTableRows = [] %}
+{% for row in page.rows %}
+  {% do methodsTableRows.append({
+    "tds": [
+      {
+          "value": '<a href="' + url_for("display_method", method=row.id) + '">' + row.title + '</a>'
+      },
+      {"value": row.theme},
+      {"value": row.exp_group},
+      {"value": row.language},
+      {"value": row.access},
+      {"value": '<span class="ons-status ons-status--' + status_class.get(row.status, "info") + '">' + row.status + '</span>'},
+    ]
+  }) %}
+{% endfor %}
+{% do methodsTable.update({"trs": methodsTableRows}) %}
 {{
-  onsTable({
-    "variants": 'sortable',
-    "sortBy": "Sort by",
-    "ariaAsc": "ascending",
-    "ariaDesc": "descending",
-    "ths": [
-      {
-        "value": "Name"
-      },
-      {
-        "value": "Theme"
-      },
-      {
-        "value": "Expert group"
-      },
-      {
-        "value": "Languages"
-      },
-      {
-        "value": "Access"
-      },
-      {
-        "value": "Status"
-      },
-    ],
-    "trs": page.rows
-  })
+  onsTable(methodsTable)
 }}
 
 {% endblock main -%}
