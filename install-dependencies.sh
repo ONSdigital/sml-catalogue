@@ -1,5 +1,5 @@
 echo "install pipenv"
-apt-get install pipenv
+pip install pipenv
 echo "Make virtual environment"
 python3 -m venv venv
 echo "Pipenv sync"
