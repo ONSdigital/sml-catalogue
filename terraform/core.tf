@@ -11,6 +11,8 @@ provider "aws" {
       "ons:owner:team"          = "SPP CMT"
       "ons:application:name"    = "SML Catalogue"
       "ons:deployment"          = terraform.workspace
+
+
     }
   }
 }

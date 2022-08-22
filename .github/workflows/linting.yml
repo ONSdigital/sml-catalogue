@@ -7,6 +7,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
-      - run: pip install black
-      - run: black --check --diff ${{ github.workspace }}/sml_builder
-      - run: echo "This job's status is ${{ job.status }}."
+      - run: cd ${{ github.workspace }}
+      - run: ./install-dependencies.sh
+      - run: black --check --diff sml_builder
+      - run: terraform fmt -check -recursive -diff
