@@ -15,3 +15,8 @@ def about():
 @app.route("/privacy-and-data-protection")
 def privacy_and_data_protection():
     return render_template("content/privacy.html")
+
+
+@app.route("/cookies")
+def cookies_page():
+    return render_template("cookies.html")
