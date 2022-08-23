@@ -19,7 +19,7 @@
         "title": "Home"},
         {"url": url_for("display_methods"),
         "title": "Methods catalogue"},
-        {"url": url_for("help"),
+        {"url": url_for("help_centre"),
         "title": "Help centre"},
         ],
         "currentPath": current_path
@@ -31,7 +31,7 @@
           "itemsList": [
             {
               "text": 'Cookies',
-              "url": '#0'
+              "url": url_for('cookies_page')
             },
             {
               "text": 'Accessibility statement',
@@ -46,8 +46,18 @@
       ]
     },
 
-    "asideCol":asideCol,
+    "asideCol":asideCol
   }
  %}
+
+    {% block preHeader %}
+        {% from "components/cookies-banner/_macro.njk" import onsCookiesBanner %}
+        {{
+            onsCookiesBanner({
+                'serviceName': 'sml.ons.gov.uk'
+            })
+        }}
+    {% endblock %}
+
   {%- block main -%}
   {%- endblock main -%}
