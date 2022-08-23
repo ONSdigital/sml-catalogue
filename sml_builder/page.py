@@ -1,10 +1,8 @@
-from flask import render_template
+from flask import render_template, request, url_for
 from sml_builder import app
-
-
-@app.route("/help")
-def help():
-    return "help"
+from json import loads
+from _jsonnet import evaluate_file
+import re
 
 
 @app.route("/resources/about")
