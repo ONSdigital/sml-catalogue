@@ -21,14 +21,14 @@ jobs:
       - name: Lint
         run: |
           source venv/bin/activate
-          pipenv run black --check --diff sml_builder
+          black --check --diff sml_builder
       - name: Freeze flask
         run: |
           source venv/bin/activate
           echo "Installing the ONS design system"
           ./get_design_system.sh
           echo "Freezing flask"
-          pipenv run python freeze.py
+          python freeze.py
   Terraform-format:
     runs-on: ubuntu-latest
     container: onsdigital/spp-terraform:1
