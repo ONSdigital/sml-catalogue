@@ -1,10 +1,8 @@
-from flask import render_template
+from flask import render_template, request, url_for
 from sml_builder import app
-
-
-@app.route("/help")
-def help():
-    return "help"
+from json import loads
+from _jsonnet import evaluate_file
+import re
 
 
 @app.route("/resources/about")
@@ -15,3 +13,8 @@ def about():
 @app.route("/privacy-and-data-protection")
 def privacy_and_data_protection():
     return render_template("content/privacy.html")
+
+
+@app.route("/cookies")
+def cookies_page():
+    return render_template("cookies.html")

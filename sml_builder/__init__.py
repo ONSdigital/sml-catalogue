@@ -14,6 +14,7 @@ import sml_builder.method
 import sml_builder.page
 import sml_builder.glossary
 import sml_builder.utils
+import sml_builder.help_centre
 
 
 @app.route("/")
