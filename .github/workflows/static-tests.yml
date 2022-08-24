@@ -1,5 +1,8 @@
 name: Static-tests
-on: [push]
+on: 
+  pull-request:
+    branches:
+      - main
 jobs:
   Python-tests:
     runs-on: ubuntu-latest
