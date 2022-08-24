@@ -20,6 +20,7 @@ jobs:
       - name: Freeze flask
         run: |
           source venv/bin/activate
+          ./get_design_system.sh
           pipenv run python freeze.py
         
   Terraform-format:
