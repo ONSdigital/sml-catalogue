@@ -7,9 +7,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
-      - run: ls -l
-      - run: cd ${{ github.workspace }}
-      - run: ls -l
       - name: Install dependencies
         run: |
           pip install pipenv
