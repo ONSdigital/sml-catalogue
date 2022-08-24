@@ -1,0 +1,36 @@
+name: Static-tests
+on: 
+  pull_request:
+    branches:
+      - main
+jobs:
+  Python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Install pipenv
+        run: pip install pipenv
+      - name: Create venv
+        run: python3 -m venv venv
+      - name: Install dependencies
+        run: |
+          source venv/bin/activate
+          pipenv sync --dev
+      - name: Lint
+        run: |
+          source venv/bin/activate
+          black --check --diff sml_builder
+      - name: Freeze flask
+        run: |
+          source venv/bin/activate
+          echo "Installing the ONS design system"
+          ./get_design_system.sh
+          echo "Freezing flask"
+          python freeze.py
+  Terraform-format:
+    runs-on: ubuntu-latest
+    container: onsdigital/spp-terraform:1
+    steps:
+      - run: terraform fmt -check -recursive -diff
