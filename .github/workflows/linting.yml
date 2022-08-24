@@ -9,6 +9,13 @@ jobs:
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
       - run: cd ${{ github.workspace }}
       - run: python3 --version
-      - run: ./install-dependencies.sh
+      - name: Install dependencies
+        run: |
+          pip install pipenv
+          python3 -m venv venv
+          source venv/bin/activate
+          pipenv sync --dev
+          apt-get install terraform
+      # - run: ./install-dependencies.sh
       - run: black --check --diff sml_builder
       - run: terraform fmt -check -recursive -diff
