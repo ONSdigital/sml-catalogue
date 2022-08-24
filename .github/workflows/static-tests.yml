@@ -1,6 +1,6 @@
 name: Static-tests
 on: 
-  pull-request:
+  pull_request:
     branches:
       - main
 jobs:
