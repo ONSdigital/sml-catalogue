@@ -16,7 +16,7 @@ jobs:
           source venv/bin/activate
           pipenv sync --dev
           pipenv run black --check --diff sml_builder
-          run: pipenv run python freeze.py
+          pipenv run python freeze.py
         
   Terraform-format:
     runs-on: ubuntu-latest
