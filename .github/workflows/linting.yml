@@ -15,7 +15,7 @@ jobs:
           python3 -m venv venv
           source venv/bin/activate
           pipenv sync --dev
-      - run: black --check --diff sml_builder
+      - run: python3 -m black --check --diff sml_builder
       - name: Freeze flask
         run: pipenv run python freeze.py
       # - run: terraform fmt -check -recursive -diff
