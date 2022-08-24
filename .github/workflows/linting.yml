@@ -15,7 +15,7 @@ jobs:
           python3 -m venv venv
           source venv/bin/activate
           pipenv sync --dev
-          apt-get install terraform
+          sudo apt-get install terraform
       # - run: ./install-dependencies.sh
       - run: black --check --diff sml_builder
       - run: terraform fmt -check -recursive -diff
