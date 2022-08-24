@@ -8,14 +8,14 @@ jobs:
         uses: actions/checkout@v3
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
       - run: cd ${{ github.workspace }}
-      - run: python3 --version
+      - run: ls -l
       - name: Install dependencies
         run: |
           pip install pipenv
           python3 -m venv venv
           source venv/bin/activate
           pipenv sync --dev
-      - run: pipenv run black --check --diff sml_builder
+          pipenv run black --check --diff sml_builder
       - name: Freeze flask
         run: pipenv run python freeze.py
   Terraform format:
