@@ -1,13 +1,12 @@
 name: Static-tests
 on: [push]
 jobs:
-  Lint:
+  Python-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo ${{ github.workspace }}
       - name: Install dependencies
         run: |
           pip install pipenv
