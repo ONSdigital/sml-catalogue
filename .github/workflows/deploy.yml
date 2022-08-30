@@ -21,7 +21,4 @@ jobs:
       - name: Install dependencies
         run: |
           aws s3api list-buckets
-          export AWS_DEFAULT_REGION=eu-west-2
-          export PAGER=cat
-          aws lambda list-functions
     
