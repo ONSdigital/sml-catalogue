@@ -1,0 +1,24 @@
+name: deploy
+on: 
+  pull_request:
+    branches:
+      - main
+jobs:
+  Test-creds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::115311790871:role/sml-deploy
+          aws-region: eu-west-2
+      - name: Install dependencies
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
+          aws s3api list-buckets
+    
