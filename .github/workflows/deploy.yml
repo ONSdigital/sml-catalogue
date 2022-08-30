@@ -9,6 +9,7 @@ permissions:
 jobs:
   Test-creds:
     runs-on: ubuntu-latest
+    container: onsdigital/spp-terraform:1
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -18,7 +19,24 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::115311790871:role/sml-deploy
           aws-region: eu-west-2
+      - name: Install pipenv
+        run: pip install pipenv
+      - name: Create venv
+        run: python3 -m venv venv
       - name: Install dependencies
         run: |
-          aws s3api list-buckets
+          source venv/bin/activate
+          pipenv sync --dev
+      - name: Lint
+        run: |
+          source venv/bin/activate
+          black --check --diff sml_builder
+      - name: Freeze flask
+        run: |
+          source venv/bin/activate
+          echo "Installing the ONS design system"
+          ./get_design_system.sh
+          echo "Freezing flask"
+          python freeze.py
+      - run: terraform fmt -check -recursive -diff
     
