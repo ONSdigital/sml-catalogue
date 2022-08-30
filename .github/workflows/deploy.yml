@@ -20,7 +20,11 @@ jobs:
           role-to-assume: arn:aws:iam::115311790871:role/sml-deploy
           aws-region: eu-west-2
       - run: terraform fmt -check -recursive -diff
-      - run: ./terraform.sh apply
+      - run: |
+        cd terraform
+        terraform init
+        export TF_WORKSPACE=${{ github.ref }}
+        terraform apply
   build-files:
     runs-on: ubuntu-latest
     steps:
