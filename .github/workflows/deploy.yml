@@ -27,6 +27,7 @@ jobs:
           cd terraform
           terraform init
           export TF_WORKSPACE=${{ github.ref }}
+          echo $TF_WORKSPACE
           terraform apply        
           echo "::set-output name=cloudfront_id::`terraform output -raw cloudfront_id`"
   build-files:
