@@ -82,6 +82,9 @@ jobs:
         run: |
           echo "List directory"
           ls -l
+          cd ../
+          echo "List outer dir"
+          ls -l
           echo "Upload files"
           aws s3 sync build s3://sml-portal-${{ github.head_ref }} --delete --content-type "text/html" --exclude "*.css"
           aws s3 sync build s3://sml-portal-${{ github.head_ref }} --delete --exclude "*" --include "*.css"
