@@ -78,6 +78,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
+          path: build
       - name: Deploy built files
         run: |
           echo "List directory"
