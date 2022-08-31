@@ -21,8 +21,10 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::115311790871:role/sml-deploy
           aws-region: eu-west-2
-      - run: terraform fmt -check -recursive -diff
+      - name: terraform format
+        run: terraform fmt -check -recursive -diff
       - id: apply
+        name: Apply terraform
         run: |
           cd terraform
           terraform init
@@ -61,8 +63,19 @@ jobs:
           ./get_design_system.sh
           echo "Freezing flask"
           python freeze.py
+      - name: Install aws CLI
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
       - name: Upload files
         run: |
-          echo ${{needs.run-terraform.outputs.cloudfront_id}}
+          echo "List directory"
+          ls -l
+          echo "Upload files"
+          aws s3 sync build s3://sml-portal-${{ github.head_ref }} --delete --content-type "text/html" --exclude "*.css"
+          aws s3 sync build s3://sml-portal-${{ github.head_ref }} --delete --exclude "*" --include "*.css"
+      - name: Clear cache
+        run: aws cloudfront create-invalidation --distribution-id ${{needs.run-terraform.outputs.cloudfront_id}} --paths "/*" > /dev/null
 
       
