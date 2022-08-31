@@ -40,7 +40,9 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
-          message: Workspace URL ${{env.DEPLOY_URL}}
+          message: |
+            Workspace URL: ${{env.DEPLOY_URL}}
+          allow-repeats: false
   build-files:
     runs-on: ubuntu-latest
     concurrency: ${{github.workflow}}-${{github.head_ref}}-build
