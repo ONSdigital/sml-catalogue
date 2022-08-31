@@ -122,5 +122,7 @@ jobs:
           terraform init
           export TF_WORKSPACE=${{ github.head_ref }}
           terraform destroy -auto-approve
+          export TF_WORKSPACE=""
+          terraform workspace delete ${{ github.head_ref }} || ( echo "ERROR: Could not delete workspace!" && exit 1)
 
       
