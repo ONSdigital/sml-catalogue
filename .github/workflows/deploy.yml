@@ -10,6 +10,7 @@ jobs:
   run-terraform:
     runs-on: ubuntu-latest
     container: onsdigital/spp-terraform:1
+    concurrency: ${{github.workflow}}-${{github.head_ref}}-deploy
     outputs:
       cloudfront_id: ${{ steps.apply.outputs.cloudfront_id }}
     steps:
@@ -35,6 +36,7 @@ jobs:
   build-files:
     runs-on: ubuntu-latest
     needs: run-terraform
+    concurrency: ${{github.workflow}}-${{github.head_ref}}-build
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -63,11 +65,11 @@ jobs:
           ./get_design_system.sh
           echo "Freezing flask"
           python freeze.py
-      - name: Install aws CLI
-        run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install
+      # - name: Install aws CLI
+      #   run: |
+      #     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      #     unzip awscliv2.zip
+      #     sudo ./aws/install
       - name: Upload files
         run: |
           echo "List directory"
