@@ -6,6 +6,7 @@ on:
 permissions:
   id-token: write
   contents: read    # This is required for actions/checkout
+  pull-requests: write
 jobs:
   run-terraform:
     runs-on: ubuntu-latest
