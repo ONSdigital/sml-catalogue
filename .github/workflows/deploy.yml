@@ -102,27 +102,3 @@ jobs:
           aws s3 sync build s3://sml-portal-${{ github.head_ref }} --delete --exclude "*" --include "*.css"
       - name: Clear cache
         run: aws cloudfront create-invalidation --distribution-id ${{needs.run-terraform.outputs.cloudfront_id}} --paths "/*" > /dev/null 
-  delete-workspace:
-    needs: deploy
-    runs-on: ubuntu-latest
-    container: onsdigital/spp-terraform:1
-    concurrency: ${{github.workflow}}-${{github.head_ref}}-destroy
-    steps:
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
-      - name: Configure AWS credentials from Dev account
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          role-to-assume: arn:aws:iam::115311790871:role/sml-deploy
-          aws-region: eu-west-2
-      - name: Terraform destroy
-        run: |
-          cd terraform
-          terraform init
-          export TF_WORKSPACE=${{ github.head_ref }}
-          terraform destroy -auto-approve
-          export TF_WORKSPACE=""
-          terraform workspace delete ${{ github.head_ref }} || ( echo "ERROR: Could not delete workspace!" && exit 1)
-
-      
