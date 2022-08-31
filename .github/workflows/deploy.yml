@@ -32,7 +32,7 @@ jobs:
           export TF_WORKSPACE=${{ github.head_ref }}
           echo $TF_WORKSPACE
           terraform apply -auto-approve
-          echo "::set-env name=DEPLOY_URL::`terraform output -raw website_url`"
+          echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_ENV
           echo "::set-output name=cloudfront_id::`terraform output -raw cloudfront_id`"
       - name: Add deploy URL to PR description
         uses: chabroA/action-append-pr-description@master
@@ -41,7 +41,7 @@ jobs:
           repo: ${{ github.event.repository.name }}
           owner: ${{ github.repository_owner }}
           pr: ${{ github.event.number }}
-          url: $DEPLOY_URL
+          url: ${{env.DEPLOY_URL}}
   build-files:
     runs-on: ubuntu-latest
     concurrency: ${{github.workflow}}-${{github.head_ref}}-build
