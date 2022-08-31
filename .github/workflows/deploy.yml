@@ -40,11 +40,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
-      - name: Configure AWS credentials from Dev account
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          role-to-assume: arn:aws:iam::115311790871:role/sml-deploy
-          aws-region: eu-west-2
       - name: Install pipenv
         run: pip install pipenv
       - name: Create venv
@@ -69,10 +64,16 @@ jobs:
         with:
           name: build
           path: build
-    deploy:
+  deploy:
     runs-on: ubuntu-latest
     needs: [run-terraform, build-files]
     concurrency: ${{github.workflow}}-${{github.head_ref}}-deploy
+    steps:
+      - name: Configure AWS credentials from Dev account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::115311790871:role/sml-deploy
+          aws-region: eu-west-2
       - name: Download built files
         uses: actions/download-artifact@v3
         with:
