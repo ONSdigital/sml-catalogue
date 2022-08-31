@@ -50,6 +50,20 @@
                 <div class="ons-u-mb-l">
                     <h3><a name="{{ term.hash }}"></a>{{ term.term }}</h3>
                     {{ term.meaning | paras }}
+                    {%- if term.external_links -%}
+                        <p><strong>Further information: </strong>
+                        {%- for link in term.external_links -%}
+                            {%- from "components/external-link/_macro.njk" import onsExternalLink -%}
+                            {{
+                              onsExternalLink({
+                                "url": link['link'],
+                                "linkText": link['text']
+                              })
+                            }}
+                            {{ ", " if not loop.last else "" }}
+                        {%- endfor -%}
+                        </p>
+                    {%- endif -%}
                     {%- if term.related -%}
                         <p><strong>See also: </strong>
                         {% for related in term.related %}
