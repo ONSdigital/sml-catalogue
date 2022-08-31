@@ -78,12 +78,12 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
-          path: build
+          path: ~/build
       - name: Deploy built files
         run: |
           echo "List directory"
           ls -l
-          cd ../
+          cd ~/
           echo "List outer dir"
           ls -l
           echo "Upload files"
