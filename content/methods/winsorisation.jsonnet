@@ -1,5 +1,5 @@
 {
-  title: 'Winsorisation',
+  title: 'Winsorisation(Outliering)',
   date: '2022-05-18',
   contact_details: 'Sample.Design.Estimation.Business@ons.gov.uk',
   method_metadata: {
