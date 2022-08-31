@@ -121,6 +121,6 @@ jobs:
           cd terraform
           terraform init
           export TF_WORKSPACE=${{ github.head_ref }}
-          terraform destroy
+          terraform destroy -auto-approve
 
       
