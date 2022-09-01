@@ -1,0 +1,33 @@
+name: destroy-workspace
+on: 
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+permissions:
+  id-token: write
+  contents: read 
+jobs:
+  delete-workspace:
+    runs-on: ubuntu-latest
+    container: onsdigital/spp-terraform:1
+    concurrency: ${{github.workflow}}-${{github.head_ref}}-destroy
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Configure AWS credentials from Dev account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::115311790871:role/sml-deploy
+          aws-region: eu-west-2
+      - name: Terraform destroy
+        run: |
+          cd terraform
+          terraform init
+          export TF_WORKSPACE=${{ github.head_ref }}
+          terraform destroy -auto-approve
+          export TF_WORKSPACE=""
+          terraform workspace delete ${{ github.head_ref }} || ( echo "ERROR: Could not delete workspace!" && exit 1)
+  
