@@ -5,6 +5,9 @@ on:
       - closed
     branches:
       - main
+permissions:
+  id-token: write
+  contents: read 
 jobs:
   delete-workspace:
     runs-on: ubuntu-latest
