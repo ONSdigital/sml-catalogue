@@ -35,7 +35,7 @@ jobs:
         run: |
           cd terraform
           terraform init
-          export TF_WORKSPACE=${{ github.head_ref }}
+          export TF_WORKSPACE=${{ github.head_ref || github.ref}}
           echo $TF_WORKSPACE
           terraform apply -auto-approve
           echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_ENV
@@ -103,7 +103,7 @@ jobs:
           echo "List outer dir"
           ls -l
           echo "Upload files"
-          aws s3 sync build s3://sml-portal-${{ github.head_ref }} --delete --content-type "text/html" --exclude "*.css"
-          aws s3 sync build s3://sml-portal-${{ github.head_ref }} --delete --exclude "*" --include "*.css"
+          aws s3 sync build s3://sml-portal-${{ github.head_ref || github.ref}} --delete --content-type "text/html" --exclude "*.css"
+          aws s3 sync build s3://sml-portal-${{ github.head_ref || github.ref}} --delete --exclude "*" --include "*.css"
       - name: Clear cache
         run: aws cloudfront create-invalidation --distribution-id ${{needs.run-terraform.outputs.cloudfront_id}} --paths "/*" > /dev/null 
