@@ -26,6 +26,9 @@ def display_glossary():
                 "related": glossary_term["related"]
                 if "related" in glossary_term
                 else [],
+                "external_links": glossary_term["external_links"]
+                if "external_links" in glossary_term
+                else [],
                 "meaning": glossary_term["meaning"],
             }
         )
