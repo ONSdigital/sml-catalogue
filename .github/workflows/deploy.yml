@@ -18,6 +18,7 @@ jobs:
     outputs:
       cloudfront_id: ${{ steps.apply.outputs.cloudfront_id }}
     steps:
+      - run: echo ${{github.event_name}}
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
