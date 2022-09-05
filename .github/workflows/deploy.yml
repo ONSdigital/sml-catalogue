@@ -73,11 +73,12 @@ jobs:
           ./get_design_system.sh
           echo "Freezing flask"
           python freeze.py
+          zip -r build.zip build
       - name: Upload files
         uses: actions/upload-artifact@v3
         with:
           name: build
-          path: build
+          path: build.zip
           retention-days: 2
   deploy:
     runs-on: ubuntu-latest
@@ -93,13 +94,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
-          path: ~/build
+          path: ./
       - name: Deploy built files
         run: |
-          echo "List directory"
-          cd ~/
-          echo "List outer dir"
-          echo "Upload files"
+          unzip build.zip
           aws s3 sync build s3://sml-portal-${{ github.head_ref || github.ref_name}} --delete --content-type "text/html" --exclude "*.css"
           aws s3 sync build s3://sml-portal-${{ github.head_ref || github.ref_name}} --delete --exclude "*" --include "*.css"
       - name: Clear cache
@@ -133,7 +131,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: build
-          asset_name: build
+          asset_path: build.zip
+          asset_name: build.zip
           asset_content_type: application/zip
 
