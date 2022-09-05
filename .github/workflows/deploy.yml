@@ -119,8 +119,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }} - ${{ github.event.pull_request.title }}
+          tag_name: <To fill>
+          release_name: Release <To fill> - ${{ github.event.pull_request.title }}
           draft: true
           prerelease: false
       - name: Upload release assets
