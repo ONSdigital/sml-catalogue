@@ -110,6 +110,7 @@ jobs:
     needs: build-files
     permissions:
       contents: write
+      pull-request: read
     steps:
       - name: Download built files
         uses: actions/download-artifact@v3
