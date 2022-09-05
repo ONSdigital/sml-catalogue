@@ -134,4 +134,5 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ~/build
           asset_name: build
+          asset_content_type: application/zip
 
