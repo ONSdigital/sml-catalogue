@@ -126,9 +126,10 @@ jobs:
           release_name: <tofill>
           draft: true
           prerelease: false
-      - run: |
-        cd /home/runner/build
-        ls -l
+      - name: list-files
+        run: |
+          cd /home/runner/build
+          ls -l
       - name: Upload release assets
         uses: actions/upload-release-asset@v1.0.1
         env:
