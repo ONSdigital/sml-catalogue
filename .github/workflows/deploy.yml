@@ -77,7 +77,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build
-          path: ./
+          path: build
           retention-days: 2
   deploy:
     runs-on: ubuntu-latest
@@ -116,7 +116,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
-          path: build
+          path: ./
       - name: Create Draft Release
         id: create_release
         uses: actions/create-release@v1
