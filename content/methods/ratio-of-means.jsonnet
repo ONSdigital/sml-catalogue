@@ -22,10 +22,6 @@
     As imputation can be carried out for multiple periods simultaneously, the method can apply forward, backward or
     construction imputation. The type of imputation used will vary for each non-respondent in each period depending on
     whether data is available in the predictive period.
-
-    The generic formula for using ratio of means imputation is the imputation link multiplied by the variable of interest
-    (auxiliary variable in the case of construction) for the non-respondent from a previous/consecutive/current period
-    for forwards/backwards/construction imputation respectively.
   |||,
 
 }
