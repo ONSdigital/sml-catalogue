@@ -3,7 +3,7 @@ on:
   pull_request:
     types: [opened, closed, reopened, synchronize]
     branches:
-      - main
+      - spp-7168-main-workspace
 permissions:
   id-token: write
   contents: read    # This is required for actions/checkout
