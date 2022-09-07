@@ -107,9 +107,9 @@ jobs:
           unzip build.zip
           if ${{github.event.pull_request.merged}}
           then
-            workspace_name = "main"
+            workspace_name="main"
           else
-            workspace_name = ${{ github.head_ref }}
+            workspace_name=${{ github.head_ref }}
           fi
           aws s3 sync build s3://sml-portal-$workspace_name --delete --content-type "text/html" --exclude "*.css"
           aws s3 sync build s3://sml-portal-$workspace_name --delete --exclude "*" --include "*.css"
