@@ -116,7 +116,7 @@ jobs:
       - name: Clear cache
         run: aws cloudfront create-invalidation --distribution-id ${{needs.run-terraform.outputs.cloudfront_id}} --paths "/*" > /dev/null
   draft-release:
-    if: ${{github.event.pull_request.action == 'closed' && github.event.pull_request.merged == true }}
+    if: ${{github.event.action == 'closed' && github.event.pull_request.merged == true }}
     runs-on: ubuntu-latest
     needs: build-files
     permissions:
@@ -147,4 +147,12 @@ jobs:
           asset_path: build.zip
           asset_name: build.zip
           asset_content_type: application/zip
+  test-vars:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{github.event.action}}
+      - run: echo ${{github.event.pull_request.merged}}
+      - run: echo ${{github.event.pull_request.action == 'closed'}}
+      - run: echo ${{github.event.pull_request.merged == true }}
+      - run: echo ${{github.event.pull_request.action == 'closed' && github.event.pull_request.merged == true }}
 
