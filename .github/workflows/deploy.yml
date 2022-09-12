@@ -150,7 +150,7 @@ jobs:
   test-vars:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{github.event.pull_request.action}}
+      - run: echo ${{github.event.action}}
       - run: echo ${{github.event.pull_request.merged}}
       - run: echo ${{github.event.pull_request.action == 'closed'}}
       - run: echo ${{github.event.pull_request.merged == true }}
