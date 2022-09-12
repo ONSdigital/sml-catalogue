@@ -3,7 +3,7 @@ on:
   pull_request:
     types: [opened, closed, reopened, synchronize]
     branches:
-      - spp-7168-main-workspace
+      - main
 permissions:
   id-token: write
   contents: read    # This is required for actions/checkout
@@ -147,12 +147,3 @@ jobs:
           asset_path: build.zip
           asset_name: build.zip
           asset_content_type: application/zip
-  test-vars:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{github.event.action}}
-      - run: echo ${{github.event.pull_request.merged}}
-      - run: echo ${{github.event.pull_request.action == 'closed'}}
-      - run: echo ${{github.event.pull_request.merged == true }}
-      - run: echo ${{github.event.pull_request.action == 'closed' && github.event.pull_request.merged == true }}
-
