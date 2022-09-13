@@ -1,7 +1,7 @@
 {
   title: 'Date adjustment',
   date: '2022-06-29',
-  contact_details: null,
+  contact_details: 'Editing.and.Imputation.expert.group@ons.gov.uk',
   method_metadata: {
     'Access type': 'Internal',
     'Expert group': 'Editing & Imputation',
@@ -13,5 +13,10 @@
   },
   specification_link: null,
   code_link: 'https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/date_adjustment.py',
-  description: null,
+  description: |||
+    To generate summary and headline statistics for a period, the ONS requires all businesses responses to cover the same period. 
+    However, sometimes it is not possible for a business to provide data for the exact period of days required. 
+    The responder may specify a different start and end dates for which the response totals cover. 
+    Therefore, Date Adjustment methods are required to approximate the values of the data for the required period that are based on the data received.
+  |||,
 }
