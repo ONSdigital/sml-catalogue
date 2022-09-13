@@ -8,7 +8,7 @@ permissions:
   contents: read    # This is required for actions/checkout
 jobs:
   run-terraform:
-    if: ${{github.event.pull_request.action != 'closed' || github.event.pull_request.merged == true }}
+    if: ${{github.event.action != 'closed' || github.event.pull_request.merged == true }}
     runs-on: ubuntu-latest
     container: onsdigital/spp-terraform:1
     concurrency: ${{github.workflow}}-{{ github.head_ref }}-deploy
@@ -55,7 +55,7 @@ jobs:
             Workspace URL: ${{env.DEPLOY_URL}}
           allow-repeats: false
   build-files:
-    if: ${{github.event.pull_request.action != 'closed' || github.event.pull_request.merged == true }}
+    if: ${{github.event.action != 'closed' || github.event.pull_request.merged == true }}
     runs-on: ubuntu-latest
     permissions:
       contents: read 
@@ -91,7 +91,7 @@ jobs:
           path: build.zip
           retention-days: 2
   deploy:
-    if: ${{github.event.pull_request.action != 'closed' || github.event.pull_request.merged == true }}
+    if: ${{github.event.action != 'closed' || github.event.pull_request.merged == true }}
     runs-on: ubuntu-latest
     needs: [run-terraform, build-files]
     permissions:
