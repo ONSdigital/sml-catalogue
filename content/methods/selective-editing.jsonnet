@@ -1,7 +1,7 @@
 {
   title: 'Selective Editing',
   date: '2022-06-29',
-  contact_details: 'Editing.and.Imputation.expert.group@ons.gov.uk',
+  contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
     'Access type': 'Internal',
     'Expert group': 'Editing & Imputation',

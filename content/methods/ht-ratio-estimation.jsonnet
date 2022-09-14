@@ -1,7 +1,7 @@
 {
   title: 'HT/Ratio Estimation',
   date: '2022-05-18',
-  contact_details: 'Sample.Design.Estimation.Business@ons.gov.uk',
+  contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
     'Access type': 'Internal',
     'Expert group': 'Sample Design & Estimation',
