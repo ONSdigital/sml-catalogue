@@ -11,10 +11,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo ${{ toJson(github.event.release.assets)}}
+        cat <<- EOF > script.py
+        import json
+        import sys
+        import os
+
+        assets = json.loads(sys.argv[1])
+        for asset in assets:
+            if asset["name"] == "file.zip":
+                os.environ["ASSET_URL"] = asset["url"]
+                break
+        EOF
+
+        python3 script.py ${{ toJson(github.event.release.assets)}}
+        
         curl \
           -H "Accept: application/vnd.github+json" \ 
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-          https://api.github.com/repos/${{ github.repository }}/releases/assets/ASSET_ID
+          ${ASSET_URL}
 
 # https://github.com/ONSdigital/sml-catalogue/releases/download/untagged-b4baa578f9c18064cf63/build.zip
