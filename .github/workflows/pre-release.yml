@@ -33,7 +33,7 @@ jobs:
 
         echo "running curl"
         curl \
-          -H "Accept: application/vnd.github+json" \ 
+          -H "Accept: application/vnd.github+json" \
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
           ${ASSET_URL}
 
