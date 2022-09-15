@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
+        echo "Creating python script"
         cat <<- 'EOF' > script.py
         import json
         import sys
@@ -23,9 +24,14 @@ jobs:
                 break
         EOF
 
+        echo "Parsing the json with python"
         ASSET_URL=$(python3 script.py '${{ toJson(github.event.release.assets) }}')
-        
+        rm script.py
+
+        echo "URL to access"
         echo ${ASSET_URL}
+
+        echo "running curl"
         curl \
           -H "Accept: application/vnd.github+json" \ 
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
