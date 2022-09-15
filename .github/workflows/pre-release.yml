@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo ${{github.event.release.assets}}
+        echo ${{ toJson(github.event.release.assets)}}
         curl \
           -H "Accept: application/vnd.github+json" \ 
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
