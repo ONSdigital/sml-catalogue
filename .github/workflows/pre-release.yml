@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        cat <<- EOF > script.py
+        cat <<- 'EOF' > script.py
         import json
         import sys
         import os
@@ -23,7 +23,7 @@ jobs:
                 break
         EOF
 
-        python3 script.py ${{ toJson(github.event.release.assets)}}
+        python3 script.py '${{ toJson(github.event.release.assets) }}'
         
         curl \
           -H "Accept: application/vnd.github+json" \ 
