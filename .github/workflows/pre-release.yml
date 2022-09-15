@@ -1,0 +1,15 @@
+name: preprod-release
+  on:
+    pull_request
+#   on:
+#     release:
+#       types: [prereleased]
+  permissions:
+    contents: read
+  jobs:
+    get_build_files:
+      - run: |
+        curl \
+          -H "Accept: application/vnd.github+json" \ 
+          -H "Authorization: Bearer ${{}}" \
+          https://api.github.com/repos/OWNER/REPO/releases/assets/ASSET_ID
