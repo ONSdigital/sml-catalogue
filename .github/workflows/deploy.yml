@@ -34,7 +34,11 @@ jobs:
         name: Apply terraform
         run: |
           cd terraform
-          terraform init
+          terraform init \
+            -upgrade \
+            -backend-config "bucket=statistical-methods-library-tf-state" \
+            -backend-config "key=sml-portal.tfstate" \
+            -backend-config "workspace_key_prefix=workspace"
           echo ${{github.event.pull_request.merged}}
           if ${{github.event.pull_request.merged}}
           then

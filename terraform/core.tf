@@ -30,9 +30,6 @@ terraform {
   # }
 
   backend "s3" {
-    bucket               = "statistical-methods-library-tf-state"
-    key                  = "sml-portal.tfstate"
-    region               = "eu-west-2"
-    workspace_key_prefix = "workspace"
+    region = "eu-west-2"
   }
 }

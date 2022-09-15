@@ -16,15 +16,14 @@ else
   exit 1
 fi
 
-cd terraform
 terraform init \
   -reconfigure \
   -upgrade \
   -backend-config "bucket=$bucket" \
   -backend-config "key=sml-portal.tfstate" \
-  -backend-config "workspace_key_prefix=workspace"
+  -backend-config "workspace_key_prefix=account"
 
-export TF_WORKSPACE=`git branch --show-current`
+export TF_WORKSPACE="account"
 if [ "$1" == "destroy" ]; then
   terraform destroy
 else
