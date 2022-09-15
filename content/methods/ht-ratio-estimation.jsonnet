@@ -12,7 +12,7 @@
     'Code available?': 'Yes',
   },
   specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/sample_design_and_estimation/estimation/ht_estimation.rst',
-  code_link: 'https://github.com/ONSdigital/statistical-methods-library/blob/main/statistical_methods_library/estimation.py',
+  code_link: 'https://github.com/ONSdigital/statistical-methods-library/blob/main/statistical_methods_library/estimation/ht_ratio.py',
   description: |||
     Sampling in business surveys is often done using stratified simple random sampling
     without replacement. The largest businesses are usually selected with certainty.
