@@ -8,6 +8,7 @@ permissions:
   contents: read
 jobs:
   get_build_files:
+    runs-on: ubuntu-latest
     steps:
     - run: |
         echo ${{github.event.release.assets}}
