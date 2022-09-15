@@ -25,9 +25,12 @@ jobs:
 
         python3 script.py '${{ toJson(github.event.release.assets) }}'
         
+        echo ${ASSET_URL}
         curl \
           -H "Accept: application/vnd.github+json" \ 
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-          ${ASSET_URL}
+          "${ASSET_URL}""
+
+        ls
 
 # https://github.com/ONSdigital/sml-catalogue/releases/download/untagged-b4baa578f9c18064cf63/build.zip
