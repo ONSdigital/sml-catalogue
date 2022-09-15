@@ -1,18 +1,19 @@
 name: preprod-release
+# on:
+#   pull_request
 on:
-  pull_request
-#   on:
-#     release:
-#       types: [prereleased]
+  release:
+    types: [prereleased]
 permissions:
   contents: read
 jobs:
   get_build_files:
+    steps:
     - run: |
-      echo ${{github.event.release}}
-      curl \
-        -H "Accept: application/vnd.github+json" \ 
-        -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-        https://api.github.com/repos/${{ github.repository }}/releases/assets/ASSET_ID
+        echo ${{github.event.release.assets}}
+        curl \
+          -H "Accept: application/vnd.github+json" \ 
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          https://api.github.com/repos/${{ github.repository }}/releases/assets/ASSET_ID
 
 # https://github.com/ONSdigital/sml-catalogue/releases/download/untagged-b4baa578f9c18064cf63/build.zip
