@@ -29,7 +29,7 @@ jobs:
         curl \
           -H "Accept: application/vnd.github+json" \ 
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-          "${ASSET_URL}""
+          "${ASSET_URL}"
 
         ls
 
