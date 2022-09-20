@@ -3,13 +3,14 @@ name: preprod-release
 #   pull_request
 on:
   release:
-    types: [prereleased]
+    types: [published]
 permissions:
   contents: read
 jobs:
   get_build_files:
     runs-on: ubuntu-latest
     steps:
+    - run: echo ${{github.event.release.isPrerelease}}
     - run: |
         echo "Creating python script"
         cat <<- 'EOF' > script.py
@@ -18,7 +19,7 @@ jobs:
         import os
         assets = json.loads(sys.argv[1])
         for asset in assets:
-            if asset["name"] == "file.zip":
+            if asset["name"] == "build.zip":
                 os.environ["ASSET_URL"] = asset["url"]
                 print(asset["url"])
                 break
