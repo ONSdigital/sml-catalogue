@@ -39,6 +39,7 @@ jobs:
           --output build
 
         ls
-        cat build
+        cd build
+        ls
 
 # https://github.com/ONSdigital/sml-catalogue/releases/download/untagged-b4baa578f9c18064cf63/build.zip
