@@ -37,11 +37,11 @@ jobs:
           -H "Accept: application/octet-stream" \
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
           ${ASSET_URL} \
-          --output build
+          --output build.zip
 
         echo "unzip the build folder"
 
-        unzip build
+        unzip build.zip build
 
         echo "List all files"
         ls -l -R
