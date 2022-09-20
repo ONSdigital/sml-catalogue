@@ -33,6 +33,7 @@ jobs:
 
         echo "running curl"
         curl \
+          -i -L\
           -H "Accept: application/octet-stream" \
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
           ${ASSET_URL} \
