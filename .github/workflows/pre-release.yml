@@ -64,7 +64,7 @@ jobs:
       - name: Configure AWS credentials from Dev account
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: ${{secrets.DEV_DEPLOYMENT_ROLE}}
+          role-to-assume: ${{github.event.release.prerelease && secrets.PREPROD_DEPLOYMENT_ROLE || secrets.PROD_DEPLOYMENT_ROLE}}
           aws-region: eu-west-2
 
 # https://github.com/ONSdigital/sml-catalogue/releases/download/untagged-b4baa578f9c18064cf63/build.zip
