@@ -41,6 +41,9 @@ jobs:
         echo "list dir"
         ls -l
 
+        echo "cat the build file"
+        cat build
+
         echo "unzip the build folder"
         unzip build
         ls -l
