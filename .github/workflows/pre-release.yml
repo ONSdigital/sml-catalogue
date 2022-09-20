@@ -38,7 +38,8 @@ jobs:
           ${ASSET_URL} \
           --output build
 
-        ls
+        ls -l
+        unzip build
         cd build
         ls
 
