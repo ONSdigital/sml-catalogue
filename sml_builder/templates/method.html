@@ -18,7 +18,15 @@
 {{ page.description | paras }}
 
 <h2> Contact details for this method </h2>
-{{ page.contact_details }}
+{% if page.contact_details %}
+  {% from "components/external-link/_macro.njk" import onsExternalLink %}
+  {{
+      onsExternalLink({
+        "url": 'mailto:' ~ page.contact_details ,
+        "linkText": page.contact_details  
+      })
+  }}
+{% endif %}
 
 {% from "components/metadata/_macro.njk" import onsMetadata %}
 {% set items = [] %}
