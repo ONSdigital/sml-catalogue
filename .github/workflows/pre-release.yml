@@ -47,5 +47,24 @@ jobs:
 
         echo "List all files"
         ls -l
+  run-terraform:
+    runs-on: ubuntu-latest
+    container: onsdigital/spp-terraform:1
+    permissions:
+      id-token: write
+      contents: read    # This is required for actions/checkout
+      pull-requests: write
+      outputs:
+      cloudfront_id: ${{ steps.apply.outputs.cloudfront_id }}
+    steps:
+      - run: echo ${{github.event_name}}
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Configure AWS credentials from Dev account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{secrets.DEV_DEPLOYMENT_ROLE}}
+          aws-region: eu-west-2
 
 # https://github.com/ONSdigital/sml-catalogue/releases/download/untagged-b4baa578f9c18064cf63/build.zip
