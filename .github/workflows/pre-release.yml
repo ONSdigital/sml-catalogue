@@ -38,9 +38,15 @@ jobs:
           ${ASSET_URL} \
           --output build
 
+        echo "list dir"
         ls -l
+
+        echo "unzip the build folder"
         unzip build
+        ls -l
+
+        echo "cd to build directory"
         cd build
-        ls
+        ls -l
 
 # https://github.com/ONSdigital/sml-catalogue/releases/download/untagged-b4baa578f9c18064cf63/build.zip
