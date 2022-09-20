@@ -3,7 +3,7 @@ name: preprod-release
 #   pull_request
 on:
   release:
-    types: [published]
+    types: [published, edited]
 permissions:
   contents: read
 jobs:
