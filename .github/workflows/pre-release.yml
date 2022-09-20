@@ -41,7 +41,7 @@ jobs:
 
         echo "unzip the build folder"
 
-        unzip build.zip build
+        unzip build build.zip 
 
         echo "List all files"
         ls -l -R
