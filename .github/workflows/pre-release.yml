@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: echo ${{toJson(github.event.release.prerelease)}}
-    - run: echo ${{toJson(github.event.action}}
+    - run: echo ${{toJson(github.event.action)}}
     - run: |
         echo "Creating python script"
         cat <<- 'EOF' > script.py
