@@ -10,7 +10,7 @@ jobs:
   get_build_files:
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{github.event.release.isPrerelease}}
+    - run: echo ${{toJson(github.event.release)}}
     - run: |
         echo "Creating python script"
         cat <<- 'EOF' > script.py
@@ -45,6 +45,6 @@ jobs:
         unzip build.zip -d build
 
         echo "List all files"
-        ls -l -R
+        ls -l
 
 # https://github.com/ONSdigital/sml-catalogue/releases/download/untagged-b4baa578f9c18064cf63/build.zip
