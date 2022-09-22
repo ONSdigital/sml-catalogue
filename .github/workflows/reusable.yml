@@ -11,4 +11,4 @@ jobs:
   example_job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{my_var}}
+      - run: echo ${{inputs.my_var}}
