@@ -9,5 +9,6 @@ jobs:
   call-workflow-in-local-repo:
     uses: ./.github/workflows/reusable.yml
     with:
-      my_var: "Just a string"
-    secrets: inherit
+      workspace: ${{github.head_ref}}
+    secrets: 
+      DEPLOYMENT_ROLE: ${{ secrets.DEV_DEPLOYMENT_ROLE }}

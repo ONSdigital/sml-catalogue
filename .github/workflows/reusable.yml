@@ -3,21 +3,20 @@ name: Reusable workflow example
 on:
   workflow_call:
     inputs:
-      my_var:
+      workspace:
         required: true
         type: string
     secrets:
-      DEV_DEPLOYMENT_ROLE:
+      DEPLOYMENT_ROLE:
         required: true
 
 permissions:
   contents: read    # This is required for actions/checkout
 jobs:
   run-terraform:
-    if: ${{github.event.action != 'closed' || github.event.pull_request.merged == true }}
     runs-on: ubuntu-latest
     container: onsdigital/spp-terraform:1
-    concurrency: ${{github.workflow}}-{{ github.head_ref }}-deploy
+    concurrency: ${{github.workflow}}-{{ inputs.workspace}}-deploy
     permissions:
       id-token: write
       contents: read    # This is required for actions/checkout
@@ -32,7 +31,7 @@ jobs:
       - name: Configure AWS credentials from Dev account
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: ${{secrets.DEV_DEPLOYMENT_ROLE}}
+          role-to-assume: ${{secrets.DEPLOYMENT_ROLE}}
           aws-region: eu-west-2
       - name: terraform format
         run: terraform fmt -check -recursive -diff
@@ -46,12 +45,7 @@ jobs:
             -backend-config "key=sml-portal.tfstate" \
             -backend-config "workspace_key_prefix=workspace"
           echo ${{github.event.pull_request.merged}}
-          if ${{github.event.pull_request.merged}}
-          then
-            export TF_WORKSPACE="main"
-          else
-            export TF_WORKSPACE=${{ github.head_ref }}
-          fi
+          export TF_WORKSPACE=${{ inputs.workspace}}
           echo $TF_WORKSPACE
           terraform apply -auto-approve
           echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_ENV
@@ -65,11 +59,10 @@ jobs:
             Workspace URL: ${{env.DEPLOY_URL}}
           allow-repeats: false
   build-files:
-    if: ${{github.event.action != 'closed' || github.event.pull_request.merged == true }}
-    runs-on: ubuntu-latest
+   runs-on: ubuntu-latest
     permissions:
       contents: read 
-    concurrency: ${{github.workflow}}-{{ github.head_ref }}-build
+    concurrency: ${{github.workflow}}-{{ inputs.workspace}}-build
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -101,18 +94,17 @@ jobs:
           path: build.zip
           retention-days: 2
   deploy:
-    if: ${{github.event.action != 'closed' || github.event.pull_request.merged == true }}
     runs-on: ubuntu-latest
     needs: [run-terraform, build-files]
     permissions:
       id-token: write
       contents: read 
-    concurrency: ${{github.workflow}}-{{ github.head_ref }}-deploy
+    concurrency: ${{github.workflow}}-{{ inputs.workspace}}-deploy
     steps:
       - name: Configure AWS credentials from Dev account
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: ${{secrets.DEV_DEPLOYMENT_ROLE}}
+          role-to-assume: ${{secrets.DEPLOYMENT_ROLE}}
           aws-region: eu-west-2
       - name: Download built files
         uses: actions/download-artifact@v3
@@ -126,7 +118,7 @@ jobs:
           then
             workspace_name="main"
           else
-            workspace_name=${{ github.head_ref }}
+            workspace_name=${{ inputs.workspace}}
           fi
           aws s3 sync build s3://sml-portal-$workspace_name --delete --content-type "text/html" --exclude "*.css"
           aws s3 sync build s3://sml-portal-$workspace_name --delete --exclude "*" --include "*.css"
