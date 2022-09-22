@@ -3,7 +3,13 @@ from json import load
 from sml_builder import app
 import markdown
 
-externallink_help_categories = ["report-bug", "provide-feedback", "support"]
+externallink_help_categories = [
+    "report-bug",
+    "provide-feedback",
+    "support",
+    "methods-request",
+    "expert-groups",
+]
 
 
 @app.route("/help-centre/index")
@@ -53,9 +59,12 @@ def guidances(category, sub_category=None):
         except OSError as e:
             _page_not_found(e)
         escaped_text = escape(text)
-        body = Markup(markdown.markdown(escaped_text))
+        body = Markup(markdown.markdown(text))
     else:
-        body = False
+        if sub_category in ["methods-request", "expert-groups"]:
+            body = sub_category
+        else:
+            body = False
 
     help_centre_nav = _help_centre_nav(category)
 
