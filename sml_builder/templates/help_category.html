@@ -1,6 +1,5 @@
 {%- extends "core.html" -%}
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
-{% from "components/label/_macro.njk" import onsLabel %}
 {% from "components/lists/_macro.njk" import onsList %}
 
 {% import "related-content-macro.html" as macros %}
@@ -58,33 +57,34 @@
             })
         }}
       <p>If you already have access to the BAW, and want access to the SML forms: </p>
-      {{
-        onsList({
-            "element": 'ol',
-            "itemsList": [
-                {
-                    "text": 'You can gain access to the SML forms via ServiceNow in “I Want Something > 04 – Software, Applications & Platforms > BAW Support”.'
-                },
-                {
-                    "text": 'Selection the option “Change A User’s Access To A Process App”.'
-                },
-                {
-                    "text": 'Under “Process app name” enter “SML Method Request”.'
-                },
-                {
-                    "text": 'Fill out the other information as appropriate to you.'
-                }
-            ]
-        })
-    }}
-    <p>Once you have been granted access to the SML forms on the BAW, login to the BAW here: {% from "components/external-link/_macro.njk" import onsExternalLink %}
-          {{
-              onsExternalLink({
-                "url": 'https://www.bpm.ibmcloud.com/auth/index.jsp',
-                "linkText": 'https://www.bpm.ibmcloud.com/auth/index.jsp' 
-              })
-          }}
-    </p>
+        {{
+          onsList({
+              "element": 'ol',
+              "itemsList": [
+                  {
+                      "text": 'You can gain access to the SML forms via ServiceNow in “I Want Something > 04 – Software, Applications & Platforms > BAW Support”.'
+                  },
+                  {
+                      "text": 'Selection the option “Change A User’s Access To A Process App”.'
+                  },
+                  {
+                      "text": 'Under “Process app name” enter “SML Method Request”.'
+                  },
+                  {
+                      "text": 'Fill out the other information as appropriate to you.'
+                  }
+              ]
+          })
+        }}
+      <p>Once you have been granted access to the SML forms on the BAW, login to the BAW here: 
+        {% from "components/external-link/_macro.njk" import onsExternalLink %}
+            {{
+                onsExternalLink({
+                  "url": 'https://www.bpm.ibmcloud.com/auth/index.jsp',
+                  "linkText": 'https://www.bpm.ibmcloud.com/auth/index.jsp' 
+                })
+            }}
+      </p>
       <p>Click on “Process Portal”. In the left-hand menu you will see “Create SML Method Request” - if you cannot see a menu on the left-hand side of the screen, click the three horizontal lines at the top left corner of the screen.</p>
       <p>Click on "Create SML Method Request”, and fill out the information in this form to create the desired request.</p>
       <h4>How do I submit new methods, or change existing methods, in the SML? (As an IDS user)</h4>
@@ -107,7 +107,7 @@
                 })
             }} </p>
     {% elif body == "expert-groups" %}
-      <p> Please visit:
+      <p> Please visit
         {% from "components/external-link/_macro.njk" import onsExternalLink %}
         {{
           onsExternalLink({
@@ -115,7 +115,7 @@
             "linkText": 'Expert groups' 
           })
         }}
-    </p>
+      </p>
     {% elif body == false %}
       <p> Please email
         {% from "components/external-link/_macro.njk" import onsExternalLink %}
@@ -126,7 +126,6 @@
             })
         }}
       </p>
-
     {% elif body %}
       {{body}}
     {% endif %}
@@ -144,8 +143,5 @@
         "itemsList": nav
     })
 }}
-
-
-
 {{macros.sml_portal_related_content()}}
 {% endblock %}
