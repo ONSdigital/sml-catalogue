@@ -59,7 +59,7 @@ def guidances(category, sub_category=None):
         except OSError as e:
             _page_not_found(e)
         escaped_text = escape(text)
-        body = Markup(markdown.markdown(text))
+        body = Markup(markdown.markdown(escaped_text))
     else:
         if sub_category in ["methods-request", "expert-groups"]:
             body = sub_category
