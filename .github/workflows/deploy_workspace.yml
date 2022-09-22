@@ -1,0 +1,12 @@
+name: Call a reusable workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  call-workflow-in-local-repo:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      my_var: "Just a string"
