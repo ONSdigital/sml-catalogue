@@ -6,6 +6,11 @@ on:
       my_var:
         required: true
         type: string
+    secrets:
+      DEV_DEPLOYMENT_ROLE:
+        required: true
+      GITHUB_TOKEN:
+        required: true
 
 permissions:
   contents: read    # This is required for actions/checkout
