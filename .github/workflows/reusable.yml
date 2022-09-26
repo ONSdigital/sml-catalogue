@@ -119,7 +119,7 @@ jobs:
       - name: Deploy built files
         run: |
           unzip build.zip
-          workspace_name=${{qinputs.workspace }}
+          workspace_name=${{ inputs.workspace }}
           aws s3 sync build s3://sml-portal-$workspace_name --delete --content-type "text/html" --exclude "*.css"
           aws s3 sync build s3://sml-portal-$workspace_name --delete --exclude "*" --include "*.css"
       - name: Clear cache
