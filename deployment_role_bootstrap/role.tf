@@ -93,7 +93,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                     "s3:GetObject",
                     "s3:DeleteObject"
                 ],
-                "Resource": "arn:aws:s3:::statistical-methods-library-tf-state/*"
+                "Resource": "arn:aws:s3:::statistical-methods-library-tf-state*/*"
             },
             {
                 "Sid": "AllowTerraformStateBucketAccess",

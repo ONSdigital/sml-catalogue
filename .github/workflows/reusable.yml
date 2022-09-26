@@ -9,6 +9,9 @@ on:
       environment:
         required: true
         type: string
+      state_bucket:
+        required: true
+        type: string
     secrets:
       DEPLOYMENT_ROLE:
         required: true
@@ -45,7 +48,7 @@ jobs:
           cd terraform
           terraform init \
             -upgrade \
-            -backend-config "bucket=statistical-methods-library-tf-state" \
+            -backend-config "bucket=${{inputs.state_bucket}}" \
             -backend-config "key=sml-portal.tfstate" \
             -backend-config "workspace_key_prefix=workspace"
           echo ${{github.event.pull_request.merged}}

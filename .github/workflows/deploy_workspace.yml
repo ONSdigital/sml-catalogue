@@ -11,5 +11,6 @@ jobs:
     with:
       workspace: ${{github.head_ref}}
       environment: Development
+      state_bucket: statistical-methods-library-tf-state
     secrets: 
       DEPLOYMENT_ROLE: ${{ secrets.DEV_DEPLOYMENT_ROLE }}
