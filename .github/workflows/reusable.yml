@@ -6,6 +6,9 @@ on:
       workspace:
         required: true
         type: string
+      environment:
+        required: true
+        type: string
     secrets:
       DEPLOYMENT_ROLE:
         required: true
@@ -16,6 +19,7 @@ jobs:
   run-terraform:
     runs-on: ubuntu-latest
     container: onsdigital/spp-terraform:1
+    environment: ${{inputs.environment}}
     concurrency: ${{github.workflow}}-{{ inputs.workspace}}-deploy
     permissions:
       id-token: write
@@ -95,6 +99,7 @@ jobs:
           retention-days: 2
   deploy:
     runs-on: ubuntu-latest
+    environment: ${{inputs.environment}}
     needs: [run-terraform, build-files]
     permissions:
       id-token: write
@@ -114,12 +119,7 @@ jobs:
       - name: Deploy built files
         run: |
           unzip build.zip
-          if ${{github.event.pull_request.merged}}
-          then
-            workspace_name="main"
-          else
-            workspace_name=${{ inputs.workspace}}
-          fi
+          workspace_name=${{qinputs.workspace }}
           aws s3 sync build s3://sml-portal-$workspace_name --delete --content-type "text/html" --exclude "*.css"
           aws s3 sync build s3://sml-portal-$workspace_name --delete --exclude "*" --include "*.css"
       - name: Clear cache

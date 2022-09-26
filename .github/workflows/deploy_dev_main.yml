@@ -9,7 +9,7 @@ jobs:
   call-workflow-in-local-repo:
     uses: ./.github/workflows/reusable.yml
     with:
-      workspace: ${{github.head_ref}}
+      workspace: main
       environment: Development
     secrets: 
       DEPLOYMENT_ROLE: ${{ secrets.DEV_DEPLOYMENT_ROLE }}
