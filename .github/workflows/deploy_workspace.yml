@@ -1,4 +1,4 @@
-name: Call a reusable workflow
+name: Deploy workspace
 
 on:
   pull_request:

@@ -1,0 +1,23 @@
+name: Call a reusable workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy-preprod:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      workspace: main
+      environment: preprod
+    secrets: 
+      DEPLOYMENT_ROLE: ${{ secrets.PREPROD_DEPLOYMENT_ROLE }}
+  deploy-prod:
+    needs: deploy-preprod
+    uses: ./.github/workflows/reusable.yml
+    with:
+      workspace: main
+      environment: prod
+    secrets: 
+      DEPLOYMENT_ROLE: ${{ secrets.PROD_DEPLOYMENT_ROLE }}
