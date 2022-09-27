@@ -10,7 +10,7 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     with:
       workspace: main
-      environment: Development
+      environment: dev
       state_bucket: statistical-methods-library-tf-state
     secrets: 
       DEPLOYMENT_ROLE: ${{ secrets.DEV_DEPLOYMENT_ROLE }}

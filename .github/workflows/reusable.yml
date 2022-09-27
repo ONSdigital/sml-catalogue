@@ -46,7 +46,7 @@ jobs:
         name: Apply terraform
         run: |
           cd terraform
-          environment=$(echo "${{inputs.environment}}"| tr "[:upper:]" "[:lower:]")
+          environment=${{inputs.environment}}
           echo "${environment}"
           terraform init \
             -upgrade \
