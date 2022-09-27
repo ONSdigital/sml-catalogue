@@ -55,7 +55,7 @@ resource "aws_iam_role" "deployment_role_sml" {
       Condition = {
         StringLike = {
           "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com",
-          "token.actions.githubusercontent.com:sub" = "repo:ONSdigital/sml-catalogue:*"
+          "token.actions.githubusercontent.com:sub" = "repo:ONSdigital/sml-catalogue:environment:${var.environment}"
         }
       }
     }

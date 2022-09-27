@@ -27,5 +27,7 @@ export TF_WORKSPACE="account"
 if [ "$1" == "destroy" ]; then
   terraform destroy
 else
-  terraform apply
+  terraform apply \
+    -auto-approve \
+    -var="enivronment=$2"
 fi
