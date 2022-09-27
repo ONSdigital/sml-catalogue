@@ -101,7 +101,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "Action": [
                     "s3:ListBucket"
                 ],
-                "Resource": "arn:aws:s3:::statistical-methods-library-tf-state"
+                "Resource": "arn:aws:s3:::statistical-methods-library-tf-state*"
             },
             {
                 "Sid": "AllowDeploymentBucketAccess",

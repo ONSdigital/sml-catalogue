@@ -50,7 +50,8 @@ jobs:
             -upgrade \
             -backend-config "bucket=${{inputs.state_bucket}}" \
             -backend-config "key=sml-portal.tfstate" \
-            -backend-config "workspace_key_prefix=workspace"
+            -backend-config "workspace_key_prefix=workspace" \
+            -var='environment="${{inputs.environment}}"'
           echo ${{github.event.pull_request.merged}}
           export TF_WORKSPACE=${{ inputs.workspace}}
           echo $TF_WORKSPACE
