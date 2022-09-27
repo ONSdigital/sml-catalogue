@@ -18,7 +18,6 @@ jobs:
   deploy-preprod:
     needs: deploy-dev-main
     uses: ./.github/workflows/reusable.yml
-    environment: preprod
     with:
       workspace: main
       environment: preprod
@@ -27,7 +26,6 @@ jobs:
       DEPLOYMENT_ROLE: ${{ secrets.PREPROD_DEPLOYMENT_ROLE }}
   deploy-prod:
     needs: deploy-preprod
-    environment: prod
     uses: ./.github/workflows/reusable.yml
     with:
       workspace: main

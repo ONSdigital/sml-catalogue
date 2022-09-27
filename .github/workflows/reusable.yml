@@ -21,6 +21,7 @@ permissions:
 jobs:
   run-terraform:
     runs-on: ubuntu-latest
+    environment: ${{inputs.environment}}
     container: onsdigital/spp-terraform:1
     concurrency: ${{github.workflow}}-${{inputs.workspace}}-${{inputs.environment}}-deploy
     permissions:
@@ -104,6 +105,7 @@ jobs:
           retention-days: 2
   deploy:
     runs-on: ubuntu-latest
+    environment: ${{inputs.environment}}
     needs: [run-terraform, build-files]
     permissions:
       id-token: write

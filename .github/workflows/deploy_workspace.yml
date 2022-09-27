@@ -1,4 +1,4 @@
-name: Call a reusable workflow
+name: Deploy workspace
 
 on:
   pull_request:
@@ -8,7 +8,6 @@ on:
 jobs:
   call-workflow-in-local-repo:
     uses: ./.github/workflows/reusable.yml
-    environment: dev
     with:
       workspace: ${{github.head_ref}}
       environment: dev
