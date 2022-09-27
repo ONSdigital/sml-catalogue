@@ -1,4 +1,4 @@
-name: Call a reusable workflow
+name: Deploy preprod and prod
 
 on:
   pull_request:

@@ -50,12 +50,13 @@ jobs:
             -upgrade \
             -backend-config "bucket=${{inputs.state_bucket}}" \
             -backend-config "key=sml-portal.tfstate" \
-            -backend-config "workspace_key_prefix=workspace" \
-            -var='environment="${{inputs.environment}}"'
+            -backend-config "workspace_key_prefix=workspace"
           echo ${{github.event.pull_request.merged}}
           export TF_WORKSPACE=${{ inputs.workspace}}
           echo $TF_WORKSPACE
-          terraform apply -auto-approve
+          terraform apply \
+            -auto-approve \
+            -var='environment="${{inputs.environment}}"'
           echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_ENV
           echo "::set-output name=cloudfront_id::`terraform output -raw cloudfront_id`"
       - name: Add deploy URL to PR comment
