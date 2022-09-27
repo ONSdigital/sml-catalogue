@@ -1,32 +1,33 @@
 #!/bin/sh
 
 if [ "$1" == "" ]; then
-  echo "Usage: bootstrap_role.sh apply|destroy PROD|PREPROD|DEV"
+  echo "Usage: bootstrap_role.sh apply|destroy prod|preprod|dev"
   exit 1
 fi
 
-if [ "$2" == "PROD" ]; then
+if [ "$2" == "prod" ]; then
   bucket="statistical-methods-library-tf-state-prod"
-elif [ "$2" == "PREPROD" ]; then
+elif [ "$2" == "preprod" ]; then
   bucket="statistical-methods-library-tf-state-preprod"
-elif [ "$2" == "DEV" ]; then
+elif [ "$2" == "dev" ]; then
   bucket="statistical-methods-library-tf-state"
 else
-  echo "Usage: bootstrap_role.sh apply|destroy PROD|PREPROD|DEV"
+  echo "Usage: bootstrap_role.sh apply|destroy prod|preprod|dev"
   exit 1
 fi
 
-cd terraform
 terraform init \
   -reconfigure \
   -upgrade \
   -backend-config "bucket=$bucket" \
   -backend-config "key=sml-portal.tfstate" \
-  -backend-config "workspace_key_prefix=workspace"
+  -backend-config "workspace_key_prefix=account"
 
-export TF_WORKSPACE=`git branch --show-current`
+export TF_WORKSPACE="account"
 if [ "$1" == "destroy" ]; then
   terraform destroy
 else
-  terraform apply
+  terraform apply \
+    -auto-approve \
+    -var="environment=$2"
 fi

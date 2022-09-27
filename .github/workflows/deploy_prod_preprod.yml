@@ -1,0 +1,34 @@
+name: Deploy preprod and prod
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy-dev-main:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      workspace: main
+      environment: dev
+      state_bucket: statistical-methods-library-tf-state
+    secrets: 
+      DEPLOYMENT_ROLE: ${{ secrets.DEV_DEPLOYMENT_ROLE }}
+  deploy-preprod:
+    needs: deploy-dev-main
+    uses: ./.github/workflows/reusable.yml
+    with:
+      workspace: main
+      environment: preprod
+      state_bucket: statistical-methods-library-tf-state-preprod
+    secrets: 
+      DEPLOYMENT_ROLE: ${{ secrets.PREPROD_DEPLOYMENT_ROLE }}
+  deploy-prod:
+    needs: deploy-preprod
+    uses: ./.github/workflows/reusable.yml
+    with:
+      workspace: main
+      environment: prod
+      state_bucket: statistical-methods-library-tf-state-prod
+    secrets: 
+      DEPLOYMENT_ROLE: ${{ secrets.PROD_DEPLOYMENT_ROLE }}

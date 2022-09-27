@@ -1,0 +1,70 @@
+name: preprod-release
+# on:
+#   pull_request
+on:
+  release:
+    types: [published, edited, prereleased, released]
+permissions:
+  contents: read
+jobs:
+  get_build_files:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo ${{toJson(github.event.release.prerelease)}}
+    - run: echo ${{toJson(github.event.action)}}
+    - run: |
+        echo "Creating python script"
+        cat <<- 'EOF' > script.py
+        import json
+        import sys
+        import os
+        assets = json.loads(sys.argv[1])
+        for asset in assets:
+            if asset["name"] == "build.zip":
+                os.environ["ASSET_URL"] = asset["url"]
+                print(asset["url"])
+                break
+        EOF
+
+        echo "Parsing the json with python"
+        ASSET_URL=$(python3 script.py '${{ toJson(github.event.release.assets) }}')
+        rm script.py
+
+        echo "URL to access"
+        echo ${ASSET_URL}
+
+        echo "running curl"
+        curl \
+          -L\
+          -H "Accept: application/octet-stream" \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          ${ASSET_URL} \
+          --output build.zip
+
+        echo "unzip the build folder"
+
+        unzip build.zip -d build
+
+        echo "List all files"
+        ls -l
+  run-terraform:
+    runs-on: ubuntu-latest
+    container: onsdigital/spp-terraform:1
+    permissions:
+      id-token: write
+      contents: read    # This is required for actions/checkout
+      pull-requests: write
+      outputs:
+      cloudfront_id: ${{ steps.apply.outputs.cloudfront_id }}
+    steps:
+      - run: echo ${{github.event_name}}
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Configure AWS credentials from Dev account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{github.event.release.prerelease && secrets.PREPROD_DEPLOYMENT_ROLE || secrets.PROD_DEPLOYMENT_ROLE}}
+          aws-region: eu-west-2
+
+# https://github.com/ONSdigital/sml-catalogue/releases/download/untagged-b4baa578f9c18064cf63/build.zip

@@ -29,7 +29,7 @@ resource "aws_cloudfront_distribution" "sml-catalogue" {
 
   logging_config {
     include_cookies = false
-    bucket          = "statistical-methods-library-cf-logs.s3.amazonaws.com"
+    bucket          = "statistical-methods-library-cf-logs-${var.environment}.s3.amazonaws.com"
     prefix          = terraform.workspace
   }
 
