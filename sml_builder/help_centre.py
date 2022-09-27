@@ -61,15 +61,14 @@ def guidances(category, sub_category=None):
         escaped_text = escape(text)
         body = Markup(markdown.markdown(escaped_text))
     else:
-        if sub_category in ["methods-request", "expert-groups"]:
-            body = sub_category
-        else:
-            body = False
+        body = False
 
     help_centre_nav = _help_centre_nav(category)
 
     return render_template(
-        "help_category.html",
+        "help-methods-request.html"
+        if sub_category == "methods-request"
+        else "help_category.html",
         body=body,
         category_label=category_label,
         sub_category_label=sub_category_label,

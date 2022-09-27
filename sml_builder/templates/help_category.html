@@ -16,7 +16,7 @@
   <h1>Help centre</h1>
     <h2>{{category_label}}</h2>
     <h3>{{sub_category_label}}</h3>
-    {%if body == "expert-groups" %}
+    {%if sub_category == "expert-groups" %}
       <p> Please visit
         {% from "components/external-link/_macro.njk" import onsExternalLink %}
         {{
@@ -26,7 +26,7 @@
           })
         }}
       </p>
-    {% elif body == false %}
+    {% elif sub_category in ("report-bug","provide-feedback","support") %}
       <p> Please email
         {% from "components/external-link/_macro.njk" import onsExternalLink %}
         {{
