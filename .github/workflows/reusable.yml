@@ -1,4 +1,4 @@
-name: Reusable workflow example
+name: Build and deploy
 
 on:
   workflow_call:
@@ -22,7 +22,6 @@ jobs:
   run-terraform:
     runs-on: ubuntu-latest
     container: onsdigital/spp-terraform:1
-    environment: ${{inputs.environment}}
     concurrency: ${{github.workflow}}-${{inputs.workspace}}-${{inputs.environment}}-deploy
     permissions:
       id-token: write
@@ -105,7 +104,6 @@ jobs:
           retention-days: 2
   deploy:
     runs-on: ubuntu-latest
-    environment: ${{inputs.environment}}
     needs: [run-terraform, build-files]
     permissions:
       id-token: write
