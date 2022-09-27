@@ -8,10 +8,10 @@ on:
 jobs:
   deploy-preprod:
     uses: ./.github/workflows/reusable.yml
+    environment: preprod
     with:
       workspace: main
       environment: preprod
-
       state_bucket: statistical-methods-library-tf-state-preprod
     secrets: 
       DEPLOYMENT_ROLE: ${{ secrets.PREPROD_DEPLOYMENT_ROLE }}
