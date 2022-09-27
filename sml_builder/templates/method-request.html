@@ -1,0 +1,122 @@
+{%- extends "core.html" -%}
+{% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
+{% from "components/lists/_macro.njk" import onsList %}
+
+{% import "related-content-macro.html" as macros %}
+
+{% set mainCols = 7 %}
+{% set asideCol =  {
+    "position": "after",
+    "colClasses": "ons-u-mt-l ons-u-mb-l ons-related-content ons-push-1@m"
+  }
+%}
+{%- set page_title = "Help centre" -%}
+{%- set current_path = url_for("help_centre") -%}
+{%- block main -%}
+  <h1>Help centre</h1>
+    <h2>{{category_label}}</h2>
+    <h3>{{sub_category_label}}</h3>
+    <h4>How do I submit new methods, or change existing methods, in the SML? (As an ONS Internal user)</h4>
+    <p>Method requests can be raised to:</p>
+        {{
+            onsList({
+                "variants": 'dashed',
+                "itemsList": [
+                    {
+                        "text": 'Have new methods developed for the Statistical Methods Library.'
+                    },
+                    {
+                        "text": 'Add existing code to the Statistical Methods Library.'
+                    },
+                    {
+                        "text": 'Change existing methods held within the Statistical Methods Library.'
+                    }
+                ]
+            })
+        }}
+    <p>Method requests can be submitted to the ONS Statistical Methods Library via the IBM Business Automation Workflow (BAW). The BAW is used across the ONS for a variety of purposes, so you may have access to this tool already.</p>
+    <p>If you do not have access to the IBM Business Automation Workflow (BAW): </p>
+        {{
+            onsList({
+                "element": 'ol',
+                "itemsList": [
+                    {
+                        "text": 'You can gain access to the BAW via ServiceNow in “I Want Something > 04 – Software, Applications & Platforms > BAW Support”.'
+                    },
+                    {
+                        "text": 'Select the option “Add A New BAW User”.'
+                    },
+                    {
+                        "text": 'Under “Process app name” enter “SML Method Request”.'
+                    },
+                    {
+                        "text": 'Fill out the other information as appropriate to you.'
+                    }
+                ]
+            })
+        }}
+    <p>If you already have access to the BAW, and want access to the SML forms: </p>
+        {{
+        onsList({
+            "element": 'ol',
+            "itemsList": [
+                {
+                    "text": 'You can gain access to the SML forms via ServiceNow in “I Want Something > 04 – Software, Applications & Platforms > BAW Support”.'
+                },
+                {
+                    "text": 'Selection the option “Change A User’s Access To A Process App”.'
+                },
+                {
+                    "text": 'Under “Process app name” enter “SML Method Request”.'
+                },
+                {
+                    "text": 'Fill out the other information as appropriate to you.'
+                }
+            ]
+        })
+        }}
+    <p>Once you have been granted access to the SML forms on the BAW, login to the BAW here: 
+        {% from "components/external-link/_macro.njk" import onsExternalLink %}
+            {{
+                onsExternalLink({
+                "url": 'https://www.bpm.ibmcloud.com/auth/index.jsp',
+                "linkText": 'https://www.bpm.ibmcloud.com/auth/index.jsp' 
+                })
+            }}
+    </p>
+    <p>Click on “Process Portal”. In the left-hand menu you will see “Create SML Method Request” - if you cannot see a menu on the left-hand side of the screen, click the three horizontal lines at the top left corner of the screen.</p>
+    <p>Click on "Create SML Method Request”, and fill out the information in this form to create the desired request.</p>
+    <h4>How do I submit new methods, or change existing methods, in the SML as a non-ONS user?</h4>
+    <p>Currently we do not accept formal method submissions or change requests from external users, In future, we will accept certain method requests via the Integrated Data Service
+        {% from "components/external-link/_macro.njk" import onsExternalLink %}
+                {{
+                    onsExternalLink({
+                    "url": 'https://integrateddataservice.gov.uk/',
+                    "linkText": 'https://integrateddataservice.gov.uk/' 
+                    })
+                }}. If you would like to make a suggestion
+        for a new method, or to provide feedback about an existing method, please do so by emailing 
+        {% from "components/external-link/_macro.njk" import onsExternalLink %}
+                {{
+                    onsExternalLink({
+                    "url": 'mailto:smlhelp@ons.gov.uk',
+                    "linkText": 'smlhelp@ons.gov.uk' 
+                    })
+                }} 
+    </p>
+{%- endblock main-%}
+
+{% block aside %}
+<h2 class="ons-related-content__title ons-u-fs-r--b ons-u-mb-xs">Other 'how to' list categories</h2>
+{% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
+{{
+    onsSectionNavigation({
+        "variants": "vertical",
+        "id": "section-menu",
+        "currentPath": url_for("guidances", category=category),
+        "classes": "ons-related-content",
+        "itemsList": nav
+    })
+}}
+{{macros.sml_portal_related_content()}}
+{% endblock %}
