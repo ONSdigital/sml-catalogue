@@ -8,7 +8,6 @@ on:
 jobs:
   deploy-dev-main:
     uses: ./.github/workflows/reusable.yml
-    environment: dev
     with:
       workspace: main
       environment: dev
