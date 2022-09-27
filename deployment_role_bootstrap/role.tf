@@ -120,7 +120,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                     "s3:PutBucketAcl"
                 ],
                 "Resource": [
-                    "arn:aws:s3:::statistical-methods-library-cf-logs"
+                    "arn:aws:s3:::statistical-methods-library-cf-logs*"
                 ]
             }
         ]
