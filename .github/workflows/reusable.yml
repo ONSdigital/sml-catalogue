@@ -47,7 +47,7 @@ jobs:
         run: |
           cd terraform
           environment="${${{inputs.environment}},,}"
-          echo ${environment}
+          echo "${environment}"
           terraform init \
             -upgrade \
             -backend-config "bucket=${{inputs.state_bucket}}" \
