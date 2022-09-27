@@ -6,7 +6,17 @@ on:
       - main
 
 jobs:
+  deploy-dev-main:
+    uses: ./.github/workflows/reusable.yml
+    environment: dev
+    with:
+      workspace: main
+      environment: dev
+      state_bucket: statistical-methods-library-tf-state
+    secrets: 
+      DEPLOYMENT_ROLE: ${{ secrets.DEV_DEPLOYMENT_ROLE }}
   deploy-preprod:
+    needs: deploy-dev-main
     uses: ./.github/workflows/reusable.yml
     environment: preprod
     with:
@@ -17,6 +27,7 @@ jobs:
       DEPLOYMENT_ROLE: ${{ secrets.PREPROD_DEPLOYMENT_ROLE }}
   deploy-prod:
     needs: deploy-preprod
+    environment: prod
     uses: ./.github/workflows/reusable.yml
     with:
       workspace: main
