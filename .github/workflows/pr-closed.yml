@@ -11,6 +11,7 @@ permissions:
 jobs:
   delete-workspace:
     runs-on: ubuntu-latest
+    environment: dev
     container: onsdigital/spp-terraform:1
     concurrency: ${{github.workflow}}-${{github.head_ref}}-destroy
     steps:
@@ -25,7 +26,11 @@ jobs:
       - name: Terraform destroy
         run: |
           cd terraform
-          terraform init
+          terraform init \
+            -upgrade \
+            -backend-config "bucket=statistical-methods-library-tf-state" \
+            -backend-config "key=sml-portal.tfstate" \
+            -backend-config "workspace_key_prefix=${{ github.head_ref }}"
           export TF_WORKSPACE=${{ github.head_ref }}
           terraform destroy -auto-approve
           export TF_WORKSPACE=""
