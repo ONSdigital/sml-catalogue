@@ -62,6 +62,7 @@ jobs:
           echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_ENV
           echo "::set-output name=cloudfront_id::`terraform output -raw cloudfront_id`"
       - name: Add deploy URL to PR comment
+        if: ${{github.event_name == pull_request}}
         uses: mshick/add-pr-comment@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
