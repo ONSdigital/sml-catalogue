@@ -1,18 +1,18 @@
 #!/bin/sh
 
 if [ "$1" == "" ]; then
-  echo "Usage: bootstrap_role.sh apply|destroy PROD|PREPROD|DEV"
+  echo "Usage: bootstrap_role.sh apply|destroy prod|preprod|dev"
   exit 1
 fi
 
-if [ "$2" == "PROD" ]; then
+if [ "$2" == "prod" ]; then
   bucket="statistical-methods-library-tf-state-prod"
-elif [ "$2" == "PREPROD" ]; then
+elif [ "$2" == "preprod" ]; then
   bucket="statistical-methods-library-tf-state-preprod"
-elif [ "$2" == "DEV" ]; then
+elif [ "$2" == "dev" ]; then
   bucket="statistical-methods-library-tf-state"
 else
-  echo "Usage: bootstrap_role.sh apply|destroy PROD|PREPROD|DEV"
+  echo "Usage: bootstrap_role.sh apply|destroy prod|preprod|dev"
   exit 1
 fi
 
@@ -29,5 +29,5 @@ if [ "$1" == "destroy" ]; then
 else
   terraform apply \
     -auto-approve \
-    -var="enivronment=$2"
+    -var="environment=$2"
 fi
