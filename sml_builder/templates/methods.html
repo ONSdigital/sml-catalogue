@@ -4,16 +4,16 @@
 {%- block main -%}
  
 <h1 class="ons-u-mt-no">All methods</h1>
-<p>Here you may discover statistical methods used by the Office for National Statistics.</p>
+<p>Here you will discover statistical methods used by the Office for National Statistics.</p>
 
 {% from "components/panel/_macro.njk" import onsPanel %}
 
 {% call onsPanel({}) %}
   <p>Codes and specification permission</p>
   <ul>
-    <li>Public methods’ access can only be requested ONS employees</li>
-    <li>Internal methods' access can be requested by: (i) all ONS employees and; (ii) external individuals</li>
-    <li>Private methods’ access can only be requested by ONS employees</li>
+    <li>Public methods can be accessed freely by everyone</li>
+    <li>Internal methods’ access can be requested by ONS employees via their ONS Digital GitHub account</li>
+    <li>Private methods can only be accessed upon request based on proposed usage</li>
   </ul>
 {% endcall %}
 

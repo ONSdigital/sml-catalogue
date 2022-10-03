@@ -23,7 +23,7 @@
         "subcategories":[
             {
                 "name":"run_a_method",
-                "label": "How to run a method?"
+                "label": "How to use a method?"
             },
             {
                 "name":"access_specification",
