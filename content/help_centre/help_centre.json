@@ -25,10 +25,6 @@
                 {
                     "name": "run-a-method",
                     "label": "How to use a method"
-                },
-                {
-                    "name": "access-specification-code",
-                    "label": "How to access a method specification and code"
                 }
             ]
         },
