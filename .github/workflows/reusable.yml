@@ -54,7 +54,7 @@ jobs:
             -backend-config "key=sml-portal.tfstate" \
             -backend-config "workspace_key_prefix=workspace"
           echo ${{github.event.pull_request.merged}}
-          export TF_WORKSPACE=${{ inputs.workspace}}
+          export TF_WORKSPACE=$(echo ${{inputs.workspace}} | tr "[:upper:]" "[:lower:]")
           echo $TF_WORKSPACE
           terraform apply \
             -auto-approve \
@@ -126,8 +126,8 @@ jobs:
       - name: Deploy built files
         run: |
           unzip build.zip
-          workspace_name=${{ inputs.workspace }}
-          environment=$(echo "${{inputs.environment}}"| tr "[:upper:]" "[:lower:]")
+          workspace_name=$(echo "${{inputs.workspace}}" | tr "[:upper:]" "[:lower:]")
+          environment=$(echo "${{inputs.environment}}" | tr "[:upper:]" "[:lower:]")
           aws s3 sync build s3://sml-portal-$environment-$workspace_name --delete --content-type "text/html" --exclude "*.css"
           aws s3 sync build s3://sml-portal-$environment-$workspace_name --delete --exclude "*" --include "*.css"
       - name: Clear cache

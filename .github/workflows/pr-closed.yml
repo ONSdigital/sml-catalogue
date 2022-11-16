@@ -30,7 +30,7 @@ jobs:
             -upgrade \
             -backend-config "bucket=statistical-methods-library-tf-state" \
             -backend-config "key=sml-portal.tfstate" \
-            -backend-config "workspace_key_prefix=${{ github.head_ref }}"
+            -backend-config "workspace_key_prefix=workspace"
           export TF_WORKSPACE=${{ github.head_ref }}
           terraform destroy \
             -auto-approve \
