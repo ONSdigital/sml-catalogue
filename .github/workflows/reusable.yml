@@ -54,7 +54,7 @@ jobs:
             -backend-config "key=sml-portal.tfstate" \
             -backend-config "workspace_key_prefix=workspace"
           echo ${{github.event.pull_request.merged}}
-          export TF_WORKSPACE=${{ inputs.workspace}}
+          export TF_WORKSPACE=$(echo ${{inputs.workspace}} | tr "[:upper:]" "[:lower:]")
           echo $TF_WORKSPACE
           terraform apply \
             -auto-approve \
