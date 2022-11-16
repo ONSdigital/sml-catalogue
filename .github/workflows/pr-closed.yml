@@ -31,10 +31,10 @@ jobs:
             -backend-config "bucket=statistical-methods-library-tf-state" \
             -backend-config "key=sml-portal.tfstate" \
             -backend-config "workspace_key_prefix=workspace"
-          export TF_WORKSPACE=${{ github.head_ref }}
+          export TF_WORKSPACE=$(echo "${{github.head_ref}}" | tr "[:upper:]" "[:lower:]")
           terraform destroy \
             -auto-approve \
             -var="environment=dev"
           export TF_WORKSPACE=""
-          terraform workspace delete ${{ github.head_ref }} || ( echo "ERROR: Could not delete workspace!" && exit 1)
+          terraform workspace delete $(echo "${{github.head_ref}}" | tr "[:upper:]" "[:lower:]") || ( echo "ERROR: Could not delete workspace!" && exit 1)
   
