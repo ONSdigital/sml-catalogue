@@ -12,7 +12,7 @@ jobs:
   delete-workspace:
     runs-on: ubuntu-latest
     environment: dev
-    container: onsdigital/spp-terraform:1
+    container: public.ecr.aws/ons-spp/terraform:1
     concurrency: ${{github.workflow}}-${{github.head_ref}}-destroy
     steps:
       - name: Check out repository code
