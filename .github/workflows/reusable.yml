@@ -22,7 +22,7 @@ jobs:
   run-terraform:
     runs-on: ubuntu-latest
     environment: ${{inputs.environment}}
-    container: onsdigital/spp-terraform:1
+    container: public.ecr.aws/ons-spp/terraform:1
     concurrency: ${{github.workflow}}-${{inputs.workspace}}-${{inputs.environment}}-deploy
     permissions:
       id-token: write
