@@ -37,7 +37,7 @@ $ sudo rm -rf /Library/Developer/CommandLineTools
 $ xcode-select --install
 $ /usr/bin/xcodebuild -version
 
-This will reinstall comand line tools and has been [documented to fix said issue](https://github.com/pyenv/pyenv/issues/1738).
+This will re-install comand line tools and has been [documented to fix said issue](https://github.com/pyenv/pyenv/issues/1738).
 
 With [Jsonnet](https://jsonnet.org/learning/getting_started.html) content in the `content/` directory, you should now be able to run the Flask demo server:
 
