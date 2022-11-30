@@ -40,7 +40,7 @@ $ /usr/bin/xcodebuild -version
 This will re-install comand line tools and has been [documented to fix said issue](https://github.com/pyenv/pyenv/issues/1738).
 
 With [Jsonnet](https://jsonnet.org/learning/getting_started.html) content in the `content/` directory, you should now be able to run the Flask demo server:
-attempt
+attempt five
 ```shell
 pipenv run flask --app sml_builder --debug run
 ```
