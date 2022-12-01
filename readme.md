@@ -1,59 +1,53 @@
 # SML Portal
 
-This repo contains the build environment and code to generate and upload the Statistical Methods Library (SML) Portal website.
+This repo contains the build environment and code to generate and upload the Statistical Methods Library (SML) Portal Web Application.
 
-## Build and deploy
+## Prerequisites
 
-### S3 Bucket creation
+Before continuing, install the following tools:
 
-[Terraform](https://www.terraform.io/intro) is used to deploy the S3 Bucket where the website is hosted. The S3 bucket will be suffixed with the currently checked-out gt branch name.
+[**Homebrew**](https://brew.sh/): Follow the instructions on this page
 
-Fetch your AWS credentials and export them to the terminal. Then:
+[**Python 3.10.0**](https://www.python.org/downloads/macos/): To install python on your local system, you can visit this link and install the relevant version (Python 3.10.0)
 
-```shell
-./terraform.sh apply
-```
+You will need to install pipenv to install the python dependencies and pyenv if you want to manage multiple versions of python. Refer to the [confluence page](https://confluence.ons.gov.uk/pages/viewpage.action?pageId=14902311) for guidance on this.
 
-This command will output the URL for your new site, and will have the form `https://xxxxxxx.cloudfront.net/`.
+## Build and Deploy
 
-### Fetch ONS Design System
+### Fetch the ONS Design System
 
 Download the release of the ONS Design System, and unpack them into the correct location with this command:
 
-```shell
+```bash
 ./get_design_system.sh
 ```
 
-### Make the site
+## Make the site
 
-You will first need to install the python dependencies, including [Frozen-flask](https://pythonhosted.org/Frozen-Flask/), the static website generator:
+You will need to install the python dependencies, including Frozen-Flask, the static website generator:
 
-```shell
+```bash
 pipenv sync
 ```
 
-With [Jsonnet](https://jsonnet.org/learning/getting_started.html) content in the `content/` directory, you should now be able to run the Flask demo server:
+With Jsonnet content in the content/ directory, you should now be able to run the Flask demo server:
 
-```shell
+```bash
 pipenv run flask --app sml_builder --debug run
 ```
 
-If this all goes well with no errors, you should now be able to navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to view the site. And if that all looks good, you can now "freeze" the site, rendering it to HTML, and uploading it to AWS. You will need to have valid AWS credentials exported to the shell for the target environment.
-
-```shell
-./freeze-n-load.sh
-```
-
-## Destroying your site
-
-When you have merged, or have otherwise finished with your feature branch, you will want to delete the deployed site. Simply run:
-
-```shell
-./terraform.sh destroy
-```
+If everything runs without errors (If you have the latest macOS version this app may crash or not run as of now macOS Monterey control center uses port 5000. In this case give a another port number), you should now be able to navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to view the site.
 
 ## Troubleshooting
 
-* __Access denied message when trying to reach CloudFront URL__
-  * One common cause of this error message is not having uploaded your site yet.
-  * Are you coming from a non-UK IP address, possbly due to a VPN being active? If so, switch this off and try again. Geographical restrictions are in place.
+### Access denied message when trying to reach CloudFront URL
+
+- One common cause of this error message is not having uploaded your site yet.
+- Are you coming from a non-UK IP address, possibly due to a VPN being active? If so, switch this off and try again. Geographical restrictions are in place.
+
+**If you have any errors running the pipenv sync command and running the web app or any other errors, it maybe because of issues relating to your latest macOS version and xcode command line tools installed. You can try the command below where you will remove and reinstall Xcode command line tools:**
+
+```bash
+sudo rm -rf /Library/Developer/CommandLineTools
+xcode-select --install
+/usr/bin/xcodebuild -version```
