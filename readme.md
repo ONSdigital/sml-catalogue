@@ -12,7 +12,7 @@ Before continuing, install the following tools:
 
 You will need to install [pipenv](https://pypi.org/project/pipenv/) to install the python dependencies. If you want to manage multiple versions of python you will need to install `pyenv`.
 
-Refer to the [confluence page](https://confluence.ons.gov.uk/pages/viewpage.action?pageId=14902311) for guidance installing and using pipenv and pyenv.
+Refer to the [confluence page](https://confluence.ons.gov.uk/display/ESD/Guide+on+using+pipenv%2C+pyenv+and+venv) for guidance installing and using pipenv and pyenv.
 
 You will also need to have installed [wget](https://formulae.brew.sh/formula/wget) to fecth the `ONS Design System`.
 
