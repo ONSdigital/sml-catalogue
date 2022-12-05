@@ -8,7 +8,7 @@ Before continuing, install the following tools:
 
 [**Homebrew**](https://brew.sh/): Follow the instructions on this page
 
-[**Python 3.10.0**](https://www.python.org/downloads/macos/): To install the correct version of python on your local system, check the pipfile and then install the relevant version.
+[**Python**](https://www.python.org/downloads/macos/): To install the correct version of python on your local system, check the pipfile and then install the relevant version.
 
 You will need to install [pipenv](https://pypi.org/project/pipenv/) to install the python dependencies. If you want to manage multiple versions of python you will need to install `pyenv`.
 
