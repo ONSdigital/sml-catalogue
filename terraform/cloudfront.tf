@@ -84,7 +84,7 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
 resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
-output "website_url" {
+output "cf_website_url" {
   value = "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
 }
 
