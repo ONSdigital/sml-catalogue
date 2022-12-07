@@ -1,5 +1,5 @@
 data "aws_route53_zone" "onsdigital" {
-  name         = local.domain_name_base[var.account]
+  name         = local.domain_name_base[var.environment]
   private_zone = false
 }
 
