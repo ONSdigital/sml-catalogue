@@ -25,6 +25,10 @@
                 {
                     "name": "run-a-method",
                     "label": "How to use a method"
+                },
+                {
+                    "name": "selective-edit-example",
+                    "label": "Selective Edit example"
                 }
             ]
         },
