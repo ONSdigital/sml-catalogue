@@ -1,6 +1,7 @@
 {%- extends "core.html" -%}
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {% from "components/lists/_macro.njk" import onsList %}
+{% from "components/collapsible/_macro.njk" import onsCollapsible %}
 
 {% import "related-content-macro.html" as macros %}
 
@@ -17,7 +18,6 @@
     <h2>{{category_label}}</h2>
     <h3>{{sub_category_label}}</h3>
 
-{% from "components/collapsible/_macro.njk" import onsCollapsible %}
 {% call onsCollapsible({
       "id": "collapsibleONSInternalUserId",
       "title": "I am an ONS internal user"
@@ -99,7 +99,6 @@
     <p>Click on "Create SML Method Request”, and fill out the information in this form to create the desired request.</p>
 {% endcall %}
 
-{% from "components/collapsible/_macro.njk" import onsCollapsible %}
 {% call onsCollapsible({
       "id": "collapsibleONSExternalUserId",
       "title": "I am a user from outside the ONS"
