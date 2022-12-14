@@ -24,8 +24,6 @@
     score are checked, low scoring contributors pass through unchecked.
   |||,
   additional_info: |||
-    Below are some links that will help you further understand the method. 
-    
-    The code link takes you to the repo while the specification and read me links take you to some further reading.
+    Links to the method code, specification and user guidance are provided for further reading.
   |||,
 }

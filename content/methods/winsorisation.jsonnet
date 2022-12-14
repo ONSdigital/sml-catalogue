@@ -23,8 +23,6 @@
     combined ratio estimation, which are commonly used in business surveys.
   |||,
   additional_info: |||
-    Below are some links that will help you further understand the method. 
-    
-    The code link takes you to the repo while the specification link take you to some further reading.
+    Links to the method code and specification are provided for further reading.
   |||,
 }

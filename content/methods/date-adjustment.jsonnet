@@ -21,8 +21,6 @@
     Therefore, Date Adjustment methods are required to approximate the values of the data for the required period that are based on the data received.
   |||,
   additional_info: |||
-    Below are some links that will help you further understand the method. 
-    
-    The code link takes you to the repo while the read me link take you to some further reading.
+    Links to the method code and user guidance are provided for further reading.
   |||,
 }
