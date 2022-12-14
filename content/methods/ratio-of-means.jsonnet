@@ -26,7 +26,7 @@
   additional_info: |||
     Below are some links that will help you further understand the method. 
     
-    The code link takes you to the repo while the specification link takes you to some further reading.
+    The code link takes you to the repo while the specification link take you to some further reading.
   |||,
 
 }
