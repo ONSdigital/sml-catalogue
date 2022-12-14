@@ -13,6 +13,7 @@
   },
   specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/selective_editing/methodological_specification.md',
   code_link: 'https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/selective_editing.py',
+  readme_link: 'https://github.com/ONSdigital/sml-python-small/blob/main/docs/selective_editing.md',
   description: |||
     Selective Editing is an internationally recognised editing method where potential errors are prioritised
     according to their expected effect on key outputs. Only respondents that are having an impact on published
@@ -22,5 +23,9 @@
     reflects the impact that editing the respondent will have on the estimates. Only contributors with a high
     score are checked, low scoring contributors pass through unchecked.
   |||,
-
+  additional_info: |||
+    Below are some links that will help you further understand the method. 
+    
+    The code link takes you to the repo while the specification and read me links takes you to some further reading.
+  |||,
 }

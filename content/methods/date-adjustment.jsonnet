@@ -13,10 +13,16 @@
   },
   specification_link: null,
   code_link: 'https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/date_adjustment.py',
+  readme_link: 'https://github.com/ONSdigital/sml-python-small/blob/main/docs/date_adjustment.md',
   description: |||
     To generate summary and headline statistics for a period, the ONS requires all businesses responses to cover the same period. 
     However, sometimes it is not possible for a business to provide data for the exact period of days required. 
     The responder may specify a different start and end dates for which the response totals cover. 
     Therefore, Date Adjustment methods are required to approximate the values of the data for the required period that are based on the data received.
+  |||,
+  additional_info: |||
+    Below are some links that will help you further understand the method. 
+    
+    The code link takes you to the repo while the read me link takes you to some further reading.
   |||,
 }

@@ -22,5 +22,9 @@
     measure of overall accuracy.  The method works for stratified expansion estimation and
     combined ratio estimation, which are commonly used in business surveys.
   |||,
-
+  additional_info: |||
+    Below are some links that will help you further understand the method. 
+    
+    The code link takes you to the repo while the specification link takes you to some further reading.
+  |||,
 }
