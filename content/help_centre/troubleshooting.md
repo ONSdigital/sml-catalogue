@@ -6,7 +6,8 @@ Some users may be in the scenario that due to user privileges that they are not 
 As an alternative to the .whl file, within a given release there will also be a tar.gz file in the format of
 {LibraryName-version.tar.gz}. Download this file and extract it:  
   
-- On a Unix system (linux/OSX) run the following command in a terminal: "tar -xf archive.tar.gz".  
+- On a Unix system (linux/OSX) run the following command in a terminal: "tar -xf archive.tar.gz". substituting archive.tar.gz
+with the path to the tar.gz file downloaded
   
 - On a Windows system open the file within 7Zip or a similar file archive program and follow the interface to extract the
 folder.  
