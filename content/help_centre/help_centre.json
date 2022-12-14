@@ -25,10 +25,6 @@
                 {
                     "name": "run-a-method",
                     "label": "How to use a method"
-                },
-                {
-                    "name": "selective-edit-example",
-                    "label": "Selective Edit example"
                 }
             ]
         },
@@ -59,12 +55,12 @@
                     "label": "How to get more information on Expert groups"
                 },
                 {
-                    "name": "github",
-                    "label": "Using GitHub"
-                },
-                {
                     "name": "troubleshooting",
                     "label": "Troubleshooting"
+                },
+                {
+                    "name": "github",
+                    "label": "Using GitHub"
                 }
             ]
         }
