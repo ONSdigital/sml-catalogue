@@ -51,7 +51,7 @@ Navigate to the extracted folder within a terminal or command prompt and run the
   
 Once this completes the library should now be installed on your machine. Please note on the above command to ensure
 that you use the correct python command. Particularly for unix users, python V3.0 and higher will often be run as python3
-within the terminal. If the previous command failed it may be that you need to instead substitute it with: 
+within the terminal. If the previous command failed, it may be that you need to instead substitute it with: 
 "python3 setup.py install".  
 Alternatively on Windows machine python may sometimes be installed as py so:  
 "py setup.py install".
