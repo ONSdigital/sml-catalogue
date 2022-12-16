@@ -24,6 +24,6 @@
     score are checked, low scoring contributors pass through unchecked.
   |||,
   additional_info: |||
-    Links to the method code, specification and user guidance are provided for further reading.
+    Links to the method code, specification and user documentation are provided for further reading.
   |||,
 }
