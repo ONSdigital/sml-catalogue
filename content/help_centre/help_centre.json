@@ -53,6 +53,14 @@
                 {
                     "name": "expert-groups",
                     "label": "How to get more information on Expert groups"
+                },
+                {
+                    "name": "troubleshooting",
+                    "label": "Troubleshooting"
+                },
+                {
+                    "name": "github",
+                    "label": "Using GitHub"
                 }
             ]
         }
