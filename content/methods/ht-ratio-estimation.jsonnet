@@ -23,5 +23,8 @@
     variable and an auxiliary variable we know for all units, and the scatter about the line
     increases with the size of the auxiliary variable.
   |||,
+  additional_info: |||
+    Links to the method code and specification are provided for further reading.
+  |||,
 
 }

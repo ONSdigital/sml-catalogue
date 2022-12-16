@@ -23,5 +23,8 @@
     construction imputation. The type of imputation used will vary for each non-respondent in each period depending on
     whether data is available in the predictive period.
   |||,
+  additional_info: |||
+    Links to the method code and specification are provided for further reading.
+  |||,
 
 }
