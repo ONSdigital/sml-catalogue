@@ -2,15 +2,15 @@
 {%- set page_title = page.title -%}
 {%- set current_path = url_for("display_methods") -%}
 {%- set breadcrumbs = {
-  "id":"breadcrumbs",
-  "ariaLabel":"breadcrumbs",
-  "itemsList":[
-    {
-      "url": url_for("display_methods"),
-      "id": "back",
-      "text": 'Back',
-    }
-  ]
+"id":"breadcrumbs",
+"ariaLabel":"breadcrumbs",
+"itemsList":[
+{
+"url": url_for("display_methods"),
+"id": "back",
+"text": 'Back',
+}
+]
 } -%}
 {%- block main -%}
 <h1 class="ons-u-mt-no">Method: {{ page.title }}</h1>
@@ -19,79 +19,65 @@
 
 <h2> Contact details for this method </h2>
 {% if page.contact_details %}
-  {% from "components/external-link/_macro.njk" import onsExternalLink %}
-  {{
-      onsExternalLink({
-        "url": 'mailto:' ~ page.contact_details ,
-        "linkText": page.contact_details  
-      })
-  }}
+{% from "components/external-link/_macro.njk" import onsExternalLink %}
+{{
+onsExternalLink({
+"url": 'mailto:' ~ page.contact_details ,
+"linkText": page.contact_details
+})
+}}
 {% endif %}
 
 {% from "components/metadata/_macro.njk" import onsMetadata %}
 {% set items = [] %}
 {% for item in page.method_metadata %}
 {% set description = page.method_metadata[item] %}
-  {% if item == "Status" %}
-    {% set description = '<span class="ons-status ons-status--' + status_class.get(description, "info") + '">' + description + '</span>' %}
+{% if item == "Status" %}
+{% set description = '<span class="ons-status ons-status--' + status_class.get(description, " info") + '">' +
+  description + '</span>' %} {% endif %} {% do items.append( { "term" : item, "descriptions" : [ { "description" :
+  description or "<em>n/a</em>" } ] } ) %} {% endfor %} <hr class="ons-u-mb-m">
+  {{
+  onsMetadata({
+  "classes": "ons-u-mb-no ",
+  "metadataLabel": "Method information",
+  "termCol": "3",
+  "descriptionCol": "9",
+  "itemsList": items
+  })
+  }}
+  <hr class="ons-u-mb-m">
+
+  <h2>GitHub resources</h2>
+  {{ page.additional_info | paras }}
+  {% if page.code_link %}
+  {% from "components/external-link/_macro.njk" import onsExternalLink %}
+  {{
+  onsExternalLink({
+  "url":page.code_link,
+  "linkText":"Go to code"
+  })
+  }}
+  &nbsp;
+  {% endif %}
+  {% if page.specification_link %}
+  {% from "components/external-link/_macro.njk" import onsExternalLink %}
+  {{
+  onsExternalLink({
+  "url":page.specification_link,
+  "linkText":"Go to specification"
+  })
+  }}
+  &nbsp;
+  {% endif %}
+  {% if page.user_documentation_link %}
+  {% from "components/external-link/_macro.njk" import onsExternalLink %}
+  {{
+  onsExternalLink({
+  "url":page.user_documentation_link,
+  "linkText":"Go to user guidance"
+  })
+  }}
+  &nbsp;
   {% endif %}
 
-{% do
-  items.append(
-    {
-        "term": item,
-        "descriptions": [
-            {
-                "description": description or "<em>n/a</em>"
-            }
-        ]
-    }
-  )
-%}
-{% endfor %}
-<hr class="ons-u-mb-m">
-{{
-  onsMetadata({
-      "classes": "ons-u-mb-no ",
-      "metadataLabel": "Method information",
-      "termCol": "3",
-      "descriptionCol": "9",
-      "itemsList": items
-  })
-}}
-<hr class="ons-u-mb-m">
-
-<h2>GitHub resources</h2>
-{{ page.additional_info | paras }}
-{% if page.code_link %}
-{% from "components/external-link/_macro.njk" import onsExternalLink %}
-{{
-  onsExternalLink({
-    "url":page.code_link,
-    "linkText":"Go to code"
-  })
-}}
-&nbsp;
-{% endif %}
-{% if page.specification_link %}
-{% from "components/external-link/_macro.njk" import onsExternalLink %}
-{{
-  onsExternalLink({
-    "url":page.specification_link,
-    "linkText":"Go to specification"
-  })
-}}
-&nbsp;
-{% endif %}
-{% if page.user_guidance_link %}
-{% from "components/external-link/_macro.njk" import onsExternalLink %}
-{{
-  onsExternalLink({
-    "url":page.user_guidance_link,
-    "linkText":"Go to user guidance"
-  })
-}}
-&nbsp;
-{% endif %}
-
-{% endblock main -%}
+  {% endblock main -%}
