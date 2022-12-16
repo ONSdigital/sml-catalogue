@@ -83,11 +83,11 @@
 }}
 &nbsp;
 {% endif %}
-{% if page.readme_link %}
+{% if page.user_guidance_link %}
 {% from "components/external-link/_macro.njk" import onsExternalLink %}
 {{
   onsExternalLink({
-    "url":page.readme_link,
+    "url":page.user_guidance_link,
     "linkText":"Go to user guidance"
   })
 }}
