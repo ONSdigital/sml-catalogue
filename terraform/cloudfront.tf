@@ -64,7 +64,10 @@ resource "aws_cloudfront_distribution" "sml-catalogue" {
     }
   }
 
-  viewer_certificate {
+  viewer_certificate = terraform.workspace == "main" ? {
+    acm_certificate_arn      = module.route53.cert_arn
+    minimum_protocol_version = "TLSv1.2_2021"
+    } : {
     cloudfront_default_certificate = true
   }
 }
@@ -82,6 +85,17 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
 }
 
 resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
+}
+
+module "route53" {
+  source = "./dns"
+  count  = terraform.workspace == "main" ? 1 : 0
+
+  s3_bucket = {
+    domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
+    hosted_zone_id = aws_cloudfront_distribution.sml-catalogue.hosted_zone_id
+  }
+  external_domain_name = local.domain_name_base[var.environment]
 }
 
 output "cf_website_url" {
