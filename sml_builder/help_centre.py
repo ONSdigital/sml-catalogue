@@ -1,7 +1,7 @@
-from flask import abort, render_template, request, url_for, Markup, escape
 from json import load
-from sml_builder import app
+from flask import abort, render_template, url_for, Markup, escape
 import markdown
+from sml_builder import app
 
 externallink_help_categories = [
     "report-bug",
@@ -15,9 +15,9 @@ externallink_help_categories = [
 @app.route("/help-centre/index")
 def help_centre(category=None):
     categories = []
-    with open("./content/help_centre/help_centre.json") as help_contents_file:
+    with open("./content/help_centre/help_centre.json", encoding="utf-8") as help_contents_file:
         contents = load(help_contents_file)
-    for category in contents["categories"]:
+    for category in contents["categories"]: # pylint: disable=redefined-argument-from-local
         categories.append(
             {
                 "name": category["label"],
@@ -47,7 +47,7 @@ def guidances(category, sub_category=None):
         category_label, sub_category_label, sub_category = _get_category_labels(
             category, sub_category
         )
-    except Exception as e:
+    except Exception as e: # pylint: disable=broad-except
         _page_not_found(e)
 
     if sub_category not in externallink_help_categories:
@@ -79,12 +79,12 @@ def guidances(category, sub_category=None):
 
 
 def _get_category_labels(selected_category, selected_sub_category):
-    with open("./content/help_centre/help_centre.json") as help_contents_file:
+    with open("./content/help_centre/help_centre.json", encoding="utf-8") as help_contents_file:
         contents = load(help_contents_file)
     for category in contents["categories"]:
         if category["name"] == selected_category:
             category_label = category["label"]
-            if selected_sub_category == None:
+            if selected_sub_category is None:
                 return (
                     category_label,
                     category["subcategories"][0]["label"],
@@ -103,7 +103,7 @@ def _get_category_labels(selected_category, selected_sub_category):
 def _help_centre_nav(
     current_category,
 ):
-    with open("./content/help_centre/help_centre.json") as help_contents_file:
+    with open("./content/help_centre/help_centre.json", encoding="utf-8") as help_contents_file:
         contents = load(help_contents_file)
     return [
         {
