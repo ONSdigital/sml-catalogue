@@ -1,0 +1,3 @@
+# FILE: .bandit
+[bandit]
+targets = sml_builder

@@ -9,6 +9,7 @@ jsonnet = "*"
 markdown = "*"
 flake8 = "*"
 pylint = "*"
+bandit = "*"
 
 [dev-packages]
 black = "*"
