@@ -121,7 +121,7 @@ user guidance, code and specification link tests
 ### 3. Unit testing 
  This is difficult to pin down as there are a lot of tests already existing in sml-python-small and the statistical-methods-library which cover a wide range.
 
- Therefore, I believe it will be more worthwhile adding unit test tickets for future work development tickets. as and when we see the need instead of backdating tests or looking for tests that are missing.
+ Therefore, I believe it will be more worthwhile adding unit test tickets for future work development tickets, as and when we see the need instead of backdating tests or looking for tests that are missing.
 
  With regards to the sml-catalogue repo I think cypress/selenium tests would be a better goal.
 
