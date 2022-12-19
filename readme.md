@@ -47,7 +47,7 @@ If everything runs without errors, you should now be able to navigate to [http:/
 To run the linters (`Pylint & Flake8`) and security scan (`Bandit`):
 
 ```bash
-sudo ./run_py_tools
+sudo ./run_py_tools.sh
 ```
 
 ## Troubleshooting
