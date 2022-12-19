@@ -19,6 +19,7 @@ def display_method(method):
 
 @app.route("/methods")
 def display_methods():
+    content = getContent()
     methods = []
     methods_dir = "./content/methods"
     for file in listdir(methods_dir):
@@ -36,5 +37,15 @@ def display_methods():
             }
         )
     return render_template(
-        "methods.html", page={"rows": methods}, status_class=STATUS_CLASS
+        "methods.html", page={"rows": methods}, status_class=STATUS_CLASS, content=content
     )
+
+def getContent():
+    import contentful
+
+    client = contentful.Client("ldcm7uk1vtxb", "kYeKazwcxKIM7neRynQ9UdTRbiZMsMbqy2SQV4PZfWI")
+
+    entry = client.entry('1Qv2rd1qDUcT7kGW5PR7ld')
+
+    print(entry)
+
