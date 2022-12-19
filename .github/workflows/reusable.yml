@@ -85,7 +85,7 @@ jobs:
       - name: Install dependencies
         run: |
           source venv/bin/activate
-          pipenv sync --dev
+          pipenv install --dev
       - name: Lint
         run: |
           source venv/bin/activate
