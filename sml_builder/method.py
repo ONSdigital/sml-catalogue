@@ -1,7 +1,7 @@
 from os import listdir
 from json import loads
 from flask import render_template
-from _jsonnet import evaluate_file # pylint: disable=no-name-in-module
+from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
 from sml_builder import app
 
 STATUS_CLASS = {
