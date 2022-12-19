@@ -27,7 +27,7 @@
    * Date adjustment - Test if output contents is as expected, both new columns and data content.
    * Date adjustment - Test any other error based outputs
    * Date adjustment - Test type validation on the input strings.
-   * Date adjustment - Test fails with type error if no input..
+   * Date adjustment - Test fails with type error if no input.
    * Date adjustment - test type validation on the target column lists(s).
    * Date adjustment - test if output is a List.
    * Date adjustment - test if output contents is as expected.
@@ -72,14 +72,14 @@
    * Date adjustment - test if output contents is as expected, both new columns and data content.
    * Date adjustment - test any other error based outputs.
    * Tests estimation - test type validation on the input dataframe(s).
-   * Tests estimation - test validation fail if mismatched death cols .
-   * Tests estimation - test validation fail if mismatched calibration cols .
-   * Tests estimation - test if params not strings .
-   * Tests estimation - test if params null .
-   * Tests estimation - test validation fail if nulls in data .
-   * Tests estimation - test if cols missing from input dataframe(s) .
-   * Tests estimation - test if references are duplicated in the input dataframe .
-   * Tests estimation - test validation fail if mixed h values in a strata .
+   * Tests estimation - test validation fail if mismatched death cols.
+   * Tests estimation - test validation fail if mismatched calibration cols.
+   * Tests estimation - test if params not strings.
+   * Tests estimation - test if params null.
+   * Tests estimation - test validation fail if nulls in data.
+   * Tests estimation - test if cols missing from input dataframe(s).
+   * Tests estimation - test if references are duplicated in the input dataframe.
+   * Tests estimation - test validation fail if mixed h values in a strata.
    * Tests estimation - test output is correct type.
    * Tests estimation - test no extra columns are copied to the output.
    * Tests estimation - test expected columns are in the output.
@@ -99,11 +99,11 @@
    * Test Imputation - tests expected columns are in the output.
    * Test Imputation - tests Scenarios.
    * Test outliering - type validation on the input dataframe(s).
-   * Test outliering - if params not strings .
-   * Test outliering - if params null .
-   * Test outliering - validation fail if mismatched calibration cols .
-   * Test outliering - validation fail if nulls in data .
-   * Test outliering - if cols missing from input dataframe(s) .
+   * Test outliering - if params not strings.
+   * Test outliering - if params null.
+   * Test outliering - validation fail if mismatched calibration cols.
+   * Test outliering - validation fail if nulls in data.
+   * Test outliering - if cols missing from input dataframe(s).
    * Test outliering - if output contents are as expected, both new columns and data.
    * Test outliering - expected columns are in the output.
 
@@ -123,11 +123,11 @@ user guidance, code and specification link tests
 ### 3. Unit testing 
  This is difficult to pin down as there are a lot of tests already existing in sml-python-small and the statistical-methods-library which cover a wide range.
 
- Therefore I believe it will be more worthwhile adding unit test tickets for future work development tickets. as and when we see the need instead of backdating tests or looking for tests that are missing.
+ Therefore, I believe it will be more worthwhile adding unit test tickets for future work development tickets. as and when we see the need instead of backdating tests or looking for tests that are missing.
 
  With regards to the sml-catalogue repo I think cypress/selenium tests would be a better goal.
 
- For example, we can now apporach a TDD process when developing tickets or we can make developer an test tickets when a business need is raised. I leave it to the team and ADM to decide which.
+ For example, we can now approach a TDD process when developing tickets or we can make developer an test tickets when a business need is raised. I leave it to the team and ADM to decide which.
 
 
 ## How do we do this (test tools, methods and test results)?
