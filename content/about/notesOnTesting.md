@@ -2,10 +2,8 @@
 
 ## What tests exist?
 
-### 1. Sml portal has no test as it stands
-### 2. Sml has tests written in pytest and csv files for mock data 
-    
-### 3. Sml python small has tests written in unittest and csv for mock data
+### 1. Sml-catalogue portal has no test as it stands
+### 2. Sml python small and the statistical methods library has tests written in pytest, unittest and has csv for mock data
    * Selective editing - Test fails with type error if no input.
    * Selective editing - Test type validation on the input dataframe(s).
    * Selective editing - Test type validation on the target column lists(s).
