@@ -37,7 +37,8 @@ jobs:
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
       - name: Configure AWS credentials from Dev account
         run: |
-          echo "role-to-assume=${{secrets.DEPLOYMENT_ROLE}}, aws-region=eu-west-2" >> $GITHUB_OUTPUT
+          echo "role-to-assume=${{secrets.DEPLOYMENT_ROLE}}" >> $role-to-assume
+          echo "aws-region=eu-west-2" >> $aws-region
       - name: terraform format
         run: terraform fmt -check -recursive -diff
       - id: apply
@@ -112,10 +113,9 @@ jobs:
     concurrency: ${{github.workflow}}-${{inputs.workspace}}-${{inputs.environment}}-deploy
     steps:
       - name: Configure AWS credentials from Dev account
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          role-to-assume: ${{secrets.DEPLOYMENT_ROLE}}
-          aws-region: eu-west-2
+        run: |
+          echo "role-to-assume=${{secrets.DEPLOYMENT_ROLE}}" >> $role-to-assume
+          echo "aws-region=eu-west-2" >> $aws-region
       - name: Download built files
         uses: actions/download-artifact@v3
         with:
