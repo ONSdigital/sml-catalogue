@@ -21,9 +21,9 @@ jobs:
       - name: Configure AWS credentials from Dev account
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          echo "role-to-assume=${{secrets.DEPLOYMENT_ROLE}}" >> $role-to-assume
-          echo "aws-region=eu-west-2" >> $aws-region
-          echo "audience=`sts.amazonaws.com`" >> $audience
+          role-to-assume: ${{secrets.DEPLOYMENT_ROLE}} >> $role-to-assume
+          aws-region: eu-west-2 >> $aws-region
+          audience: sts.amazonaws.com >> $audience
       - name: Terraform destroy
         run: |
           cd terraform
