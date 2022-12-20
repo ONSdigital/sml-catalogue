@@ -35,12 +35,17 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
-      - name: Configure AWS credentials from Dev account
+      - name: Gather Outputs
         run: |
-          aws-actions/configure-aws-credentials@v1
-          echo "role-to-assume=${{secrets.DEPLOYMENT_ROLE}}" >> $role-to-assume
-          echo "aws-region=eu-west-2" >> $aws-region
-          echo "aws-region=us-east-1" >> $audience
+          echo "role-to-assume=${{secrets.DEPLOYMENT_ROLE}}" >> $ROLETOASSUME
+          echo "aws-region=eu-west-2" >> $AWSREGION
+          echo "aws-region=us-east-1" >> $AUDIENCE
+      - name: Configure AWS credentials from Dev account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: $ROLETOASSUME
+          aws-region: AWSREGION
+          audience: $AUDIENCE
       - name: terraform format
         run: terraform fmt -check -recursive -diff
       - id: apply
@@ -114,12 +119,17 @@ jobs:
       contents: read 
     concurrency: ${{github.workflow}}-${{inputs.workspace}}-${{inputs.environment}}-deploy
     steps:
-      - name: Configure AWS credentials from Dev account
+      - name: Gather Outputs
         run: |
-          aws-actions/configure-aws-credentials@v1
-          echo "role-to-assume=${{secrets.DEPLOYMENT_ROLE}}" >> $role-to-assume
-          echo "aws-region=eu-west-2" >> $aws-region
-          echo "aws-region=us-east-1" >> $audience
+          echo "role-to-assume=${{secrets.DEPLOYMENT_ROLE}}" >> $ROLETOASSUME
+          echo "aws-region=eu-west-2" >> $AWSREGION
+          echo "aws-region=us-east-1" >> $AUDIENCE
+      - name: Configure AWS credentials from Dev account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: $ROLETOASSUME
+          aws-region: AWSREGION
+          audience: $AUDIENCE
       - name: Download built files
         uses: actions/download-artifact@v3
         with:
