@@ -35,17 +35,11 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
-      - name: Gather Outputs
-        run: |
-          echo "role-to-assume=${{secrets.DEPLOYMENT_ROLE}}" >> $ROLETOASSUME
-          echo "aws-region=eu-west-2" >> $AWSREGION
-          echo "aws-region=us-east-1" >> $AUDIENCE
       - name: Configure AWS credentials from Dev account
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: $ROLETOASSUME
-          aws-region: AWSREGION
-          audience: $AUDIENCE
+          role-to-assume: ${{secrets.DEPLOYMENT_ROLE}}
+          aws-region: eu-west-2
       - name: terraform format
         run: terraform fmt -check -recursive -diff
       - id: apply
@@ -119,17 +113,11 @@ jobs:
       contents: read 
     concurrency: ${{github.workflow}}-${{inputs.workspace}}-${{inputs.environment}}-deploy
     steps:
-      - name: Gather Outputs
-        run: |
-          echo "role-to-assume=${{secrets.DEPLOYMENT_ROLE}}" >> $ROLETOASSUME
-          echo "aws-region=eu-west-2" >> $AWSREGION
-          echo "aws-region=us-east-1" >> $AUDIENCE
       - name: Configure AWS credentials from Dev account
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: $ROLETOASSUME
-          aws-region: AWSREGION
-          audience: $AUDIENCE
+          role-to-assume: ${{secrets.DEPLOYMENT_ROLE}}
+          aws-region: eu-west-2
       - name: Download built files
         uses: actions/download-artifact@v3
         with:
