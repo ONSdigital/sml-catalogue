@@ -19,9 +19,9 @@ def help_centre(category=None):
         "./content/help_centre/help_centre.json", encoding="utf-8"
     ) as help_contents_file:
         contents = load(help_contents_file)
-    for category in contents[
+    for category in contents[  # pylint: disable=redefined-argument-from-local
         "categories"
-    ]:  # pylint: disable=redefined-argument-from-local
+    ]:
         categories.append(
             {
                 "name": category["label"],
