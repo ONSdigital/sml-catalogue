@@ -85,7 +85,7 @@ jobs:
       - name: Install dependencies
         run: |
           source venv/bin/activate
-          pipenv install --dev
+          pipenv sync --dev
       - name: Code Formatter
         run: |
           source venv/bin/activate
