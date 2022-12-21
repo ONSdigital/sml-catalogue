@@ -85,11 +85,20 @@ jobs:
       - name: Install dependencies
         run: |
           source venv/bin/activate
-          pipenv sync --dev
-      - name: Lint
+          pipenv install --dev
+      - name: Code Formatter
         run: |
           source venv/bin/activate
           black --check --diff sml_builder
+      - name: Linting
+        run: |
+          source venv/bin/activate
+          pylint sml_builder
+          flake8 sml_builder
+      - name: Security Scanner
+        run: |
+          source venv/bin/activate
+          bandit -r sml_builder 
       - name: Freeze flask
         run: |
           source venv/bin/activate
