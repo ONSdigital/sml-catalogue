@@ -1,6 +1,6 @@
 from flask import abort, escape, Markup, render_template
-from sml_builder import app
 import markdown
+from sml_builder import app
 
 
 @app.route("/resources/about")

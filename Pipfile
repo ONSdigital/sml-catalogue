@@ -7,6 +7,9 @@ name = "pypi"
 frozen-flask = "*"
 jsonnet = "*"
 markdown = "*"
+flake8 = "*"
+pylint = "*"
+bandit = "*"
 
 [dev-packages]
 black = "*"

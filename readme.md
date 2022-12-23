@@ -42,6 +42,14 @@ pipenv run flask --app sml_builder --debug run
 
 If everything runs without errors, you should now be able to navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to view the site.
 
+## Linters & Security Scan
+
+To run the linters (`Pylint & Flake8`) and security scan (`Bandit`):
+
+```bash
+sudo ./run_py_tools.sh
+```
+
 ## Troubleshooting
 
 ### Access denied message when trying to reach CloudFront URL

@@ -1,20 +1,19 @@
-import re
-from flask import Flask, render_template, request, g, abort, escape, Markup
+from flask import Flask, render_template, escape, Markup
 
 app = Flask(__name__)
 
-app.jinja_env.add_extension("jinja2.ext.do")
+app.jinja_env.add_extension("jinja2.ext.do")  # pylint: disable=no-member
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
 app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
 app.config["FREEZER_DESTINATION"] = "../build"
 
-import sml_builder.method
-import sml_builder.page
-import sml_builder.glossary
-import sml_builder.utils
-import sml_builder.help_centre
+import sml_builder.method  # noqa: F401
+import sml_builder.page  # noqa: F401
+import sml_builder.glossary  # noqa: F401
+import sml_builder.utils  # noqa: F401
+import sml_builder.help_centre  # noqa: F401
 
 
 @app.route("/")
