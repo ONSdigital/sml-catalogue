@@ -47,5 +47,8 @@ def getContent():
 
     entry = client.entry('1Qv2rd1qDUcT7kGW5PR7ld')
 
-    print(entry)
+    content = entry.fields()
 
+    print(content["title"])
+
+    return content
