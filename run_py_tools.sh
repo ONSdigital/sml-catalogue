@@ -8,6 +8,6 @@ do
     then
         echo "$i command successfully executed"
     else
-        echo "$i command failed to execute or have errors that needs to be corrected"
+        echo "$i command failed to execute or display errors that needs to be corrected"
     fi
 done
