@@ -1,7 +1,9 @@
 import re
 from flask import Flask, render_template, request, g, abort, escape, Markup
+from flaskext.markdown import Markdown
 
 app = Flask(__name__)
+Markdown(app)
 
 app.jinja_env.add_extension("jinja2.ext.do")
 app.jinja_env.trim_blocks = True

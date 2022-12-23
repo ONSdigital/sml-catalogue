@@ -8,6 +8,7 @@ frozen-flask = "*"
 jsonnet = "*"
 markdown = "*"
 contentful = "*"
+flask-markdown = "*"
 
 [dev-packages]
 black = "*"

@@ -3,6 +3,7 @@ from flask import render_template, url_for
 from json import loads
 from _jsonnet import evaluate_file
 from sml_builder import app
+from sml_builder.headlessCMS import getMethodsCatalogue
 
 STATUS_CLASS = {
     "In development": "pending",
@@ -19,7 +20,7 @@ def display_method(method):
 
 @app.route("/methods")
 def display_methods():
-    content = getContent()
+    content = getMethodsCatalogue()
     methods = []
     methods_dir = "./content/methods"
     for file in listdir(methods_dir):
@@ -39,16 +40,3 @@ def display_methods():
     return render_template(
         "methods.html", page={"rows": methods}, status_class=STATUS_CLASS, content=content
     )
-
-def getContent():
-    import contentful
-
-    client = contentful.Client("ldcm7uk1vtxb", "kYeKazwcxKIM7neRynQ9UdTRbiZMsMbqy2SQV4PZfWI")
-
-    entry = client.entry('1Qv2rd1qDUcT7kGW5PR7ld')
-
-    content = entry.fields()
-
-    print(content["title"])
-
-    return content
