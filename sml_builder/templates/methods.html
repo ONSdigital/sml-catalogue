@@ -3,23 +3,23 @@
 {%- set current_path = url_for("display_methods") -%}
 {%- block main -%}
 
-<h1 class="ons-u-mt-no">{{ content["methodsCatalogue"]["title"] }}</h1>
-<p>{{ content["brief_info"] }}</p>
+<h1 class="ons-u-mt-no">{{ content["methodsCatalogue"]["heading1"] }}</h1>
+<p>{{ content["methodsCatalogue"]["paragraph"] }}</p>
 
 {% from "components/panel/_macro.njk" import onsPanel %}
 
 {% call onsPanel({}) %}
-  {{ content["methodsCatalogue"]["main_content"] | markdown}}
+  {{ content["methodsCatalogue"]["panel"] | markdown}}
 {% endcall %}
 
-<h2 class="ons-u-mt-m">{{ content["catalogueTableOfMethods"]["title"] }}</h2>
+<h2 class="ons-u-mt-m">{{ content["methodsCatalogue"]["heading2"] }}</h2>
 
 {% from "components/collapsible/_macro.njk" import onsCollapsible %}
 {% call onsCollapsible({
       "id": "collapsible",
-      "title": content["catalogueTableOfMethods"]["title"]
+      "title": content["methodsCatalogue"]["detail"]
 }) %}
-<p>{{ content["catalogueTableOfMethods"]["main_content"] | markdown}}</p>
+<p>{{ content["methodsCatalogue"]["detail_content"] | markdown}}</p>
 {% endcall %}
 
 {% from "components/table/_macro.njk" import onsTable %}
