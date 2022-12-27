@@ -38,8 +38,9 @@ def compileContent(entries_by_content_type):
     content = dict()
 
     for entry in entries_by_content_type:
-        content_type = entry.sys["content_type"].id
+        # content_type = entry.sys["content_type"].id
         entry_fields = entry.fields()
-        content[content_type] = entry_fields
+        # content[content_type] = entry_fields
 
-    return content
+    # print(content)
+    return entry_fields
