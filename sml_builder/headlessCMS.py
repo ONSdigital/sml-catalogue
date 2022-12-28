@@ -20,10 +20,13 @@ client = contentful.Client("ldcm7uk1vtxb", "kYeKazwcxKIM7neRynQ9UdTRbiZMsMbqy2SQ
 #     return content
 
 # The function that retrieves and returns the content from contentful
-def getContent(contentType):
+def getContent(contentType, isTable):
     content_type = client.content_type(contentType)
     entries_by_content_type = getEntriesByContentType(content_type)
-    content = compileContent(entries_by_content_type)
+    if isTable:
+        content = compileContentTable(entries_by_content_type)
+    else:
+        content = compileContent(entries_by_content_type)
 
     return content
 
@@ -44,3 +47,18 @@ def compileContent(entries_by_content_type):
 
     # print(content)
     return entry_fields
+
+def compileContentTable(entries_by_content_type):
+    content = []
+
+    for entry in entries_by_content_type:
+        # content_type = entry.sys["content_type"].id
+        entry_fields = entry.fields()
+        # content[content_type] = entry_fields
+        content.append(entry_fields)
+
+    # print(content)
+    return content
+
+
+

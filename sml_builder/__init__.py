@@ -22,7 +22,7 @@ import sml_builder.help_centre
 
 @app.route("/")
 def index():
-    content = getContent("heroHomePage")
+    content = getContent("heroHomePage", False)
     return render_template("index.html", content=content)
 
 

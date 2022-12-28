@@ -51,17 +51,17 @@
   ]
 } %}
 {% set methodsTableRows = [] %}
-{% for row in page.rows %}
+{% for method in methods %}
   {% do methodsTableRows.append({
     "tds": [
       {
-          "value": '<a href="' + url_for("display_method", method=row.id) + '">' + row.title + '</a>'
+          "value": '<a href="' + url_for("display_method", method=method["id"]) + '">' + method.name + '</a>'
       },
-      {"value": row.theme},
-      {"value": row.exp_group},
-      {"value": row.language},
-      {"value": row.access},
-      {"value": '<span class="ons-status ons-status--' + status_class.get(row.status, "info") + '">' + row.status + '</span>'},
+      {"value": method.theme},
+      {"value": method.expert_group},
+      {"value": method.language},
+      {"value": method.access},
+      {"value": '<span class="ons-status ons-status--' + status_class.get(method.status, "info") + '">' + method.status + '</span>'},
     ]
   }) %}
 {% endfor %}
