@@ -30,28 +30,9 @@ def display_method(method):
 def display_methods():
     content = getContent("methodsCatalogue", False)
     getContentMethodsTable = getContent("catalogueTableOfMethods2", True)
-    # print("Output", getContentMethodsTable)
     methods = []
     for method in getContentMethodsTable:
-        # print(method)
         methods.append(method)
-    # methods_dir = "./content/methods"
-    # for file in listdir(methods_dir):
-    #     method = loads(evaluate_file(f"{methods_dir}/{file}"))
-
-    #     methods.append(
-    #         {
-    #             "id": file.split(".")[0],
-    #             "title": method["title"],
-    #             "theme": method["method_metadata"]["Theme"],
-    #             "exp_group": method["method_metadata"]["Expert group"],
-    #             "language": method["method_metadata"]["Programming language"],
-    #             "access": method["method_metadata"]["Access type"],
-    #             "status": method["method_metadata"]["Status"],
-    #         }
-    #     )
-
-    # print(methods)
     return render_template(
         "methods.html", methods=methods, status_class=STATUS_CLASS, content=content
     )

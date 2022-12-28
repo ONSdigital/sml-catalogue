@@ -59,6 +59,3 @@ def compileContentTable(entries_by_content_type):
 
     # print(content)
     return content
-
-
-
