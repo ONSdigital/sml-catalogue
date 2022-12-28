@@ -10,6 +10,7 @@ markdown = "*"
 flake8 = "*"
 pylint = "*"
 bandit = "*"
+pytest-bdd = "*"
 
 [dev-packages]
 black = "*"
