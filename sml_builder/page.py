@@ -1,20 +1,13 @@
 from flask import abort, escape, Markup, render_template
 from sml_builder import app
 import markdown
+from sml_builder.headlessCMS import getContent
 
 
 @app.route("/resources/about")
 def about():
-    try:
-        with open(
-            "./content/about/about-this-library.md", "r", encoding="utf-8"
-        ) as input_file:
-            text = input_file.read()
-            escaped_text = escape(text)
-            body = Markup(markdown.markdown(escaped_text))
-    except OSError as e:
-        _page_not_found(e)
-    return render_template("about.html", page_boby=body)
+    content = getContent("about", False)
+    return render_template("about.html", content=content)
 
 
 @app.route("/privacy-and-data-protection")
