@@ -106,7 +106,7 @@
    * Test outliering - expected columns are in the output.
 
 ## What do we want to test (foundation suite of tests)?
-### 1. Selenium/cypress testing behaviour tests
+### 1. Pytest testing behaviour tests
    * Help center tests
 user guidance, code and specification link tests
    * Method links
@@ -123,7 +123,7 @@ user guidance, code and specification link tests
 
  Therefore, I believe it will be more worthwhile adding unit test tickets for future work development tickets, as and when we see the need instead of backdating tests or looking for tests that are missing.
 
- With regards to the sml-catalogue repo I think cypress/selenium tests would be a better goal.
+ With regards to the sml-catalogue repo I think pytest BDD tests would be a better goal.
 
  For example, we can now approach a TDD process when developing tickets or we can make developer an test tickets when a business need is raised. I leave it to the team and ADM to decide which.
 
@@ -131,6 +131,5 @@ user guidance, code and specification link tests
 ## How do we do this (test tools, methods and test results)?
    * Pytest
    * Unittest
-   * Cypress/Selenium
    * Python
-   * Generic sml-catalogue cypress/selenum tests for UI frontend testing e.g method links and help center links 
+   * Generic sml-catalogue pytest BDD tests for UI frontend testing e.g method links and help center links 
