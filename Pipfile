@@ -9,6 +9,9 @@ jsonnet = "*"
 markdown = "*"
 contentful = "*"
 flask-markdown = "*"
+flake8 = "*"
+pylint = "*"
+bandit = "*"
 
 [dev-packages]
 black = "*"

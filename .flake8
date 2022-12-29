@@ -1,0 +1,5 @@
+[flake8]
+max-line-length = 160
+extend-ignore =
+    # E402 module level import not at top of file
+    E402
