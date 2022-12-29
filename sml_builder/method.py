@@ -10,7 +10,7 @@ STATUS_CLASS = {
 
 
 @app.route("/method/<method>")
-def display_method(method):
+def display_method(method):  # pylint: disable=inconsistent-return-statements
     # Gets the methods for the individual method page
     getMethodsTableItems = getContent("catalogueTableOfMethods2")
     content = None
@@ -21,9 +21,7 @@ def display_method(method):
             return render_template(
                 "method.html", method=content, status_class=STATUS_CLASS
             )
-        return None
-    if content is None:
-        abort(404)
+    abort(404)
 
 
 @app.route("/methods")
