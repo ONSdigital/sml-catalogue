@@ -1,12 +1,12 @@
 from flask import abort, escape, Markup, render_template
 from sml_builder import app
 import markdown
-from sml_builder.headlessCMS import getContent
+from sml_builder.cms import getContent
 
 
 @app.route("/resources/about")
 def about():
-    content = getContent("about", False)
+    content = getContent("about")
     return render_template("about.html", content=content)
 
 

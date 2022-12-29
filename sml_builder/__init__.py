@@ -1,7 +1,7 @@
 import re
 from flask import Flask, render_template, request, g, abort, escape, Markup
 from flaskext.markdown import Markdown
-from sml_builder.headlessCMS import getContent
+from sml_builder.cms import getContent
 
 app = Flask(__name__)
 Markdown(app)
@@ -22,7 +22,7 @@ import sml_builder.help_centre
 
 @app.route("/")
 def index():
-    content = getContent("heroHomePage", False)
+    content = getContent("heroHomePage")
     return render_template("index.html", content=content)
 
 

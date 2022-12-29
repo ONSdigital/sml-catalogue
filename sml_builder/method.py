@@ -3,7 +3,7 @@ from flask import render_template, url_for, abort
 from json import loads
 from _jsonnet import evaluate_file
 from sml_builder import app
-from sml_builder.headlessCMS import getContent
+from sml_builder.cms import getContent
 
 STATUS_CLASS = {
     "In development": "pending",
@@ -14,10 +14,11 @@ STATUS_CLASS = {
 
 @app.route("/method/<method>")
 def display_method(method):
-    getContentMethodsTable = getContent("catalogueTableOfMethods2", True)
+    # Gets the methods for the individual method page
+    getMethodsTableItems = getContent("catalogueTableOfMethods2")
     content = None
-    # print(getContentMethodsTable)
-    for item in getContentMethodsTable:
+
+    for item in getMethodsTableItems:
         if method == item["id"]:
             content = item
             return render_template("method.html", method=content, status_class=STATUS_CLASS)
@@ -28,11 +29,15 @@ def display_method(method):
 
 @app.route("/methods")
 def display_methods():
-    content = getContent("methodsCatalogue", False)
-    getContentMethodsTable = getContent("catalogueTableOfMethods2", True)
+    # Gets the content for the methods catalogue page
+    content = getContent("methodsCatalogue")
+    # Gets the methods table items for the methods catalogue page
+    getMethodsTableItems = getContent("catalogueTableOfMethods2")
+
     methods = []
-    for method in getContentMethodsTable:
+    for method in getMethodsTableItems:
         methods.append(method)
+
     return render_template(
         "methods.html", methods=methods, status_class=STATUS_CLASS, content=content
     )
