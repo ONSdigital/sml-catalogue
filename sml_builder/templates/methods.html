@@ -2,35 +2,26 @@
 {%- set page_title = "All methods" -%}
 {%- set current_path = url_for("display_methods") -%}
 {%- block main -%}
- 
-<h1 class="ons-u-mt-no">All methods</h1>
-<p>Here you will discover statistical methods used by the Office for National Statistics.</p>
+
+<h1 class="ons-u-mt-no">{{ content["heading1"] }}</h1>
+<p>{{ content["paragraph"] }}</p>
 
 {% from "components/panel/_macro.njk" import onsPanel %}
 
 {% call onsPanel({}) %}
-  <p>Codes and specification permission</p>
-  <ul>
-    <li>Public methods can be accessed freely by everyone</li>
-    <li>Internal methods can be accessed on request by ONS employees via their ONS Digital GitHub account</li>
-    <li>Private methods can only be accessed upon request based on proposed usage</li>
-  </ul>
+  {{ content["panel"] | markdown}}
 {% endcall %}
 
-<h2 class="ons-u-mt-m">Catalogue table of methods:</h2>
+<h2 class="ons-u-mt-m">{{ content["heading2"] }}</h2>
 
 {% from "components/collapsible/_macro.njk" import onsCollapsible %}
 {% call onsCollapsible({
       "id": "collapsible",
-      "title": "What are method themes and expert groups?"
+      "title": content["detail"]
 }) %}
-<p>Method are sorted in hierarchical order with expert groups as the top level.
-  For example, within an expert group are different themes, and within the themes
-  are different methods.</p>
-
-  <p>To find out more about expert groups and themes,
-    please visit the <a href=" {{ url_for('display_glossary') }} ">library glossary</a>.</p>
+<p>{{ content["detail_content"] | markdown}}</p>
 {% endcall %}
+
 {% from "components/table/_macro.njk" import onsTable %}
 {% set methodsTable = {
   "variants": 'sortable',
@@ -60,17 +51,17 @@
   ]
 } %}
 {% set methodsTableRows = [] %}
-{% for row in page.rows %}
+{% for method in methods %}
   {% do methodsTableRows.append({
     "tds": [
       {
-          "value": '<a href="' + url_for("display_method", method=row.id) + '">' + row.title + '</a>'
+          "value": '<a href="' + url_for("display_method", method=method["id"]) + '">' + method.name + '</a>'
       },
-      {"value": row.theme},
-      {"value": row.exp_group},
-      {"value": row.language},
-      {"value": row.access},
-      {"value": '<span class="ons-status ons-status--' + status_class.get(row.status, "info") + '">' + row.status + '</span>'},
+      {"value": method.theme},
+      {"value": method.expert_group},
+      {"value": method.language},
+      {"value": method.access},
+      {"value": '<span class="ons-status ons-status--' + status_class.get(method.status, "info") + '">' + method.status + '</span>'},
     ]
   }) %}
 {% endfor %}

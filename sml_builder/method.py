@@ -1,8 +1,10 @@
 from os import listdir
+from flask import render_template, url_for, abort
 from json import loads
 from flask import render_template
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
 from sml_builder import app
+from sml_builder.headlessCMS import getContent
 
 STATUS_CLASS = {
     "In development": "pending",
@@ -13,28 +15,25 @@ STATUS_CLASS = {
 
 @app.route("/method/<method>")
 def display_method(method):
-    page_data = loads(evaluate_file(f"./content/methods/{method}.jsonnet"))
-    return render_template("method.html", page=page_data, status_class=STATUS_CLASS)
+    getContentMethodsTable = getContent("catalogueTableOfMethods2", True)
+    content = None
+    # print(getContentMethodsTable)
+    for item in getContentMethodsTable:
+        if method == item["id"]:
+            content = item
+            return render_template("method.html", method=content, status_class=STATUS_CLASS)
+
+    if content is None:
+        abort(404)
 
 
 @app.route("/methods")
 def display_methods():
+    content = getContent("methodsCatalogue", False)
+    getContentMethodsTable = getContent("catalogueTableOfMethods2", True)
     methods = []
-    methods_dir = "./content/methods"
-    for file in listdir(methods_dir):
-        method = loads(evaluate_file(f"{methods_dir}/{file}"))
-
-        methods.append(
-            {
-                "id": file.split(".")[0],
-                "title": method["title"],
-                "theme": method["method_metadata"]["Theme"],
-                "exp_group": method["method_metadata"]["Expert group"],
-                "language": method["method_metadata"]["Programming language"],
-                "access": method["method_metadata"]["Access type"],
-                "status": method["method_metadata"]["Status"],
-            }
-        )
+    for method in getContentMethodsTable:
+        methods.append(method)
     return render_template(
-        "methods.html", page={"rows": methods}, status_class=STATUS_CLASS
+        "methods.html", methods=methods, status_class=STATUS_CLASS, content=content
     )
