@@ -1,5 +1,4 @@
-from flask import abort, escape, Markup, render_template
-import markdown
+from flask import abort, render_template
 from sml_builder import app
 from sml_builder.cms import getContent
 

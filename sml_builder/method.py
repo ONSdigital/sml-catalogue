@@ -1,8 +1,4 @@
-from os import listdir
-from flask import render_template, url_for, abort
-from json import loads
-from flask import render_template
-from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
+from flask import render_template, abort
 from sml_builder import app
 from sml_builder.cms import getContent
 
@@ -22,8 +18,10 @@ def display_method(method):
     for item in getMethodsTableItems:
         if method == item["id"]:
             content = item
-            return render_template("method.html", method=content, status_class=STATUS_CLASS)
-
+            return render_template(
+                "method.html", method=content, status_class=STATUS_CLASS
+            )
+        return None
     if content is None:
         abort(404)
 
@@ -32,7 +30,7 @@ def display_method(method):
 def display_methods():
     # Gets the content for the methods catalogue page
     content = getContent("methodsCatalogue")
-    # Gets the methods table items for the methods catalogue page
+    # Gets the methods table items for the methods catalogue page
     getMethodsTableItems = getContent("catalogueTableOfMethods2")
 
     methods = []
