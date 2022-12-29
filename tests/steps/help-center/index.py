@@ -16,7 +16,7 @@ def navigate_to_url():
     webbrowser.open('http://127.0.0.1:5000')
 
 
-@when('I am on the help center page')
+@when('I navigate to the help center page')
 def navigate_to_url():
     webbrowser.find_element_by_id('title2').click()
 
