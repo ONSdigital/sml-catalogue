@@ -1,8 +1,4 @@
-from os import listdir
-from flask import render_template, url_for, abort
-from json import loads
-from flask import render_template
-from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
+from flask import render_template, abort
 from sml_builder import app
 from sml_builder.headlessCMS import getContent
 
@@ -22,6 +18,7 @@ def display_method(method):
         if method == item["id"]:
             content = item
             return render_template("method.html", method=content, status_class=STATUS_CLASS)
+        return None
 
     if content is None:
         abort(404)
