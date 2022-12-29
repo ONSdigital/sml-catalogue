@@ -1,7 +1,9 @@
 import contentful
 
 # Need to get these keys into a Environment Variable, if it goes through to production
-client = contentful.Client("ldcm7uk1vtxb", "kYeKazwcxKIM7neRynQ9UdTRbiZMsMbqy2SQV4PZfWI")
+client = contentful.Client(
+    "ldcm7uk1vtxb", "kYeKazwcxKIM7neRynQ9UdTRbiZMsMbqy2SQV4PZfWI"
+)
 
 
 # The function that retrieves and returns the content from contentful

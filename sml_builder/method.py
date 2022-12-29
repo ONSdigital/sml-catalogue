@@ -13,11 +13,12 @@ STATUS_CLASS = {
 def display_method(method):
     getContentMethodsTable = getContent("catalogueTableOfMethods2", True)
     content = None
-    # print(getContentMethodsTable)
     for item in getContentMethodsTable:
         if method == item["id"]:
             content = item
-            return render_template("method.html", method=content, status_class=STATUS_CLASS)
+            return render_template(
+                "method.html", method=content, status_class=STATUS_CLASS
+            )
         return None
 
     if content is None:
