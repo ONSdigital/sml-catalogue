@@ -21,6 +21,7 @@ import sml_builder.help_centre  # noqa: F401
 
 @app.route("/")
 def index():
+    # Gets the content for the home page
     content = getContent("heroHomePage")
     return render_template("index.html", content=content)
 

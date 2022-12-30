@@ -15,14 +15,15 @@ def getContent(contentType):
     return content
 
 
-# Returns the entries for the type of content passed into the function
+# Gets the entries for the type of content passed into the function
 def getEntriesByContentType(contentType):
     entries_by_content_type = client.entries({"content_type": contentType.id})
 
     return entries_by_content_type
 
 
-# Returns all the entries
+# Returns all the content depending if it's a list of content such as items on a table
+# or single item
 def compileContent(entries_by_content_type):
     entry_fields = []
     if (len(entries_by_content_type)) == 1:

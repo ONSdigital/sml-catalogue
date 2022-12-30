@@ -5,6 +5,7 @@ from sml_builder.cms import getContent
 
 @app.route("/resources/about")
 def about():
+    # Gets the content for the about page
     content = getContent("about")
     return render_template("about.html", content=content)
 
