@@ -1,5 +1,7 @@
 import contentful
 
+# Will need a official contentful account for the project, and then we can update
+# the space_id, content_delivery_api_key and put in env variables or secrets
 client = contentful.Client(
     "ldcm7uk1vtxb", "kYeKazwcxKIM7neRynQ9UdTRbiZMsMbqy2SQV4PZfWI"
 )
