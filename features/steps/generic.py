@@ -20,7 +20,5 @@ def navigate_to_url(context, page):
 
 @then('The title of the page is "{title}"')
 def check_title(context, title):
-
-    main_content = driver.find_element(By.ID, value="main-content")
-    page_title = main_content.find_element(By.TAG_NAME, "h1").text
+    page_title = driver.find_element(By.TAG_NAME, "h1").text
     assert page_title == title

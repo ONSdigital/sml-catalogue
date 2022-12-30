@@ -15,12 +15,10 @@ def auth_user(context):
 
 @when('I navigate to the help centre page')
 def navigate_to_url(context):
-    time.sleep(1)
     driver.find_element(By.LINK_TEXT, value='Help centre').click()
 
 
 @then('The title of the help centre page is "{title}"')
 def check_title(context, title):
-    main_content = driver.find_element(By.ID, value="main-content")
-    page_title = main_content.find_element(By.TAG_NAME, value="h1").text
+    page_title = driver.find_element(By.TAG_NAME, value="h1").text
     assert page_title == title

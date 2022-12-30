@@ -14,15 +14,11 @@ def auth_user(context):
 
 @when('I navigate to the thousand pound correction page')
 def navigate_to_date_adjustment_method(context):
-    time.sleep(1)
     driver.find_element(By.ID, value='title1').click()
-    time.sleep(1)
     driver.find_element(By.LINK_TEXT, value='Thousand pound correction').click()
 
 
 @then('The title of the thousand pound correction page is "{title}"')
 def check_title(context, title):
-
-    main_content = driver.find_element(By.ID, value="main-content")
-    page_title = main_content.find_element(By.TAG_NAME, "h1").text
+    page_title = driver.find_element(By.TAG_NAME, "h1").text
     assert page_title == title
