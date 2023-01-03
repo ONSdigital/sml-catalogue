@@ -2,7 +2,6 @@
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
 from behave import *
 driver = webdriver.Chrome()
 

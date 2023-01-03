@@ -1,9 +1,7 @@
 # Step definitions for methods catalogue page
 
-from urllib.parse import urljoin
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
 from behave import *
 driver = webdriver.Chrome()
 
@@ -39,6 +37,7 @@ def check_title(context, text):
     content_div = driver.find_element(By.ID, value='collapsible-content')
     dropdown_content_elements = content_div.find_elements(By.TAG_NAME, "p")
     dropdown_content = ""
+
     for i in range (len(dropdown_content_elements)):
         dropdown_content += dropdown_content_elements[i].text
         if i < len(dropdown_content_elements)-1:
