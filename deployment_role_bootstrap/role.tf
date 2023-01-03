@@ -128,6 +128,9 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
             "Effect": "Allow",
             "Action": [
                 "route53:GetHostedZone",
+                "route53:ListHostedZones",
+                "route53:ListTagsForResources",
+                "route53:ListTagsForResource",
                 "acm:DeleteCertificate",
                 "acm:DescribeCertificate",
                 "acm:RequestCertificate",
