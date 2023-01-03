@@ -64,11 +64,10 @@ resource "aws_cloudfront_distribution" "sml-catalogue" {
     }
   }
 
-  viewer_certificate = terraform.workspace == "main" ? {
-    acm_certificate_arn      = module.route53.cert_arn
-    minimum_protocol_version = "TLSv1.2_2021"
-    } : {
-    cloudfront_default_certificate = true
+  viewer_certificate {
+    acm_certificate_arn            = terraform.workspace == "main" ? module.route53.cert_arn : null
+    minimum_protocol_version       = terraform.workspace == "main" ? "TLSv1.2_2021" : null
+    cloudfront_default_certificate = terraform.workspace != "main"
   }
 }
 
