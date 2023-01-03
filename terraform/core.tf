@@ -7,8 +7,8 @@ provider "aws" {
       Name                      = "SML Catalogue"
       "ons:owner:business-unit" = "DST"
       "ons:application:eol"     = "N/A"
-      "ons:owner:contact"       = "Phil Bambridge"
-      "ons:owner:team"          = "SPP CMT"
+      "ons:owner:contact"       = "Steve Gibbard"
+      "ons:owner:team"          = "SPP SML"
       "ons:application:name"    = "SML Catalogue"
       "ons:deployment"          = terraform.workspace
 
@@ -27,8 +27,8 @@ provider "aws" {
       Name                      = "SML Catalogue"
       "ons:owner:business-unit" = "DST"
       "ons:application:eol"     = "N/A"
-      "ons:owner:contact"       = "Phil Bambridge"
-      "ons:owner:team"          = "SPP CMT"
+      "ons:owner:contact"       = "Steve Gibbard"
+      "ons:owner:team"          = "SPP SML"
       "ons:application:name"    = "SML Catalogue"
       "ons:deployment"          = terraform.workspace
 

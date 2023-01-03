@@ -1,11 +1,11 @@
-var "s3_bucket" {
+variable "s3_bucket" {
   type = object({
     domain_name    = string
     hosted_zone_id = string
   })
 }
 
-var "domain_name_base" {
+variable "domain_name_base" {
   type = string
 }
 
