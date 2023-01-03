@@ -16,6 +16,8 @@ resource "aws_cloudfront_distribution" "sml-catalogue" {
   is_ipv6_enabled     = true
   default_root_object = "index.html"
 
+  aliases = terraform.workspace == "main" ? [local.domain_name_base[var.environment]] : null
+
   custom_error_response {
     error_code         = "403"
     response_code      = "404"
@@ -65,9 +67,9 @@ resource "aws_cloudfront_distribution" "sml-catalogue" {
   }
 
   viewer_certificate {
-    acm_certificate_arn = terraform.workspace == "main" ? module.route53[0].cert_arn : null
-    ssl_support_method  = terraform.workspace == "main" ? "sni-only" : null
-    #minimum_protocol_version       = terraform.workspace == "main" ? "TLSv1.2_2019" : null
+    acm_certificate_arn            = terraform.workspace == "main" ? module.route53[0].cert_arn : null
+    ssl_support_method             = terraform.workspace == "main" ? "sni-only" : null
+    minimum_protocol_version       = terraform.workspace == "main" ? "TLSv1.2_2019" : null
     cloudfront_default_certificate = terraform.workspace != "main"
   }
 }
