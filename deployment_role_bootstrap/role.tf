@@ -132,6 +132,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "route53:ListTagsForResources",
                 "route53:ListTagsForResource",
                 "route53:ChangeResourceRecordSets",
+                "route53:ListResourceRecordSets",
                 "route53:GetChange",
                 "acm:DeleteCertificate",
                 "acm:DescribeCertificate",
