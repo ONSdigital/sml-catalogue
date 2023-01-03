@@ -7,7 +7,7 @@ driver = webdriver.Chrome()
 
 @given('I\'m an sml portal user trying to get to the methods catalogue page')
 def auth_user(context):
-    driver.get('http://localhost:5000/')
+    driver.get('http://localhost:8000/')
 
 
 @when('I navigate to the methods catalogue page')
