@@ -3,13 +3,13 @@
 # branch deployments are left as CF URLs since they
 # do not need to be memorable or static.
 
-data "aws_route53_zone" "onsdigital" {
+data "aws_route53_zone" "sml" {
   name         = var.domain_name_base
   private_zone = false
 }
 
-resource "aws_route53_record" "onsdigital" {
-  zone_id = data.aws_route53_zone.onsdigital.zone_id
+resource "aws_route53_record" "sml" {
+  zone_id = data.aws_route53_zone.sml.zone_id
   name    = var.domain_name_base
   type    = "A"
   alias {
