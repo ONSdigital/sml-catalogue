@@ -45,7 +45,3 @@ resource "aws_route53_record" "cert-validations" {
   type            = each.value.type
   zone_id         = data.aws_route53_zone.sml.zone_id
 }
-
-output "website_url" {
-  value = "https://${var.domain_name_base}/"
-}

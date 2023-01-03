@@ -110,3 +110,7 @@ output "cf_website_url" {
 output "cloudfront_id" {
   value = aws_cloudfront_distribution.sml-catalogue.id
 }
+
+output "website_url" {
+  value = module.route53.website_url
+}
