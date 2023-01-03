@@ -9,7 +9,7 @@ driver = webdriver.Chrome()
 
 @given('I\'m an sml portal user on the home page')
 def auth_user(context):
-    driver.get('http://localhost:5000/')
+    driver.get('http://localhost:8000/')
 
 
 @when('I click the "{page}" link in the header')

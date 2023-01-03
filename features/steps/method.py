@@ -23,7 +23,7 @@ def check_title(context, title):
 
 @given('I am on the methods catalogue page')
 def auth_user(context):
-    driver.get('http://localhost:5000/methods')
+    driver.get('http://localhost:8000/methods')
 
 
 @when('I click on the collapsible drop down')
@@ -40,7 +40,7 @@ def check_title(context, text):
 
     for i in range (len(dropdown_content_elements)):
         dropdown_content += dropdown_content_elements[i].text
-        if i < len(dropdown_content_elements)-1:
-            dropdown_content += " "
-    print(dropdown_content)
+        dropdown_content += " "
+
+    dropdown_content = dropdown_content.rstrip()
     assert dropdown_content == text

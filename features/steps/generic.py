@@ -9,12 +9,12 @@ driver = webdriver.Chrome()
 
 @given('I\'m an sml portal user')
 def auth_user(context):
-    driver.get('http://localhost:5000/')
+    driver.get('http://localhost:8000/')
 
 
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
-    driver.get(urljoin('http://localhost:5000/resources/', page))
+    driver.get(urljoin('http://localhost:8000/resources/', page))
 
 
 @then('The title of the page is "{title}"')
