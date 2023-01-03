@@ -22,13 +22,13 @@ resource "aws_route53_record" "onsdigital" {
 resource "aws_acm_certificate" "sml" {
   domain_name       = var.domain_name_base
   validation_method = "DNS"
-  provider          = aws.us_east_1
+  #  provider          = aws.us_east_1
 }
 
 resource "aws_acm_certificate_validation" "sml" {
   certificate_arn         = aws_acm_certificate.sml.arn
   validation_record_fqdns = [for record in aws_route53_record.cert-validations : record.fqdn]
-  provider                = aws.us_east_1
+  #  provider                = aws.us_east_1
 }
 resource "aws_route53_record" "cert-validations" {
   for_each = {
