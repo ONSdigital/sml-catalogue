@@ -10,5 +10,5 @@ variable "domain_name_base" {
 }
 
 output "cert_arn" {
-  value = aws_acm_certificate.arn
+  value = aws_acm_certificate.sml.arn
 }
