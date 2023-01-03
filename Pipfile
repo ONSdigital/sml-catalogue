@@ -10,7 +10,8 @@ markdown = "*"
 flake8 = "*"
 pylint = "*"
 bandit = "*"
-pytest-bdd = "*"
+behave = "*"
+selenium = "*"
 
 [dev-packages]
 black = "*"

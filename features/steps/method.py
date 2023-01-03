@@ -11,23 +11,28 @@ driver = webdriver.Chrome()
 def auth_user(context):
     driver.get('http://localhost:5000/')
 
+
 @when('I navigate to the methods catalogue page')
 def navigate_to_url(context):
     driver.find_element(By.ID, value='title1').click()
+
 
 @then('The title of the methods catalogue page is "{title}"')
 def check_title(context, title):
     page_title = driver.find_element(By.TAG_NAME, "h1").text
     assert page_title == title
 
+
 @given('I am on the methods catalogue page')
 def auth_user(context):
     driver.get('http://localhost:5000/methods')
+
 
 @when('I click on the collapsible drop down')
 def navigate_to_url(context):
     collapsible = driver.find_element(By.ID, value='collapsible')
     collapsible.find_element(By.TAG_NAME, "summary").click()
+
 
 @then('I see the dropdown content "{text}"')
 def check_title(context, text):
