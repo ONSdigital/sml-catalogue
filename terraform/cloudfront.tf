@@ -66,7 +66,7 @@ resource "aws_cloudfront_distribution" "sml-catalogue" {
 
   viewer_certificate {
     acm_certificate_arn            = terraform.workspace == "main" ? module.route53[0].cert_arn : null
-    Sssl_support_method            = terraform.workspace == "main" ? "static-ip" : null
+    ssl_support_method             = terraform.workspace == "main" ? "static-ip" : null
     minimum_protocol_version       = terraform.workspace == "main" ? "TLSv1.2_2021" : null
     cloudfront_default_certificate = terraform.workspace != "main"
   }
