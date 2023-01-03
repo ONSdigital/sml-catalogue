@@ -131,11 +131,13 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "route53:ListHostedZones",
                 "route53:ListTagsForResources",
                 "route53:ListTagsForResource",
+                "route53:ChangeResourceRecordSets",
                 "acm:DeleteCertificate",
                 "acm:DescribeCertificate",
                 "acm:RequestCertificate",
                 "acm:RemoveTagsFromCertificate",
                 "acm:AddTagsToCertificate",
+                "acm:ListTagsForCertificate",
                 "acm:ListCertificates",
                 "acm:RenewCertificate"
             ],
