@@ -122,7 +122,22 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "Resource": [
                     "arn:aws:s3:::statistical-methods-library-cf-logs*"
                 ]
-            }
+            },
+            {
+            "Sid": "AllowRoute53PlusACM",
+            "Effect": "Allow",
+            "Action": [
+                "route53:GetHostedZone",
+                "acm:DeleteCertificate",
+                "acm:DescribeCertificate",
+                "acm:RequestCertificate",
+                "acm:RemoveTagsFromCertificate",
+                "acm:AddTagsToCertificate",
+                "acm:ListCertificates",
+                "acm:RenewCertificate"
+            ],
+            "Resource": "*"
+        },
         ]
     }
     EOF
