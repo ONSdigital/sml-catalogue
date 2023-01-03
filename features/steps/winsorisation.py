@@ -1,9 +1,10 @@
 # Tests for the winsorisation link
 
-from selenium import webdriver
+import setupSelenium
 from selenium.webdriver.common.by import By
 from behave import *
-driver = webdriver.Chrome()
+
+driver = setupSelenium.driver
 
 
 @given('I\'m an sml portal user trying to get to the winsorisation method')

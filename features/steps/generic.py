@@ -1,10 +1,11 @@
 # Step definitions for about page
 
 from urllib.parse import urljoin
-from selenium import webdriver
+import setupSelenium
 from selenium.webdriver.common.by import By
 from behave import *
-driver = webdriver.Chrome()
+
+driver = setupSelenium.driver
 
 
 @given('I\'m an sml portal user')

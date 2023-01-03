@@ -1,9 +1,11 @@
 # Step definitions for methods catalogue page
 
-from selenium import webdriver
+import setupSelenium
 from selenium.webdriver.common.by import By
 from behave import *
-driver = webdriver.Chrome()
+
+driver = setupSelenium.driver
+
 
 @given('I\'m an sml portal user trying to get to the methods catalogue page')
 def auth_user(context):
