@@ -1,6 +1,7 @@
-from flask import Flask, render_template, escape, Markup
+from flask import Flask, render_template, escape, Markup, abort
 from flaskext.markdown import Markdown
 from sml_builder.cms import getContent
+
 
 app = Flask(__name__)
 Markdown(app)
@@ -17,12 +18,15 @@ import sml_builder.page  # noqa: F401
 import sml_builder.glossary  # noqa: F401
 import sml_builder.utils  # noqa: F401
 import sml_builder.help_centre  # noqa: F401
+from sml_builder.utils import checkEmptyList
 
 
 @app.route("/")
 def index():
     # Gets the content for the home page
     content = getContent("heroHomePage")
+    if checkEmptyList(content):
+        abort(404)
     return render_template("index.html", content=content)
 
 

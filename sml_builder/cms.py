@@ -1,10 +1,12 @@
+import os
 import contentful
 
-# Will need a official contentful account for the project, and then we can update
-# the space_id, content_delivery_api_key and put in env variables or secrets
-client = contentful.Client(
-    "ldcm7uk1vtxb", "kYeKazwcxKIM7neRynQ9UdTRbiZMsMbqy2SQV4PZfWI"
-)
+# Will need a official contentful account for the project/ team, and then we can update
+# the space_id, content_delivery_api_key
+SPACE_ID = os.environ.get("SPACE_ID")
+CDA_KEY = os.environ.get("CDA_KEY")
+
+client = contentful.Client(SPACE_ID, CDA_KEY)
 
 
 # Returns the content depending on the content type

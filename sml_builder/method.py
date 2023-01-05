@@ -1,6 +1,7 @@
 from flask import render_template, abort
 from sml_builder import app
 from sml_builder.cms import getContent
+from sml_builder.utils import checkTypeList, checkEmptyList
 
 STATUS_CLASS = {
     "In development": "pending",
@@ -15,12 +16,17 @@ def display_method(method):  # pylint: disable=inconsistent-return-statements
     getMethodsTableItems = getContent("catalogueTableOfMethods2")
     content = None
 
-    for item in getMethodsTableItems:
-        if method == item["id"]:
-            content = item
-            return render_template(
-                "method.html", method=content, status_class=STATUS_CLASS
-            )
+    if checkTypeList(getMethodsTableItems):
+        for item in getMethodsTableItems:
+            if method == item["id"]:
+                content = item
+                return render_template(
+                    "method.html", method=content, status_class=STATUS_CLASS
+                )
+
+    elif method == getMethodsTableItems["id"]:
+        content = getMethodsTableItems
+        return render_template("method.html", method=content, status_class=STATUS_CLASS)
     abort(404)
 
 
@@ -30,10 +36,16 @@ def display_methods():
     content = getContent("methodsCatalogue")
     # Gets the methods table items for the methods catalogue page
     getMethodsTableItems = getContent("catalogueTableOfMethods2")
+    if checkEmptyList(getMethodsTableItems) or checkEmptyList(content):
+        abort(404)
 
     methods = []
-    for method in getMethodsTableItems:
-        methods.append(method)
+
+    if checkTypeList(getMethodsTableItems):
+        for method in getMethodsTableItems:
+            methods.append(method)
+    else:
+        methods.append(getMethodsTableItems)
 
     return render_template(
         "methods.html", methods=methods, status_class=STATUS_CLASS, content=content

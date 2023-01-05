@@ -1,12 +1,15 @@
 from flask import abort, render_template
 from sml_builder import app
 from sml_builder.cms import getContent
+from sml_builder.utils import checkEmptyList
 
 
 @app.route("/resources/about")
 def about():
     # Gets the content for the about page
     content = getContent("about")
+    if checkEmptyList(content):
+        abort(404)
     return render_template("about.html", content=content)
 
 
