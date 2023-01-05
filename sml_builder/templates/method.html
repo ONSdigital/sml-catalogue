@@ -1,5 +1,5 @@
 {%- extends "core.html" -%}
-{%- set page_title = page.title -%}
+{%- set page_title = method.name -%}
 {%- set current_path = url_for("display_methods") -%}
 {%- set breadcrumbs = {
   "id":"breadcrumbs",
@@ -13,81 +13,125 @@
   ]
 } -%}
 {%- block main -%}
-<h1 class="ons-u-mt-no">Method: {{ page.title }}</h1>
+<h1 class="ons-u-mt-no">Method: {{ method.name }}</h1>
 <h2> Method summary </h2>
-{{ page.description | paras }}
+{{ method.description | paras }}
 
 <h2> Contact details for this method </h2>
-{% if page.contact_details %}
+{% if method.contact_details %}
   {% from "components/external-link/_macro.njk" import onsExternalLink %}
   {{
       onsExternalLink({
-        "url": 'mailto:' ~ page.contact_details ,
-        "linkText": page.contact_details  
+        "url": 'mailto:' ~ method.contact_details ,
+        "linkText": method.contact_details  
       })
   }}
 {% endif %}
 
-{% from "components/metadata/_macro.njk" import onsMetadata %}
-{% set items = [] %}
-{% for item in page.method_metadata %}
-{% set description = page.method_metadata[item] %}
-  {% if item == "Status" %}
-    {% set description = '<span class="ons-status ons-status--' + status_class.get(description, "info") + '">' + description + '</span>' %}
-  {% endif %}
-
-{% do
-  items.append(
-    {
-        "term": item,
-        "descriptions": [
-            {
-                "description": description or "<em>n/a</em>"
-            }
-        ]
-    }
-  )
-%}
-{% endfor %}
 <hr class="ons-u-mb-m">
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+
+{% if method.code_available == True %}
+  {% set code_available = "Yes" %}
+{% else %}
+  {% set code_available = "No" %}
+{% endif %}
+
 {{
   onsMetadata({
-      "classes": "ons-u-mb-no ",
-      "metadataLabel": "Method information",
-      "termCol": "3",
-      "descriptionCol": "9",
-      "itemsList": items
+    "classes": "ons-u-mb-no ",
+    "metadataLabel": "Method information",
+    "termCol": "3",
+    "descriptionCol": "9",
+    "itemsList": [
+      {
+        "term": "Access type",
+        "descriptions": [
+          {
+            "description": method.access
+          }
+        ]
+      },
+      {
+        "term": "Author",
+        "descriptions": [
+          {
+            "description": method.author
+          }
+        ]
+      },
+      {
+        "term": "Code available?",
+        "descriptions": [
+          {
+            "description": code_available
+          }
+        ]
+      },
+      {
+        "term": "Expert group",
+        "descriptions": [
+          {
+            "description": method.expert_group
+          }
+        ]
+      },
+      {
+        "term": "Programming language",
+        "descriptions": [
+          {
+            "description": method.language
+          }
+        ]
+      },
+      {
+        "term": "Status",
+        "descriptions": [
+          {
+            "description": '<span class="ons-status ons-status--' + status_class.get(method.status, "info") + '">' + method.status + '</span>'
+          }
+        ]
+      },
+      {
+        "term": "Theme",
+        "descriptions": [
+          {
+            "description": method.theme
+          }
+        ]
+      },
+    ]
   })
 }}
 <hr class="ons-u-mb-m">
 
 <h2>GitHub resources</h2>
-{{ page.additional_info | paras }}
-{% if page.code_link %}
+{{ method.additional_information | paras }}
+{% if method.code_link %}
 {% from "components/external-link/_macro.njk" import onsExternalLink %}
 {{
   onsExternalLink({
-    "url":page.code_link,
+    "url":method.code_link,
     "linkText":"Go to code"
   })
 }}
 &nbsp;
 {% endif %}
-{% if page.specification_link %}
+{% if method.specification_link %}
 {% from "components/external-link/_macro.njk" import onsExternalLink %}
 {{
   onsExternalLink({
-    "url":page.specification_link,
+    "url":method.specification_link,
     "linkText":"Go to specification"
   })
 }}
 &nbsp;
 {% endif %}
-{% if page.user_documentation_link %}
+{% if method.user_documentation_link %}
 {% from "components/external-link/_macro.njk" import onsExternalLink %}
 {{
   onsExternalLink({
-    "url":page.user_documentation_link,
+    "url":method.user_documentation_link,
     "linkText":"Go to user documentation"
   })
 }}
