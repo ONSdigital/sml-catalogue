@@ -13,6 +13,10 @@
                     "label": "How to submit a method request"
                 },
                 {
+                    "name": "version-methods",
+                    "label": "How are the methods versioned?"
+                },
+                {
                     "name": "coding-standards",
                     "label": "What are the coding standards?"
                 }
