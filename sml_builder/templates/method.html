@@ -15,7 +15,7 @@
 {%- block main -%}
 <h1 class="ons-u-mt-no">Method: {{ method.name }}</h1>
 <h2> Method summary </h2>
-{{ method.description | paras }}
+{{ method.description | markdown }}
 
 <h2> Contact details for this method </h2>
 {% if method.contact_details %}

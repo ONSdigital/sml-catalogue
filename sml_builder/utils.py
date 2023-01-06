@@ -9,12 +9,8 @@ def convert_term(value):
 
 
 def checkTypeList(data):
-    if isinstance(data, list):
-        return True
-    return None
+    return isinstance(data, list)
 
 
 def checkEmptyList(data):
-    if not data:
-        return True
-    return None
+    return not data
