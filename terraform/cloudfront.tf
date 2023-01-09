@@ -112,5 +112,5 @@ output "cloudfront_id" {
 }
 
 output "website_url" {
- value = length(module.route53) > 0 ? module.route53[0].website_url : null
+  value = length(module.route53) > 0 ? module.route53[0].website_url : null
 }
