@@ -104,13 +104,13 @@ module "route53" {
 }
 
 output "cf_website_url" {
-  value = length(module.route53) > 0 ? "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/" : null
+  value = length(module.route53) > 0 ? "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
 }
 
 output "cloudfront_id" {
-  value = length(module.route53) > 0 ? aws_cloudfront_distribution.sml-catalogue.id : null
+  value = length(module.route53) > 0 ? aws_cloudfront_distribution.sml-catalogue.id
 }
 
 output "website_url" {
-  value = length(module.route53) > 0 ? module.route53[0].website_url : null
+  value = length(module.route53) > 0 ? module.route53[0].website_url
 }
