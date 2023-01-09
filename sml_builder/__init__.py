@@ -1,6 +1,10 @@
-from flask import Flask, render_template, escape, Markup
+from flask import Flask, render_template, escape, Markup, abort
+from flaskext.markdown import Markdown
+from sml_builder.cms import getContent
+
 
 app = Flask(__name__)
+Markdown(app)
 
 app.jinja_env.add_extension("jinja2.ext.do")  # pylint: disable=no-member
 app.jinja_env.trim_blocks = True
@@ -14,11 +18,16 @@ import sml_builder.page  # noqa: F401
 import sml_builder.glossary  # noqa: F401
 import sml_builder.utils  # noqa: F401
 import sml_builder.help_centre  # noqa: F401
+from sml_builder.utils import checkEmptyList
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    # Gets the content for the home page
+    content = getContent("heroHomePage")
+    if checkEmptyList(content):
+        abort(404)
+    return render_template("index.html", content=content)
 
 
 @app.errorhandler(404)

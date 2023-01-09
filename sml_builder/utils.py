@@ -6,3 +6,11 @@ from sml_builder import app
 def convert_term(value):
     converted = re.sub("[^0-9a-z]+", "-", value.lower())
     return converted
+
+
+def checkTypeList(data):
+    return isinstance(data, list)
+
+
+def checkEmptyList(data):
+    return not data
