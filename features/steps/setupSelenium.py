@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.options import Options
 import socket
 import os
 options = Options()
-# options.headless = True
+options.headless = True
 driver = webdriver.Chrome(options=options)
 
 hostname = socket.gethostname()
