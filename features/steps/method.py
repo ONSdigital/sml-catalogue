@@ -26,7 +26,7 @@ def check_title(context, title):
 
 @given('I am on the methods catalogue page')
 def auth_user(context):
-    driver.get(host)
+    driver.get(host + "methods/")
 
 
 @when('I click on the collapsible drop down')

@@ -8,5 +8,5 @@ driver = webdriver.Chrome(options=options)
 hostname = socket.gethostname()
 local_ip = socket.gethostbyname(hostname)
 
-local_ip = f"http://{local_ip}:8000/"
-# print(local_ip)
+local_ip = f"http://{local_ip}/"
+print(local_ip)
