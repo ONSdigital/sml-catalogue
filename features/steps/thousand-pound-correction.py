@@ -9,7 +9,7 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user trying to get to the thousand pound correction method')
 def auth_user(context):
-    driver.get('http://localhost:8000/')
+    driver.get('https://dka5cqmdre2ci.cloudfront.net/')
 
 
 @when('I navigate to the thousand pound correction page')

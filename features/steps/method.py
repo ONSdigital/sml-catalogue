@@ -9,7 +9,7 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user trying to get to the methods catalogue page')
 def auth_user(context):
-    driver.get('http://localhost:8000/')
+    driver.get('https://dka5cqmdre2ci.cloudfront.net/')
 
 
 @when('I navigate to the methods catalogue page')
@@ -25,7 +25,7 @@ def check_title(context, title):
 
 @given('I am on the methods catalogue page')
 def auth_user(context):
-    driver.get('http://localhost:8000/methods')
+    driver.get('https://dka5cqmdre2ci.cloudfront.net/methods')
 
 
 @when('I click on the collapsible drop down')

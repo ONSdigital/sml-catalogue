@@ -10,12 +10,12 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user')
 def auth_user(context):
-    driver.get('http://localhost:8000/')
+    driver.get('https://dka5cqmdre2ci.cloudfront.net/')
 
 
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
-    driver.get(urljoin('http://localhost:8000/resources/', page))
+    driver.get(urljoin('https://dka5cqmdre2ci.cloudfront.net/resources/', page))
 
 
 @then('The title of the page is "{title}"')
