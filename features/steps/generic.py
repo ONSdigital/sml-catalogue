@@ -1,5 +1,6 @@
 # Step definitions for about page
 
+import os
 from urllib.parse import urljoin
 import setupSelenium
 from selenium.webdriver.common.by import By
@@ -10,12 +11,12 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user')
 def auth_user(context):
-    driver.get('https://dka5cqmdre2ci.cloudfront.net/')
+    driver.get(os.environ.get('DEPLOY_URL'))
 
 
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
-    driver.get(urljoin('https://dka5cqmdre2ci.cloudfront.net/resources/', page))
+    driver.get(urljoin(os.environ.get('DEPLOY_URL'), f'resources/{page}'))
 
 
 @then('The title of the page is "{title}"')

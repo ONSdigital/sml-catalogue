@@ -1,5 +1,6 @@
 # Step definitions for help centre page
 
+import os
 import setupSelenium
 from selenium.webdriver.common.by import By
 from behave import *
@@ -9,7 +10,7 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user trying to get to the help centre')
 def auth_user(context):
-    driver.get('https://dka5cqmdre2ci.cloudfront.net/')
+    driver.get(os.environ.get('DEPLOY_URL'))
 
 
 @when('I navigate to the help centre page')

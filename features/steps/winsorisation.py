@@ -9,7 +9,7 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user trying to get to the winsorisation method')
 def auth_user(context):
-    driver.get('https://dka5cqmdre2ci.cloudfront.net/')
+    driver.get(os.environ.get('DEPLOY_URL'))
 
 
 @when('I navigate to the winsorisation page')

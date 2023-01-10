@@ -1,5 +1,7 @@
 # Step definitions for methods catalogue page
 
+import os
+from urllib.parse import urljoin
 import setupSelenium
 from selenium.webdriver.common.by import By
 from behave import *
@@ -9,7 +11,7 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user trying to get to the methods catalogue page')
 def auth_user(context):
-    driver.get('https://dka5cqmdre2ci.cloudfront.net/')
+    driver.get(os.environ.get('DEPLOY_URL'))
 
 
 @when('I navigate to the methods catalogue page')
@@ -25,7 +27,7 @@ def check_title(context, title):
 
 @given('I am on the methods catalogue page')
 def auth_user(context):
-    driver.get('https://dka5cqmdre2ci.cloudfront.net/methods')
+    driver.get(urljoin(os.environ.get('DEPLOY_URL'), 'methods/'))
 
 
 @when('I click on the collapsible drop down')

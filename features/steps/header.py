@@ -1,5 +1,6 @@
 # Step definitions for methods catalogue page
 
+import os
 import setupSelenium
 from selenium.webdriver.common.by import By
 from behave import *
@@ -9,7 +10,7 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user on the home page')
 def auth_user(context):
-    driver.get('https://dka5cqmdre2ci.cloudfront.net/')
+    driver.get(os.environ.get('DEPLOY_URL'))
 
 
 @when('I click the "{page}" link in the header')
