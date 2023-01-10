@@ -20,6 +20,8 @@
       "title": content["detail"]
 }) %}
 <p>{{ content["detail_content"] | markdown}}</p>
+<p>To find out more about expert groups and themes, 
+  please visit the <a href=" {{ url_for('display_glossary') }} ">library glossary</a>.</p>
 {% endcall %}
 
 {% from "components/table/_macro.njk" import onsTable %}
