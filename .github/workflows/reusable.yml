@@ -86,10 +86,6 @@ jobs:
         run: |
           source venv/bin/activate
           pipenv sync --dev
-      - name: Get Env Variables
-        run: |
-          source venv/bin/activate
-          python getEnv.py
       - name: Run selenium behaviour tests
         run: |
           source venv/bin/activate

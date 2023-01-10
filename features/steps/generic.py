@@ -6,16 +6,17 @@ from selenium.webdriver.common.by import By
 from behave import *
 
 driver = setupSelenium.driver
+host = setupSelenium.local_ip
 
 
 @given('I\'m an sml portal user')
 def auth_user(context):
-    driver.get('https://dka5cqmdre2ci.cloudfront.net/')
+    driver.get(f"{host}:8000")
 
 
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
-    driver.get(urljoin('https://dka5cqmdre2ci.cloudfront.net/resources/', page))
+    driver.get(urljoin(host + "resources/", page))
 
 
 @then('The title of the page is "{title}"')
