@@ -86,7 +86,7 @@ jobs:
         run: |
           source venv/bin/activate
           pipenv sync --dev
-      - name: Run behaviour tests
+      - name: Run selenium behaviour tests
         run: |
           source venv/bin/activate
           behave
