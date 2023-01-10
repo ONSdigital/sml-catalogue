@@ -86,6 +86,10 @@ jobs:
         run: |
           source venv/bin/activate
           pipenv sync --dev
+      - name: Run selenium behaviour tests
+        run: |
+          source venv/bin/activate
+          behave
       - name: Code Formatter
         run: |
           source venv/bin/activate
@@ -99,10 +103,6 @@ jobs:
         run: |
           source venv/bin/activate
           bandit -r sml_builder 
-      - name: Run selenium behaviour tests
-        run: |
-          source venv/bin/activate
-          behave
       - name: Freeze flask
         run: |
           source venv/bin/activate

@@ -3,12 +3,12 @@ from selenium.webdriver.chrome.options import Options
 import socket
 import os
 options = Options()
-options.headless = True
+# options.headless = True
 driver = webdriver.Chrome(options=options)
 
 hostname = socket.gethostname()
 local_ip = socket.gethostbyname(hostname)
 
-local_ip = f"http://{local_ip}/"
-print(local_ip)
-print(os.environ["DEPLOY_URL"])
+local_ip = f"http://{local_ip}:8000"
+# print(local_ip)
+# print(os.environ["DEPLOY_URL"])
