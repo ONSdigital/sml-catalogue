@@ -86,6 +86,10 @@ jobs:
         run: |
           source venv/bin/activate
           pipenv sync --dev
+      - name: Run behaviour tests
+        run: |
+          source venv/bin/activate
+          behave
       - name: Code Formatter
         run: |
           source venv/bin/activate
