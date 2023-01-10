@@ -7,12 +7,10 @@ from behave import *
 
 driver = setupSelenium.driver
 host = setupSelenium.local_ip
-port = setupSelenium.port
 
 @given('I\'m an sml portal user trying to get to the methods catalogue page')
 def auth_user(context):
-    driver.get(f"{host}:{port}/")
-
+    driver.get(host)
 
 @when('I navigate to the methods catalogue page')
 def navigate_to_url(context):
@@ -27,7 +25,7 @@ def check_title(context, title):
 
 @given('I am on the methods catalogue page')
 def auth_user(context):
-    driver.get(urljoin(f"{host}:{port}/", 'methods/'))
+    driver.get(host)
 
 
 @when('I click on the collapsible drop down')

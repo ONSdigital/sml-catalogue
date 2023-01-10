@@ -6,12 +6,10 @@ from behave import *
 
 driver = setupSelenium.driver
 host = setupSelenium.local_ip
-port = setupSelenium.port
 
 @given('I\'m an sml portal user trying to get to the help centre')
 def auth_user(context):
-    driver.get(f"{host}:{port}/")
-
+    driver.get(host)
 
 @when('I navigate to the help centre page')
 def navigate_to_url(context):
