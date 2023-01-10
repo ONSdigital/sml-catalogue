@@ -11,7 +11,7 @@ port = setupSelenium.port
 @given('I\'m an sml portal user trying to get to the winsorisation method')
 def auth_user(context):
     driver.get(f"{host}:{port}/")
-
+    print(host, port)
 
 @when('I navigate to the winsorisation page')
 def navigate_to_date_adjustment_method(context):
