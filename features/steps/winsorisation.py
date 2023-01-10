@@ -1,5 +1,6 @@
 # Tests for the winsorisation link
 
+import os
 import setupSelenium
 from selenium.webdriver.common.by import By
 from behave import *
@@ -9,7 +10,7 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user trying to get to the winsorisation method')
 def auth_user(context):
-    driver.get(os.environ.get('DEPLOY_URL'))
+    driver.get(f"{os.environ.get('DEPLOY_URL')}")
 
 
 @when('I navigate to the winsorisation page')

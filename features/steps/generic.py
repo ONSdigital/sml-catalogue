@@ -11,12 +11,12 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user')
 def auth_user(context):
-    driver.get(os.environ.get('DEPLOY_URL'))
+    driver.get(f"{os.environ.get('DEPLOY_URL')}")
 
 
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
-    driver.get(urljoin(os.environ.get('DEPLOY_URL'), f'resources/{page}'))
+    driver.get(urljoin(f"{os.environ.get('DEPLOY_URL')})", f'resources/{page}'))
 
 
 @then('The title of the page is "{title}"')

@@ -10,7 +10,7 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user on the home page')
 def auth_user(context):
-    driver.get(os.environ.get('DEPLOY_URL'))
+    driver.get(f"{os.environ.get('DEPLOY_URL')}")
 
 
 @when('I click the "{page}" link in the header')

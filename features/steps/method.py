@@ -11,7 +11,7 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user trying to get to the methods catalogue page')
 def auth_user(context):
-    driver.get(os.environ.get('DEPLOY_URL'))
+    driver.get(f"{os.environ.get('DEPLOY_URL')}")
 
 
 @when('I navigate to the methods catalogue page')
@@ -27,7 +27,7 @@ def check_title(context, title):
 
 @given('I am on the methods catalogue page')
 def auth_user(context):
-    driver.get(urljoin(os.environ.get('DEPLOY_URL'), 'methods/'))
+    driver.get(urljoin(f"{os.environ.get('DEPLOY_URL')})", 'methods/'))
 
 
 @when('I click on the collapsible drop down')

@@ -10,7 +10,7 @@ driver = setupSelenium.driver
 
 @given('I\'m an sml portal user trying to get to the thousand pound correction method')
 def auth_user(context):
-    driver.get(os.environ.get('DEPLOY_URL'))
+    driver.get(f"{os.environ.get('DEPLOY_URL')}")
 
 
 @when('I navigate to the thousand pound correction page')
