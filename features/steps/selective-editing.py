@@ -1,16 +1,16 @@
 # Tests for the selective editing link
 
-import os
 import setupSelenium
 from selenium.webdriver.common.by import By
 from behave import *
 
 driver = setupSelenium.driver
-
+host = setupSelenium.local_ip
+port = setupSelenium.port
 
 @given('I\'m an sml portal user trying to get to the selective editing method')
 def auth_user(context):
-    driver.get(f"{os.environ.get('DEPLOY_URL')}")
+    driver.get(f"{host}:{port}/")
 
 
 @when('I navigate to the selective editing page')

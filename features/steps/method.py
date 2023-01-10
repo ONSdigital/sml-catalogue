@@ -1,17 +1,17 @@
 # Step definitions for methods catalogue page
 
-import os
 from urllib.parse import urljoin
 import setupSelenium
 from selenium.webdriver.common.by import By
 from behave import *
 
 driver = setupSelenium.driver
-
+host = setupSelenium.local_ip
+port = setupSelenium.port
 
 @given('I\'m an sml portal user trying to get to the methods catalogue page')
 def auth_user(context):
-    driver.get(f"{os.environ.get('DEPLOY_URL')}")
+    driver.get(f"{host}:{port}/")
 
 
 @when('I navigate to the methods catalogue page')
@@ -27,7 +27,7 @@ def check_title(context, title):
 
 @given('I am on the methods catalogue page')
 def auth_user(context):
-    driver.get(urljoin(f"{os.environ.get('DEPLOY_URL')})", 'methods/'))
+    driver.get(urljoin(f"{host}:{port}/", 'methods/'))
 
 
 @when('I click on the collapsible drop down')

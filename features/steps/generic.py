@@ -1,22 +1,22 @@
 # Step definitions for about page
 
-import os
 from urllib.parse import urljoin
 import setupSelenium
 from selenium.webdriver.common.by import By
 from behave import *
 
 driver = setupSelenium.driver
-
+host = setupSelenium.local_ip
+port = setupSelenium.port
 
 @given('I\'m an sml portal user')
 def auth_user(context):
-    driver.get(f"{os.environ.get('DEPLOY_URL')}")
+    driver.get(f"{host}:{port}/")
 
 
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
-    driver.get(urljoin(f"{os.environ.get('DEPLOY_URL')})", f'resources/{page}'))
+    driver.get(urljoin(f"{host}:{port}/", f'resources/{page}'))
 
 
 @then('The title of the page is "{title}"')
