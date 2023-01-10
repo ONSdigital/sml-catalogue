@@ -11,5 +11,4 @@ local_ip = socket.gethostbyname(hostname)
 
 local_ip = f"http://{local_ip}/"
 print(local_ip)
-for name, value in os.environ.items():
-    print("{0}: {1}".format(name, value))
+print(os.environ["DEPLOY_URL"])
