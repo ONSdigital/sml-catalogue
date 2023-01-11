@@ -70,8 +70,6 @@ jobs:
           message: |
             Workspace URL: ${{env.DEPLOY_URL}}
           allow-repeats: false
-      - name: "Show environmetn variables"
-        run: env
   build-files:
     runs-on: ubuntu-latest
     permissions:
