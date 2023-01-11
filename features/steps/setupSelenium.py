@@ -10,3 +10,5 @@ hostname = socket.gethostname()
 local_ip = socket.gethostbyname(hostname)
 
 local_ip = f"http://{local_ip}:8000"
+aws_url = os.system('echo ${{ needs.run-terraform.outputs.DEPLOY_URL }}')
+print(aws_url)

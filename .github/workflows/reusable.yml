@@ -80,9 +80,7 @@ jobs:
       contents: read 
     steps:
       - name: Output Deploy URL
-        run:  |
-          echo ${{ needs.run-terraform.outputs.DEPLOY_URL }}
-          echo ${{ {needs.run-terraform.outputs.cloudfront_id }}
+        run:  echo ${{ needs.run-terraform.outputs.DEPLOY_URL }}
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
