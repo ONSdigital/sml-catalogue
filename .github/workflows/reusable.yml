@@ -88,6 +88,7 @@ jobs:
           pipenv sync --dev
       - name: Run selenium behaviour tests
         run: |
+          echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_ENV
           source venv/bin/activate
           behave
       - name: Code Formatter
