@@ -77,12 +77,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: run-terraform
     permissions:
-      contents: read 
+      contents: read
+    env:
+      deploy_url: echo ${{ needs.run-terraform.outputs.DEPLOY_URL }}
     steps:
-      - name: Output Deploy URL
-        env:
-          deploy_url: echo ${{ needs.run-terraform.outputs.DEPLOY_URL }}
-        # run: echo ${{ needs.run-terraform.outputs.DEPLOY_URL }} >> $GITHUB_ENV
+      # - name: Output Deploy URL
+      #   run:  echo ${{ needs.run-terraform.outputs.DEPLOY_URL }}
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
