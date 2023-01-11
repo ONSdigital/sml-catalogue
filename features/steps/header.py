@@ -5,16 +5,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from behave import *
 
-def document_initialised(driver):
-    return driver.execute_script("return initialised")
-
 driver = setupSelenium.driver
 host = setupSelenium.local_ip
 
 @given('I\'m an sml portal user on the home page')
 def auth_user(context):
     driver.get(host)
-    WebDriverWait(driver, timeout=10).until(document_initialised)
     
 @when('I click the "{page}" link in the header')
 def navigate_to_url(context, page):
