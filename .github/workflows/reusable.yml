@@ -71,7 +71,7 @@ jobs:
             Workspace URL: ${{env.DEPLOY_URL}}
           allow-repeats: false
     outputs:
-      output: ${{ steps.step.outputs.test }}
+      output: ${{ steps.step.outputs.DEPLOY_URL }}
     steps:
       - id: step
         run: echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_OUTPUT
