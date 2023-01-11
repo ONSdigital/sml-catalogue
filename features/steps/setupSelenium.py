@@ -10,4 +10,6 @@ hostname = socket.gethostname()
 local_ip = socket.gethostbyname(hostname)
 
 local_ip = f"http://{local_ip}:8000"
-print(os.popen(f"terraform output website_url").read())
+
+for name, value in os.environ.items():
+    print("{0}: {1}".format(name, value))
