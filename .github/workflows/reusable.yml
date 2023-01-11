@@ -59,7 +59,7 @@ jobs:
           terraform apply \
             -auto-approve \
             -var="environment=${environment}"
-          echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_ENV
+          echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_JAMES
           echo "::set-output name=cloudfront_id::`terraform output -raw cloudfront_id`"
       - name: Add deploy URL to PR comment
         if: github.event_name == 'pull_request'

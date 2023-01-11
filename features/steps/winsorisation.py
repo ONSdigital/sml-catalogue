@@ -6,6 +6,7 @@ from behave import *
 
 driver = setupSelenium.driver
 host = setupSelenium.local_ip
+
 @given('I\'m an sml portal user trying to get to the winsorisation method')
 def auth_user(context):
     driver.get(host)
