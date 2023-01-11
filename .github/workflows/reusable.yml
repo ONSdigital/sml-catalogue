@@ -78,7 +78,7 @@ jobs:
     permissions:
       contents: read 
     steps:
-      - name: Output Deploy URL
+      - name: "Output Deploy URL"
         run: echo ${{needs.run-terraform.outputs.DEPLOY_URL}}
       - name: Check out repository code
         uses: actions/checkout@v3
