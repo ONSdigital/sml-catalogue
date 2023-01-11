@@ -30,6 +30,7 @@ jobs:
       pull-requests: write
     outputs:
       cloudfront_id: ${{ steps.apply.outputs.cloudfront_id }}
+      deploy_url: ${{ steps.apply.outputs.website_url }}
     steps:
       - run: echo ${{github.event_name}}
       - name: Check out repository code
@@ -60,7 +61,7 @@ jobs:
             -auto-approve \
             -var="environment=${environment}"
           echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_ENV
-          echo "::set-output name=cloudfront_id::`terraform output -raw cloudfront_id`"
+          echo "cloudfront_id=`terraform output -raw cloudfront_id`" >> $GITHUB_OUTPUT
       - name: Add deploy URL to PR comment
         if: github.event_name == 'pull_request'
         uses: mshick/add-pr-comment@v1
@@ -70,14 +71,11 @@ jobs:
           message: |
             Workspace URL: ${{env.DEPLOY_URL}}
           allow-repeats: false
-    outputs:
-      output: ${{ steps.step.outputs.DEPLOY_URL }}
-    steps:
-      - id: step
-        run: echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_OUTPUT
 
   build-files:
     runs-on: ubuntu-latest
+    needs: run-terraform
+    steps: echo ${{needs.run-terraform.outputs.deploy_url}}
     permissions:
       contents: read 
     steps:
