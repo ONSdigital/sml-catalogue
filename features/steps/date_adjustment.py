@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from behave import *
 
 driver = setupSelenium.driver
-host = setupSelenium.local_ip
+host = setupSelenium.website_url
 print(host)
 
 

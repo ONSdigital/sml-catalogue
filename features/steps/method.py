@@ -6,7 +6,7 @@ from behave import *
 import time
 
 driver = setupSelenium.driver
-host = setupSelenium.local_ip
+host = setupSelenium.website_url
 
 
 @given('I\'m an sml portal user trying to get to the methods catalogue page')
