@@ -92,8 +92,6 @@ jobs:
         run: |
           source venv/bin/activate
           pipenv sync --dev
-      - name: Show environment variables
-        run: env
       - name: Run selenium behaviour tests
         run: |
           source venv/bin/activate

@@ -10,5 +10,6 @@ driver = webdriver.Chrome(options=options)
 # website_url = socket.gethostbyname(hostname)
 
 website_url = os.getenv("env.deploy_url")
+print(website_url)
 website_url = str(website_url)
 # website_url = f"http://{website_url}:8000"
