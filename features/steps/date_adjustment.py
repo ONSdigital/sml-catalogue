@@ -5,10 +5,11 @@ from selenium.webdriver.common.by import By
 from behave import *
 
 driver = setupSelenium.driver
+host = setupSelenium.local_ip
 
 @given('I\'m an sml portal user trying to get to the date adjustment method')
 def auth_user(context):
-    driver.get('https://dka5cqmdre2ci.cloudfront.net/')
+    driver.get(host)
 
 
 @when('I navigate to the date adjustment page')
