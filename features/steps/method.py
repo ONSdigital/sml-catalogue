@@ -3,7 +3,11 @@
 from urllib.parse import urljoin
 import setupSelenium
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 from behave import *
+
+def document_initialised(driver):
+    return driver.execute_script("return initialised")
 import time
 
 driver = setupSelenium.driver
@@ -16,6 +20,7 @@ def auth_user(context):
 @when('I navigate to the methods catalogue page')
 def navigate_to_url(context):
     driver.find_element(By.ID, value='title1').click()
+    WebDriverWait(driver, timeout=10).until(document_initialised)
 
 
 @then('The title of the methods catalogue page is "{title}"')
@@ -33,6 +38,7 @@ def auth_user(context):
 def navigate_to_url(context):
     collapsible = driver.find_element(By.ID, value='collapsible')
     collapsible.find_element(By.TAG_NAME, "summary").click()
+    WebDriverWait(driver, timeout=10).until(document_initialised)
 
 
 @then('I see the dropdown content "{text}"')

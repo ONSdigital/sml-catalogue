@@ -2,7 +2,14 @@
 
 import setupSelenium
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 from behave import *
+
+def document_initialised(driver):
+    return driver.execute_script("return initialised")
+
+def document_initialised(driver):
+    return driver.execute_script("return initialised")
 
 driver = setupSelenium.driver
 host = setupSelenium.local_ip
@@ -15,8 +22,9 @@ def auth_user(context):
 @when('I navigate to the date adjustment page')
 def navigate_to_date_adjustment_method(context):
     driver.find_element(By.ID, value='title1').click()
+    WebDriverWait(driver, timeout=10).until(document_initialised)
     driver.find_element(By.LINK_TEXT, value='Date adjustment').click()
-
+    WebDriverWait(driver, timeout=10).until(document_initialised)
 
 @then('The title of the date adjustment page is "{title}"')
 def check_title(context, title):

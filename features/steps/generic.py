@@ -3,7 +3,11 @@
 from urllib.parse import urljoin
 import setupSelenium
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 from behave import *
+
+def document_initialised(driver):
+    return driver.execute_script("return initialised")
 
 driver = setupSelenium.driver
 host = setupSelenium.local_ip
