@@ -6,10 +6,10 @@ options = Options()
 options.headless = True
 driver = webdriver.Chrome(options=options)
 
-# hostname = socket.gethostname()
-# website_url = socket.gethostbyname(hostname)
+hostname = socket.gethostname()
+website_url = socket.gethostbyname(hostname)
 
-website_url = os.getenv("env.deploy_url")
-print(website_url)
-website_url = str(website_url)
-# website_url = f"http://{website_url}:8000"
+if os.getenv("deploy_url"):
+    website_url = f"{os.getenv('deploy_url')}"
+else:
+    website_url = f"http://{website_url}:8000/"
