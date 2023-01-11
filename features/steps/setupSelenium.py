@@ -7,8 +7,9 @@ options.headless = True
 driver = webdriver.Chrome(options=options)
 
 hostname = socket.gethostname()
-local_ip = socket.gethostbyname(hostname)
+website_url = socket.gethostbyname(hostname)
 
-local_ip = f"http://{local_ip}:8000"
-
-print(os.getenv("env.DEPLOY_URL"))
+if os.getenv("env.deploy_url"):
+    website_url = os.getenv("env.deploy_url")
+else:
+    website_url = f"http://{website_url}:8000"
