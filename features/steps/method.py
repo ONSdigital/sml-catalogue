@@ -27,19 +27,16 @@ def check_title(context, title):
 
 @given('I am on the methods catalogue page')
 def auth_user(context):
-    driver.get(host + "/methods/")
-
+    driver.get(host)
+    WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='title1')).click()
 
 @when('I click on the collapsible drop down')
 def navigate_to_url(context):
-    collapsible =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='collapsible'))
-    collapsible.find_element(By.TAG_NAME, "summary").click()
-
+    WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='collapsible')).click
 
 @then('I see the dropdown content "{text}"')
 def check_title(context, text):
-    content_div =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='collapsible-content'))
-    dropdown_content_elements = content_div.find_elements(By.TAG_NAME, "p")
+    dropdown_content_elements = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='collapsible-content').find_elements(By.TAG_NAME, "p"))
     dropdown_content = ""
 
     for i in range (len(dropdown_content_elements)):
