@@ -5,7 +5,6 @@ import setupSelenium
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from behave import *
-import time
 
 driver = setupSelenium.driver
 host = setupSelenium.local_ip
@@ -32,11 +31,12 @@ def auth_user(context):
 
 @when('I click on the collapsible drop down')
 def navigate_to_url(context):
-    WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='collapsible')).click
+    WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.TAG_NAME, "summary")).click()
 
 @then('I see the dropdown content "{text}"')
 def check_title(context, text):
-    dropdown_content_elements = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='collapsible-content').find_elements(By.TAG_NAME, "p"))
+    content_div =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='collapsible-content'))
+    dropdown_content_elements = content_div.find_elements(By.TAG_NAME, "p")
     dropdown_content = ""
 
     for i in range (len(dropdown_content_elements)):
