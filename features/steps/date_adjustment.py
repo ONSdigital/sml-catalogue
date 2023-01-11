@@ -6,7 +6,6 @@ from behave import *
 
 driver = setupSelenium.driver
 host = setupSelenium.website_url
-print(host)
 
 
 @given('I\'m an sml portal user trying to get to the date adjustment method')
