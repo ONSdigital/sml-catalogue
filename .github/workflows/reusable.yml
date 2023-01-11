@@ -61,6 +61,7 @@ jobs:
             -auto-approve \
             -var="environment=${environment}"
           echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_ENV
+          echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_OUTPUT
           echo "cloudfront_id=`terraform output -raw cloudfront_id`" >> $GITHUB_OUTPUT
       - name: Add deploy URL to PR comment
         if: github.event_name == 'pull_request'
@@ -78,7 +79,7 @@ jobs:
     permissions:
       contents: read 
     steps:
-      - name: "Output Deploy URL"
+      - name: Output Deploy URL
         run: echo ${{needs.run-terraform.outputs.DEPLOY_URL}}
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -91,7 +92,7 @@ jobs:
         run: |
           source venv/bin/activate
           pipenv sync --dev
-      - name: "Show environment variables"
+      - name: Show environment variables
         run: env
       - name: Run selenium behaviour tests
         run: |
