@@ -10,11 +10,11 @@ host = setupSelenium.local_ip
 
 @given('I\'m an sml portal user')
 def auth_user(context):
-    driver.get(f"{host}:8000")
+    driver.get(host)
 
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
-    driver.get(urljoin(host + "resources/", page))
+    driver.get(urljoin(host + "/resources/", page))
 
 
 @then('The title of the page is "{title}"')

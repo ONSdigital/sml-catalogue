@@ -30,6 +30,7 @@ jobs:
       pull-requests: write
     outputs:
       cloudfront_id: ${{ steps.apply.outputs.cloudfront_id }}
+      deploy_url: ${{ steps.apply.outputs.DEPLOY_URL }}
     steps:
       - run: echo ${{github.event_name}}
       - name: Check out repository code
@@ -60,7 +61,8 @@ jobs:
             -auto-approve \
             -var="environment=${environment}"
           echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_ENV
-          echo "::set-output name=cloudfront_id::`terraform output -raw cloudfront_id`"
+          echo "DEPLOY_URL=`terraform output -raw website_url`" >> $GITHUB_OUTPUT
+          echo "cloudfront_id=`terraform output -raw cloudfront_id`" >> $GITHUB_OUTPUT
       - name: Add deploy URL to PR comment
         if: github.event_name == 'pull_request'
         uses: mshick/add-pr-comment@v1
@@ -72,9 +74,12 @@ jobs:
           allow-repeats: false
   build-files:
     runs-on: ubuntu-latest
+    needs: run-terraform
     permissions:
       contents: read 
     steps:
+      - name: Output Deploy URL
+        run:  echo ${{ needs.run-terraform.outputs.DEPLOY_URL }}
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
@@ -86,6 +91,10 @@ jobs:
         run: |
           source venv/bin/activate
           pipenv sync --dev
+      - name: Show environment variables
+        run: | 
+          echo "DEPLOY_URL=`run-terraform output -raw deploy-url`" >> $GITHUB_OUTPUT
+          env
       - name: Run selenium behaviour tests
         run: |
           env

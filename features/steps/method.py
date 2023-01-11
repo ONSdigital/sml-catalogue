@@ -4,6 +4,7 @@ from urllib.parse import urljoin
 import setupSelenium
 from selenium.webdriver.common.by import By
 from behave import *
+import time
 
 driver = setupSelenium.driver
 host = setupSelenium.local_ip
@@ -25,7 +26,7 @@ def check_title(context, title):
 
 @given('I am on the methods catalogue page')
 def auth_user(context):
-    driver.get(host)
+    driver.get(host + "/methods/")
 
 
 @when('I click on the collapsible drop down')
