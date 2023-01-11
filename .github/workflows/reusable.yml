@@ -77,8 +77,6 @@ jobs:
     needs: run-terraform
     permissions:
       contents: read
-    env:  
-      deploy-url: ${{ needs.run-terraform.outputs.DEPLOY_URL }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
@@ -91,11 +89,6 @@ jobs:
         run: |
           source venv/bin/activate
           pipenv sync --dev
-      - name: Run selenium behaviour tests
-        run: |
-          env
-          source venv/bin/activate
-          behave
       - name: Code Formatter
         run: |
           source venv/bin/activate
@@ -126,6 +119,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: ${{inputs.environment}}
+    env:  
+      deploy-url: ${{ needs.run-terraform.outputs.DEPLOY_URL }}
     needs: [run-terraform, build-files]
     permissions:
       id-token: write
@@ -151,3 +146,8 @@ jobs:
           aws s3 sync build s3://sml-portal-$environment-$workspace_name --delete --exclude "*" --include "*.css"
       - name: Clear cache
         run: aws cloudfront create-invalidation --distribution-id ${{needs.run-terraform.outputs.cloudfront_id}} --paths "/*" > /dev/null
+      - name: Run selenium behaviour tests
+        run: |
+          env
+          source venv/bin/activate
+          behave
