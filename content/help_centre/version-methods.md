@@ -6,7 +6,7 @@ The major version is incremented (and minor and patch releases reset to zero) wh
 
 The minor version is incremented (and the patch version reset to zero) when new features are added without breaking backward compatibility (e.g addition of a new statistical method)
 
-The patch release version is incremented when bugfixes are implemented.
+The patch release version is incremented when backward compatible bugfixes are implemented.
 
 Consult the [SML python/pySpark release history in Github](https://github.com/ONSdigital/statistical-methods-library/releases) for the current and past releases for the python/pySpark methods and the [associated python/pySpark release notes](https://github.com/ONSdigital/statistical-methods-library/tree/main/docs/release-notes) to understand the changes between releases.
 
