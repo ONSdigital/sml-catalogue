@@ -72,10 +72,6 @@ jobs:
           message: |
             Workspace URL: ${{env.DEPLOY_URL}}
           allow-repeats: false
-      - name: Check chrome version
-        run: |
-          pwd
-          google-chrome --version
 
   build-files:
     runs-on: ubuntu-latest
@@ -173,8 +169,8 @@ jobs:
         run:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install ./google-chrome-stable_current_amd64.deb
+          google-chrome --version
       - name: Run selenium behaviour tests
         run: |
           source venv/bin/activate
           behave --no-capture
-
