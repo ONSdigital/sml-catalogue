@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from behave import *
 
 driver = setupSelenium.driver
-host = setupSelenium.local_ip
+host = setupSelenium.website_url
 
 @given('I\'m an sml portal user trying to get to the methods catalogue page')
 def auth_user(context):
