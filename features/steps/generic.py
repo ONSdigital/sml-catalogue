@@ -17,8 +17,8 @@ def auth_user(context):
 def navigate_to_url(context, page):
     print('host: ', host)
     driver.get(urljoin(host + "resources/", page))
-    print(host + "resources/", page)
-    WebDriverWait(driver, timeout=20).until(EC.presence_of_element_located((By.ID, 'main-content')))
+    print(urljoin(host + "resources/", page))
+    WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
 
 @then('The title of the page is "{title}"')
 def check_title(context, title):
