@@ -12,7 +12,6 @@ host = setupSelenium.local_ip
 @given('I\'m an sml portal user trying to get to the ht/ratio estimation method')
 def auth_user(context):
     driver.get(host)
-    WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'title1')))
 
 @when('I navigate to the ht/ratio estimation page')
 def navigate_to_date_adjustment_method(context):

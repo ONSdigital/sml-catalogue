@@ -117,7 +117,7 @@ jobs:
           name: build
           path: build.zip
           retention-days: 2
-      - name: Run selenium behaviour tests
+      - name: Run selenium tests
         run: |
           env
           source venv/bin/activate

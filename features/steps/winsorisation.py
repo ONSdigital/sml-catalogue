@@ -12,7 +12,6 @@ host = setupSelenium.local_ip
 @given('I\'m an sml portal user trying to get to the winsorisation method')
 def auth_user(context):
     driver.get(f"{host}methods")
-    WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
     
 @when('I navigate to the winsorisation page')
 def navigate_to_date_adjustment_method(context):
