@@ -21,8 +21,8 @@ def navigate_to_url(context, page):
         WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'collapsible')))
     elif page == "help centre":
         main_navigation =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='main-navigation'))
-        WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
         main_navigation.find_element(By.LINK_TEXT, value='Help centre').click()
+        WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
 
 
 @then('The title of this page is "{title}"')

@@ -15,10 +15,10 @@ def auth_user(context):
 
 @when('I navigate to the date adjustment page')
 def navigate_to_date_adjustment_method(context):
-    WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='title1')).click()
-    WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'collapsible')))
-    WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.LINK_TEXT, value='Date adjustment')).click()
-    WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
+    WebDriverWait(driver, timeout=20).until(lambda d: d.find_element(By.ID, value='title1')).click()
+    WebDriverWait(driver, timeout=20).until(EC.presence_of_element_located((By.ID, 'collapsible')))
+    WebDriverWait(driver, timeout=20).until(lambda d: d.find_element(By.LINK_TEXT, value='Date adjustment')).click()
+    WebDriverWait(driver, timeout=20).until(EC.presence_of_element_located((By.ID, 'main-content')))
 
 @then('The title of the date adjustment page is "{title}"')
 def check_title(context, title):
