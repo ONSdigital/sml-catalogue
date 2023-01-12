@@ -19,6 +19,7 @@ def navigate_to_date_adjustment_method(context):
     test = driver.find_element(By.TAG_NAME, "p").text
     print("Host: ", host)
     print("Test: ", test)
+    print("Current URL: ", driver.current_url)
     driver.find_element(By.ID, value='title1').click()
     driver.find_element(By.LINK_TEXT, value='Date adjustment').click()
 
