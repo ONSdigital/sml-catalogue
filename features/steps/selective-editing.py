@@ -10,7 +10,7 @@ host = setupSelenium.local_ip
 
 @given('I\'m an sml portal user trying to get to the selective editing method')
 def auth_user(context):
-    driver.get(host)
+    WebDriverWait(driver, timeout=10).until(host)
 
 @when('I navigate to the selective editing page')
 def navigate_to_date_adjustment_method(context):

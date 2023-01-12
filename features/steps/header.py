@@ -10,7 +10,7 @@ host = setupSelenium.local_ip
 
 @given('I\'m an sml portal user on the home page')
 def auth_user(context):
-    driver.get(host)
+    WebDriverWait(driver, timeout=10).until(host)
     
 @when('I click the "{page}" link in the header')
 def navigate_to_url(context, page):
