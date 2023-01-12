@@ -73,7 +73,7 @@ jobs:
             Workspace URL: ${{env.DEPLOY_URL}}
           allow-repeats: false
       - name: Check chrome version
-        run:
+        run: |
           pwd
           google-chrome --version
 
