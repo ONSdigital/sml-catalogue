@@ -168,4 +168,4 @@ jobs:
       - name: Run selenium behaviour tests
         run: |
           source venv/bin/activate
-          behave
+          behave --no-capture

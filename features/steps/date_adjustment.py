@@ -22,4 +22,5 @@ def navigate_to_date_adjustment_method(context):
 @then('The title of the date adjustment page is "{title}"')
 def check_title(context, title):
     page_title = driver.find_element(By.TAG_NAME, "h1").text
+    print(title, page_title)
     assert page_title == title
