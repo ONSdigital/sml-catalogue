@@ -11,11 +11,10 @@ host = setupSelenium.website_url
 
 @given('I\'m an sml portal user')
 def auth_user(context):
-    driver.get(host)
-    page_title = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
-    print('Discover methods used by the Office for National Statistics')
+    driver.get('www.google.com')
+    page_title = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, "gbqfbb")).text
     print(page_title)
-    assert page_title == 'Discover methods used by the Office for National Statistics'
+    assert page_title == 'I\'m Feeling Lucky'
 
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
