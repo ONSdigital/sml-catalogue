@@ -169,3 +169,5 @@ jobs:
         run: |
           source venv/bin/activate
           behave --no-capture
+          google-chrome --version
+
