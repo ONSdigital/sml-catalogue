@@ -1,7 +1,7 @@
 import os
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-options = ChromeOptions()
+options = Options()
 options.headless = True
 driver = webdriver.Chrome(options=options)
 if os.getenv('deploy_url'):
