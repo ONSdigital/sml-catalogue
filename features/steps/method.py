@@ -1,9 +1,9 @@
 # Step definitions for methods catalogue page
 
-from urllib.parse import urljoin
 import setupSelenium
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from behave import *
 
 driver = setupSelenium.driver
@@ -11,7 +11,8 @@ host = setupSelenium.local_ip
 
 @given('I\'m an sml portal user trying to get to the methods catalogue page')
 def auth_user(context):
-    WebDriverWait(driver, timeout=10).until(host)
+    driver.get(host)
+    WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'title1')))
 
 @when('I navigate to the methods catalogue page')
 def navigate_to_url(context):
@@ -26,7 +27,8 @@ def check_title(context, title):
 
 @given('I am on the methods catalogue page')
 def auth_user(context):
-    WebDriverWait(driver, timeout=10).until(f"{host}methods")
+    driver.get(f"{host}methods")
+    WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
 
 @when('I click on the collapsible drop down')
 def navigate_to_url(context):

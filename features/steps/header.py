@@ -3,6 +3,7 @@
 import setupSelenium
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from behave import *
 
 driver = setupSelenium.driver
@@ -10,7 +11,8 @@ host = setupSelenium.local_ip
 
 @given('I\'m an sml portal user on the home page')
 def auth_user(context):
-    WebDriverWait(driver, timeout=10).until(host)
+    driver.get(host)
+    WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'title1')))
     
 @when('I click the "{page}" link in the header')
 def navigate_to_url(context, page):
