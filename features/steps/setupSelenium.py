@@ -15,7 +15,7 @@ def returnWebURL():
     website_url = socket.gethostbyname(hostname)
 
     if os.getenv("deploy_url"):
-        website_url = f"{os.getenv('deploy_url')}"
+        website_url = os.getenv('deploy_url')
     else:
         website_url = f"http://{website_url}:8000/"
         
