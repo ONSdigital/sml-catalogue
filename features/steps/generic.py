@@ -22,7 +22,7 @@ def navigate_to_url(context, page):
 
 @then('The title of the page is "{title}"')
 def check_title(context, title):
-    page_title = driver.find_element(By.ID, "h1")
+    page_title = WebDriverWait(driver, timeout=20).until(driver.find_element(By.ID, "h1"))
     print(driver.current_url)
     print(title)
     print(page_title)
