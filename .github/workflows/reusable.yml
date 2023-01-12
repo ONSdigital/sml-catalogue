@@ -92,10 +92,6 @@ jobs:
         run: |
           source venv/bin/activate
           pipenv sync --dev
-      - name: Run selenium behaviour tests
-        run: |
-          source venv/bin/activate
-          behave
       - name: Code Formatter
         run: |
           source venv/bin/activate
@@ -123,6 +119,10 @@ jobs:
           name: build
           path: build.zip
           retention-days: 2
+      - name: Run selenium behaviour tests
+        run: |
+          source venv/bin/activate
+          behave
   deploy:
     runs-on: ubuntu-latest
     environment: ${{inputs.environment}}
