@@ -166,7 +166,7 @@ jobs:
           source venv/bin/activate
           pipenv sync --dev
       - name: Install chrome
-        run:
+        run: |
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install ./google-chrome-stable_current_amd64.deb
           google-chrome --version
