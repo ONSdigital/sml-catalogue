@@ -15,12 +15,12 @@ def auth_user(context):
 
 @when('I navigate to the methods catalogue page')
 def navigate_to_url(context):
-     WebDriverWait(driver, timeout=20).until(lambda d: d.find_element(By.ID, value='title1')).click()
-     WebDriverWait(driver, timeout=20).until(EC.presence_of_element_located((By.ID, 'collapsible')))
+     WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='title1')).click()
+     WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'collapsible')))
 
 @then('The title of the methods catalogue page is "{title}"')
 def check_title(context, title):
-    page_title =  WebDriverWait(driver, timeout=20).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
+    page_title =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
     assert page_title == title
 
 
@@ -30,12 +30,12 @@ def auth_user(context):
 
 @when('I click on the collapsible drop down')
 def navigate_to_url(context):
-    WebDriverWait(driver, timeout=20).until(lambda d: d.find_element(By.TAG_NAME, "summary")).click()
-    WebDriverWait(driver, timeout=20).until(EC.presence_of_element_located((By.ID, 'collapsible-content')))
+    WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.TAG_NAME, "summary")).click()
+    WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'collapsible-content')))
 
 @then('I see the dropdown content "{text}"')
 def check_title(context, text):
-    content_div =  WebDriverWait(driver, timeout=20).until(lambda d: d.find_element(By.ID, value='collapsible-content'))
+    content_div =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='collapsible-content'))
     dropdown_content_elements = content_div.find_elements(By.TAG_NAME, "p")
     dropdown_content = ""
 
