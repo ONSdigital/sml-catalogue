@@ -2,6 +2,8 @@
 
 import setupSelenium
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from behave import *
 
 driver = setupSelenium.driver
@@ -17,7 +19,8 @@ def auth_user(context):
 @when('I navigate to the date adjustment page')
 def navigate_to_date_adjustment_method(context):
     driver.get(host)
-    test = driver.find_element(By.TAG_NAME, "h1").text
+    test =  WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.TAG_NAME, "h1").text))
+    # test = driver.find_element(By.TAG_NAME, "h1").text
     print("Test: ", test)
     driver.find_element(By.ID, value='title1').click()
     driver.find_element(By.LINK_TEXT, value='Date adjustment').click()
