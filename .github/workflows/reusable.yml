@@ -148,7 +148,7 @@ jobs:
 
   selenium_testing:
     runs-on: ubuntu-latest
-    needs: run-terraform
+    needs: [run-terraform, build-files, deploy]
     permissions:
       contents: read
     env:
@@ -169,4 +169,3 @@ jobs:
         run: |
           source venv/bin/activate
           behave
-
