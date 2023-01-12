@@ -5,6 +5,6 @@ options = Options()
 options.headless = True
 driver = webdriver.Chrome(options=options)
 if os.getenv('deploy_url'):
-    website_url = f"{os.getenv('deploy_url')}"
+    website_url = f"{os.getenv('deploy_url')}/"
 else:
-    website_url = "http://localhost:8000/"
+    website_url = "http://127.0.0.1:5000/"
