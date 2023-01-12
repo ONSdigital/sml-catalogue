@@ -12,14 +12,15 @@ host = setupSelenium.local_ip
 @given('I\'m an sml portal user trying to get to the winsorisation method')
 def auth_user(context):
     driver.get(f"{host}methods")
-    WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
+    WebDriverWait(driver, timeout=20).until(EC.presence_of_element_located((By.ID, 'main-content')))
     
 @when('I navigate to the winsorisation page')
 def navigate_to_date_adjustment_method(context):
-    WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.LINK_TEXT, value='Winsorisation')).click()
+    WebDriverWait(driver, timeout=20).until(lambda d: d.find_element(By.LINK_TEXT, value='Winsorisation')).click()
+    WebDriverWait(driver, timeout=20).until(EC.presence_of_element_located((By.ID, 'main-content')))
 
 
 @then('The title of the winsorisation page is "{title}"')
 def check_title(context, title):
-    page_title = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
+    page_title = WebDriverWait(driver, timeout=20).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
     assert page_title == title

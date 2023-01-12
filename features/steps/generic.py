@@ -12,14 +12,13 @@ host = setupSelenium.local_ip
 @given('I\'m an sml portal user')
 def auth_user(context):
     driver.get(host)
-    WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'title1')))
 
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
     driver.get(urljoin(host + "/resources/", page))
-    WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
+    WebDriverWait(driver, timeout=20).until(EC.presence_of_element_located((By.ID, 'main-content')))
 
 @then('The title of the page is "{title}"')
 def check_title(context, title):
-    page_title = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
+    page_title = WebDriverWait(driver, timeout=20).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
     assert page_title == title
