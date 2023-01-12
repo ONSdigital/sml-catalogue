@@ -3,7 +3,6 @@
 import setupSelenium
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from behave import *
 
 driver = setupSelenium.driver
@@ -16,7 +15,6 @@ def auth_user(context):
 @when('I navigate to the help centre page')
 def navigate_to_url(context):
      WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.LINK_TEXT, value='Help centre')).click()
-
 
 @then('The title of the help centre page is "{title}"')
 def check_title(context, title):
