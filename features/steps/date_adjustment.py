@@ -1,11 +1,11 @@
 # Tests for the date adjustment link
 
-import setupSelenium
+from setupSelenium import returnDriver, returnWebURL
 from selenium.webdriver.common.by import By
 from behave import *
 
-driver = setupSelenium.driver
-host = setupSelenium.website_url
+driver = returnDriver()
+host = returnWebURL()
 
 
 @given('I\'m an sml portal user trying to get to the date adjustment method')
