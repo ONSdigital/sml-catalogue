@@ -16,7 +16,7 @@ def auth_user(context):
 
 @when('I navigate to the date adjustment page')
 def navigate_to_date_adjustment_method(context):
-    test = driver.find_element(By.TAG_NAME, "h1").text
+    test = driver.find_element(By.TAG_NAME, "p").text
     print("Host: ", host)
     print("Test: ", test)
     driver.find_element(By.ID, value='title1').click()
