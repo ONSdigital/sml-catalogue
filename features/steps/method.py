@@ -26,8 +26,7 @@ def check_title(context, title):
 
 @given('I am on the methods catalogue page')
 def auth_user(context):
-    driver.get(host)
-    WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='title1')).click()
+    driver.get(f"{host}/methods")
 
 @when('I click on the collapsible drop down')
 def navigate_to_url(context):
