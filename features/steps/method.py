@@ -3,7 +3,6 @@
 import setupSelenium
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from behave import *
 
 driver = setupSelenium.driver
@@ -16,7 +15,6 @@ def auth_user(context):
 @when('I navigate to the methods catalogue page')
 def navigate_to_url(context):
      WebDriverWait(driver, timeout=20).until(lambda d: d.find_element(By.ID, value='title1')).click()
-     WebDriverWait(driver, timeout=20).until(EC.presence_of_element_located((By.ID, 'collapsible')))
 
 @then('The title of the methods catalogue page is "{title}"')
 def check_title(context, title):
@@ -31,7 +29,6 @@ def auth_user(context):
 @when('I click on the collapsible drop down')
 def navigate_to_url(context):
     WebDriverWait(driver, timeout=20).until(lambda d: d.find_element(By.TAG_NAME, "summary")).click()
-    WebDriverWait(driver, timeout=20).until(EC.presence_of_element_located((By.ID, 'collapsible-content')))
 
 @then('I see the dropdown content "{text}"')
 def check_title(context, text):

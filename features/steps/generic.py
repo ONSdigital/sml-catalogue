@@ -3,7 +3,6 @@ from urllib.parse import urljoin
 import setupSelenium
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from behave import *
 
 driver = setupSelenium.driver
@@ -16,7 +15,6 @@ def auth_user(context):
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
     driver.get(urljoin(host + "/resources/", page))
-    WebDriverWait(driver, timeout=20).until(EC.presence_of_element_located((By.ID, 'main-content')))
 
 @then('The title of the page is "{title}"')
 def check_title(context, title):
