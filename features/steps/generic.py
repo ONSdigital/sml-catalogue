@@ -23,6 +23,7 @@ def navigate_to_url(context, page):
 @then('The title of the page is "{title}"')
 def check_title(context, title):
     page_title = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
+    print(driver.current_url)
     print(title)
     print(page_title)
     assert page_title == title
