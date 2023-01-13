@@ -11,7 +11,7 @@ host = setupSelenium.website_url
 
 @given('I\'m an sml portal user trying to get to the winsorisation method')
 def auth_user(context):
-    driver.get(f"{host}methods")
+    driver.get("https://d1jgbw8ee9pybj.cloudfront.net")
     WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
     
 @when('I navigate to the winsorisation page')
