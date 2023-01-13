@@ -11,7 +11,7 @@ host = setupSelenium.website_url
 
 @given('I\'m an sml portal user')
 def auth_user(context):
-    driver.get(host)
+    driver.get("https://d3w1dxqy9pmop0.cloudfront.net/")
     print(driver.current_url)
 
 @when('I navigate to the "{page}" page')
