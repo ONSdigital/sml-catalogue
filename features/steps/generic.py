@@ -11,8 +11,8 @@ host = setupSelenium.website_url
 
 @given('I\'m an sml portal user')
 def auth_user(context):
-    driver.get("https://d1jgbw8ee9pybj.cloudfront.net/")
-    page_title = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.CLASS_NAME, "ons-hero__title ons-u-fs-xxxl")).text
+    driver.get(host)
+    page_title = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
     print('Discover methods used by the Office for National Statistics')
     print(page_title)
     assert page_title == 'Discover methods used by the Office for National Statistics'
