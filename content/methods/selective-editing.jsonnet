@@ -13,7 +13,7 @@
   },
   specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/selective_editing/methodological_specification.md',
   code_link: 'https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/selective_editing.py',
-  user_documentation_link: 'https://github.com/ONSdigital/sml-python-small/blob/main/docs/selective_editing.md',
+  user_documentation_link: 'https://github.com/ONSdigital/sml-supporting-info/method-info/selective-editing/selective_editing.md',
   description: |||
     Selective Editing is an internationally recognised editing method where potential errors are prioritised
     according to their expected effect on key outputs. Only respondents that are having an impact on published
