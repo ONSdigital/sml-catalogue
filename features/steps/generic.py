@@ -16,7 +16,7 @@ def auth_user(context):
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
     print(f"Host is: {host}, page is; {page}")
-    driver.get(urljoin(host + "resources/", page))
+    driver.get(urljoin(host + "/resources/", page))
     WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
     print(driver.find_element(By.TAG_NAME, "h1").get_attribute("innerHTML"))
 
