@@ -1,21 +1,23 @@
 # Tests for the date adjustment link
 
-from setupSelenium import returnDriver, returnWebURL
+from setupSelenium import returnDriver
 from selenium.webdriver.common.by import By
 from behave import *
 
 driver = returnDriver()
-host = returnWebURL()
+# host = returnWebURL()
 
 
 @given('I\'m an sml portal user trying to get to the date adjustment method')
 def auth_user(context):
-    driver.get(host)
+    driver.get("https://d273a4m6g1cakm.cloudfront.net")
     # print("Host: ", host)
 
 
 @when('I navigate to the date adjustment page')
 def navigate_to_date_adjustment_method(context):
+    driverAttr = dir(driver)
+    print("Driver: ", driverAttr)
     print("Current URL 1: ", driver.current_url)
     test = driver.find_element(By.ID, "main-content")
     print("Current URL 2: ", driver.current_url)
