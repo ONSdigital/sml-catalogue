@@ -13,6 +13,7 @@ host = setupSelenium.website_url
 def auth_user(context):
     driver.get(host)
     print(driver.find_element(By.TAG_NAME, "h1").get_attribute("innerHTML"))
+    print(driver.current_url)
 
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
