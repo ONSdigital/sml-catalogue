@@ -18,18 +18,18 @@ def auth_user(context):
 
 @when('I navigate to the date adjustment page')
 def navigate_to_date_adjustment_method(context):
-    print("Current URL 3: ", driver.current_url)
+    print("Current URL 3: ", driver.current_url, driver.title)
     test = driver.find_element(By.ID, "main-content")
-    print("Current URL 4: ", driver.current_url)
+    print("Current URL 4: ", driver.current_url, driver.title)
     test_text = test.find_element(By.TAG_NAME, "p").text
-    print("Current URL 5: ", driver.current_url)
+    print("Current URL 5: ", driver.current_url, driver.title)
     # print("Host: ", host)
     print("Test: ", test_text)
-    print("Current URL 6: ", driver.current_url)
+    print("Current URL 6: ", driver.current_url, driver.title)
     driver.find_element(By.ID, value='title1').click()
-    print("Current URL 7: ", driver.current_url)
+    print("Current URL 7: ", driver.current_url, driver.title)
     driver.find_element(By.LINK_TEXT, value='Date adjustment').click()
-    print("Current URL 8: ", driver.current_url)
+    print("Current URL 8: ", driver.current_url, driver.title)
 
 
 @then('The title of the date adjustment page is "{title}"')
