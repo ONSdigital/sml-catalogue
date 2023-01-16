@@ -11,12 +11,13 @@ host = setupSelenium.website_url
 
 @given('I\'m an sml portal user')
 def auth_user(context):
-    driver.get("https://d3w1dxqy9pmop0.cloudfront.net")
+    driver.get(host)
     print(driver.current_url)
     print(driver.find_element(By.TAG_NAME, "h1").get_attribute("innerHTML"))
 
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):
+    driver.get(host)
     driver.get(urljoin(host, "/resources/"+page))
     WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
 
