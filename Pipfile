@@ -11,7 +11,7 @@ flake8 = "*"
 pylint = "*"
 bandit = "*"
 behave = "*"
-selenium = "*"
+selenium = "4.1.0"
 
 [dev-packages]
 black = "*"
