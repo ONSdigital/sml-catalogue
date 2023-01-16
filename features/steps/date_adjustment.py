@@ -10,17 +10,17 @@ driver = returnDriver()
 
 @given('I\'m an sml portal user trying to get to the date adjustment method')
 def auth_user(context):
+    print("Current URL 1: ", driver.current_url)
     driver.get("https://d273a4m6g1cakm.cloudfront.net")
+    print("Current URL 2: ", driver.current_url)
     # print("Host: ", host)
 
 
 @when('I navigate to the date adjustment page')
 def navigate_to_date_adjustment_method(context):
-    driverAttr = dir(driver)
-    print("Driver: ", driverAttr)
-    print("Current URL 1: ", driver.current_url)
+    print("Current URL 3: ", driver.current_url)
     test = driver.find_element(By.ID, "main-content")
-    print("Current URL 2: ", driver.current_url)
+    print("Current URL 4: ", driver.current_url)
     test_text = test.find_element(By.TAG_NAME, "p").text
     # print("Host: ", host)
     print("Test: ", test_text)
