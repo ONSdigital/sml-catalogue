@@ -74,3 +74,19 @@ In this case run the following command, replacing it with the port you want the 
 ```bash
 pipenv run flask --app sml_builder --debug run --port=8000
 ```
+
+## Behaviour tests
+
+The selenium behaviour tests can be run using the following command
+
+```
+behave
+```
+
+This will run the behaviuor test locally in a headless state. If you want to see the GUI browser tests running then go to the setupSelenium.py file and comment the headless boolean.
+
+Note: Investigation was undertaken to automate the behavior tests as part of the pipeline github action workflows.
+
+However, we discovered the github agents are hosted in the United States and when visiting our services url, the runner routed to our 'page not found' webpage.
+
+Hence as the page can only be accessed from within the uk we cannot automate the tests in the pipeline.
