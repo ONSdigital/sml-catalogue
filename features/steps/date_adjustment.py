@@ -11,7 +11,7 @@ driver = returnDriver()
 @given('I\'m an sml portal user trying to get to the date adjustment method')
 def auth_user(context):
     print("Current URL 1: ", driver.current_url, driver.title)
-    driver.get("https://d273a4m6g1cakm.cloudfront.net")
+    driver.get("https://statisticalmethodslibrary.ons.gov.uk")
     print("Current URL 2: ", driver.current_url, driver.title)
     # print("Host: ", host)
 
