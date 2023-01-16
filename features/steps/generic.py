@@ -12,7 +12,7 @@ host = "https://d1jgbw8ee9pybj.cloudfront.net/"
 @given('I\'m an sml portal user')
 def auth_user(context):
     driver.get(host)
-    page_title = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
+    page_title = WebDriverWait(driver, timeout=40).until(lambda d: d.find_element(By.ID, "title1")).text
     print('Discover methods used by the Office for National Statistics')
     print('page_title', page_title)
     print('host:', driver.current_url)
