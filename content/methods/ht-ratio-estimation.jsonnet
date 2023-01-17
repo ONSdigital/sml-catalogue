@@ -1,5 +1,5 @@
 {
-  title: 'HT/Ratio Estimation',
+  title: 'Horvitz-Thompson Ratio Estimator',
   date: '2022-05-18',
   contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
