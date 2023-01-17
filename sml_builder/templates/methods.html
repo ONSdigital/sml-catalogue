@@ -13,7 +13,7 @@
   <ul>
     <li>Public methods can be accessed freely by everyone</li>
     <li>Internal methods can be accessed on request by ONS employees via their ONS Digital GitHub account</li>
-    <li>Private methods can only be accessed upon request based on proposed usage</li>
+    <li>Private methods can only be accessed by ONS staff upon request based on proposed usage</li>
   </ul>
 {% endcall %}
 
@@ -29,7 +29,7 @@
   are different methods.</p>
 
   <p>To find out more about expert groups and themes,
-    please visit the <a href=" {{ url_for('display_glossary') }} ">library glossary</a>.</p>
+    please visit the <a href="https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/">analysis function website</a>.</p>
 {% endcall %}
 {% from "components/table/_macro.njk" import onsTable %}
 {% set methodsTable = {
@@ -78,5 +78,5 @@
 {{
   onsTable(methodsTable)
 }}
-
+<p>The Statistical Methods Library will grow as more statistical methods are requested.</p>
 {% endblock main -%}
