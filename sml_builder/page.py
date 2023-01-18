@@ -27,6 +27,13 @@ def cookies_page():
     return render_template("cookies.html")
 
 
+@app.route("/.well-known/security.txt")
+def security_text():
+    with open(".well-known/security.txt", "r", encoding="utf-8") as input_text:
+        content = input_text.read()
+    return render_template("security.html", content=content)
+
+
 def _page_not_found(error):
     print(error)
     abort(404)
