@@ -21,9 +21,7 @@ def filterOutList(methods):
 def display_method(method):  # pylint: disable=inconsistent-return-statements
     # Gets the methods for the individual method page
     getMethodsTableItems = getContent("catalogueTableOfMethods2")
-    # Filter any items in a list in the object we recieve back
-    getMethodsTableItems = filterOutList(getMethodsTableItems)
-
+    
     content = None
 
     if checkTypeList(getMethodsTableItems):
@@ -46,8 +44,6 @@ def display_methods():
     content = getContent("methodsCatalogue")
     # Gets the methods table items for the methods catalogue page
     getMethodsTableItems = getContent("catalogueTableOfMethods2")
-    # Filter any items in a list in the object we recieve back
-    getMethodsTableItems = filterOutList(getMethodsTableItems)
 
     # print("Raw", getMethodsTableItems)
     if checkEmptyList(getMethodsTableItems) or checkEmptyList(content):
