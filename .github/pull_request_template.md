@@ -44,7 +44,7 @@ If any of these are not completed, please explain why in notes.
 - [ ] I have checked for spelling errors
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] My changes don't break anything unexpected
-- [ ] Up to date with master branch
+- [ ] Up to date with main branch
  
 # Notes:
 
