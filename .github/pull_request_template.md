@@ -46,6 +46,3 @@ If any of these are not completed, please explain why in notes.
 - [ ] My changes don't break anything unexpected
 - [ ] Up to date with main branch
  
-# Notes:
-
-Add any extra information that is important for the rest of the team/reviewers to know here.
