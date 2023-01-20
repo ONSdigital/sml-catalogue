@@ -10,4 +10,4 @@ Feature: Methods catalogue tests
     Scenario: Title check
         Given I am on the methods catalogue page
         When I click on the collapsible drop down
-        Then I see the dropdown content "Method are sorted in hierarchical order with expert groups as the top level. For example, within an expert group are different themes, and within the themes are different methods. To find out more about expert groups and themes, please visit the library glossary."
+        Then I see the dropdown content "Method are sorted in hierarchical order with expert groups as the top level. For example, within an expert group are different themes, and within the themes are different methods. To find out more about expert groups and themes, please visit the analysis function website."
