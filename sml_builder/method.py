@@ -9,19 +9,12 @@ STATUS_CLASS = {
     "Approved for development": "dead",
 }
 
-def filterOutList(methods):
-    for method in methods:
-        for k, v in method.items():
-            if isinstance(method[k], list):
-                # print("List hit", v[0])
-                method[k] = v[0]
-    return methods
 
 @app.route("/method/<method>")
 def display_method(method):  # pylint: disable=inconsistent-return-statements
     # Gets the methods for the individual method page
     getMethodsTableItems = getContent("catalogueTableOfMethods2")
-    
+
     content = None
 
     if checkTypeList(getMethodsTableItems):
@@ -45,7 +38,6 @@ def display_methods():
     # Gets the methods table items for the methods catalogue page
     getMethodsTableItems = getContent("catalogueTableOfMethods2")
 
-    # print("Raw", getMethodsTableItems)
     if checkEmptyList(getMethodsTableItems) or checkEmptyList(content):
         abort(404)
 
@@ -56,10 +48,7 @@ def display_methods():
             methods.append(method)
     else:
         methods.append(getMethodsTableItems)
-    
-    print("Methods", methods)
+
     return render_template(
         "methods.html", methods=methods, status_class=STATUS_CLASS, content=content
     )
-
-# Refactor code in this file

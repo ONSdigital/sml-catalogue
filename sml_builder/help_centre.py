@@ -2,6 +2,7 @@ from json import load
 from flask import abort, render_template, url_for, Markup, escape
 import markdown
 from sml_builder import app
+from sml_builder.cms import getContent
 
 externallink_help_categories = [
     "report-bug",
@@ -11,33 +12,53 @@ externallink_help_categories = [
     "expert-groups",
 ]
 
+# Checks to see if the category already exists, to prevent duplicate categories
+
+
+def checkDuplicateCategory(categories, item):
+    for i in categories:
+        if i["name"] == item["help_centre_sections_list"]:
+            return True
+    return None
+
 
 @app.route("/help-centre/index")
 def help_centre(category=None):
+    # Gets the methods for the help centre page
+    getHelpCentreItems = getContent("helpCentreInformation")
+
     categories = []
-    with open(
-        "./content/help_centre/help_centre.json", encoding="utf-8"
-    ) as help_contents_file:
-        contents = load(help_contents_file)
-    for category in contents[  # pylint: disable=redefined-argument-from-local
-        "categories"
-    ]:
-        categories.append(
-            {
-                "name": category["label"],
-                "subcategories": [
-                    {
-                        "url": url_for(
-                            "guidances",
-                            category=category["name"],
-                            sub_category=sub_category["name"],
-                        ),
-                        "text": sub_category["label"],
-                    }
-                    for sub_category in category["subcategories"]
-                ],
-            }
-        )
+
+    for item in getHelpCentreItems:
+        if not checkDuplicateCategory(categories, item):
+            categories.append(
+                {
+                    "name": item["help_centre_sections_list"],
+                    "subcategories": [
+                        {
+                            "url": url_for(
+                                "guidances",
+                                category=item["help_centre_sections_list"],
+                                sub_category=item["id"],
+                            ),
+                            "text": item["title"],
+                        }
+                    ],
+                }
+            )
+        else:
+            for i in categories:
+                if i["name"] == item["help_centre_sections_list"]:
+                    i["subcategories"].append(
+                        {
+                            "url": url_for(
+                                "guidances",
+                                category=item["help_centre_sections_list"],
+                                sub_category=item["id"],
+                            ),
+                            "text": item["title"],
+                        }
+                    )
 
     return render_template(
         "help.html", help_categories=categories, selected_category=category
