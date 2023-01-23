@@ -46,18 +46,10 @@ def check_title(context, text):
     dropdown_content = dropdown_content.rstrip()
     assert dropdown_content == text
 
-@given('I am on the methods catalogue table on the methods catalogue page')
-def auth_user(context):
-    driver.get(f"{host}methods")
-
-@when('I navigate to the methods catalogue table')
-def navigate_to_methods_catalogue_table(context):
-    print("I am on the methods catalogue table on the methods catalogue page")
-
 @then('The table headings of the methods catalogue table are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
 def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
     methods_catalogue_table_header = WebDriverWait(driver, timeout=10).until(lambda d: d.find_elements(By.CLASS_NAME, "ons-table__header"))
-    
+
     headers = []
     for header in methods_catalogue_table_header:
         header_button = header.find_element(By.TAG_NAME, "button")
