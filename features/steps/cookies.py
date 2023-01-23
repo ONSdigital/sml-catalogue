@@ -1,4 +1,4 @@
-# Tests for the date adjustment link
+# Tests for the cookie preferences
 
 import setupSelenium
 from selenium.webdriver.common.by import By

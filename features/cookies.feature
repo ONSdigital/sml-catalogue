@@ -1,4 +1,4 @@
-# content of home page.
+# Cookie feature tests for both setting and changing cookie preferences
 
 Feature: Cookie banner tests
     Scenario: Accept cookies test
