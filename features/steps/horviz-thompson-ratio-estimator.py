@@ -14,7 +14,7 @@ def auth_user(context):
     driver.get(host)
 
 @when('I navigate to the ht/ratio estimation page')
-def navigate_to_date_adjustment_method(context):
+def navigate_to_ratio_estimator_method(context):
      WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='title1')).click()
      WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'collapsible')))
      WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.LINK_TEXT, value='Horvitz-Thompson Ratio Estimator')).click()

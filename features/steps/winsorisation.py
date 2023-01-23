@@ -15,7 +15,7 @@ def auth_user(context):
     WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
     
 @when('I navigate to the winsorisation page')
-def navigate_to_date_adjustment_method(context):
+def navigate_to_winsorisation_method(context):
     WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.LINK_TEXT, value='Winsorisation')).click()
     WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'main-content')))
 
