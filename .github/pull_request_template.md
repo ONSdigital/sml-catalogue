@@ -28,7 +28,6 @@ If any of these are not completed, please explain why in notes.
 - [ ] Code to be commented where applicable 
 - [ ] Documentation updated where required 
 - [ ] Have considered non-functional requirements such as Security, Performance, Scalability and Fault Tolerance
-- [ ] Have considered non-functional requirements such as Security, Performance, Scalability and Fault Tolerance.
 - [ ] I have linted the code
 
 **Testing**
