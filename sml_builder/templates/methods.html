@@ -1,9 +1,9 @@
 {%- extends "core.html" -%}
-{%- set page_title = "All methods" -%}
+{%- set page_title = "Methods catalogue" -%}
 {%- set current_path = url_for("display_methods") -%}
 {%- block main -%}
  
-<h1 class="ons-u-mt-no">All methods</h1>
+<h1 class="ons-u-mt-no">Methods catalogue</h1>
 <p>Here you will discover statistical methods used by the Office for National Statistics.</p>
 
 {% from "components/panel/_macro.njk" import onsPanel %}
@@ -15,9 +15,8 @@
     <li>Internal methods can be accessed on request by ONS employees via their ONS Digital GitHub account</li>
     <li>Private methods can only be accessed by ONS staff upon request based on proposed usage</li>
   </ul>
-{% endcall %}
-
-<h2 class="ons-u-mt-m">Catalogue table of methods:</h2>
+  <br>
+  {% endcall %}
 
 {% from "components/collapsible/_macro.njk" import onsCollapsible %}
 {% call onsCollapsible({

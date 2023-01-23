@@ -1,11 +1,11 @@
-# Tests for all methods page.
+# Tests for Methods catalogue page.
 
 Feature: Methods catalogue tests
 
     Scenario: Title check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The title of the methods catalogue page is "All methods"
+        Then The title of the methods catalogue page is "Methods catalogue"
 
     Scenario: Title check
         Given I am on the methods catalogue page
