@@ -16,3 +16,33 @@ Feature: Methods catalogue tests
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
         Then The table headings of the methods catalogue table are "Name" "Theme" "Expert group" "Languages" "Access" "Status"
+
+    Scenario: Ratio of Means table row check
+        Given I'm an sml portal user trying to get to the methods catalogue page
+        When I navigate to the methods catalogue page
+        Then The table row of the method Ratio of Means are "Ratio of Means" "Imputation" "Editing & Imputation" "Python/PySpark" "Internal" "In development"
+
+    Scenario: Winsorisation table row check
+        Given I'm an sml portal user trying to get to the methods catalogue page
+        When I navigate to the methods catalogue page
+        Then The table row of the method Ratio of Means are "Winsorisation" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark" "Internal" "In development"
+
+    Scenario: Thousand pound correction table row check
+        Given I'm an sml portal user trying to get to the methods catalogue page
+        When I navigate to the methods catalogue page
+        Then The table row of the method Ratio of Means are "Thousand pound correction" "Editing" "Editing & Imputation" "Python/PySpark" "Internal" "Approved for development"
+
+    Scenario: Horvitz-Thompson Ratio Estimator table row check
+        Given I'm an sml portal user trying to get to the methods catalogue page
+        When I navigate to the methods catalogue page
+        Then The table row of the method Ratio of Means are "Horvitz-Thompson Ratio Estimator" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark" "Internal" "In development"
+    
+    Scenario: Date adjustment table row check
+        Given I'm an sml portal user trying to get to the methods catalogue page
+        When I navigate to the methods catalogue page
+        Then The table row of the method Ratio of Means are "Date adjustment" "Editing" "Editing & Imputation" "Python/Pandas" "Internal" "Complete"
+    
+    Scenario: Selective editing table row check
+        Given I'm an sml portal user trying to get to the methods catalogue page
+        When I navigate to the methods catalogue page
+        Then The table row of the method Ratio of Means are "Selective Editing" "Editing" "Editing & Imputation" "Python/Pandas" "Internal" "Complete"

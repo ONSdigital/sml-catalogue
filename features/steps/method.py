@@ -46,14 +46,29 @@ def check_title(context, text):
     dropdown_content = dropdown_content.rstrip()
     assert dropdown_content == text
 
-@then('The table headings of the methods catalogue table are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
-def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
+def extractMethodTableContent(context):
     methods_catalogue_table_header = WebDriverWait(driver, timeout=10).until(lambda d: d.find_elements(By.CLASS_NAME, "ons-table__header"))
 
     headers = []
     for header in methods_catalogue_table_header:
         header_button = header.find_element(By.TAG_NAME, "button")
         headers.append(header_button.text)
+    
+
+    methods_catalogue_table_rows = WebDriverWait(driver, timeout=10).until(lambda d: d.find_elements(By.CLASS_NAME, "ons-table__row"))
+
+    content = []
+    for row in methods_catalogue_table_rows:
+        cells = row.find_elements(By.CLASS_NAME, "ons-table__cell")
+        for cell in cells:
+            content.append(cell.text)
+
+    return headers, content
+
+
+@then('The table headings of the methods catalogue table are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
+def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
+    headers = extractMethodTableContent(context)[0]
 
     assert name in headers
     assert theme in headers
@@ -61,3 +76,69 @@ def check_methods_catalogue_title(context, name, theme, expertGroup, languages, 
     assert languages in headers
     assert access in headers
     assert status in headers
+
+@then('The table row of the method Ratio of Means are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
+def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
+    content = extractMethodTableContent(context)[1]
+
+    assert name in content
+    assert theme in content
+    assert expertGroup in content
+    assert languages in content
+    assert access in content
+    assert status in content
+
+@then('The table row of the method winsorisation are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
+def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
+    content = extractMethodTableContent(context)[1]
+
+    assert name in content
+    assert theme in content
+    assert expertGroup in content
+    assert languages in content
+    assert access in content
+    assert status in content
+
+@then('The table row of the method thousand pound correction are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
+def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
+    content = extractMethodTableContent(context)[1]
+
+    assert name in content
+    assert theme in content
+    assert expertGroup in content
+    assert languages in content
+    assert access in content
+    assert status in content
+
+@then('The table row of the method horvitz thompson ratio estimator are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
+def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
+    content = extractMethodTableContent(context)[1]
+
+    assert name in content
+    assert theme in content
+    assert expertGroup in content
+    assert languages in content
+    assert access in content
+    assert status in content
+
+@then('The table row of the method date adjustment are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
+def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
+    content = extractMethodTableContent(context)[1]
+
+    assert name in content
+    assert theme in content
+    assert expertGroup in content
+    assert languages in content
+    assert access in content
+    assert status in content
+
+@then('The table row of the method selective editing are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
+def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
+    content = extractMethodTableContent(context)[1]
+
+    assert name in content
+    assert theme in content
+    assert expertGroup in content
+    assert languages in content
+    assert access in content
+    assert status in content
