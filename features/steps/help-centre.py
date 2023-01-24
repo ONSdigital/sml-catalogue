@@ -45,3 +45,8 @@ def check_title(context, text):
     dropdown_content = dropdown_content.replace('(opens in a new tab)', '').replace('\n', '').rstrip()
     print(dropdown_content)
     assert dropdown_content == text
+    
+@then('The subtitle of the help centre page is "{subtitle}"')
+def check_title(context, subtitle):
+    page_title =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.LINK_TEXT, subtitle)).text
+    assert page_title == subtitle
