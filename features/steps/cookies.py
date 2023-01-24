@@ -68,18 +68,18 @@ def disable_cookie(context):
     WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, "ons_cookie_save_changes")).click()
     WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.ID, 'alert')))
 
-@then('The cookie banner displays "{title}"')
-def cookie_title_check(context, title):
-    page_title =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.CLASS_NAME, value='ons-cookies-banner__desc')).text
-    assert page_title == title
+@then('The cookie banner displays "{banner}"')
+def cookie_banner_check(context, banner):
+    page_banner =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.CLASS_NAME, value='ons-cookies-banner__desc')).text
+    assert page_banner == banner
 
 @then('I am taken to the "{title}" page')
 def check_title_for_cookie_page(context, title):
     page_title =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
     assert page_title == title
 
-@then('I see the cookie drop down content "{title}"')
-def check_title_for_dropdown(context, title):
+@then('I see the cookie drop down content "{content}"')
+def check_content_for_dropdown(context, content):
     content_div =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, value='cookies-essential-details-content'))
     dropdown_content_elements = content_div.find_elements(By.TAG_NAME, "h4")
     dropdown_content = ""
@@ -89,7 +89,7 @@ def check_title_for_dropdown(context, title):
 
     dropdown_content = dropdown_content.rstrip().replace('Cookie message', '')
     print(dropdown_content)
-    assert dropdown_content == title
+    assert dropdown_content == content
 
 @then('The cookies are enabled')
 def cookie_enabled_check(context):
