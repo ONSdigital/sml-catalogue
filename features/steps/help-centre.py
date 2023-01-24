@@ -22,3 +22,8 @@ def navigate_to_url(context):
 def check_title(context, title):
     page_title =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.TAG_NAME, value="h1")).text
     assert page_title == title
+
+@then('The subtitle of the help centre page is "{subtitle}"')
+def check_title(context, subtitle):
+    page_title =  WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.LINK_TEXT, subtitle)).text
+    assert page_title == subtitle
