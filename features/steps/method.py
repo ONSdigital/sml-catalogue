@@ -57,13 +57,15 @@ def extractMethodTableContent(context):
 
     methods_catalogue_table_rows = WebDriverWait(driver, timeout=10).until(lambda d: d.find_elements(By.CLASS_NAME, "ons-table__row"))
 
-    content = []
+    # Come up with a better variable name
+    methods = []
     for row in methods_catalogue_table_rows:
         cells = row.find_elements(By.CLASS_NAME, "ons-table__cell")
+        new_list = []
         for cell in cells:
-            content.append(cell.text)
-
-    return headers, content
+            new_list.append(cell.text)
+        methods.append(new_list)
+    return headers, methods
 
 
 @then('The table headings of the methods catalogue table are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
@@ -77,68 +79,15 @@ def check_methods_catalogue_title(context, name, theme, expertGroup, languages, 
     assert access in headers
     assert status in headers
 
-@then('The table row of the method Ratio of Means are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
+@then('The table row of the method are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
 def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
-    content = extractMethodTableContent(context)[1]
+    methods = extractMethodTableContent(context)[1]
 
-    assert name in content
-    assert theme in content
-    assert expertGroup in content
-    assert languages in content
-    assert access in content
-    assert status in content
+    checks = [name, theme, expertGroup, languages, access, status]
 
-@then('The table row of the method winsorisation are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
-def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
-    content = extractMethodTableContent(context)[1]
-
-    assert name in content
-    assert theme in content
-    assert expertGroup in content
-    assert languages in content
-    assert access in content
-    assert status in content
-
-@then('The table row of the method thousand pound correction are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
-def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
-    content = extractMethodTableContent(context)[1]
-
-    assert name in content
-    assert theme in content
-    assert expertGroup in content
-    assert languages in content
-    assert access in content
-    assert status in content
-
-@then('The table row of the method horvitz thompson ratio estimator are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
-def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
-    content = extractMethodTableContent(context)[1]
-
-    assert name in content
-    assert theme in content
-    assert expertGroup in content
-    assert languages in content
-    assert access in content
-    assert status in content
-
-@then('The table row of the method date adjustment are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
-def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
-    content = extractMethodTableContent(context)[1]
-
-    assert name in content
-    assert theme in content
-    assert expertGroup in content
-    assert languages in content
-    assert access in content
-    assert status in content
-
-@then('The table row of the method selective editing are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
-def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
-    content = extractMethodTableContent(context)[1]
-
-    assert name in content
-    assert theme in content
-    assert expertGroup in content
-    assert languages in content
-    assert access in content
-    assert status in content
+    method_found = False
+    for method in methods:
+        if method == checks:
+            method_found = True
+    
+    assert method_found
