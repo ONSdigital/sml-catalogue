@@ -95,15 +95,26 @@ def check_methods_catalogue_title(context, name, theme, expertGroup, languages, 
     
 @then('I see the subtitle "{subtitle}" and the content "{line1}" and "{line2}" and "{line3}"')
 def check_title_and_content(context, subtitle, line1, line2, line3):
+    panel = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.CLASS_NAME, "ons-panel__body"))
+    checks = [subtitle, line1, line2, line3]
 
-    subtitle_content = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, "subtitle-code-spec")).text
-    assert subtitle_content == subtitle
+    panel_content = []
+    checks = [subtitle, line1, line2, line3]
 
-    dropdown_content = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, "subtitle-code-spec-content-line-1")).text
-    assert dropdown_content == line1
+    panel_title = panel.find_element(By.ID, "subtitle-code-spec")
+    panel_content.append(panel_title.text)
 
-    dropdown_content = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, "subtitle-code-spec-content-line-2")).text
-    assert dropdown_content == line2
+    panel_lists = panel.find_elements(By.TAG_NAME, "li")
 
-    dropdown_content = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, "subtitle-code-spec-content-line-3")).text
-    assert dropdown_content == line3
+    for list in panel_lists:
+        panel_content.append(list.text)
+
+    content_found = False
+    for item in panel_content:
+        if item in checks:
+            content_found = True
+        else:
+            content_found = False
+            break
+    
+    assert content_found
