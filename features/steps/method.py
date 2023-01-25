@@ -45,3 +45,18 @@ def check_title(context, text):
 
     dropdown_content = dropdown_content.rstrip()
     assert dropdown_content == text
+
+@then('I see the subtitle "{subtitle}" and the content "{line1}" and "{line2}" and "{line3}"')
+def check_title(context, subtitle, line1, line2, line3):
+
+    subtitle_content = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, "subtitle-code-spec")).text
+    assert subtitle_content == subtitle
+
+    dropdown_content = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, "subtitle-code-spec-content-line-1")).text
+    assert dropdown_content == line1
+
+    dropdown_content = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, "subtitle-code-spec-content-line-2")).text
+    assert dropdown_content == line2
+
+    dropdown_content = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, "subtitle-code-spec-content-line-3")).text
+    assert dropdown_content == line3

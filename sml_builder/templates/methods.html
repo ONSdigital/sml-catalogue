@@ -9,11 +9,11 @@
 {% from "components/panel/_macro.njk" import onsPanel %}
 
 {% call onsPanel({}) %}
-  <p>Codes and specification permission</p>
+  <p id="subtitle-code-spec">Codes and specification access</p>
   <ul>
-    <li>Public methods can be accessed freely by everyone</li>
-    <li>Internal methods can be accessed on request by ONS employees via their ONS Digital GitHub account</li>
-    <li>Private methods can only be accessed by ONS staff upon request based on proposed usage</li>
+    <li id="subtitle-code-spec-content-line-1">Public methods can be accessed freely by everyone</li>
+    <li id="subtitle-code-spec-content-line-2">Internal methods can be accessed on request by ONS employees via their ONS Digital GitHub account</li>
+    <li id="subtitle-code-spec-content-line-3">Private methods can only be accessed by ONS staff upon request based on proposed usage</li>
   </ul>
 {% endcall %}
 
