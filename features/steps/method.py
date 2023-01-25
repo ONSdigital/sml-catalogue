@@ -46,6 +46,53 @@ def check_title(context, text):
     dropdown_content = dropdown_content.rstrip()
     assert dropdown_content == text
 
+
+def extractMethodTableContent(context):
+    methods_catalogue_table_header = WebDriverWait(driver, timeout=10).until(lambda d: d.find_elements(By.CLASS_NAME, "ons-table__header"))
+
+    headers = []
+    for header in methods_catalogue_table_header:
+        header_button = header.find_element(By.TAG_NAME, "button")
+        headers.append(header_button.text)
+    
+
+    methods_catalogue_table_rows = WebDriverWait(driver, timeout=10).until(lambda d: d.find_elements(By.CLASS_NAME, "ons-table__row"))
+
+    # Come up with a better variable name
+    methods = []
+    for row in methods_catalogue_table_rows:
+        cells = row.find_elements(By.CLASS_NAME, "ons-table__cell")
+        new_list = []
+        for cell in cells:
+            new_list.append(cell.text)
+        methods.append(new_list)
+    return headers, methods
+
+
+@then('The table headings of the methods catalogue table are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
+def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
+    headers = extractMethodTableContent(context)[0]
+
+    assert name in headers
+    assert theme in headers
+    assert expertGroup in headers
+    assert languages in headers
+    assert access in headers
+    assert status in headers
+
+@then('The table row of the method are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
+def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
+    methods = extractMethodTableContent(context)[1]
+
+    checks = [name, theme, expertGroup, languages, access, status]
+
+    method_found = False
+    for method in methods:
+        if method == checks:
+            method_found = True
+    
+    assert method_found
+    
 @then('I see the subtitle "{subtitle}" and the content "{line1}" and "{line2}" and "{line3}"')
 def check_title_and_content(context, subtitle, line1, line2, line3):
 
