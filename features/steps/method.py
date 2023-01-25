@@ -47,7 +47,7 @@ def check_title(context, text):
     assert dropdown_content == text
 
 
-def extractMethodTableContent(context):
+def extract_method_table_content(context):
     methods_catalogue_table_header = WebDriverWait(driver, timeout=10).until(lambda d: d.find_elements(By.CLASS_NAME, "ons-table__header"))
 
     headers = []
@@ -71,7 +71,7 @@ def extractMethodTableContent(context):
 
 @then('The table headings of the methods catalogue table are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
 def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
-    headers = extractMethodTableContent(context)[0]
+    headers = extract_method_table_content(context)[0]
 
     assert name in headers
     assert theme in headers
@@ -82,7 +82,7 @@ def check_methods_catalogue_title(context, name, theme, expertGroup, languages, 
 
 @then('The table row of the method are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}" "{status}"')
 def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access, status):
-    methods = extractMethodTableContent(context)[1]
+    methods = extract_method_table_content(context)[1]
 
     checks = [name, theme, expertGroup, languages, access, status]
 
