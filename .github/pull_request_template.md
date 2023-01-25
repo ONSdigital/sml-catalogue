@@ -34,7 +34,6 @@ If any of these are not completed, please explain why in the notes.
 
 - [ ] All levels of acceptance test are passing (automated, integration, manual, accessibility, etc.)
 - [ ] I have run the behave command to check the selenium behaviour tests pass locally
-- [ ] I have run the pytest command (see tests/README.md) to check that unit tests pass locally
 - [ ] Acceptance criteria met
 
 **Other Checks**

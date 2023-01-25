@@ -83,7 +83,7 @@ The selenium behaviour tests can be run using the following command
 behave
 ```
 
-This will run the behaviuor test locally in a headless state. If you want to see the GUI browser tests running then go to the setupSelenium.py file and comment the headless boolean.
+This will run the behaviour test locally in a headless state. If you want to see the GUI browser tests running then go to the setupSelenium.py file and comment the headless boolean.
 
 Note: Investigation was undertaken to automate the behavior tests as part of the pipeline github action workflows.
 
