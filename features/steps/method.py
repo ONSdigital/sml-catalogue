@@ -47,7 +47,7 @@ def check_title(context, text):
     assert dropdown_content == text
 
 @then('I see the subtitle "{subtitle}" and the content "{line1}" and "{line2}" and "{line3}"')
-def check_title(context, subtitle, line1, line2, line3):
+def check_title_and_content(context, subtitle, line1, line2, line3):
 
     subtitle_content = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, "subtitle-code-spec")).text
     assert subtitle_content == subtitle
