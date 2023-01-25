@@ -13,7 +13,7 @@ host = setupSelenium.website_url
 def auth_user(context):
     driver.get(host)
     page_title = WebDriverWait(driver, timeout=40).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
-    assert page_title == 'Discover methods used by the Office for National Statistics'
+    assert page_title == 'An open source library for statistical code approved by the ONS'
 
 @when('I navigate to the "{page}" page')
 def navigate_to_url(context, page):

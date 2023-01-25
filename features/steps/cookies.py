@@ -14,7 +14,7 @@ def auth_user_home_page(context):
     driver.delete_all_cookies()
     driver.get(host)
     banner = WebDriverWait(driver, timeout=40).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
-    assert banner == 'Discover methods used by the Office for National Statistics'
+    assert banner == 'An open source library for statistical code approved by the ONS'
 
 @given('I am on the cookies page')
 def auth_user_cookie_page(context):
