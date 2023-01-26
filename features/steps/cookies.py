@@ -15,8 +15,8 @@ timeout = setupSelenium.timeout
 def auth_user_home_page(context):
     driver.delete_all_cookies()
     driver.get(host)
-    banner = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
-    assert banner == 'Discover methods used by the Office for National Statistics'
+    banner = WebDriverWait(driver, timeout=40).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
+    assert banner == 'An open source library for statistical code approved by the ONS'
 
 
 @given('I am on the cookies page')
