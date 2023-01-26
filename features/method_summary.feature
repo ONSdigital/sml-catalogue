@@ -1,4 +1,4 @@
-# Tests for date adjustment page.
+# Tests for method summary page.
 
 Feature: Method summary page tests
 
