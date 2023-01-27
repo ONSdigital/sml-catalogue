@@ -30,7 +30,7 @@ Feature: Methods catalogue tests
     Scenario: Thousand pound correction table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The table row of the method are "Thousand pound correction" "Editing" "Editing & Imputation" "Python/Pandas" "Internal" "Approved for development"
+        Then The table row of the method are "Thousand Pound Correction" "Editing" "Editing & Imputation" "Python/Pandas" "Internal" "Approved for development"
 
     Scenario: Horvitz-Thompson Ratio Estimator table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
@@ -40,7 +40,7 @@ Feature: Methods catalogue tests
     Scenario: Date adjustment table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The table row of the method are "Date adjustment" "Editing" "Editing & Imputation" "Python/Pandas" "Internal" "Complete"
+        Then The table row of the method are "Date Adjustment" "Editing" "Editing & Imputation" "Python/Pandas" "Internal" "Complete"
     
     Scenario: Selective editing table row check
         Given I'm an sml portal user trying to get to the methods catalogue page

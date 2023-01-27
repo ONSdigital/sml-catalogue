@@ -1,5 +1,5 @@
 {
-  title: 'Date adjustment',
+  title: 'Date Adjustment',
   date: '2022-06-29',
   contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
