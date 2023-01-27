@@ -31,7 +31,6 @@ def display_methods():
                 "theme": method["method_metadata"]["Theme"],
                 "exp_group": method["method_metadata"]["Expert group"],
                 "language": method["method_metadata"]["Programming language"],
-                "access": method["method_metadata"]["Access type"],
                 "status": method["method_metadata"]["Status"],
             }
         )
