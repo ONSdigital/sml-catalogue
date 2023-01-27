@@ -8,17 +8,6 @@
 
 {% from "components/panel/_macro.njk" import onsPanel %}
 
-{% call onsPanel({}) %}
-  <p>Codes and specification permission</p>
-  <ul>
-    <li>Public methods can be accessed freely by everyone</li>
-    <li>Internal methods can be accessed on request by ONS employees via their ONS Digital GitHub account</li>
-    <li>Private methods can only be accessed by ONS staff upon request based on proposed usage</li>
-  </ul>
-  {% endcall %}
-
-  <br>
-
 {% from "components/collapsible/_macro.njk" import onsCollapsible %}
 {% call onsCollapsible({
       "id": "collapsible",
