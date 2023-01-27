@@ -1,6 +1,17 @@
 {%- extends "core.html" -%}
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {% from "components/lists/_macro.njk" import onsList %}
+{%- set breadcrumbs = {
+  "id":"breadcrumbs",
+  "ariaLabel":"breadcrumbs",
+  "itemsList":[
+    {
+      "url": url_for("help_centre"),
+      "id": "back",
+      "text": 'Back',
+    }
+  ]
+} -%}
 
 {% import "related-content-macro.html" as macros %}
 
