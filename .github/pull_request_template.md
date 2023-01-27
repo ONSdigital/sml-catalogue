@@ -4,10 +4,6 @@ Please include a summary of the changes and features. Please also include releva
 
 If you have not checked any of the lists below explain why here.
 
-# URL to relevant Jira ticket
-
-Please include the link to the relevant Jira ticket here for ease of cross-referencing.
-
 ## Type of change
 
 Please delete options that are not relevant.
