@@ -25,3 +25,8 @@ def check_title(context, title):
     page_title = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
     assert page_title == title
 
+@then('The subtitle of the page is "{subtitle}"')
+def check_subtitle(context, subtitle):
+    page_subtitle = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.ID, "page-subtitle")).text
+    assert page_subtitle == subtitle
+
