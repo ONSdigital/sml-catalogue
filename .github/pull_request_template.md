@@ -13,7 +13,6 @@ Please delete options that are not relevant.
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] Technical Enhancements
 
-
 # Checklist:
 
 If any of these are not completed, please explain why in the notes.
