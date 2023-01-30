@@ -8,9 +8,6 @@
 
 {% from "components/panel/_macro.njk" import onsPanel %}
 
-{% call onsPanel({}) %}
-  {{ content["panel"] | markdown}}
-{% endcall %}
 
 <h2 class="ons-u-mt-m">{{ content["heading2"] }}</h2>
 
@@ -20,8 +17,6 @@
       "title": content["detail"]
 }) %}
 <p>{{ content["detail_content"] | markdown}}</p>
-<p>To find out more about expert groups and themes, 
-  please visit the <a href=" {{ url_for('display_glossary') }} ">library glossary</a>.</p>
 {% endcall %}
 
 {% from "components/table/_macro.njk" import onsTable %}
