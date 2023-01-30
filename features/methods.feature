@@ -15,34 +15,34 @@ Feature: Methods catalogue tests
     Scenario: Methods catalgoue table header check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The table headings of the methods catalogue table are "Name" "Theme" "Expert group" "Languages" "Access" "Status"
+        Then The table headings of the methods catalogue table are "Name" "Theme" "Expert group" "Languages" "Status"
 
     Scenario: Ratio of Means table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The table row of the method are "Ratio of Means" "Imputation" "Editing & Imputation" "Python/PySpark" "Internal" "In development"
+        Then The table row of the method are "Ratio of Means" "Imputation" "Editing & Imputation" "Python/PySpark" "In development"
 
     Scenario: Winsorisation table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The table row of the method are "Winsorisation" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark" "Internal" "In development"
+        Then The table row of the method are "Winsorisation" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark" "In development"
 
     Scenario: Thousand pound correction table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The table row of the method are "Thousand pound correction" "Editing" "Editing & Imputation" "Python/Pandas" "Internal" "Approved for development"
+        Then The table row of the method are "Thousand Pound Correction" "Editing" "Editing & Imputation" "Python/Pandas" "Approved for development"
 
     Scenario: Horvitz-Thompson Ratio Estimator table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The table row of the method are "Horvitz-Thompson Ratio Estimator" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark" "Internal" "In development"
+        Then The table row of the method are "Horvitz-Thompson Ratio Estimator" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark" "In development"
     
     Scenario: Date adjustment table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The table row of the method are "Date adjustment" "Editing" "Editing & Imputation" "Python/Pandas" "Internal" "Complete"
+        Then The table row of the method are "Date Adjustment" "Editing" "Editing & Imputation" "Python/Pandas" "Complete"
     
     Scenario: Selective editing table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The table row of the method are "Selective Editing" "Editing" "Editing & Imputation" "Python/Pandas" "Internal" "Complete"
+        Then The table row of the method are "Selective Editing" "Editing" "Editing & Imputation" "Python/Pandas" "Complete"
