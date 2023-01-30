@@ -36,6 +36,7 @@
     onsHero({
         "title": content["hero_title"],
         "button": {
+            "id": 'find-methods-button',
             "url": url_for("display_methods"),
             "text":  content["hero_button"]
         },
@@ -69,7 +70,7 @@
                 "textId": 'text2',
                 "title": 'Help centre',
                 "url": url_for('help_centre'),
-                "text": 'Information on how to use the Statistical methods library'
+                "text": 'Information on how to use the Statistical Methods Library'
             }) }}
         </div>
 
@@ -81,7 +82,7 @@
                 "url": none,
                 "text": '',
                 "itemsList": [
-                    {
+                    {   
                         "url": url_for("about"),
                         "text": 'About this library'
                     },

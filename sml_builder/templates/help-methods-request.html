@@ -2,6 +2,17 @@
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {% from "components/lists/_macro.njk" import onsList %}
 {% from "components/collapsible/_macro.njk" import onsCollapsible %}
+{%- set breadcrumbs = {
+  "id":"breadcrumbs",
+  "ariaLabel":"breadcrumbs",
+  "itemsList":[
+    {
+      "url": url_for("help_centre"),
+      "id": "back",
+      "text": 'Back',
+    }
+  ]
+} -%}
 
 {% import "related-content-macro.html" as macros %}
 
@@ -97,13 +108,20 @@
     </p>
     <p>Click on “Process Portal”. In the left-hand menu you will see “Create SML Method Request” - if you cannot see a menu on the left-hand side of the screen, click the three horizontal lines at the top left corner of the screen.</p>
     <p>Click on "Create SML Method Request”, and fill out the information in this form to create the desired request.</p>
+    <p>
+        Once you have filled out the form, you will need to complete a method specification. Please use the following 
+        <a href="https://officenationalstatistics.sharepoint.com/sites/MTHIT/SysDev/Forms/AllItems.aspx?id=%2Fsites%2FMTHIT%2FSysDev%2FStatistical%5FMethods%5FLibrary%2FCommunication%2FSML%20methodological%20specification%20template%2Emd&parent=%2Fsites%2FMTHIT%2FSysDev%2FStatistical%5FMethods%5FLibrary%2FCommunication&p=true&ga=1">
+            template
+        </a>
+         to help you do this.
+    </p>
 {% endcall %}
 
 {% call onsCollapsible({
       "id": "collapsibleONSExternalUserId",
       "title": "I am a user from outside the ONS"
 }) %}
-    <p>Currently we do not accept formal method submissions or change requests from external users, In future, we will accept certain method requests via the Integrated Data Service
+    <p>Currently we do not accept formal method submissions or change requests from external users. In future, we will accept certain method requests via the Integrated Data Service
         {% from "components/external-link/_macro.njk" import onsExternalLink %}
                 {{
                     onsExternalLink({

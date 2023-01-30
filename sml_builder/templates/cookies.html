@@ -9,14 +9,14 @@
 
 {%- block main -%}
     <div class="ons-page__body">
-        <h1 class="ons-u-fs-xxl">Cookies on sml.ons.gov.uk</h1>
+        <h1 class="ons-u-fs-xxl">Cookies on the statistical methods library portal</h1>
         {%- call onsPanel({
             "classes": "ons-u-mb-m ons-u-d-no ons-cookies-confirmation-message",
             "type": "success",
             "iconType": "check",
             "iconSize": "xl"
         }) -%}
-            <h2>Your cookie settings have been saved</h2>
+            <h2 id="cookie_change_alert">Your cookie settings have been saved</h2>
             <p class="ons-u-mb-no">Some parts of the ONS may use additional cookies and will have their own cookie policy and banner.</p>
             <a class="ons-js-return-link ons-u-mt-s ons-u-dib" href="#0">Return to previous page</a>
         {%- endcall -%}
@@ -155,6 +155,7 @@
                 {%- endcall -%}
                 {{
                     onsButton({
+                        "id": "ons_cookie_save_changes",
                         "type": 'submit',
                         "text": 'Save changes'
                     })

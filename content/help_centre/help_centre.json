@@ -6,15 +6,19 @@
             "subcategories": [
                 {
                     "name": "view-methods",
-                    "label": "How to find and view methods"
+                    "label": "Find and view methods"
                 },
                 {
                     "name": "methods-request",
-                    "label": "How to submit a method request"
+                    "label": "Submit a method request"
+                },
+                {
+                    "name": "version-methods",
+                    "label": "How the methods are versioned"
                 },
                 {
                     "name": "coding-standards",
-                    "label": "What are the coding standards?"
+                    "label": "Coding standards"
                 }
             ]
         },
@@ -24,7 +28,7 @@
             "subcategories": [
                 {
                     "name": "run-a-method",
-                    "label": "How to use a method"
+                    "label": "Use a method"
                 }
             ]
         },
@@ -34,11 +38,11 @@
             "subcategories": [
                 {
                     "name": "report-bug",
-                    "label": "How to report a code defect or bug"
+                    "label": "Report a defect or bug"
                 },
                 {
                     "name": "provide-feedback",
-                    "label": "How to provide feedback"
+                    "label": "Provide feedback"
                 }
             ]
         },
@@ -48,11 +52,11 @@
             "subcategories": [
                 {
                     "name": "support",
-                    "label": "How to get support"
+                    "label": "Get support"
                 },
                 {
                     "name": "expert-groups",
-                    "label": "How to get more information on Expert groups"
+                    "label": "Get information on expert groups"
                 },
                 {
                     "name": "troubleshooting",
