@@ -27,6 +27,11 @@ def cookies_page():
     return render_template("cookies.html")
 
 
+@app.route("/accessibility-statement")
+def accessibility_page():
+    return render_template("accessibility_statement.html")
+
+
 @app.route("/.well-known/security.txt")
 def security_text():
     with open(".well-known/security.txt", "r", encoding="utf-8") as input_text:
