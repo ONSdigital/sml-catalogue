@@ -14,7 +14,7 @@ def about():
             body = Markup(markdown.markdown(escaped_text))
     except OSError as e:
         _page_not_found(e)
-    return render_template("about.html", page_boby=body)
+    return render_template("about.html", page_body=body)
 
 
 @app.route("/privacy-and-data-protection")
