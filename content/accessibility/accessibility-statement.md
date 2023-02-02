@@ -12,9 +12,9 @@ We are aware that some parts of this website are not fully accessible, and we ar
 
 If you need information from the website in a different format please contact us at [SMLHelp@ons.gov.uk](mailto:SMLHelp@ons.gov.uk) and tell us:
 
-The web address (URL)
-Your name and email address
-The format you require.
+* The web address (URL).
+* Your name and email address.
+* The format you require.
 
 We’ll reply within ten days to let you know when we will be able to provide the information. We will consider each request but may not be able to provide an alternative accessible format on every occasion.
 
@@ -38,4 +38,4 @@ In order to make sure our online services are accessible to all users, we are wo
 
 ## Preparation of this accessibility statement
 
-This statement was prepared on 01.02.2023
+This statement was prepared on 01.02.2023.
