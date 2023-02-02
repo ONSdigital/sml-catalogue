@@ -29,7 +29,16 @@ def cookies_page():
 
 @app.route("/accessibility-statement")
 def accessibility_page():
-    return render_template("accessibility_statement.html")
+    try:
+        with open(
+            "./content/accessibility/accessibility-statement.md", "r", encoding="utf-8"
+        ) as input_file:
+            text = input_file.read()
+            escaped_text = escape(text)
+            body = Markup(markdown.markdown(escaped_text))
+    except OSError as e:
+        _page_not_found(e)
+    return render_template("accessibility_statement.html", page_body=body)
 
 
 @app.route("/.well-known/security.txt")
