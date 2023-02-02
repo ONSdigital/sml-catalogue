@@ -1,14 +1,6 @@
 # Tests for the date adjustment link
 
-import setupSelenium
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from behave import *
-
-driver = setupSelenium.driver
-host = setupSelenium.website_url
-timeout = setupSelenium.timeout
+from setupSelenium import *
 
 
 @given('I\'m an sml portal user trying to get to the "{page}" page')
