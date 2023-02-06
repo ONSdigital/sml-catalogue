@@ -7,7 +7,6 @@
     'Expert group': 'Sample Design & Estimation',
     Theme: 'Sample Design & Estimation',
     Author: 'ONS',
-    Status: 'In development',
     'Programming language': 'Python/PySpark',
     'Code available?': 'Yes',
   },

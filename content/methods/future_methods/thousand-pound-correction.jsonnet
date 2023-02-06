@@ -7,7 +7,6 @@
     'Expert group': 'Editing & Imputation',
     Theme: 'Editing',
     Author: 'ONS',
-    Status: 'Approved for development',
     'Programming language': 'Python/Pandas',
     'Code available?': 'No',
   },
