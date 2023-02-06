@@ -1,4 +1,4 @@
-from flask import abort, escape, Markup, render_template
+from flask import escape, Markup, render_template
 import markdown
 from sml_builder import app
 from .utils import _page_not_found
