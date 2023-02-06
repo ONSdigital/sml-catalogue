@@ -2,7 +2,7 @@
 
 This accessibility statement applies to the Office for National Statistics (ONS) Statistical Methods Library.  
 
-We want as many people as possible to be able to use the website. If you have a disability, [AbilityNet](https://mcmw.abilitynet.org.uk/) has advice on making your device easier to use.
+We want as many people as possible to be able to use the website. If you have a disability, [AbilityNet](https://mcmw.abilitynet.org.uk/) has advice on making your device easier to use.
 
 ## How accessible the website is
 
