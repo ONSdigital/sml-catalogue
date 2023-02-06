@@ -1,6 +1,7 @@
 from flask import abort, escape, Markup, render_template
 import markdown
 from sml_builder import app
+from .utils import _page_not_found
 
 
 @app.route("/resources/about")
@@ -46,8 +47,3 @@ def security_text():
     with open(".well-known/security.txt", "r", encoding="utf-8") as input_text:
         content = input_text.read()
     return render_template("security.html", content=content)
-
-
-def _page_not_found(error):
-    print(error)
-    abort(404)

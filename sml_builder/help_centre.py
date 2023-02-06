@@ -2,6 +2,7 @@ from json import load
 from flask import abort, render_template, url_for, Markup, escape
 import markdown
 from sml_builder import app
+from .utils import _page_not_found
 
 externallink_help_categories = [
     "report-bug",
@@ -136,8 +137,3 @@ def _help_centre_nav(
         }
         for category in contents["categories"]
     ]
-
-
-def _page_not_found(error):
-    print(error)
-    abort(404)
