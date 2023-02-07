@@ -53,8 +53,11 @@ def check_title(context, text):
     assert dropdown_content == text
 
 
-def extractMethodTableContent(context):
-    methods_catalogue_table_header = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_elements(By.CLASS_NAME, "ons-table__header"))
+def extractMethodTableContent(context, tableType):
+    if tableType == 'ready':
+        methods_catalogue_table_header = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_elements(By.ID, "ready-table"))
+    elif tableType == 'future':
+        methods_catalogue_table_header = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_elements(By.ID, "future-table"))
 
     headers = []
     for header in methods_catalogue_table_header:
@@ -75,9 +78,9 @@ def extractMethodTableContent(context):
     return headers, methods
 
 
-@then('The table headings of the methods catalogue table are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}"')
-def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access):
-    headers = extractMethodTableContent(context)[0]
+@then('The "{table}" table headings of the methods catalogue table are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}"')
+def check_methods_catalogue_title(context, table, name, theme, expertGroup, languages, access):
+    headers = extractMethodTableContent(context, table)[0]
 
     assert name in headers
     assert theme in headers
@@ -86,9 +89,9 @@ def check_methods_catalogue_title(context, name, theme, expertGroup, languages, 
     assert access in headers
 
 
-@then('The table row of the method are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}"')
-def check_methods_catalogue_title(context, name, theme, expertGroup, languages, access):
-    methods = extractMethodTableContent(context)[1]
+@then('The "{table}" table row of the method are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}"')
+def check_methods_catalogue_title(context, table, name, theme, expertGroup, languages, access):
+    methods = extractMethodTableContent(context, table)[1]
 
     checks = [name, theme, expertGroup, languages, access]
 

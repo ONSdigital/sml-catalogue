@@ -30,7 +30,7 @@
 }}</h2>
 <p>The following methods are released and ready to use</p>
 {% set methodsTable = {
-  "id": "readyTable",
+  "id": "ready-table",
   "variants": "sortable",
   "tableClasses": "ons-u-mt-m",
   "sortBy": "Sort by",
@@ -72,55 +72,4 @@
 {{
   onsTable(methodsTable)
 }}
-<h2>{{
-  onsStatus({
-      "label": 'Future Methods',
-      "type": 'pending'
-  })
-}}</h2>
-<p>The following methods have been approved for development and will be included in future releases</p>
-{% set futureMethodsTable = {
-  "id": "futureTable",
-  "variants": "sortable",
-  "tableClasses": "ons-u-mt-m",
-  "sortBy": "Sort by",
-  "ariaAsc": "ascending",
-  "ariaDesc": "descending",
-  "ths": [
-    {
-      "value": "Name"
-    },
-    {
-      "value": "Theme"
-    },
-    {
-      "value": "Expert group"
-    },
-    {
-      "value": "Languages"
-    },
-    {
-      "value": "Access"
-    },
-  ]
-} %}
-{% set futureMethodsTableRows = [] %}
-{% for row in page.future_rows %}
-  {% do futureMethodsTableRows.append({
-    "tds": [
-      {
-          "value": '<a href="' + url_for("display_method", method=row.id) + '">' + row.title + '</a>'
-      },
-      {"value": row.theme},
-      {"value": row.exp_group},
-      {"value": row.language},
-      {"value": row.access},
-    ]
-  }) %}
-{% endfor %}
-{% do futureMethodsTable.update({"trs": futureMethodsTableRows}) %}
-{{
-  onsTable(futureMethodsTable)
-}}
-<p>The Statistical Methods Library will grow as more statistical methods are requested.</p>
 {% endblock main -%}
