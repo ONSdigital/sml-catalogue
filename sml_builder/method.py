@@ -18,20 +18,9 @@ def display_methods():
     future_methods = appendRow(future_methods_dir)
 
     return render_template(
-        "futureMethods.html", page={"rows": methods, "future_rows": future_methods}
+        "methods.html", page={"rows": methods, "future_rows": future_methods}
     )
 
-@app.route("/methods")
-def display_future_methods():
-    methods_dir = "./content/methods/ready_to_use_methods"
-    future_methods_dir = "./content/methods/future_methods"
-    
-    methods = appendRow(methods_dir)
-    future_methods = appendRow(future_methods_dir)
-
-    return render_template(
-        "futureMethods.html", page={"rows": methods, "future_rows": future_methods}
-    )
 
 def appendRow(methods_dir):
     methods = []
