@@ -44,6 +44,9 @@ def accessibility_page():
 
 @app.route("/.well-known/security.txt")
 def security_text():
-    with open(".well-known/security.txt", "r", encoding="utf-8") as input_text:
-        content = input_text.read()
+    try:
+        with open(".well-known/security.txt", "r", encoding="utf-8") as input_text:
+            content = input_text.read()
+    except OSError as e:
+        _page_not_found(e)
     return render_template("security.html", content=content)

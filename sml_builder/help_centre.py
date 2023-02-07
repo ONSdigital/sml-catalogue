@@ -16,30 +16,32 @@ externallink_help_categories = [
 @app.route("/help-centre/index")
 def help_centre(category=None):
     categories = []
-    with open(
-        "./content/help_centre/help_centre.json", encoding="utf-8"
-    ) as help_contents_file:
-        contents = load(help_contents_file)
-    for category in contents[  # pylint: disable=redefined-argument-from-local
-        "categories"
-    ]:
-        categories.append(
-            {
-                "name": category["label"],
-                "subcategories": [
-                    {
-                        "url": url_for(
-                            "guidances",
-                            category=category["name"],
-                            sub_category=sub_category["name"],
-                        ),
-                        "text": sub_category["label"],
-                    }
-                    for sub_category in category["subcategories"]
-                ],
-            }
-        )
-
+    try:
+        with open(
+            "./content/help_centre/help_centre.json", encoding="utf-8"
+        ) as help_contents_file:
+            contents = load(help_contents_file)
+        for category in contents[  # pylint: disable=redefined-argument-from-local
+            "categories"
+        ]:
+            categories.append(
+                {
+                    "name": category["label"],
+                    "subcategories": [
+                        {
+                            "url": url_for(
+                                "guidances",
+                                category=category["name"],
+                                sub_category=sub_category["name"],
+                            ),
+                            "text": sub_category["label"],
+                        }
+                        for sub_category in category["subcategories"]
+                    ],
+                }
+            )
+    except OSError as e:
+        _page_not_found(e)
     return render_template(
         "help.html", help_categories=categories, selected_category=category
     )
