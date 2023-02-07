@@ -1,6 +1,5 @@
 from flask import render_template, abort
 from sml_builder import app
-from .utils import _page_not_found
 from sml_builder.cms import getContent
 from sml_builder.utils import checkTypeList, checkEmptyList
 

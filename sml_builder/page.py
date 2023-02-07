@@ -1,8 +1,4 @@
-from flask import abort, render_template
-from sml_builder import app
-from sml_builder.cms import getContent
-from sml_builder.utils import checkEmptyList
-from flask import escape, Markup, render_template
+from flask import escape, Markup, render_template, abort
 import markdown
 from sml_builder import app
 from sml_builder.cms import getContent

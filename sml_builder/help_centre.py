@@ -2,8 +2,8 @@ from json import load
 from flask import render_template, url_for, Markup, escape
 import markdown
 from sml_builder import app
-from .utils import _page_not_found
 from sml_builder.cms import getContent
+from .utils import _page_not_found
 
 externallink_help_categories = [
     "report-bug",
