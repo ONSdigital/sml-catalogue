@@ -1,0 +1,21 @@
+{%- extends "core.html" -%}
+{%- set page_title = 'Privacy and Data Protection' -%}
+{%- set mainCols=8 -%}
+
+{%- set breadcrumbs = {
+"id":"breadcrumbs",
+"ariaLabel":"breadcrumbs",
+"itemsList":[
+  {
+    "url": url_for("index"),
+    "id": "home",
+    "text": 'Home',
+  }
+]
+} -%}
+
+
+{%- from "components/lists/_macro.njk" import onsList -%}
+{%- block main -%}
+  {{ page_body }}
+{% endblock main -%}
