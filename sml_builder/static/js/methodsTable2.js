@@ -1,3 +1,9 @@
+/** 
+Currently we have a problem with the ONS table macro where 
+we can't display two tables with the same headers on the same page.
+This script is a temporary solution to the problem, where we update
+the headers on the second table manually on page load.
+*/
 headers = ["Name", "Theme", "Expert group", "Languages", "Access", "Status"];
 
 
