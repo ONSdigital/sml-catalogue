@@ -1,4 +1,4 @@
-from os import listdir
+from os import listdir, path
 from json import loads
 from flask import render_template
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
@@ -6,7 +6,10 @@ from sml_builder import app
 
 @app.route("/method/<method>")
 def display_method(method):
-    page_data = loads(evaluate_file(f"./content/methods/{method}.jsonnet"))
+    if path.exists(f"./content/methods/ready_to_use_methods/{method}.jsonnet"):
+        page_data = loads(evaluate_file(f"./content/methods/ready_to_use_methods/{method}.jsonnet"))
+    else:
+        page_data = loads(evaluate_file(f"./content/methods/future_methods/{method}.jsonnet"))
     return render_template("method.html", page=page_data)
 
 @app.route("/methods")
