@@ -48,14 +48,18 @@
   )
 %}
 {% endfor %}
+
 {% for item in items %}
 {% if item["term"]  == "Release" %}
 {% set temp=item["descriptions"][0]["description"] %}
+
 {% if temp=="Not Released Yet" %}
 {% set item=item["descriptions"][0].__setitem__("description", '<span class="ons-status ons-status--' + status + '">' + temp + '</span>') %}
+
 {% else %}
 {% set link = page.additional_data["Release Link"] %}
 {% set item=item["descriptions"][0].__setitem__("description", '<span class="ons-status ons-status--' + status + '"><a href='+ link + '>' + temp + '</a></span>') %}
+
 {% endif %}
 {% endif %}
 {% endfor %}
