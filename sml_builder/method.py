@@ -6,12 +6,6 @@ from sml_builder import app
 from .utils import _page_not_found
 
 
-@app.route("/method/<method>")
-def display_method(method):
-    page_data = loads(evaluate_file(f"./content/methods/{method}.jsonnet"))
-    return render_template("method.html", page=page_data)
-
-
 @app.route("/method/<methodState>/<method>")
 def display_method_summary(method, methodState):
     page_data = loads(
