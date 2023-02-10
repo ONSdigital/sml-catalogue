@@ -6,35 +6,11 @@ from sml_builder import app
 from .utils import _page_not_found
 
 
-@app.route("/method/<method>")
-def display_method(method):
-    if path.exists(f"./content/methods/ready-to-use-methods/{method}.jsonnet"):
-        page_data = loads(
-            evaluate_file(f"./content/methods/ready-to-use-methods/{method}.jsonnet")
-        )
-    else:
-        page_data = loads(
-            evaluate_file(f"./content/methods/future-methods/{method}.jsonnet")
-        )
-    return render_template("method.html", page=page_data)
-
-
 @app.route("/method/<methodState>/<method>")
 def display_method_summary(method, methodState):
     page_data = loads(
         evaluate_file(f"./content/methods/{methodState}/{method}.jsonnet")
     )
-    sorted_order = [
-        "Author",
-        "Theme",
-        "Expert group",
-        "Programming language",
-        "Access type",
-        "Release",
-    ]
-    page_data["method_metadata"] = {
-        k: page_data["method_metadata"][k] for k in sorted_order
-    }
     return render_template("method.html", page=page_data)
 
 
