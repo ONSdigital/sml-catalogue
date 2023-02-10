@@ -7,7 +7,12 @@
     'Expert group': 'Editing & Imputation',
     Theme: 'Editing',
     Author: 'ONS',
-    'Programming language': 'Python/Pandas'
+    'Programming language': 'Python/Pandas',
+    "Release": "v1.0.0"
+  },
+  additional_data: {
+    "Release Status": "success",
+    "Release Link": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.0.0"
   },
   specification_link: null,
   code_link: 'https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/date_adjustment.py',

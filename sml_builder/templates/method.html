@@ -49,7 +49,7 @@
 %}
 {% endfor %}
 {% for item in items %}
-{% if item["term"]  == "Release Version" %}
+{% if item["term"]  == "Release" %}
 {% set temp=item["descriptions"][0]["description"] %}
 {% if temp=="Not Released Yet" %}
 {% set item=item["descriptions"][0].__setitem__("description", '<span class="ons-status ons-status--' + status + '">' + temp + '</span>') %}

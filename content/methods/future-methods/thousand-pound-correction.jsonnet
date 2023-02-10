@@ -8,7 +8,10 @@
     Theme: 'Editing',
     Author: 'ONS',
     'Programming language': 'Python/Pandas',
-    'Code available?': 'No',
+    "Release": "Not Released Yet"
+  },
+  additional_data: {
+    "Release Status": "pending"
   },
   specification_link: null,
   code_link: null,

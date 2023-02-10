@@ -8,7 +8,10 @@
     Theme: 'Sample Design & Estimation',
     Author: 'ONS',
     'Programming language': 'Python/PySpark',
-    'Code available?': 'Yes',
+    "Release": "Not Released Yet",
+  },
+  additional_data: {
+    "Release Status": "pending"
   },
   specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/sample_design_and_estimation/estimation/ht_estimation.rst',
   code_link: 'https://github.com/ONSdigital/statistical-methods-library/blob/main/statistical_methods_library/estimation/ht_ratio.py',
