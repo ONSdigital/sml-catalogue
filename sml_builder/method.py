@@ -52,4 +52,3 @@ def appendRow(methods_dir):
             }
         )
     return methods
-    
