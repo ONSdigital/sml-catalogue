@@ -64,7 +64,7 @@
   {% do methodsTableRows.append({
     "tds": [
       {
-          "value": '<a href="' + url_for("display_method", method=row.id) + '">' + row.title + '</a>'
+          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="ready-to-use-methods") + '">' + row.title + '</a>'
       },
       {"value": row.theme},
       {"value": row.exp_group},
@@ -115,7 +115,7 @@
   {% do futureMethodsTableRows.append({
     "tds": [
       {
-          "value": '<a href="' + url_for("display_method", method=row.id) + '">' + row.title + '</a>'
+          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="future-methods") + '">' + row.title + '</a>'
       },
       {"value": row.theme},
       {"value": row.exp_group},

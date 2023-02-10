@@ -9,10 +9,15 @@ def display_method(method):
     page_data = loads(evaluate_file(f"./content/methods/{method}.jsonnet"))
     return render_template("method.html", page=page_data)
 
+@app.route("/method/<methodState>/<method>")
+def display_method_summary(method, methodState):
+    page_data = loads(evaluate_file(f"./content/methods/{methodState}/{method}.jsonnet"))
+    return render_template("method.html", page=page_data)
+
 @app.route("/methods")
 def display_methods():
-    methods_dir = "./content/methods/ready_to_use_methods"
-    future_methods_dir = "./content/methods/future_methods"
+    methods_dir = "./content/methods/ready-to-use-methods"
+    future_methods_dir = "./content/methods/future-methods"
     
     methods = appendRow(methods_dir)
     future_methods = appendRow(future_methods_dir)
