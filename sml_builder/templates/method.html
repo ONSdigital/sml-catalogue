@@ -12,6 +12,7 @@
     }
   ]
 } -%}
+{% from "components/status/_macro.njk" import onsStatus %}
 {%- block main -%}
 <h1 class="ons-u-mt-no">Method: {{ page.title }}</h1>
 <h2> Method summary </h2>
@@ -30,6 +31,7 @@
 
 {% from "components/metadata/_macro.njk" import onsMetadata %}
 {% set items = [] %}
+{% set status =  page.additional_data["Release Status"] %}
 {% for item in page.method_metadata %}
 {% set description = page.method_metadata[item] %}
 
@@ -45,6 +47,21 @@
     }
   )
 %}
+{% endfor %}
+
+{% for item in items %}
+{% if item["term"]  == "Release" %}
+    {% set temp=item["descriptions"][0]["description"] %}
+
+{% if temp=="Not Released Yet" %}
+    {% set item=item["descriptions"][0].__setitem__("description", '<span class="ons-status ons-status--' + status + '">' + temp + '</span>') %}
+
+{% else %}
+    {% set link = page.additional_data["Release Link"] %}
+    {% set item=item["descriptions"][0].__setitem__("description", '<span class="ons-status ons-status--' + status + '"><a href='+ link + '>' + temp + '</a></span>') %}
+
+{% endif %}
+{% endif %}
 {% endfor %}
 <hr class="ons-u-mb-m">
 {{

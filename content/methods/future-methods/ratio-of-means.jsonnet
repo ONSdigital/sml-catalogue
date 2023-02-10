@@ -3,12 +3,15 @@
   date: '2022-06-07',
   contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
-    'Access type': 'Internal',
+    'Access': 'Internal',
     'Expert group': 'Editing & Imputation',
     Theme: 'Imputation',
     Author: 'ONS',
-    'Programming language': 'Python/PySpark',
-    'Code available?': 'Yes',
+    'Languages': 'Python/PySpark',
+    "Release": "Not Released Yet"
+  },
+  additional_data: {
+    "Release Status": "pending"
   },
   specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/ratio_of_means/methodological_specification.md',
   code_link: 'https://github.com/ONSdigital/statistical-methods-library/blob/main/statistical_methods_library/imputation/ratio_of_means.py',
