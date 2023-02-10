@@ -12,7 +12,7 @@ def display_method_summary(method, methodState):
         evaluate_file(f"./content/methods/{methodState}/{method}.jsonnet")
     )
     # Manually sorting the order of the method_metadata dictionary, the jsonnet library automatically sorts the
-    # resulting dictionary and nested dictionaries alphabetically, this lets us select the desired order using the
+    # resulting dictionary and nested dictionaries alphabetically, this lets us select the desired order when using the
     # onsMetadata component
 
     sorted_order = [
