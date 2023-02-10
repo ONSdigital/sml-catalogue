@@ -16,6 +16,14 @@ def display_method(method):
         page_data = loads(
             evaluate_file(f"./content/methods/future-methods/{method}.jsonnet")
         )
+    return render_template("method.html", page=page_data)
+
+
+@app.route("/method/<methodState>/<method>")
+def display_method_summary(method, methodState):
+    page_data = loads(
+        evaluate_file(f"./content/methods/{methodState}/{method}.jsonnet")
+    )
     sorted_order = [
         "Author",
         "Theme",
@@ -27,14 +35,6 @@ def display_method(method):
     page_data["method_metadata"] = {
         k: page_data["method_metadata"][k] for k in sorted_order
     }
-    return render_template("method.html", page=page_data)
-
-
-@app.route("/method/<methodState>/<method>")
-def display_method_summary(method, methodState):
-    page_data = loads(
-        evaluate_file(f"./content/methods/{methodState}/{method}.jsonnet")
-    )
     return render_template("method.html", page=page_data)
 
 
