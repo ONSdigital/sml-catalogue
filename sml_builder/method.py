@@ -8,7 +8,9 @@ from .utils import _page_not_found
 
 @app.route("/method/<method>")
 def display_method(method):
-    page_data = loads(evaluate_file(f"./content/methods/{method}.jsonnet"))
+    page_data = loads(
++        evaluate_file(f"./content/methods/{methodState}/{method}.jsonnet")
+    )
     return render_template("method.html", page=page_data)
 
 
