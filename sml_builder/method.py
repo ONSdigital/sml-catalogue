@@ -1,4 +1,4 @@
-from os import listdir, path
+from os import listdir
 from json import loads
 from flask import render_template
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
