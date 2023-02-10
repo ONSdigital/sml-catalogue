@@ -1,14 +1,6 @@
 # Step definitions for methods catalogue page
 
-import setupSelenium
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from behave import *
-
-driver = setupSelenium.driver
-host = setupSelenium.website_url
-timeout = setupSelenium.timeout
+from setupSelenium import *
 
 
 @given('I\'m an sml portal user trying to get to the methods catalogue page')
@@ -53,11 +45,13 @@ def check_title(context, text):
     assert dropdown_content == text
 
 
-def extractMethodTableContent(context, tableType):
-    if tableType == 'ready':
-        methods_catalogue_table_header = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_elements(By.ID, "ready-table"))
-    elif tableType == 'future':
-        methods_catalogue_table_header = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_elements(By.ID, "future-table"))
+def extractMethodTableContent(context, table):
+    if table == 'ready':
+        methods_catalogue_table = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, value='ready-table'))
+        methods_catalogue_table_header = methods_catalogue_table.find_elements(By.CLASS_NAME, "ons-table__header")
+    elif table == 'future':
+        methods_catalogue_table = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, value='future-table'))
+        methods_catalogue_table_header = methods_catalogue_table.find_elements(By.CLASS_NAME, "ons-table__header")
 
     headers = []
     for header in methods_catalogue_table_header:

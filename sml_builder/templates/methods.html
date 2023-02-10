@@ -4,6 +4,10 @@
 {% from "components/table/_macro.njk" import onsTable %}
 {% from "components/status/_macro.njk" import onsStatus %}
 
+{%- block head -%}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/sml.css') }}" media="all" type="text/css">
+{%- endblock head -%}
+
 {%- block main -%}
 
 <h1 class="ons-u-mt-no">Methods catalogue</h1>
@@ -60,7 +64,7 @@
   {% do methodsTableRows.append({
     "tds": [
       {
-          "value": '<a href="' + url_for("display_method", method=row.id) + '">' + row.title + '</a>'
+          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="ready-to-use-methods") + '">' + row.title + '</a>'
       },
       {"value": row.theme},
       {"value": row.exp_group},
@@ -111,7 +115,7 @@
   {% do futureMethodsTableRows.append({
     "tds": [
       {
-          "value": '<a href="' + url_for("display_method", method=row.id) + '">' + row.title + '</a>'
+          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="future-methods") + '">' + row.title + '</a>'
       },
       {"value": row.theme},
       {"value": row.exp_group},
@@ -128,5 +132,5 @@
 {% endblock main -%}
 
 {%- block scripts -%}
-    <script type=text/javascript src="{{ url_for('static',filename='js/methodsTable2.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static',filename='js/sml.js') }}"></script>
 {%- endblock scripts -%}

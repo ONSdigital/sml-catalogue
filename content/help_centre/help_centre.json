@@ -4,10 +4,7 @@
             "name": "information",
             "label": "Information",
             "subcategories": [
-                {
-                    "name": "view-methods",
-                    "label": "Find and view methods"
-                },
+
                 {
                     "name": "methods-request",
                     "label": "Submit a method request"
@@ -26,6 +23,10 @@
             "name": "access",
             "label": "Access (and usage)",
             "subcategories": [
+                {
+                    "name": "view-methods",
+                    "label": "Find and view methods"
+                },
                 {
                     "name": "run-a-method",
                     "label": "Use a method"

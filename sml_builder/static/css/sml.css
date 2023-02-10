@@ -15,3 +15,16 @@
 #topBtn svg {
   transform: rotate(-90deg);
 }
+
+/* Overriding the method table classes
+to fix the table row spacing issue
+we currently have with the ONS Design System  */
+.ons-table__cell, .ons-table__header {
+  border-bottom: 2px solid #707071;
+  overflow: hidden;
+  padding: 0.5rem 0 0.5rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  /* background-color: red; */
+  max-width: 100px;
+}
