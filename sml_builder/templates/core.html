@@ -21,6 +21,10 @@
         "title": "Methods catalogue"},
         {"url": url_for("help_centre"),
         "title": "Help centre"},
+        {"url": url_for("about"),
+        "title": "About this library"},
+        {"url": url_for("display_glossary"),
+        "title": "Glossary"},
         ],
         "currentPath": current_path
     },
@@ -35,7 +39,7 @@
             },
             {
               "text": 'Accessibility Statement',
-              "url": '#0'
+              "url": url_for('accessibility_page')
             },
             {
               "text": 'Privacy and Data Protection',

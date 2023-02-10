@@ -1,14 +1,6 @@
 # Step definitions for help centre page
 
-import setupSelenium
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from behave import *
-
-driver = setupSelenium.driver
-host = setupSelenium.website_url
-timeout = setupSelenium.timeout
+from setupSelenium import *
 
 @given('I\'m an sml portal user trying to get to the help centre')
 def auth_user(context):
@@ -17,7 +9,7 @@ def auth_user(context):
 @given('I\'m an sml portal user on the "{page}"')
 def auth_user(context, page):
     if page == "find and view methods page":
-        driver.get(f"{host}help-centre/information/view-methods")
+        driver.get(f"{host}help-centre/access/view-methods")
     elif page == "submit a method request":
         driver.get(f"{host}help-centre/information/methods-request")
 

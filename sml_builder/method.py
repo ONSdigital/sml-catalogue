@@ -3,6 +3,7 @@ from json import loads
 from flask import render_template
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
 from sml_builder import app
+from .utils import _page_not_found
 
 @app.route("/method/<method>")
 def display_method(method):
@@ -18,10 +19,13 @@ def display_method_summary(method, methodState):
 def display_methods():
     methods_dir = "./content/methods/ready-to-use-methods"
     future_methods_dir = "./content/methods/future-methods"
+    try:
     
-    methods = appendRow(methods_dir)
-    future_methods = appendRow(future_methods_dir)
+        methods = appendRow(methods_dir)
+        future_methods = appendRow(future_methods_dir)
 
+    except OSError as e:
+        _page_not_found(e)
     return render_template(
         "methods.html", page={"rows": methods, "future_rows": future_methods}
     )
