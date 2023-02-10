@@ -3,10 +3,10 @@
   date: '2022-05-18',
   contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
+    'Access type': 'Internal',
     'Expert group': 'Sample Design & Estimation',
     Theme: 'Sample Design & Estimation',
     Author: 'ONS',
-    Status: 'In development',
     'Programming language': 'Python/PySpark',
     'Code available?': 'Yes',
   },

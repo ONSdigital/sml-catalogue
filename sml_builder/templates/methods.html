@@ -1,12 +1,17 @@
 {%- extends "core.html" -%}
 {%- set page_title = "Methods catalogue" -%}
 {%- set current_path = url_for("display_methods") -%}
+{% from "components/table/_macro.njk" import onsTable %}
+{% from "components/status/_macro.njk" import onsStatus %}
+
+{%- block head -%}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/sml.css') }}" media="all" type="text/css">
+{%- endblock head -%}
+
 {%- block main -%}
- 
+
 <h1 class="ons-u-mt-no">Methods catalogue</h1>
 <p>Here you will discover statistical methods used by the Office for National Statistics.</p>
-
-{% from "components/panel/_macro.njk" import onsPanel %}
 
 {% from "components/collapsible/_macro.njk" import onsCollapsible %}
 {% call onsCollapsible({
@@ -19,10 +24,19 @@
 
   <p>To find out more about expert groups and themes,
     please visit the <a href="https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/">analysis function website</a>.</p>
-{% endcall %}
-{% from "components/table/_macro.njk" import onsTable %}
+    {% endcall %}
+
+  </br>
+<h2>{{
+  onsStatus({
+      "label": 'Method Ready to Use',
+      "type": 'success'
+  })
+}}</h2>
+<p>The following methods are released and ready to use</p>
 {% set methodsTable = {
-  "variants": 'sortable',
+  "id": "ready-table",
+  "variants": "sortable",
   "tableClasses": "ons-u-mt-m",
   "sortBy": "Sort by",
   "ariaAsc": "ascending",
@@ -41,7 +55,7 @@
       "value": "Languages"
     },
     {
-      "value": "Status"
+      "value": "Access"
     },
   ]
 } %}
@@ -50,12 +64,12 @@
   {% do methodsTableRows.append({
     "tds": [
       {
-          "value": '<a href="' + url_for("display_method", method=row.id) + '">' + row.title + '</a>'
+          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="ready-to-use-methods") + '">' + row.title + '</a>'
       },
       {"value": row.theme},
       {"value": row.exp_group},
       {"value": row.language},
-      {"value": '<span class="ons-status ons-status--' + status_class.get(row.status, "info") + '">' + row.status + '</span>'},
+      {"value": row.access},
     ]
   }) %}
 {% endfor %}
@@ -63,5 +77,60 @@
 {{
   onsTable(methodsTable)
 }}
+
+<h2>{{
+  onsStatus({
+      "label": 'Future Methods',
+      "type": 'pending'
+  })
+}}</h2>
+<p>The following methods have been approved for development and will be included in future releases</p>
+{% set futureMethodsTable = {
+  "id": "future-table",
+  "variants": "sortable",
+  "tableClasses": "ons-u-mt-m",
+  "sortBy": "Sort by",
+  "ariaAsc": "ascending",
+  "ariaDesc": "descending",
+  "ths": [
+    {
+      "value": "Name."
+    },
+    {
+      "value": "Theme."
+    },
+    {
+      "value": "Expert group."
+    },
+    {
+      "value": "Languages."
+    },
+    {
+      "value": "Access."
+    },
+  ]
+} %}
+{% set futureMethodsTableRows = [] %}
+{% for row in page.future_rows %}
+  {% do futureMethodsTableRows.append({
+    "tds": [
+      {
+          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="future-methods") + '">' + row.title + '</a>'
+      },
+      {"value": row.theme},
+      {"value": row.exp_group},
+      {"value": row.language},
+      {"value": row.access},
+    ]
+  }) %}
+{% endfor %}
+{% do futureMethodsTable.update({"trs": futureMethodsTableRows}) %}
+{{
+  onsTable(futureMethodsTable)
+}}
 <p>The Statistical Methods Library will grow as more statistical methods are requested.</p>
 {% endblock main -%}
+
+{%- block scripts -%}
+    <script type=text/javascript src="{{ url_for('static',filename='js/sml.js') }}"></script>
+{%- endblock scripts -%}

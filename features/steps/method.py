@@ -45,8 +45,13 @@ def check_title(context, text):
     assert dropdown_content == text
 
 
-def extractMethodTableContent(context):
-    methods_catalogue_table_header = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_elements(By.CLASS_NAME, "ons-table__header"))
+def extractMethodTableContent(context, table):
+    if table == 'ready':
+        methods_catalogue_table = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, value='ready-table'))
+        methods_catalogue_table_header = methods_catalogue_table.find_elements(By.CLASS_NAME, "ons-table__header")
+    elif table == 'future':
+        methods_catalogue_table = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, value='future-table'))
+        methods_catalogue_table_header = methods_catalogue_table.find_elements(By.CLASS_NAME, "ons-table__header")
 
     headers = []
     for header in methods_catalogue_table_header:
@@ -67,22 +72,22 @@ def extractMethodTableContent(context):
     return headers, methods
 
 
-@then('The table headings of the methods catalogue table are "{name}" "{theme}" "{expertGroup}" "{languages}" "{status}"')
-def check_methods_catalogue_title(context, name, theme, expertGroup, languages, status):
-    headers = extractMethodTableContent(context)[0]
+@then('The "{table}" table headings of the methods catalogue table are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}"')
+def check_methods_catalogue_title(context, table, name, theme, expertGroup, languages, access):
+    headers = extractMethodTableContent(context, table)[0]
 
     assert name in headers
     assert theme in headers
     assert expertGroup in headers
     assert languages in headers
-    assert status in headers
+    assert access in headers
 
 
-@then('The table row of the method are "{name}" "{theme}" "{expertGroup}" "{languages}" "{status}"')
-def check_methods_catalogue_title(context, name, theme, expertGroup, languages, status):
-    methods = extractMethodTableContent(context)[1]
+@then('The "{table}" table row of the method are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}"')
+def check_methods_catalogue_title(context, table, name, theme, expertGroup, languages, access):
+    methods = extractMethodTableContent(context, table)[1]
 
-    checks = [name, theme, expertGroup, languages, status]
+    checks = [name, theme, expertGroup, languages, access]
 
     method_found = False
     for method in methods:
