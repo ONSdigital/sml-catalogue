@@ -4,10 +4,10 @@ set -e
 
 echo "Creating report directory"
 cd features/test_reports
-date=$(date '+%Y_%m_%d_%H_%M_%S')
+date=$(date '+%Y_%m_%d')
 
 echo $date
-mkdir $date
+mkdir -p $date
 
 echo "cd to directory"
 cd $date
