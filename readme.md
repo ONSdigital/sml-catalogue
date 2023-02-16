@@ -90,3 +90,9 @@ Note: Investigation was undertaken to automate the behavior tests as part of the
 However, we discovered the github agents are hosted in the United States and when visiting our services url, the runner routed to our 'page not found' webpage.
 
 Hence as the page can only be accessed from within the uk we cannot automate the tests in the pipeline.
+
+Note: Once a week we will be generating test reports for record keeping. To do this run the test report script using the following command.
+
+```bash
+source test_report_generation.sh
+```
