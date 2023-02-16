@@ -24,6 +24,7 @@ If any of these are not completed, please explain why in the notes.
 - [ ] Documentation updated where required 
 - [ ] Have considered non-functional requirements such as Security, Performance, Scalability, and Fault Tolerance
 - [ ] I have linted the code
+- [ ] I have generated a test report by running the test report generation script
 
 **Testing**
 
