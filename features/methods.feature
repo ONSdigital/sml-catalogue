@@ -15,12 +15,12 @@ Feature: Methods catalogue tests
     Scenario: Methods catalogue ready table header check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "ready" table headings of the methods catalogue table are "Name" "Theme" "Expert group" "Languages" "Access"
+        Then The "ready" table headings of the methods catalogue table are "Name" "Theme" "Expert group" "Languages"
 
     Scenario: Methods catalogue future table header check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "future" table headings of the methods catalogue table are "Name" "Theme" "Expert group" "Languages" "Access"
+        Then The "future" table headings of the methods catalogue table are "Name" "Theme" "Expert group" "Languages"
 
     Scenario: Ratio of Means table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
