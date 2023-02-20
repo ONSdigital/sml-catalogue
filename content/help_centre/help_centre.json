@@ -6,8 +6,8 @@
             "subcategories": [
 
                 {
-                    "name": "methods-request",
-                    "label": "Submit a method request"
+                    "name": "submit-methods",
+                    "label": ""
                 },
                 {
                     "name": "version-methods",

@@ -11,7 +11,7 @@ def auth_user(context, page):
     if page == "find and view methods page":
         driver.get(f"{host}help-centre/access/view-methods")
     elif page == "submit a method request":
-        driver.get(f"{host}help-centre/information/methods-request")
+        driver.get(f"{host}help-centre/information/submit-method")
 
 @when('I navigate to the help centre page')
 def navigate_to_url(context):
