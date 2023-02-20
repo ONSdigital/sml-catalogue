@@ -11,7 +11,7 @@ def auth_user(context, page):
     if page == "find and view methods page":
         driver.get(f"{host}help-centre/access/view-methods")
     elif page == "submit a method request":
-        driver.get(f"{host}help-centre/information/submit-method")
+        driver.get(f"{host}help-centre/information/submit-methods")
 
 @when('I navigate to the help centre page')
 def navigate_to_url(context):
@@ -21,11 +21,6 @@ def navigate_to_url(context):
 @when('I click the back link')
 def navigate_to_url(context):
     WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, value='back')).click()
-
-@when('I click the external user dropdown')
-def navigate_to_url(context):
-    WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, value='collapsibleONSExternalUserId')).click()
-    WebDriverWait(driver, timeout=timeout).until(EC.presence_of_element_located((By.ID, 'collapsibleONSExternalUserId-content')))
 
 @then('The title of the help centre page is "{title}"')
 def check_title(context, title):
