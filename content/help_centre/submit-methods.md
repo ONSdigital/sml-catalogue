@@ -32,7 +32,7 @@ Click on “Process Portal”. In the left-hand menu you will see “Create SML 
 Click on "Create SML Method Request”, and fill out the information in this form to create the desired request.
 
 Once you have filled out the form, you will need to complete a method specification. Please use the following [template](https://officenationalstatistics.sharepoint.com/sites/MTHIT/SysDev/Forms/AllItems.aspx?id=%2Fsites%2FMTHIT%2FSysDev%2FStatistical%5FMethods%5FLibrary%2FCommunication%2FSML%20methodological%20specification%20template%2Emd&parent=%2Fsites%2FMTHIT%2FSysDev%2FStatistical%5FMethods%5FLibrary%2FCommunication&p=true&ga=1) to help you do this.
-#
-### I am a user from outside the ONS
+
+#### I am a user from outside the ONS
 
 Currently we do not accept formal method submissions or change requests from external users. In future, we will accept certain method requests via the Integrated Data Service [https://integrateddataservice.gov.uk/](https://integrateddataservice.gov.uk/). If you would like to make a suggestion for a new method, or to provide feedback about an existing method, please do so by emailing [smlhelp@ons.gov.uk](smlhelp@ons.gov.uk).
