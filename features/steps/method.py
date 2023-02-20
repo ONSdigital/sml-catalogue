@@ -72,22 +72,21 @@ def extractMethodTableContent(context, table):
     return headers, methods
 
 
-@then('The "{table}" table headings of the methods catalogue table are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}"')
-def check_methods_catalogue_title(context, table, name, theme, expertGroup, languages, access):
+@then('The "{table}" table headings of the methods catalogue table are "{name}" "{theme}" "{expertGroup}" "{languages}"')
+def check_methods_catalogue_title(context, table, name, theme, expertGroup, languages):
     headers = extractMethodTableContent(context, table)[0]
 
     assert name in headers
     assert theme in headers
     assert expertGroup in headers
     assert languages in headers
-    assert access in headers
 
 
-@then('The "{table}" table row of the method are "{name}" "{theme}" "{expertGroup}" "{languages}" "{access}"')
-def check_methods_catalogue_title(context, table, name, theme, expertGroup, languages, access):
+@then('The "{table}" table row of the method are "{name}" "{theme}" "{expertGroup}" "{languages}"')
+def check_methods_catalogue_title(context, table, name, theme, expertGroup, languages):
     methods = extractMethodTableContent(context, table)[1]
 
-    checks = [name, theme, expertGroup, languages, access]
+    checks = [name, theme, expertGroup, languages]
 
     method_found = False
     for method in methods:

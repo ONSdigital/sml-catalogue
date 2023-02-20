@@ -25,29 +25,29 @@ Feature: Methods catalogue tests
     Scenario: Ratio of Means table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Ratio of Means" "Imputation" "Editing & Imputation" "Python/PySpark" "Internal"
+        Then The "future" table row of the method are "Ratio of Means" "Imputation" "Editing & Imputation" "Python/PySpark"
 
     Scenario: Winsorisation table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Winsorisation" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark" "Internal"
+        Then The "future" table row of the method are "Winsorisation" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark"
 
     Scenario: Thousand pound correction table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Thousand Pound Correction" "Editing" "Editing & Imputation" "Python/Pandas" "Internal"
+        Then The "future" table row of the method are "Thousand Pound Correction" "Editing" "Editing & Imputation" "Python/Pandas"
 
     Scenario: Horvitz-Thompson Ratio Estimator table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Horvitz-Thompson Ratio Estimator" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark" "Internal"
+        Then The "future" table row of the method are "Horvitz-Thompson Ratio Estimator" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark"
     
     Scenario: Date adjustment table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "ready" table row of the method are "Date Adjustment" "Editing" "Editing & Imputation" "Python/Pandas" "Internal"
+        Then The "ready" table row of the method are "Date Adjustment" "Editing" "Editing & Imputation" "Python/Pandas"
     
     Scenario: Selective editing table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "ready" table row of the method are "Selective Editing" "Editing" "Editing & Imputation" "Python/Pandas" "Internal"
+        Then The "ready" table row of the method are "Selective Editing" "Editing" "Editing & Imputation" "Python/Pandas"
