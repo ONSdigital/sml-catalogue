@@ -1,5 +1,3 @@
-### Submit a method request
-
 #### I am an ONS internal user
 
 Method requests can be raised to:
