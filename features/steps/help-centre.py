@@ -21,7 +21,7 @@ def navigate_to_url(context):
 @when('I click the back link')
 def navigate_to_url(context):
     WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, value='back')).click()
-    
+
 @when('I click the external user dropdown')
 def navigate_to_url(context):
     WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, value='collapsibleONSExternalUserId')).click()
