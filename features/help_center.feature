@@ -6,7 +6,7 @@ Feature: Help center tests
         Given I'm an sml portal user trying to get to the help centre
         When I navigate to the help centre page
         Then The title of the help centre page is "Help centre"
-        
+
     Scenario: Content check for external user
         Given I'm an sml portal user on the "submit a method request"
         When I click the external user dropdown
