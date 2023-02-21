@@ -8,6 +8,7 @@ externallink_help_categories = [
     "report-bug",
     "provide-feedback",
     "support",
+    "methods-request",
     "expert-groups",
 ]
 
@@ -71,8 +72,10 @@ def guidances(category, sub_category=None):
 
     help_centre_nav = _help_centre_nav(category)
 
-    return render_template(
-        "help_category.html",
+    return render_template(        
+        "help-methods-request.html"
+        if sub_category == "methods-request"
+        else "help_category.html",
         body=body,
         category_label=category_label,
         sub_category_label=sub_category_label,
