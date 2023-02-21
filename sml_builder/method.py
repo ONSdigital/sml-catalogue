@@ -11,6 +11,21 @@ def display_method_summary(method, methodState):
     page_data = loads(
         evaluate_file(f"./content/methods/{methodState}/{method}.jsonnet")
     )
+    # Manually sorting the order of the method_metadata dictionary, the jsonnet library automatically sorts the
+    # resulting dictionary and nested dictionaries alphabetically, this lets us select the desired order when using the
+    # onsMetadata component
+
+    sorted_order = [
+        "Author",
+        "Theme",
+        "Expert group",
+        "Languages",
+        "Access",
+        "Release",
+    ]
+    page_data["method_metadata"] = {
+        k: page_data["method_metadata"][k] for k in sorted_order
+    }
     return render_template("method.html", page=page_data)
 
 
@@ -41,8 +56,8 @@ def appendRow(methods_dir):
                 "title": method["title"],
                 "theme": method["method_metadata"]["Theme"],
                 "exp_group": method["method_metadata"]["Expert group"],
-                "language": method["method_metadata"]["Programming language"],
-                "access": method["method_metadata"]["Access type"],
+                "language": method["method_metadata"]["Languages"],
+                "access": method["method_metadata"]["Access"],
             }
         )
     return methods

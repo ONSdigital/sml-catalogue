@@ -3,12 +3,15 @@
   date: '2022-06-29',
   contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
-    'Access type': 'Internal',
+    'Access': 'Internal',
     'Expert group': 'Editing & Imputation',
     Theme: 'Editing',
     Author: 'ONS',
-    'Programming language': 'Python/Pandas',
-    'Code available?': 'No',
+    'Languages': 'Python/Pandas',
+    "Release": "Not Released Yet"
+  },
+  additional_data: {
+    "Release Status": "pending"
   },
   specification_link: null,
   code_link: null,

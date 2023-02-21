@@ -3,12 +3,16 @@
   date: '2022-06-29',
   contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
-    'Access type': 'Internal',
+    'Access': 'Internal',
     'Expert group': 'Editing & Imputation',
     Theme: 'Editing',
     Author: 'ONS',
-    'Programming language': 'Python/Pandas',
-    'Code available?': 'Yes',
+    'Languages': 'Python/Pandas',
+    "Release": "v1.0.0"
+  },
+  additional_data: {
+    "Release Status": "success",
+    "Release Link": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.0.0"
   },
   specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/selective_editing/methodological_specification.md',
   code_link: 'https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/selective_editing.py',
