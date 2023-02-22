@@ -7,6 +7,21 @@ from setupSelenium import *
 def auth_user_home_page(context):
     driver.delete_all_cookies()
     driver.get(host)
+    axe = Axe(driver)
+    # Inject axe-core javascript into page.
+    axe.inject()
+    # Run axe accessibility checks.
+    results = axe.run()
+    # Write results to file
+    axe.write_results(results, 'axeResults.json')
+    violations = results["violations"]
+    violationCount = 0
+    # Filter out minor and moderate error alerts
+    for i in range(len(violations)):
+        if violations[i]["impact"] in ('critical', 'serious'):
+            violationCount += 1
+    # Assert no violations are found
+    assert violationCount == 0
     banner = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
     assert banner == 'An open source library for statistical code approved by the ONS'
 
