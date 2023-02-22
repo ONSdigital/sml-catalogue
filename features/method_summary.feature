@@ -6,6 +6,11 @@ Feature: Method summary page tests
         Given I'm an sml portal user trying to get to the "date adjustment method" summary page
         When I navigate to the "Date Adjustment" summary page
         Then The title of the method summary page is "Method: Date Adjustment"
+        And The "Author" of the method is "ONS"
+        And The "Theme" of the method is "Editing"
+        And The "Expert group" of the method is "Editing & Imputation"
+        And The "Langauges" of the method is "Python/Pandas"
+        And The "Release" of the method is "v1.0.0"
 
     Scenario: Horvitz-thompson ratio estimator check
         Given I'm an sml portal user trying to get to the "ht/ratio estimation method" summary page
