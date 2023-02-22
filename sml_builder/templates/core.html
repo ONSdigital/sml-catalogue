@@ -1,17 +1,6 @@
 {% extends "layout/_template.njk" %}
 {%- if page_title -%} {%- set page_title_value = page_title + ' - Statistical Methods Library Portal' -%} {%- else -%} {%- set page_title_value = 'Statistical Methods Library Portal' -%} {%- endif -%}
-{% set pageConfig = { 
-    "title": page_title_value,
-    "header": {
-        "title": 'Statistical Methods Library Portal',
-        "orgLogoHref": 'https://www.ons.gov.uk',
-        "titleLogoHref": '/'
-    },
-    "mainCol":{
-      "columns": mainCols if mainCols else 12,
-      "classes": "ons-u-mt-m"
-    },
-    "breadcrumbs": breadcrumbs,
+{% set navigation= {
     "navigation": {
         "id": "main-navigation",
         "itemsList": [
@@ -27,7 +16,30 @@
         "title": "Glossary"},
         ],
         "currentPath": current_path
+        }
+    }
+%}
+{% set pageConfig = {
+    "meta": {
+        "canonicalUrl": "/",
+        "description": "/",
     },
+
+    "title": page_title_value,
+    "header": {
+        "title": 'Statistical Methods Library Portal',
+        "orgLogoHref": 'https://www.ons.gov.uk',
+        "titleLogoHref": "/",
+        "mastheadLogo": "/",
+        "titleLogo": "/",
+        "navigation": navigation.navigation,
+    },
+    "pageColNumber": "12",
+    "colNumber": ColNumber if ColNumber else 12,
+    "pageColClasses": pageColClasses if pageColClasses,
+    "mainClasses": "ons-u-mt-m",
+    "breadcrumbs": breadcrumbs,
+    "navigation": navigation.navigation,
     "footer": {
       "OGLLink": true,
       "legal": [
@@ -49,8 +61,6 @@
         }
       ]
     },
-
-    "asideCol":asideCol
   }
  %}
 

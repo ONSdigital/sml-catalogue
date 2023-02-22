@@ -1,4 +1,4 @@
-{%- extends "core.html" -%}
+{%- extends "sidebar.html" -%}
 {% from "components/card/_macro.njk" import onsCard %}
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {% from "components/label/_macro.njk" import onsLabel %}
@@ -6,28 +6,21 @@
 {% import "related-content-macro.html" as macros %}
 
 {%- set page_title = "Help centre" -%}
+{%- set colNumber = 7 -%}
 {%- set current_path = url_for("help_centre") -%}
-{% set mainCols = 7 %}
-{% set asideCol =  {
-    "position": "after",
-    "colClasses": "ons-u-mt-l ons-u-mb-l ons-push-1@m"
-  }
-%}
 
-{%- block main -%}
-    <h1>Help centre</h1>
-    {% for category in help_categories %}
-        {{ onsCard({
-        "id": category.name,
-        "title": category.name,
-        "itemsList": category.subcategories
-            }) 
-        }}
-    {% endfor%}
-{%- endblock main-%}
+{% block mainContent %}
+            <h1>Help centre</h1>
+            {% for category in help_categories %}
+                {{ onsCard({
+                "id": category.name,
+                "title": category.name,
+                "itemsList": category.subcategories
+                    })
+                }}
+            {% endfor%}
 
-{% block aside %}   
-
+{% endblock mainContent %}
+{% block sidebarContent %}
     {{macros.sml_portal_related_content()}}
-
-{% endblock %}
+{% endblock sidebarContent %}
