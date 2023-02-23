@@ -7,6 +7,8 @@ from setupSelenium import *
 def auth_user_home_page(context):
     driver.delete_all_cookies()
     driver.get(host)
+    banner = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
+    assert banner == 'An open source library for statistical code approved by the ONS'
 
 
 @given('I am on the cookies page')
