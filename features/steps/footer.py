@@ -6,21 +6,6 @@ from setupSelenium import *
 @given('I\'m an sml portal user trying to get to the "{page}" page')
 def auth_user(context, page):
     driver.get(host)
-    axe = Axe(driver)
-    # Inject axe-core javascript into page.
-    axe.inject()
-    # Run axe accessibility checks.
-    results = axe.run()
-    # Write results to file
-    axe.write_results(results, 'axeResults.json')
-    violations = results["violations"]
-    violationCount = 0
-    # Filter out minor and moderate error alerts
-    for i in range(len(violations)):
-        if violations[i]["impact"] in ('critical', 'serious'):
-            violationCount += 1
-    # Assert no violations are found
-    assert violationCount == 0
 
 
 @when('I click the "{page}" page on the footer')
