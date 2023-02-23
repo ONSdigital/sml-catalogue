@@ -25,12 +25,19 @@ def check_title(context, title):
 @then('The {metaDataField} of the method is {metaDataValue}')
 def check_ons_meta_data(context, metaDataField, metaDataValue):
     ons_meta_data_fields = extract_ons_meta_data(context)[0]
-    print(ons_meta_data_fields, metaDataField)
     ons_meta_data_values = extract_ons_meta_data(context)[1]
-    print(ons_meta_data_values, metaDataValue)
+    metaDataField = metaDataField.strip('"')
+    metaDataValue = metaDataValue.strip('"')
 
-    assert metaDataField in ons_meta_data_fields
-    assert metaDataValue in ons_meta_data_values
+    check_duplicates = list(set(ons_meta_data_values))
+
+    if metaDataField in ons_meta_data_fields and metaDataValue in ons_meta_data_values:
+        if ons_meta_data_fields.index(metaDataField) == ons_meta_data_values.index(metaDataValue) or len(ons_meta_data_values) != len(check_duplicates):
+            assert True
+        else:
+            assert False
+    else:
+            assert False
 
 
 def extract_ons_meta_data(context):

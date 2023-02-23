@@ -43,7 +43,6 @@ def check_title(context, text):
         dropdown_content += " "
 
     dropdown_content = dropdown_content.replace('(opens in a new tab)', '').replace('\n', '').rstrip()
-    print(dropdown_content)
     assert dropdown_content == text
 
 @then('The subtitle of the help centre page is "{subtitle}"')
