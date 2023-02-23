@@ -2,7 +2,7 @@
 
 Feature: About library tests
 
-    Scenario:Home page accessibility check
+    Scenario: Home page accessibility check
         Given I'm an sml portal user
         When I refresh the page
         Then The accessibility test passes
