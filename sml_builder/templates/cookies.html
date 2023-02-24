@@ -3,7 +3,7 @@
 {%- from "components/radios/_macro.njk" import onsRadios -%}
 {%- from "components/button/_macro.njk" import onsButton -%}
 {%- from "components/panel/_macro.njk" import onsPanel -%}
-{%- from "components/collapsible/_macro.njk" import onsCollapsible -%}
+{%- from "components/details/_macro.njk" import onsDetails -%}
 {%- from "components/table/_macro.njk" import onsTable -%}
 {%- from "components/lists/_macro.njk" import onsList -%}
 
@@ -67,7 +67,7 @@
                     <li>remember your progress through a form (for example, an ons study)</li>
                 </ul>
                 <p>They always need to be on.</p>
-                {%- call onsCollapsible({
+                {%- call onsDetails({
                     "id": "cookies-essential-details",
                     "classes": "ons-u-mb-l",
                     "title": "Learn more about these essential cookies",
