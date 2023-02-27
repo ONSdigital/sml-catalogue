@@ -20,3 +20,39 @@ def navigate_to_the_method(context, method):
 def check_title(context, title):
     page_title = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
     assert page_title == title
+
+
+@then('The {metaDataField} of the method is {metaDataValue}')
+def check_ons_meta_data(context, metaDataField, metaDataValue):
+    ons_meta_data_fields = extract_ons_meta_data(context)[0]
+    ons_meta_data_values = extract_ons_meta_data(context)[1]
+    metaDataField = metaDataField.strip('"')
+    metaDataValue = metaDataValue.strip('"')
+
+    check_duplicates = list(set(ons_meta_data_values))
+
+    if metaDataField in ons_meta_data_fields and metaDataValue in ons_meta_data_values:
+        if ons_meta_data_fields.index(metaDataField) == ons_meta_data_values.index(metaDataValue) or len(ons_meta_data_values) != len(check_duplicates):
+            assert True
+        else:
+            assert False
+    else:
+            assert False
+
+
+def extract_ons_meta_data(context):
+    main_content = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, value='main-content'))
+    ons_meta_data = main_content.find_element(By.TAG_NAME, "dl")
+    ons_meta_data_fields = ons_meta_data.find_elements(By.TAG_NAME, "dt")
+    ons_meta_data_values = ons_meta_data.find_elements(By.TAG_NAME, "dd")
+
+    fields = []
+    values = []
+
+    for field in ons_meta_data_fields:
+        fields.append(field.text)
+    
+    for value in ons_meta_data_values:
+        values.append(value.text)
+
+    return fields, values

@@ -103,10 +103,10 @@ def _get_category_labels(selected_category, selected_sub_category):
                 if sub_category["name"] == selected_sub_category:
                     sub_category_label = sub_category["label"]
                     return category_label, sub_category_label, selected_sub_category
-            raise Exception(
+            raise KeyError(
                 f"The sub category {selected_sub_category} was not found in the category '{selected_category}'"
             )
-    raise Exception(f"The category '{selected_category}' was not found")
+    raise KeyError(f"The category '{selected_category}' was not found")
 
 
 def _help_centre_nav(

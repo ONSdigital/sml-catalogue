@@ -20,7 +20,6 @@ def display_method_summary(method, methodState):
         "Theme",
         "Expert group",
         "Languages",
-        "Access",
         "Release",
     ]
     page_data["method_metadata"] = {
@@ -57,7 +56,6 @@ def appendRow(methods_dir):
                 "theme": method["method_metadata"]["Theme"],
                 "exp_group": method["method_metadata"]["Expert group"],
                 "language": method["method_metadata"]["Languages"],
-                "access": method["method_metadata"]["Access"],
             }
         )
     return methods

@@ -3,7 +3,6 @@
   date: '2022-06-29',
   contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
-    'Access': 'Internal',
     'Expert group': 'Editing & Imputation',
     Theme: 'Editing',
     Author: 'ONS',
