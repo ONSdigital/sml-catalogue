@@ -5,7 +5,7 @@ Feature: Help center tests
     Scenario: Title check
         Given I'm an sml portal user trying to get to the help centre
         When I navigate to the help centre page
-        Then The title of the help centre page is "Help centre"
+        Then The title of the page is "Help centre"
 
     Scenario: Content check for external user
         Given I'm an sml portal user on the "submit a method request"
@@ -70,9 +70,9 @@ Feature: Help center tests
     Scenario: Back link check for sub categories
         Given I'm an sml portal user on the "find and view methods page"
         When I click the back link
-        Then The title of the help centre page is "Help centre"
+        Then The title of the page is "Help centre"
 
     Scenario: Back link check for submit a method request (uses different code to above test)
         Given I'm an sml portal user on the "submit a method request"
         When I click the back link
-        Then The title of the help centre page is "Help centre"
+        Then The title of the page is "Help centre"

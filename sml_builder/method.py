@@ -33,7 +33,6 @@ def display_methods():
     methods_dir = "./content/methods/ready-to-use-methods"
     future_methods_dir = "./content/methods/future-methods"
     try:
-
         methods = appendRow(methods_dir)
         future_methods = appendRow(future_methods_dir)
 
