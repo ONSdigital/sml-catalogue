@@ -61,3 +61,13 @@ Feature: Method summary page tests
         And The "Expert group" of the method is "Sample Design & Estimation"
         And The "Languages" of the method is "Python/PySpark"
         And The "Release" of the method is "Not Released Yet"
+
+    Scenario: Totals and components check
+        Given I'm an sml portal user trying to get to the "totals and components method" summary page
+        When I navigate to the "Totals and Components" summary page
+        Then The title of the method summary page is "Method: Totals and Components"
+        And The "Author" of the method is "ONS"
+        And The "Theme" of the method is "Sample Design & Estimation"
+        And The "Expert group" of the method is "Sample Design & Estimation"
+        And The "Languages" of the method is "Python/PySpark"
+        And The "Release" of the method is "Not Released Yet"
