@@ -41,7 +41,12 @@ Feature: Methods catalogue tests
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
         Then The "future" table row of the method are "Horvitz-Thompson Ratio Estimator" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark"
-    
+
+    Scenario: Mean of Ratios table row check
+        Given I'm an sml portal user trying to get to the methods catalogue page
+        When I navigate to the methods catalogue page
+        Then The "future" table row of the method are "Mean of Ratios" "Imputation" "Editing & Imputation" "Python/PySpark"
+
     Scenario: Date adjustment table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
@@ -51,3 +56,4 @@ Feature: Methods catalogue tests
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
         Then The "ready" table row of the method are "Selective Editing" "Editing" "Editing & Imputation" "Python/Pandas"
+
