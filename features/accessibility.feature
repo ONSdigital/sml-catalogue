@@ -133,3 +133,9 @@ Feature: About library tests
         When I navigate to the "Thousand Pound Correction" summary page
         Then The title of the page is "Method: Thousand Pound Correction"
         And The accessibility test passes
+
+    Scenario: Mean of ratios summary page accessibility check
+        Given I'm an sml portal user
+        When I navigate to the "Mean of Ratios" summary page
+        Then The title of the page is "Method: Mean of Ratios"
+        And The accessibility test passes
