@@ -1935,63 +1935,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Access</dt>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dt:nth-child(9)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Internal</dd>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dd:nth-child(10)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "bold",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
                     "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Release</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "dt:nth-child(11)"
+                        "dt:nth-child(9)"
                     ]
                 },
                 {
@@ -2410,7 +2358,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Access</dt>",
+                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Release</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2428,47 +2376,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Internal</dd>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dd:nth-child(10)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "dlitem",
-                            "impact": "serious",
-                            "message": "Description list item has a <dl> parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Release</dt>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dt:nth-child(11)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "dlitem",
-                            "impact": "serious",
-                            "message": "Description list item has a <dl> parent element",
-                            "relatedNodes": []
-                        }
-                    ],
                     "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\"><span class=\"ons-status ons-status--pending\">Not Released Yet</span></dd>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "dd:nth-child(12)"
+                        "dd:nth-child(10)"
                     ]
                 }
             ],
@@ -2682,7 +2594,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<main id=\"main-content\" class=\"ons-page__main ons-u-mt-m\">",
+                    "html": "<main id=\"main-content\" class=\"ons-page__main \">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -3102,43 +3014,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-header__org-logo-link\" href=\"https://www.ons.gov.uk\">",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-header__org-logo-link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a class=\"ons-header__title-link\" href=\"/\">\n                                <div class=\"ons-header__title\">Statistical Methods Library Portal</div>\n                                </a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-header__title-link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/\">Home</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/\">Home</a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3174,7 +3050,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                            <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3210,7 +3086,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3246,7 +3122,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/resources/about\">About this library</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/resources/about\">About this library</a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3282,7 +3158,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/resources/glossary\">Glossary</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/resources/glossary\">Glossary</a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3641,7 +3517,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<main id=\"main-content\" class=\"ons-page__main ons-u-mt-m\">",
+                    "html": "<main id=\"main-content\" class=\"ons-page__main \">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -3746,7 +3622,7 @@
                             "message": "Page has at least one main landmark",
                             "relatedNodes": [
                                 {
-                                    "html": "<main id=\"main-content\" class=\"ons-page__main ons-u-mt-m\">",
+                                    "html": "<main id=\"main-content\" class=\"ons-page__main \">",
                                     "target": [
                                         "#main-content"
                                     ]
@@ -3760,7 +3636,7 @@
                             "message": "Page does not have more than one main landmark",
                             "relatedNodes": [
                                 {
-                                    "html": "<main id=\"main-content\" class=\"ons-page__main ons-u-mt-m\">",
+                                    "html": "<main id=\"main-content\" class=\"ons-page__main \">",
                                     "target": [
                                         "#main-content"
                                     ]
@@ -3865,58 +3741,6 @@
                     ],
                     "target": [
                         ".ons-skip-link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-header__org-logo-link\" href=\"https://www.ons.gov.uk\">",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-header__org-logo-link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-header__title-link\" href=\"/\">\n                                <div class=\"ons-header__title\">Statistical Methods Library Portal</div>\n                                </a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-header__title-link"
                     ]
                 },
                 {
@@ -4301,7 +4125,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/\">Home</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/\">Home</a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4319,7 +4143,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                            <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4337,7 +4161,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4355,7 +4179,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/resources/about\">About this library</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/resources/about\">About this library</a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4373,7 +4197,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/resources/glossary\">Glossary</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/resources/glossary\">Glossary</a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4592,7 +4416,7 @@
             ]
         }
     ],
-    "timestamp": "2023-03-01T13:42:13.578Z",
+    "timestamp": "2023-03-07T11:57:44.026Z",
     "url": "http://localhost:8000/method/future-methods/thousand-pound-correction",
     "violations": [
         {
