@@ -27,11 +27,6 @@ def navigate_to_url(context):
     WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, value='collapsibleONSExternalUserId')).click()
     WebDriverWait(driver, timeout=timeout).until(EC.presence_of_element_located((By.ID, 'collapsibleONSExternalUserId-content')))
 
-@then('The title of the help centre page is "{title}"')
-def check_title(context, title):
-    page_title = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.TAG_NAME, value="h1")).text
-    assert page_title == title
-
 @then('The drop down content is "{text}"')
 def check_title(context, text):
     content_div = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, value='collapsibleONSExternalUserId-content'))
@@ -43,7 +38,6 @@ def check_title(context, text):
         dropdown_content += " "
 
     dropdown_content = dropdown_content.replace('(opens in a new tab)', '').replace('\n', '').rstrip()
-    print(dropdown_content)
     assert dropdown_content == text
 
 @then('The subtitle of the help centre page is "{subtitle}"')

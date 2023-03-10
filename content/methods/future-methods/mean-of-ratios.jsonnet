@@ -1,6 +1,6 @@
 {
-  title: 'Ratio of Means',
-  date: '2022-06-07',
+  title: 'Mean of Ratios',
+  date: '2023-03-07',
   contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
     'Expert group': 'Editing & Imputation',
@@ -12,12 +12,14 @@
   additional_data: {
     "Release Status": "pending"
   },
-  specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/ratio_of_means/methodological_specification.md',
+  specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/mean_of_ratios/technical_specification.md',
   description: |||
-    Ratio of means is a standard imputation method used for business surveys. The method imputes for each non-responding
-    contributor a single numeric target variable within the dataset for multiple periods simultaneously. It uses the
-    relationship between the target variable of interest and a predictive value and/or auxiliary variable to inform the
-    imputed value. Due to its robust nature, it does not use any form of trimming or outliering.
+    Mean of Ratios imputation is a standard imputation method for business
+    surveys. It can be used to impute value for unit (complete) non-response
+    or item (partial) non-response. There is an option to use trimming as the
+    method can be influenced by extreme values. The method imputes a single
+    numeric variable. It uses the relationship between the variable being imputed
+    and an appropriate predictive or auxiliary variable.
 
     As imputation can be carried out for multiple periods simultaneously, the method can apply forward, backward or
     construction imputation. The type of imputation used will vary for each non-respondent in each period depending on

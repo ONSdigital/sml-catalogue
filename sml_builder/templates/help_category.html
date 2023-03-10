@@ -1,4 +1,4 @@
-{%- extends "core.html" -%}
+{%- extends "sidebar.html" -%}
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {% from "components/lists/_macro.njk" import onsList %}
 {%- set breadcrumbs = {
@@ -15,15 +15,10 @@
 
 {% import "related-content-macro.html" as macros %}
 
-{% set mainCols = 7 %}
-{% set asideCol =  {
-    "position": "after",
-    "colClasses": "ons-u-mt-l ons-u-mb-l ons-related-content ons-push-1@m"
-  }
-%}
+{% set sidebarCols = 7 %}
 {%- set page_title = "Help centre" -%}
 {%- set current_path = url_for("help_centre") -%}
-{%- block main -%}
+{%- block mainContent -%}
   <h1>Help centre</h1>
     <h2>{{category_label}}</h2>
     <h3>{{sub_category_label}}</h3>
@@ -50,9 +45,10 @@
     {% elif body %}
       {{body}}
     {% endif %}
-{%- endblock main-%}
-
-{% block aside %}
+{%- endblock mainContent-%}
+{%- block sidebar -%}
+<div class="ons-grid__col ons-col-5@m ons-u-mt-l ons-u-mb-l ons-related-content ons-push-1@m">
+{% block sidebarContent %}
 <h2 class="ons-related-content__title ons-u-fs-r--b ons-u-mb-xs">Other 'how to' list categories</h2>
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {{
@@ -60,9 +56,10 @@
         "variants": "vertical",
         "id": "section-menu",
         "currentPath": url_for("guidances", category=category),
-        "classes": "ons-related-content",
         "itemsList": nav
     })
 }}
 {{macros.sml_portal_related_content()}}
-{% endblock %}
+{% endblock sidebarContent %}
+</div>
+{%- endblock sidebar -%}

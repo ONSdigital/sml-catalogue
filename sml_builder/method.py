@@ -20,7 +20,6 @@ def display_method_summary(method, methodState):
         "Theme",
         "Expert group",
         "Languages",
-        "Access",
         "Release",
     ]
     page_data["method_metadata"] = {
@@ -34,7 +33,6 @@ def display_methods():
     methods_dir = "./content/methods/ready-to-use-methods"
     future_methods_dir = "./content/methods/future-methods"
     try:
-
         methods = appendRow(methods_dir)
         future_methods = appendRow(future_methods_dir)
 
@@ -57,7 +55,6 @@ def appendRow(methods_dir):
                 "theme": method["method_metadata"]["Theme"],
                 "exp_group": method["method_metadata"]["Expert group"],
                 "language": method["method_metadata"]["Languages"],
-                "access": method["method_metadata"]["Access"],
             }
         )
     return methods
