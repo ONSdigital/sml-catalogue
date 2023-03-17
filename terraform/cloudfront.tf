@@ -91,9 +91,9 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
   }
   security_headers_config {
     strict_transport_security {
-      override                    = true
-      access_control_max_age_sec  = 31536000
-      include_subdomains          = true
+      override                   = true
+      access_control_max_age_sec = 31536000
+      include_subdomains         = true
     }
     content_type_options {
       override             = true
