@@ -84,10 +84,9 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
       value    = "noindex"
     }
     items {
-      header                     = "Strict-Transport-Security"
-      access_control_max_age_sec = 31536000
-      include_subdomains         = true
-      override                   = true
+      header             = "Strict-Transport-Security"
+      override           = true
+      value              = "max-age = 31536000; include_subdomains = true"
     }
     items {
       header   = "Content-Type-Options"
