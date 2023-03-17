@@ -84,39 +84,36 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
       value    = "noindex"
     }
     items {
-      header   = "Strict-Transport-Security"
-      override = true
-      value    = "max-age = 31536000; include_subdomains = true"
-    }
-    items {
-      header   = "Content-Type-Options"
-      override = true
-      value    = "nosniff"
-    }
-    items {
-      header   = "X-XSS-Protection"
-      override = true
-      value    = "1"
-    }
-    items {
-      header   = "X-Frame-Options"
-      override = true
-      value    = "DENY"
-    }
-    items {
-      header   = "Content-Security-Policy"
-      override = true
-      value    = "script-src 'self'"
-    }
-    items {
-      header   = "Referrer-Policy"
-      override = true
-      value    = "no-referrer"
-    }
-    items {
-      header   = "Permissions-Policy"
+      header   = "Permissions-Policy
       override = true
       value    = "geolocation=() fullscreen=()"
+    }
+  }
+  security_headers_config {
+    strict_transport_security {
+      override                    = true
+      access_control_max_age_sec  = 31536000
+      include_subdomains          = true
+    }
+    content_type_options {
+      override             = true
+      content_type_options = "nosniff"
+    }
+    x_xss_protection {
+      override   = true
+      protection = true
+    }
+    x_frame_options {
+      override      = true
+      frame_options = "DENY"
+    }
+    content_security_policy {
+      override                = true
+      content_security_policy = "script-src 'self'"
+    }
+    referrer_policy {
+      override        = true
+      referrer_policy = "no-referrer"
     }
   }
 }
