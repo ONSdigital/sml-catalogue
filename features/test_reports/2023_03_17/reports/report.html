@@ -1,0 +1,3720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>report.xml</title>
+    <style type="text/css">
+        body {
+    background-color: white;
+    padding-bottom: 20em;
+    margin: 0;
+    min-height: 15cm;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+    font-family: sans-serif;
+}
+
+h1 {
+    background-color: #007acc;
+    color: white;
+    padding: 3mm;
+    margin-top: 0;
+    margin-bottom: 1mm;
+}
+
+.footer {
+    font-style: italic;
+    font-size: small;
+    text-align: right;
+    padding: 1em;
+}
+
+.testsuite {
+    padding-bottom: 2em;
+    margin-left: 1em;
+}
+
+.proplist {
+    width: 100%;
+    margin-bottom: 2em;
+    border-collapse: collapse;
+    border: 1px solid grey;
+}
+
+.proplist th {
+    background-color: silver;
+    width: 5em;
+    padding: 2px;
+    padding-right: 1em;
+    text-align: left;
+}
+
+.proplist td {
+    padding: 2px;
+}
+
+.index-table {
+    width: 90%;
+    margin-left: 1em;
+}
+
+.index-table td {
+    vertical-align: top;
+    width: 50%;
+}
+
+.failure-index {
+
+}
+
+.toc {
+    margin-bottom: 2em;
+    font-family: monospace;
+}
+
+.stdio, pre {
+    min-height: 1em;
+    background-color: #1e1e1e;
+    color: silver;
+    padding: 0.5em;
+}
+.tdpre {
+    background-color: #1e1e1e;
+}
+
+.test {
+    margin-left: 0.5cm;
+}
+
+.outcome {
+    border-left: 1em;
+    padding: 2px;
+}
+
+.outcome-failed {
+    border-left: 1em solid lightcoral;
+}
+
+.outcome-passed {
+    border-left: 1em solid lightgreen;
+}
+
+.outcome-skipped {
+    border-left: 1em solid lightyellow;
+}
+
+.stats-table {
+}
+
+.stats-table td {
+    min-width: 4em;
+    text-align: right;
+}
+
+.stats-table .failed {
+    background-color: lightcoral;
+}
+
+.stats-table .passed {
+    background-color: lightgreen;
+}
+
+.matrix-table {
+    table-layout: fixed;
+    border-spacing: 0;
+    width: available;
+    margin-left: 1em;
+}
+
+.matrix-table td {
+    vertical-align: center;
+}
+
+.matrix-table td:last-child {
+    width: 0;
+}
+
+.matrix-table tr:hover {
+    background-color: yellow;
+}
+
+.matrix-axis-name {
+    white-space: nowrap;
+    padding-right: 0.5em;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    text-align: right;
+}
+
+.matrix-axis-line {
+    border-left: 1px solid black;
+    width: 0.5em;
+}
+
+.matrix-classname {
+    text-align: left;
+    width: 100%;
+    border-top: 2px solid grey;
+    border-bottom: 1px solid silver;
+}
+
+.matrix-casename {
+    text-align: left;
+    font-weight: normal;
+    font-style: italic;
+    padding-left: 1em;
+    border-bottom: 1px solid silver;
+}
+
+.matrix-result {
+    display: block;
+    width: 1em;
+    text-align: center;
+    padding: 1mm;
+    margin: 0;
+}
+
+.matrix-result-combined {
+    white-space: nowrap;
+    padding-right: 0.2em;
+    text-align: right;
+}
+
+.matrix-result-failed {
+    background-color: lightcoral;
+}
+
+.matrix-result-passed {
+    background-color: lightgreen;
+}
+
+.matrix-result-skipped {
+    background-color: lightyellow;
+}
+
+.matrix-even {
+    background-color: lightgray;
+}
+    </style>
+</head>
+<body>
+    
+<h1>
+    Test Report : report.xml
+</h1>
+<a id="toc"></a>
+<table class="index-table">
+    <tr>
+        <td>
+            <ul class="toc">
+            
+                
+                <li>footer.Footer pages tests
+                <ul>
+                    
+                    <li><a href="#5647ab77-23b6-4232-b15f-010e05ee2bcb">Accessibility statement page check</a></li>
+                    
+                    <li><a href="#f13c0b60-30e8-45bb-861f-a3705a0ab1e1">Cookies page check</a></li>
+                    
+                    <li><a href="#502b2ca1-e350-4035-a317-4078a4729d1b">Privacy and data protection page check</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>header.Home page tests
+                <ul>
+                    
+                    <li><a href="#3ce7798a-500d-40fe-b776-d8bce001c455">Check methods catalogue header link works</a></li>
+                    
+                    <li><a href="#ae02197d-e84c-4de8-ab0a-c751535f5f28">Check help centre header link works</a></li>
+                    
+                    <li><a href="#3375941d-453f-4577-b383-aea07db7077a">Check about this library header link works</a></li>
+                    
+                    <li><a href="#603db894-5544-4d6b-a30e-0e4bc53775ce">Check glossary header link works</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>methods.Methods catalogue tests
+                <ul>
+                    
+                    <li><a href="#82045660-a414-4745-b919-6577c7ec85aa">Title check</a></li>
+                    
+                    <li><a href="#61196a05-642d-4835-a468-eb47b0466519">Check for dropdown content</a></li>
+                    
+                    <li><a href="#370791fa-c401-4435-9821-676ba33f7819">Methods catalogue ready table header check</a></li>
+                    
+                    <li><a href="#33d8784d-dad7-4d51-b055-9bf88f1a048a">Methods catalogue future table header check</a></li>
+                    
+                    <li><a href="#b3ac9d4f-9ed2-457b-b567-45ebb9d9207f">Ratio of Means table row check</a></li>
+                    
+                    <li><a href="#55a928d8-fb03-4653-ab69-68ca5465bde0">Winsorisation table row check</a></li>
+                    
+                    <li><a href="#e7f419b8-1a83-46f1-b33a-b647afb43ce3">Totals and Components table row check</a></li>
+                    
+                    <li><a href="#3257d8ef-5652-431f-92a0-10f1af12d8a7">Thousand pound correction table row check</a></li>
+                    
+                    <li><a href="#4b8cb6a3-8464-4310-9c72-0af20be0d82b">Horvitz-Thompson Ratio Estimator table row check</a></li>
+                    
+                    <li><a href="#7dc2a499-8579-46f4-9e46-e5b54ad00ed0">Mean of Ratios table row check</a></li>
+                    
+                    <li><a href="#bc4e73af-b7c9-4e7c-ab36-570f775c7c6a">Date adjustment table row check</a></li>
+                    
+                    <li><a href="#e2804c98-64f0-4bf9-b655-78d97897a000">Selective editing table row check</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>method_summary.Method summary page tests
+                <ul>
+                    
+                    <li><a href="#1d70f4da-0180-4ee8-a63c-072f20955663">Date adjustment check</a></li>
+                    
+                    <li><a href="#96fea3e0-8f03-4db1-ac27-88526c9b364d">Horvitz-thompson ratio estimator check</a></li>
+                    
+                    <li><a href="#83799127-e274-4693-b47e-7b9f8fc1f6d6">Ratio of means check</a></li>
+                    
+                    <li><a href="#5a794169-9fc4-4863-bc2b-c6b4ad9de8ce">Selective editing check</a></li>
+                    
+                    <li><a href="#f59ffd21-c364-4dd4-bc05-e8236f765d8c">Thousand pound correction check</a></li>
+                    
+                    <li><a href="#58a7b1d2-babf-471d-9647-5538a323c157">Winsorisation check</a></li>
+                    
+                    <li><a href="#26c62e64-e2ad-4c1c-80d2-4f8493702f4e">Totals and components check</a></li>
+                    
+                    <li><a href="#c664b5c4-0c00-4c09-b336-3335857d69a5">Mean of Ratios check</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>glossary.Glossary tests
+                <ul>
+                    
+                    <li><a href="#dce58c57-04a4-4097-a988-8299130a94a4">Title check</a></li>
+                    
+                    <li><a href="#14b7b53f-92ef-4875-a6fa-5fd1165886d3">Subtitle check</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>about.About library tests
+                <ul>
+                    
+                    <li><a href="#991f267a-1c34-4d26-ba13-9bd0159248be">Title check</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>help_center.Help center tests
+                <ul>
+                    
+                    <li><a href="#ac617b41-da5b-456c-a800-2dea078219d5">Title check</a></li>
+                    
+                    <li><a href="#bb3f553c-3a59-4042-8e61-e9886f5f00cc">Content check for external user</a></li>
+                    
+                    <li><a href="#ada7e63e-cb87-4602-a97e-09cf43298ff1">Sub-title check for find and view methods</a></li>
+                    
+                    <li><a href="#c9ac231c-8e61-47e1-a331-ae027d11afd0">Sub-title check for submit a method request</a></li>
+                    
+                    <li><a href="#f8178fa7-b9ee-4427-8575-92a8667c7b01">Sub-title check for how the methods are versioned</a></li>
+                    
+                    <li><a href="#c9fc5c9e-3b0c-4687-b80f-15e72e40731b">Sub-title check for coding standards</a></li>
+                    
+                    <li><a href="#8e8b5319-6f1b-48d5-9703-b64c3d7af6c8">Sub-title check for use a method</a></li>
+                    
+                    <li><a href="#2c2c7c54-fa4e-4d71-a9f7-ceb99cf95f8b">Sub-title check for report a defect or bug</a></li>
+                    
+                    <li><a href="#8b3c995f-c949-4cd0-9e23-c40080af614b">Sub-title check for provide feedback</a></li>
+                    
+                    <li><a href="#bae752d3-3a25-42b4-904d-389e463afc83">Sub-title check for get support</a></li>
+                    
+                    <li><a href="#9b8b994c-4840-4237-b6ec-e57500567666">Sub-title check for get information on expert groups</a></li>
+                    
+                    <li><a href="#ff2c15a0-dfd7-4776-9a9c-f0e4242098e7">Sub-title check for troubleshooting</a></li>
+                    
+                    <li><a href="#845cee8f-ef3b-488d-9d98-1b25e3c725ac">Sub-title check for using github</a></li>
+                    
+                    <li><a href="#f6b84794-14b7-4300-b3d7-13ab5ff7a647">Back link check for sub categories</a></li>
+                    
+                    <li><a href="#a8580538-5527-4cc5-b2c4-15a790fefdf6">Back link check for submit a method request (uses different code to above test)</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>cookies.Cookie banner tests
+                <ul>
+                    
+                    <li><a href="#691f3900-8110-4781-99f0-2157faf9f689">Accept cookies test</a></li>
+                    
+                    <li><a href="#680c6b01-1e0f-4d60-8a9a-4e6f2d560d44">Reject cookies test</a></li>
+                    
+                    <li><a href="#204f5d73-5cc3-48b7-8eac-16bbb39655ea">Additional cookies link test</a></li>
+                    
+                    <li><a href="#d7fd86f9-6c16-44d4-b9f2-592ff52b4432">View cookies cookies link test</a></li>
+                    
+                    <li><a href="#b3318bd7-d5c0-44e1-925b-dca13489426a">I change the cookie settings to enabled</a></li>
+                    
+                    <li><a href="#efa2953a-c254-4788-88d4-9a41da4ae38d">I change the cookie settings to disabled</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>accessibility.About library tests
+                <ul>
+                    
+                    <li><a href="#ec62c381-aaff-4a3b-9a99-45138720afcf">Home page accessibility check</a></li>
+                    
+                    <li><a href="#1ca0407d-80c2-42a6-8c07-1e89c13d5723">Help centre page accessibility check</a></li>
+                    
+                    <li><a href="#1a29ef99-b943-43dd-89d6-d1f9654328eb">Submit a method request page accessibility check</a></li>
+                    
+                    <li><a href="#60234cac-9106-413a-8936-3feb20e10077">Help centre page accessibility check</a></li>
+                    
+                    <li><a href="#e844047d-4055-4a88-b8d7-13328bc0add0">Help centre page accessibility check</a></li>
+                    
+                    <li><a href="#d435b8e8-1018-48bd-8be3-e4a54d08bf82">Help centre page accessibility check</a></li>
+                    
+                    <li><a href="#60dac2ee-3808-4951-9617-430f2f107da0">Help centre page accessibility check</a></li>
+                    
+                    <li><a href="#69ccf5ba-4349-4e9d-a6d6-46033f399c44">Help centre page accessibility check</a></li>
+                    
+                    <li><a href="#c0839f3f-3a24-4cec-a0e2-417ce4948792">Help centre page accessibility check</a></li>
+                    
+                    <li><a href="#02a78399-8eca-49fc-9686-8232bf417404">Help centre page accessibility check</a></li>
+                    
+                    <li><a href="#7287dbe9-16ec-4840-a078-d180582e5c57">Help centre page accessibility check</a></li>
+                    
+                    <li><a href="#860b7766-0934-4401-8564-051b8bb6deb6">Help centre page accessibility check</a></li>
+                    
+                    <li><a href="#c75da3a6-3b16-412a-9fd6-76603b198984">Accessibility page accessibility check</a></li>
+                    
+                    <li><a href="#db12ea58-c0ea-4238-8313-9fc89991727f">Methods catalogue page accessibility check</a></li>
+                    
+                    <li><a href="#a25bb5da-170a-4919-a446-801b228794be">Glossary page accessibility check</a></li>
+                    
+                    <li><a href="#78f095b7-dc38-455d-b682-87d773c91eca">Winsorisation page accessibility check</a></li>
+                    
+                    <li><a href="#35a2718b-85a2-4880-aa38-e969ce16d891">Totals and components page accessibility check</a></li>
+                    
+                    <li><a href="#f9c568de-183e-4536-9631-00c88aac96b9">Date Adjustment summary page accessibility check</a></li>
+                    
+                    <li><a href="#70f0c47b-cba0-4af7-b68b-b639b622088b">Selective Editing summary page accessibility check</a></li>
+                    
+                    <li><a href="#81b1615c-d934-4c6d-a927-941f13e4bb36">Horvitz-Thompson Ratio Estimator summary page accessibility check</a></li>
+                    
+                    <li><a href="#85ad4256-efb8-4b86-a1b6-af7f8ab20b5b">Ratio of means summary page accessibility check</a></li>
+                    
+                    <li><a href="#b9f3848c-b358-4de6-9834-0f6d181a829e">Thousand Pound Estimation summary page accessibility check</a></li>
+                    
+                    <li><a href="#ea4664c7-9bc8-45b2-9069-f85a8ec5bb44">Mean of ratios summary page accessibility check</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+            </ul>
+        </td>
+        <td class="failure-index">
+            <ul class="toc">
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+            </ul>
+        </td>
+    </tr>
+</table>
+
+
+    <div class="testsuite">
+        <h2>Test Suite: footer.Footer pages tests</h2>
+        <a id="500e7b38-5416-4879-9500-a3ffb4a94685"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.287 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>3</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>footer.Footer pages tests</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="5647ab77-23b6-4232-b15f-010e05ee2bcb"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Accessibility statement page check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.096 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Accessibility statement page check
+    Given I&#39;m an sml portal user trying to get to the &#34;accessibility statement&#34; page ... passed in 0.019s
+    When I click the &#34;Accessibility Statement&#34; page on the footer ... passed in 0.060s
+    Then The title of the page is &#34;Accessibility statement&#34; ... passed in 0.018s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="f13c0b60-30e8-45bb-861f-a3705a0ab1e1"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Cookies page check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.098 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Cookies page check
+    Given I&#39;m an sml portal user trying to get to the &#34;cookies&#34; page ... passed in 0.019s
+    When I click the &#34;Cookies&#34; page on the footer ... passed in 0.061s
+    Then The title of the page is &#34;Cookies on the statistical methods library portal&#34; ... passed in 0.018s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="502b2ca1-e350-4035-a317-4078a4729d1b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Privacy and data protection page check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.093 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Privacy and data protection page check
+    Given I&#39;m an sml portal user trying to get to the &#34;privacy and data protection&#34; page ... passed in 0.020s
+    When I click the &#34;Privacy and Data Protection&#34; page on the footer ... passed in 0.056s
+    Then The title of the page is &#34;Privacy and Data Protection&#34; ... passed in 0.018s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: header.Home page tests</h2>
+        <a id="6cacdbce-1652-44ed-828a-40dfdacc3ae0"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>1.75 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>4</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>header.Home page tests</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="3ce7798a-500d-40fe-b776-d8bce001c455"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Check methods catalogue header link works</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.473 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Check methods catalogue header link works
+    Given I&#39;m an sml portal user on the home page ... passed in 0.020s
+    When I click the &#34;methods catalogue&#34; link in the header ... passed in 0.435s
+    Then The title of this page is &#34;Methods catalogue&#34; ... passed in 0.017s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="ae02197d-e84c-4de8-ab0a-c751535f5f28"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Check help centre header link works</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.095 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Check help centre header link works
+    Given I&#39;m an sml portal user on the home page ... passed in 0.020s
+    When I click the &#34;help centre&#34; link in the header ... passed in 0.057s
+    Then The title of this page is &#34;Help centre&#34; ... passed in 0.018s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="3375941d-453f-4577-b383-aea07db7077a"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Check about this library header link works</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.097 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Check about this library header link works
+    Given I&#39;m an sml portal user on the home page ... passed in 0.019s
+    When I click the &#34;about this library&#34; link in the header ... passed in 0.060s
+    Then The title of this page is &#34;About the Statistical Methods Library&#34; ... passed in 0.018s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="603db894-5544-4d6b-a30e-0e4bc53775ce"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Check glossary header link works</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>1.086 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Check glossary header link works
+    Given I&#39;m an sml portal user on the home page ... passed in 0.020s
+    When I click the &#34;glossary&#34; link in the header ... passed in 1.048s
+    Then The title of this page is &#34;Library glossary&#34; ... passed in 0.018s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: methods.Methods catalogue tests</h2>
+        <a id="c4dd7450-dfcd-4c08-a499-048ab8da7575"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>10.396 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>12</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>methods.Methods catalogue tests</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="82045660-a414-4745-b919-6577c7ec85aa"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Title check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.443 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Title check
+    Given I&#39;m an sml portal user trying to get to the methods catalogue page ... passed in 0.021s
+    When I navigate to the methods catalogue page ... passed in 0.403s
+    Then The title of the methods catalogue page is &#34;Methods catalogue&#34; ... passed in 0.019s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="61196a05-642d-4835-a468-eb47b0466519"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Check for dropdown content</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.464 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Check for dropdown content
+    Given I am on the methods catalogue page ... passed in 0.381s
+    When I click on the collapsible drop down ... passed in 0.046s
+    Then I see the dropdown content &#34;Methods are sorted in hierarchical order with expert groups as the top level. For example, within an expert group are different themes, and within the themes are different methods. To find out more about expert groups and themes, please visit the analysis function website.&#34; ... passed in 0.036s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="370791fa-c401-4435-9821-676ba33f7819"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Methods catalogue ready table header check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.842 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Methods catalogue ready table header check
+    Given I&#39;m an sml portal user trying to get to the methods catalogue page ... passed in 0.021s
+    When I navigate to the methods catalogue page ... passed in 0.410s
+    Then The &#34;ready&#34; table headings of the methods catalogue table are &#34;Name&#34; &#34;Theme&#34; &#34;Expert group&#34; &#34;Languages&#34; ... passed in 0.411s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="33d8784d-dad7-4d51-b055-9bf88f1a048a"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Methods catalogue future table header check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.862 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Methods catalogue future table header check
+    Given I&#39;m an sml portal user trying to get to the methods catalogue page ... passed in 0.023s
+    When I navigate to the methods catalogue page ... passed in 0.413s
+    Then The &#34;future&#34; table headings of the methods catalogue table are &#34;Name&#34; &#34;Theme&#34; &#34;Expert group&#34; &#34;Languages&#34; ... passed in 0.426s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="b3ac9d4f-9ed2-457b-b567-45ebb9d9207f"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Ratio of Means table row check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.883 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Ratio of Means table row check
+    Given I&#39;m an sml portal user trying to get to the methods catalogue page ... passed in 0.022s
+    When I navigate to the methods catalogue page ... passed in 0.406s
+    Then The &#34;future&#34; table row of the method are &#34;Ratio of Means&#34; &#34;Imputation&#34; &#34;Editing &amp; Imputation&#34; &#34;Python/PySpark&#34; ... passed in 0.455s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="55a928d8-fb03-4653-ab69-68ca5465bde0"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Winsorisation table row check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.935 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Winsorisation table row check
+    Given I&#39;m an sml portal user trying to get to the methods catalogue page ... passed in 0.024s
+    When I navigate to the methods catalogue page ... passed in 0.403s
+    Then The &#34;future&#34; table row of the method are &#34;Winsorisation&#34; &#34;Sample Design &amp; Estimation&#34; &#34;Sample Design &amp; Estimation&#34; &#34;Python/PySpark&#34; ... passed in 0.508s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="e7f419b8-1a83-46f1-b33a-b647afb43ce3"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Totals and Components table row check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.934 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Totals and Components table row check
+    Given I&#39;m an sml portal user trying to get to the methods catalogue page ... passed in 0.020s
+    When I navigate to the methods catalogue page ... passed in 0.439s
+    Then The &#34;future&#34; table row of the method are &#34;Totals and Components&#34; &#34;Sample Design &amp; Estimation&#34; &#34;Sample Design &amp; Estimation&#34; &#34;Python/PySpark&#34; ... passed in 0.475s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="3257d8ef-5652-431f-92a0-10f1af12d8a7"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Thousand pound correction table row check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.992 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Thousand pound correction table row check
+    Given I&#39;m an sml portal user trying to get to the methods catalogue page ... passed in 0.021s
+    When I navigate to the methods catalogue page ... passed in 0.419s
+    Then The &#34;future&#34; table row of the method are &#34;Thousand Pound Correction&#34; &#34;Editing&#34; &#34;Editing &amp; Imputation&#34; &#34;Python/Pandas&#34; ... passed in 0.552s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="4b8cb6a3-8464-4310-9c72-0af20be0d82b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Horvitz-Thompson Ratio Estimator table row check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.962 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Horvitz-Thompson Ratio Estimator table row check
+    Given I&#39;m an sml portal user trying to get to the methods catalogue page ... passed in 0.023s
+    When I navigate to the methods catalogue page ... passed in 0.417s
+    Then The &#34;future&#34; table row of the method are &#34;Horvitz-Thompson Ratio Estimator&#34; &#34;Sample Design &amp; Estimation&#34; &#34;Sample Design &amp; Estimation&#34; &#34;Python/PySpark&#34; ... passed in 0.522s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="7dc2a499-8579-46f4-9e46-e5b54ad00ed0"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Mean of Ratios table row check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.977 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Mean of Ratios table row check
+    Given I&#39;m an sml portal user trying to get to the methods catalogue page ... passed in 0.018s
+    When I navigate to the methods catalogue page ... passed in 0.414s
+    Then The &#34;future&#34; table row of the method are &#34;Mean of Ratios&#34; &#34;Imputation&#34; &#34;Editing &amp; Imputation&#34; &#34;Python/PySpark&#34; ... passed in 0.545s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="bc4e73af-b7c9-4e7c-ab36-570f775c7c6a"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Date adjustment table row check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.999 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Date adjustment table row check
+    Given I&#39;m an sml portal user trying to get to the methods catalogue page ... passed in 0.021s
+    When I navigate to the methods catalogue page ... passed in 0.399s
+    Then The &#34;ready&#34; table row of the method are &#34;Date Adjustment&#34; &#34;Editing&#34; &#34;Editing &amp; Imputation&#34; &#34;Python/Pandas&#34; ... passed in 0.579s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="e2804c98-64f0-4bf9-b655-78d97897a000"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Selective editing table row check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>1.102 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Selective editing table row check
+    Given I&#39;m an sml portal user trying to get to the methods catalogue page ... passed in 0.021s
+    When I navigate to the methods catalogue page ... passed in 0.480s
+    Then The &#34;ready&#34; table row of the method are &#34;Selective Editing&#34; &#34;Editing&#34; &#34;Editing &amp; Imputation&#34; &#34;Python/Pandas&#34; ... passed in 0.602s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: method_summary.Method summary page tests</h2>
+        <a id="f158d5e6-5020-4873-9cd9-baccb3f1cb7f"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>8.676 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>8</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>method_summary.Method summary page tests</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="1d70f4da-0180-4ee8-a63c-072f20955663"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Date adjustment check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>1.106 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Date adjustment check
+    Given I&#39;m an sml portal user trying to get to the &#34;date adjustment method&#34; summary page ... passed in 0.020s
+    When I navigate to the &#34;Date Adjustment&#34; summary page ... passed in 0.521s
+    Then The title of the method summary page is &#34;Method: Date Adjustment&#34; ... passed in 0.017s
+    And The &#34;Author&#34; of the method is &#34;ONS&#34; ... passed in 0.152s
+    And The &#34;Theme&#34; of the method is &#34;Editing&#34; ... passed in 0.102s
+    And The &#34;Expert group&#34; of the method is &#34;Editing &amp; Imputation&#34; ... passed in 0.100s
+    And The &#34;Languages&#34; of the method is &#34;Python/Pandas&#34; ... passed in 0.098s
+    And The &#34;Release&#34; of the method is &#34;v1.0.0&#34; ... passed in 0.097s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="96fea3e0-8f03-4db1-ac27-88526c9b364d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Horvitz-thompson ratio estimator check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>1.092 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Horvitz-thompson ratio estimator check
+    Given I&#39;m an sml portal user trying to get to the &#34;ht/ratio estimation method&#34; summary page ... passed in 0.019s
+    When I navigate to the &#34;Horvitz-Thompson Ratio Estimator&#34; summary page ... passed in 0.516s
+    Then The title of the method summary page is &#34;Method: Horvitz-Thompson Ratio Estimator&#34; ... passed in 0.019s
+    And The &#34;Author&#34; of the method is &#34;ONS&#34; ... passed in 0.152s
+    And The &#34;Theme&#34; of the method is &#34;Sample Design &amp; Estimation&#34; ... passed in 0.097s
+    And The &#34;Expert group&#34; of the method is &#34;Sample Design &amp; Estimation&#34; ... passed in 0.097s
+    And The &#34;Languages&#34; of the method is &#34;Python/PySpark&#34; ... passed in 0.096s
+    And The &#34;Release&#34; of the method is &#34;Not Released Yet&#34; ... passed in 0.097s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="83799127-e274-4693-b47e-7b9f8fc1f6d6"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Ratio of means check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>1.104 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Ratio of means check
+    Given I&#39;m an sml portal user trying to get to the &#34;ratio of means method&#34; summary page ... passed in 0.024s
+    When I navigate to the &#34;Ratio of Means&#34; summary page ... passed in 0.519s
+    Then The title of the method summary page is &#34;Method: Ratio of Means&#34; ... passed in 0.018s
+    And The &#34;Author&#34; of the method is &#34;ONS&#34; ... passed in 0.152s
+    And The &#34;Theme&#34; of the method is &#34;Imputation&#34; ... passed in 0.096s
+    And The &#34;Expert group&#34; of the method is &#34;Editing &amp; Imputation&#34; ... passed in 0.100s
+    And The &#34;Languages&#34; of the method is &#34;Python/PySpark&#34; ... passed in 0.097s
+    And The &#34;Release&#34; of the method is &#34;Not Released Yet&#34; ... passed in 0.098s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="5a794169-9fc4-4863-bc2b-c6b4ad9de8ce"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Selective editing check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>1.114 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Selective editing check
+    Given I&#39;m an sml portal user trying to get to the &#34;selective editing method&#34; summary page ... passed in 0.021s
+    When I navigate to the &#34;Selective Editing&#34; summary page ... passed in 0.512s
+    Then The title of the method summary page is &#34;Method: Selective Editing&#34; ... passed in 0.018s
+    And The &#34;Author&#34; of the method is &#34;ONS&#34; ... passed in 0.152s
+    And The &#34;Theme&#34; of the method is &#34;Editing&#34; ... passed in 0.106s
+    And The &#34;Expert group&#34; of the method is &#34;Editing &amp; Imputation&#34; ... passed in 0.094s
+    And The &#34;Languages&#34; of the method is &#34;Python/Pandas&#34; ... passed in 0.095s
+    And The &#34;Release&#34; of the method is &#34;v1.0.0&#34; ... passed in 0.116s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="f59ffd21-c364-4dd4-bc05-e8236f765d8c"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Thousand pound correction check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>1.096 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Thousand pound correction check
+    Given I&#39;m an sml portal user trying to get to the &#34;thousand pound correction method&#34; summary page ... passed in 0.022s
+    When I navigate to the &#34;Thousand Pound Correction&#34; summary page ... passed in 0.513s
+    Then The title of the method summary page is &#34;Method: Thousand Pound Correction&#34; ... passed in 0.018s
+    And The &#34;Author&#34; of the method is &#34;ONS&#34; ... passed in 0.153s
+    And The &#34;Theme&#34; of the method is &#34;Editing&#34; ... passed in 0.097s
+    And The &#34;Expert group&#34; of the method is &#34;Editing &amp; Imputation&#34; ... passed in 0.099s
+    And The &#34;Languages&#34; of the method is &#34;Python/Pandas&#34; ... passed in 0.098s
+    And The &#34;Release&#34; of the method is &#34;Not Released Yet&#34; ... passed in 0.097s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="58a7b1d2-babf-471d-9647-5538a323c157"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Winsorisation check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>1.119 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Winsorisation check
+    Given I&#39;m an sml portal user trying to get to the &#34;winsorisation method&#34; summary page ... passed in 0.024s
+    When I navigate to the &#34;Winsorisation&#34; summary page ... passed in 0.522s
+    Then The title of the method summary page is &#34;Method: Winsorisation&#34; ... passed in 0.018s
+    And The &#34;Author&#34; of the method is &#34;ONS&#34; ... passed in 0.155s
+    And The &#34;Theme&#34; of the method is &#34;Sample Design &amp; Estimation&#34; ... passed in 0.100s
+    And The &#34;Expert group&#34; of the method is &#34;Sample Design &amp; Estimation&#34; ... passed in 0.100s
+    And The &#34;Languages&#34; of the method is &#34;Python/PySpark&#34; ... passed in 0.100s
+    And The &#34;Release&#34; of the method is &#34;Not Released Yet&#34; ... passed in 0.099s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="26c62e64-e2ad-4c1c-80d2-4f8493702f4e"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Totals and components check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.932 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Totals and components check
+    Given I&#39;m an sml portal user trying to get to the &#34;totals and components method&#34; summary page ... passed in 0.023s
+    When I navigate to the &#34;Totals and Components&#34; summary page ... passed in 0.507s
+    Then The title of the method summary page is &#34;Method: Totals and Components&#34; ... passed in 0.018s
+    And The &#34;Author&#34; of the method is &#34;ONS&#34; ... passed in 0.158s
+    And The &#34;Theme&#34; of the method is &#34;Sample Design &amp; Estimation&#34; ... passed in 0.122s
+    And The &#34;Expert group&#34; of the method is &#34;Sample Design &amp; Estimation&#34; ... passed in 0.104s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="c664b5c4-0c00-4c09-b336-3335857d69a5"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Mean of Ratios check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>1.113 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Mean of Ratios check
+    Given I&#39;m an sml portal user trying to get to the &#34;mean of ratios method&#34; summary page ... passed in 0.023s
+    When I navigate to the &#34;Mean of Ratios&#34; summary page ... passed in 0.509s
+    Then The title of the method summary page is &#34;Method: Mean of Ratios&#34; ... passed in 0.018s
+    And The &#34;Author&#34; of the method is &#34;ONS&#34; ... passed in 0.158s
+    And The &#34;Theme&#34; of the method is &#34;Imputation&#34; ... passed in 0.101s
+    And The &#34;Expert group&#34; of the method is &#34;Editing &amp; Imputation&#34; ... passed in 0.100s
+    And The &#34;Languages&#34; of the method is &#34;Python/PySpark&#34; ... passed in 0.103s
+    And The &#34;Release&#34; of the method is &#34;Not Released Yet&#34; ... passed in 0.102s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: glossary.Glossary tests</h2>
+        <a id="b40983e6-bd73-4683-a663-225793379032"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>2.223 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>2</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>glossary.Glossary tests</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="dce58c57-04a4-4097-a988-8299130a94a4"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Title check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>1.098 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Title check
+    Given I&#39;m an sml portal user ... passed in 0.039s
+    When I navigate to the &#34;glossary&#34; page ... passed in 1.038s
+    Then The title of the page is &#34;Library glossary&#34; ... passed in 0.020s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="14b7b53f-92ef-4875-a6fa-5fd1165886d3"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Subtitle check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>1.125 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Subtitle check
+    Given I&#39;m an sml portal user ... passed in 0.040s
+    When I navigate to the &#34;glossary&#34; page ... passed in 1.064s
+    Then The subtitle of the page is &#34;Definitions of words, phrases, and abbreviations used within the Statistical Methods Library&#34; ... passed in 0.021s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: about.About library tests</h2>
+        <a id="5b2e6492-8ee9-438c-b959-35982a4a348e"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.553 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>1</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>about.About library tests</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="991f267a-1c34-4d26-ba13-9bd0159248be"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Title check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.553 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Title check
+    Given I&#39;m an sml portal user ... passed in 0.480s
+    When I navigate to the &#34;about&#34; page ... passed in 0.051s
+    Then The title of the page is &#34;About the Statistical Methods Library&#34; ... passed in 0.022s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: help_center.Help center tests</h2>
+        <a id="9c3390cd-97e0-4419-aaa1-2f98b7f5b76c"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>1.469 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>15</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>help_center.Help center tests</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="ac617b41-da5b-456c-a800-2dea078219d5"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Title check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.094 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Title check
+    Given I&#39;m an sml portal user trying to get to the help centre ... passed in 0.019s
+    When I navigate to the help centre page ... passed in 0.057s
+    Then The title of the page is &#34;Help centre&#34; ... passed in 0.019s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="bb3f553c-3a59-4042-8e61-e9886f5f00cc"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Content check for external user</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.116 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Content check for external user
+    Given I&#39;m an sml portal user on the &#34;submit a method request&#34; ... passed in 0.021s
+    When I click the external user dropdown ... passed in 0.065s
+    Then The drop down content is &#34;Currently we do not accept formal method submissions or change requests from external users. In future, we will accept certain method requests via the Integrated Data Service https://integrateddataservice.gov.uk/. If you would like to make a suggestion for a new method, or to provide feedback about an existing method, please do so by emailing smlhelp@ons.gov.uk&#34; ... passed in 0.030s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="ada7e63e-cb87-4602-a97e-09cf43298ff1"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Sub-title check for find and view methods</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.096 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Sub-title check for find and view methods
+    Given I&#39;m an sml portal user trying to get to the help centre ... passed in 0.020s
+    When I navigate to the help centre page ... passed in 0.050s
+    Then The subtitle of the help centre page is &#34;Find and view methods&#34; ... passed in 0.026s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="c9ac231c-8e61-47e1-a331-ae027d11afd0"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Sub-title check for submit a method request</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.096 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Sub-title check for submit a method request
+    Given I&#39;m an sml portal user trying to get to the help centre ... passed in 0.020s
+    When I navigate to the help centre page ... passed in 0.051s
+    Then The subtitle of the help centre page is &#34;Submit a method request&#34; ... passed in 0.025s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="f8178fa7-b9ee-4427-8575-92a8667c7b01"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Sub-title check for how the methods are versioned</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.095 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Sub-title check for how the methods are versioned
+    Given I&#39;m an sml portal user trying to get to the help centre ... passed in 0.020s
+    When I navigate to the help centre page ... passed in 0.051s
+    Then The subtitle of the help centre page is &#34;How the methods are versioned&#34; ... passed in 0.025s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="c9fc5c9e-3b0c-4687-b80f-15e72e40731b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Sub-title check for coding standards</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.097 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Sub-title check for coding standards
+    Given I&#39;m an sml portal user trying to get to the help centre ... passed in 0.021s
+    When I navigate to the help centre page ... passed in 0.050s
+    Then The subtitle of the help centre page is &#34;Coding standards&#34; ... passed in 0.026s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="8e8b5319-6f1b-48d5-9703-b64c3d7af6c8"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Sub-title check for use a method</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.098 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Sub-title check for use a method
+    Given I&#39;m an sml portal user trying to get to the help centre ... passed in 0.020s
+    When I navigate to the help centre page ... passed in 0.052s
+    Then The subtitle of the help centre page is &#34;Use a method&#34; ... passed in 0.026s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="2c2c7c54-fa4e-4d71-a9f7-ceb99cf95f8b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Sub-title check for report a defect or bug</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.119 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Sub-title check for report a defect or bug
+    Given I&#39;m an sml portal user trying to get to the help centre ... passed in 0.022s
+    When I navigate to the help centre page ... passed in 0.071s
+    Then The subtitle of the help centre page is &#34;Report a defect or bug&#34; ... passed in 0.026s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="8b3c995f-c949-4cd0-9e23-c40080af614b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Sub-title check for provide feedback</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.095 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Sub-title check for provide feedback
+    Given I&#39;m an sml portal user trying to get to the help centre ... passed in 0.019s
+    When I navigate to the help centre page ... passed in 0.049s
+    Then The subtitle of the help centre page is &#34;Provide feedback&#34; ... passed in 0.027s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="bae752d3-3a25-42b4-904d-389e463afc83"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Sub-title check for get support</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.097 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Sub-title check for get support
+    Given I&#39;m an sml portal user trying to get to the help centre ... passed in 0.019s
+    When I navigate to the help centre page ... passed in 0.052s
+    Then The subtitle of the help centre page is &#34;Get support&#34; ... passed in 0.027s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="9b8b994c-4840-4237-b6ec-e57500567666"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Sub-title check for get information on expert groups</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.096 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Sub-title check for get information on expert groups
+    Given I&#39;m an sml portal user trying to get to the help centre ... passed in 0.019s
+    When I navigate to the help centre page ... passed in 0.050s
+    Then The subtitle of the help centre page is &#34;Get information on expert groups&#34; ... passed in 0.027s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="ff2c15a0-dfd7-4776-9a9c-f0e4242098e7"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Sub-title check for troubleshooting</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.096 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Sub-title check for troubleshooting
+    Given I&#39;m an sml portal user trying to get to the help centre ... passed in 0.018s
+    When I navigate to the help centre page ... passed in 0.051s
+    Then The subtitle of the help centre page is &#34;Troubleshooting&#34; ... passed in 0.027s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="845cee8f-ef3b-488d-9d98-1b25e3c725ac"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Sub-title check for using github</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.097 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Sub-title check for using github
+    Given I&#39;m an sml portal user trying to get to the help centre ... passed in 0.020s
+    When I navigate to the help centre page ... passed in 0.050s
+    Then The subtitle of the help centre page is &#34;Using GitHub&#34; ... passed in 0.027s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="f6b84794-14b7-4300-b3d7-13ab5ff7a647"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Back link check for sub categories</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.089 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Back link check for sub categories
+    Given I&#39;m an sml portal user on the &#34;find and view methods page&#34; ... passed in 0.021s
+    When I click the back link ... passed in 0.048s
+    Then The title of the page is &#34;Help centre&#34; ... passed in 0.020s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="a8580538-5527-4cc5-b2c4-15a790fefdf6"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Back link check for submit a method request (uses different code to above test)</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.086 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Back link check for submit a method request (uses different code to above test)
+    Given I&#39;m an sml portal user on the &#34;submit a method request&#34; ... passed in 0.022s
+    When I click the back link ... passed in 0.045s
+    Then The title of the page is &#34;Help centre&#34; ... passed in 0.019s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: cookies.Cookie banner tests</h2>
+        <a id="d03dcfc9-41f5-4e94-b5b6-a9fc4ea1db55"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.72 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>6</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>cookies.Cookie banner tests</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="691f3900-8110-4781-99f0-2157faf9f689"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Accept cookies test</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.109 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Accept cookies test
+    Given I&#39;m an sml portal user on the home page with a cookie banner ... passed in 0.048s
+    When I click the accept cookies button in the header ... passed in 0.029s
+    Then The cookie banner displays &#34;You have accepted all additional cookies. You can change your cookie preferences at any time.&#34; ... passed in 0.031s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="680c6b01-1e0f-4d60-8a9a-4e6f2d560d44"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Reject cookies test</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.09 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Reject cookies test
+    Given I&#39;m an sml portal user on the home page with a cookie banner ... passed in 0.047s
+    When I click the reject cookies button in the header ... passed in 0.027s
+    Then The cookie banner displays &#34;You have rejected all additional cookies. You can change your cookie preferences at any time.&#34; ... passed in 0.016s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="204f5d73-5cc3-48b7-8eac-16bbb39655ea"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Additional cookies link test</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.119 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Additional cookies link test
+    Given I&#39;m an sml portal user on the home page with a cookie banner ... passed in 0.045s
+    When I click the additional cookies link in the header ... passed in 0.056s
+    Then I am taken to the &#34;Cookies on the statistical methods library portal&#34; page ... passed in 0.018s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="d7fd86f9-6c16-44d4-b9f2-592ff52b4432"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>View cookies cookies link test</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.113 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: View cookies cookies link test
+    Given I&#39;m an sml portal user on the home page with a cookie banner ... passed in 0.042s
+    When I click the view cookies link in the header ... passed in 0.052s
+    Then I am taken to the &#34;Cookies on the statistical methods library portal&#34; page ... passed in 0.018s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="b3318bd7-d5c0-44e1-925b-dca13489426a"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>I change the cookie settings to enabled</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.153 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: I change the cookie settings to enabled
+    Given I am on the cookies page where cookies are already disabled ... passed in 0.060s
+    When I change my settings to enable cookies ... passed in 0.071s
+    Then The cookies are enabled ... passed in 0.022s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="efa2953a-c254-4788-88d4-9a41da4ae38d"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>I change the cookie settings to disabled</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.137 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: I change the cookie settings to disabled
+    Given I am on the cookies page where cookies are already enabled ... passed in 0.062s
+    When I change my settings to disable cookies ... passed in 0.056s
+    Then The cookies are disabled ... passed in 0.018s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: accessibility.About library tests</h2>
+        <a id="601fcee2-7d12-4b13-89ed-8e04dcfdb3ca"></a>
+        
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>11.417 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>23</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>accessibility.About library tests</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="ec62c381-aaff-4a3b-9a99-45138720afcf"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Home page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.286 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Home page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.045s
+    When I refresh the page ... passed in 0.032s
+    Then The title of the page is &#34;An open source library for statistical code approved by the ONS&#34; ... passed in 0.019s
+    And The accessibility test passes ... passed in 0.191s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="1ca0407d-80c2-42a6-8c07-1e89c13d5723"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Help centre page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.36 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Help centre page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.050s
+    When I navigate to the help centre &#34;submit a method request&#34; page ... passed in 0.034s
+    Then The title of the help centre page is &#34;Submit a method request&#34; ... passed in 0.022s
+    And The accessibility test passes ... passed in 0.254s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="1a29ef99-b943-43dd-89d6-d1f9654328eb"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Submit a method request page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.31 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Submit a method request page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.048s
+    When I navigate to the help centre &#34;how the methods are versioned&#34; page ... passed in 0.036s
+    Then The title of the help centre page is &#34;How the methods are versioned&#34; ... passed in 0.030s
+    And The accessibility test passes ... passed in 0.196s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="60234cac-9106-413a-8936-3feb20e10077"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Help centre page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.286 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Help centre page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.051s
+    When I navigate to the help centre &#34;coding standards&#34; page ... passed in 0.034s
+    Then The title of the help centre page is &#34;Coding standards&#34; ... passed in 0.018s
+    And The accessibility test passes ... passed in 0.183s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="e844047d-4055-4a88-b8d7-13328bc0add0"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Help centre page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.289 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Help centre page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.066s
+    When I navigate to the help centre &#34;find and view methods&#34; page ... passed in 0.029s
+    Then The title of the help centre page is &#34;Find and view methods&#34; ... passed in 0.019s
+    And The accessibility test passes ... passed in 0.175s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="d435b8e8-1018-48bd-8be3-e4a54d08bf82"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Help centre page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.271 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Help centre page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.043s
+    When I navigate to the help centre &#34;use a method&#34; page ... passed in 0.032s
+    Then The title of the help centre page is &#34;Use a method&#34; ... passed in 0.018s
+    And The accessibility test passes ... passed in 0.179s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="60dac2ee-3808-4951-9617-430f2f107da0"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Help centre page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.268 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Help centre page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.048s
+    When I navigate to the help centre &#34;report a defect or bug&#34; page ... passed in 0.029s
+    Then The title of the help centre page is &#34;Report a defect or bug&#34; ... passed in 0.020s
+    And The accessibility test passes ... passed in 0.172s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="69ccf5ba-4349-4e9d-a6d6-46033f399c44"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Help centre page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.264 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Help centre page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.047s
+    When I navigate to the help centre &#34;provide feedback&#34; page ... passed in 0.030s
+    Then The title of the help centre page is &#34;Provide feedback&#34; ... passed in 0.020s
+    And The accessibility test passes ... passed in 0.167s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="c0839f3f-3a24-4cec-a0e2-417ce4948792"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Help centre page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.291 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Help centre page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.048s
+    When I navigate to the help centre &#34;get support&#34; page ... passed in 0.049s
+    Then The title of the help centre page is &#34;Get support&#34; ... passed in 0.018s
+    And The accessibility test passes ... passed in 0.177s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="02a78399-8eca-49fc-9686-8232bf417404"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Help centre page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.265 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Help centre page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.048s
+    When I navigate to the help centre &#34;get information on expert groups&#34; page ... passed in 0.028s
+    Then The title of the help centre page is &#34;Get information on expert groups&#34; ... passed in 0.018s
+    And The accessibility test passes ... passed in 0.172s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="7287dbe9-16ec-4840-a078-d180582e5c57"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Help centre page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.278 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Help centre page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.045s
+    When I navigate to the help centre &#34;troubleshooting&#34; page ... passed in 0.032s
+    Then The title of the help centre page is &#34;Troubleshooting&#34; ... passed in 0.019s
+    And The accessibility test passes ... passed in 0.182s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="860b7766-0934-4401-8564-051b8bb6deb6"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Help centre page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.253 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Help centre page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.042s
+    When I navigate to the help centre &#34;using github&#34; page ... passed in 0.029s
+    Then The title of the help centre page is &#34;Using GitHub&#34; ... passed in 0.019s
+    And The accessibility test passes ... passed in 0.163s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="c75da3a6-3b16-412a-9fd6-76603b198984"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Accessibility page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.249 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Accessibility page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.049s
+    When I navigate to &#34;accessibility-statement&#34; ... passed in 0.041s
+    Then The title of the page is &#34;Accessibility statement&#34; ... passed in 0.018s
+    And The accessibility test passes ... passed in 0.141s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="db12ea58-c0ea-4238-8313-9fc89991727f"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Methods catalogue page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.726 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Methods catalogue page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.043s
+    When I navigate to &#34;methods&#34; ... passed in 0.442s
+    Then The title of the page is &#34;Methods catalogue&#34; ... passed in 0.018s
+    And The accessibility test passes ... passed in 0.223s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="a25bb5da-170a-4919-a446-801b228794be"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Glossary page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>1.319 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Glossary page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.066s
+    When I navigate to the &#34;glossary&#34; page ... passed in 1.009s
+    Then The title of the page is &#34;Library glossary&#34; ... passed in 0.020s
+    And The accessibility test passes ... passed in 0.224s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="78f095b7-dc38-455d-b682-87d773c91eca"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Winsorisation page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.734 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Winsorisation page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.043s
+    When I navigate to the &#34;Winsorisation&#34; summary page ... passed in 0.547s
+    Then The title of the page is &#34;Method: Winsorisation&#34; ... passed in 0.017s
+    And The accessibility test passes ... passed in 0.127s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="35a2718b-85a2-4880-aa38-e969ce16d891"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Totals and components page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.699 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Totals and components page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.041s
+    When I navigate to the &#34;Totals and Components&#34; summary page ... passed in 0.514s
+    Then The title of the page is &#34;Method: Totals and Components&#34; ... passed in 0.017s
+    And The accessibility test passes ... passed in 0.126s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="f9c568de-183e-4536-9631-00c88aac96b9"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Date Adjustment summary page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.708 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Date Adjustment summary page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.041s
+    When I navigate to the &#34;Date Adjustment&#34; summary page ... passed in 0.517s
+    Then The title of the page is &#34;Method: Date Adjustment&#34; ... passed in 0.019s
+    And The accessibility test passes ... passed in 0.131s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="70f0c47b-cba0-4af7-b68b-b639b622088b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Selective Editing summary page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.737 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Selective Editing summary page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.044s
+    When I navigate to the &#34;Selective Editing&#34; summary page ... passed in 0.529s
+    Then The title of the page is &#34;Method: Selective Editing&#34; ... passed in 0.018s
+    And The accessibility test passes ... passed in 0.146s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="81b1615c-d934-4c6d-a927-941f13e4bb36"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Horvitz-Thompson Ratio Estimator summary page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.694 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Horvitz-Thompson Ratio Estimator summary page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.043s
+    When I navigate to the &#34;Horvitz-Thompson Ratio Estimator&#34; summary page ... passed in 0.508s
+    Then The title of the page is &#34;Method: Horvitz-Thompson Ratio Estimator&#34; ... passed in 0.018s
+    And The accessibility test passes ... passed in 0.126s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="85ad4256-efb8-4b86-a1b6-af7f8ab20b5b"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Ratio of means summary page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.701 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Ratio of means summary page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.043s
+    When I navigate to the &#34;Ratio of Means&#34; summary page ... passed in 0.512s
+    Then The title of the page is &#34;Method: Ratio of Means&#34; ... passed in 0.018s
+    And The accessibility test passes ... passed in 0.128s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="b9f3848c-b358-4de6-9834-0f6d181a829e"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Thousand Pound Estimation summary page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.733 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Thousand Pound Estimation summary page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.044s
+    When I navigate to the &#34;Thousand Pound Correction&#34; summary page ... passed in 0.545s
+    Then The title of the page is &#34;Method: Thousand Pound Correction&#34; ... passed in 0.018s
+    And The accessibility test passes ... passed in 0.127s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="ea4664c7-9bc8-45b2-9069-f85a8ec5bb44"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Mean of ratios summary page accessibility check</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.694 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>
+
+@scenario.begin
+  Scenario: Mean of ratios summary page accessibility check
+    Given I&#39;m an sml portal user ... passed in 0.043s
+    When I navigate to the &#34;Mean of Ratios&#34; summary page ... passed in 0.506s
+    Then The title of the page is &#34;Method: Mean of Ratios&#34; ... passed in 0.019s
+    And The accessibility test passes ... passed in 0.127s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+
+
+<p class="footer">
+    Generated by junit2html
+</p>
+</body>
+</html>
