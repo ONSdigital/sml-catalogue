@@ -84,7 +84,7 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
       value    = "noindex"
     }
     items {
-      header   = "Permissions-Policy
+      header   = "Permissions-Policy"
       override = true
       value    = "geolocation=() fullscreen=()"
     }
