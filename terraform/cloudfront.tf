@@ -86,7 +86,6 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
     items {
       header   = "Permissions-Policy"
       override = true
-      value    = "geolocation=() fullscreen=()"
     }
   }
   security_headers_config {
@@ -94,6 +93,9 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
       override                   = true
       access_control_max_age_sec = 31536000
       include_subdomains         = true
+    }
+    content_type_options {
+      override = true
     }
     xss_protection {
       override   = true
