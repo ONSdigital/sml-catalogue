@@ -86,6 +86,7 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
     items {
       header   = "Permissions-Policy"
       override = true
+      value    = "()"
     }
   }
   security_headers_config {
