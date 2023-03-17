@@ -97,7 +97,6 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
     }
     content_type_options {
       override             = true
-      content_type_options = "nosniff"
     }
     xss_protection {
       override   = true
