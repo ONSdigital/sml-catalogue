@@ -16,7 +16,7 @@ def auth_user_cookie_page(context):
     driver.delete_all_cookies()
     driver.get(f"{host}cookies")
     page_title = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
-    assert page_title == 'Cookies on the statistical methods library portal'
+    assert page_title == 'Cookies on the statistical methods library'
 
 
 @given('I am on the cookies page where cookies are already enabled')
