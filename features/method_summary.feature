@@ -61,11 +61,3 @@ Feature: Method summary page tests
         And The "Expert group" of the method is "Sample Design & Estimation"
         And The "Languages" of the method is "Python/PySpark"
         And The "Release" of the method is "Not Released Yet"
-
-    Scenario: General Linear Model (GLM) check
-        Given I'm an sml portal user trying to get to the "General Linear Model (GLM) method" summary page
-        When I navigate to the "General Linear Model (GLM)" summary page
-        Then The title of the method summary page is "Method: General Linear Model (GLM)"
-        And The "Author" of the method is "R Core Team"
-        And The "Theme" of the method is "Regression"
-        And The "Expert group" of the method is "Analysis"

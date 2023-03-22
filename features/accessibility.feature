@@ -98,12 +98,6 @@ Feature: About library tests
         Then The title of the page is "Method: Winsorisation"
         And The accessibility test passes
 
-    Scenario: General Linear Model (GLM) page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the "General Linear Model (GLM)" summary page
-        Then The title of the page is "Method: General Linear Model (GLM)"
-        And The accessibility test passes
-
     Scenario: Date Adjustment summary page accessibility check
         Given I'm an sml portal user
         When I navigate to the "Date Adjustment" summary page
