@@ -32,10 +32,10 @@ Feature: Methods catalogue tests
         When I navigate to the methods catalogue page
         Then The "future" table row of the method are "Winsorisation" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark"
 
-    Scenario: Totals and Components table row check
+    Scenario: General Linear Model (GLM) table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Totals and Components" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark"
+        Then The "future" table row of the method are "General Linear Model (GLM)" "Regression" "Analysis" "R"
 
     Scenario: Thousand pound correction table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
@@ -46,11 +46,6 @@ Feature: Methods catalogue tests
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
         Then The "future" table row of the method are "Horvitz-Thompson Ratio Estimator" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark"
-
-    Scenario: Mean of Ratios table row check
-        Given I'm an sml portal user trying to get to the methods catalogue page
-        When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Mean of Ratios" "Imputation" "Editing & Imputation" "Python/PySpark"
 
     Scenario: Date adjustment table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
