@@ -5,7 +5,7 @@
   method_metadata: {
     'Expert group': 'Analysis',
     Theme: 'Regression',
-    Author: 'ONS',
+    Author: 'R Core Team',
     'Languages': 'R',
     "Release": "Not Released Yet"
   },
