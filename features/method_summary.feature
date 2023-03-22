@@ -66,6 +66,6 @@ Feature: Method summary page tests
         Given I'm an sml portal user trying to get to the "General Linear Model (GLM) method" summary page
         When I navigate to the "General Linear Model (GLM)" summary page
         Then The title of the method summary page is "Method: General Linear Model (GLM)"
-        And The "Author" of the method is "ONS"
+        And The "Author" of the method is "R Core Team"
         And The "Theme" of the method is "Regression"
         And The "Expert group" of the method is "Analysis"
