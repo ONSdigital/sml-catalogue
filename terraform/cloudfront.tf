@@ -83,6 +83,37 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
       override = true
       value    = "noindex"
     }
+    items {
+      header   = "Permissions-Policy"
+      override = true
+      value    = "geolocation=() camera=()"
+    }
+  }
+  security_headers_config {
+    strict_transport_security {
+      override                   = true
+      access_control_max_age_sec = 31536000
+      include_subdomains         = true
+    }
+    content_type_options {
+      override = true
+    }
+    xss_protection {
+      override   = true
+      protection = true
+    }
+    frame_options {
+      override     = true
+      frame_option = "DENY"
+    }
+    content_security_policy {
+      override                = true
+      content_security_policy = "script-src 'self'"
+    }
+    referrer_policy {
+      override        = true
+      referrer_policy = "no-referrer"
+    }
   }
 }
 
