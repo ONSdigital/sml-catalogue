@@ -35,7 +35,6 @@ If any of these are not completed, please explain why in the notes.
 - [ ] I have performed a self-review of my own code
 - [ ] I have checked for spelling errors
 - [ ] I have commented on my code, particularly in hard-to-understand areas
-- [ ] I have added the JIRA ticket link to this PR
 - [ ] My changes don't break anything unexpected
 - [ ] I have checked and updated the security.txt file where required
 - [ ] Up to date with the main branch
