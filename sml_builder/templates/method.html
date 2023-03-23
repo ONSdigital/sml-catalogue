@@ -86,20 +86,20 @@
 }}
 &nbsp;
 {% endif %}
-{% if page.specification_link %}
-{{
-  onsExternalLink({
-    "url":page.specification_link,
-    "linkText":"Go to specification"
-  })
-}}
-&nbsp;
-{% endif %}
 {% if page.user_documentation_link %}
 {{
   onsExternalLink({
     "url":page.user_documentation_link,
     "linkText":"Go to user documentation"
+  })
+}}
+&nbsp;
+{% endif %}
+{% if page.specification_link %}
+{{
+  onsExternalLink({
+    "url":page.specification_link,
+    "linkText":"Go to specification"
   })
 }}
 &nbsp;
