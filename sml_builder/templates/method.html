@@ -77,20 +77,20 @@
 
 <h2>GitHub resources</h2>
 {{ page.additional_info | paras }}
-{% if page.code_link %}
-{{
-  onsExternalLink({
-    "url":page.code_link,
-    "linkText":"Go to code"
-  })
-}}
-&nbsp;
-{% endif %}
 {% if page.specification_link %}
 {{
   onsExternalLink({
     "url":page.specification_link,
     "linkText":"Go to specification"
+  })
+}}
+&nbsp;
+{% endif %}
+{% if page.code_link %}
+{{
+  onsExternalLink({
+    "url":page.code_link,
+    "linkText":"Go to code"
   })
 }}
 &nbsp;
