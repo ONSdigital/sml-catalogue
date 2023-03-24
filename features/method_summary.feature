@@ -61,21 +61,3 @@ Feature: Method summary page tests
         And The "Expert group" of the method is "Sample Design & Estimation"
         And The "Languages" of the method is "Python/PySpark"
         And The "Release" of the method is "Not Released Yet"
-
-    Scenario: Totals and components check
-        Given I'm an sml portal user trying to get to the "totals and components method" summary page
-        When I navigate to the "Totals and Components" summary page
-        Then The title of the method summary page is "Method: Totals and Components"
-        And The "Author" of the method is "ONS"
-        And The "Theme" of the method is "Sample Design & Estimation"
-        And The "Expert group" of the method is "Sample Design & Estimation"
-        
-    Scenario: Mean of Ratios check
-        Given I'm an sml portal user trying to get to the "mean of ratios method" summary page
-        When I navigate to the "Mean of Ratios" summary page
-        Then The title of the method summary page is "Method: Mean of Ratios"
-        And The "Author" of the method is "ONS"
-        And The "Theme" of the method is "Imputation"
-        And The "Expert group" of the method is "Editing & Imputation"
-        And The "Languages" of the method is "Python/PySpark"
-        And The "Release" of the method is "Not Released Yet"

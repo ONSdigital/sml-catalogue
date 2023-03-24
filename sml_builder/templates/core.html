@@ -1,5 +1,5 @@
 {% extends "layout/_template.njk" %}
-{%- if page_title -%} {%- set page_title_value = page_title + ' - Statistical Methods Library Portal' -%} {%- else -%} {%- set page_title_value = 'Statistical Methods Library Portal' -%} {%- endif -%}
+{%- if page_title -%} {%- set page_title_value = page_title + ' - Statistical Methods Library' -%} {%- else -%} {%- set page_title_value = 'Statistical Methods Library' -%} {%- endif -%}
 {% set navigation= {
     "navigation": {
         "id": "main-navigation",
@@ -27,7 +27,7 @@
 
     "title": page_title_value,
     "header": {
-        "title": 'Statistical Methods Library Portal',
+        "title": 'Statistical Methods Library',
         "orgLogoHref": 'https://www.ons.gov.uk',
         "titleLogoHref": "/",
         "mastheadLogo": "/",

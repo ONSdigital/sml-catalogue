@@ -14,12 +14,12 @@ Feature: Cookie banner tests
     Scenario: Additional cookies link test
         Given I'm an sml portal user on the home page with a cookie banner
         When I click the additional cookies link in the header
-        Then I am taken to the "Cookies on the statistical methods library portal" page
+        Then I am taken to the "Cookies on the statistical methods library" page
     
     Scenario: View cookies cookies link test
         Given I'm an sml portal user on the home page with a cookie banner
         When I click the view cookies link in the header
-        Then I am taken to the "Cookies on the statistical methods library portal" page
+        Then I am taken to the "Cookies on the statistical methods library" page
 
     Scenario: I change the cookie settings to enabled
         Given I am on the cookies page where cookies are already disabled

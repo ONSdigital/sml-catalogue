@@ -10,7 +10,7 @@ Feature: Footer pages tests
     Scenario: Cookies page check
         Given I'm an sml portal user trying to get to the "cookies" page
         When I click the "Cookies" page on the footer
-        Then The title of the page is "Cookies on the statistical methods library portal"
+        Then The title of the page is "Cookies on the statistical methods library"
     
     Scenario: Privacy and data protection page check
         Given I'm an sml portal user trying to get to the "privacy and data protection" page
