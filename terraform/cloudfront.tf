@@ -83,11 +83,6 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
       override = true
       value    = "noindex"
     }
-    items {
-      header   = "Permissions-Policy"
-      override = true
-      value    = "geolocation=() camera=()"
-    }
   }
   security_headers_config {
     strict_transport_security {
