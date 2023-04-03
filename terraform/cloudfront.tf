@@ -106,9 +106,6 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
       override     = true
       frame_option = "DENY"
     }
-    content_security_policy {
-      override = true
-    }
     referrer_policy {
       override        = true
       referrer_policy = "no-referrer"
