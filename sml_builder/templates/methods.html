@@ -123,3 +123,7 @@
 <p>These methods can be developed and extended after a formal release. ‘Code under development’ is tested and checked before it is made into a formal release. Usage of code prior to a formal release is at the user's own risk.</p>
 <p>The Statistical Methods Library will grow as more statistical methods are requested.</p>
 {% endblock main -%}
+
+{%- block scripts -%}
+    <script type=text/javascript src="{{ url_for('static',filename='js/sml.js') }}"></script>
+{%- endblock scripts -%}
