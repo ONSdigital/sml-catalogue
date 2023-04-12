@@ -6,7 +6,7 @@ app.jinja_env.add_extension("jinja2.ext.do")  # pylint: disable=no-member
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
-app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
+app.config["FREEZER_DEFAULT_MIMETYPE"] = "application/javascript"
 app.config["FREEZER_DESTINATION"] = "../build"
 
 import sml_builder.method  # noqa: F401
