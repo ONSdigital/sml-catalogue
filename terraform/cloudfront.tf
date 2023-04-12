@@ -86,7 +86,7 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
     items {
       header   = "Permissions-Policy"
       override = true
-      value    = "geolocation=() camera=()"
+      value    = "fullscreen=(self) geolocation=() camera=()"
     }
   }
   security_headers_config {
