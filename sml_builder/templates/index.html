@@ -4,7 +4,9 @@
 
 {% set containerClasses = "ons-container--full-width" %}
 {% block header %}
-<meta http-equiv="Content-Security-Policy" content="script src 'self'" />
+<head>
+    <meta http-equiv="Content-Security-Policy" content="script src 'self'" />
+</head>
 {{
     onsHeader({
         "title": pageConfig.header.title | default(pageConfig.title),
