@@ -1,3 +1,6 @@
+<head>
+  <meta http-equiv="Content-Security-Policy" content="script src 'self'" />
+</head>
 {% extends "layout/_template.njk" %}
 {%- if page_title -%} {%- set page_title_value = page_title + ' - Statistical Methods Library' -%} {%- else -%} {%- set page_title_value = 'Statistical Methods Library' -%} {%- endif -%}
 {% set navigation= {
