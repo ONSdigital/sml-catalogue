@@ -136,6 +136,6 @@ jobs:
           workspace_name=$(echo "${{inputs.workspace}}" | tr "[:upper:]" "[:lower:]")
           environment=$(echo "${{inputs.environment}}" | tr "[:upper:]" "[:lower:]")
           aws s3 sync build s3://sml-portal-$environment-$workspace_name --delete --content-type "text/html" --exclude "*.css" --exclude "*.js"
-          aws s3 sync build s3://sml-portal-$environment-$workspace_name --delete --exclude "*" --include "*.css" --exclude "*.js"
+          aws s3 sync build s3://sml-portal-$environment-$workspace_name --delete --exclude "*" --include "*.css" --include "*.js"
       - name: Clear cache
         run: aws cloudfront create-invalidation --distribution-id ${{needs.run-terraform.outputs.cloudfront_id}} --paths "/*" > /dev/null
