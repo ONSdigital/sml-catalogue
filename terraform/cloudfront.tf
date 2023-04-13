@@ -88,16 +88,17 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
       override = true
       value    = "accelerometer=(),autoplay=(),camera=(),display-capture=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),magnetometer=(),microphone=(),midi=(),payment=(),picture-in-picture=(),publickey-credentials-get=(),sync-xhr=(self),usb=(),screen-wake-lock=(),xr-spatial-tracking=()"
     }
+    items {
+      header   = "X-Content-Type-Options"
+      override = true
+      value    = "nosniff"
+    }
   }
   security_headers_config {
     strict_transport_security {
       override                   = true
       access_control_max_age_sec = 31536000
       include_subdomains         = true
-    }
-    content_type_options {
-      override               = true
-      X-Content-Type-Options = "nosniff"
     }
     xss_protection {
       override   = true
