@@ -95,6 +95,10 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
       access_control_max_age_sec = 31536000
       include_subdomains         = true
     }
+    content_type_options {
+      override = true
+      value    = "nosniff"
+    }
     xss_protection {
       override   = true
       protection = true
