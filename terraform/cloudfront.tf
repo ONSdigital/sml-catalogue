@@ -96,7 +96,7 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
       include_subdomains         = true
     }
     content_type_options {
-      override = true
+      override = false
     }
     xss_protection {
       override   = true
