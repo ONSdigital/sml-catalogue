@@ -38,4 +38,4 @@ In order to make sure our online services are accessible to all users, we are wo
 
 ## Preparation of this accessibility statement
 
-This statement was prepared on 01/02/2023.
+This statement was prepared on 1 February 2023.
