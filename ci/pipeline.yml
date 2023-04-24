@@ -1,0 +1,42 @@
+
+resources:
+  - name: main-updated
+    type: git
+    icon: github
+    check_every: never
+    webhook_token: gesture
+    source:
+      uri: https://github.com/ONSdigital/sml-catalogue.git
+      branch: main
+      username: ((github_access_token))
+      password: x-oauth-basic
+
+jobs:
+  - name: job-hello-world
+    plan:
+      - get: repo
+        resource: main-updated
+      - task: hello-world
+        config:
+          platform: linux
+          image_resource:
+            type: registry-image
+            source:
+              repository: busybox
+              tag: latest
+          run:
+            path: echo
+            args: [hello world]
+      - task: goodbye-world
+        config:
+          platform: linux
+          image_resource:
+            type: registry-image
+            source:
+              repository: public.ecr.aws/docker/library/alpine
+              tag: latest
+          run:
+            path: echo
+            args: [goodbye world]
+      - task: list-repo
+        file: repo/ci/tasks/list-repo.yml

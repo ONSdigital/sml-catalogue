@@ -90,3 +90,16 @@ Note: Investigation was undertaken to automate the behavior tests as part of the
 However, we discovered the github agents are hosted in the United States and when visiting our services url, the runner routed to our 'page not found' webpage.
 
 Hence as the page can only be accessed from within the uk we cannot automate the tests in the pipeline.
+
+## Concourse Setup
+
+```shell
+fly set-pipeline \
+-t aws-sml \
+-p sml-catalogue \
+-c ci/pipeline.yml
+```
+
+```shell
+fly destroy-pipeline -t aws-sml -p sml-catalogue
+```

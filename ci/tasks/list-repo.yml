@@ -1,0 +1,14 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: public.ecr.aws/docker/library/alpine
+    tag: latest
+
+inputs:
+  - name: repo
+
+run:
+  path: repo/ci/tasks/list-repo.sh
