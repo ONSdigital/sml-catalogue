@@ -22,7 +22,7 @@ jobs:
             type: registry-image
             source:
               repository: jasonbellons/python_3_slim
-              tag: 2
+              tag: 3
           params:
             ENDPOINT: 'https://statisticalmethodslibrary.ons.gov.uk'
           inputs:
