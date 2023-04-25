@@ -21,8 +21,8 @@ jobs:
           image_resource:
             type: registry-image
             source:
-              repository: public.ecr.aws/ons-spp/python-selenium
-              tag: 4
+              repository: jasonbellons/python_3_slim
+              tag: 2
           params:
             ENDPOINT: 'https://statisticalmethodslibrary.ons.gov.uk'
           inputs:
@@ -33,8 +33,6 @@ jobs:
             args:
             - -exc
             - |
-              sudo apt install python3.10
               python --version
-              pip install pipenv
               pipenv install
-              behave
+              pipenv run behave
