@@ -34,5 +34,5 @@ jobs:
             - -exc
             - |
               python --version
-              pipenv install
+              pipenv install --dev
               pipenv run behave
