@@ -1,42 +1,40 @@
 
 resources:
-  - name: main-updated
+  - name: main
     type: git
     icon: github
     check_every: never
     webhook_token: gesture
     source:
       uri: https://github.com/ONSdigital/sml-catalogue.git
-      branch: main
+      branch: SPP-9143-set-up-concourse
       username: ((github_access_token))
       password: x-oauth-basic
 
 jobs:
-  - name: job-hello-world
+  - name: prod-bdd-tests
     plan:
-      - get: repo
-        resource: main-updated
-      - task: hello-world
+      - get: main
+      - task: run-acceptance-tests
         config:
           platform: linux
           image_resource:
             type: registry-image
             source:
-              repository: busybox
-              tag: latest
+              repository: public.ecr.aws/ons-spp/python-selenium
+              tag: 4
+          params:
+            ENDPOINT: 'https://statisticalmethodslibrary.ons.gov.uk'
+          inputs:
+            - name: main
           run:
-            path: echo
-            args: [hello world]
-      - task: goodbye-world
-        config:
-          platform: linux
-          image_resource:
-            type: registry-image
-            source:
-              repository: public.ecr.aws/docker/library/alpine
-              tag: latest
-          run:
-            path: echo
-            args: [goodbye world]
-      - task: list-repo
-        file: repo/ci/tasks/list-repo.yml
+            path: sh
+            dir: main
+            args:
+            - -exc
+            - |
+              python --version
+              pip install pipenv
+              pipenv lock
+              pipenv sync
+              behave
