@@ -33,8 +33,8 @@ jobs:
             args:
             - -exc
             - |
+              sudo apt install python3.10
               python --version
               pip install pipenv
-              pipenv lock
-              pipenv sync
+              pipenv install
               behave
