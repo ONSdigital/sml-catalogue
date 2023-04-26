@@ -35,7 +35,7 @@ jobs:
             - |
               python --version
               pipenv install --dev
-              pipenv run behave -D host="https://d1jgbw8ee9pybj.cloudfront.net/"
+              pipenv run behave -D host=$ENDPOINT
 
   - name: preprod-bdd-tests
     plan:
@@ -60,7 +60,7 @@ jobs:
             - |
               python --version
               pipenv install --dev
-              pipenv run behave -D host="https://preprod-sml.aws.onsdigital.uk/"
+              pipenv run behave -D host=$ENDPOINT
 
   - name: prod-bdd-tests
     plan:
@@ -85,4 +85,4 @@ jobs:
             - |
               python --version
               pipenv install --dev
-              pipenv run behave -D host="https://statisticalmethodslibrary.ons.gov.uk"
+              pipenv run behave -D host=$ENDPOINT
