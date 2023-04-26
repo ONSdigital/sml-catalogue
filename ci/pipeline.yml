@@ -12,6 +12,56 @@ resources:
       password: x-oauth-basic
 
 jobs:
+  - name: dev-bdd-tests
+    plan:
+      - get: main
+      - task: run-acceptance-tests
+        config:
+          platform: linux
+          image_resource:
+            type: registry-image
+            source:
+              repository: jasonbellons/python_3_slim
+              tag: 3
+          params:
+            ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'
+          inputs:
+            - name: main
+          run:
+            path: sh
+            dir: main
+            args:
+            - -exc
+            - |
+              python --version
+              pipenv install --dev
+              pipenv run behave
+
+  - name: preprod-bdd-tests
+    plan:
+      - get: main
+      - task: run-acceptance-tests
+        config:
+          platform: linux
+          image_resource:
+            type: registry-image
+            source:
+              repository: jasonbellons/python_3_slim
+              tag: 3
+          params:
+            ENDPOINT: 'https://preprod-sml.aws.onsdigital.uk/'
+          inputs:
+            - name: main
+          run:
+            path: sh
+            dir: main
+            args:
+            - -exc
+            - |
+              python --version
+              pipenv install --dev
+              pipenv run behave
+
   - name: prod-bdd-tests
     plan:
       - get: main
