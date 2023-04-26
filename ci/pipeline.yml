@@ -24,7 +24,7 @@ jobs:
               repository: jasonbellons/python_3_slim
               tag: 3
           params:
-            ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'
+            {ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'}
           inputs:
             - name: main
           run:
@@ -49,7 +49,7 @@ jobs:
               repository: jasonbellons/python_3_slim
               tag: 3
           params:
-            ENDPOINT: '`https://preprod-sml.aws.onsdigital.uk/`'
+            {ENDPOINT: 'https://preprod-sml.aws.onsdigital.uk/'}
           inputs:
             - name: main
           run:
@@ -74,7 +74,7 @@ jobs:
               repository: jasonbellons/python_3_slim
               tag: 3
           params:
-            ENDPOINT: 'https://statisticalmethodslibrary.ons.gov.uk'
+            {ENDPOINT: 'https://statisticalmethodslibrary.ons.gov.uk'}
           inputs:
             - name: main
           run:
