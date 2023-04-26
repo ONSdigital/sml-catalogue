@@ -14,7 +14,7 @@ options.add_argument('--disable-gpu')
 options.add_argument('--no-sandbox')
 driver = webdriver.Chrome(options=options)
 # host = "https://statisticalmethodslibrary.ons.gov.uk/" # prod
-# host = "https://preprod-sml.aws.onsdigital.uk/" # preprod
-host = "https://d1jgbw8ee9pybj.cloudfront.net/" # dev
+host = "https://preprod-sml.aws.onsdigital.uk/" # preprod
+# host = "https://d1jgbw8ee9pybj.cloudfront.net/" # dev
 # host = "http://localhost:8000/"
 timeout = 5
