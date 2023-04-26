@@ -35,7 +35,7 @@ jobs:
             - |
               python --version
               pipenv install --dev
-              pipenv run behave
+              pipenv run behave -D host=((ENDPOINT))
 
   - name: preprod-bdd-tests
     plan:
@@ -49,7 +49,7 @@ jobs:
               repository: jasonbellons/python_3_slim
               tag: 3
           params:
-            ENDPOINT: 'https://preprod-sml.aws.onsdigital.uk/'
+            ENDPOINT: '`https://preprod-sml.aws.onsdigital.uk/`'
           inputs:
             - name: main
           run:
@@ -60,7 +60,7 @@ jobs:
             - |
               python --version
               pipenv install --dev
-              pipenv run behave
+              pipenv run behave -D host=((ENDPOINT))
 
   - name: prod-bdd-tests
     plan:
@@ -85,4 +85,4 @@ jobs:
             - |
               python --version
               pipenv install --dev
-              pipenv run behave
+              pipenv run behave -D host=((ENDPOINT))

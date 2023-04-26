@@ -5,7 +5,7 @@ from setupSelenium import *
 
 @given('I\'m an sml portal user trying to get to the methods catalogue page')
 def auth_user(context):
-    driver.get(host)
+    driver.get(context.config.userdata.get("host"))
 
 
 @when('I navigate to the methods catalogue page')
@@ -22,7 +22,7 @@ def check_title(context, title):
 
 @given('I am on the methods catalogue page')
 def auth_user(context):
-    driver.get(f"{host}methods")
+    driver.get(f'{context.config.userdata.get("host")}methods')
 
 
 @when('I click on the collapsible drop down')
