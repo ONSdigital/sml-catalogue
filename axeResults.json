@@ -81,32 +81,6 @@
             ]
         },
         {
-            "description": "Ensures <dl> elements are structured correctly",
-            "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script> or <template> elements",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/definition-list?application=axeAPI",
-            "id": "definition-list",
-            "impact": null,
-            "nodes": [],
-            "tags": [
-                "cat.structure",
-                "wcag2a",
-                "wcag131"
-            ]
-        },
-        {
-            "description": "Ensures <dt> and <dd> elements are contained by a <dl>",
-            "help": "<dt> and <dd> elements must be contained by a <dl>",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/dlitem?application=axeAPI",
-            "id": "dlitem",
-            "impact": null,
-            "nodes": [],
-            "tags": [
-                "cat.structure",
-                "wcag2a",
-                "wcag131"
-            ]
-        },
-        {
             "description": "Ensures <iframe> and <frame> elements contain the axe-core script",
             "help": "Frames must be tested with axe-core",
             "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/frame-tested?application=axeAPI",
@@ -552,83 +526,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<nav class=\"ons-section-nav ons-section-nav--vertical\" id=\"section-menu\" aria-label=\"Section menu\">",
+                    "html": "<dl class=\"ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#section-menu"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-allowed-attr",
-                            "impact": "critical",
-                            "message": "ARIA attributes are used correctly for the defined role",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\" aria-current=\"location\">Information</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/information/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-allowed-attr",
-                            "impact": "critical",
-                            "message": "ARIA attributes are used correctly for the defined role",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<aside class=\"ons-related-content\" aria-label=\"Related content\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "aside"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-allowed-attr",
-                            "impact": "critical",
-                            "message": "ARIA attributes are used correctly for the defined role",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"userful-resources\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-allowed-attr",
-                            "impact": "critical",
-                            "message": "ARIA attributes are used correctly for the defined role",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"explore-methods\">\n            \n\n        <ul class=\"ons-list ons-list--bare\">                <li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>\n</ul>\n\n          </nav>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"explore-methods\"]"
+                        "dl"
                     ]
                 }
             ],
@@ -1054,111 +956,11 @@
                         }
                     ],
                     "any": [],
-                    "html": "<nav class=\"ons-section-nav ons-section-nav--vertical\" id=\"section-menu\" aria-label=\"Section menu\">",
+                    "html": "<dl class=\"ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#section-menu"
-                    ]
-                },
-                {
-                    "all": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr-value",
-                            "impact": "critical",
-                            "message": "ARIA attribute values are valid",
-                            "relatedNodes": []
-                        },
-                        {
-                            "data": null,
-                            "id": "aria-errormessage",
-                            "impact": "critical",
-                            "message": "Uses a supported aria-errormessage technique",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "any": [],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\" aria-current=\"location\">Information</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/information/index\"]"
-                    ]
-                },
-                {
-                    "all": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr-value",
-                            "impact": "critical",
-                            "message": "ARIA attribute values are valid",
-                            "relatedNodes": []
-                        },
-                        {
-                            "data": null,
-                            "id": "aria-errormessage",
-                            "impact": "critical",
-                            "message": "Uses a supported aria-errormessage technique",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "any": [],
-                    "html": "<aside class=\"ons-related-content\" aria-label=\"Related content\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "aside"
-                    ]
-                },
-                {
-                    "all": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr-value",
-                            "impact": "critical",
-                            "message": "ARIA attribute values are valid",
-                            "relatedNodes": []
-                        },
-                        {
-                            "data": null,
-                            "id": "aria-errormessage",
-                            "impact": "critical",
-                            "message": "Uses a supported aria-errormessage technique",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "any": [],
-                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"userful-resources\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"]"
-                    ]
-                },
-                {
-                    "all": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr-value",
-                            "impact": "critical",
-                            "message": "ARIA attribute values are valid",
-                            "relatedNodes": []
-                        },
-                        {
-                            "data": null,
-                            "id": "aria-errormessage",
-                            "impact": "critical",
-                            "message": "Uses a supported aria-errormessage technique",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "any": [],
-                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"explore-methods\">\n            \n\n        <ul class=\"ons-list ons-list--bare\">                <li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>\n</ul>\n\n          </nav>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"explore-methods\"]"
+                        "dl"
                     ]
                 },
                 {
@@ -1283,83 +1085,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<nav class=\"ons-section-nav ons-section-nav--vertical\" id=\"section-menu\" aria-label=\"Section menu\">",
+                    "html": "<dl class=\"ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#section-menu"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr",
-                            "impact": "critical",
-                            "message": "ARIA attribute name are valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\" aria-current=\"location\">Information</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/information/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr",
-                            "impact": "critical",
-                            "message": "ARIA attribute name are valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<aside class=\"ons-related-content\" aria-label=\"Related content\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "aside"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr",
-                            "impact": "critical",
-                            "message": "ARIA attribute name are valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"userful-resources\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr",
-                            "impact": "critical",
-                            "message": "ARIA attribute name are valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"explore-methods\">\n            \n\n        <ul class=\"ons-list ons-list--bare\">                <li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>\n</ul>\n\n          </nav>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"explore-methods\"]"
+                        "dl"
                     ]
                 },
                 {
@@ -1702,7 +1432,7 @@
                                 "expectedContrastRatio": "4.5:1",
                                 "fgColor": "#ffffff",
                                 "fontSize": "13.5pt",
-                                "fontWeight": "normal",
+                                "fontWeight": "bold",
                                 "missingData": null
                             },
                             "id": "color-contrast",
@@ -1728,7 +1458,7 @@
                                 "expectedContrastRatio": "4.5:1",
                                 "fgColor": "#ffffff",
                                 "fontSize": "13.5pt",
-                                "fontWeight": "bold",
+                                "fontWeight": "normal",
                                 "missingData": null
                             },
                             "id": "color-contrast",
@@ -1741,7 +1471,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__link[href=\"/help-centre/index\"]"
+                        "a[href=\"/help-centre/index\"]"
                     ]
                 },
                 {
@@ -1767,7 +1497,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__link[href$=\"about\"]"
+                        "a[href$=\"about\"]"
                     ]
                 },
                 {
@@ -1793,7 +1523,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__link[href$=\"glossary\"]"
+                        "a[href$=\"glossary\"]"
                     ]
                 },
                 {
@@ -1815,7 +1545,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/help-centre/index\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/methods\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1841,7 +1571,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1>Help centre</h1>",
+                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1867,37 +1597,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2>Information</h2>",
+                    "html": "<h2> Method summary </h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-col-7\\@m > h2"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "3:1",
-                                "fgColor": "#222222",
-                                "fontSize": "16.5pt",
-                                "fontWeight": "bold",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h3>How the methods are versioned</h3>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "h3"
+                        "h2:nth-child(2)"
                     ]
                 },
                 {
@@ -1919,7 +1623,33 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p>The Statistical Methods Library (SML) and the associated methods are versioned using semantic versioning comprised of a major, minor and patch release version separated by full stops (e.g 3.5.4). </p>",
+                    "html": "<p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(3)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p> The method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent.</p>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1933,10 +1663,10 @@
                             "data": {
                                 "bgColor": "#ffffff",
                                 "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
+                                "expectedContrastRatio": "3:1",
                                 "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
+                                "fontSize": "19.5pt",
+                                "fontWeight": "bold",
                                 "missingData": null
                             },
                             "id": "color-contrast",
@@ -1945,115 +1675,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p>There are separate releases of the libraries based on the method implementation, python/pandas or python/pySpark, and each library uses semantic versioning.</p>",
+                    "html": "<h2> Contact details for this method </h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "p:nth-child(5)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<p>The major version is incremented (and minor and patch releases reset to zero) when backward incompatible changes are made (e.g renaming a pre-existing method function name).</p>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "p:nth-child(6)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<p>The minor version is incremented (and the patch version reset to zero) when new features are added without breaking backward compatibility (e.g addition of a new statistical method)</p>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "p:nth-child(7)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<p>The patch release version is incremented when backward compatible bugfixes are implemented.</p>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "p:nth-child(8)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<p>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "p:nth-child(9)"
+                        "h2:nth-child(5)"
                     ]
                 },
                 {
@@ -2075,11 +1701,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"https://github.com/ONSdigital/statistical-methods-library/releases\">SML python/pySpark release history in Github</a>",
+                    "html": "<span class=\"ons-external-link__text\">smlhelp@ons.gov.uk</span>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "p:nth-child(9) > a:nth-child(1)"
+                        "a[href$=\"mailto:smlhelp@ons.gov.uk\"] > .ons-external-link__text"
                     ]
                 },
                 {
@@ -2088,24 +1714,24 @@
                         {
                             "data": {
                                 "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
+                                "contrastRatio": 15.9,
                                 "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
+                                "fgColor": "#222222",
                                 "fontSize": "13.5pt",
-                                "fontWeight": "normal",
+                                "fontWeight": "bold",
                                 "missingData": null
                             },
                             "id": "color-contrast",
                             "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
+                            "message": "Element has sufficient color contrast of 15.9",
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"https://github.com/ONSdigital/statistical-methods-library/tree/main/docs/release-notes\">associated python/pySpark release notes</a>",
+                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Author</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "p:nth-child(9) > a:nth-child(2)"
+                        "dt:nth-child(1)"
                     ]
                 },
                 {
@@ -2127,11 +1753,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p>",
+                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">ONS</dd>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "p:nth-child(10)"
+                        "dd:nth-child(2)"
                     ]
                 },
                 {
@@ -2140,50 +1766,24 @@
                         {
                             "data": {
                                 "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
+                                "contrastRatio": 15.9,
                                 "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
+                                "fgColor": "#222222",
                                 "fontSize": "13.5pt",
-                                "fontWeight": "normal",
+                                "fontWeight": "bold",
                                 "missingData": null
                             },
                             "id": "color-contrast",
                             "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
+                            "message": "Element has sufficient color contrast of 15.9",
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases\">SML python/pandas release history in Github</a>",
+                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Theme</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "p:nth-child(10) > a:nth-child(1)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/tree/main/docs/release-notes\">associated python/pandas release notes</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "p:nth-child(10) > a:nth-child(2)"
+                        "dt:nth-child(3)"
                     ]
                 },
                 {
@@ -2205,375 +1805,219 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p>For further information about semantic versioning read the recommended <a href=\"https://semver.org\">guidance</a>.</p>",
+                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Editing</dd>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dd:nth-child(4)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Expert group</dt>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dt:nth-child(5)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Editing &amp; Imputation</dd>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dd:nth-child(6)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Languages</dt>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dt:nth-child(7)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Python/Pandas</dd>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dd:nth-child(8)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Release</dt>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dt:nth-child(9)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span class=\"ons-status ons-status--pending\">Not Released Yet</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-status"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "3:1",
+                                "fgColor": "#222222",
+                                "fontSize": "19.5pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2>GitHub resources</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h2:nth-child(10)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p>No resources are currently available.\n</p>",
                     "impact": null,
                     "none": [],
                     "target": [
                         "p:nth-child(11)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"https://semver.org\">guidance</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href$=\"semver.org\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "bold",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\">Other 'how to' list categories</h2>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-col-5\\@m > .ons-related-content__title.ons-u-fs-r--b"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 11.77,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#003c57",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "bold",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 11.77",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\" aria-current=\"location\">Information</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/information/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/help-centre/information/methods-request\" class=\"ons-section-nav__link ons-list__link\">Submit a method request</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(1) > .ons-section-nav__link.ons-list__link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/help-centre/information/version-methods\" class=\"ons-section-nav__link ons-list__link\">How the methods are versioned</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(2) > .ons-section-nav__link.ons-list__link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/help-centre/information/coding-standards\" class=\"ons-section-nav__link ons-list__link\">Coding standards</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(3) > .ons-section-nav__link.ons-list__link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\">Access (and usage)</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/access/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/feedback/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/support/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "bold",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"userful-resources\">Useful resources</h2>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#userful-resources"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-list__link[href$=\"about\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-list__link[href$=\"glossary\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "bold",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"explore-methods\">Explore</h2>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#explore-methods"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-list--bare.ons-list > .ons-list__item > .ons-list__link[href$=\"methods\"]"
                     ]
                 },
                 {
@@ -2703,7 +2147,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-external-link__text"
+                        ".ons-footer__license > .ons-external-link[target=\"_blank\"][rel=\"noopener\"] > .ons-external-link__text"
                     ]
                 }
             ],
@@ -2711,6 +2155,239 @@
                 "cat.color",
                 "wcag2aa",
                 "wcag143"
+            ]
+        },
+        {
+            "description": "Ensures <dl> elements are structured correctly",
+            "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/definition-list?application=axeAPI",
+            "id": "definition-list",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<dl class=\"ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "structured-dlitems",
+                            "impact": "serious",
+                            "message": "When not empty, element has both <dt> and <dd> elements",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "only-dlitems",
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <dt> or <dd> elements",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "dl"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ]
+        },
+        {
+            "description": "Ensures <dt> and <dd> elements are contained by a <dl>",
+            "help": "<dt> and <dd> elements must be contained by a <dl>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/dlitem?application=axeAPI",
+            "id": "dlitem",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "dlitem",
+                            "impact": "serious",
+                            "message": "Description list item has a <dl> parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Author</dt>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dt:nth-child(1)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "dlitem",
+                            "impact": "serious",
+                            "message": "Description list item has a <dl> parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">ONS</dd>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dd:nth-child(2)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "dlitem",
+                            "impact": "serious",
+                            "message": "Description list item has a <dl> parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Theme</dt>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dt:nth-child(3)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "dlitem",
+                            "impact": "serious",
+                            "message": "Description list item has a <dl> parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Editing</dd>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dd:nth-child(4)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "dlitem",
+                            "impact": "serious",
+                            "message": "Description list item has a <dl> parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Expert group</dt>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dt:nth-child(5)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "dlitem",
+                            "impact": "serious",
+                            "message": "Description list item has a <dl> parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Editing &amp; Imputation</dd>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dd:nth-child(6)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "dlitem",
+                            "impact": "serious",
+                            "message": "Description list item has a <dl> parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Languages</dt>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dt:nth-child(7)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "dlitem",
+                            "impact": "serious",
+                            "message": "Description list item has a <dl> parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Python/Pandas</dd>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dd:nth-child(8)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "dlitem",
+                            "impact": "serious",
+                            "message": "Description list item has a <dl> parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Release</dt>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dt:nth-child(9)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "dlitem",
+                            "impact": "serious",
+                            "message": "Description list item has a <dl> parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\"><span class=\"ons-status ons-status--pending\">Not Released Yet</span></dd>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "dd:nth-child(10)"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
             ]
         },
         {
@@ -2763,7 +2440,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/help-centre/index\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/methods\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2818,42 +2495,6 @@
                     "none": [],
                     "target": [
                         "#ons-logo-stacked-en-alt"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": "userful-resources",
-                            "id": "duplicate-id-aria",
-                            "impact": "critical",
-                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"userful-resources\">Useful resources</h2>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#userful-resources"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": "explore-methods",
-                            "id": "duplicate-id-aria",
-                            "impact": "critical",
-                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"explore-methods\">Explore</h2>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#explore-methods"
                     ]
                 },
                 {
@@ -2959,24 +2600,6 @@
                     "target": [
                         "#main-content"
                     ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": "section-menu",
-                            "id": "duplicate-id",
-                            "impact": "minor",
-                            "message": "Document has no static elements that share the same id attribute",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<nav class=\"ons-section-nav ons-section-nav--vertical\" id=\"section-menu\" aria-label=\"Section menu\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#section-menu"
-                    ]
                 }
             ],
             "tags": [
@@ -3021,7 +2644,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1>Help centre</h1>",
+                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -3039,11 +2662,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2>Information</h2>",
+                    "html": "<h2> Method summary </h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-col-7\\@m > h2"
+                        "h2:nth-child(2)"
                     ]
                 },
                 {
@@ -3057,11 +2680,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h3>How the methods are versioned</h3>",
+                    "html": "<h2> Contact details for this method </h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h3"
+                        "h2:nth-child(5)"
                     ]
                 },
                 {
@@ -3075,47 +2698,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\">Other 'how to' list categories</h2>",
+                    "html": "<h2>GitHub resources</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-col-5\\@m > .ons-related-content__title.ons-u-fs-r--b"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"userful-resources\">Useful resources</h2>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#userful-resources"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"explore-methods\">Explore</h2>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#explore-methods"
+                        "h2:nth-child(10)"
                     ]
                 }
             ],
@@ -3160,7 +2747,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1>Help centre</h1>",
+                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -3178,29 +2765,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2>Information</h2>",
+                    "html": "<h2> Method summary </h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-col-7\\@m > h2"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": 3,
-                            "id": "heading-order",
-                            "impact": "moderate",
-                            "message": "Heading order valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h3>How the methods are versioned</h3>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "h3"
+                        "h2:nth-child(2)"
                     ]
                 },
                 {
@@ -3214,11 +2783,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\">Other 'how to' list categories</h2>",
+                    "html": "<h2> Contact details for this method </h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-col-5\\@m > .ons-related-content__title.ons-u-fs-r--b"
+                        "h2:nth-child(5)"
                     ]
                 },
                 {
@@ -3232,29 +2801,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"userful-resources\">Useful resources</h2>",
+                    "html": "<h2>GitHub resources</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#userful-resources"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": 2,
-                            "id": "heading-order",
-                            "impact": "moderate",
-                            "message": "Heading order valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"explore-methods\">Explore</h2>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#explore-methods"
+                        "h2:nth-child(10)"
                     ]
                 }
             ],
@@ -3499,7 +3050,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3511,7 +3062,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__item:nth-child(2)"
+                        ".ons-navigation__item--active"
                     ]
                 },
                 {
@@ -3535,7 +3086,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3547,7 +3098,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__item--active"
+                        ".ons-navigation__item:nth-child(3)"
                     ]
                 },
                 {
@@ -3565,7 +3116,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href=\"/help-centre/index\"]"
+                        "a[href=\"/help-centre/index\"]"
                     ]
                 },
                 {
@@ -3601,7 +3152,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"about\"]"
+                        "a[href$=\"about\"]"
                     ]
                 },
                 {
@@ -3637,7 +3188,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"glossary\"]"
+                        "a[href$=\"glossary\"]"
                     ]
                 },
                 {
@@ -3661,7 +3212,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/help-centre/index\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/methods\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3679,7 +3230,25 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>The Statistical Methods Library (SML) and the associated methods are versioned using semantic versioning comprised of a major, minor and patch release version separated by full stops (e.g 3.5.4). </p>",
+                    "html": "<p>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "p:nth-child(3)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<p> The method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent.</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3697,7 +3266,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>There are separate releases of the libraries based on the method implementation, python/pandas or python/pySpark, and each library uses semantic versioning.</p>",
+                    "html": "<a href=\"mailto:smlhelp@ons.gov.uk\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
                     "impact": null,
                     "none": [
                         {
@@ -3709,175 +3278,13 @@
                         }
                     ],
                     "target": [
-                        "p:nth-child(5)"
+                        "a[href$=\"mailto:smlhelp@ons.gov.uk\"]"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>The major version is incremented (and minor and patch releases reset to zero) when backward incompatible changes are made (e.g renaming a pre-existing method function name).</p>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(6)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<p>The minor version is incremented (and the patch version reset to zero) when new features are added without breaking backward compatibility (e.g addition of a new statistical method)</p>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(7)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<p>The patch release version is incremented when backward compatible bugfixes are implemented.</p>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(8)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<p>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(9)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a href=\"https://github.com/ONSdigital/statistical-methods-library/releases\">SML python/pySpark release history in Github</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(9) > a:nth-child(1)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a href=\"https://github.com/ONSdigital/statistical-methods-library/tree/main/docs/release-notes\">associated python/pySpark release notes</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(9) > a:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<p>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(10)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases\">SML python/pandas release history in Github</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(10) > a:nth-child(1)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/tree/main/docs/release-notes\">associated python/pandas release notes</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(10) > a:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<p>For further information about semantic versioning read the recommended <a href=\"https://semver.org\">guidance</a>.</p>",
+                    "html": "<p>No resources are currently available.\n</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3895,384 +3302,6 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a href=\"https://semver.org\">guidance</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "a[href$=\"semver.org\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<li class=\"ons-section-nav__item ons-section-nav__item--active\">",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__item--active"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\" aria-current=\"location\">Information</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "a[href=\"/help-centre/information/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/information/methods-request\" class=\"ons-section-nav__link ons-list__link\">Submit a method request</a>\n                          </li>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(1)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a href=\"/help-centre/information/methods-request\" class=\"ons-section-nav__link ons-list__link\">Submit a method request</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(1) > .ons-section-nav__link.ons-list__link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/information/version-methods\" class=\"ons-section-nav__link ons-list__link\">How the methods are versioned</a>\n                          </li>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a href=\"/help-centre/information/version-methods\" class=\"ons-section-nav__link ons-list__link\">How the methods are versioned</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(2) > .ons-section-nav__link.ons-list__link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/information/coding-standards\" class=\"ons-section-nav__link ons-list__link\">Coding standards</a>\n                          </li>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(3)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a href=\"/help-centre/information/coding-standards\" class=\"ons-section-nav__link ons-list__link\">Coding standards</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(3) > .ons-section-nav__link.ons-list__link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\">Access (and usage)</a>\n          </li>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__list > .ons-section-nav__item:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\">Access (and usage)</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "a[href=\"/help-centre/access/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>\n          </li>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__list > .ons-section-nav__item:nth-child(3)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "a[href=\"/help-centre/feedback/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>\n          </li>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__item:nth-child(4)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "a[href=\"/help-centre/support/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>                </li>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list > .ons-list__item:nth-child(1)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-list__link[href$=\"about\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>                </li>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list > .ons-list__item:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-list__link[href$=\"glossary\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "nav[aria-labelledby=\"explore-methods\"] > .ons-list--bare.ons-list > .ons-list__item"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-list--bare.ons-list > .ons-list__item > .ons-list__link[href$=\"methods\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
                     "html": "<li class=\"ons-list__item\">\n\n<a href=\"/cookies\" class=\"ons-list__link\">Cookies</a>                </li>",
                     "impact": null,
                     "none": [
@@ -4285,7 +3314,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-u-mb-s > .ons-list__item:nth-child(1)"
+                        ".ons-list__item:nth-child(1)"
                     ]
                 },
                 {
@@ -4321,7 +3350,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-u-mb-s > .ons-list__item:nth-child(2)"
+                        ".ons-list__item:nth-child(2)"
                     ]
                 },
                 {
@@ -4357,7 +3386,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-u-mb-s > .ons-list__item:nth-child(3)"
+                        ".ons-list__item:nth-child(3)"
                     ]
                 },
                 {
@@ -4393,7 +3422,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-external-link"
+                        ".ons-footer__license > .ons-external-link[target=\"_blank\"][rel=\"noopener\"]"
                     ]
                 }
             ],
@@ -4789,7 +3818,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href=\"/help-centre/index\"]"
+                        "a[href=\"/help-centre/index\"]"
                     ]
                 },
                 {
@@ -4815,7 +3844,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"about\"]"
+                        "a[href$=\"about\"]"
                     ]
                 },
                 {
@@ -4841,7 +3870,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"glossary\"]"
+                        "a[href$=\"glossary\"]"
                     ]
                 },
                 {
@@ -4855,7 +3884,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/help-centre/index\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/methods\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [
                         {
@@ -4881,7 +3910,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"https://github.com/ONSdigital/statistical-methods-library/releases\">SML python/pySpark release history in Github</a>",
+                    "html": "<a href=\"mailto:smlhelp@ons.gov.uk\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
                     "impact": null,
                     "none": [
                         {
@@ -4893,371 +3922,7 @@
                         }
                     ],
                     "target": [
-                        "p:nth-child(9) > a:nth-child(1)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"https://github.com/ONSdigital/statistical-methods-library/tree/main/docs/release-notes\">associated python/pySpark release notes</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(9) > a:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases\">SML python/pandas release history in Github</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(10) > a:nth-child(1)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/tree/main/docs/release-notes\">associated python/pandas release notes</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(10) > a:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"https://semver.org\">guidance</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "a[href$=\"semver.org\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\" aria-current=\"location\">Information</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "a[href=\"/help-centre/information/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/help-centre/information/methods-request\" class=\"ons-section-nav__link ons-list__link\">Submit a method request</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(1) > .ons-section-nav__link.ons-list__link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/help-centre/information/version-methods\" class=\"ons-section-nav__link ons-list__link\">How the methods are versioned</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(2) > .ons-section-nav__link.ons-list__link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/help-centre/information/coding-standards\" class=\"ons-section-nav__link ons-list__link\">Coding standards</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(3) > .ons-section-nav__link.ons-list__link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\">Access (and usage)</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "a[href=\"/help-centre/access/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "a[href=\"/help-centre/feedback/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "a[href=\"/help-centre/support/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-list__link[href$=\"about\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-list__link[href$=\"glossary\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-list--bare.ons-list > .ons-list__item > .ons-list__link[href$=\"methods\"]"
+                        "a[href$=\"mailto:smlhelp@ons.gov.uk\"]"
                     ]
                 },
                 {
@@ -5361,7 +4026,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-external-link"
+                        ".ons-footer__license > .ons-external-link[target=\"_blank\"][rel=\"noopener\"]"
                     ]
                 }
             ],
@@ -5420,78 +4085,6 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<ul class=\"ons-section-nav__list\">",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "only-listitems",
-                            "impact": "serious",
-                            "message": "List element only has direct children that are allowed inside <li> elements",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__list"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<ul class=\"ons-section-nav__sub-items ons-list ons-list--dashed ons-u-mt-xs ons-u-mb-xs\">",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "only-listitems",
-                            "impact": "serious",
-                            "message": "List element only has direct children that are allowed inside <li> elements",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__sub-items"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<ul class=\"ons-list ons-list--bare\">",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "only-listitems",
-                            "impact": "serious",
-                            "message": "List element only has direct children that are allowed inside <li> elements",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<ul class=\"ons-list ons-list--bare\">                <li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>\n</ul>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "only-listitems",
-                            "impact": "serious",
-                            "message": "List element only has direct children that are allowed inside <li> elements",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "nav[aria-labelledby=\"explore-methods\"] > .ons-list--bare.ons-list"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
                     "html": "<ul class=\"ons-list ons-u-mb-s ons-footer--rows ons-list--bare ons-list--inline\">",
                     "impact": null,
                     "none": [
@@ -5504,7 +4097,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-u-mb-s"
+                        ".ons-list"
                     ]
                 }
             ],
@@ -5550,11 +4143,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__item:nth-child(2)"
+                        ".ons-navigation__item--active"
                     ]
                 },
                 {
@@ -5568,11 +4161,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__item--active"
+                        ".ons-navigation__item:nth-child(3)"
                     ]
                 },
                 {
@@ -5640,191 +4233,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-section-nav__item ons-section-nav__item--active\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item--active"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/information/methods-request\" class=\"ons-section-nav__link ons-list__link\">Submit a method request</a>\n                          </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(1)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/information/version-methods\" class=\"ons-section-nav__link ons-list__link\">How the methods are versioned</a>\n                          </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/information/coding-standards\" class=\"ons-section-nav__link ons-list__link\">Coding standards</a>\n                          </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(3)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\">Access (and usage)</a>\n          </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__list > .ons-section-nav__item:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>\n          </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__list > .ons-section-nav__item:nth-child(3)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>\n          </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item:nth-child(4)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>                </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list > .ons-list__item:nth-child(1)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>                </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list > .ons-list__item:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"explore-methods\"] > .ons-list--bare.ons-list > .ons-list__item"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
                     "html": "<li class=\"ons-list__item\">\n\n<a href=\"/cookies\" class=\"ons-list__link\">Cookies</a>                </li>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-u-mb-s > .ons-list__item:nth-child(1)"
+                        ".ons-list__item:nth-child(1)"
                     ]
                 },
                 {
@@ -5842,7 +4255,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-u-mb-s > .ons-list__item:nth-child(2)"
+                        ".ons-list__item:nth-child(2)"
                     ]
                 },
                 {
@@ -5860,7 +4273,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-u-mb-s > .ons-list__item:nth-child(3)"
+                        ".ons-list__item:nth-child(3)"
                     ]
                 }
             ],
@@ -5949,7 +4362,7 @@
                             "message": "Page has at least one level-one heading",
                             "relatedNodes": [
                                 {
-                                    "html": "<h1>Help centre</h1>",
+                                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                                     "target": [
                                         "h1"
                                     ]
@@ -6003,8 +4416,8 @@
             ]
         }
     ],
-    "timestamp": "2023-04-25T10:35:29.325Z",
-    "url": "http://localhost:8000/help-centre/information/version-methods",
+    "timestamp": "2023-04-26T07:03:24.928Z",
+    "url": "http://localhost:8000/method/future-methods/thousand-pound-correction",
     "violations": [
         {
             "description": "Ensures role attribute has an appropriate value for the element",
