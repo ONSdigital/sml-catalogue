@@ -37,6 +37,11 @@ Feature: Methods catalogue tests
         When I navigate to the methods catalogue page
         Then The "future" table row of the method are "Totals and Components" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark"
 
+    Scenario: Mean of Ratios table row check
+        Given I'm an sml portal user trying to get to the methods catalogue page
+        When I navigate to the methods catalogue page
+        Then The "future" table row of the method are "Mean of Ratios" "Imputation" "Editing & Imputation" "Python/PySpark"
+
     Scenario: Thousand pound correction table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page

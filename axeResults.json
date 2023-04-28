@@ -4416,11 +4416,7 @@
             ]
         }
     ],
-<<<<<<< HEAD
-    "timestamp": "2023-04-03T16:43:50.142Z",
-=======
-    "timestamp": "2023-03-07T11:57:44.026Z",
->>>>>>> 81c8c11a14eaaff5ad84ee349dfdcc2a0e64243b
+    "timestamp": "2023-04-28T13:48:44.667Z",
     "url": "http://localhost:8000/method/future-methods/thousand-pound-correction",
     "violations": [
         {
