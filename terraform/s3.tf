@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "sml-catalogue" {
 resource "aws_s3_bucket_ownership_controls" "sml-catalogue" {
   bucket = aws_s3_bucket.sml-catalogue.id
   rule {
-      object_ownership = "BucketOwnerPreferred"
+    object_ownership = "BucketOwnerPreferred"
   }
 }
 
