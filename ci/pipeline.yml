@@ -15,17 +15,17 @@ resources:
     type: time
     source:
       # Triggers the tests once per day, just after 7am.
-      start: 07:35
-      stop: 07:45
+      start: 10:40
+      stop: 10:50
       location: Europe/London
       days: [Monday, Tuesday, Wednesday, Thursday, Friday]
 
 jobs:
   - name: dev-bdd-tests
     plan:
-      - get: main
       - get: bdd-test-timer
         trigger: true
+      - get: main
       - task: run-acceptance-tests
         config:
           platform: linux
@@ -50,9 +50,9 @@ jobs:
 
   - name: preprod-bdd-tests
     plan:
-      - get: main
       - get: bdd-test-timer
         trigger: true
+      - get: main
       - task: run-acceptance-tests
         config:
           platform: linux
@@ -77,9 +77,9 @@ jobs:
 
   - name: prod-bdd-tests
     plan:
-      - get: main
       - get: bdd-test-timer
         trigger: true
+      - get: main
       - task: run-acceptance-tests
         config:
           platform: linux
