@@ -23,7 +23,7 @@ jobs:
             type: registry-image
             source:
               repository: jasonbellons/python_3_slim
-              tag: 311test
+              tag: 311test2
           params:
             {ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'}
           inputs:
