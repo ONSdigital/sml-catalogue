@@ -15,8 +15,8 @@ resources:
     type: time
     source:
       # Triggers the tests once per day, just after 7:30am.
-      start: 2:30 PM
-      stop:  2:45 PM
+      start: 14:50
+      stop: 14:55
       location: Europe/London
       days: [Monday, Tuesday, Wednesday, Thursday, Friday]
 
