@@ -12,18 +12,9 @@ resources:
       username: ((github_access_token))
       password: x-oauth-basic
 
-  - name: run-daily
-    type: time
-    source:
-      start: 6:30 AM
-      stop: 7:00 AM
-      location: Europe/London
-
 jobs:
   - name: dev-bdd-tests
     plan:
-      - get: run-daily
-        trigger: true
       - get: main
       - task: run-acceptance-tests
         config:
@@ -49,8 +40,6 @@ jobs:
 
   - name: preprod-bdd-tests
     plan:
-      - get: run-daily
-        trigger: true
       - get: main
       - task: run-acceptance-tests
         config:
@@ -76,8 +65,6 @@ jobs:
 
   - name: prod-bdd-tests
     plan:
-      - get: run-daily
-        trigger: true
       - get: main
       - task: run-acceptance-tests
         config:
