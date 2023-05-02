@@ -22,8 +22,8 @@ jobs:
           image_resource:
             type: registry-image
             source:
-              repository: jasonbellons/python_3_slim
-              tag: 311test2
+              repository: public.ecr.aws/ons-spp/python-selenium
+              tag: 4
           params:
             {ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'}
           inputs:
@@ -34,7 +34,7 @@ jobs:
             args:
             - -exc
             - |
-              python --version
+              pip install pipenv
               pipenv install --dev
               pipenv run behave -D host=$ENDPOINT
 
@@ -47,8 +47,8 @@ jobs:
           image_resource:
             type: registry-image
             source:
-              repository: jasonbellons/python_3_slim
-              tag: 3
+              repository: public.ecr.aws/ons-spp/python-selenium
+              tag: 4
           params:
             {ENDPOINT: 'https://preprod-sml.aws.onsdigital.uk/'}
           inputs:
@@ -59,7 +59,7 @@ jobs:
             args:
             - -exc
             - |
-              python --version
+              pip install pipenv
               pipenv install --dev
               pipenv run behave -D host=$ENDPOINT
 
@@ -72,8 +72,8 @@ jobs:
           image_resource:
             type: registry-image
             source:
-              repository: jasonbellons/python_3_slim
-              tag: 3
+              repository: public.ecr.aws/ons-spp/python-selenium
+              tag: 4
           params:
             {ENDPOINT: 'https://statisticalmethodslibrary.ons.gov.uk/'}
           inputs:
@@ -84,6 +84,6 @@ jobs:
             args:
             - -exc
             - |
-              python --version
+              pip install pipenv
               pipenv install --dev
               pipenv run behave -D host=$ENDPOINT
