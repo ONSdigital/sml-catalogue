@@ -14,9 +14,9 @@ resources:
   - name: bdd-test-timer
     type: time
     source:
-      # Triggers the tests once per day, just after 7am.
-      start: 14:10
-      stop: 14:15
+      # Triggers the tests once per day, just after 7:30am.
+      start: 2:21 PM
+      stop:  2;25 PM
       location: Europe/London
       days: [Monday, Tuesday, Wednesday, Thursday, Friday]
 
