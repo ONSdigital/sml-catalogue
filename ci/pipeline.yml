@@ -8,15 +8,15 @@ resources:
     webhook_token: gesture
     source:
       uri: https://github.com/ONSdigital/sml-catalogue.git
-      branch: main
+      branch: SPP-9144-schedule-concourse-runs
       username: ((github_access_token))
       password: x-oauth-basic
   - name: bdd-test-timer
     type: time
     source:
       # Triggers the tests once per day, just after 7:30am.
-      start: 7:35
-      stop: 7:45
+      start: 12:30
+      stop: 12:45
       location: Europe/London
       days: [Monday, Tuesday, Wednesday, Thursday, Friday]
 
