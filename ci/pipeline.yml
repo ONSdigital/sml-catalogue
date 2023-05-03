@@ -8,7 +8,7 @@ resources:
     webhook_token: gesture
     source:
       uri: https://github.com/ONSdigital/sml-catalogue.git
-      branch: main
+      branch: SPP-9145-concourse-BDD-test-reports
       username: ((github_access_token))
       password: x-oauth-basic
 
@@ -36,7 +36,24 @@ jobs:
             - |
               pip install pipenv
               pipenv install --dev
-              pipenv run behave -D host=$ENDPOINT
+              echo "Creating report directory"
+              cd features/test_reports/dev
+              date=$(date '+%Y_%m_%d')
+              echo $date
+              mkdir -p $date
+              echo "cd to directory"
+              cd $date
+              pipenv run behave -D host=$ENDPOINT --junit
+              echo "Create overview report"
+              junit2html ./reports/ --merge reports/report.xml
+              junit2html ./reports/report.xml reports/report.html
+              echo "Remove junk files"
+              cd ./reports
+              find . -name "*.xml" -type f|xargs rm -f
+              echo Push to branch
+              git add .
+              git commit -m "Test report update"
+              git push
 
   - name: preprod-bdd-tests
     plan:
@@ -61,7 +78,24 @@ jobs:
             - |
               pip install pipenv
               pipenv install --dev
-              pipenv run behave -D host=$ENDPOINT
+              echo "Creating report directory"
+              cd features/test_reports/preprod
+              date=$(date '+%Y_%m_%d')
+              echo $date
+              mkdir -p $date
+              echo "cd to directory"
+              cd $date
+              pipenv run behave -D host=$ENDPOINT --junit
+              echo "Create overview report"
+              junit2html ./reports/ --merge reports/report.xml
+              junit2html ./reports/report.xml reports/report.html
+              echo "Remove junk files"
+              cd ./reports
+              find . -name "*.xml" -type f|xargs rm -f
+              echo Push to branch
+              git add .
+              git commit -m "Test report update"
+              git push
 
   - name: prod-bdd-tests
     plan:
@@ -86,4 +120,21 @@ jobs:
             - |
               pip install pipenv
               pipenv install --dev
-              pipenv run behave -D host=$ENDPOINT
+              echo "Creating report directory"
+              cd features/test_reports/prod
+              date=$(date '+%Y_%m_%d')
+              echo $date
+              mkdir -p $date
+              echo "cd to directory"
+              cd $date
+              pipenv run behave -D host=$ENDPOINT --junit
+              echo "Create overview report"
+              junit2html ./reports/ --merge reports/report.xml
+              junit2html ./reports/report.xml reports/report.html
+              echo "Remove junk files"
+              cd ./reports
+              find . -name "*.xml" -type f|xargs rm -f
+              echo Push to branch
+              git add .
+              git commit -m "Test report update"
+              git push
