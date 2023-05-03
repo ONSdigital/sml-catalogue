@@ -8,7 +8,7 @@ resources:
     webhook_token: gesture
     source:
       uri: https://github.com/ONSdigital/sml-catalogue.git
-      branch: SPP-9143-set-up-concourse
+      branch: main
       username: ((github_access_token))
       password: x-oauth-basic
 
