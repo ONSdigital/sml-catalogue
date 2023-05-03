@@ -137,3 +137,4 @@ output/*
 sml_builder/templates/components
 sml_builder/templates/layout
 content/.DS_Store
+/.idea

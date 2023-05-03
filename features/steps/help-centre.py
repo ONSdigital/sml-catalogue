@@ -4,14 +4,14 @@ from setupSelenium import *
 
 @given('I\'m an sml portal user trying to get to the help centre')
 def auth_user(context):
-    driver.get(host)
+    driver.get(context.config.userdata.get("host"))
 
 @given('I\'m an sml portal user on the "{page}"')
 def auth_user(context, page):
     if page == "find and view methods page":
-        driver.get(f"{host}help-centre/access/view-methods")
+        driver.get(f'{context.config.userdata.get("host")}help-centre/access/view-methods')
     elif page == "submit a method request":
-        driver.get(f"{host}help-centre/information/methods-request")
+        driver.get(f'{context.config.userdata.get("host")}help-centre/information/methods-request')
 
 @when('I navigate to the help centre page')
 def navigate_to_url(context):

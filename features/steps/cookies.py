@@ -6,7 +6,7 @@ from setupSelenium import *
 @given('I\'m an sml portal user on the home page with a cookie banner')
 def auth_user_home_page(context):
     driver.delete_all_cookies()
-    driver.get(host)
+    driver.get(context.config.userdata.get("host"))
     banner = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
     assert banner == 'An open source library for statistical code approved by the ONS'
 
@@ -14,7 +14,7 @@ def auth_user_home_page(context):
 @given('I am on the cookies page')
 def auth_user_cookie_page(context):
     driver.delete_all_cookies()
-    driver.get(f"{host}cookies")
+    driver.get(f'{context.config.userdata.get("host")}cookies')
     page_title = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
     assert page_title == 'Cookies on the statistical methods library'
 
@@ -22,14 +22,14 @@ def auth_user_cookie_page(context):
 @given('I am on the cookies page where cookies are already enabled')
 def auth_user_cookie_page_cookies_enabled(context):
     driver.delete_all_cookies()
-    driver.get(f"{host}cookies")
+    driver.get(f'{context.config.userdata.get("host")}cookies')
     WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.CLASS_NAME, value='ons-js-accept-cookies')).click()
 
 
 @given('I am on the cookies page where cookies are already disabled')
 def auth_user_cookie_page_cookies_disabled(context):
     driver.delete_all_cookies()
-    driver.get(f"{host}cookies")
+    driver.get(f'{context.config.userdata.get("host")}cookies')
     WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.CLASS_NAME, value='ons-js-reject-cookies')).click()
 
 
