@@ -12,20 +12,20 @@ resources:
       branch: SPP-9145-concourse-BDD-test-reports
       username: ((github_access_token))
       password: x-oauth-basic
-  - name: bdd-test-timer
-    type: time
-    source:
-      # Triggers the tests once per day, just after 7:30am.
-      start: 7:30
-      stop: 7:45
-      location: Europe/London
-      days: [Monday, Tuesday, Wednesday, Thursday, Friday]
+  # - name: bdd-test-timer
+  #   type: time
+  #   source:
+  #     # Triggers the tests once per day, just after 7:30am.
+  #     start: 7:30
+  #     stop: 7:45
+  #     location: Europe/London
+  #     days: [Monday, Tuesday, Wednesday, Thursday, Friday]
 
 jobs:
   - name: dev-bdd-tests
     plan:
-      - get: bdd-test-timer
-        trigger: true
+      # - get: bdd-test-timer
+      #   trigger: true
       - get: main
       - task: run-acceptance-tests
         config:
@@ -68,8 +68,8 @@ jobs:
 
   - name: preprod-bdd-tests
     plan:
-      - get: bdd-test-timer
-        trigger: true
+      # - get: bdd-test-timer
+      #   trigger: true
       - get: main
       - task: run-acceptance-tests
         config:
@@ -112,8 +112,8 @@ jobs:
 
   - name: prod-bdd-tests
     plan:
-      - get: bdd-test-timer
-        trigger: true
+      # - get: bdd-test-timer
+      #   trigger: true
       - get: main
       - task: run-acceptance-tests
         config:
