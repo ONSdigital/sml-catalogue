@@ -47,6 +47,8 @@ jobs:
             - |
               pip install pipenv
               pipenv install --dev
+              pipenv install axe-selenium-python
+              pipenv install axe-selenium-python -d
               echo "Creating report directory"
               cd ./features/test_reports/dev
               date=$(date '+%Y_%m_%d')
