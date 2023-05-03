@@ -1,8 +1,9 @@
-from flask import Flask, render_template, escape, Markup
+from flask import Flask, render_template
+from markupsafe import escape, Markup
 
 app = Flask(__name__)
 
-app.jinja_env.add_extension("jinja2.ext.do")  # pylint: disable=no-member
+app.jinja_env.add_extension("jinja2.ext.do")
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
