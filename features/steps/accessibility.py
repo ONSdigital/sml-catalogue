@@ -1,6 +1,7 @@
 # Tests for the accessibility preferences
 
 from urllib.parse import urljoin
+from axe_selenium_python import Axe
 from setupSelenium import *
 
 @then('The accessibility test passes')
