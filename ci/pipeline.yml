@@ -1,5 +1,6 @@
 # This is the pipeline to run the BDD tests on prod, pre-prod and dev. 
-# The triggers are manual for now, a ticket has been written to address this.
+# The triggers are daily
+# BDD test reports are added as part of the pipeline run
 resources:
   - name: main
     type: git
