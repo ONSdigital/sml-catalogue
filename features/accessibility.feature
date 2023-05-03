@@ -98,6 +98,18 @@ Feature: About library tests
         Then The title of the page is "Method: Winsorisation"
         And The accessibility test passes
 
+    Scenario: Totals and components page accessibility check
+        Given I'm an sml portal user
+        When I navigate to the "Totals and Components" summary page
+        Then The title of the page is "Method: Totals and Components"
+        And The accessibility test passes
+
+    Scenario: Mean of Ratios page accessibility check
+        Given I'm an sml portal user
+        When I navigate to the "Mean of Ratios" summary page
+        Then The title of the page is "Method: Mean of Ratios"
+        And The accessibility test passes
+
     Scenario: Date Adjustment summary page accessibility check
         Given I'm an sml portal user
         When I navigate to the "Date Adjustment" summary page
