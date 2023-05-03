@@ -38,7 +38,7 @@ jobs:
               pip install pipenv
               pipenv install --dev
               echo "Creating report directory"
-              cd features/test_reports/dev
+              cd ./features/test_reports/dev
               date=$(date '+%Y_%m_%d')
               echo $date
               mkdir -p $date
