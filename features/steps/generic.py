@@ -5,7 +5,7 @@ from setupSelenium import *
 
 @given('I\'m an sml portal user')
 def auth_user(context):
-    driver.get(host)
+    driver.get(context.config.userdata.get("host"))
     page_title = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
     assert page_title == 'An open source library for statistical code approved by the ONS'
 
@@ -19,13 +19,13 @@ def refresh_page(context):
 
 @when('I navigate to the "{page}" page')
 def navigate_to_page(context, page):
-    driver.get(urljoin(host + "resources/", page))
+    driver.get(urljoin(context.config.userdata.get("host") + "resources/", page))
     WebDriverWait(driver, timeout=timeout).until(EC.presence_of_element_located((By.ID, 'main-content')))
 
 
 @when('I navigate to "{url}"')
 def navigate_to_url(context, url):
-    driver.get(urljoin(host, url))
+    driver.get(urljoin(context.config.userdata.get("host"), url))
     WebDriverWait(driver, timeout=timeout).until(EC.presence_of_element_located((By.ID, 'main-content')))
 
 

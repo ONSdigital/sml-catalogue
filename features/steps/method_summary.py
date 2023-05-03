@@ -5,7 +5,7 @@ from setupSelenium import *
 
 @given('I\'m an sml portal user trying to get to the "{method}" summary page')
 def auth_user(context, method):
-    driver.get(host)
+    driver.get(context.config.userdata.get("host"))
 
 
 @when('I navigate to the "{method}" summary page')

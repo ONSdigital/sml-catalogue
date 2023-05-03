@@ -37,5 +37,5 @@ def navigate_to_page(context, page):
     if page == "get information on expert groups": path = "support/expert-groups"
     if page == "troubleshooting": path = "support/troubleshooting"
     if page == "using github": path = "support/github"
-    driver.get(urljoin(host + "help-centre/", path))
+    driver.get(urljoin(context.config.userdata.get("host") + "help-centre/", path))
     WebDriverWait(driver, timeout=timeout).until(EC.presence_of_element_located((By.ID, 'main-content')))
