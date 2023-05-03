@@ -1,5 +1,5 @@
-# This is the pipeline to run the BDD tests on prod, pre-prod and dev. 
-# The triggers are manual for now, a ticket has been written to address this.
+# This is the pipeline to run the BDD tests on prod, pre-prod and dev.
+# The triggers are daily for now, a ticket has been written to address push to branch triggers.
 resources:
   - name: main
     type: git
@@ -11,10 +11,20 @@ resources:
       branch: main
       username: ((github_access_token))
       password: x-oauth-basic
+  - name: bdd-test-timer
+    type: time
+    source:
+      # Triggers the tests once per day, just after 7:30am.
+      start: 7:30
+      stop: 7:45
+      location: Europe/London
+      days: [Monday, Tuesday, Wednesday, Thursday, Friday]
 
 jobs:
   - name: dev-bdd-tests
     plan:
+      - get: bdd-test-timer
+        trigger: true
       - get: main
       - task: run-acceptance-tests
         config:
@@ -40,6 +50,8 @@ jobs:
 
   - name: preprod-bdd-tests
     plan:
+      - get: bdd-test-timer
+        trigger: true
       - get: main
       - task: run-acceptance-tests
         config:
@@ -65,6 +77,8 @@ jobs:
 
   - name: prod-bdd-tests
     plan:
+      - get: bdd-test-timer
+        trigger: true
       - get: main
       - task: run-acceptance-tests
         config:
