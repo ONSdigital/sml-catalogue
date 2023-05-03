@@ -9,7 +9,7 @@ resources:
     webhook_token: gesture
     source:
       uri: https://github.com/ONSdigital/sml-catalogue.git
-      branch: SPP-9145-concourse-BDD-test-reports
+      branch: SPP-9145-concourse-BDD-test-report
       username: ((github_access_token))
       password: x-oauth-basic
   # - name: bdd-test-timer
