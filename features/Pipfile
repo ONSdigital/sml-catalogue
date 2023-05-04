@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+frozen-flask = "*"
+jsonnet = "*"
+markdown = "*"
+flake8 = "*"
+pylint = "*"
+bandit = "*"
+axe_selenium_python = "*"
+
+[dev-packages]
+black = "*"
+behave = "*"
+selenium = "*"
+axe_selenium_python = "*"
+
+[requires]
+python_version = "3.11"
