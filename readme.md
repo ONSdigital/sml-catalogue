@@ -98,7 +98,7 @@ Prod and preprod are served as one pipeline which runs main
 ```shell
 fly set-pipeline \
 -t aws-sml \
--p sml-catalogue \
+-p live-sml-catalogue \
 -c ci/live-pipeline.yml
 ```
 
@@ -111,8 +111,14 @@ fly set-pipeline \
 -c ci/dev-pipeline.yml
 ```
 
-To delete these run the command
+To delete these run the commands
 
 ```shell
-fly destroy-pipeline -t aws-sml -p sml-catalogue
+fly destroy-pipeline -t aws-sml -p live-sml-catalogue
+```
+
+and
+
+```shell
+fly destroy-pipeline -t aws-sml -p dev-sml-catalogue
 ```
