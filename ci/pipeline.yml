@@ -54,10 +54,11 @@ jobs:
               mkdir -p $date
               echo "cd to directory"
               cd $date
+              cd ./
               pipenv run behave -D host=$ENDPOINT --junit
               echo "Create overview report"
-              junit2html ./reports/ --merge reports/report.xml
-              junit2html ./reports/report.xml reports/report.html
+              pipenv run junit2html ./reports/ --merge reports/report.xml
+              pipenv run junit2html ./reports/report.xml reports/report.html
               echo "Remove junk files"
               cd ./reports
               find . -name "*.xml" -type f|xargs rm -f
