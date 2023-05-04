@@ -41,16 +41,15 @@ jobs:
             - name: main
           run:
             path: sh
-            dir: main/features
+            dir: main
             args:
             - -exc
             - |
               pip install pipenv
               pipenv install --dev
-              pipenv run behave -D host=$ENDPOINT --junit
-              echo "Create overview report"
-              pipenv run junit2html ./reports/ --merge reports/report.xml
-              pipenv run junit2html ./reports/report.xml reports/report.html
-              echo "Remove junk files"
-              cd ./reports
-              find . -name "*.xml" -type f|xargs rm -f
+              date=$(date '+%Y_%m_%d')
+              echo $date
+              mkdir -p ./features/test_reports/dev/$date
+              pipenv run behave -D host=$ENDPOINT --junit --junit-directory ./test_reports/dev/$date
+              cd ./features/test_reports/dev
+              ls
