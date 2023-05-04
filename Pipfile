@@ -10,13 +10,13 @@ markdown = "*"
 flake8 = "*"
 pylint = "*"
 bandit = "*"
-axe-selenium-python = "*"
+axe_selenium_python = "*"
 
 [dev-packages]
 black = "*"
 behave = "*"
 selenium = "*"
-axe-selenium-python = "*"
+axe_selenium_python = "*"
 
 [requires]
 python_version = "3.11"
