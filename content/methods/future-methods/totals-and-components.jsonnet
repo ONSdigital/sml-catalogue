@@ -3,7 +3,7 @@
   date: '2023-03-07',
   contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
-    'Expert group': 'Sam& Estimation',
+    'Expert group': 'Sample Design & Estimation',
     Theme: 'Sample Design & Estimation',
     Author: 'ONS',
     'Languages': 'Python/PySpark',

@@ -53,7 +53,8 @@ jobs:
               pipenv run behave -D host=$ENDPOINT --junit --junit-directory ./features/test_reports/preprod/$date
               cd ./features/test_reports/preprod/$date
               ls
-              cat TESTS-about.xml TESTS-accessibility.xml TESTS-cookies.xml TESTS-footer.xml TESTS-glossary.xml TESTS-header.xml TESTS-help_center.xml TESTS-method_summary.xml TESTS-methods.xml
+              cat TESTS-about.xml TESTS-accessibility.xml TESTS-cookies.xml TESTS-footer.xml TESTS-glossary.xml TESTS-header.xml TESTS-help_center.xml TESTS-method_summary.xml TESTS-methods.xml > test_report.xml
+              cat test_report.xml
 
   - name: prod-bdd-tests
     plan:
@@ -86,4 +87,5 @@ jobs:
               pipenv run behave -D host=$ENDPOINT --junit --junit-directory ./features/test_reports/prod/$date
               cd ./features/test_reports/prod/$date
               ls
-              cat TESTS-about.xml TESTS-accessibility.xml TESTS-cookies.xml TESTS-footer.xml TESTS-glossary.xml TESTS-header.xml TESTS-help_center.xml TESTS-method_summary.xml TESTS-methods.xml
+              cat TESTS-about.xml TESTS-accessibility.xml TESTS-cookies.xml TESTS-footer.xml TESTS-glossary.xml TESTS-header.xml TESTS-help_center.xml TESTS-method_summary.xml TESTS-methods.xml > test_report.xml
+              cat test_report.xml
