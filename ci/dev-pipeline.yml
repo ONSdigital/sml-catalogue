@@ -50,6 +50,15 @@ jobs:
               date=$(date '+%Y_%m_%d')
               echo $date
               mkdir -p ./features/test_reports/dev/$date
-              pipenv run behave -D host=$ENDPOINT --junit --junit-directory ./test_reports/dev/$date
-              cd ./features/test_reports/dev
+              pipenv run behave -D host=$ENDPOINT --junit --junit-directory ./features/test_reports/dev/$date
+              cd ./features/test_reports/dev/$date
               ls
+              cat ./features/test_reports/dev/$date/TESTS-about.xml
+              cat ./features/test_reports/dev/$date/TESTS-accessibility.xml
+              cat ./features/test_reports/dev/$date/TESTS-cookies.xml
+              cat ./features/test_reports/dev/$date/TESTS-footer.xml
+              cat ./features/test_reports/dev/$date/TESTS-glossary.xml
+              cat ./features/test_reports/dev/$date/TESTS-header.xml
+              cat ./features/test_reports/dev/$date/TESTS-help_center.xml
+              cat ./features/test_reports/dev/$date/TESTS-method_summary.xml
+              cat ./features/test_reports/dev/$date/TESTS-methods.xml
