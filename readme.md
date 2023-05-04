@@ -93,12 +93,25 @@ Hence as the page can only be accessed from within the uk we cannot automate the
 
 ## Concourse Setup
 
+Prod and preprod are served as one pipeline which runs main
+
 ```shell
 fly set-pipeline \
 -t aws-sml \
 -p sml-catalogue \
--c ci/pipeline.yml
+-c ci/live-pipeline.yml
 ```
+
+While Dev is set as another
+
+```shell
+fly set-pipeline \
+-t aws-sml \
+-p dev-sml-catalogue \
+-c ci/dev-pipeline.yml
+```
+
+To delete these run the command
 
 ```shell
 fly destroy-pipeline -t aws-sml -p sml-catalogue

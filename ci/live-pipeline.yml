@@ -9,68 +9,23 @@ resources:
     webhook_token: gesture
     source:
       uri: https://github.com/ONSdigital/sml-catalogue.git
-      branch: SPP-9145-concourse-BDD-test-report
+      branch: main
       username: ((github_access_token))
       password: x-oauth-basic
-  # - name: bdd-test-timer
-  #   type: time
-  #   source:
-  #     # Triggers the tests once per day, just after 7:30am.
-  #     start: 7:30
-  #     stop: 7:45
-  #     location: Europe/London
-  #     days: [Monday, Tuesday, Wednesday, Thursday, Friday]
+  - name: bdd-test-timer
+    type: time
+    source:
+      # Triggers the tests once per day, just after 7:30am.
+      start: 7:30
+      stop: 7:45
+      location: Europe/London
+      days: [Monday, Tuesday, Wednesday, Thursday, Friday]
 
 jobs:
-  - name: dev-bdd-tests
-    plan:
-      # - get: bdd-test-timer
-      #   trigger: true
-      - get: main
-      - task: run-acceptance-tests
-        config:
-          platform: linux
-          image_resource:
-            type: registry-image
-            source:
-              repository: public.ecr.aws/ons-spp/python-selenium
-              tag: 4
-          params:
-            {ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'}
-          inputs:
-            - name: main
-          run:
-            path: sh
-            dir: main
-            args:
-            - -exc
-            - |
-              pip install pipenv
-              pipenv install --dev
-              echo "Creating report directory"
-              cd ./features/test_reports/dev
-              date=$(date '+%Y_%m_%d')
-              echo $date
-              mkdir -p $date
-              echo "cd to directory"
-              cd $date
-              cd ./
-              pipenv run behave -D host=$ENDPOINT --junit
-              echo "Create overview report"
-              pipenv run junit2html ./reports/ --merge reports/report.xml
-              pipenv run junit2html ./reports/report.xml reports/report.html
-              echo "Remove junk files"
-              cd ./reports
-              find . -name "*.xml" -type f|xargs rm -f
-              echo Push to branch
-              git add .
-              git commit -m "Test report update"
-              git push
-
   - name: preprod-bdd-tests
     plan:
-      # - get: bdd-test-timer
-      #   trigger: true
+      - get: bdd-test-timer
+        trigger: true
       - get: main
       - task: run-acceptance-tests
         config:
@@ -113,8 +68,8 @@ jobs:
 
   - name: prod-bdd-tests
     plan:
-      # - get: bdd-test-timer
-      #   trigger: true
+      - get: bdd-test-timer
+        trigger: true
       - get: main
       - task: run-acceptance-tests
         config:
