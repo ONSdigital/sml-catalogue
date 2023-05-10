@@ -21,33 +21,6 @@ resources:
       days: [Monday, Tuesday, Wednesday, Thursday, Friday]
 
 jobs:
-  - name: dev-bdd-tests
-    plan:
-      - get: bdd-test-timer
-        trigger: true
-      - get: main
-      - task: run-acceptance-tests
-        config:
-          platform: linux
-          image_resource:
-            type: registry-image
-            source:
-              repository: public.ecr.aws/ons-spp/python-selenium
-              tag: 4
-          params:
-            {ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'}
-          inputs:
-            - name: main
-          run:
-            path: sh
-            dir: main
-            args:
-            - -exc
-            - |
-              pip install pipenv
-              pipenv install --dev
-              pipenv run behave -D host=$ENDPOINT
-
   - name: preprod-bdd-tests
     plan:
       - get: bdd-test-timer
@@ -73,7 +46,14 @@ jobs:
             - |
               pip install pipenv
               pipenv install --dev
-              pipenv run behave -D host=$ENDPOINT
+              date=$(date '+%Y_%m_%d')
+              echo $date
+              mkdir -p ./features/test_reports/preprod/$date
+              pipenv run behave -D host=$ENDPOINT --junit --junit-directory ./features/test_reports/preprod/$date
+              cd ./features/test_reports/preprod/$date
+              ls
+              cat TESTS-about.xml TESTS-accessibility.xml TESTS-cookies.xml TESTS-footer.xml TESTS-glossary.xml TESTS-header.xml TESTS-help_center.xml TESTS-method_summary.xml TESTS-methods.xml > test_report.xml
+              cat test_report.xml
 
   - name: prod-bdd-tests
     plan:
@@ -100,4 +80,11 @@ jobs:
             - |
               pip install pipenv
               pipenv install --dev
-              pipenv run behave -D host=$ENDPOINT
+              date=$(date '+%Y_%m_%d')
+              echo $date
+              mkdir -p ./features/test_reports/prod/$date
+              pipenv run behave -D host=$ENDPOINT --junit --junit-directory ./features/test_reports/prod/$date
+              cd ./features/test_reports/prod/$date
+              ls
+              cat TESTS-about.xml TESTS-accessibility.xml TESTS-cookies.xml TESTS-footer.xml TESTS-glossary.xml TESTS-header.xml TESTS-help_center.xml TESTS-method_summary.xml TESTS-methods.xml > test_report.xml
+              cat test_report.xml
