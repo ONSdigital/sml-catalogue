@@ -100,7 +100,7 @@ jobs:
             - name: repo
           run:
             path: sh
-            dir: main
+            dir: repo
             args:
             - -exc
             - |
