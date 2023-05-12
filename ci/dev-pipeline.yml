@@ -86,32 +86,32 @@ jobs:
             path: repo
             status: pending
             context: dev-bdd-tests
-        - task: run-acceptance-tests
-          config:
-            platform: linux
-            image_resource:
-              type: registry-image
-              source:
-                repository: public.ecr.aws/ons-spp/python-selenium
-                tag: 4
-            params:
-              {ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'}
-            run:
-              path: sh
-              dir: main
-              args:
-              - -exc
-              - |
-                pip install pipenv
-                pipenv install --dev
-                date=$(date '+%Y_%m_%d')
-                echo $date
-                mkdir -p repo/features/test_reports/dev/$date
-                pipenv run behave -D host=$ENDPOINT --junit --junit-directory repo/features/test_reports/dev/$date
-                cd repo/features/test_reports/dev/$date
-                ls
-                cat TESTS-about.xml TESTS-accessibility.xml TESTS-cookies.xml TESTS-footer.xml TESTS-glossary.xml TESTS-header.xml TESTS-help_center.xml TESTS-method_summary.xml TESTS-methods.xml > test_report.xml
-                cat test_report.xml
+      - task: run-acceptance-tests
+        config:
+          platform: linux
+          image_resource:
+            type: registry-image
+            source:
+              repository: public.ecr.aws/ons-spp/python-selenium
+              tag: 4
+          params:
+            {ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'}
+          run:
+            path: sh
+            dir: main
+            args:
+            - -exc
+            - |
+              pip install pipenv
+              pipenv install --dev
+              date=$(date '+%Y_%m_%d')
+              echo $date
+              mkdir -p repo/features/test_reports/dev/$date
+              pipenv run behave -D host=$ENDPOINT --junit --junit-directory repo/features/test_reports/dev/$date
+              cd repo/features/test_reports/dev/$date
+              ls
+              cat TESTS-about.xml TESTS-accessibility.xml TESTS-cookies.xml TESTS-footer.xml TESTS-glossary.xml TESTS-header.xml TESTS-help_center.xml TESTS-method_summary.xml TESTS-methods.xml > test_report.xml
+              cat test_report.xml
     on_success:
       put: repo
       resource: pr-open
