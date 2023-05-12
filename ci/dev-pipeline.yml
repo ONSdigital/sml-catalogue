@@ -80,12 +80,6 @@ jobs:
           resource: pr-open
           trigger: true
           version: every
-        - put: repo
-          resource: pr-open
-          params:
-            path: repo
-            status: pending
-            context: dev-bdd-tests
       - task: run-acceptance-tests
         config:
           platform: linux
