@@ -11,11 +11,11 @@ image_resource:
 inputs:
   - name: repo
 outputs:
-  - name: branch-info
+  - name: repo
 run:
   path: sh
   dir: repo
   args:
     - -exc
     - |
-      git branch --show-current > ../branch-info/current-branch
+      git branch --show-current > ./branch-info/current-branch

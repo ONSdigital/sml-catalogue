@@ -9,7 +9,6 @@ image_resource:
 
 inputs:
   - name: repo
-  - name: branch-info
 
 run:
   path: sh
