@@ -101,6 +101,7 @@ jobs:
             params:
               <<: *general_dev_params
               <<: *github_pull_creds
+              <<: *sml_dev_setup
               TERRAFORM_SOURCE: repo/terraform
               WORKSPACE_KEY_INFIX: workspaces
 
