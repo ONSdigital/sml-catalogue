@@ -16,6 +16,6 @@ run:
   args:
     - -exc
     - |
-      WORKSPACE=$(<./branch-info/current-branch)
+      WORKSPACE=$(<./current-branch)
       apk add --update --no-progress bash jq
       bash ./ci/tasks/apply_terraform.sh
