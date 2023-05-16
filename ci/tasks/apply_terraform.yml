@@ -8,8 +8,7 @@ image_resource:
     tag: 1
 
 inputs:
-  - name: spp-sml-portal
-  - name: build
+  - name: repo
   - name: branch-info
 
 run:
