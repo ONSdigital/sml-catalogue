@@ -5,12 +5,18 @@ env_setups:
     AWS_DEFAULT_REGION: eu-west-2
     S3_ACCOUNT_STATE_KEY: ons-smlportal-dev.account.tfstate
     S3_ENVIRONMENT_STATE_KEY: ons-smlportal-dev.environment.tfstate
+    S3_NAME: statistical-methods-library-tf-state
+    S3_KEY: sml-portal.tfstate
     CONCOURSE_ACCESS_TOKEN: ((github_access_token))
     SHARED_ACCOUNT_ROLE: &shared_account_role arn:aws:iam::289259348294:role/spp-concourse-access-prod
 
   general_dev: &general_dev_params
-    TF_VAR_deployment_type:
+    TF_VAR_deployment_type: dev
     <<: *general_params
+
+  github_pull_creds: &github_pull_creds
+    username: ((github_access_token))
+    password: x-oauth-basic
 
   # -------------------
 
@@ -39,7 +45,7 @@ resources:
  #   source:
  #     uri: https://github.com/ONSdigital/sml-catalogue.git
  #     branch: main
- #     username: ((github_access_token))
+ #    username: ((github_access_token))
  #     password: x-oauth-basic
  # - name: bdd-test-timer
  #   type: time
@@ -56,7 +62,7 @@ resources:
     webhook_token: gesture
     source:
       repository: ONSdigital/sml-catalogue
-      access_token: ((new_github_access_token))
+      access_token: ((github_access_token))
       base_branch: main
       disable_forks: true
       states: ["OPEN"]
@@ -86,45 +92,55 @@ jobs:
             path: repo
             status: pending
             context: behave-tests
-      - task: run-acceptance-tests
-        config:
-          platform: linux
-          image_resource:
-            type: registry-image
-            source:
-              repository: public.ecr.aws/ons-spp/python-selenium
-              tag: 4
-          params:
-            {ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'}
-          inputs:
-            - name: repo
-          run:
-            path: sh
-            dir: repo
-            args:
-            - -exc
-            - |
-              pip install pipenv
-              pipenv install --dev
-              date=$(date '+%Y_%m_%d')
-              echo $date
-              mkdir -p ./features/test_reports/dev/$date
-              pipenv run behave -D host=$ENDPOINT --junit --junit-directory ./features/test_reports/dev/$date
-              cd ./features/test_reports/dev/$date
-              ls
-              cat TESTS-about.xml TESTS-accessibility.xml TESTS-cookies.xml TESTS-footer.xml TESTS-glossary.xml TESTS-header.xml TESTS-help_center.xml TESTS-method_summary.xml TESTS-methods.xml > test_report.xml
-              cat test_report.xml
+      - do:
+          - task: terraform-apply-environment
+            file: repo/ci/tasks/terraform_apply.yml
+            params:
+              <<: *general_dev_params
+              <<: *github_pull_creds
+              TERRAFORM_SOURCE: repo/terraform
+              WORKSPACE: ((workspace))
+              WORKSPACE_KEY_INFIX: workspaces
+
+          - task: run-acceptance-tests
+            config:
+              platform: linux
+              image_resource:
+                type: registry-image
+                source:
+                  repository: public.ecr.aws/ons-spp/python-selenium
+                  tag: 4
+              params:
+                {ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'}
+              inputs:
+                - name: repo
+              run:
+                path: sh
+                dir: repo
+                args:
+                - -exc
+                - |
+                  pip install pipenv
+                  pipenv install --dev
+                  date=$(date '+%Y_%m_%d')
+                  echo $date
+                  mkdir -p ./features/test_reports/dev/$date
+                  pipenv run behave -D host=$ENDPOINT --junit --junit-directory ./features/test_reports/dev/$date
+                  cd ./features/test_reports/dev/$date
+                  ls
+                  cat TESTS-about.xml TESTS-accessibility.xml TESTS-cookies.xml TESTS-footer.xml TESTS-glossary.xml TESTS-header.xml TESTS-help_center.xml TESTS-method_summary.xml TESTS-methods.xml > test_report.xml
+                  cat test_report.xml
     on_success:
       put: repo
       resource: pr-open
       params:
         path: repo
         status: success
-        context: dev-bdd-tests
+        context: behave-tests
     on_failure:
       put: repo
       resource: pr-open
       params:
         path: repo
         status: success
-        context: dev-bdd-tests
+        context: behave-tests
