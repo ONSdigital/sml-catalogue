@@ -3,7 +3,7 @@
 # Runs a `terraform apply` on ${TERRAFORM_SOURCE}
 
 set -euo pipefail
-=
+
 : ${TERRAFORM_SOURCE}
 : ${TF_VAR_environment}
 : ${AWS_DEFAULT_REGION}
