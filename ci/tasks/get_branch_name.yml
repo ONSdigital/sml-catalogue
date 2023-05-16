@@ -1,0 +1,22 @@
+---
+
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: public.ecr.aws/ons-spp/python-poetry
+    tag: 3.9
+
+inputs:
+  - name: repo
+outputs:
+  - name: branch-info
+run:
+  path: sh
+  dir: repo
+  args:
+    - -exc
+    - |
+      cd source
+      git branch --show-current > ../branch-info/current-branch

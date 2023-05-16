@@ -93,13 +93,15 @@ jobs:
             status: pending
             context: behave-tests
       - do:
+          - task: get-branch
+            file: repo/ci/tasks/get_branch_name.yml
+
           - task: terraform-apply-environment
             file: repo/ci/tasks/apply_terraform.yml
             params:
               <<: *general_dev_params
               <<: *github_pull_creds
               TERRAFORM_SOURCE: repo/terraform
-              WORKSPACE: ((workspace))
               WORKSPACE_KEY_INFIX: workspaces
 
           - task: run-acceptance-tests
