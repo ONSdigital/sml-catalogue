@@ -94,7 +94,7 @@ jobs:
             context: behave-tests
       - do:
           - task: terraform-apply-environment
-            file: repo/ci/tasks/terraform_apply.yml
+            file: repo/ci/tasks/apply_terraform.yml
             params:
               <<: *general_dev_params
               <<: *github_pull_creds
