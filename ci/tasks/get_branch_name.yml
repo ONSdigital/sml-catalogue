@@ -11,7 +11,7 @@ image_resource:
 inputs:
   - name: repo
 outputs:
-  - name: branch-info
+  - name: repo
 run:
   path: sh
   dir: repo
