@@ -6,6 +6,7 @@ set -euo pipefail
 
 : ${TERRAFORM_SOURCE}
 : ${TF_VAR_environment}
+: ${WORKSPACE_KEY_INFIX}
 : ${AWS_DEFAULT_REGION}
 : ${S3_NAME}
 : ${S3_KEY}
@@ -21,7 +22,7 @@ terraform init \
     -upgrade \
     -backend-config "bucket=${S3_NAME}" \
     -backend-config "key=${S3_KEY}" \
-    -backend-config "workspace_key_prefix=workspace"
+    -backend-config "workspace_key_prefix=${WORKSPACE_KEY_INFIX}"
 
 terraform plan -out=plan.tfstate
 terraform apply \

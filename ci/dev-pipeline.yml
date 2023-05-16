@@ -99,11 +99,10 @@ jobs:
           - task: terraform-apply-environment
             file: repo/ci/tasks/apply_terraform.yml
             params:
-              <<: *general_dev_params
               <<: *github_pull_creds
               <<: *sml_dev_setup
               TERRAFORM_SOURCE: repo/terraform
-              WORKSPACE_KEY_INFIX: workspaces
+              WORKSPACE_KEY_INFIX: workspace
 
           - task: run-acceptance-tests
             config:
