@@ -13,6 +13,7 @@ inputs:
 
 run:
   path: sh
+  dir: repo
   args:
     - -exc
     - |
