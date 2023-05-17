@@ -12,7 +12,6 @@ set -euo pipefail
 : ${S3_KEY}
 : ${username}
 : ${password}
-: ${TF_WORKSPACE}
 
 echo "Setting netrc creds"
 rm -f $HOME/.netrc
