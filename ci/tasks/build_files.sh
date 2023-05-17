@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-
+pip install --upgrade pip
 pip install pipenv
 python3 -m venv venv
 source venv/bin/activate
