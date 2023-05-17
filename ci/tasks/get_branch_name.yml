@@ -18,5 +18,5 @@ run:
   args:
     - -exc
     - |
-      git branch --show-current > ./current-branch
+      git rev-parse --abbrev-ref HEAD > ./current-branch
       cat ./current-branch
