@@ -4,6 +4,7 @@
 
 set -euo pipefail
 
+apt-get -y update && apt-get install -y zip
 pip install --upgrade pip
 pip install pipenv
 python3 -m venv venv
