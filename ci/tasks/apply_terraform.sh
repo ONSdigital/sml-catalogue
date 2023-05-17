@@ -16,15 +16,16 @@ set -euo pipefail
 echo "Setting netrc creds"
 rm -f $HOME/.netrc
 echo "default login $username password $password" >> "${HOME}/.netrc"
-
+echo "starting terraform init"
 cd ./terraform
 terraform init \
     -upgrade \
     -backend-config "bucket=${S3_NAME}" \
     -backend-config "key=${S3_KEY}" \
     -backend-config "workspace_key_prefix=${WORKSPACE_KEY_INFIX}"
-
+echo "starting terraform plan"
 terraform plan -out=plan.tfstate
+echo "starting terraform apply"
 terraform apply \
     -auto-approve \
     -var="environment=${TF_VAR_environment}"
