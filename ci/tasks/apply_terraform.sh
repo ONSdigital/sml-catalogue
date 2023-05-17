@@ -13,6 +13,8 @@ set -euo pipefail
 : ${username}
 : ${password}
 
+
+TF_WORKSPACE=`cat ./.git/resource/head_name`
 echo "Setting netrc creds"
 rm -f $HOME/.netrc
 echo "default login $username password $password" >> "${HOME}/.netrc"

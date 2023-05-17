@@ -16,6 +16,5 @@ run:
   args:
     - -exc
     - |
-      TF_WORKSPACE=`cat ./.git/resource/head_name`
       apk add --update --no-progress bash jq
       bash ./ci/tasks/apply_terraform.sh
