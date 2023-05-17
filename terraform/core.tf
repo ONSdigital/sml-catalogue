@@ -59,3 +59,9 @@ terraform {
     role_arn = "arn:aws:iam::115311790871:role/spp-concourse-sml-deployment-dev"
   }
 }
+
+provider "aws" {
+  assume_role {
+    role_arn = var.deployment_role
+  }
+}
