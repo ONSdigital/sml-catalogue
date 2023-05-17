@@ -25,7 +25,7 @@ terraform init \
     -backend-config "key=${S3_KEY}" \
     -backend-config "workspace_key_prefix=${WORKSPACE_KEY_INFIX}"
 echo "starting terraform plan"
-export TF_WORKSPACE=`cat ../.git/resource/head_name`
+export TF_WORKSPACE=`cat ../.git/resource/head_name| tr "[:upper:]" "[:lower:]"`
 echo Workspace: ${TF_WORKSPACE}
 terraform plan -out=plan.tfstate
 echo "starting terraform apply"
