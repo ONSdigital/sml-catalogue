@@ -7,7 +7,7 @@ set -euo pipefail
 : ${TF_VAR_environment}
 
 workspace_name=`cat ./.git/resource/head_name| tr "[:upper:]" "[:lower:]"`
-echo Workspace: ${TF_WORKSPACE}
+echo Workspace: ${workspace_name}
 
 unzip build.zip
 aws s3 sync build s3://sml-portal-$environment-$workspace_name --delete --content-type "text/html" --exclude "*.css" --exclude "*.js"
