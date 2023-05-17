@@ -94,14 +94,16 @@ jobs:
             status: pending
             context: behave-tests
       - do:
-          - task: terraform-apply-environment
-            file: repo/ci/tasks/apply_terraform.yml
-            params:
-              <<: *github_pull_creds
-              <<: *sml_dev_setup
-              TERRAFORM_SOURCE: repo/terraform
-              WORKSPACE_KEY_INFIX: workspace
-
+          - in_parallel:
+            - task: terraform-apply-environment
+              file: repo/ci/tasks/apply_terraform.yml
+              params:
+                <<: *github_pull_creds
+                <<: *sml_dev_setup
+                TERRAFORM_SOURCE: repo/terraform
+                WORKSPACE_KEY_INFIX: workspace
+            - task: build-files
+              file: repo/ci/tasks/build_files.yml
           - task: run-acceptance-tests
             config:
               platform: linux
