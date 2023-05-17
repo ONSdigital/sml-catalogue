@@ -19,3 +19,4 @@ run:
     - -exc
     - |
       git branch --show-current > ./current-branch
+      cat ./current-branch
