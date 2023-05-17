@@ -23,7 +23,7 @@ env_setups:
   sml_dev: &sml_dev_setup
     <<: *general_dev_params
     ACCOUNT_NAME: &account sml_dev
-    AWS_ACCOUNT_ID: ((*account))
+    AWS_ACCOUNT_ID: *account
     AWS_SERVICE_ROLE>: &role arn:aws:iam::((*account)):role/spp-concourse-sml-deployment-dev
     TF_VAR_deployment_role: *role
     TF_VAR_environment: dev
