@@ -104,6 +104,11 @@ jobs:
                 WORKSPACE_KEY_INFIX: workspace
             - task: build-files
               file: repo/ci/tasks/build_files.yml
+          - task: deploy_code
+            file: repo/ci/tasks/deploy.yml
+            params:
+              <<: *github_pull_creds
+              <<: *sml_dev_setup
           - task: run-acceptance-tests
             config:
               platform: linux
@@ -122,6 +127,7 @@ jobs:
                 args:
                 - -exc
                 - |
+                  cat GITHUB_OUTPUT
                   pip install pipenv
                   pipenv install --dev
                   date=$(date '+%Y_%m_%d')
