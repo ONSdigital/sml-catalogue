@@ -37,6 +37,7 @@ resource_types:
       repository: teliaoss/github-pr-resource
 
 resources:
+ #
  # - name: main
  #   type: git
  #   icon: github
