@@ -1,5 +1,10 @@
 provider "aws" {
-  region = "eu-west-2"
+  alias  = "eu-west-1"
+  region = "eu-west-1"
+  assume_role {
+    role_arn = var.deployment_role
+  }
+
 
   default_tags {
     tags = {
@@ -20,7 +25,9 @@ provider "aws" {
 provider "aws" {
   region = "us-east-1"
   alias  = "us_east_1"
-
+  assume_role {
+      role_arn = var.deployment_role
+    }
   default_tags {
     tags = {
       ManagedBy                 = "Terraform"
@@ -44,6 +51,8 @@ terraform {
       version = "~> 4.0"
     }
   }
+
+
 
   backend "s3" {
     region   = "eu-west-2"
