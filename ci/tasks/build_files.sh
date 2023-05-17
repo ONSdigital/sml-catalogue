@@ -10,6 +10,7 @@ python3 -m venv venv
 source venv/bin/activate
 pipenv sync --dev
 pip install wrapt
+pip install dill
 black --check --diff sml_builder
 pylint sml_builder
 flake8 sml_builder
