@@ -20,3 +20,4 @@ run:
     - |
       git rev-parse --abbrev-ref HEAD > ./current-branch
       cat ./current-branch
+      cat .git/resource/metadata.json
