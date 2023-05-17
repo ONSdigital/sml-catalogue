@@ -58,7 +58,7 @@ resources:
   - name: pr-open
     type: pull-request
     icon: github
-    check_every: never
+    check_every: 1m
     webhook_token: gesture
     source:
       repository: ONSdigital/sml-catalogue
