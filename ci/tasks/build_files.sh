@@ -9,10 +9,10 @@ pip install pipenv
 python3 -m venv venv
 source venv/bin/activate
 pipenv sync --dev
-black --check --diff sml_builder
-pylint sml_builder
-flake8 sml_builder
-bandit -r sml_builder
+pipenv run black --check --diff sml_builder
+pipenv run pylint sml_builder
+pipenv run flake8 sml_builder
+pipenv run bandit -r sml_builder
 echo "Installing the ONS design system"
 ./get_design_system.sh
 echo "Freezing flask"
