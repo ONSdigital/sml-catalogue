@@ -9,6 +9,8 @@ image_resource:
 
 inputs:
   - name: repo
+outputs:
+  - name: GITHUB_OUTPUT
 
 run:
   path: sh
