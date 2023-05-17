@@ -12,6 +12,7 @@ set -euo pipefail
 : ${S3_KEY}
 : ${username}
 : ${password}
+: ${TF_WORKSPACE}
 
 echo "Setting netrc creds"
 rm -f $HOME/.netrc
@@ -24,6 +25,7 @@ terraform init \
     -backend-config "key=${S3_KEY}" \
     -backend-config "workspace_key_prefix=${WORKSPACE_KEY_INFIX}"
 echo "starting terraform plan"
+echo Workspace: ${TF_WORKSPACE}
 terraform plan -out=plan.tfstate
 echo "starting terraform apply"
 terraform apply \
