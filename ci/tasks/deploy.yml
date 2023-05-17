@@ -4,8 +4,8 @@ platform: linux
 image_resource:
   type: registry-image
   source:
-    repository: ubuntu
-    tag: latest
+    repository: public.ecr.aws/ons-spp/terraform
+    tag: 1
 
 inputs:
   - name: repo
@@ -16,4 +16,6 @@ run:
   args:
     - -exc
     - |
+      apk add --update --no-progress bash jq
+      apk add --no-cache --no-progress aws-cli
       bash ./ci/tasks/deploy.sh
