@@ -14,7 +14,6 @@ set -euo pipefail
 : ${password}
 
 
-export TF_WORKSPACE=`cat ./.git/resource/head_name`
 echo "Setting netrc creds"
 rm -f $HOME/.netrc
 echo "default login $username password $password" >> "${HOME}/.netrc"
@@ -26,6 +25,7 @@ terraform init \
     -backend-config "key=${S3_KEY}" \
     -backend-config "workspace_key_prefix=${WORKSPACE_KEY_INFIX}"
 echo "starting terraform plan"
+export TF_WORKSPACE=`cat ../.git/resource/head_name`
 echo Workspace: ${TF_WORKSPACE}
 terraform plan -out=plan.tfstate
 echo "starting terraform apply"
