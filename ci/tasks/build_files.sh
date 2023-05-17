@@ -4,7 +4,6 @@
 
 set -euo pipefail
 
-apt-get -y update && apt-get install -y zip
 pip install --upgrade pip
 pip install pipenv
 python3 -m venv venv
@@ -24,4 +23,3 @@ echo "Installing the ONS design system"
 ./get_design_system.sh
 echo "Freezing flask"
 python freeze.py
-zip -r build.zip build
