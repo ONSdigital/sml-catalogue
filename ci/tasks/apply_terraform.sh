@@ -34,6 +34,6 @@ terraform apply \
     -var="environment=${TF_VAR_environment}"
 rm plan.tfstate
 echo "done"
-touch ../GITHUB_OUTPUT/output.txt
-echo "DEPLOY_URL=`terraform output -raw website_url`" >> ../GITHUB_OUTPUT/output.txt
+mkdir ../GITHUB_OUTPUT
+echo "DEPLOY_URL=`terraform output -raw website_url`" > ../GITHUB_OUTPUT/output.txt
 echo "cloudfront_id=`terraform output -raw cloudfront_id`" >> ../GITHUB_OUTPUT/output.txt
