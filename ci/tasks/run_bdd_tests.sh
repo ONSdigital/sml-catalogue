@@ -2,10 +2,7 @@
 
 # Runs BDD testing on the deployed workspace
 
-: ${GITHUB_OUTPUT}
 
-
-cat GITHUB_OUTPUT
 cd repo
 pip install pipenv
 pipenv install --dev
