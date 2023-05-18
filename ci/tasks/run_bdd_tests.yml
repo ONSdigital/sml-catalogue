@@ -19,5 +19,5 @@ run:
   args:
     - -exc
     - |
-      echo $(pwd)
+      echo $(ls ..)
       bash ./ci/tasks/run_bdd_tests.sh
