@@ -19,4 +19,5 @@ run:
     - -exc
     - |
       echo $(ls ./GITHUB_OUTPUT)
+      echo $(cat ./GITHUB_OUTPUT/output.txt)
       bash ./ci/tasks/run_bdd_tests.sh
