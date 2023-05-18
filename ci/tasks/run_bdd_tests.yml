@@ -15,9 +15,10 @@ inputs:
 
 run:
   path: sh
+  dir: repo
   args:
     - -exc
     - |
       echo $(ls)
-      echo $(cat ./GITHUB_OUTPUT/output.txt)
+      echo $(cat ../GITHUB_OUTPUT/output.txt)
       bash ./ci/tasks/run_bdd_tests.sh
