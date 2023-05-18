@@ -110,7 +110,7 @@ jobs:
               <<: *github_pull_creds
               <<: *sml_dev_setup
           - task: run-acceptance-tests
-            file: repo/ci/run_bdd_tests.yml
+            file: repo/ci/tasks/run_bdd_tests.yml
 
     on_success:
       put: repo
