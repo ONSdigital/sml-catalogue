@@ -1,0 +1,21 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: public.ecr.aws/ons-spp/python-selenium
+    tag: 4
+
+params:
+  {ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'}
+inputs:
+  - name: repo
+  - name: GITHUB_OUTPUT
+
+run:
+  path: sh
+  args:
+    - -exc
+    - |
+      bash ./ci/tasks/run_bdd_tests.sh
