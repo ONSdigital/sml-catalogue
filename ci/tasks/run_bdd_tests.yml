@@ -18,5 +18,5 @@ run:
   args:
     - -exc
     - |
-      cat GITHUB_OUTPUT
+      ls ./GITHUB_OUTPUT
       bash ./ci/tasks/run_bdd_tests.sh
