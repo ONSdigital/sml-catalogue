@@ -17,6 +17,5 @@ run:
   args:
     - -exc
     - |
-      URL=$(sed -n 1p ../GITHUB_OUTPUT/output.txt | cut -d " " -f1)
-      export URL="${URL:11}"
+      export URL=$(sed -n 1p ../GITHUB_OUTPUT/output.txt | cut -d " " -f1 | cut -c 12-)
       bash ./ci/tasks/run_bdd_tests.sh
