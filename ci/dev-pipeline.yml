@@ -80,7 +80,7 @@ resources:
   #    states: ["CLOSED", "MERGED"]
 
 jobs:
-  - name: dev-bdd-tests
+  - name: apply_terraform_&_build_files
     plan:
       - do:
         - get: repo
@@ -92,37 +92,90 @@ jobs:
           params:
             path: repo
             status: pending
-            context: behave-tests
-      - do:
-          - in_parallel:
-            - task: terraform-apply-environment
-              file: repo/ci/tasks/apply_terraform.yml
-              params:
-                <<: *github_pull_creds
-                <<: *sml_dev_setup
-                TERRAFORM_SOURCE: repo/terraform
-                WORKSPACE_KEY_INFIX: workspace
-            - task: build-files
-              file: repo/ci/tasks/build_files.yml
-          - task: deploy_code
-            file: repo/ci/tasks/deploy.yml
+            context: Running_Terraform_&_Building_Files
+        - in_parallel:
+          - task: terraform-apply-environment
+            file: repo/ci/tasks/apply_terraform.yml
             params:
               <<: *github_pull_creds
               <<: *sml_dev_setup
-          - task: run-acceptance-tests
-            file: repo/ci/tasks/run_bdd_tests.yml
-
+              TERRAFORM_SOURCE: repo/terraform
+              WORKSPACE_KEY_INFIX: workspace
+          - task: build-files
+            file: repo/ci/tasks/build_files.yml
+          on_success:
+            resource: pr-open
+            params:
+              path: repo
+              status: success
+              context: Running_Terraform_&_Building_Files
+          on_failure:
+            put: repo
+            resource: pr-open
+            params:
+              path: repo
+              status: success
+              context: Running_Terraform_&_Building_Files
+  - name: deploy
+    plan:
+    - do:
+      - get: repo
+        resource: pr-open
+        trigger: true
+        version: every
+        passed: [apply_terraform_&_build_files]
+      - put: repo
+        resource: pr-open
+        params:
+          path: repo
+          status: pending
+          context: Deploying_Build
+      - task: deploy_code
+        file: repo/ci/tasks/deploy.yml
+        params:
+          <<: *github_pull_creds
+          <<: *sml_dev_setup
     on_success:
       put: repo
       resource: pr-open
       params:
         path: repo
         status: success
-        context: behave-tests
+        context: Deploying_Build
     on_failure:
       put: repo
       resource: pr-open
       params:
         path: repo
         status: success
-        context: behave-tests
+        context: Deploying_Build
+  - name: run_acceptance
+    plan:
+    - do:
+      - get: repo
+        resource: pr-open
+        trigger: true
+        version: every
+        passed: [deploy]
+      - put: repo
+        resource: pr-open
+        params:
+          path: repo
+          status: pending
+          context: Running_Acceptance_Tests
+      - task: run-acceptance-tests
+        file: repo/ci/tasks/run_bdd_tests.yml
+    on_success:
+      put: repo
+      resource: pr-open
+      params:
+        path: repo
+        status: success
+        context: Running_Acceptance_Tests
+    on_failure:
+      put: repo
+      resource: pr-open
+      params:
+        path: repo
+        status: success
+        context: Running_Acceptance_Tests
