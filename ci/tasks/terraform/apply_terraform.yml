@@ -19,4 +19,4 @@ run:
     - -exc
     - |
       apk add --update --no-progress bash jq
-      bash ./ci/tasks/apply_terraform.sh
+      bash ./ci/tasks/terraform/apply_terraform.sh

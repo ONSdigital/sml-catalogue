@@ -93,7 +93,7 @@ resources:
   - name: pr-open
     type: pull-request
     icon: github
-    check_every: never
+    check_every: 1m
     webhook_token: gesture
     source:
       repository: ONSdigital/sml-catalogue
@@ -129,21 +129,25 @@ jobs:
               context: Deploying_Dev
           - in_parallel:
               - task: terraform-apply-environment
-                file: repo/ci/tasks/apply_terraform.yml
+                file: repo/ci/tasks/terraform/apply_terraform.yml
                 params:
                   <<: *github_pull_creds
                   <<: *sml_dev_setup
                   TERRAFORM_SOURCE: repo/terraform
                   WORKSPACE_KEY_INFIX: workspace
+
               - task: build-files
-                file: repo/ci/tasks/build_files.yml
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+
           - task: deploy_code
-            file: repo/ci/tasks/deploy.yml
+            file: repo/ci/tasks/build_and_deploy/deploy.yml
             params:
               <<: *github_pull_creds
               <<: *sml_dev_setup
+
           - task: run-acceptance-tests
-            file: repo/ci/tasks/run_bdd_tests.yml
+            file: repo/ci/tasks/testing/run_bdd_tests.yml
+
     on_success:
       put: repo
       resource: pr-open
@@ -151,6 +155,7 @@ jobs:
         path: repo
         status: success
         context: Deploying_Dev
+
     on_failure:
       put: repo
       resource: pr-open
@@ -168,21 +173,24 @@ jobs:
             version: every
           - in_parallel:
               - task: terraform-apply-environment
-                file: repo/ci/tasks/apply_terraform.yml
+                file: repo/ci/tasks/terraform/apply_terraform.yml
                 params:
                   <<: *github_pull_creds
                   <<: *sml_dev_setup
                   TERRAFORM_SOURCE: repo/terraform
                   WORKSPACE_KEY_INFIX: workspace
+
               - task: build-files
-                file: repo/ci/tasks/build_files.yml
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+
           - task: deploy_code
-            file: repo/ci/tasks/deploy.yml
+            file: repo/ci/tasks/build_and_deploy/deploy.yml
             params:
               <<: *github_pull_creds
               <<: *sml_dev_setup
+
           - task: run-acceptance-tests
-            file: repo/ci/tasks/run_bdd_tests.yml
+            file: repo/ci/tasks/testing/run_bdd_tests.yml
   - name: build_and_deploy_preprod
     plan:
       - do:
@@ -190,21 +198,24 @@ jobs:
           resource: main
         - in_parallel:
           - task: terraform-apply-environment
-            file: repo/ci/tasks/apply_terraform.yml
+            file: repo/ci/tasks/terraform/apply_terraform.yml
             params:
               <<: *github_pull_creds
               <<: *sml_preprod_setup
               TERRAFORM_SOURCE: repo/terraform
               WORKSPACE_KEY_INFIX: workspace
+
           - task: build-files
-            file: repo/ci/tasks/build_files.yml
+            file: repo/ci/tasks/build_and_deploy/build_files.yml
+
         - task: deploy_code
-          file: repo/ci/tasks/deploy.yml
+          file: repo/ci/tasks/build_and_deploy/deploy.yml
           params:
             <<: *github_pull_creds
             <<: *sml_preprod_setup
+
         - task: run-acceptance-tests
-          file: repo/ci/tasks/run_bdd_tests.yml
+          file: repo/ci/tasks/testing/run_bdd_tests.yml
 
   - name: build_and_deploy_prod
     plan:
@@ -213,21 +224,24 @@ jobs:
             resource: main
           - in_parallel:
               - task: terraform-apply-environment
-                file: repo/ci/tasks/apply_terraform.yml
+                file: repo/ci/tasks/terraform/apply_terraform.yml
                 params:
                   <<: *github_pull_creds
                   <<: *sml_prod_setup
                   TERRAFORM_SOURCE: repo/terraform
                   WORKSPACE_KEY_INFIX: workspace
+
               - task: build-files
-                file: repo/ci/tasks/build_files.yml
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+
           - task: deploy_code
-            file: repo/ci/tasks/deploy.yml
+            file: repo/ci/tasks/build_and_deploy/deploy.yml
             params:
               <<: *github_pull_creds
               <<: *sml_prod_setup
+
           - task: run-acceptance-tests
-            file: repo/ci/tasks/run_bdd_tests.yml
+            file: repo/ci/tasks/testing/run_bdd_tests.yml
 
   - name: destroy_workspace
     serial: true
@@ -238,9 +252,9 @@ jobs:
             trigger: true
             version: every
           - task: init-metadata
-            file: repo/ci/tasks/init_metadata.yml
+            file: repo/ci/tasks/terraform/init_metadata.yml
           - task: terraform
-            file: repo/ci/tasks/destroy_terraform.yml
+            file: repo/ci/tasks/terraform/destroy_terraform.yml
             params:
               <<: *sml_dev_setup
 
