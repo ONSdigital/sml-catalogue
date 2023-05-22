@@ -235,8 +235,8 @@ jobs:
             trigger: true
             version: every
           - task: init-metadata
-            file: repo/ci/tasks/init-metadata.yml
+            file: repo/ci/tasks/init_metadata.yml
           - task: terraform
-            file: repo/ci/tasks/destroy/terraform.yml
+            file: repo/ci/tasks/destroy_terraform.yml
             params:
               <<: *sml_dev_setup
