@@ -110,7 +110,7 @@ resources:
       states: ["CLOSED", "MERGED"]
 
 jobs:
-  - name: Build_and_Deploy_Dev_Branch
+  - name: build_and_deploy_dev_branch
     plan:
       - do:
         - get: repo
@@ -155,7 +155,7 @@ jobs:
         status: success
         context: Deploying_Dev
 
-  - name: Build_and_Deploy_Dev
+  - name: build_and_deploy_dev
     plan:
       - do:
         - get: repo
@@ -180,7 +180,7 @@ jobs:
         - task: run-acceptance-tests
           file: repo/ci/tasks/run_bdd_tests.yml
 
-  - name: Build_and_Deploy_PreProd
+  - name: build_and_deploy_preprod
     plan:
       - do:
         - get: repo
@@ -203,7 +203,7 @@ jobs:
         - task: run-acceptance-tests
           file: repo/ci/tasks/run_bdd_tests.yml
 
-  - name: Build_and_Deploy_Prod
+  - name: build_and_deploy_prod
     plan:
       - do:
           - get: repo
@@ -226,7 +226,7 @@ jobs:
           - task: run-acceptance-tests
             file: repo/ci/tasks/run_bdd_tests.yml
 
-  - name: Destroy_Workspace
+  - name: destroy_workspace
     serial: true
     plan:
       - do:
