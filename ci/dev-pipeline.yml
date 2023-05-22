@@ -35,8 +35,8 @@ env_setups:
   sml_dev: &sml_dev_setup
     <<: *general_dev_params
     ACCOUNT_NAME: &account sml_dev
-    AWS_ACCOUNT_ID: ((aws_account_uat))
-    AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_uat)):role/spp-concourse-sml-deployment-dev
+    AWS_ACCOUNT_ID: ((aws_account_sml_dev))
+    AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_dev)):role/spp-concourse-sml-deployment-dev
     TF_VAR_deployment_role: *role
     TF_VAR_environment: dev
     TF_VAR_account: *account
@@ -44,8 +44,8 @@ env_setups:
   sml_preprod: &sml_preprod_setup
     <<: *general_preprod_params
     ACCOUNT_NAME: &account sml_preprod
-    AWS_ACCOUNT_ID: ((sml_account_preprod))
-    AWS_SERVICE_ROLE: &role arn:aws:iam::((sml_account_preprod)):role/spp-concourse-sml-deployment-preprod
+    AWS_ACCOUNT_ID: ((aws_account_sml_preprod))
+    AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_preprod)):role/spp-concourse-sml-deployment-preprod
     TF_VAR_deployment_role: *role
     TF_VAR_environment: preprod
     TF_VAR_account: *account
@@ -53,8 +53,8 @@ env_setups:
   sml_prod: &sml_prod_setup
     <<: *general_prod_params
     ACCOUNT_NAME: &account sml_prod
-    AWS_ACCOUNT_ID: ((sml_account_prod))
-    AWS_SERVICE_ROLE: &role arn:aws:iam::((sml_account_prod)):role/spp-concourse-sml-deployment-prod
+    AWS_ACCOUNT_ID: ((aws_account_sml_prod))
+    AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_prod)):role/spp-concourse-sml-deployment-prod
     TF_VAR_deployment_role: *role
     TF_VAR_environment: prod
 
