@@ -3,8 +3,6 @@
 env_setups:
   general: &general_params
     AWS_DEFAULT_REGION: eu-west-2
-    S3_ACCOUNT_STATE_KEY: ons-smlportal-dev.account.tfstate
-    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-dev.environment.tfstate
     S3_NAME: statistical-methods-library-tf-state
     S3_KEY: sml-portal.tfstate
     CONCOURSE_ACCESS_TOKEN: ((github_access_token))
@@ -12,6 +10,20 @@ env_setups:
 
   general_dev: &general_dev_params
     TF_VAR_deployment_type: dev
+    S3_ACCOUNT_STATE_KEY: ons-smlportal-dev.account.tfstate
+    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-dev.environment.tfstate
+    <<: *general_params
+
+  general_preprod: &general_preprod_params
+    S3_ACCOUNT_STATE_KEY: ons-smlportal-preprod.account.tfstate
+    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-preprod.environment.tfstate
+    TF_VAR_deployment_type: preprod
+    <<: *general_params
+
+  general_prod: &general_prod_params
+    S3_ACCOUNT_STATE_KEY: ons-smlportal-prod.account.tfstate
+    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-prod.environment.tfstate
+    TF_VAR_deployment_type: prod
     <<: *general_params
 
   github_pull_creds: &github_pull_creds
@@ -23,11 +35,28 @@ env_setups:
   sml_dev: &sml_dev_setup
     <<: *general_dev_params
     ACCOUNT_NAME: &account sml_dev
-    AWS_ACCOUNT_ID: 115311790871
-    AWS_SERVICE_ROLE: &role arn:aws:iam::115311790871:role/spp-concourse-sml-deployment-dev
+    AWS_ACCOUNT_ID: ((aws_account_uat))
+    AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_uat)):role/spp-concourse-sml-deployment-dev
     TF_VAR_deployment_role: *role
     TF_VAR_environment: dev
     TF_VAR_account: *account
+
+  sml_preprod: &sml_preprod_setup
+    <<: *general_preprod_params
+    ACCOUNT_NAME: &account sml_preprod
+    AWS_ACCOUNT_ID: ((sml_account_preprod))
+    AWS_SERVICE_ROLE: &role arn:aws:iam::((sml_account_preprod)):role/spp-concourse-sml-deployment-preprod
+    TF_VAR_deployment_role: *role
+    TF_VAR_environment: preprod
+    TF_VAR_account: *account
+
+  sml_prod: &sml_prod_setup
+    <<: *general_prod_params
+    ACCOUNT_NAME: &account sml_prod
+    AWS_ACCOUNT_ID: ((sml_account_prod))
+    AWS_SERVICE_ROLE: &role arn:aws:iam::((sml_account_prod)):role/spp-concourse-sml-deployment-prod
+    TF_VAR_deployment_role: *role
+    TF_VAR_environment: prod
 
 
 resource_types:
@@ -37,6 +66,26 @@ resource_types:
       repository: teliaoss/github-pr-resource
 
 resources:
+  - name: main
+    type: git
+    icon: github
+    check_every: never
+    webhook_token: gesture
+    source:
+      uri: https://github.com/ONSdigital/sml-catalogue.git
+      branch: main
+      username: ((github_access_token))
+      password: x-oauth-basic
+  - name: main-updated
+    type: git
+    icon: github
+    check_every: never
+    webhook_token: gesture
+    source:
+      uri: https://github.com/ONSdigital/sml-catalogue.git
+      branch: main
+      username: ((github_access_token))
+      password: x-oauth-basic
   - name: pr-open
     type: pull-request
     icon: github
@@ -48,20 +97,20 @@ resources:
       base_branch: main
       disable_forks: true
       states: ["OPEN"]
-  #- name: pr-done
-  #  type: pull-request
-  #  icon: github
-  #  check_every: never
-  #  webhook_token: gesture
-  #  source:
-  #    repository: ONSdigital/sml-catalogue
-  #    access_token: ((github_access_token))
-  #    base_branch: main
-  #    disable_forks: true
-  #    states: ["CLOSED", "MERGED"]
+  - name: pr-done
+    type: pull-request
+    icon: github
+    check_every: never
+    webhook_token: gesture
+    source:
+      repository: ONSdigital/sml-catalogue
+      access_token: ((github_access_token))
+      base_branch: main
+      disable_forks: true
+      states: ["CLOSED", "MERGED"]
 
 jobs:
-  - name: apply_terraform_and_build_files
+  - name: Build_and_Deploy_Dev_Branch
     plan:
       - do:
         - get: repo
@@ -105,3 +154,89 @@ jobs:
         path: repo
         status: success
         context: Deploying_Dev
+
+  - name: Build_and_Deploy_Dev
+    plan:
+      - do:
+        - get: repo
+          resource: main-updated
+          trigger: true
+          version: every
+        - in_parallel:
+          - task: terraform-apply-environment
+            file: repo/ci/tasks/apply_terraform.yml
+            params:
+              <<: *github_pull_creds
+              <<: *sml_dev_setup
+              TERRAFORM_SOURCE: repo/terraform
+              WORKSPACE_KEY_INFIX: workspace
+          - task: build-files
+            file: repo/ci/tasks/build_files.yml
+        - task: deploy_code
+          file: repo/ci/tasks/deploy.yml
+          params:
+            <<: *github_pull_creds
+            <<: *sml_dev_setup
+        - task: run-acceptance-tests
+          file: repo/ci/tasks/run_bdd_tests.yml
+
+  - name: Build_and_Deploy_PreProd
+    plan:
+      - do:
+        - get: repo
+          resource: main
+        - in_parallel:
+          - task: terraform-apply-environment
+            file: repo/ci/tasks/apply_terraform.yml
+            params:
+              <<: *github_pull_creds
+              <<: *sml_preprod_setup
+              TERRAFORM_SOURCE: repo/terraform
+              WORKSPACE_KEY_INFIX: workspace
+          - task: build-files
+            file: repo/ci/tasks/build_files.yml
+        - task: deploy_code
+          file: repo/ci/tasks/deploy.yml
+          params:
+            <<: *github_pull_creds
+            <<: *sml_preprod_setup
+        - task: run-acceptance-tests
+          file: repo/ci/tasks/run_bdd_tests.yml
+
+  - name: Build_and_Deploy_Prod
+    plan:
+      - do:
+          - get: repo
+            resource: main
+          - in_parallel:
+              - task: terraform-apply-environment
+                file: repo/ci/tasks/apply_terraform.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_prod_setup
+                  TERRAFORM_SOURCE: repo/terraform
+                  WORKSPACE_KEY_INFIX: workspace
+              - task: build-files
+                file: repo/ci/tasks/build_files.yml
+          - task: deploy_code
+            file: repo/ci/tasks/deploy.yml
+            params:
+              <<: *github_pull_creds
+              <<: *sml_prod_setup
+          - task: run-acceptance-tests
+            file: repo/ci/tasks/run_bdd_tests.yml
+
+  - name: Destroy_Workspace
+    serial: true
+    plan:
+      - do:
+          - get: repo
+            resource: pr-done
+            trigger: true
+            version: every
+          - task: init-metadata
+            file: repo/ci/tasks/init-metadata.yml
+          - task: terraform
+            file: repo/ci/tasks/destroy/terraform.yml
+            params:
+              <<: *sml_dev_setup
