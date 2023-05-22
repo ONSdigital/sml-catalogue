@@ -142,7 +142,7 @@ jobs:
             <<: *sml_dev_setup
 
         - task: run-acceptance-tests
-          file: repo/ci/tasks/testing/un_bdd_tests.yml
+          file: repo/ci/tasks/testing/run_bdd_tests.yml
 
     on_success:
       put: repo
