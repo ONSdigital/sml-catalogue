@@ -1,6 +1,6 @@
 provider "aws" {
-  alias  = "eu-west-1"
-  region = "eu-west-1"
+  alias  = "eu-west-2"
+  region = "eu-west-2"
   assume_role {
     role_arn = var.deployment_role
   }
