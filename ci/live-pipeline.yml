@@ -155,6 +155,7 @@ jobs:
         path: repo
         status: success
         context: Deploying_Dev
+        comment_file: GITHUB_OUTPUT/output.txt
 
     on_failure:
       put: repo
@@ -163,6 +164,7 @@ jobs:
         path: repo
         status: success
         context: Deploying_Dev
+        comment_file: GITHUB_OUTPUT/output.txt
 
   - name: build_and_deploy_dev
     plan:
@@ -251,10 +253,30 @@ jobs:
             resource: pr-done
             trigger: true
             version: every
+          - put: repo
+            resource: pr-done
+            params:
+               path: repo
+               status: pending
+               context: Deleting Workspace
           - task: init-metadata
             file: repo/ci/tasks/terraform/init_metadata.yml
           - task: terraform
             file: repo/ci/tasks/terraform/destroy_terraform.yml
             params:
               <<: *sml_dev_setup
+    on_success:
+      put: repo
+      resource: pr-done
+      params:
+        path: repo
+        status: success
+        context: Deleting Workspace
 
+    on_failure:
+      put: repo
+      resource: pr-done
+      params:
+        path: repo
+        status: success
+        context: Deleting Workspace
