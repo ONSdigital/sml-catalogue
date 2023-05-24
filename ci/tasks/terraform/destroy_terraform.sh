@@ -29,7 +29,7 @@ terraform init \
 
 # --------------------------
 
-export TF_WORKSPACE=$(cat ~/repo/.workspace)
+export TF_WORKSPACE=`cat ../.git/resource/head_name | tr "[:upper:]" "[:lower:]"`
 echo "Workspace: ${TF_WORKSPACE}"
 
 # --------------------------
