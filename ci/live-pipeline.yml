@@ -7,26 +7,22 @@
 env_setups:
   general: &general_params
     AWS_DEFAULT_REGION: eu-west-2
-    S3_NAME: statistical-methods-library-tf-state
     S3_KEY: sml-portal.tfstate
     CONCOURSE_ACCESS_TOKEN: ((github_access_token))
     SHARED_ACCOUNT_ROLE: &shared_account_role arn:aws:iam::289259348294:role/spp-concourse-access-prod
 
   general_dev: &general_dev_params
     TF_VAR_deployment_type: dev
-    S3_ACCOUNT_STATE_KEY: ons-smlportal-dev.account.tfstate
-    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-dev.environment.tfstate
+    S3_NAME: statistical-methods-library-tf-state
     <<: *general_params
 
   general_preprod: &general_preprod_params
-    S3_ACCOUNT_STATE_KEY: ons-smlportal-preprod.account.tfstate
-    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-preprod.environment.tfstate
+    S3_NAME: statistical-methods-library-tf-state-preprod
     TF_VAR_deployment_type: preprod
     <<: *general_params
 
   general_prod: &general_prod_params
-    S3_ACCOUNT_STATE_KEY: ons-smlportal-prod.account.tfstate
-    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-prod.environment.tfstate
+    S3_NAME: statistical-methods-library-tf-state-prod
     TF_VAR_deployment_type: prod
     <<: *general_params
 
