@@ -6,7 +6,7 @@ set -euo pipefail
 
 : ${TF_VAR_environment}
 : ${AWS_SERVICE_ROLE}
-if [ -z ${workspace_name+x} ]; then export workspace_name=`cat ../.git/resource/head_name | tr "[:upper:]" "[:lower:]"`; else echo "Workspace already set"; fi
+if [ -z ${workspace_name+x} ]; then export workspace_name=`cat ./.git/resource/head_name | tr "[:upper:]" "[:lower:]"`; else echo "Workspace already set"; fi
 echo Workspace: ${workspace_name}
 aws sts assume-role --output text \
   --role-arn "${AWS_SERVICE_ROLE}" \
