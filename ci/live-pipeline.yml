@@ -270,6 +270,7 @@ jobs:
             file: repo/ci/tasks/terraform/destroy_terraform.yml
             params:
               <<: *sml_dev_setup
+              WORKSPACE_KEY_INFIX: workspace
     on_success:
       put: repo
       resource: pr-done
