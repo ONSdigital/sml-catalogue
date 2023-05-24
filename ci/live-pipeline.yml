@@ -191,6 +191,7 @@ jobs:
             params:
               <<: *github_pull_creds
               <<: *sml_dev_setup
+              workspace_name: main
 
           - task: run-acceptance-tests
             file: repo/ci/tasks/testing/run_bdd_tests.yml
@@ -218,6 +219,7 @@ jobs:
           params:
             <<: *github_pull_creds
             <<: *sml_preprod_setup
+            workspace_name: main
 
         - task: run-acceptance-tests
           file: repo/ci/tasks/testing/run_bdd_tests.yml
@@ -245,6 +247,7 @@ jobs:
             params:
               <<: *github_pull_creds
               <<: *sml_prod_setup
+              workspace_name: main
 
           - task: run-acceptance-tests
             file: repo/ci/tasks/testing/run_bdd_tests.yml
