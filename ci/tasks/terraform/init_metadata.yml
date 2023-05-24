@@ -19,9 +19,8 @@ outputs:
 
 run:
   path: sh
-  dir: repo
   args:
     - -exc
     - |
       apk add --update --no-progress bash jq
-      bash ./ci/tasks/terraform/init_metadata.sh
+      bash ./repo/ci/tasks/terraform/init_metadata.sh
