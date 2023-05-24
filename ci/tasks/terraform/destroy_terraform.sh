@@ -35,6 +35,3 @@ echo "Workspace: ${TF_WORKSPACE}"
 # --------------------------
 
 terraform destroy -auto-approve
-
-export TF_WORKSPACE=""
-terraform workspace delete "$(cat ../../.workspace)" || ( echo "ERROR: Could not delete workspace!" && exit 1)
