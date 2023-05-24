@@ -1,0 +1,21 @@
+#
+# Extracts some of the interesting Pull Request metadata out of the JSON into individual files, making it easier to consume.
+#
+
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: public.ecr.aws/docker/library/alpine
+    tag: latest
+
+inputs:
+  - name: repo
+
+outputs:
+  - name: repo
+
+run:
+  path: repo/ci/tasks/terraform/init_metadata.sh

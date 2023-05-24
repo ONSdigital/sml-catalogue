@@ -1,5 +1,70 @@
 # This is the pipeline to run the BDD tests on prod, pre-prod and dev.
 # The triggers are daily for now, a ticket has been written to address push to branch triggers.
+env_setups:
+  general: &general_params
+    AWS_DEFAULT_REGION: eu-west-2
+    S3_NAME: statistical-methods-library-tf-state
+    S3_KEY: sml-portal.tfstate
+    CONCOURSE_ACCESS_TOKEN: ((github_access_token))
+    SHARED_ACCOUNT_ROLE: &shared_account_role arn:aws:iam::289259348294:role/spp-concourse-access-prod
+
+  general_dev: &general_dev_params
+    TF_VAR_deployment_type: dev
+    S3_ACCOUNT_STATE_KEY: ons-smlportal-dev.account.tfstate
+    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-dev.environment.tfstate
+    <<: *general_params
+
+  general_preprod: &general_preprod_params
+    S3_ACCOUNT_STATE_KEY: ons-smlportal-preprod.account.tfstate
+    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-preprod.environment.tfstate
+    TF_VAR_deployment_type: preprod
+    <<: *general_params
+
+  general_prod: &general_prod_params
+    S3_ACCOUNT_STATE_KEY: ons-smlportal-prod.account.tfstate
+    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-prod.environment.tfstate
+    TF_VAR_deployment_type: prod
+    <<: *general_params
+
+  github_pull_creds: &github_pull_creds
+    username: ((github_access_token))
+    password: x-oauth-basic
+
+  # -------------------
+
+  sml_dev: &sml_dev_setup
+    <<: *general_dev_params
+    ACCOUNT_NAME: &account sml_dev
+    AWS_ACCOUNT_ID: ((aws_account_sml_dev))
+    AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_dev)):role/spp-concourse-sml-deployment-dev
+    TF_VAR_deployment_role: *role
+    TF_VAR_environment: dev
+    TF_VAR_account: *account
+
+  sml_preprod: &sml_preprod_setup
+    <<: *general_preprod_params
+    ACCOUNT_NAME: &account sml_preprod
+    AWS_ACCOUNT_ID: ((aws_account_sml_preprod))
+    AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_preprod)):role/spp-concourse-sml-deployment-preprod
+    TF_VAR_deployment_role: *role
+    TF_VAR_environment: preprod
+    TF_VAR_account: *account
+
+  sml_prod: &sml_prod_setup
+    <<: *general_prod_params
+    ACCOUNT_NAME: &account sml_prod
+    AWS_ACCOUNT_ID: ((aws_account_sml_prod))
+    AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_prod)):role/spp-concourse-sml-deployment-prod
+    TF_VAR_deployment_role: *role
+    TF_VAR_environment: prod
+
+
+resource_types:
+  - name: pull-request
+    type: docker-image
+    source:
+      repository: teliaoss/github-pr-resource
+
 resources:
   - name: main
     type: git
@@ -11,46 +76,205 @@ resources:
       branch: main
       username: ((github_access_token))
       password: x-oauth-basic
-  - name: bdd-test-timer
-    type: time
+  - name: main-updated
+    type: git
+    icon: github
+    check_every: never
+    webhook_token: gesture
     source:
-      # Triggers the tests once per day, just after 7:30am.
-      start: 7:30
-      stop: 7:45
-      location: Europe/London
-      days: [Monday, Tuesday, Wednesday, Thursday, Friday]
+      uri: https://github.com/ONSdigital/sml-catalogue.git
+      branch: main
+      username: ((github_access_token))
+      password: x-oauth-basic
+  - name: pr-open
+    type: pull-request
+    icon: github
+    check_every: never
+    webhook_token: gesture
+    source:
+      repository: ONSdigital/sml-catalogue
+      access_token: ((github_access_token))
+      base_branch: main
+      disable_forks: true
+      states: ["OPEN"]
+  - name: pr-done
+    type: pull-request
+    icon: github
+    check_every: never
+    webhook_token: gesture
+    source:
+      repository: ONSdigital/sml-catalogue
+      access_token: ((github_access_token))
+      base_branch: main
+      disable_forks: true
+      states: ["CLOSED", "MERGED"]
 
 jobs:
-  - name: dev-bdd-tests
+  - name: build_and_deploy_dev_branch
     plan:
-      - get: bdd-test-timer
-        trigger: true
-      - get: main
-      - task: run-acceptance-tests
-        config:
-          platform: linux
-          image_resource:
-            type: registry-image
-            source:
-              repository: public.ecr.aws/ons-spp/python-selenium
-              tag: 4
+      - do:
+        - get: repo
+          resource: pr-open
+          trigger: true
+          version: every
+        - put: repo
+          resource: pr-open
           params:
-            {ENDPOINT: 'https://d1jgbw8ee9pybj.cloudfront.net/'}
-          inputs:
-            - name: main
-          run:
-            path: sh
-            dir: main
-            args:
-            - -exc
-            - |
-              pip install pipenv
-              pipenv install --dev
-              date=$(date '+%Y_%m_%d')
-              echo $date
-              mkdir -p ./features/test_reports/dev/$date
-              pipenv run behave -D host=$ENDPOINT --junit --junit-directory ./features/test_reports/dev/$date
-              cd ./features/test_reports/dev/$date
-              ls
-              cat TESTS-about.xml TESTS-accessibility.xml TESTS-cookies.xml TESTS-footer.xml TESTS-glossary.xml TESTS-header.xml TESTS-help_center.xml TESTS-method_summary.xml TESTS-methods.xml > test_report.xml
-              cat test_report.xml
+            path: repo
+            status: pending
+            context: Deploying_Dev
+        - in_parallel:
+          - task: terraform-apply-environment
+            file: repo/ci/tasks/terraform/apply_terraform.yml
+            params:
+              <<: *github_pull_creds
+              <<: *sml_dev_setup
+              TERRAFORM_SOURCE: repo/terraform
+              WORKSPACE_KEY_INFIX: workspace
+
+          - task: build-files
+            file: repo/ci/tasks/build_and_deploy/build_files.yml
+
+        - task: deploy_code
+          file: repo/ci/tasks/build_and_deploy/deploy.yml
+          params:
+            <<: *github_pull_creds
+            <<: *sml_dev_setup
+
+        - task: run-acceptance-tests
+          file: repo/ci/tasks/testing/run_bdd_tests.yml
+
+    on_success:
+      put: repo
+      resource: pr-open
+      params:
+        path: repo
+        status: success
+        context: Deploying_Dev
+        comment_file: GITHUB_OUTPUT/output.txt
+
+    on_failure:
+      put: repo
+      resource: pr-open
+      params:
+        path: repo
+        status: success
+        context: Deploying_Dev
+        comment_file: GITHUB_OUTPUT/output.txt
+
+  - name: build_and_deploy_dev
+    plan:
+      - do:
+        - get: repo
+          resource: main-updated
+          trigger: true
+          version: every
+        - in_parallel:
+          - task: terraform-apply-environment
+            file: repo/ci/tasks/terraform/apply_terraform.yml
+            params:
+              <<: *github_pull_creds
+              <<: *sml_dev_setup
+              TERRAFORM_SOURCE: repo/terraform
+              WORKSPACE_KEY_INFIX: workspace
+
+          - task: build-files
+            file: repo/ci/tasks/build_and_deploy/build_files.yml
+
+        - task: deploy_code
+          file: repo/ci/tasks/build_and_deploy/deploy.yml
+          params:
+            <<: *github_pull_creds
+            <<: *sml_dev_setup
+
+        - task: run-acceptance-tests
+          file: repo/ci/tasks/testing/run_bdd_tests.yml
+
+  - name: build_and_deploy_preprod
+    plan:
+      - do:
+        - get: repo
+          resource: main
+        - in_parallel:
+          - task: terraform-apply-environment
+            file: repo/ci/tasks/terraform/apply_terraform.yml
+            params:
+              <<: *github_pull_creds
+              <<: *sml_preprod_setup
+              TERRAFORM_SOURCE: repo/terraform
+              WORKSPACE_KEY_INFIX: workspace
+
+          - task: build-files
+            file: repo/ci/tasks/build_and_deploy/build_files.yml
+
+        - task: deploy_code
+          file: repo/ci/tasks/build_and_deploy/deploy.yml
+          params:
+            <<: *github_pull_creds
+            <<: *sml_preprod_setup
+
+        - task: run-acceptance-tests
+          file: repo/ci/tasks/testing/run_bdd_tests.yml
+
+  - name: build_and_deploy_prod
+    plan:
+      - do:
+          - get: repo
+            resource: main
+          - in_parallel:
+              - task: terraform-apply-environment
+                file: repo/ci/tasks/terraform/apply_terraform.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_prod_setup
+                  TERRAFORM_SOURCE: repo/terraform
+                  WORKSPACE_KEY_INFIX: workspace
+
+              - task: build-files
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+
+          - task: deploy_code
+            file: repo/ci/tasks/build_and_deploy/deploy.yml
+            params:
+              <<: *github_pull_creds
+              <<: *sml_prod_setup
+
+          - task: run-acceptance-tests
+            file: repo/ci/tasks/testing/run_bdd_tests.yml
+
+  - name: destroy_workspace
+    serial: true
+    plan:
+      - do:
+          - get: repo
+            resource: pr-done
+            trigger: true
+            version: every
+          - put: repo
+            resource: pr-done
+            params:
+               path: repo
+               status: pending
+               context: Deleting Workspace
+          - task: init-metadata
+            file: repo/ci/tasks/terraform/init_metadata.yml
+          - task: terraform
+            file: repo/ci/tasks/terraform/destroy_terraform.yml
+            params:
+              <<: *sml_dev_setup
+
+    on_success:
+      put: repo
+      resource: pr-done
+      params:
+        path: repo
+        status: success
+        context: Deleting Workspace
+
+    on_failure:
+      put: repo
+      resource: pr-done
+      params:
+        path: repo
+        status: success
+        context: Deleting Workspace

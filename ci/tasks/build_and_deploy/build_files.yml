@@ -1,0 +1,21 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: public.ecr.aws/ons-spp/python-selenium
+    tag: 4
+
+inputs:
+  - name: repo
+outputs:
+  - name: repo
+
+run:
+  path: sh
+  dir: repo
+  args:
+    - -exc
+    - |
+      bash ./ci/tasks/build_and_deploy/build_files.sh

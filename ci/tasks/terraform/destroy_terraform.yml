@@ -1,0 +1,15 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: public.ecr.aws/ons-spp/terraform
+    tag: 1
+
+inputs:
+  - name: repo
+  - name: json-identities
+
+run:
+  path: repo/ci/tasks/terraform/destroy_terraform.sh

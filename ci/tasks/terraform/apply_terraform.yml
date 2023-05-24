@@ -1,0 +1,22 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: public.ecr.aws/ons-spp/terraform
+    tag: 1
+
+inputs:
+  - name: repo
+outputs:
+  - name: GITHUB_OUTPUT
+
+run:
+  path: sh
+  dir: repo
+  args:
+    - -exc
+    - |
+      apk add --update --no-progress bash jq
+      bash ./ci/tasks/terraform/apply_terraform.sh

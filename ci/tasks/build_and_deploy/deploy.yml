@@ -1,0 +1,21 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: public.ecr.aws/ons-spp/terraform
+    tag: 1
+
+inputs:
+  - name: repo
+
+run:
+  path: sh
+  dir: repo
+  args:
+    - -exc
+    - |
+      apk add --update --no-progress bash jq
+      apk add --no-cache --no-progress aws-cli
+      bash ./ci/tasks/build_and_deploy/deploy.sh
