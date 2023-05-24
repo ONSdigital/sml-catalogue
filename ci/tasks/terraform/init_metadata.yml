@@ -18,4 +18,9 @@ outputs:
   - name: repo
 
 run:
-  path: repo/ci/tasks/terraform/init_metadata.sh
+  path: sh
+  dir: repo
+  args:
+    - -exc
+    - | 
+      bash ./ci/tasks/terraform/init_metadata.sh

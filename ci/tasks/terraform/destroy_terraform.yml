@@ -12,4 +12,9 @@ inputs:
   - name: json-identities
 
 run:
-  path: repo/ci/tasks/terraform/destroy_terraform.sh
+  path: sh
+  dir: repo
+  args:
+    - -exc
+    - |
+      bash ./ci/tasks/terraform/destroy_terraform.sh
