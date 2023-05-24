@@ -9,7 +9,6 @@ image_resource:
 
 inputs:
   - name: repo
-  - name: json-identities
 
 run:
   path: sh
