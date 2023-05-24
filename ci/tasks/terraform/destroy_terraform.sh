@@ -19,7 +19,7 @@ export TF_VAR_head_sha_short=$(cat .git/resource/head_sha_short)
 
 # --------------------------
 
-cd terraform/environment
+cd terraform
 
 terraform init \
 -upgrade \
