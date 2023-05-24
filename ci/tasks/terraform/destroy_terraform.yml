@@ -9,7 +9,11 @@ image_resource:
 
 inputs:
   - name: repo
-  - name: json-identities
 
 run:
-  path: repo/ci/tasks/terraform/destroy_terraform.sh
+  path: sh
+  args:
+    - -exc
+    - |
+      apk add --update --no-progress bash jq
+      bash ./repo/ci/tasks/terraform/destroy_terraform.sh

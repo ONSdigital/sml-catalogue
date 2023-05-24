@@ -8,8 +8,8 @@ platform: linux
 image_resource:
   type: registry-image
   source:
-    repository: public.ecr.aws/docker/library/alpine
-    tag: latest
+    repository: public.ecr.aws/ons-spp/concourse-init-metadata
+    tag: 1
 
 inputs:
   - name: repo
@@ -18,4 +18,9 @@ outputs:
   - name: repo
 
 run:
-  path: repo/ci/tasks/terraform/init_metadata.sh
+  path: sh
+  args:
+    - -exc
+    - |
+      apk add --update --no-progress bash jq
+      bash ./repo/ci/tasks/terraform/init_metadata.sh

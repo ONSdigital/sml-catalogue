@@ -181,6 +181,7 @@ jobs:
                   <<: *sml_dev_setup
                   TERRAFORM_SOURCE: repo/terraform
                   WORKSPACE_KEY_INFIX: workspace
+                  TF_WORKSPACE: main
 
               - task: build-files
                 file: repo/ci/tasks/build_and_deploy/build_files.yml
@@ -193,6 +194,7 @@ jobs:
 
           - task: run-acceptance-tests
             file: repo/ci/tasks/testing/run_bdd_tests.yml
+
   - name: build_and_deploy_preprod
     plan:
       - do:
@@ -206,6 +208,7 @@ jobs:
               <<: *sml_preprod_setup
               TERRAFORM_SOURCE: repo/terraform
               WORKSPACE_KEY_INFIX: workspace
+              TF_WORKSPACE: main
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
@@ -232,6 +235,7 @@ jobs:
                   <<: *sml_prod_setup
                   TERRAFORM_SOURCE: repo/terraform
                   WORKSPACE_KEY_INFIX: workspace
+                  TF_WORKSPACE: main
 
               - task: build-files
                 file: repo/ci/tasks/build_and_deploy/build_files.yml
@@ -265,6 +269,7 @@ jobs:
             file: repo/ci/tasks/terraform/destroy_terraform.yml
             params:
               <<: *sml_dev_setup
+              WORKSPACE_KEY_INFIX: workspace
     on_success:
       put: repo
       resource: pr-done

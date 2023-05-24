@@ -19,7 +19,7 @@ export TF_VAR_head_sha_short=$(cat .git/resource/head_sha_short)
 
 # --------------------------
 
-cd terraform/environment
+cd terraform
 
 terraform init \
 -upgrade \
@@ -29,12 +29,9 @@ terraform init \
 
 # --------------------------
 
-export TF_WORKSPACE=$(cat ~/repo/.workspace)
+export TF_WORKSPACE=`cat ../.git/resource/head_name | tr "[:upper:]" "[:lower:]"`
 echo "Workspace: ${TF_WORKSPACE}"
 
 # --------------------------
 
 terraform destroy -auto-approve
-
-export TF_WORKSPACE=""
-terraform workspace delete "$(cat ../../.workspace)" || ( echo "ERROR: Could not delete workspace!" && exit 1)
