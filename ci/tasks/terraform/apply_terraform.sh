@@ -6,6 +6,7 @@ set -euo pipefail
 
 : ${TERRAFORM_SOURCE}
 : ${TF_VAR_environment}
+: ${TF_VAR_deployment_role}
 : ${WORKSPACE_KEY_INFIX}
 : ${AWS_DEFAULT_REGION}
 : ${S3_NAME}
@@ -23,7 +24,8 @@ terraform init \
     -upgrade \
     -backend-config "bucket=${S3_NAME}" \
     -backend-config "key=${S3_KEY}" \
-    -backend-config "workspace_key_prefix=${WORKSPACE_KEY_INFIX}"
+    -backend-config "workspace_key_prefix=${WORKSPACE_KEY_INFIX}" \
+    -backend-config "role_arn=${TF_VAR_deployment_role}"
 echo "starting terraform plan"
 if [ -z ${TF_WORKSPACE+x} ]; then export TF_WORKSPACE=`cat ../.git/resource/head_name | tr "[:upper:]" "[:lower:]"`; else echo "Workspace already set"; fi
 echo Workspace: ${TF_WORKSPACE}
