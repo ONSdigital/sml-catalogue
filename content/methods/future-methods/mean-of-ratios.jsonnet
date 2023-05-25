@@ -1,5 +1,5 @@
 {
-  title: 'Mean of Ratios',
+  title: 'Apple Counter',
   date: '2023-03-07',
   contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
