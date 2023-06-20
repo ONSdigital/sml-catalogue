@@ -6,10 +6,10 @@
 set -euo pipefail
 
 pip install --upgrade pip
-pip install pipenv
+pip install poetry
 python3 -m venv venv
 source venv/bin/activate
-pipenv sync --dev
+poetry install
 pip install wrapt
 pip install dill
 echo "Running Black"
