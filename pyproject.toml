@@ -15,7 +15,6 @@ pylint = "*"
 bandit = "*"
 axe-selenium-python = "*"
 
-
 [tool.poetry.dev-dependencies]
 black = "*"
 behave = "*"
