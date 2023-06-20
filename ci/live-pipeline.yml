@@ -103,6 +103,12 @@ resources:
       base_branch: main
       disable_forks: true
       states: ["OPEN"]
+      ignore_paths:
+        - CHANGELOG.MD
+        - freeze.py
+        - pyproject.toml
+        - poetry.lock
+        - build
   - name: pr-done
     type: pull-request
     icon: github
