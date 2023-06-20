@@ -10,8 +10,6 @@ pip install poetry
 python3 -m venv venv
 source venv/bin/activate
 poetry install
-pip install wrapt
-pip install dill
 echo "Running Black"
 black --check --diff sml_builder
 echo "Running pylint"
@@ -26,5 +24,6 @@ echo "Freezing flask"
 if [ "$IS_MAIN" -eq 0 ]; then
   python freeze.py
 else
+  git fetch
   semantic-release publish
 fi
