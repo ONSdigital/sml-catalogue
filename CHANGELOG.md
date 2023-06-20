@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v0.1.7 (2023-06-20)
+
+### Fix
+
+* Amending build command to zip created build for distribution ([`5aa0a50`](https://github.com/ONSdigital/sml-catalogue/commit/5aa0a50d221e4b54ef0b012eca072956e3b205e2))
+
 ## v0.1.6 (2023-06-20)
 
 ### Fix

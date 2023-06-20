@@ -1,7 +1,7 @@
 from flask_frozen import Freezer
 from sml_builder import app
 
-__version__ = "0.1.6"
+__version__ = "0.1.7"
 
 freezer = Freezer(app)
 
