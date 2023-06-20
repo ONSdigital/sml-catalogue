@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v0.1.3 (2023-06-20)
+
+### Fix
+
+* Amending token name ([`461ef82`](https://github.com/ONSdigital/sml-catalogue/commit/461ef824f0f42967a221e011ed957a0fcebbd885))
+
 ## v0.1.2 (2023-06-20)
 
 ### Fix
