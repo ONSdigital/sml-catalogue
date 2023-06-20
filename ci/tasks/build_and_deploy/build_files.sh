@@ -21,6 +21,7 @@ bandit -r sml_builder
 echo "Installing the ONS design system"
 ./get_design_system.sh
 echo "Freezing flask"
+
 if [ "$IS_MAIN" -eq 0 ]; then
   python freeze.py
 else
