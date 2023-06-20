@@ -86,12 +86,12 @@ resources:
       branch: main
       username: ((github_access_token))
       password: x-oauth-basic
-    ignore_paths:
-      - CHANGELOG.MD
-      - freeze.py
-      - pyproject.toml
-      - poetry.lock
-      - build
+      ignore_paths:
+        - CHANGELOG.MD
+        - freeze.py
+        - pyproject.toml
+        - poetry.lock
+        - build
   - name: pr-open
     type: pull-request
     icon: github
