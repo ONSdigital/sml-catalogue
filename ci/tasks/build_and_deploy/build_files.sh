@@ -26,5 +26,5 @@ echo "Freezing flask"
 if [ "$IS_MAIN" -eq 0 ]; then
   python freeze.py
 else
-  python semantic-release publish
+  semantic-release publish
 fi
