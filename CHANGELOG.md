@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v0.1.1 (2023-06-20)
+
+### Fix
+
+* Amendments to pipeline setup for semantic versioning ([`33ddddc`](https://github.com/ONSdigital/sml-catalogue/commit/33ddddc796267e90447e8f700d4d83ad11f2d04b))
+
 ## v0.1.0 (2023-06-20)
 
 ### Feature
