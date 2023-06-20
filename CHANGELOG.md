@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v0.1.6 (2023-06-20)
+
+### Fix
+
+* Amending dist path to build ([`67ad1b6`](https://github.com/ONSdigital/sml-catalogue/commit/67ad1b6015b7a91f1bab557c33851b3ebd0e9749))
+
 ## v0.1.5 (2023-06-20)
 
 ### Fix
