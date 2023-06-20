@@ -16,6 +16,7 @@ axe-selenium-python = "*"
 black = "*"
 behave = "*"
 selenium = "*"
+python-semantic-release = "*"
 
 [requires]
 python_version = "3.11"

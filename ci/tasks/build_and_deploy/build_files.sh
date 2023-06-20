@@ -1,6 +1,7 @@
- #!/bin/bash
+#!/bin/bash
 
 # Runs static code testing and builds files
+: "${IS_MAIN}"
 
 set -euo pipefail
 
@@ -22,4 +23,8 @@ bandit -r sml_builder
 echo "Installing the ONS design system"
 ./get_design_system.sh
 echo "Freezing flask"
-python freeze.py
+if [ "$IS_MAIN" -eq 0 ]; then
+  python freeze.py
+else
+  python-semantic-release publish
+fi
