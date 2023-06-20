@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v0.1.2 (2023-06-20)
+
+### Fix
+
+* Providing access to GitHub token to deploy.sh ([`b47bd23`](https://github.com/ONSdigital/sml-catalogue/commit/b47bd2315987e31903e269f142b07280e1d98437))
+
 ## v0.1.1 (2023-06-20)
 
 ### Fix
