@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v0.1.9-rc.3 (2023-06-20)
+
+### Fix
+
+* Amending ignore_paths ([`32f68a7`](https://github.com/ONSdigital/sml-catalogue/commit/32f68a73f10689ae95cf7af483e0e31390dae9a2))
+
 ## v0.1.9-rc.2 (2023-06-20)
 
 
