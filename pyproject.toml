@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sml-catalogue"
-version = "0.1.1"
+version = "0.1.2"
 description = "This repo contains the build environment and code to generate and upload the Statistical Methods Library (SML) Portal Web Application."
 authors = []
 readme = "README.md"
