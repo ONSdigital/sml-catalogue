@@ -26,5 +26,5 @@ if [ "$IS_MAIN" -eq 0 ]; then
   python freeze.py
 else
   git fetch
-  semantic-release publish
+  semantic-release publish --prerelease
 fi
