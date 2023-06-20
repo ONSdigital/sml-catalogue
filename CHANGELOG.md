@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v0.1.4 (2023-06-20)
+
+### Fix
+
+* Adding changes to live pipeline ([`f7a7526`](https://github.com/ONSdigital/sml-catalogue/commit/f7a75262777cf7ebab71bb10019256038ba4c1fb))
+
 ## v0.1.3 (2023-06-20)
 
 ### Fix
