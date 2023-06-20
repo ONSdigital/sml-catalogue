@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v0.2.0-rc.5 (2023-06-20)
+
+### Fix
+
+* Demo ([`79bdba7`](https://github.com/ONSdigital/sml-catalogue/commit/79bdba7b7d1de8770ecd02e1e666a618494b93c8))
+
 ## v0.2.0-rc.4 (2023-06-20)
 
 
