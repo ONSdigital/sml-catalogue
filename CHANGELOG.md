@@ -1,5 +1,12 @@
 <!--next-version-placeholder-->
 
+## v0.1.8 (2023-06-20)
+
+### Fix
+
+* Changing install tool ([`a49f34d`](https://github.com/ONSdigital/sml-catalogue/commit/a49f34dd49ff6dcb34c1ff0e530898e6a815243d))
+* Installing zip to build box ([`ed2adf8`](https://github.com/ONSdigital/sml-catalogue/commit/ed2adf81a3ee07ded21baf8da356eb267be982e1))
+
 ## v0.1.7 (2023-06-20)
 
 ### Fix
