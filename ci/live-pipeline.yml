@@ -104,7 +104,7 @@ resources:
       disable_forks: true
       states: ["OPEN"]
       ignore_paths:
-        - CHANGELOG.MD
+        - CHANGELOG.md
         - freeze.py
         - pyproject.toml
         - poetry.lock
