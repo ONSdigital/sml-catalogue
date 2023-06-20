@@ -1,5 +1,15 @@
 <!--next-version-placeholder-->
 
+## v0.1.9-rc.2 (2023-06-20)
+
+
+
+## v0.1.9-rc.1 (2023-06-20)
+
+### Fix
+
+* Adding prerelease tag and using prerelease in pipeline ([`d3739dd`](https://github.com/ONSdigital/sml-catalogue/commit/d3739ddb9eeaa3c37b0a6a7c1345c8fac7a2c755))
+
 ## v0.1.8 (2023-06-20)
 
 ### Fix
