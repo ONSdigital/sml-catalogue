@@ -33,3 +33,4 @@ version_variable = [
 branch = "SPP-9387-Release-Versioning"
 upload_to_pypi = false
 build_command = "python freeze.py"
+dist_path = "build/"
