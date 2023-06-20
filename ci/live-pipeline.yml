@@ -138,10 +138,10 @@ jobs:
                   TERRAFORM_SOURCE: repo/terraform
                   WORKSPACE_KEY_INFIX: workspace
 
-          - task: build-files
-            file: repo/ci/tasks/build_and_deploy/build_files.yml
-            params:
-              IS_MAIN: 1
+              - task: build-files
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+                params:
+                  IS_MAIN: 1
 
           - task: deploy_code
             file: repo/ci/tasks/build_and_deploy/deploy.yml
