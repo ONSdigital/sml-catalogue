@@ -81,6 +81,32 @@
             ]
         },
         {
+            "description": "Ensures <dl> elements are structured correctly",
+            "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/definition-list?application=axeAPI",
+            "id": "definition-list",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ]
+        },
+        {
+            "description": "Ensures <dt> and <dd> elements are contained by a <dl>",
+            "help": "<dt> and <dd> elements must be contained by a <dl>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/dlitem?application=axeAPI",
+            "id": "dlitem",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ]
+        },
+        {
             "description": "Ensures <iframe> and <frame> elements contain the axe-core script",
             "help": "Frames must be tested with axe-core",
             "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/frame-tested?application=axeAPI",
@@ -526,11 +552,83 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dl class=\"ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
+                    "html": "<nav class=\"ons-section-nav ons-section-nav--vertical\" id=\"section-menu\" aria-label=\"Section menu\">",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "dl"
+                        "#section-menu"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-attr",
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\" aria-current=\"location\">Access (and usage)</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "a[href=\"/help-centre/access/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-attr",
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<aside class=\"ons-related-content\" aria-label=\"Related content\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "aside"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-attr",
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"userful-resources\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "nav[aria-labelledby=\"userful-resources\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-attr",
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"explore-methods\">\n            \n\n        <ul class=\"ons-list ons-list--bare\">                <li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>\n</ul>\n\n          </nav>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "nav[aria-labelledby=\"explore-methods\"]"
                     ]
                 }
             ],
@@ -956,11 +1054,111 @@
                         }
                     ],
                     "any": [],
-                    "html": "<dl class=\"ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
+                    "html": "<nav class=\"ons-section-nav ons-section-nav--vertical\" id=\"section-menu\" aria-label=\"Section menu\">",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "dl"
+                        "#section-menu"
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "data": null,
+                            "id": "aria-valid-attr-value",
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "aria-errormessage",
+                            "impact": "critical",
+                            "message": "Uses a supported aria-errormessage technique",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "any": [],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\" aria-current=\"location\">Access (and usage)</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "a[href=\"/help-centre/access/index\"]"
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "data": null,
+                            "id": "aria-valid-attr-value",
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "aria-errormessage",
+                            "impact": "critical",
+                            "message": "Uses a supported aria-errormessage technique",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "any": [],
+                    "html": "<aside class=\"ons-related-content\" aria-label=\"Related content\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "aside"
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "data": null,
+                            "id": "aria-valid-attr-value",
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "aria-errormessage",
+                            "impact": "critical",
+                            "message": "Uses a supported aria-errormessage technique",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "any": [],
+                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"userful-resources\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "nav[aria-labelledby=\"userful-resources\"]"
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "data": null,
+                            "id": "aria-valid-attr-value",
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "aria-errormessage",
+                            "impact": "critical",
+                            "message": "Uses a supported aria-errormessage technique",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "any": [],
+                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"explore-methods\">\n            \n\n        <ul class=\"ons-list ons-list--bare\">                <li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>\n</ul>\n\n          </nav>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "nav[aria-labelledby=\"explore-methods\"]"
                     ]
                 },
                 {
@@ -1085,11 +1283,83 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dl class=\"ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
+                    "html": "<nav class=\"ons-section-nav ons-section-nav--vertical\" id=\"section-menu\" aria-label=\"Section menu\">",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "dl"
+                        "#section-menu"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-valid-attr",
+                            "impact": "critical",
+                            "message": "ARIA attribute name are valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\" aria-current=\"location\">Access (and usage)</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "a[href=\"/help-centre/access/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-valid-attr",
+                            "impact": "critical",
+                            "message": "ARIA attribute name are valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<aside class=\"ons-related-content\" aria-label=\"Related content\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "aside"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-valid-attr",
+                            "impact": "critical",
+                            "message": "ARIA attribute name are valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"userful-resources\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "nav[aria-labelledby=\"userful-resources\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-valid-attr",
+                            "impact": "critical",
+                            "message": "ARIA attribute name are valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"explore-methods\">\n            \n\n        <ul class=\"ons-list ons-list--bare\">                <li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>\n</ul>\n\n          </nav>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "nav[aria-labelledby=\"explore-methods\"]"
                     ]
                 },
                 {
@@ -1432,7 +1702,7 @@
                                 "expectedContrastRatio": "4.5:1",
                                 "fgColor": "#ffffff",
                                 "fontSize": "13.5pt",
-                                "fontWeight": "bold",
+                                "fontWeight": "normal",
                                 "missingData": null
                             },
                             "id": "color-contrast",
@@ -1458,7 +1728,7 @@
                                 "expectedContrastRatio": "4.5:1",
                                 "fgColor": "#ffffff",
                                 "fontSize": "13.5pt",
-                                "fontWeight": "normal",
+                                "fontWeight": "bold",
                                 "missingData": null
                             },
                             "id": "color-contrast",
@@ -1471,7 +1741,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        "a[href=\"/help-centre/index\"]"
+                        ".ons-navigation__link[href=\"/help-centre/index\"]"
                     ]
                 },
                 {
@@ -1497,7 +1767,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        "a[href$=\"about\"]"
+                        ".ons-navigation__link[href$=\"about\"]"
                     ]
                 },
                 {
@@ -1523,7 +1793,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        "a[href$=\"glossary\"]"
+                        ".ons-navigation__link[href$=\"glossary\"]"
                     ]
                 },
                 {
@@ -1545,7 +1815,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/help-centre/index\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1571,7 +1841,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                    "html": "<h1>Help centre</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1597,63 +1867,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2> Method summary </h2>",
+                    "html": "<h2>Access (and usage)</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h2:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<p>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "p:nth-child(3)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<p> The method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent.</p>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "p:nth-child(4)"
+                        ".ons-col-7\\@m > h2"
                     ]
                 },
                 {
@@ -1665,7 +1883,7 @@
                                 "contrastRatio": 15.9,
                                 "expectedContrastRatio": "3:1",
                                 "fgColor": "#222222",
-                                "fontSize": "19.5pt",
+                                "fontSize": "16.5pt",
                                 "fontWeight": "bold",
                                 "missingData": null
                             },
@@ -1675,11 +1893,37 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2> Contact details for this method </h2>",
+                    "html": "<h3>Find and view methods</h3>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h2:nth-child(5)"
+                        "h3"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p>You can find and view methods within the <a href=\"/methods\">methods catalogue</a></p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(4)"
                     ]
                 },
                 {
@@ -1701,37 +1945,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<span class=\"ons-external-link__text\">smlhelp@ons.gov.uk</span>",
+                    "html": "<a href=\"/methods\">methods catalogue</a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "a[href$=\"mailto:smlhelp@ons.gov.uk\"] > .ons-external-link__text"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "bold",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Author</dt>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dt:nth-child(1)"
+                        "p:nth-child(4) > a[href$=\"methods\"]"
                     ]
                 },
                 {
@@ -1753,11 +1971,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">ONS</dd>",
+                    "html": "<p>Where available, links to GitHub for source code and specifications will be on the method's details page.</p>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "dd:nth-child(2)"
+                        "p:nth-child(5)"
                     ]
                 },
                 {
@@ -1779,11 +1997,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Theme</dt>",
+                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\">Other 'how to' list categories</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "dt:nth-child(3)"
+                        ".ons-col-5\\@m > .ons-related-content__title.ons-u-fs-r--b"
                     ]
                 },
                 {
@@ -1792,24 +2010,154 @@
                         {
                             "data": {
                                 "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
+                                "contrastRatio": 6.62,
                                 "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
+                                "fgColor": "#206095",
                                 "fontSize": "13.5pt",
                                 "fontWeight": "normal",
                                 "missingData": null
                             },
                             "id": "color-contrast",
                             "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
+                            "message": "Element has sufficient color contrast of 6.62",
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Editing</dd>",
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\">Information</a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "dd:nth-child(4)"
+                        "a[href=\"/help-centre/information/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 11.77,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#003c57",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 11.77",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\" aria-current=\"location\">Access (and usage)</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "a[href=\"/help-centre/access/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/help-centre/access/view-methods\" class=\"ons-section-nav__link ons-list__link\">Find and view methods</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-section-nav__item.ons-list__item:nth-child(1) > .ons-section-nav__link.ons-list__link"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/help-centre/access/run-a-method\" class=\"ons-section-nav__link ons-list__link\">Use a method</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-section-nav__item.ons-list__item:nth-child(2) > .ons-section-nav__link.ons-list__link"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "a[href=\"/help-centre/feedback/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "a[href=\"/help-centre/support/index\"]"
                     ]
                 },
                 {
@@ -1831,11 +2179,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Expert group</dt>",
+                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"userful-resources\">Useful resources</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "dt:nth-child(5)"
+                        "#userful-resources"
                     ]
                 },
                 {
@@ -1844,24 +2192,50 @@
                         {
                             "data": {
                                 "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
+                                "contrastRatio": 6.62,
                                 "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
+                                "fgColor": "#206095",
                                 "fontSize": "13.5pt",
                                 "fontWeight": "normal",
                                 "missingData": null
                             },
                             "id": "color-contrast",
                             "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
+                            "message": "Element has sufficient color contrast of 6.62",
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Editing &amp; Imputation</dd>",
+                    "html": "<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "dd:nth-child(6)"
+                        ".ons-list__link[href$=\"about\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-list__link[href$=\"glossary\"]"
                     ]
                 },
                 {
@@ -1883,11 +2257,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Languages</dt>",
+                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"explore-methods\">Explore</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "dt:nth-child(7)"
+                        "#explore-methods"
                     ]
                 },
                 {
@@ -1896,128 +2270,24 @@
                         {
                             "data": {
                                 "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
+                                "contrastRatio": 6.62,
                                 "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
+                                "fgColor": "#206095",
                                 "fontSize": "13.5pt",
                                 "fontWeight": "normal",
                                 "missingData": null
                             },
                             "id": "color-contrast",
                             "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
+                            "message": "Element has sufficient color contrast of 6.62",
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Python/Pandas</dd>",
+                    "html": "<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "dd:nth-child(8)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "bold",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Release</dt>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dt:nth-child(9)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<span class=\"ons-status ons-status--pending\">Not Released Yet</span>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-status"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "3:1",
-                                "fgColor": "#222222",
-                                "fontSize": "19.5pt",
-                                "fontWeight": "bold",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h2>GitHub resources</h2>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "h2:nth-child(10)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<p>No resources are currently available.\n</p>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "p:nth-child(11)"
+                        ".ons-list--bare.ons-list > .ons-list__item > .ons-list__link[href$=\"methods\"]"
                     ]
                 },
                 {
@@ -2147,7 +2417,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-footer__license > .ons-external-link[target=\"_blank\"][rel=\"noopener\"] > .ons-external-link__text"
+                        ".ons-external-link__text"
                     ]
                 }
             ],
@@ -2155,239 +2425,6 @@
                 "cat.color",
                 "wcag2aa",
                 "wcag143"
-            ]
-        },
-        {
-            "description": "Ensures <dl> elements are structured correctly",
-            "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script> or <template> elements",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/definition-list?application=axeAPI",
-            "id": "definition-list",
-            "impact": null,
-            "nodes": [
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<dl class=\"ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "structured-dlitems",
-                            "impact": "serious",
-                            "message": "When not empty, element has both <dt> and <dd> elements",
-                            "relatedNodes": []
-                        },
-                        {
-                            "data": null,
-                            "id": "only-dlitems",
-                            "impact": "serious",
-                            "message": "List element only has direct children that are allowed inside <dt> or <dd> elements",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "dl"
-                    ]
-                }
-            ],
-            "tags": [
-                "cat.structure",
-                "wcag2a",
-                "wcag131"
-            ]
-        },
-        {
-            "description": "Ensures <dt> and <dd> elements are contained by a <dl>",
-            "help": "<dt> and <dd> elements must be contained by a <dl>",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/dlitem?application=axeAPI",
-            "id": "dlitem",
-            "impact": null,
-            "nodes": [
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "dlitem",
-                            "impact": "serious",
-                            "message": "Description list item has a <dl> parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Author</dt>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dt:nth-child(1)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "dlitem",
-                            "impact": "serious",
-                            "message": "Description list item has a <dl> parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">ONS</dd>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dd:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "dlitem",
-                            "impact": "serious",
-                            "message": "Description list item has a <dl> parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Theme</dt>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dt:nth-child(3)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "dlitem",
-                            "impact": "serious",
-                            "message": "Description list item has a <dl> parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Editing</dd>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dd:nth-child(4)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "dlitem",
-                            "impact": "serious",
-                            "message": "Description list item has a <dl> parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Expert group</dt>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dt:nth-child(5)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "dlitem",
-                            "impact": "serious",
-                            "message": "Description list item has a <dl> parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Editing &amp; Imputation</dd>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dd:nth-child(6)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "dlitem",
-                            "impact": "serious",
-                            "message": "Description list item has a <dl> parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Languages</dt>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dt:nth-child(7)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "dlitem",
-                            "impact": "serious",
-                            "message": "Description list item has a <dl> parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Python/Pandas</dd>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dd:nth-child(8)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "dlitem",
-                            "impact": "serious",
-                            "message": "Description list item has a <dl> parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Release</dt>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dt:nth-child(9)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "dlitem",
-                            "impact": "serious",
-                            "message": "Description list item has a <dl> parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\"><span class=\"ons-status ons-status--pending\">Not Released Yet</span></dd>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "dd:nth-child(10)"
-                    ]
-                }
-            ],
-            "tags": [
-                "cat.structure",
-                "wcag2a",
-                "wcag131"
             ]
         },
         {
@@ -2440,7 +2477,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/help-centre/index\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2495,6 +2532,42 @@
                     "none": [],
                     "target": [
                         "#ons-logo-stacked-en-alt"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "userful-resources",
+                            "id": "duplicate-id-aria",
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"userful-resources\">Useful resources</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#userful-resources"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "explore-methods",
+                            "id": "duplicate-id-aria",
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"explore-methods\">Explore</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#explore-methods"
                     ]
                 },
                 {
@@ -2600,6 +2673,24 @@
                     "target": [
                         "#main-content"
                     ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "section-menu",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<nav class=\"ons-section-nav ons-section-nav--vertical\" id=\"section-menu\" aria-label=\"Section menu\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#section-menu"
+                    ]
                 }
             ],
             "tags": [
@@ -2644,7 +2735,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                    "html": "<h1>Help centre</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2662,11 +2753,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2> Method summary </h2>",
+                    "html": "<h2>Access (and usage)</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h2:nth-child(2)"
+                        ".ons-col-7\\@m > h2"
                     ]
                 },
                 {
@@ -2680,11 +2771,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2> Contact details for this method </h2>",
+                    "html": "<h3>Find and view methods</h3>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h2:nth-child(5)"
+                        "h3"
                     ]
                 },
                 {
@@ -2698,11 +2789,47 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2>GitHub resources</h2>",
+                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\">Other 'how to' list categories</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h2:nth-child(10)"
+                        ".ons-col-5\\@m > .ons-related-content__title.ons-u-fs-r--b"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"userful-resources\">Useful resources</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#userful-resources"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"explore-methods\">Explore</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#explore-methods"
                     ]
                 }
             ],
@@ -2747,7 +2874,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                    "html": "<h1>Help centre</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2765,11 +2892,29 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2> Method summary </h2>",
+                    "html": "<h2>Access (and usage)</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h2:nth-child(2)"
+                        ".ons-col-7\\@m > h2"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": 3,
+                            "id": "heading-order",
+                            "impact": "moderate",
+                            "message": "Heading order valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h3>Find and view methods</h3>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h3"
                     ]
                 },
                 {
@@ -2783,11 +2928,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2> Contact details for this method </h2>",
+                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\">Other 'how to' list categories</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h2:nth-child(5)"
+                        ".ons-col-5\\@m > .ons-related-content__title.ons-u-fs-r--b"
                     ]
                 },
                 {
@@ -2801,11 +2946,29 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2>GitHub resources</h2>",
+                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"userful-resources\">Useful resources</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h2:nth-child(10)"
+                        "#userful-resources"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": 2,
+                            "id": "heading-order",
+                            "impact": "moderate",
+                            "message": "Heading order valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"explore-methods\">Explore</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#explore-methods"
                     ]
                 }
             ],
@@ -3050,7 +3213,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3062,7 +3225,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__item--active"
+                        ".ons-navigation__item:nth-child(2)"
                     ]
                 },
                 {
@@ -3086,7 +3249,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3098,7 +3261,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__item:nth-child(3)"
+                        ".ons-navigation__item--active"
                     ]
                 },
                 {
@@ -3116,7 +3279,7 @@
                         }
                     ],
                     "target": [
-                        "a[href=\"/help-centre/index\"]"
+                        ".ons-navigation__link[href=\"/help-centre/index\"]"
                     ]
                 },
                 {
@@ -3152,7 +3315,7 @@
                         }
                     ],
                     "target": [
-                        "a[href$=\"about\"]"
+                        ".ons-navigation__link[href$=\"about\"]"
                     ]
                 },
                 {
@@ -3188,7 +3351,7 @@
                         }
                     ],
                     "target": [
-                        "a[href$=\"glossary\"]"
+                        ".ons-navigation__link[href$=\"glossary\"]"
                     ]
                 },
                 {
@@ -3212,7 +3375,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/help-centre/index\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3230,25 +3393,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "p:nth-child(3)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<p> The method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent.</p>",
+                    "html": "<p>You can find and view methods within the <a href=\"/methods\">methods catalogue</a></p>",
                     "impact": null,
                     "none": [
                         {
@@ -3266,7 +3411,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a href=\"mailto:smlhelp@ons.gov.uk\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
+                    "html": "<a href=\"/methods\">methods catalogue</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3278,13 +3423,13 @@
                         }
                     ],
                     "target": [
-                        "a[href$=\"mailto:smlhelp@ons.gov.uk\"]"
+                        "p:nth-child(4) > a[href$=\"methods\"]"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>No resources are currently available.\n</p>",
+                    "html": "<p>Where available, links to GitHub for source code and specifications will be on the method's details page.</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3296,7 +3441,331 @@
                         }
                     ],
                     "target": [
-                        "p:nth-child(11)"
+                        "p:nth-child(5)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\">Information</a>\n          </li>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-section-nav__list > .ons-section-nav__item:nth-child(1)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\">Information</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[href=\"/help-centre/information/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<li class=\"ons-section-nav__item ons-section-nav__item--active\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-section-nav__item--active"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\" aria-current=\"location\">Access (and usage)</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[href=\"/help-centre/access/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/access/view-methods\" class=\"ons-section-nav__link ons-list__link\">Find and view methods</a>\n                          </li>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-section-nav__item.ons-list__item:nth-child(1)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"/help-centre/access/view-methods\" class=\"ons-section-nav__link ons-list__link\">Find and view methods</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-section-nav__item.ons-list__item:nth-child(1) > .ons-section-nav__link.ons-list__link"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/access/run-a-method\" class=\"ons-section-nav__link ons-list__link\">Use a method</a>\n                          </li>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-section-nav__item.ons-list__item:nth-child(2)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"/help-centre/access/run-a-method\" class=\"ons-section-nav__link ons-list__link\">Use a method</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-section-nav__item.ons-list__item:nth-child(2) > .ons-section-nav__link.ons-list__link"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>\n          </li>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-section-nav__item:nth-child(3)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[href=\"/help-centre/feedback/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>\n          </li>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-section-nav__item:nth-child(4)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[href=\"/help-centre/support/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>                </li>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list > .ons-list__item:nth-child(1)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-list__link[href$=\"about\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>                </li>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list > .ons-list__item:nth-child(2)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-list__link[href$=\"glossary\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "nav[aria-labelledby=\"explore-methods\"] > .ons-list--bare.ons-list > .ons-list__item"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-list--bare.ons-list > .ons-list__item > .ons-list__link[href$=\"methods\"]"
                     ]
                 },
                 {
@@ -3314,7 +3783,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-list__item:nth-child(1)"
+                        ".ons-u-mb-s > .ons-list__item:nth-child(1)"
                     ]
                 },
                 {
@@ -3350,7 +3819,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-list__item:nth-child(2)"
+                        ".ons-u-mb-s > .ons-list__item:nth-child(2)"
                     ]
                 },
                 {
@@ -3422,7 +3891,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-footer__license > .ons-external-link[target=\"_blank\"][rel=\"noopener\"]"
+                        ".ons-external-link"
                     ]
                 }
             ],
@@ -3818,7 +4287,7 @@
                         }
                     ],
                     "target": [
-                        "a[href=\"/help-centre/index\"]"
+                        ".ons-navigation__link[href=\"/help-centre/index\"]"
                     ]
                 },
                 {
@@ -3844,7 +4313,7 @@
                         }
                     ],
                     "target": [
-                        "a[href$=\"about\"]"
+                        ".ons-navigation__link[href$=\"about\"]"
                     ]
                 },
                 {
@@ -3870,7 +4339,7 @@
                         }
                     ],
                     "target": [
-                        "a[href$=\"glossary\"]"
+                        ".ons-navigation__link[href$=\"glossary\"]"
                     ]
                 },
                 {
@@ -3884,7 +4353,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/help-centre/index\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3910,7 +4379,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"mailto:smlhelp@ons.gov.uk\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
+                    "html": "<a href=\"/methods\">methods catalogue</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3922,7 +4391,241 @@
                         }
                     ],
                     "target": [
-                        "a[href$=\"mailto:smlhelp@ons.gov.uk\"]"
+                        "p:nth-child(4) > a[href$=\"methods\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\">Information</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[href=\"/help-centre/information/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\" aria-current=\"location\">Access (and usage)</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[href=\"/help-centre/access/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/help-centre/access/view-methods\" class=\"ons-section-nav__link ons-list__link\">Find and view methods</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-section-nav__item.ons-list__item:nth-child(1) > .ons-section-nav__link.ons-list__link"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/help-centre/access/run-a-method\" class=\"ons-section-nav__link ons-list__link\">Use a method</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-section-nav__item.ons-list__item:nth-child(2) > .ons-section-nav__link.ons-list__link"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[href=\"/help-centre/feedback/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[href=\"/help-centre/support/index\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-list__link[href$=\"about\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-list__link[href$=\"glossary\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-list--bare.ons-list > .ons-list__item > .ons-list__link[href$=\"methods\"]"
                     ]
                 },
                 {
@@ -4026,7 +4729,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-footer__license > .ons-external-link[target=\"_blank\"][rel=\"noopener\"]"
+                        ".ons-external-link"
                     ]
                 }
             ],
@@ -4085,6 +4788,78 @@
                 {
                     "all": [],
                     "any": [],
+                    "html": "<ul class=\"ons-section-nav__list\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "only-listitems",
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-section-nav__list"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<ul class=\"ons-section-nav__sub-items ons-list ons-list--dashed ons-u-mt-xs ons-u-mb-xs\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "only-listitems",
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-section-nav__sub-items"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<ul class=\"ons-list ons-list--bare\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "only-listitems",
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<ul class=\"ons-list ons-list--bare\">                <li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>\n</ul>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "only-listitems",
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "nav[aria-labelledby=\"explore-methods\"] > .ons-list--bare.ons-list"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
                     "html": "<ul class=\"ons-list ons-u-mb-s ons-footer--rows ons-list--bare ons-list--inline\">",
                     "impact": null,
                     "none": [
@@ -4097,7 +4872,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-list"
+                        ".ons-u-mb-s"
                     ]
                 }
             ],
@@ -4143,11 +4918,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__item--active"
+                        ".ons-navigation__item:nth-child(2)"
                     ]
                 },
                 {
@@ -4161,11 +4936,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__item:nth-child(3)"
+                        ".ons-navigation__item--active"
                     ]
                 },
                 {
@@ -4233,11 +5008,173 @@
                             "relatedNodes": []
                         }
                     ],
+                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\">Information</a>\n          </li>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-section-nav__list > .ons-section-nav__item:nth-child(1)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "listitem",
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<li class=\"ons-section-nav__item ons-section-nav__item--active\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-section-nav__item--active"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "listitem",
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/access/view-methods\" class=\"ons-section-nav__link ons-list__link\">Find and view methods</a>\n                          </li>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-section-nav__item.ons-list__item:nth-child(1)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "listitem",
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/access/run-a-method\" class=\"ons-section-nav__link ons-list__link\">Use a method</a>\n                          </li>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-section-nav__item.ons-list__item:nth-child(2)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "listitem",
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>\n          </li>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-section-nav__item:nth-child(3)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "listitem",
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>\n          </li>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-section-nav__item:nth-child(4)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "listitem",
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>                </li>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list > .ons-list__item:nth-child(1)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "listitem",
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>                </li>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list > .ons-list__item:nth-child(2)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "listitem",
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "nav[aria-labelledby=\"explore-methods\"] > .ons-list--bare.ons-list > .ons-list__item"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "listitem",
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
+                            "relatedNodes": []
+                        }
+                    ],
                     "html": "<li class=\"ons-list__item\">\n\n<a href=\"/cookies\" class=\"ons-list__link\">Cookies</a>                </li>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-list__item:nth-child(1)"
+                        ".ons-u-mb-s > .ons-list__item:nth-child(1)"
                     ]
                 },
                 {
@@ -4255,7 +5192,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-list__item:nth-child(2)"
+                        ".ons-u-mb-s > .ons-list__item:nth-child(2)"
                     ]
                 },
                 {
@@ -4362,7 +5299,7 @@
                             "message": "Page has at least one level-one heading",
                             "relatedNodes": [
                                 {
-                                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                                    "html": "<h1>Help centre</h1>",
                                     "target": [
                                         "h1"
                                     ]
@@ -4416,8 +5353,8 @@
             ]
         }
     ],
-    "timestamp": "2023-06-22T10:58:24.393Z",
-    "url": "http://127.0.0.1:8000/method/future-methods/thousand-pound-correction",
+    "timestamp": "2023-06-22T11:01:45.869Z",
+    "url": "http://127.0.0.1:8000/help-centre/access/view-methods",
     "violations": [
         {
             "description": "Ensures role attribute has an appropriate value for the element",
