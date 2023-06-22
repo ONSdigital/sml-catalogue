@@ -3,10 +3,10 @@
   date: '2023-03-07',
   contact_details: 'smlhelp@ons.gov.uk',
   method_metadata: {
-    'Expert group': 'Sample Design & Estimation',
-    Theme: 'Sample Design & Estimation',
+    'Expert group': 'Editing & Imputation',
+    Theme: 'Editing',
     Author: 'ONS',
-    'Languages': 'Python/PySpark',
+    'Languages': 'Python/Pandas',
     "Release": "Not Released Yet"
   },
   additional_data: {
