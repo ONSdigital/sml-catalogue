@@ -540,96 +540,6 @@
                     "target": [
                         "#breadcrumbs"
                     ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-allowed-attr",
-                            "impact": "critical",
-                            "message": "ARIA attributes are used correctly for the defined role",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<nav class=\"ons-section-nav ons-section-nav--vertical\" id=\"section-menu\" aria-label=\"Section menu\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#section-menu"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-allowed-attr",
-                            "impact": "critical",
-                            "message": "ARIA attributes are used correctly for the defined role",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\" aria-current=\"location\">Access (and usage)</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/access/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-allowed-attr",
-                            "impact": "critical",
-                            "message": "ARIA attributes are used correctly for the defined role",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<aside class=\"ons-related-content\" aria-label=\"Related content\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "aside"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-allowed-attr",
-                            "impact": "critical",
-                            "message": "ARIA attributes are used correctly for the defined role",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"userful-resources\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-allowed-attr",
-                            "impact": "critical",
-                            "message": "ARIA attributes are used correctly for the defined role",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"explore-methods\">\n            \n\n        <ul class=\"ons-list ons-list--bare\">                <li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>\n</ul>\n\n          </nav>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"explore-methods\"]"
-                    ]
                 }
             ],
             "tags": [
@@ -1054,131 +964,6 @@
                         }
                     ],
                     "any": [],
-                    "html": "<nav class=\"ons-section-nav ons-section-nav--vertical\" id=\"section-menu\" aria-label=\"Section menu\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#section-menu"
-                    ]
-                },
-                {
-                    "all": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr-value",
-                            "impact": "critical",
-                            "message": "ARIA attribute values are valid",
-                            "relatedNodes": []
-                        },
-                        {
-                            "data": null,
-                            "id": "aria-errormessage",
-                            "impact": "critical",
-                            "message": "Uses a supported aria-errormessage technique",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "any": [],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\" aria-current=\"location\">Access (and usage)</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/access/index\"]"
-                    ]
-                },
-                {
-                    "all": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr-value",
-                            "impact": "critical",
-                            "message": "ARIA attribute values are valid",
-                            "relatedNodes": []
-                        },
-                        {
-                            "data": null,
-                            "id": "aria-errormessage",
-                            "impact": "critical",
-                            "message": "Uses a supported aria-errormessage technique",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "any": [],
-                    "html": "<aside class=\"ons-related-content\" aria-label=\"Related content\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "aside"
-                    ]
-                },
-                {
-                    "all": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr-value",
-                            "impact": "critical",
-                            "message": "ARIA attribute values are valid",
-                            "relatedNodes": []
-                        },
-                        {
-                            "data": null,
-                            "id": "aria-errormessage",
-                            "impact": "critical",
-                            "message": "Uses a supported aria-errormessage technique",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "any": [],
-                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"userful-resources\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"]"
-                    ]
-                },
-                {
-                    "all": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr-value",
-                            "impact": "critical",
-                            "message": "ARIA attribute values are valid",
-                            "relatedNodes": []
-                        },
-                        {
-                            "data": null,
-                            "id": "aria-errormessage",
-                            "impact": "critical",
-                            "message": "Uses a supported aria-errormessage technique",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "any": [],
-                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"explore-methods\">\n            \n\n        <ul class=\"ons-list ons-list--bare\">                <li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>\n</ul>\n\n          </nav>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"explore-methods\"]"
-                    ]
-                },
-                {
-                    "all": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr-value",
-                            "impact": "critical",
-                            "message": "ARIA attribute values are valid",
-                            "relatedNodes": []
-                        },
-                        {
-                            "data": null,
-                            "id": "aria-errormessage",
-                            "impact": "critical",
-                            "message": "Uses a supported aria-errormessage technique",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "any": [],
                     "html": "<svg class=\"ons-svg-logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\">",
                     "impact": null,
                     "none": [],
@@ -1270,96 +1055,6 @@
                     "none": [],
                     "target": [
                         "#breadcrumbs"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr",
-                            "impact": "critical",
-                            "message": "ARIA attribute name are valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<nav class=\"ons-section-nav ons-section-nav--vertical\" id=\"section-menu\" aria-label=\"Section menu\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#section-menu"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr",
-                            "impact": "critical",
-                            "message": "ARIA attribute name are valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\" aria-current=\"location\">Access (and usage)</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/access/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr",
-                            "impact": "critical",
-                            "message": "ARIA attribute name are valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<aside class=\"ons-related-content\" aria-label=\"Related content\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "aside"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr",
-                            "impact": "critical",
-                            "message": "ARIA attribute name are valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"userful-resources\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr",
-                            "impact": "critical",
-                            "message": "ARIA attribute name are valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<nav class=\"ons-related-content__navigation\" aria-labelledby=\"explore-methods\">\n            \n\n        <ul class=\"ons-list ons-list--bare\">                <li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>\n</ul>\n\n          </nav>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"explore-methods\"]"
                     ]
                 },
                 {
@@ -1585,7 +1280,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        "p:nth-child(2)"
+                        ".ons-cookies-banner__statement > p:nth-child(2)"
                     ]
                 },
                 {
@@ -1715,7 +1410,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__link[href$=\"methods\"]"
+                        "a[href$=\"methods\"]"
                     ]
                 },
                 {
@@ -1728,7 +1423,7 @@
                                 "expectedContrastRatio": "4.5:1",
                                 "fgColor": "#ffffff",
                                 "fontSize": "13.5pt",
-                                "fontWeight": "bold",
+                                "fontWeight": "normal",
                                 "missingData": null
                             },
                             "id": "color-contrast",
@@ -1741,7 +1436,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__link[href=\"/help-centre/index\"]"
+                        "a[href=\"/help-centre/index\"]"
                     ]
                 },
                 {
@@ -1767,7 +1462,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__link[href$=\"about\"]"
+                        "a[href$=\"about\"]"
                     ]
                 },
                 {
@@ -1793,7 +1488,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__link[href$=\"glossary\"]"
+                        "a[href$=\"glossary\"]"
                     ]
                 },
                 {
@@ -1815,11 +1510,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/help-centre/index\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/\" id=\"home\">Home</a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#back"
+                        "#home"
                     ]
                 },
                 {
@@ -1841,11 +1536,89 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1>Help centre</h1>",
+                    "html": "<h1>Accessibility statement</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
                         "h1"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p>This accessibility statement applies to the Office for National Statistics (ONS) Statistical Methods Library.&nbsp;&nbsp;</p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#main-content > p:nth-child(2)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p>We want as many people as possible to be able to use the website. If you have a disability, <a href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a>\u202fhas advice on making your device easier to use.</p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(3)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(3) > a"
                     ]
                 },
                 {
@@ -1867,37 +1640,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2>Access (and usage)</h2>",
+                    "html": "<h2>How accessible the website is</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-col-7\\@m > h2"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "3:1",
-                                "fgColor": "#222222",
-                                "fontSize": "16.5pt",
-                                "fontWeight": "bold",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h3>Find and view methods</h3>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "h3"
+                        "h2:nth-child(4)"
                     ]
                 },
                 {
@@ -1919,59 +1666,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p>You can find and view methods within the <a href=\"/methods\">methods catalogue</a></p>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "p:nth-child(4)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/methods\">methods catalogue</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "p:nth-child(4) > a[href$=\"methods\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<p>Where available, links to GitHub for source code and specifications will be on the method's details page.</p>",
+                    "html": "<p>We are aware that some parts of this website are not fully accessible, and we are working to improve this.</p>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1985,9 +1680,9 @@
                             "data": {
                                 "bgColor": "#ffffff",
                                 "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
+                                "expectedContrastRatio": "3:1",
                                 "fgColor": "#222222",
-                                "fontSize": "13.5pt",
+                                "fontSize": "19.5pt",
                                 "fontWeight": "bold",
                                 "missingData": null
                             },
@@ -1997,167 +1692,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\">Other 'how to' list categories</h2>",
+                    "html": "<h2>How to request content in an accessible format</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-col-5\\@m > .ons-related-content__title.ons-u-fs-r--b"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\">Information</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/information/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 11.77,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#003c57",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "bold",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 11.77",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\" aria-current=\"location\">Access (and usage)</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/access/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/help-centre/access/view-methods\" class=\"ons-section-nav__link ons-list__link\">Find and view methods</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(1) > .ons-section-nav__link.ons-list__link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/help-centre/access/run-a-method\" class=\"ons-section-nav__link ons-list__link\">Use a method</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(2) > .ons-section-nav__link.ons-list__link"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/feedback/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "a[href=\"/help-centre/support/index\"]"
+                        "h2:nth-child(6)"
                     ]
                 },
                 {
@@ -2170,7 +1709,7 @@
                                 "expectedContrastRatio": "4.5:1",
                                 "fgColor": "#222222",
                                 "fontSize": "13.5pt",
-                                "fontWeight": "bold",
+                                "fontWeight": "normal",
                                 "missingData": null
                             },
                             "id": "color-contrast",
@@ -2179,11 +1718,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"userful-resources\">Useful resources</h2>",
+                    "html": "<p>If you need information from the website in a different format please contact us at <a href=\"mailto:SMLHelp@ons.gov.uk\">SMLHelp@ons.gov.uk</a> and tell us:</p>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#userful-resources"
+                        "p:nth-child(7)"
                     ]
                 },
                 {
@@ -2205,37 +1744,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>",
+                    "html": "<a href=\"mailto:SMLHelp@ons.gov.uk\">SMLHelp@ons.gov.uk</a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-list__link[href$=\"about\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 6.62,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#206095",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.62",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-list__link[href$=\"glossary\"]"
+                        "p:nth-child(7) > a[href$=\"mailto:SMLHelp@ons.gov.uk\"]"
                     ]
                 },
                 {
@@ -2248,6 +1761,110 @@
                                 "expectedContrastRatio": "4.5:1",
                                 "fgColor": "#222222",
                                 "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<li>The web address (URL).</li>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#main-content > ul > li:nth-child(1)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<li>Your name and email address.</li>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#main-content > ul > li:nth-child(2)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<li>The format you require.</li>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#main-content > ul > li:nth-child(3)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p>We\u2019ll reply within ten days to let you know when we will be able to provide the information. We will consider each request but may not be able to provide an alternative accessible format on every occasion.</p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(9)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "3:1",
+                                "fgColor": "#222222",
+                                "fontSize": "19.5pt",
                                 "fontWeight": "bold",
                                 "missingData": null
                             },
@@ -2257,11 +1874,37 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"explore-methods\">Explore</h2>",
+                    "html": "<h2>Reporting accessibility problems</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#explore-methods"
+                        "h2:nth-child(10)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p>We are working to meet accessibility standards across this website. If you experience difficulty in accessing our website please contact us at <a href=\"mailto:SMLHelp@ons.gov.uk\">SMLHelp@ons.gov.uk</a>.</p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(11)"
                     ]
                 },
                 {
@@ -2283,11 +1926,323 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>",
+                    "html": "<a href=\"mailto:SMLHelp@ons.gov.uk\">SMLHelp@ons.gov.uk</a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-list--bare.ons-list > .ons-list__item > .ons-list__link[href$=\"methods\"]"
+                        "p:nth-child(11) > a[href$=\"mailto:SMLHelp@ons.gov.uk\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "3:1",
+                                "fgColor": "#222222",
+                                "fontSize": "19.5pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2>Enforcement procedure</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h2:nth-child(12)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(13)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://www.equalityadvisoryservice.com/\">Equality Advisory and Support Service (EASS)</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(13) > a"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "3:1",
+                                "fgColor": "#222222",
+                                "fontSize": "19.5pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2>Technical information about the website\u2019s accessibility</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h2:nth-child(14)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p>The ONS is committed to making this portal accessible, in accordance with the\u202f<a href=\"https://www.legislation.gov.uk/uksi/2018/952/made\">Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018</a>.</p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(15)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://www.legislation.gov.uk/uksi/2018/952/made\">Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(15) > a"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "3:1",
+                                "fgColor": "#222222",
+                                "fontSize": "19.5pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2>What we\u2019re doing to improve accessibility</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h2:nth-child(16)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p>We are committed to making sure our online services are accessible to all users and comply with level AA of the Web Content Accessibility Guidelines \u2013 WCAG 2.1 in line with the Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility regulations 2018, and intend to.</p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(17)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(18)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"http://www.digitalaccessibilitycentre.org/\">The Digital Accessibility Centre (DAC)</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(18) > a"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "3:1",
+                                "fgColor": "#222222",
+                                "fontSize": "19.5pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2>Preparation of this accessibility statement</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h2:nth-child(19)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p>This statement was prepared on 1 February 2023.</p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(20)"
                     ]
                 },
                 {
@@ -2470,18 +2425,18 @@
                     "all": [],
                     "any": [
                         {
-                            "data": "back",
+                            "data": "home",
                             "id": "duplicate-id-active",
                             "impact": "serious",
                             "message": "Document has no active elements that share the same id attribute",
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/help-centre/index\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/\" id=\"home\">Home</a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#back"
+                        "#home"
                     ]
                 }
             ],
@@ -2532,42 +2487,6 @@
                     "none": [],
                     "target": [
                         "#ons-logo-stacked-en-alt"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": "userful-resources",
-                            "id": "duplicate-id-aria",
-                            "impact": "critical",
-                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"userful-resources\">Useful resources</h2>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#userful-resources"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": "explore-methods",
-                            "id": "duplicate-id-aria",
-                            "impact": "critical",
-                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"explore-methods\">Explore</h2>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#explore-methods"
                     ]
                 },
                 {
@@ -2673,24 +2592,6 @@
                     "target": [
                         "#main-content"
                     ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": "section-menu",
-                            "id": "duplicate-id",
-                            "impact": "minor",
-                            "message": "Document has no static elements that share the same id attribute",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<nav class=\"ons-section-nav ons-section-nav--vertical\" id=\"section-menu\" aria-label=\"Section menu\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#section-menu"
-                    ]
                 }
             ],
             "tags": [
@@ -2735,7 +2636,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1>Help centre</h1>",
+                    "html": "<h1>Accessibility statement</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2753,11 +2654,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2>Access (and usage)</h2>",
+                    "html": "<h2>How accessible the website is</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-col-7\\@m > h2"
+                        "h2:nth-child(4)"
                     ]
                 },
                 {
@@ -2771,11 +2672,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h3>Find and view methods</h3>",
+                    "html": "<h2>How to request content in an accessible format</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h3"
+                        "h2:nth-child(6)"
                     ]
                 },
                 {
@@ -2789,11 +2690,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\">Other 'how to' list categories</h2>",
+                    "html": "<h2>Reporting accessibility problems</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-col-5\\@m > .ons-related-content__title.ons-u-fs-r--b"
+                        "h2:nth-child(10)"
                     ]
                 },
                 {
@@ -2807,11 +2708,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"userful-resources\">Useful resources</h2>",
+                    "html": "<h2>Enforcement procedure</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#userful-resources"
+                        "h2:nth-child(12)"
                     ]
                 },
                 {
@@ -2825,11 +2726,47 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"explore-methods\">Explore</h2>",
+                    "html": "<h2>Technical information about the website\u2019s accessibility</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#explore-methods"
+                        "h2:nth-child(14)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2>What we\u2019re doing to improve accessibility</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h2:nth-child(16)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2>Preparation of this accessibility statement</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h2:nth-child(19)"
                     ]
                 }
             ],
@@ -2874,7 +2811,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1>Help centre</h1>",
+                    "html": "<h1>Accessibility statement</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2892,29 +2829,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2>Access (and usage)</h2>",
+                    "html": "<h2>How accessible the website is</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-col-7\\@m > h2"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": 3,
-                            "id": "heading-order",
-                            "impact": "moderate",
-                            "message": "Heading order valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h3>Find and view methods</h3>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "h3"
+                        "h2:nth-child(4)"
                     ]
                 },
                 {
@@ -2928,11 +2847,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\">Other 'how to' list categories</h2>",
+                    "html": "<h2>How to request content in an accessible format</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-col-5\\@m > .ons-related-content__title.ons-u-fs-r--b"
+                        "h2:nth-child(6)"
                     ]
                 },
                 {
@@ -2946,11 +2865,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"userful-resources\">Useful resources</h2>",
+                    "html": "<h2>Reporting accessibility problems</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#userful-resources"
+                        "h2:nth-child(10)"
                     ]
                 },
                 {
@@ -2964,11 +2883,65 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h2 class=\"ons-related-content__title ons-u-fs-r--b ons-u-mb-xs\" id=\"explore-methods\">Explore</h2>",
+                    "html": "<h2>Enforcement procedure</h2>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#explore-methods"
+                        "h2:nth-child(12)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": 2,
+                            "id": "heading-order",
+                            "impact": "moderate",
+                            "message": "Heading order valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2>Technical information about the website\u2019s accessibility</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h2:nth-child(14)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": 2,
+                            "id": "heading-order",
+                            "impact": "moderate",
+                            "message": "Heading order valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2>What we\u2019re doing to improve accessibility</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h2:nth-child(16)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": 2,
+                            "id": "heading-order",
+                            "impact": "moderate",
+                            "message": "Heading order valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h2>Preparation of this accessibility statement</h2>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h2:nth-child(19)"
                     ]
                 }
             ],
@@ -3081,7 +3054,7 @@
                         }
                     ],
                     "target": [
-                        "p:nth-child(2)"
+                        ".ons-cookies-banner__statement > p:nth-child(2)"
                     ]
                 },
                 {
@@ -3243,13 +3216,13 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"methods\"]"
+                        "a[href$=\"methods\"]"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3261,7 +3234,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__item--active"
+                        ".ons-navigation__item:nth-child(3)"
                     ]
                 },
                 {
@@ -3279,7 +3252,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href=\"/help-centre/index\"]"
+                        "a[href=\"/help-centre/index\"]"
                     ]
                 },
                 {
@@ -3315,7 +3288,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"about\"]"
+                        "a[href$=\"about\"]"
                     ]
                 },
                 {
@@ -3351,7 +3324,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"glossary\"]"
+                        "a[href$=\"glossary\"]"
                     ]
                 },
                 {
@@ -3375,7 +3348,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/help-centre/index\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/\" id=\"home\">Home</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3387,13 +3360,13 @@
                         }
                     ],
                     "target": [
-                        "#back"
+                        "#home"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>You can find and view methods within the <a href=\"/methods\">methods catalogue</a></p>",
+                    "html": "<p>This accessibility statement applies to the Office for National Statistics (ONS) Statistical Methods Library.&nbsp;&nbsp;</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3405,13 +3378,13 @@
                         }
                     ],
                     "target": [
-                        "p:nth-child(4)"
+                        "#main-content > p:nth-child(2)"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a href=\"/methods\">methods catalogue</a>",
+                    "html": "<p>We want as many people as possible to be able to use the website. If you have a disability, <a href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a>\u202fhas advice on making your device easier to use.</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3423,13 +3396,31 @@
                         }
                     ],
                     "target": [
-                        "p:nth-child(4) > a[href$=\"methods\"]"
+                        "p:nth-child(3)"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>Where available, links to GitHub for source code and specifications will be on the method's details page.</p>",
+                    "html": "<a href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "p:nth-child(3) > a"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<p>We are aware that some parts of this website are not fully accessible, and we are working to improve this.</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3447,7 +3438,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\">Information</a>\n          </li>",
+                    "html": "<p>If you need information from the website in a different format please contact us at <a href=\"mailto:SMLHelp@ons.gov.uk\">SMLHelp@ons.gov.uk</a> and tell us:</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3459,13 +3450,13 @@
                         }
                     ],
                     "target": [
-                        ".ons-section-nav__list > .ons-section-nav__item:nth-child(1)"
+                        "p:nth-child(7)"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\">Information</a>",
+                    "html": "<a href=\"mailto:SMLHelp@ons.gov.uk\">SMLHelp@ons.gov.uk</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3477,13 +3468,13 @@
                         }
                     ],
                     "target": [
-                        "a[href=\"/help-centre/information/index\"]"
+                        "p:nth-child(7) > a[href$=\"mailto:SMLHelp@ons.gov.uk\"]"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-section-nav__item ons-section-nav__item--active\">",
+                    "html": "<li>The web address (URL).</li>",
                     "impact": null,
                     "none": [
                         {
@@ -3495,13 +3486,13 @@
                         }
                     ],
                     "target": [
-                        ".ons-section-nav__item--active"
+                        "#main-content > ul > li:nth-child(1)"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\" aria-current=\"location\">Access (and usage)</a>",
+                    "html": "<li>Your name and email address.</li>",
                     "impact": null,
                     "none": [
                         {
@@ -3513,13 +3504,13 @@
                         }
                     ],
                     "target": [
-                        "a[href=\"/help-centre/access/index\"]"
+                        "#main-content > ul > li:nth-child(2)"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/access/view-methods\" class=\"ons-section-nav__link ons-list__link\">Find and view methods</a>\n                          </li>",
+                    "html": "<li>The format you require.</li>",
                     "impact": null,
                     "none": [
                         {
@@ -3531,13 +3522,13 @@
                         }
                     ],
                     "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(1)"
+                        "#main-content > ul > li:nth-child(3)"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a href=\"/help-centre/access/view-methods\" class=\"ons-section-nav__link ons-list__link\">Find and view methods</a>",
+                    "html": "<p>We\u2019ll reply within ten days to let you know when we will be able to provide the information. We will consider each request but may not be able to provide an alternative accessible format on every occasion.</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3549,13 +3540,13 @@
                         }
                     ],
                     "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(1) > .ons-section-nav__link.ons-list__link"
+                        "p:nth-child(9)"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/access/run-a-method\" class=\"ons-section-nav__link ons-list__link\">Use a method</a>\n                          </li>",
+                    "html": "<p>We are working to meet accessibility standards across this website. If you experience difficulty in accessing our website please contact us at <a href=\"mailto:SMLHelp@ons.gov.uk\">SMLHelp@ons.gov.uk</a>.</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3567,13 +3558,13 @@
                         }
                     ],
                     "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(2)"
+                        "p:nth-child(11)"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a href=\"/help-centre/access/run-a-method\" class=\"ons-section-nav__link ons-list__link\">Use a method</a>",
+                    "html": "<a href=\"mailto:SMLHelp@ons.gov.uk\">SMLHelp@ons.gov.uk</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3585,13 +3576,13 @@
                         }
                     ],
                     "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(2) > .ons-section-nav__link.ons-list__link"
+                        "p:nth-child(11) > a[href$=\"mailto:SMLHelp@ons.gov.uk\"]"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>\n          </li>",
+                    "html": "<p>",
                     "impact": null,
                     "none": [
                         {
@@ -3603,13 +3594,13 @@
                         }
                     ],
                     "target": [
-                        ".ons-section-nav__item:nth-child(3)"
+                        "p:nth-child(13)"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>",
+                    "html": "<a href=\"https://www.equalityadvisoryservice.com/\">Equality Advisory and Support Service (EASS)</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3621,13 +3612,13 @@
                         }
                     ],
                     "target": [
-                        "a[href=\"/help-centre/feedback/index\"]"
+                        "p:nth-child(13) > a"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>\n          </li>",
+                    "html": "<p>The ONS is committed to making this portal accessible, in accordance with the\u202f<a href=\"https://www.legislation.gov.uk/uksi/2018/952/made\">Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018</a>.</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3639,13 +3630,13 @@
                         }
                     ],
                     "target": [
-                        ".ons-section-nav__item:nth-child(4)"
+                        "p:nth-child(15)"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>",
+                    "html": "<a href=\"https://www.legislation.gov.uk/uksi/2018/952/made\">Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3657,13 +3648,13 @@
                         }
                     ],
                     "target": [
-                        "a[href=\"/help-centre/support/index\"]"
+                        "p:nth-child(15) > a"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>                </li>",
+                    "html": "<p>We are committed to making sure our online services are accessible to all users and comply with level AA of the Web Content Accessibility Guidelines \u2013 WCAG 2.1 in line with the Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility regulations 2018, and intend to.</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3675,13 +3666,13 @@
                         }
                     ],
                     "target": [
-                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list > .ons-list__item:nth-child(1)"
+                        "p:nth-child(17)"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>",
+                    "html": "<p>",
                     "impact": null,
                     "none": [
                         {
@@ -3693,13 +3684,13 @@
                         }
                     ],
                     "target": [
-                        ".ons-list__link[href$=\"about\"]"
+                        "p:nth-child(18)"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>                </li>",
+                    "html": "<a href=\"http://www.digitalaccessibilitycentre.org/\">The Digital Accessibility Centre (DAC)</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3711,13 +3702,13 @@
                         }
                     ],
                     "target": [
-                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list > .ons-list__item:nth-child(2)"
+                        "p:nth-child(18) > a"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>",
+                    "html": "<p>This statement was prepared on 1 February 2023.</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3729,43 +3720,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-list__link[href$=\"glossary\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "nav[aria-labelledby=\"explore-methods\"] > .ons-list--bare.ons-list > .ons-list__item"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "duplicate-img-label",
-                            "impact": "minor",
-                            "message": "Element does not duplicate existing text in <img> alt text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-list--bare.ons-list > .ons-list__item > .ons-list__link[href$=\"methods\"]"
+                        "p:nth-child(20)"
                     ]
                 },
                 {
@@ -3783,7 +3738,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-u-mb-s > .ons-list__item:nth-child(1)"
+                        ".ons-list__item:nth-child(1)"
                     ]
                 },
                 {
@@ -3819,7 +3774,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-u-mb-s > .ons-list__item:nth-child(2)"
+                        ".ons-list__item:nth-child(2)"
                     ]
                 },
                 {
@@ -4261,7 +4216,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"methods\"]"
+                        "a[href$=\"methods\"]"
                     ]
                 },
                 {
@@ -4287,7 +4242,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href=\"/help-centre/index\"]"
+                        "a[href=\"/help-centre/index\"]"
                     ]
                 },
                 {
@@ -4313,7 +4268,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"about\"]"
+                        "a[href$=\"about\"]"
                     ]
                 },
                 {
@@ -4339,7 +4294,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"glossary\"]"
+                        "a[href$=\"glossary\"]"
                     ]
                 },
                 {
@@ -4353,7 +4308,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/help-centre/index\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/\" id=\"home\">Home</a>",
                     "impact": null,
                     "none": [
                         {
@@ -4365,7 +4320,7 @@
                         }
                     ],
                     "target": [
-                        "#back"
+                        "#home"
                     ]
                 },
                 {
@@ -4379,7 +4334,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"/methods\">methods catalogue</a>",
+                    "html": "<a href=\"https://mcmw.abilitynet.org.uk/\">AbilityNet</a>",
                     "impact": null,
                     "none": [
                         {
@@ -4391,7 +4346,7 @@
                         }
                     ],
                     "target": [
-                        "p:nth-child(4) > a[href$=\"methods\"]"
+                        "p:nth-child(3) > a"
                     ]
                 },
                 {
@@ -4405,7 +4360,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\">Information</a>",
+                    "html": "<a href=\"mailto:SMLHelp@ons.gov.uk\">SMLHelp@ons.gov.uk</a>",
                     "impact": null,
                     "none": [
                         {
@@ -4417,7 +4372,7 @@
                         }
                     ],
                     "target": [
-                        "a[href=\"/help-centre/information/index\"]"
+                        "p:nth-child(7) > a[href$=\"mailto:SMLHelp@ons.gov.uk\"]"
                     ]
                 },
                 {
@@ -4431,7 +4386,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/access/index\" aria-current=\"location\">Access (and usage)</a>",
+                    "html": "<a href=\"mailto:SMLHelp@ons.gov.uk\">SMLHelp@ons.gov.uk</a>",
                     "impact": null,
                     "none": [
                         {
@@ -4443,7 +4398,7 @@
                         }
                     ],
                     "target": [
-                        "a[href=\"/help-centre/access/index\"]"
+                        "p:nth-child(11) > a[href$=\"mailto:SMLHelp@ons.gov.uk\"]"
                     ]
                 },
                 {
@@ -4457,7 +4412,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"/help-centre/access/view-methods\" class=\"ons-section-nav__link ons-list__link\">Find and view methods</a>",
+                    "html": "<a href=\"https://www.equalityadvisoryservice.com/\">Equality Advisory and Support Service (EASS)</a>",
                     "impact": null,
                     "none": [
                         {
@@ -4469,7 +4424,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(1) > .ons-section-nav__link.ons-list__link"
+                        "p:nth-child(13) > a"
                     ]
                 },
                 {
@@ -4483,7 +4438,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"/help-centre/access/run-a-method\" class=\"ons-section-nav__link ons-list__link\">Use a method</a>",
+                    "html": "<a href=\"https://www.legislation.gov.uk/uksi/2018/952/made\">Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018</a>",
                     "impact": null,
                     "none": [
                         {
@@ -4495,7 +4450,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(2) > .ons-section-nav__link.ons-list__link"
+                        "p:nth-child(15) > a"
                     ]
                 },
                 {
@@ -4509,7 +4464,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>",
+                    "html": "<a href=\"http://www.digitalaccessibilitycentre.org/\">The Digital Accessibility Centre (DAC)</a>",
                     "impact": null,
                     "none": [
                         {
@@ -4521,111 +4476,7 @@
                         }
                     ],
                     "target": [
-                        "a[href=\"/help-centre/feedback/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "a[href=\"/help-centre/support/index\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-list__link[href$=\"about\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-list__link[href$=\"glossary\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "focusable-no-name",
-                            "impact": "serious",
-                            "message": "Element is not in tab order or has accessible text",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-list--bare.ons-list > .ons-list__item > .ons-list__link[href$=\"methods\"]"
+                        "p:nth-child(18) > a"
                     ]
                 },
                 {
@@ -4788,7 +4639,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<ul class=\"ons-section-nav__list\">",
+                    "html": "<ul>\n<li>The web address (URL).</li>\n<li>Your name and email address.</li>\n<li>The format you require.</li>\n</ul>",
                     "impact": null,
                     "none": [
                         {
@@ -4800,61 +4651,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-section-nav__list"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<ul class=\"ons-section-nav__sub-items ons-list ons-list--dashed ons-u-mt-xs ons-u-mb-xs\">",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "only-listitems",
-                            "impact": "serious",
-                            "message": "List element only has direct children that are allowed inside <li> elements",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        ".ons-section-nav__sub-items"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<ul class=\"ons-list ons-list--bare\">",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "only-listitems",
-                            "impact": "serious",
-                            "message": "List element only has direct children that are allowed inside <li> elements",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [],
-                    "html": "<ul class=\"ons-list ons-list--bare\">                <li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>\n</ul>",
-                    "impact": null,
-                    "none": [
-                        {
-                            "data": null,
-                            "id": "only-listitems",
-                            "impact": "serious",
-                            "message": "List element only has direct children that are allowed inside <li> elements",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "target": [
-                        "nav[aria-labelledby=\"explore-methods\"] > .ons-list--bare.ons-list"
+                        "#main-content > ul"
                     ]
                 },
                 {
@@ -4872,7 +4669,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-u-mb-s"
+                        ".ons-list"
                     ]
                 }
             ],
@@ -4936,11 +4733,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__item--active"
+                        ".ons-navigation__item:nth-child(3)"
                     ]
                 },
                 {
@@ -5008,11 +4805,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/information/index\">Information</a>\n          </li>",
+                    "html": "<li>The web address (URL).</li>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-section-nav__list > .ons-section-nav__item:nth-child(1)"
+                        "#main-content > ul > li:nth-child(1)"
                     ]
                 },
                 {
@@ -5026,11 +4823,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-section-nav__item ons-section-nav__item--active\">",
+                    "html": "<li>Your name and email address.</li>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-section-nav__item--active"
+                        "#main-content > ul > li:nth-child(2)"
                     ]
                 },
                 {
@@ -5044,119 +4841,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/access/view-methods\" class=\"ons-section-nav__link ons-list__link\">Find and view methods</a>\n                          </li>",
+                    "html": "<li>The format you require.</li>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(1)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-section-nav__item ons-list__item\">\n                              <a href=\"/help-centre/access/run-a-method\" class=\"ons-section-nav__link ons-list__link\">Use a method</a>\n                          </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item.ons-list__item:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/feedback/index\">Feedback</a>\n          </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item:nth-child(3)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-section-nav__item\">\n            <a class=\"ons-section-nav__link\" href=\"/help-centre/support/index\">Support</a>\n          </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        ".ons-section-nav__item:nth-child(4)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/resources/about\" class=\"ons-list__link\">About this library</a>                </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list > .ons-list__item:nth-child(1)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/resources/glossary\" class=\"ons-list__link\">Library glossary</a>                </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"userful-resources\"] > .ons-list--bare.ons-list > .ons-list__item:nth-child(2)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "listitem",
-                            "impact": "serious",
-                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/methods\" class=\"ons-list__link\">Methods catalogue</a>                </li>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "nav[aria-labelledby=\"explore-methods\"] > .ons-list--bare.ons-list > .ons-list__item"
+                        "#main-content > ul > li:nth-child(3)"
                     ]
                 },
                 {
@@ -5174,7 +4863,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-u-mb-s > .ons-list__item:nth-child(1)"
+                        ".ons-list__item:nth-child(1)"
                     ]
                 },
                 {
@@ -5192,7 +4881,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-u-mb-s > .ons-list__item:nth-child(2)"
+                        ".ons-list__item:nth-child(2)"
                     ]
                 },
                 {
@@ -5299,7 +4988,7 @@
                             "message": "Page has at least one level-one heading",
                             "relatedNodes": [
                                 {
-                                    "html": "<h1>Help centre</h1>",
+                                    "html": "<h1>Accessibility statement</h1>",
                                     "target": [
                                         "h1"
                                     ]
@@ -5353,8 +5042,8 @@
             ]
         }
     ],
-    "timestamp": "2023-06-22T11:01:45.869Z",
-    "url": "http://127.0.0.1:8000/help-centre/access/view-methods",
+    "timestamp": "2023-06-22T11:02:46.243Z",
+    "url": "http://127.0.0.1:8000/accessibility-statement",
     "violations": [
         {
             "description": "Ensures role attribute has an appropriate value for the element",

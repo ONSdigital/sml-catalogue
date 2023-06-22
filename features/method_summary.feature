@@ -69,7 +69,7 @@ Feature: Method summary page tests
         And The "Author" of the method is "ONS"
         And The "Theme" of the method is "Editing"
         And The "Expert group" of the method is "Editing & Imputation"
-        And The "Languages" of the method is "Python/PySpark"
+        And The "Languages" of the method is "Python/Pandas"
         And The "Release" of the method is "Not Released Yet"
 
     Scenario: Mean of Ratios check
