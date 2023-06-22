@@ -1,5 +1,7 @@
-# This is the pipeline to run the BDD tests on prod, pre-prod and dev.
-# The triggers are daily for now, a ticket has been written to address push to branch triggers.
+# This is the dev pipeline to run the BDD tests on prod, pre-prod and dev.
+
+# Build type 0 = freeze files, 1 = freeze and publish as release candidate, 2 = freeze and publish as
+# final version
 env_setups:
   general: &general_params
     AWS_DEFAULT_REGION: eu-west-2
@@ -62,6 +64,17 @@ resource_types:
       repository: teliaoss/github-pr-resource
 
 resources:
+  - name: tag_commit
+    type: git
+    icon: github
+    check_every: never
+    webhook_token: gesture
+    source:
+      uri: https://github.com/ONSdigital/sml-catalogue.git
+      branch: main
+      tag: ((RELEASE_CANDIDATE))
+      username: ((github_access_token))
+      password: x-oauth-basic
   - name: main
     type: git
     icon: github
@@ -82,12 +95,12 @@ resources:
       branch: main
       username: ((github_access_token))
       password: x-oauth-basic
-    ignore_paths:
-      - CHANGELOG.MD
-      - freeze.py
-      - pyproject.toml
-      - poetry.lock
-      - build
+      ignore_paths:
+        - CHANGELOG.MD
+        - freeze.py
+        - pyproject.toml
+        - poetry.lock
+        - build
   - name: pr-open
     type: pull-request
     icon: github
@@ -115,39 +128,39 @@ jobs:
   - name: build_and_deploy_dev_branch
     plan:
       - do:
-        - get: repo
-          resource: pr-open
-          trigger: true
-          version: every
-        - put: repo
-          resource: pr-open
-          params:
-            path: repo
-            status: pending
-            context: Deploying_Dev
-        - in_parallel:
-          - task: terraform-apply-environment
-            file: repo/ci/tasks/terraform/apply_terraform.yml
+          - get: repo
+            resource: pr-open
+            trigger: true
+            version: every
+          - put: repo
+            resource: pr-open
+            params:
+              path: repo
+              status: pending
+              context: Deploying_Dev
+          - in_parallel:
+              - task: terraform-apply-environment
+                file: repo/ci/tasks/terraform/apply_terraform.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_dev_setup
+                  TERRAFORM_SOURCE: repo/terraform
+                  WORKSPACE_KEY_INFIX: workspace
+
+              - task: build-files
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+                params:
+                  BUILD_TYPE: 0
+                  GH_TOKEN: ((github_access_token))
+
+          - task: deploy_code
+            file: repo/ci/tasks/build_and_deploy/deploy.yml
             params:
               <<: *github_pull_creds
               <<: *sml_dev_setup
-              TERRAFORM_SOURCE: repo/terraform
-              WORKSPACE_KEY_INFIX: workspace
 
-          - task: build-files
-            file: repo/ci/tasks/build_and_deploy/build_files.yml
-            params:
-              IS_MAIN: 1
-              GH_TOKEN: ((github_access_token))
-
-        - task: deploy_code
-          file: repo/ci/tasks/build_and_deploy/deploy.yml
-          params:
-            <<: *github_pull_creds
-            <<: *sml_dev_setup
-
-        - task: run-acceptance-tests
-          file: repo/ci/tasks/testing/run_bdd_tests.yml
+          - task: run-acceptance-tests
+            file: repo/ci/tasks/testing/run_bdd_tests.yml
 
     on_success:
       put: repo
@@ -170,34 +183,35 @@ jobs:
   - name: build_and_deploy_dev
     plan:
       - do:
-        - get: repo
-          resource: main-updated
-          trigger: true
-          version: every
-        - in_parallel:
-          - task: terraform-apply-environment
-            file: repo/ci/tasks/terraform/apply_terraform.yml
+          - get: repo
+            resource: main-updated
+            trigger: true
+            version: every
+          - in_parallel:
+              - task: terraform-apply-environment
+                file: repo/ci/tasks/terraform/apply_terraform.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_dev_setup
+                  TERRAFORM_SOURCE: repo/terraform
+                  WORKSPACE_KEY_INFIX: workspace
+                  TF_WORKSPACE: main
+
+              - task: build-files
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+                params:
+                  BUILD_TYPE: 0
+                  GH_TOKEN: ((github_access_token))
+
+          - task: deploy_code
+            file: repo/ci/tasks/build_and_deploy/deploy.yml
             params:
               <<: *github_pull_creds
               <<: *sml_dev_setup
-              TERRAFORM_SOURCE: repo/terraform
-              WORKSPACE_KEY_INFIX: workspace
-              TF_WORKSPACE: main
+              workspace_name: main
 
-          - task: build-files
-            file: repo/ci/tasks/build_and_deploy/build_files.yml
-            params:
-              IS_MAIN: 0
-
-        - task: deploy_code
-          file: repo/ci/tasks/build_and_deploy/deploy.yml
-          params:
-            <<: *github_pull_creds
-            <<: *sml_dev_setup
-            workspace_name: main
-
-        - task: run-acceptance-tests
-          file: repo/ci/tasks/testing/run_bdd_tests.yml
+          - task: run-acceptance-tests
+            file: repo/ci/tasks/testing/run_bdd_tests.yml
 
   - name: build_and_deploy_preprod
     plan:
@@ -217,7 +231,8 @@ jobs:
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
-              IS_MAIN: 0
+              BUILD_TYPE: 1
+              GH_TOKEN: ((github_access_token))
 
         - task: deploy_code
           file: repo/ci/tasks/build_and_deploy/deploy.yml
@@ -233,7 +248,7 @@ jobs:
     plan:
       - do:
           - get: repo
-            resource: main
+            resource: tag_commit
           - in_parallel:
               - task: terraform-apply-environment
                 file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -247,7 +262,8 @@ jobs:
               - task: build-files
                 file: repo/ci/tasks/build_and_deploy/build_files.yml
                 params:
-                  IS_MAIN: 1
+                  BUILD_TYPE: 2
+                  GH_TOKEN: ((github_access_token))
 
           - task: deploy_code
             file: repo/ci/tasks/build_and_deploy/deploy.yml

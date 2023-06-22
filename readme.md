@@ -122,3 +122,13 @@ and
 ```shell
 fly destroy-pipeline -t aws-sml -p dev-sml-catalogue
 ```
+
+When running the production pipline we need to run it via fly execute in order to pass the tag version
+to deploy to production, this can be done as so:
+```shell
+fly execute \
+-t aws-sml \
+-p live-sml-catalogue \
+-v RELEASE_CANDIDATE="tag_version, e.g 1.1.0_rc.1" \
+-c ci/live-pipeline.yml
+```

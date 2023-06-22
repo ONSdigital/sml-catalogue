@@ -26,10 +26,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.semantic_release]
-version_variable = [
-    "freeze.py:__version__",
-    "pyproject.toml:version"
-]
+version_variable = "pyproject.toml:version"
 branch = "SPP-9387-Release-Versioning"
 upload_to_pypi = false
 build_command = "python freeze.py && mkdir dist/ && zip -r dist/build.zip build/"
