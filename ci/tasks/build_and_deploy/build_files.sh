@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Runs static code testing and builds files
-: "${IS_MAIN}"
+: "${BUILD_TYPE}"
 : "${RELEASE_CANDIDATE}"
 
 set -euo pipefail
@@ -26,10 +26,10 @@ run_linting(){
   echo "Freezing flask"
 }
 
-if [ "$IS_MAIN" -eq 0 ]; then
+if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
   python freeze.py
-elif [ "$IS_MAIN" -eq 1 ]; then
+elif [ "$BUILD_TYPE" -eq 1 ]; then
   git fetch
   run_linting
   semantic-release publish --prerelease
