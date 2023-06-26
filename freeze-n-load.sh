@@ -7,7 +7,7 @@ rm -rf build/*
 echo "done"
 
 echo -n "Freezing site to static files..."
-pipenv run python freeze.py
+poetry run python freeze.py
 echo "done"
 
 echo -n "Uploading to S3 bucket..."
