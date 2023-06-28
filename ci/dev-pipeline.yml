@@ -1,5 +1,7 @@
-# This is the pipeline to run the BDD tests on prod, pre-prod and dev.
-# The triggers are daily for now, a ticket has been written to address push to branch triggers.
+# This is the dev pipeline to run the BDD tests on prod, pre-prod and dev.
+
+# Build type 0 = freeze files, 1 = freeze and publish as release candidate, 2 = freeze and publish as
+# final version
 env_setups:
   general: &general_params
     AWS_DEFAULT_REGION: eu-west-2
@@ -10,21 +12,15 @@ env_setups:
   general_dev: &general_dev_params
     TF_VAR_deployment_type: dev
     S3_NAME: statistical-methods-library-tf-state
-    S3_ACCOUNT_STATE_KEY: ons-smlportal-dev.account.tfstate
-    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-dev.environment.tfstate
     <<: *general_params
 
   general_preprod: &general_preprod_params
-    S3_ACCOUNT_STATE_KEY: ons-smlportal-preprod.account.tfstate
     S3_NAME: statistical-methods-library-tf-state-preprod
-    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-preprod.environment.tfstate
     TF_VAR_deployment_type: preprod
     <<: *general_params
 
   general_prod: &general_prod_params
-    S3_ACCOUNT_STATE_KEY: ons-smlportal-prod.account.tfstate
     S3_NAME: statistical-methods-library-tf-state-prod
-    S3_ENVIRONMENT_STATE_KEY: ons-smlportal-prod.environment.tfstate
     TF_VAR_deployment_type: prod
     <<: *general_params
 
@@ -59,7 +55,7 @@ env_setups:
     AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_prod)):role/spp-concourse-sml-deployment-prod
     TF_VAR_deployment_role: *role
     TF_VAR_environment: prod
-
+    TF_VAR_account: *account
 
 resource_types:
   - name: pull-request
@@ -68,6 +64,17 @@ resource_types:
       repository: teliaoss/github-pr-resource
 
 resources:
+  - name: tag_commit
+    type: git
+    icon: github
+    check_every: never
+    webhook_token: gesture
+    source:
+      uri: https://github.com/ONSdigital/sml-catalogue.git
+      branch: main
+      tag: ((RELEASE_CANDIDATE))
+      username: ((github_access_token))
+      password: x-oauth-basic
   - name: main
     type: git
     icon: github
@@ -88,6 +95,10 @@ resources:
       branch: main
       username: ((github_access_token))
       password: x-oauth-basic
+      ignore_paths:
+        - CHANGELOG.MD
+        - pyproject.toml
+        - poetry.lock
   - name: pr-open
     type: pull-request
     icon: github
@@ -115,36 +126,39 @@ jobs:
   - name: build_and_deploy_dev_branch
     plan:
       - do:
-        - get: repo
-          resource: pr-open
-          trigger: true
-          version: every
-        - put: repo
-          resource: pr-open
-          params:
-            path: repo
-            status: pending
-            context: Deploying_Dev
-        - in_parallel:
-          - task: terraform-apply-environment
-            file: repo/ci/tasks/terraform/apply_terraform.yml
+          - get: repo
+            resource: pr-open
+            trigger: true
+            version: every
+          - put: repo
+            resource: pr-open
+            params:
+              path: repo
+              status: pending
+              context: Deploying_Dev
+          - in_parallel:
+              - task: terraform-apply-environment
+                file: repo/ci/tasks/terraform/apply_terraform.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_dev_setup
+                  TERRAFORM_SOURCE: repo/terraform
+                  WORKSPACE_KEY_INFIX: workspace
+
+              - task: build-files
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+                params:
+                  BUILD_TYPE: 0
+                  GH_TOKEN: ((github_access_token))
+
+          - task: deploy_code
+            file: repo/ci/tasks/build_and_deploy/deploy.yml
             params:
               <<: *github_pull_creds
               <<: *sml_dev_setup
-              TERRAFORM_SOURCE: repo/terraform
-              WORKSPACE_KEY_INFIX: workspace
 
-          - task: build-files
-            file: repo/ci/tasks/build_and_deploy/build_files.yml
-
-        - task: deploy_code
-          file: repo/ci/tasks/build_and_deploy/deploy.yml
-          params:
-            <<: *github_pull_creds
-            <<: *sml_dev_setup
-
-        - task: run-acceptance-tests
-          file: repo/ci/tasks/testing/run_bdd_tests.yml
+          - task: run-acceptance-tests
+            file: repo/ci/tasks/testing/run_bdd_tests.yml
 
     on_success:
       put: repo
@@ -167,32 +181,35 @@ jobs:
   - name: build_and_deploy_dev
     plan:
       - do:
-        - get: repo
-          resource: main-updated
-          trigger: true
-          version: every
-        - in_parallel:
-          - task: terraform-apply-environment
-            file: repo/ci/tasks/terraform/apply_terraform.yml
+          - get: repo
+            resource: main-updated
+            trigger: true
+            version: every
+          - in_parallel:
+              - task: terraform-apply-environment
+                file: repo/ci/tasks/terraform/apply_terraform.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_dev_setup
+                  TERRAFORM_SOURCE: repo/terraform
+                  WORKSPACE_KEY_INFIX: workspace
+                  TF_WORKSPACE: main
+
+              - task: build-files
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+                params:
+                  BUILD_TYPE: 0
+                  GH_TOKEN: ((github_access_token))
+
+          - task: deploy_code
+            file: repo/ci/tasks/build_and_deploy/deploy.yml
             params:
               <<: *github_pull_creds
               <<: *sml_dev_setup
-              TERRAFORM_SOURCE: repo/terraform
-              WORKSPACE_KEY_INFIX: workspace
-              TF_WORKSPACE: main
+              workspace_name: main
 
-          - task: build-files
-            file: repo/ci/tasks/build_and_deploy/build_files.yml
-
-        - task: deploy_code
-          file: repo/ci/tasks/build_and_deploy/deploy.yml
-          params:
-            <<: *github_pull_creds
-            <<: *sml_dev_setup
-            workspace_name: main
-
-        - task: run-acceptance-tests
-          file: repo/ci/tasks/testing/run_bdd_tests.yml
+          - task: run-acceptance-tests
+            file: repo/ci/tasks/testing/run_bdd_tests.yml
 
   - name: build_and_deploy_preprod
     plan:
@@ -211,6 +228,9 @@ jobs:
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
+            params:
+              BUILD_TYPE: 1
+              GH_TOKEN: ((github_access_token))
 
         - task: deploy_code
           file: repo/ci/tasks/build_and_deploy/deploy.yml
@@ -226,7 +246,7 @@ jobs:
     plan:
       - do:
           - get: repo
-            resource: main
+            resource: tag_commit
           - in_parallel:
               - task: terraform-apply-environment
                 file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -239,6 +259,9 @@ jobs:
 
               - task: build-files
                 file: repo/ci/tasks/build_and_deploy/build_files.yml
+                params:
+                  BUILD_TYPE: 2
+                  GH_TOKEN: ((github_access_token))
 
           - task: deploy_code
             file: repo/ci/tasks/build_and_deploy/deploy.yml
