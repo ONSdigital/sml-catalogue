@@ -25,17 +25,17 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
-
+git config --global user.email "spp-shared-services@example.com"
+git config --global user.name "spp-shared-services"
 if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
   python freeze.py
 elif [ "$BUILD_TYPE" -eq 1 ]; then
-  git config --global user.email "spp-shared-services@example.com"
-  git config --global user.name "spp-shared-services"
   git fetch
   run_linting
   semantic-release publish --prerelease
 else
+  git fetch
   run_linting
   semantic-release publish
 fi
