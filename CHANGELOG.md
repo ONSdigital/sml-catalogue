@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v0.1.0-rc.2 (2023-07-18)
+
+### Fix
+
+* Amending build files to set git config for preprod and prod runs ([`c0a9fe2`](https://github.com/ONSdigital/sml-catalogue/commit/c0a9fe253a14f3b026dfc1aa8c764a18e2b7a6f1))
+
 ## v0.1.0-rc.1 (2023-07-07)
 
 ### Feature
