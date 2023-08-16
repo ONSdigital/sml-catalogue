@@ -5,8 +5,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from axe_selenium_python import Axe
 from behave import *
-import socket
-import os
 
 options = Options()
 options.headless = True

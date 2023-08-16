@@ -8,11 +8,11 @@ Before continuing, install the following tools:
 
 [**Homebrew**](https://brew.sh/): Follow the instructions on this page
 
-[**Python**](https://www.python.org/downloads/macos/): To install the correct version of python on your local system, check the pipfile and then install the relevant version.
+[**Python**](https://www.python.org/downloads/macos/): To install the correct version of python on your local system, check the pyproject.toml and then install the relevant version.
 
-You will need to install [pipenv](https://pypi.org/project/pipenv/) to install the python dependencies. If you want to manage multiple versions of python you will need to install `pyenv`.
+You will need to install [poetry](https://python-poetry.org/docs/#installing-with-the-official-installer) to install the python dependencies. If you want to manage multiple versions of python you will need to install `pyenv`.
 
-Refer to the [confluence page](https://confluence.ons.gov.uk/display/ESD/Guide+on+using+pipenv%2C+pyenv+and+venv) for guidance installing and using pipenv and pyenv.
+Refer to the [confluence page](https://confluence.ons.gov.uk/display/ESD/Guide+on+using+pipenv%2C+pyenv+and+venv) for guidance on installing and using pyenv.
 
 You will also need to have installed [wget](https://formulae.brew.sh/formula/wget) to fecth the `ONS Design System`.
 
@@ -31,13 +31,19 @@ Download the release of the ONS Design System, and unpack them into the correct 
 You will need to install the python dependencies, including `Frozen-Flask`, the static website generator:
 
 ```bash
-pipenv sync
+poetry install
+```
+
+You can activate your virtual environment with the following command:
+
+```bash
+poetry shell
 ```
 
 With Jsonnet content in the content/ directory, you should now be able to run the Flask demo server:
 
 ```bash
-pipenv run flask --app sml_builder --debug run
+poetry run flask --app sml_builder --debug run
 ```
 
 If everything runs without errors, you should now be able to navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to view the site.
@@ -72,15 +78,15 @@ If another program is already using port 5000, you may see the error ```OSError:
 In this case run the following command, replacing it with the port you want the web app to run on, so that the application is launched on a different port.
 
 ```bash
-pipenv run flask --app sml_builder --debug run --port=8000
+poetry run flask --app sml_builder --debug run --port=8000
 ```
 
 ## Behaviour tests
 
-The selenium behaviour tests can be run using the following command
+The selenium behaviour tests can be run using the following command. If you are running the web app on a different port than port 5000, please change the port number below before running the command.
 
 ```bash
-behave
+behave -D host=http://127.0.0.1:5000/
 ```
 
 This will run the behaviour test locally in a headless state. If you want to see the GUI browser tests running then go to the setupSelenium.py file and comment the headless boolean.
