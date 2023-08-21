@@ -14,7 +14,7 @@ You will need to install [poetry](https://python-poetry.org/docs/#installing-wit
 
 Refer to the [confluence page](https://confluence.ons.gov.uk/display/ESD/Guide+on+using+pipenv%2C+pyenv+and+venv) for guidance on installing and using pyenv.
 
-You will also need to have installed [wget](https://formulae.brew.sh/formula/wget) to fecth the `ONS Design System`.
+You will also need to have installed [wget](https://formulae.brew.sh/formula/wget) to fetch the `ONS Design System`.
 
 ## Build and Deploy
 
@@ -63,7 +63,7 @@ sudo ./run_py_tools.sh
 - One common cause of this error message is not having uploaded your site yet.
 - Are you coming from a non-UK IP address, possibly due to a VPN being active? If so, switch this off and try again. Geographical restrictions are in place.
 
-If you have any errors running the pipenv sync command and running the web app or any other errors, it maybe because of issues relating to your latest macOS version and Xcode command line tools installed. You can try the command below where you will remove and reinstall Xcode command line tools:
+If you have any errors running the web app or any other errors, it maybe because of issues relating to your latest macOS version and Xcode command line tools installed. You can try the command below where you will remove and reinstall Xcode command line tools:
 
 ```bash
 sudo rm -rf /Library/Developer/CommandLineTools
@@ -131,6 +131,7 @@ fly destroy-pipeline -t aws-sml -p dev-sml-catalogue
 
 When running the production pipeline we need to run it via fly execute in order to pass the tag version
 to deploy to production, this can be done as so:
+
 ```shell
 fly execute \
 -t aws-sml \
