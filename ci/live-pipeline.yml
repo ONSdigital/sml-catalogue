@@ -27,6 +27,7 @@ env_setups:
   github_pull_creds: &github_pull_creds
     username: ((github_access_token))
     password: x-oauth-basic
+    
 
   # -------------------
 
@@ -75,6 +76,7 @@ resources:
       tag: ((RELEASE_CANDIDATE))
       username: ((github_access_token))
       password: x-oauth-basic
+      commit_verification_keys: ((github_ons_spp_machine_user_gpg_key_private))
   - name: main
     type: git
     icon: github
@@ -85,6 +87,7 @@ resources:
       branch: main
       username: ((github_access_token))
       password: x-oauth-basic
+      commit_verification_keys: ((github_ons_spp_machine_user_gpg_key_private))
   - name: main-updated
     type: git
     icon: github
