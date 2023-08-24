@@ -37,7 +37,6 @@ elif [ "$BUILD_TYPE" -eq 1 ]; then
   semantic-release publish --prerelease
 else
   git fetch
-  git checkout main
   run_linting
   semantic-release publish
 fi
