@@ -99,9 +99,9 @@ resources:
       username: ((github_access_token))
       password: x-oauth-basic
       ignore_paths:
-        - CHANGELOG.MD
-        - pyproject.toml
-        - poetry.lock
+      - CHANGELOG.MD
+      - pyproject.toml
+      - poetry.lock
   - name: pr-open
     type: pull-request
     icon: github

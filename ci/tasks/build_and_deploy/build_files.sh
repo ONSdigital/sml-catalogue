@@ -32,6 +32,7 @@ if [ "$BUILD_TYPE" -eq 0 ]; then
   python freeze.py
 elif [ "$BUILD_TYPE" -eq 1 ]; then
   git fetch
+  git checkout main
   run_linting
   semantic-release publish --prerelease
 else
