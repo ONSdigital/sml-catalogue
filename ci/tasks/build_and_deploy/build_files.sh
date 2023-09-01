@@ -3,6 +3,7 @@
 # Runs static code testing and builds files
 : "${BUILD_TYPE}"
 : "${RELEASE_CANDIDATE}"
+: "${SIGNING_KEY}"
 
 set -euo pipefail
 
@@ -27,6 +28,9 @@ run_linting(){
 }
 git config --global user.email "spp-shared-services@example.com"
 git config --global user.name "spp-shared-services"
+git config --global user.signingkey "${SIGNING_KEY}"
+git config commit.gpgsign true
+
 if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
   python freeze.py
