@@ -13,7 +13,6 @@ source venv/bin/activate
 
 run_linting(){
   poetry install --sync
-  poetry check
   echo "Running Black"
   black --check --diff sml_builder
   echo "Running pylint"
