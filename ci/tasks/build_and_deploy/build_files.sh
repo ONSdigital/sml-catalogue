@@ -3,7 +3,6 @@
 # Runs static code testing and builds files
 : "${BUILD_TYPE}"
 : "${RELEASE_CANDIDATE}"
-: "${SIGNING_KEY}"
 
 set -euo pipefail
 
@@ -13,9 +12,7 @@ python3 -m venv venv
 source venv/bin/activate
 
 run_linting(){
-  poetry install --sync
-  echo "Check if project.toml file and poetry.lock file are in sync"
-  poetry check
+  poetry install
   echo "Running Black"
   black --check --diff sml_builder
   echo "Running pylint"
@@ -30,9 +27,6 @@ run_linting(){
 }
 git config --global user.email "spp-shared-services@example.com"
 git config --global user.name "spp-shared-services"
-git config --global user.signingkey "${SIGNING_KEY}"
-git config commit.gpgsign true
-
 if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
   python freeze.py

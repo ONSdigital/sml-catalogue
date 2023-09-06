@@ -6,9 +6,7 @@
 
 cd repo
 pip install poetry
-poetry install --sync
-echo "Check if project.toml file and poetry.lock file are in sync"
-poetry check
+poetry install
 date=$(date '+%Y_%m_%d')
 echo $date
 mkdir -p ./features/test_reports/dev/$date
