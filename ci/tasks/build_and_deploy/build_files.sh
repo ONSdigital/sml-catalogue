@@ -13,6 +13,7 @@ source venv/bin/activate
 
 run_linting(){
   poetry install --sync
+  echo "Check if project toml file and poetry lock file are in sync"
   poetry check
   echo "Running Black"
   black --check --diff sml_builder
