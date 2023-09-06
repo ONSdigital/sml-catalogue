@@ -7,6 +7,7 @@
 cd repo
 pip install poetry
 poetry install --sync
+poetry check
 date=$(date '+%Y_%m_%d')
 echo $date
 mkdir -p ./features/test_reports/dev/$date
