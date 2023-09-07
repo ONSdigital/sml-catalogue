@@ -37,6 +37,7 @@ if [ "$BUILD_TYPE" -eq 0 ]; then
   python freeze.py
   echo "test" > test.txt
   git fetch
+  git checkout fix-semantic-release-issues
   git add test.txt
   git commit -m "Test"
   git push origin fix-semantic-release-issues
