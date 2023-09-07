@@ -26,10 +26,8 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
-git config --global user.email "spp-shared-services@example.com"
-git config --global user.name "spp-shared-services"
 git config --global user.signingkey "${SIGNING_KEY}"
-git config commit.gpgsign true
+git config --global commit.gpgsign true
 
 if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
