@@ -32,13 +32,13 @@ git config --global user.email "spp@ons.gov.uk"
 git config --global user.name "SPP Machine User"
 git config --global user.signingkey "79DDAC12EE2E036D"
 git config --global commit.gpgsign true
-gpg -K --keyid-format LONG
 if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
   python freeze.py
-  git fetch
-  run_linting
-  semantic-release publish --prerelease
+  echo "test" > test.txt
+  git add -A
+  git commit -m "Test"
+  git push origin
 elif [ "$BUILD_TYPE" -eq 1 ]; then
   git fetch
   run_linting
