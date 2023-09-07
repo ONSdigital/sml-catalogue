@@ -36,9 +36,9 @@ if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
   python freeze.py
   echo "test" > test.txt
-  git add -A
+  git add test.txt
   git commit -m "Test"
-  git push origin
+  git push origin fix-semantic-release-issues
 elif [ "$BUILD_TYPE" -eq 1 ]; then
   git fetch
   run_linting
