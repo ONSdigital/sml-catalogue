@@ -26,6 +26,7 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
+gpg --import "${SIGNING_KEY}"
 git config --global user.signingkey "${SIGNING_KEY}"
 git config --global commit.gpgsign true
 gpg -K --keyid-format SHORT
