@@ -31,4 +31,3 @@ branch = "main"
 upload_to_pypi = false
 build_command = "python freeze.py && mkdir dist/ && zip -r dist/build.zip build/"
 prerelease_tag = "rc"
-
