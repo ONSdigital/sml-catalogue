@@ -26,11 +26,9 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
-git config --get-all user.email
-git config --get-all user.name
 git config --global user.signingkey "${SIGNING_KEY}"
 git config --global commit.gpgsign true
-
+gpg -K --keyid-format SHORT
 if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
   python freeze.py
