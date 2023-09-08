@@ -13,8 +13,9 @@ python3 -m venv venv
 source venv/bin/activate
 
 run_linting(){
-  poetry install
-  echo "Running Black"
+  poetry install --sync
+  echo "Check if project toml file and poetry lock file are in sync"
+  poetry check
   black --check --diff sml_builder
   echo "Running pylint"
   pylint sml_builder
