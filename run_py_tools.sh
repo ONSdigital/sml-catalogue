@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CMDS=("pylint sml_builder" "flake8 sml_builder" "bandit -r sml_builder")
+CMDS=("pylint sml_builder" "flake8 sml_builder" "bandit -r freeze.py" "bandit -r sml_builder")
 
 for i in "${CMDS[@]}"
 do 

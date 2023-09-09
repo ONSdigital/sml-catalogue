@@ -22,6 +22,7 @@ run_linting(){
   echo "Running flake8"
   flake8 sml_builder
   echo "Running bandit"
+  bandit -r freeze.py
   bandit -r sml_builder
   echo "Installing the ONS design system"
   ./get_design_system.sh

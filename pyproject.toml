@@ -10,15 +10,16 @@ python = "^3.10"
 frozen-flask = "*"
 jsonnet = "*"
 markdown = "*"
-flake8 = "*"
-pylint = "*"
-bandit = "*"
-axe-selenium-python = "*"
+isort = "^5.12.0"
 
 [tool.poetry.dev-dependencies]
 black = "*"
 behave = "*"
 selenium = "^4.10.0"
+flake8 = "*"
+pylint = "*"
+bandit = "*"
+axe-selenium-python = "*"
 python-semantic-release = "<8.0.0"
 
 [build-system]
