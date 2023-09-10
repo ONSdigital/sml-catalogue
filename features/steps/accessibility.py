@@ -1,6 +1,7 @@
 # Tests for the accessibility preferences
 
 from urllib.parse import urljoin
+
 from setupSelenium import *
 
 

@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from markupsafe import escape, Markup
+from markupsafe import Markup, escape
 
 app = Flask(__name__)
 
@@ -10,11 +10,11 @@ app.jinja_env.lstrip_blocks = True
 app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
 app.config["FREEZER_DESTINATION"] = "../build"
 
+import sml_builder.glossary  # noqa: F401
+import sml_builder.help_centre  # noqa: F401
 import sml_builder.method  # noqa: F401
 import sml_builder.page  # noqa: F401
-import sml_builder.glossary  # noqa: F401
 import sml_builder.utils  # noqa: F401
-import sml_builder.help_centre  # noqa: F401
 
 
 @app.route("/")
