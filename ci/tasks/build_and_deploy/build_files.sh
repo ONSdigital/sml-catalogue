@@ -16,7 +16,7 @@ run_linting(){
   poetry install --sync
   echo "Check if project toml file and poetry lock file are in sync"
   poetry check
-  black black --check --diff freeze.py sml_builder features
+  black --check --diff freeze.py sml_builder features
   echo "Running pylint"
   pylint freeze.py sml_builder features
   echo "Running flake8"
