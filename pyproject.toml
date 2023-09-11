@@ -23,8 +23,8 @@ axe-selenium-python = "*"
 python-semantic-release = "<8.0.0"
 
 [tool.bandit]
-exclude_dirs = ["tests", "featyres/steps"]
-skips = ["B101"]
+exclude_dirs = ["tests", "features"]
+
 
 [build-system]
 requires = ["poetry-core"]
