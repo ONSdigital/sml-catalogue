@@ -22,7 +22,7 @@ run_linting(){
   echo "Running flake8"
   flake8 freeze.py sml_builder features
   echo "Running bandit"
-  bandit -r freeze.py sml_builder features
+  bandit -c pyproject.toml -r .
   echo "Running isort"
   isort --check-only .
   echo "Installing the ONS design system"
