@@ -18,9 +18,9 @@ run_linting(){
   poetry check
   black --check --diff freeze.py sml_builder features
   echo "Running pylint"
-  pylint freeze.py sml_builder
+  pylint freeze.py sml_builder features
   echo "Running flake8"
-  flake8 freeze.py sml_builder
+  flake8 freeze.py sml_builder features
   echo "Running bandit"
   bandit -r freeze.py sml_builder features
   echo "Running isort"

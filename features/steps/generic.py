@@ -1,7 +1,9 @@
 # Step definitions for about page
+# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined, duplicate-code
+
 from urllib.parse import urljoin
 
-from setupSelenium import *
+from setupSelenium import EC, By, WebDriverWait, driver, timeout
 
 
 @given("I'm an sml portal user")

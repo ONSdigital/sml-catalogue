@@ -23,7 +23,7 @@ axe-selenium-python = "*"
 python-semantic-release = "<8.0.0"
 
 [tool.bandit]
-exclude_dirs = ["tests", "features"]
+exclude_dirs = ["features"]
 
 
 [build-system]

@@ -1,3 +1,5 @@
+# pylint: disable=wildcard-import, unused-import, unused-wildcard-import
+
 from axe_selenium_python import Axe
 from behave import *
 from selenium import webdriver

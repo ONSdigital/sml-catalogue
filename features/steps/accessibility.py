@@ -1,8 +1,9 @@
 # Tests for the accessibility preferences
+# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined
 
 from urllib.parse import urljoin
 
-from setupSelenium import *
+from setupSelenium import EC, Axe, By, WebDriverWait, driver, timeout
 
 
 @then("The accessibility test passes")
@@ -18,8 +19,8 @@ def accessibility_check(context):
     violations = results["violations"]
     violationCount = 0
     # Filter out minor and moderate error alerts
-    for i in range(len(violations)):
-        if violations[i]["impact"] in ("critical", "serious"):
+    for violation in violations:
+        if violation["impact"] in ("critical", "serious"):
             violationCount += 1
     # Assert no violations are found
     assert violationCount == 0
