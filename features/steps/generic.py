@@ -19,15 +19,6 @@ def auth_user(context):
     )
 
 
-@when("I refresh the page")
-def refresh_page(context):
-    driver.current_url
-    driver.refresh()
-    WebDriverWait(driver, timeout=timeout).until(
-        EC.presence_of_element_located((By.ID, "main-content"))
-    )
-
-
 @when('I navigate to the "{page}" page')
 def navigate_to_page(context, page):
     driver.get(urljoin(context.config.userdata.get("host") + "resources/", page))
