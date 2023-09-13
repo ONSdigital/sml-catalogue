@@ -35,6 +35,7 @@ git config user.signingkey 79DDAC12EE2E036D
 git config commit.gpgsign true
 if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
+  python freeze.py
 elif [ "$BUILD_TYPE" -eq 1 ]; then
   git fetch
   run_linting
