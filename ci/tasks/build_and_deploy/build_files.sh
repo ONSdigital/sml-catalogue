@@ -7,6 +7,7 @@
 
 
 set -euo pipefail
+export TERM=xterm
 
 pip install --upgrade pip
 pip install poetry
