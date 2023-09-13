@@ -30,11 +30,10 @@ run_linting(){
 }
 echo "${SIGNING_KEY}" > signingkey.key
 gpg --import signingkey.key
-git config --global user.email "spp@ons.gov.uk"
-git config --global user.name "SPP Machine User"
-git config --global user.signingkey 79DDAC12EE2E036D
-git config --global commit.gpgsign true
-git config -l
+git config user.email "spp@ons.gov.uk"
+git config user.name "SPP Machine User"
+git config user.signingkey 79DDAC12EE2E036D
+git config commit.gpgsign true
 if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
   python freeze.py
