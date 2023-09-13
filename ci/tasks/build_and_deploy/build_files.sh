@@ -37,9 +37,9 @@ git config commit.gpgsign true
 if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
   python freeze.py
-  echo "test" > test.txt
   git fetch
   git checkout fix-semantic-release-issues
+  echo "test" > test.txt
   git add test.txt
   git commit -m "Test"
   git push origin fix-semantic-release-issues
