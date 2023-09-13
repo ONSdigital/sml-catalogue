@@ -5,6 +5,7 @@
 : "${RELEASE_CANDIDATE}"
 : "${SIGNING_KEY}"
 
+
 set -euo pipefail
 
 pip install --upgrade pip
@@ -27,11 +28,12 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
-git config --global user.email "spp-shared-services@example.com"
-git config --global user.name "spp-shared-services"
-git config --global user.signingkey "${SIGNING_KEY}"
+echo "${SIGNING_KEY}" > signingkey.key
+gpg --import signingkey.key
+git config user.email "spp@ons.gov.uk"
+git config user.name "SPP Machine User"
+git config user.signingkey 79DDAC12EE2E036D
 git config commit.gpgsign true
-
 if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
   python freeze.py
