@@ -98,9 +98,9 @@ resources:
       username: ((github_access_token))
       password: x-oauth-basic
       ignore_paths:
-        - CHANGELOG.MD
-        - pyproject.toml
-        - poetry.lock
+      - CHANGELOG.MD
+      - pyproject.toml
+      - poetry.lock
   - name: pr-open
     type: pull-request
     icon: github
@@ -128,39 +128,40 @@ jobs:
   - name: build_and_deploy_dev_branch
     plan:
       - do:
-          - get: repo
-            resource: pr-open
-            trigger: true
-            version: every
-          - put: repo
-            resource: pr-open
-            params:
-              path: repo
-              status: pending
-              context: Deploying_Dev
-          - in_parallel:
-              - task: terraform-apply-environment
-                file: repo/ci/tasks/terraform/apply_terraform.yml
-                params:
-                  <<: *github_pull_creds
-                  <<: *sml_dev_setup
-                  TERRAFORM_SOURCE: repo/terraform
-                  WORKSPACE_KEY_INFIX: workspace
-
-              - task: build-files
-                file: repo/ci/tasks/build_and_deploy/build_files.yml
-                params:
-                  BUILD_TYPE: 0
-                  GH_TOKEN: ((github_access_token))
-
-          - task: deploy_code
-            file: repo/ci/tasks/build_and_deploy/deploy.yml
+        - get: repo
+          resource: pr-open
+          trigger: true
+          version: every
+        - put: repo
+          resource: pr-open
+          params:
+            path: repo
+            status: pending
+            context: Deploying_Dev
+        - in_parallel:
+          - task: terraform-apply-environment
+            file: repo/ci/tasks/terraform/apply_terraform.yml
             params:
               <<: *github_pull_creds
               <<: *sml_dev_setup
+              TERRAFORM_SOURCE: repo/terraform
+              WORKSPACE_KEY_INFIX: workspace
 
-          - task: run-acceptance-tests
-            file: repo/ci/tasks/testing/run_bdd_tests.yml
+          - task: build-files
+            file: repo/ci/tasks/build_and_deploy/build_files.yml
+            params:
+              BUILD_TYPE: 0
+              GH_TOKEN: ((github_access_token))
+              SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+
+        - task: deploy_code
+          file: repo/ci/tasks/build_and_deploy/deploy.yml
+          params:
+            <<: *github_pull_creds
+            <<: *sml_dev_setup
+
+        - task: run-acceptance-tests
+          file: repo/ci/tasks/testing/run_bdd_tests.yml
 
     on_success:
       put: repo
@@ -183,35 +184,36 @@ jobs:
   - name: build_and_deploy_dev
     plan:
       - do:
-          - get: repo
-            resource: main-updated
-            trigger: true
-            version: every
-          - in_parallel:
-              - task: terraform-apply-environment
-                file: repo/ci/tasks/terraform/apply_terraform.yml
-                params:
-                  <<: *github_pull_creds
-                  <<: *sml_dev_setup
-                  TERRAFORM_SOURCE: repo/terraform
-                  WORKSPACE_KEY_INFIX: workspace
-                  TF_WORKSPACE: main
-
-              - task: build-files
-                file: repo/ci/tasks/build_and_deploy/build_files.yml
-                params:
-                  BUILD_TYPE: 0
-                  GH_TOKEN: ((github_access_token))
-
-          - task: deploy_code
-            file: repo/ci/tasks/build_and_deploy/deploy.yml
+        - get: repo
+          resource: main-updated
+          trigger: true
+          version: every
+        - in_parallel:
+          - task: terraform-apply-environment
+            file: repo/ci/tasks/terraform/apply_terraform.yml
             params:
               <<: *github_pull_creds
               <<: *sml_dev_setup
-              workspace_name: main
+              TERRAFORM_SOURCE: repo/terraform
+              WORKSPACE_KEY_INFIX: workspace
+              TF_WORKSPACE: main
 
-          - task: run-acceptance-tests
-            file: repo/ci/tasks/testing/run_bdd_tests.yml
+          - task: build-files
+            file: repo/ci/tasks/build_and_deploy/build_files.yml
+            params:
+              BUILD_TYPE: 0
+              GH_TOKEN: ((github_access_token))
+              SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+
+        - task: deploy_code
+          file: repo/ci/tasks/build_and_deploy/deploy.yml
+          params:
+            <<: *github_pull_creds
+            <<: *sml_dev_setup
+            workspace_name: main
+
+        - task: run-acceptance-tests
+          file: repo/ci/tasks/testing/run_bdd_tests.yml
 
   - name: build_and_deploy_preprod
     plan:
@@ -231,8 +233,11 @@ jobs:
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
+              <<: *github_pull_creds
+              <<: *sml_preprod_setup
               BUILD_TYPE: 1
               GH_TOKEN: ((github_access_token))
+              SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
 
         - task: deploy_code
           file: repo/ci/tasks/build_and_deploy/deploy.yml
@@ -247,55 +252,56 @@ jobs:
   - name: build_and_deploy_prod
     plan:
       - do:
-          - get: repo
-            resource: tag_commit
-          - in_parallel:
-              - task: terraform-apply-environment
-                file: repo/ci/tasks/terraform/apply_terraform.yml
-                params:
-                  <<: *github_pull_creds
-                  <<: *sml_prod_setup
-                  TERRAFORM_SOURCE: repo/terraform
-                  WORKSPACE_KEY_INFIX: workspace
-                  TF_WORKSPACE: main
-
-              - task: build-files
-                file: repo/ci/tasks/build_and_deploy/build_files.yml
-                params:
-                  BUILD_TYPE: 2
-                  GH_TOKEN: ((github_access_token))
-
-          - task: deploy_code
-            file: repo/ci/tasks/build_and_deploy/deploy.yml
+        - get: repo
+          resource: tag_commit
+        - in_parallel:
+          - task: terraform-apply-environment
+            file: repo/ci/tasks/terraform/apply_terraform.yml
             params:
               <<: *github_pull_creds
               <<: *sml_prod_setup
-              workspace_name: main
+              TERRAFORM_SOURCE: repo/terraform
+              WORKSPACE_KEY_INFIX: workspace
+              TF_WORKSPACE: main
 
-          - task: run-acceptance-tests
-            file: repo/ci/tasks/testing/run_bdd_tests.yml
+          - task: build-files
+            file: repo/ci/tasks/build_and_deploy/build_files.yml
+            params:
+              BUILD_TYPE: 2
+              GH_TOKEN: ((github_access_token))
+              SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+
+        - task: deploy_code
+          file: repo/ci/tasks/build_and_deploy/deploy.yml
+          params:
+            <<: *github_pull_creds
+            <<: *sml_prod_setup
+            workspace_name: main
+
+        - task: run-acceptance-tests
+          file: repo/ci/tasks/testing/run_bdd_tests.yml
 
   - name: destroy_workspace
     serial: true
     plan:
       - do:
-          - get: repo
-            resource: pr-done
-            trigger: true
-            version: every
-          - put: repo
-            resource: pr-done
-            params:
-               path: repo
-               status: pending
-               context: Deleting Workspace
-          - task: init-metadata
-            file: repo/ci/tasks/terraform/init_metadata.yml
-          - task: terraform
-            file: repo/ci/tasks/terraform/destroy_terraform.yml
-            params:
-              <<: *sml_dev_setup
-              WORKSPACE_KEY_INFIX: workspace
+        - get: repo
+          resource: pr-done
+          trigger: true
+          version: every
+        - put: repo
+          resource: pr-done
+          params:
+             path: repo
+             status: pending
+             context: Deleting Workspace
+        - task: init-metadata
+          file: repo/ci/tasks/terraform/init_metadata.yml
+        - task: terraform
+          file: repo/ci/tasks/terraform/destroy_terraform.yml
+          params:
+            <<: *sml_dev_setup
+            WORKSPACE_KEY_INFIX: workspace
     on_success:
       put: repo
       resource: pr-done
