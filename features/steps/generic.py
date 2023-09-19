@@ -32,7 +32,10 @@ def navigate_to_url(context, url):
 @then('The title of the page is "{title}"')
 def check_title(context, title):
     page_title = WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.TAG_NAME, "h1")).text
-    assert page_title == title
+    try:
+        assert page_title == title
+    except AssertionError:
+        raise (AssertionError(f"Expected: '{title}' but got: '{page_title}'"))
 
 @then('The title of the help centre page is "{title}"')
 def check_title(context, title):

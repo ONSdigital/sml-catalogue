@@ -6,12 +6,14 @@ from setupSelenium import *
 def auth_user(context):
     driver.get(context.config.userdata.get("host"))
 
-@given('I\'m an sml portal user on the "{page}"')
+@given('I\'m an sml portal user on the "{page}" page')
 def auth_user(context, page):
-    if page == "find and view methods page":
+    if page == "find and view methods":
         driver.get(f'{context.config.userdata.get("host")}help-centre/access/view-methods')
     elif page == "submit a method request":
         driver.get(f'{context.config.userdata.get("host")}help-centre/information/methods-request')
+    elif page == "coding standards":
+        driver.get(f'{context.config.userdata.get("host")}help-centre/information/coding-standards')
 
 @when('I navigate to the help centre page')
 def navigate_to_url(context):
@@ -21,6 +23,10 @@ def navigate_to_url(context):
 @when('I click the back link')
 def navigate_to_url(context):
     WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, value='back')).click()
+
+@when('I click the "{link}" link')
+def navigate_to_url(context, link):
+    WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=link)).click()
 
 @when('I click the external user dropdown')
 def navigate_to_url(context):
