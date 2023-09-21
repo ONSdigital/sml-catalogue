@@ -1,7 +1,8 @@
 [flake8]
 max-line-length = 160
-extend-ignore =
-    # E402 module level import not at top of file
-    E402
 per-file-ignores =
-    features/steps/*: F821, F811, F401, F403
+    # F401
+    # F403
+    # F811
+    # F821
+    features/steps/*:F401, F403 F811, F821
