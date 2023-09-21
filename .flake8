@@ -1,8 +1,9 @@
 [flake8]
 max-line-length = 160
 per-file-ignores =
-    # F401
-    # F403
-    # F811
-    # F821
-    features/steps/*:F401, F403 F811, F821
+    # F403 ‘from module import *’ used; unable to detect undefined names
+    # F811 redefinition of unused name from line N
+    # F821 undefined name
+    # Ignoring the errors above due to the way we write tests and work with behave
+    # and selenium such as using "given", "when" and "then" statements
+    features/steps/*:F403 F811, F821

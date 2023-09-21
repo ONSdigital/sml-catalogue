@@ -10,9 +10,9 @@ app.jinja_env.lstrip_blocks = True
 app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
 app.config["FREEZER_DESTINATION"] = "../build"
 
-# E401 module import but unused
+# F401 module import but unused
 # We have to import the modules below here and they get
-# used in other files later on so ignoring this E401 error
+# used in other files later on so ignoring this F401 error
 # We import the utils module and do use
 # E402 module level import not at top of file
 # We import the python files/ flask routes into the __init__.py file and we can't
