@@ -8,7 +8,6 @@ from setupSelenium import EC, By, WebDriverWait, driver, timeout
 def auth_user(context):
     driver.get(context.config.userdata.get("host"))
 
-
 @given('I\'m an sml portal user on the "{page}"')
 def auth_user(context, page):
     if page == "find and view methods page":
@@ -21,15 +20,10 @@ def auth_user(context, page):
         )
 
 
-@when("I navigate to the help centre page")
+@when('I navigate to the help centre page')
 def navigate_to_url(context):
-    WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.LINK_TEXT, value="Help centre")
-    ).click()
-    WebDriverWait(driver, timeout=timeout).until(
-        EC.presence_of_element_located((By.ID, "main-content"))
-    )
-
+    WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.LINK_TEXT, value='Help centre')).click()
+    WebDriverWait(driver, timeout=timeout).until(EC.presence_of_element_located((By.ID, 'main-content')))
 
 @when("I click the back link")
 def navigate_to_url(context):
