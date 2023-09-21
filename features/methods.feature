@@ -60,5 +60,5 @@ Feature: Methods catalogue tests
     Scenario: Selective editing table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "ready" table row of the method are "Selectiveee Editing" "Editing" "Editing & Imputation" "Python/Pandas"
+        Then The "ready" table row of the method are "Selective Editing" "Editing" "Editing & Imputation" "Python/Pandas"
 
