@@ -5,7 +5,6 @@ set -euo
 
 : ${URL}
 
-cd repo
 pip install poetry
 poetry install --sync
 echo "Check if project toml file and poetry lock file are in sync"
