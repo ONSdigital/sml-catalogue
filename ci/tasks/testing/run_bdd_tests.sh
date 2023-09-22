@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Runs BDD testing on the deployed workspace
 
