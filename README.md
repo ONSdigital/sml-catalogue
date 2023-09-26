@@ -12,7 +12,7 @@ Before continuing, install the following tools:
 
 You will need to install [poetry](https://python-poetry.org/docs/#installing-with-the-official-installer) to install the python dependencies. If you want to manage multiple versions of python you will need to install `pyenv`.
 
-Refer to the [confluence page](https://confluence.ons.gov.uk/display/ESD/Guide+on+using+pipenv%2C+pyenv+and+venv) for guidance on installing and using pyenv.
+Refer to the [confluence page](https://confluence.ons.gov.uk/display/ESD/Guide+on+using+pipenv%2C+pyenv+and+venv) for guidance on installing and using pyenv and poetry.
 
 You will also need to have installed [wget](https://formulae.brew.sh/formula/wget) to fetch the `ONS Design System`.
 
