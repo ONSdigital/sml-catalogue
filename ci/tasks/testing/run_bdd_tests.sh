@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo
+set -euo pipefail
 
 # Runs BDD testing on the deployed workspace
 

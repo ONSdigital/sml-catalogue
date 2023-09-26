@@ -316,5 +316,5 @@ jobs:
       resource: pr-done
       params:
         path: repo
-        status: success
+        status: failure
         context: Deleting Workspace
