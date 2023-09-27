@@ -11,67 +11,67 @@ Feature: About library tests
     Scenario: Help centre page accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre "submit a method request" page
-        Then The title of the help centre page is "Submit a method request"
+        Then The title of the page is "Help centre - Submit a method request"
         And The accessibility test passes
 
     Scenario: Submit a method request page accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre "how the methods are versioned" page
-        Then The title of the help centre page is "How the methods are versioned"
+        Then The title of the page is "Help centre - How the methods are versioned"
         And The accessibility test passes
 
     Scenario: Help centre page accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre "coding standards" page
-        Then The title of the help centre page is "Coding standards"
+        Then The title of the page is "Help centre - Coding standards"
         And The accessibility test passes
 
     Scenario: Help centre page accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre "find and view methods" page
-        Then The title of the help centre page is "Find and view methods"
+        Then The title of the page is "Help centre - Find and view methods"
         And The accessibility test passes
 
     Scenario: Help centre page accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre "use a method" page
-        Then The title of the help centre page is "Use a method"
+        Then The title of the page is "Help centre - Use a method"
         And The accessibility test passes
 
     Scenario: Help centre page accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre "report a defect or bug" page
-        Then The title of the help centre page is "Report a defect or bug"
+        Then The title of the page is "Help centre - Report a defect or bug"
         And The accessibility test passes
 
     Scenario: Help centre page accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre "provide feedback" page
-        Then The title of the help centre page is "Provide feedback"
+        Then The title of the page is "Help centre - Provide feedback"
         And The accessibility test passes
 
     Scenario: Help centre page accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre "get support" page
-        Then The title of the help centre page is "Get support"
+        Then The title of the page is "Help centre - Get support"
         And The accessibility test passes
 
     Scenario: Help centre page accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre "get information on expert groups" page
-        Then The title of the help centre page is "Get information on expert groups"
+        Then The title of the page is "Help centre - Get information on expert groups"
         And The accessibility test passes
 
     Scenario: Help centre page accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre "troubleshooting" page
-        Then The title of the help centre page is "Troubleshooting"
+        Then The title of the page is "Help centre - Troubleshooting"
         And The accessibility test passes
 
     Scenario: Help centre page accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre "using github" page
-        Then The title of the help centre page is "Using GitHub"
+        Then The title of the page is "Help centre - Using GitHub"
         And The accessibility test passes
 
     Scenario: Accessibility page accessibility check
