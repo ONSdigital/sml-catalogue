@@ -31,7 +31,7 @@ Download the release of the ONS Design System, and unpack them into the correct 
 You will need to install the python dependencies, including `Frozen-Flask`, the static website generator:
 
 ```bash
-poetry install
+poetry install --sync
 ```
 
 You can activate your virtual environment with the following command:
