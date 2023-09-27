@@ -1,7 +1,7 @@
 {
-  term: 'Integrated Data Programme (IDP)',
+  term: 'Integrated Data Program (IDP)',
   related: ['Integrated Data Service (IDS)'],
   meaning: |||
-    The Integrated Data Programme, the ONS team that provides and adminstrates the Integrated Data Service (IDS).
+    The Integrated Data Program, the ONS team that provides and adminstrates the Integrated Data Service (IDS).
   |||
 } 
