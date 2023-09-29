@@ -28,17 +28,3 @@ we currently have with the ONS Design System  */
   /* background-color: red; */
   max-width: 100px;
 }
-
-.visually-hidden:not(:focus):not(:active) { 
-  /* Contain text within 1px box */
-  height: 1px; 
-  overflow: hidden;
-  width: 1px;
-  position: absolute;
-  /* Remove any visible trace (e.g. background color) */
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  /* Prevent the screen reader to skip spaces between words */
-  white-space: nowrap;
-}
