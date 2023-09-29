@@ -26,6 +26,9 @@ def check_title(context, title):
 def check_ons_meta_data(context, metaDataField, metaDataValue):
     ons_meta_data_fields = extract_ons_meta_data(context)[0]
     ons_meta_data_values = extract_ons_meta_data(context)[1]
+
+    ons_meta_data_values = [val.replace('Release version\n','').replace('\n(opens in a new tab)','') for val in ons_meta_data_values]
+    
     metaDataField = metaDataField.strip('"')
     metaDataValue = metaDataValue.strip('"')
 
