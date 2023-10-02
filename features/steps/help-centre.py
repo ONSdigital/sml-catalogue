@@ -1,6 +1,7 @@
 # Step definitions for help centre page
+# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined
 
-from setupSelenium import *
+from setupSelenium import EC, By, WebDriverWait, driver, timeout
 
 
 @given("I'm an sml portal user trying to get to the help centre")
@@ -59,8 +60,8 @@ def check_title(context, text):
     dropdown_content_elements = content_div.find_elements(By.TAG_NAME, "p")
     dropdown_content = ""
 
-    for i in range(len(dropdown_content_elements)):
-        dropdown_content += dropdown_content_elements[i].text
+    for element in dropdown_content_elements:
+        dropdown_content += element.text
         dropdown_content += " "
 
     dropdown_content = (

@@ -17,13 +17,15 @@ run_linting(){
   poetry install --sync
   echo "Check if project toml file and poetry lock file are in sync"
   poetry check
-  black --check --diff sml_builder
+  black --check --diff freeze.py sml_builder features
   echo "Running pylint"
-  pylint sml_builder
+  pylint freeze.py sml_builder features
   echo "Running flake8"
-  flake8 sml_builder
+  flake8 freeze.py sml_builder features
   echo "Running bandit"
-  bandit -r sml_builder
+  bandit -c pyproject.toml -r .
+  echo "Running isort"
+  isort --check-only .
   echo "Installing the ONS design system"
   ./get_design_system.sh
   echo "Freezing flask"
