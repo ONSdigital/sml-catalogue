@@ -58,7 +58,14 @@
 
 {% else %}
     {% set link = page.additional_data["Release Link"] %}
-    {% set item=item["descriptions"][0].__setitem__("description", '<span class="ons-status ons-status--' + status + '"><a href='+ link + ' target="_blank" rel="noopener noreferrer">' + temp + '</a></span>') %}
+    {% set item=item["descriptions"][0].__setitem__("description", 
+    '<span class="ons-status ons-status--' + status + '">
+      <a href='+ link + ' target="_blank" rel="noopener noreferrer">
+        <span class="ons-u-vh">Release version</span>
+        ' + temp + '
+        <span class="ons-u-vh">(opens in a new tab)</span>
+      </a>
+    </span>') %}
 
 {% endif %}
 {% endif %}

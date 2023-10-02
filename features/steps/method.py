@@ -56,7 +56,9 @@ def check_title(context, text):
         dropdown_content += element.text
         dropdown_content += " "
 
-    dropdown_content = dropdown_content.rstrip()
+    dropdown_content = dropdown_content.replace(
+        "\n(opens in a new window)\n", ""
+    ).rstrip()
     assert dropdown_content == text
 
 
