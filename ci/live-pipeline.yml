@@ -170,15 +170,17 @@ jobs:
         status: success
         context: Deploying_Dev
         comment_file: GITHUB_OUTPUT/output.txt
+        delete_previous_comments: true
 
     on_failure:
       put: repo
       resource: pr-open
       params:
         path: repo
-        status: success
+        status: failure
         context: Deploying_Dev
         comment_file: GITHUB_OUTPUT/output.txt
+        delete_previous_comments: true
 
   - name: build_and_deploy_dev
     plan:
@@ -314,5 +316,5 @@ jobs:
       resource: pr-done
       params:
         path: repo
-        status: success
+        status: failure
         context: Deleting Workspace

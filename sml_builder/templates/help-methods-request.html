@@ -16,13 +16,12 @@
 } -%}
 
 {% import "related-content-macro.html" as macros %}
-{%- set page_title = "Help centre" -%}
+{%- set page_title = "Help centre - "~sub_category_label -%}
 {%- set current_path = url_for("help_centre") -%}
 {%- block mainContent -%}
 
-              <h1>Help centre</h1>
+              <h1>Help centre - {{sub_category_label}}</h1>
                 <h2>{{category_label}}</h2>
-                <h3>{{sub_category_label}}</h3>
 
             {% call onsDetails({
                   "id": "collapsibleONSInternalUserId",
@@ -71,7 +70,7 @@
                         {{
                             onsExternalLink({
                             "url": 'https://www.bpm.ibmcloud.com/auth/index.jsp',
-                            "linkText": 'https://www.bpm.ibmcloud.com/auth/index.jsp'
+                            "linkText": 'Log in to IBM Business Automation Workflow (BAW)'
                             })
                         }}
                 </p>
@@ -80,7 +79,7 @@
                 <p>
                     Once you have filled out the form, you will need to complete a method specification. Please use the following
                     <a href="https://officenationalstatistics.sharepoint.com/sites/MTHIT/SysDev/Forms/AllItems.aspx?id=%2Fsites%2FMTHIT%2FSysDev%2FStatistical%5FMethods%5FLibrary%2FCommunication%2FSML%20methodological%20specification%20template%2Emd&parent=%2Fsites%2FMTHIT%2FSysDev%2FStatistical%5FMethods%5FLibrary%2FCommunication&p=true&ga=1">
-                        template
+                        method specification template
                     </a>
                      to help you do this.
                 </p>

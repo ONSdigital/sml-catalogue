@@ -33,27 +33,27 @@
         "customHeaderLogo": pageConfig.header.customHeaderLogo
     })
 }}
-{{
-    onsHero({
-        "title": 'An open source library for statistical code approved by the ONS',
-        "button": {
-            "id": 'find-methods-button',
-            "url": url_for("display_methods"),
-            "text": 'Find methods'
-        },
-        wide:true
-    })
-}}
 {% endblock %}
-{% block preMain %}
 
-{% endblock%}
-
-{%- block main %}
+{% block pageContent %}
+<main id="main-content">
+    {{
+        onsHero({
+            "title": 'An open source library for statistical code approved by the ONS',
+            "button": {
+                "id": 'find-methods-button',
+                "url": url_for("display_methods"),
+                "text": 'Find methods'
+            },
+            wide:true
+        })
+    }}
 {% from "components/card/_macro.njk" import onsCard %}
-<div class="ons-container">
+<div class="ons-page__container ons-container ons-u-pb-m">
     
-    <div class="ons-grid ons-grid--column">
+    <section class="ons-u-pt-m">
+
+    <div class="ons-grid ons-grid--column@xxs@s">
        
         <div class="ons-grid__col ons-col-4@m">
             {{ onsCard({
@@ -96,9 +96,11 @@
         </div>
 
     </div>
+
+    </section>
     
 </div>
-
-{% endblock main%}
+</main>
+{% endblock %}
 
 

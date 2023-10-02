@@ -79,10 +79,10 @@ Feature: Help center tests
 
     Scenario: Back link check for sub categories
         Given I'm an sml portal user on the "find and view methods" page
-        When I click the "back" link
+        When I click the "Back" link
         Then The title of the page is "Help centre"
 
     Scenario: Back link check for submit a method request (uses different code to above test)
         Given I'm an sml portal user on the "submit a method request" page
-        When I click the "back" link
+        When I click the "Back" link
         Then The title of the page is "Help centre"
