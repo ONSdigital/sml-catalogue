@@ -1,7 +1,9 @@
-from flask import render_template
-from markupsafe import escape, Markup
 import markdown
+from flask import render_template
+from markupsafe import Markup, escape
+
 from sml_builder import app
+
 from .utils import _page_not_found
 
 

@@ -1,6 +1,7 @@
 # Tests for the cookie preferences
+# pylint: disable=import-error, undefined-variable, unused-argument
 
-from setupSelenium import *
+from setupSelenium import EC, By, WebDriverWait, driver, timeout
 
 
 @given("I'm an sml portal user on the home page with a cookie banner")

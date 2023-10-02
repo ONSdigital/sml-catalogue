@@ -1,6 +1,7 @@
 # Tests for the date adjustment link
+# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined
 
-from setupSelenium import *
+from setupSelenium import EC, By, WebDriverWait, driver, timeout
 
 
 @given('I\'m an sml portal user trying to get to the "{page}" page')

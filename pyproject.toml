@@ -10,16 +10,21 @@ python = "^3.10"
 frozen-flask = "*"
 jsonnet = "*"
 markdown = "*"
-flake8 = "*"
-pylint = "*"
-bandit = "*"
-axe-selenium-python = "*"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 black = "*"
 behave = "*"
 selenium = "^4.10.0"
+flake8 = "*"
+pylint = "*"
+bandit = "*"
+isort = "^5.12.0"
+axe-selenium-python = "*"
 python-semantic-release = "<8.0.0"
+
+[tool.bandit]
+exclude_dirs = ["features", "./venv/"]
+
 
 [build-system]
 requires = ["poetry-core"]

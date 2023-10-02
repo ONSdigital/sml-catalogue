@@ -1,8 +1,11 @@
-from os import listdir
 from json import loads
-from flask import render_template
+from os import listdir
+
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
+from flask import render_template
+
 from sml_builder import app
+
 from .utils import _page_not_found
 
 

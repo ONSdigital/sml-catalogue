@@ -88,28 +88,28 @@
 {{
   onsExternalLink({
     "url":page.specification_link,
-    "linkText":"Go to specification"
+    "linkText":"Go to " ~ page.title ~ " specification on GitHub"
   })
 }}
-&nbsp;
+<br>
 {% endif %}
 {% if page.code_link %}
 {{
   onsExternalLink({
     "url":page.code_link,
-    "linkText":"Go to code"
+    "linkText":"Go to " ~ page.title ~ " code on GitHub"
   })
 }}
-&nbsp;
+<br>
 {% endif %}
 {% if page.user_documentation_link %}
 {{
   onsExternalLink({
     "url":page.user_documentation_link,
-    "linkText":"Go to user documentation"
+    "linkText":"Go to "~ page.title ~" user documentation on GitHub"
   })
 }}
-&nbsp;
+
 {% endif %}
 
 {% endblock main -%}

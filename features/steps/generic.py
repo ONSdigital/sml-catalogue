@@ -1,6 +1,9 @@
 # Step definitions for about page
+# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined, duplicate-code
+
 from urllib.parse import urljoin
-from setupSelenium import *
+
+from setupSelenium import EC, By, WebDriverWait, driver, timeout
 
 
 @given("I'm an sml portal user")
@@ -13,15 +16,6 @@ def auth_user(context):
     )
     assert (
         page_title == "An open source library for statistical code approved by the ONS"
-    )
-
-
-@when("I refresh the page")
-def refresh_page(context):
-    driver.current_url
-    driver.refresh()
-    WebDriverWait(driver, timeout=timeout).until(
-        EC.presence_of_element_located((By.ID, "main-content"))
     )
 
 
