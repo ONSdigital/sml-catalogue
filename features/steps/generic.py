@@ -44,6 +44,7 @@ def check_title(context, title):
     )
     assert page_title == title
 
+
 @then('The subtitle of the page is "{subtitle}"')
 def check_subtitle(context, subtitle):
     page_subtitle = (
