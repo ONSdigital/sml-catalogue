@@ -74,12 +74,7 @@
         {% from "components/external-link/_macro.njk" import onsExternalLink %}
 
         {% set feedbackLink %}
-            {{
-                onsExternalLink({
-                    "url": "mailto:smlhelp@ons.gov.uk",
-                    "linkText": "give feedback"
-                })
-            }}
+          <a href="mailto:smlhelp@ons.gov.uk">give feedback</a>
         {% endset %}
 
         {{
