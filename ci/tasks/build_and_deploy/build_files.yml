@@ -28,6 +28,6 @@ run:
       ./configure
       make
       make install
-      sudo ln -fs /opt/Python-3.10.11/Python /usr/bin/python3.10
+      ln -fs /opt/Python-3.10.11/Python /usr/bin/python3.10
       cd /repo
       bash ./ci/tasks/build_and_deploy/build_files.sh
