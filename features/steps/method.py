@@ -20,7 +20,7 @@ def navigate_to_url(context):
 
 
 @then('The title of the methods catalogue page is "{title}"')
-def check_title(context, title):
+def check_methods_catalogue_title(context, title):
     page_title = (
         WebDriverWait(driver, timeout=timeout)
         .until(lambda d: d.find_element(By.TAG_NAME, "h1"))
@@ -45,7 +45,7 @@ def navigate_to_url(context):
 
 
 @then('I see the dropdown content "{text}"')
-def check_title(context, text):
+def check_dropdown_content(context, text):
     content_div = WebDriverWait(driver, timeout=timeout).until(
         lambda d: d.find_element(By.ID, value="collapsible-content")
     )

@@ -53,7 +53,7 @@ def navigate_to_url(context):
 
 
 @then('The drop down content is "{text}"')
-def check_title(context, text):
+def check_dropdown_title(context, text):
     content_div = WebDriverWait(driver, timeout=timeout).until(
         lambda d: d.find_element(By.ID, value="collapsibleONSExternalUserId-content")
     )
@@ -71,7 +71,7 @@ def check_title(context, text):
 
 
 @then('The subtitle of the help centre page is "{subtitle}"')
-def check_title(context, subtitle):
+def check_subtitle(context, subtitle):
     page_title = (
         WebDriverWait(driver, timeout=timeout)
         .until(lambda d: d.find_element(By.LINK_TEXT, subtitle))

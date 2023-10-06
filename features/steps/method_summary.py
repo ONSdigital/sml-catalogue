@@ -26,7 +26,7 @@ def navigate_to_the_method(context, method):
 
 
 @then('The title of the method summary page is "{title}"')
-def check_title(context, title):
+def check_method_summary_title(context, title):
     page_title = (
         WebDriverWait(driver, timeout=timeout)
         .until(lambda d: d.find_element(By.TAG_NAME, "h1"))
