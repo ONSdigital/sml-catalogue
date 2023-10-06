@@ -19,9 +19,7 @@ run:
     - -exc
     - |
       CWD=$(pwd)
-      apt-get -y update && apt-get install -y zip
-      apt-get -y update && apt-get install -y libffi-dev
-      apt-get -y update && apt-get install -y zlib1g-dev
+      apt-get -y update && apt-get install -y zip zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev
       cd /opt
       wget https://www.python.org/ftp/python/3.10.11/Python-3.10.11.tgz
       tar xzvf Python-3.10.11.tgz
