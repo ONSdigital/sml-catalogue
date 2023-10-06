@@ -18,6 +18,7 @@ run:
   args:
     - -exc
     - |
+      pwd
       apt-get -y update && apt-get install -y zip
       apt-get -y update && apt-get install -y libffi-dev
       apt-get -y update && apt-get install -y zlib1g-dev
