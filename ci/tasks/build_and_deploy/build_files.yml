@@ -20,7 +20,13 @@ run:
     - |
       apt-get -y update && apt-get install -y zip
       apt-get -y update && apt-get install -y libffi-dev
-      add-apt-repository ppa:deadsnakes/ppa
-      apt-get update
-      apt-get install python3.10
+      cd /opt
+      wget https://www.python.org/ftp/python/3.10.11/Python-3.10.11.tgz
+      tar xzvf Python-3.10.11.tgz
+      cd Python-3.10.11
+      ./configure
+      make
+      make install
+      sudo ln -fs /opt/Python-3.10.11/Python /usr/bin/python3.10
+      cd /repo
       bash ./ci/tasks/build_and_deploy/build_files.sh
