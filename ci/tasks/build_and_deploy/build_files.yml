@@ -20,6 +20,7 @@ run:
     - |
       apt-get -y update && apt-get install -y zip
       apt-get -y update && apt-get install -y libffi-dev
+      apt-get -y update && apt-get install -y zlib1g-dev
       cd /opt
       wget https://www.python.org/ftp/python/3.10.11/Python-3.10.11.tgz
       tar xzvf Python-3.10.11.tgz
