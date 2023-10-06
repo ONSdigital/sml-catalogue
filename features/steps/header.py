@@ -56,7 +56,7 @@ def check_title(context, title):
 
 
 @then('The banner mailto address is "{address}"')
-def check_title(context, address):
+def check_banner(context, address):
     feedback_address = (
         WebDriverWait(driver, timeout=timeout)
         .until(lambda d: d.find_element(By.LINK_TEXT, "give feedback"))
