@@ -18,7 +18,7 @@ run:
   args:
     - -exc
     - |
-      pwd
+      CWD=$(pwd)
       apt-get -y update && apt-get install -y zip
       apt-get -y update && apt-get install -y libffi-dev
       apt-get -y update && apt-get install -y zlib1g-dev
@@ -30,5 +30,5 @@ run:
       make
       make install
       ln -fs /opt/Python-3.10.11/Python /usr/bin/python3.10
-      cd /repo
+      cd $CWD
       bash ./ci/tasks/build_and_deploy/build_files.sh
