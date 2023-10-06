@@ -23,4 +23,5 @@ Feature: Home page tests
         
     Scenario: Beta banner feedback link check
         Given I'm an sml portal user
+        When I click the "home" link in the header
         Then The banner mailto address is "mailto:smlhelp@ons.gov.uk"

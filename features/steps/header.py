@@ -54,6 +54,7 @@ def check_title(context, title):
     )
     assert page_title == title
 
+
 @then('The banner mailto address is "{address}"')
 def check_title(context, address):
     feedback_address = (
