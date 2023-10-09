@@ -16,11 +16,12 @@ black = "*"
 behave = "*"
 selenium = "^4.10.0"
 flake8 = "*"
-pylint = "*"
+pylint = "3.0.1"
 bandit = "*"
 isort = "^5.12.0"
 axe-selenium-python = "*"
 python-semantic-release = "<8.0.0"
+werkzeug = "2.3.7"
 
 [tool.bandit]
 exclude_dirs = ["features", "./venv/"]
