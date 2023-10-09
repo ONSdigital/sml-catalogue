@@ -10,7 +10,7 @@ set -euo pipefail
 
 pip install --upgrade pip
 pip install poetry
-python3 -m venv venv
+python3.10 -m venv venv
 source venv/bin/activate
 
 run_linting(){
@@ -36,7 +36,7 @@ git config user.signingkey 79DDAC12EE2E036D
 git config commit.gpgsign true
 if [ "$BUILD_TYPE" -eq 0 ]; then
   run_linting
-  python freeze.py
+  python3.10 freeze.py
 elif [ "$BUILD_TYPE" -eq 1 ]; then
   git fetch
   run_linting
