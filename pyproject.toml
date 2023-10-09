@@ -21,6 +21,7 @@ bandit = "*"
 isort = "^5.12.0"
 axe-selenium-python = "*"
 python-semantic-release = "<8.0.0"
+werkzeug = "2.3.7"
 
 [tool.bandit]
 exclude_dirs = ["features", "./venv/"]
