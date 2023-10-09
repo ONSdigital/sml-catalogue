@@ -28,7 +28,7 @@ run_linting(){
   isort --check-only .
   echo "Installing the ONS design system"
   ./get_design_system.sh
-  echo "Freezing flask"
+  echo "Freezing flask "
 }
 echo "${SIGNING_KEY}" > signingkey.key
 gpg --import signingkey.key
