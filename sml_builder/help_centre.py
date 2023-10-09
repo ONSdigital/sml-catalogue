@@ -1,8 +1,11 @@
 from json import load
-from flask import render_template, url_for
-from markupsafe import escape, Markup
+
 import markdown
+from flask import render_template, url_for
+from markupsafe import Markup, escape
+
 from sml_builder import app
+
 from .utils import _page_not_found
 
 externallink_help_categories = [

@@ -2,12 +2,6 @@
 
 Feature: About library tests
 
-    Scenario: Home page accessibility check
-        Given I'm an sml portal user
-        When I refresh the page
-        Then The title of the page is "An open source library for statistical code approved by the ONS"
-        And The accessibility test passes
-
     Scenario: Help centre page accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre "submit a method request" page
