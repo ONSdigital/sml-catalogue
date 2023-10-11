@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sml-catalogue
+  description: The build environment and code to generate and upload the SML portal web application.
+  annotations:
+    jira/project-key: SPP
+    github.com/project-slug: ONSdigital/sml-catalogue
+  tags:
+    - python
+    - html
+    - sml
+  links:
+    - url: https://statisticalmethodslibrary.ons.gov.uk
+      title: SML Website
+      icon: search
+spec:
+  type: website
+  lifecycle: production
+  owner: group:spp-sml
