@@ -70,6 +70,17 @@
                 'serviceName': 'statisticalmethodslibrary.ons.gov.uk'
             })
         }}
+        {% from "components/phase-banner/_macro.njk" import onsPhaseBanner %}
+
+        {% set feedbackLink %}
+          <a href="mailto:smlhelp@ons.gov.uk">give feedback</a>
+        {% endset %}
+
+        {{
+            onsPhaseBanner({
+                "html": "This is a new service. To help us improve it, " + feedbackLink
+          })
+        }}
     {% endblock %}
 
   {%- block main -%}

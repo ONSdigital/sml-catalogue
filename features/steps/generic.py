@@ -36,7 +36,7 @@ def navigate_to_url(context, url):
 
 
 @then('The title of the page is "{title}"')
-def check_title(context, title):
+def check_generic_title(context, title):
     page_title = (
         WebDriverWait(driver, timeout=timeout)
         .until(lambda d: d.find_element(By.TAG_NAME, "h1"))
