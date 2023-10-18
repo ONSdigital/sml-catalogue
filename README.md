@@ -16,6 +16,8 @@ Refer to the [confluence page](https://confluence.ons.gov.uk/display/ESD/Guide+o
 
 You will also need to have installed [wget](https://formulae.brew.sh/formula/wget) to fetch the `ONS Design System`.
 
+If you have not set up a GPG key with your GitHub account you will need to also follow these [instructions on installing a gpg key](https://confluence.ons.gov.uk/display/ESD/Guide+on+adding+GPG+keys+and+signing+commits) before you can make a commit.
+
 ## Build and Deploy
 
 ### Fetch the ONS Design System
