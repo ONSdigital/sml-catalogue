@@ -1375,6 +1375,84 @@
                     "any": [
                         {
                             "data": {
+                                "bgColor": "#222222",
+                                "contrastRatio": 15.9,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#ffffff",
+                                "fontSize": "11.5pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 15.9",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h3 class=\"ons-phase-banner__badge\">Beta</h3>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h3"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#f5f5f6",
+                                "contrastRatio": 14.6,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#222222",
+                                "fontSize": "10.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 14.6",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p class=\"ons-phase-banner__desc ons-u-fs-s ons-u-mb-no\">This is a new service. To help us improve it,           <a href=\"mailto:smlhelp@ons.gov.uk\">give feedback</a>\n</p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-phase-banner__desc"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#f5f5f6",
+                                "contrastRatio": 6.08,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "10.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.08",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"mailto:smlhelp@ons.gov.uk\">give feedback</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-phase-banner__desc > a[href$=\"mailto:smlhelp@ons.gov.uk\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
                                 "bgColor": "#206095",
                                 "contrastRatio": 6.62,
                                 "expectedContrastRatio": "3:1",
@@ -1705,7 +1783,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        "a[href$=\"mailto:smlhelp@ons.gov.uk\"] > .ons-external-link__text"
+                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][target=\"_blank\"] > .ons-external-link__text"
                     ]
                 },
                 {
@@ -2644,6 +2722,24 @@
                             "relatedNodes": []
                         }
                     ],
+                    "html": "<h3 class=\"ons-phase-banner__badge\">Beta</h3>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h3"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
                     "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                     "impact": null,
                     "none": [],
@@ -2734,6 +2830,24 @@
                     "none": [],
                     "target": [
                         ".ons-cookies-banner__title"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": 3,
+                            "id": "heading-order",
+                            "impact": "moderate",
+                            "message": "Heading order valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h3 class=\"ons-phase-banner__badge\">Beta</h3>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "h3"
                     ]
                 },
                 {
@@ -2991,6 +3105,42 @@
                     ],
                     "target": [
                         ".ons-cookies-banner__link"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<p class=\"ons-phase-banner__desc ons-u-fs-s ons-u-mb-no\">This is a new service. To help us improve it,           <a href=\"mailto:smlhelp@ons.gov.uk\">give feedback</a>\n</p>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-phase-banner__desc"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"mailto:smlhelp@ons.gov.uk\">give feedback</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-phase-banner__desc > a[href$=\"mailto:smlhelp@ons.gov.uk\"]"
                     ]
                 },
                 {
@@ -3278,7 +3428,7 @@
                         }
                     ],
                     "target": [
-                        "a[href$=\"mailto:smlhelp@ons.gov.uk\"]"
+                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][target=\"_blank\"]"
                     ]
                 },
                 {
@@ -3728,6 +3878,32 @@
                             "relatedNodes": []
                         }
                     ],
+                    "html": "<a href=\"mailto:smlhelp@ons.gov.uk\">give feedback</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-phase-banner__desc > a[href$=\"mailto:smlhelp@ons.gov.uk\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
                     "html": "<a class=\"ons-skip-link\" href=\"#main-content\">Skip to main content</a>",
                     "impact": null,
                     "none": [
@@ -3922,7 +4098,7 @@
                         }
                     ],
                     "target": [
-                        "a[href$=\"mailto:smlhelp@ons.gov.uk\"]"
+                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][target=\"_blank\"]"
                     ]
                 },
                 {
@@ -4416,8 +4592,8 @@
             ]
         }
     ],
-    "timestamp": "2023-10-02T17:04:07.053Z",
-    "url": "http://127.0.0.1:8000/method/future-methods/thousand-pound-correction",
+    "timestamp": "2023-10-19T08:59:02.331Z",
+    "url": "http://127.0.0.1:8000/method/ready-to-use-methods/thousand-pound-correction",
     "violations": [
         {
             "description": "Ensures role attribute has an appropriate value for the element",
@@ -4469,6 +4645,18 @@
                             "impact": "moderate",
                             "message": "Some page content is not contained by landmarks",
                             "relatedNodes": [
+                                {
+                                    "html": "<h3 class=\"ons-phase-banner__badge\">Beta</h3>",
+                                    "target": [
+                                        "h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<p class=\"ons-phase-banner__desc ons-u-fs-s ons-u-mb-no\">This is a new service. To help us improve it,           <a href=\"mailto:smlhelp@ons.gov.uk\">give feedback</a>\n</p>",
+                                    "target": [
+                                        ".ons-phase-banner__desc"
+                                    ]
+                                },
                                 {
                                     "html": "<a class=\"ons-skip-link\" href=\"#main-content\">Skip to main content</a>",
                                     "target": [
