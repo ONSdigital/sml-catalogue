@@ -42,11 +42,6 @@ Feature: Methods catalogue tests
         When I navigate to the methods catalogue page
         Then The "future" table row of the method are "Mean of Ratios" "Imputation" "Editing & Imputation" "Python/PySpark"
 
-    Scenario: Thousand pound correction table row check
-        Given I'm an sml portal user trying to get to the methods catalogue page
-        When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Thousand Pound Correction" "Editing" "Editing & Imputation" "Python/Pandas"
-
     Scenario: Horvitz-Thompson Ratio Estimator table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
@@ -61,3 +56,8 @@ Feature: Methods catalogue tests
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
         Then The "ready" table row of the method are "Selective Editing" "Editing" "Editing & Imputation" "Python/Pandas"
+
+    Scenario: Thousand pound correction table row check
+        Given I'm an sml portal user trying to get to the methods catalogue page
+        When I navigate to the methods catalogue page
+        Then The "ready" table row of the method are "Thousand Pound Correction" "Editing" "Editing & Imputation" "Python/Pandas"
