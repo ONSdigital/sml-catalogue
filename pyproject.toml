@@ -26,7 +26,6 @@ werkzeug = "2.3.7"
 [tool.bandit]
 exclude_dirs = ["features", "./venv/"]
 
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
