@@ -26,6 +26,9 @@ werkzeug = "2.3.7"
 [tool.bandit]
 exclude_dirs = ["features", "./venv/"]
 
+[tool.isort]
+profile="black"
+known_third_party=["boto3","moto","pandas","numpy"]
 
 [build-system]
 requires = ["poetry-core"]
