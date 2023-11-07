@@ -85,7 +85,7 @@ resources:
       uri: https://github.com/ONSdigital/sml-catalogue.git
       branch: main
       username: ((github_access_token))
-      password: x-oauth-basicx
+      password: x-oauth-basic
   - name: main-updated
     type: git
     icon: github
