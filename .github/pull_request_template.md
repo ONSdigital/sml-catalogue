@@ -43,3 +43,31 @@ commit message
 
 Note when merging, squash commit must begin with one of the following tags:
 "BREAKING CHANGE", "feat", "fix", "perf", "build", "chore", "ci", "docs", "style", "refactor", "test"
+
+Usage
+
+build: Changes that affect the build system or external dependencies (e.g Pyproject)
+
+ci: Changes to our CI configuration files and scripts (Concourse)
+
+docs: Documentation only changes
+
+feat: A new feature
+    E.G feat: adding method x to future methods table
+
+fix: A bug fix
+    E.G fix: amending page for method x to show correct release version
+
+perf: A code change that improves performance
+    E.G perf: amending issue on page x which impacted load times
+
+BREAKING CHANGE: any change that breaks current functionality and may cause compatibility errors to users upgrading
+    E.G BREAKING CHANGE: refactored method x to take variable y as input (changed from variable z)
+
+refactor: A code change that neither fixes a bug nor adds a feature
+
+test: Adding missing tests or correcting existing tests
+
+chore: A task that has to be done on a regular basis that may or may not be automated, (E.G AXE test reports)
+
+style: A change to amend code styling (black, pylint, flake8)
