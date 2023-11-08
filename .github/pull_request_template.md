@@ -38,7 +38,7 @@ If any of these are not completed, please explain why in the notes.
 - [ ] My changes don't break anything unexpected
 - [ ] I have checked and updated the security.txt file where required
 - [ ] Up to date with the main branch
-- [ ] I have a commit with the fix:, feat or BREAKING_CHANGE: tags and will copy this commit message to the squash
+- [ ] I have a commit with the fix:, feat or BREAKING_CHANGE: tags (or other relevant tag) and will copy this commit message to the squash
 commit message
 
 Note when merging, squash commit must begin with one of the following tags:
