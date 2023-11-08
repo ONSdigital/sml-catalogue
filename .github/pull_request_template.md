@@ -38,19 +38,18 @@ If any of these are not completed, please explain why in the notes.
 - [ ] My changes don't break anything unexpected
 - [ ] I have checked and updated the security.txt file where required
 - [ ] Up to date with the main branch
-- [ ] I have a commit with the fix:, feat or BREAKING_CHANGE: tags (or other relevant tag) and will copy this commit message to the squash
-commit message
+- [ ] For a change that needs to be deployed in a release I have a commit with the fix:, feat: or BREAKING CHANGE:
+tags and will copy this commit message to the squash
+- [ ] For a change that does not affect the deployed code I have added a commit with ci:, docs: or test:
+depending upon which area of the solution was affected
 
 Note when merging, squash commit must begin with one of the following tags:
-"BREAKING CHANGE", "feat", "fix", "perf", "build", "chore", "ci", "docs", "style", "refactor", "test"
+"BREAKING CHANGE", "feat", "fix", "ci", "docs", "test"
 
 Usage
 
-build: Changes that affect the build system or external dependencies (e.g Pyproject)
-
-ci: Changes to our CI configuration files and scripts (Concourse)
-
-docs: Documentation only changes
+BREAKING CHANGE: any change that breaks current functionality and may cause compatibility errors to users upgrading
+    E.G BREAKING CHANGE: refactored method x to take variable y as input (changed from variable z)
 
 feat: A new feature
     E.G feat: adding method x to future methods table
@@ -58,16 +57,8 @@ feat: A new feature
 fix: A bug fix
     E.G fix: amending page for method x to show correct release version
 
-perf: A code change that improves performance
-    E.G perf: amending issue on page x which impacted load times
+ci: Changes to our CI configuration files and scripts (Concourse)
 
-BREAKING CHANGE: any change that breaks current functionality and may cause compatibility errors to users upgrading
-    E.G BREAKING CHANGE: refactored method x to take variable y as input (changed from variable z)
-
-refactor: A code change that neither fixes a bug nor adds a feature
+docs: Documentation only changes
 
 test: Adding missing tests or correcting existing tests
-
-chore: A task that has to be done on a regular basis that may or may not be automated, (E.G AXE test reports)
-
-style: A change to amend code styling (black, pylint, flake8)
