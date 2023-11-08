@@ -40,3 +40,6 @@ If any of these are not completed, please explain why in the notes.
 - [ ] Up to date with the main branch
 - [ ] I have a commit with the fix:, feat or BREAKING_CHANGE: tags and will copy this commit message to the squash
 commit message
+
+Note when merging, squash commit must begin with one of the following tags:
+"BREAKING CHANGE", "feat", "fix", "perf", "build", "chore", "ci", "docs", "style", "refactor", "test"
