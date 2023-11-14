@@ -70,7 +70,7 @@ Feature: Method summary page tests
         And The "Theme" of the method is "Editing"
         And The "Expert group" of the method is "Editing & Imputation"
         And The "Languages" of the method is "Python/Pandas"
-        And The "Release" of the method is "v.1.1.0"
+        And The "Release" of the method is "v1.1.0"
 
     Scenario: Mean of Ratios check
         Given I'm an sml portal user trying to get to the "mean of ratios method" summary page
