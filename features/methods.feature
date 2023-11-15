@@ -35,7 +35,7 @@ Feature: Methods catalogue tests
     Scenario: Totals and Components table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Totals and Components" "Editing" "Editing & Imputation" "Python/Pandas"
+        Then The "ready" table row of the method are "Totals and Components" "Editing" "Editing & Imputation" "Python/Pandas"
 
     Scenario: Mean of Ratios table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
