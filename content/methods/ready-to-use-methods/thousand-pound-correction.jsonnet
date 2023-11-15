@@ -26,7 +26,7 @@
     submitting 56.
 
     The method checks the ratio of a principal variable
-    against a suitable predictor variable and make an automatic correction
+    against a suitable predictor variable and makes an automatic correction
     if the calculated ratio is around 1000. The automatic correction is
     applied to all relevant variables for the respondent.
    |||,
