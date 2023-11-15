@@ -20,7 +20,7 @@ Feature: Method summary page tests
         And The "Theme" of the method is "Editing"
         And The "Expert group" of the method is "Editing & Imputation"
         And The "Languages" of the method is "Python/Pandas"
-        And The "Release" of the method is "v1.1.0-rc8"
+        And The "Release" of the method is "v1.1.0"
 
     Scenario: Horvitz-thompson ratio estimator check
         Given I'm an sml portal user trying to get to the "ht/ratio estimation method" summary page
