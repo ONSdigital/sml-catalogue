@@ -1,5 +1,27 @@
 <!--next-version-placeholder-->
 
+## v0.2.0 (2023-11-07)
+
+
+
+## v0.2.0-rc.1 (2023-11-07)
+
+### Feature
+
+* Amending github template to reflect changes to semantic versioning process ([`b364590`](https://github.com/ONSdigital/sml-catalogue/commit/b364590eea25bcdd1560a229821393696fc14183))
+
+## v0.1.1-rc.5 (2023-11-07)
+
+
+
+## v0.1.1-rc.4 (2023-11-07)
+
+
+
+## v0.1.1-rc.3 (2023-11-07)
+
+
+
 ## v0.1.1-rc.2 (2023-09-13)
 
 
