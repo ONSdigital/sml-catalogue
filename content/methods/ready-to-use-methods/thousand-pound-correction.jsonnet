@@ -7,15 +7,15 @@
     Theme: 'Editing',
     Author: 'ONS',
     'Languages': 'Python/Pandas',
-    "Release": "v1.1.0-rc8"
+    "Release": "v1.1.0"
   },
   additional_data: {
     "Release Status": "success",
-    "Release Link": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0-rc8"
+    "Release Link": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0"
   },
   specification_link: null,
   code_link: 'https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/thousand_pounds/thousand_pounds.py',
-  user_documentation_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/tree/main/editing_and_imputation/editing/thousand_pounds_correction',
+  user_documentation_link: 'https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/thousand-pound-correction/thousand_pound_correction.md',
   description: |||
     The automatic editing method for thousand pounds correction is
     commonly used across ONS business surveys. It is a generic rule
