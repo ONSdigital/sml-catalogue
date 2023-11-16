@@ -39,7 +39,6 @@ env_setups:
     TF_VAR_deployment_role: *role
     TF_VAR_environment: dev
     TF_VAR_account: *account
-    ROLLBACK_TAG: ((rollback_tag))
 
   sml_preprod: &sml_preprod_setup
     <<: *general_preprod_params
@@ -49,7 +48,6 @@ env_setups:
     TF_VAR_deployment_role: *role
     TF_VAR_environment: preprod
     TF_VAR_account: *account
-    ROLLBACK_TAG: ((rollback_tag))
 
   sml_prod: &sml_prod_setup
     <<: *general_prod_params
@@ -59,7 +57,6 @@ env_setups:
     TF_VAR_deployment_role: *role
     TF_VAR_environment: prod
     TF_VAR_account: *account
-    ROLLBACK_TAG: ((rollback_tag))
 
 resource_types:
   - name: pull-request
@@ -134,6 +131,8 @@ jobs:
           resource: pr-open
           trigger: true
           version: every
+        - load_var: variables
+          file: variables.yml
         - put: repo
           resource: pr-open
           params:
@@ -152,6 +151,8 @@ jobs:
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
+              ROLLBACK_TAG: ((rollback_tag))
+
               BUILD_TYPE: 0
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
