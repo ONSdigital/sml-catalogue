@@ -4,6 +4,7 @@
 : "${BUILD_TYPE}"
 : "${RELEASE_CANDIDATE}"
 : "${SIGNING_KEY}"
+: "${ROLLBACK}"
 
 
 set -euo pipefail
