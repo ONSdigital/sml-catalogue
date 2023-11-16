@@ -39,7 +39,7 @@ env_setups:
     TF_VAR_deployment_role: *role
     TF_VAR_environment: dev
     TF_VAR_account: *account
-    ROLLBACK: ((rollback))
+    ROLLBACK_TAG: ((rollback_tag))
 
   sml_preprod: &sml_preprod_setup
     <<: *general_preprod_params
@@ -49,7 +49,7 @@ env_setups:
     TF_VAR_deployment_role: *role
     TF_VAR_environment: preprod
     TF_VAR_account: *account
-    ROLLBACK: ((rollback))
+    ROLLBACK_TAG: ((rollback_tag))
 
   sml_prod: &sml_prod_setup
     <<: *general_prod_params
@@ -59,7 +59,7 @@ env_setups:
     TF_VAR_deployment_role: *role
     TF_VAR_environment: prod
     TF_VAR_account: *account
-    ROLLBACK: ((rollback))
+    ROLLBACK_TAG: ((rollback_tag))
 
 resource_types:
   - name: pull-request
