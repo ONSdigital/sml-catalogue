@@ -135,7 +135,7 @@ When running the production pipeline we need to run it via fly execute in order 
 to deploy to production, this can be done as so:
 
 ```shell
-fly execute \
+fly set-pipeline \
 -t aws-sml \
 -p live-sml-catalogue \
 -v RELEASE_CANDIDATE="tag_version, e.g 1.1.0_rc.1" \
