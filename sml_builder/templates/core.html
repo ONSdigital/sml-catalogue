@@ -1,12 +1,4 @@
 {% extends "layout/_template.njk" %}
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6EG2LPCLFN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-6EG2LPCLFN');
-</script>
 {%- if page_title -%} {%- set page_title_value = page_title + ' - Statistical Methods Library - Office for National Statistics' -%} {%- else -%} {%- set page_title_value = 'Statistical Methods Library - Office for National Statistics' -%} {%- endif -%}
 {% set navigation= {
     "navigation": {
@@ -92,4 +84,12 @@
     {% endblock %}
 
   {%- block main -%}
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6EG2LPCLFN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6EG2LPCLFN');
+  </script>
   {%- endblock main -%}
