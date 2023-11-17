@@ -2,6 +2,9 @@
 {%- set page_title = "Methods catalogue" -%}
 {%- set current_path = url_for("display_methods") -%}
 {% from "components/table/_macro.njk" import onsTable %}
+{% from "components/status/_macro.njk" import onsStatus %}
+
+{%- block main -%}
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6EG2LPCLFN"></script>
@@ -10,10 +13,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-6EG2LPCLFN');
-</script>{% from "components/status/_macro.njk" import onsStatus %}
-
-{%- block main -%}
-
+</script>
 
 <h1 class="ons-u-mt-no">Methods catalogue</h1>
 <p>Here you will discover statistical methods used by the Office for National Statistics.</p>
