@@ -1,3 +1,11 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6EG2LPCLFN"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6EG2LPCLFN');
+</script>
 {%- extends "core.html" -%}
 {%- set page_title = 'Privacy and Data Protection' -%}
 {%- set mainCols=8 -%}
@@ -17,13 +25,5 @@
 
 {%- from "components/lists/_macro.njk" import onsList -%}
 {%- block main -%}
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6EG2LPCLFN"></script>
-  <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-6EG2LPCLFN');
-  </script>
   {{ page_body }}
 {% endblock main -%}
