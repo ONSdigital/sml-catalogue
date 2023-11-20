@@ -4,7 +4,7 @@
 : "${BUILD_TYPE}"
 : "${RELEASE_CANDIDATE}"
 : "${SIGNING_KEY}"
-: "${ROLLBACK_TAG}"
+: "${ROLLBACK_TAG:=''}"
 
 
 set -euo pipefail
@@ -39,7 +39,6 @@ git config user.signingkey 79DDAC12EE2E036D
 git config commit.gpgsign true
 if [ -n "$ROLLBACK_TAG" ]; then
   git fetch
-  git checkout "$ROLLBACK_TAG" -b 'tag_version'
   run_linting
   python freeze.py
 elif [ "$BUILD_TYPE" -eq 0 ]; then
