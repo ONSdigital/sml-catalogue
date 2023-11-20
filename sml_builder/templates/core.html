@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 {% extends "layout/_template.njk" %}
 <head>
 <!-- Google Tag Manager -->
@@ -8,6 +10,12 @@
   })(window,document,'script','dataLayer','GTM-WK76MC47');</script>
   <!-- End Google Tag Manager -->
 </head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK76MC47"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
 {%- if page_title -%} {%- set page_title_value = page_title + ' - Statistical Methods Library - Office for National Statistics' -%} {%- else -%} {%- set page_title_value = 'Statistical Methods Library - Office for National Statistics' -%} {%- endif -%}
 {% set navigation= {
     "navigation": {
@@ -93,10 +101,6 @@
     {% endblock %}
 
   {%- block main -%}
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK76MC47"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
   </body>
   {%- endblock main -%}
+  </html>
