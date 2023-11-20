@@ -131,13 +131,25 @@ and
 fly destroy-pipeline -t aws-sml -p dev-sml-catalogue
 ```
 
-When running the production pipeline we need to run it via fly execute in order to pass the tag version
+When running the production pipeline we need to run it via fly set-pipeline in order to pass the tag version
 to deploy to production, this can be done as so:
 
 ```shell
 fly set-pipeline \
 -t aws-sml \
 -p live-sml-catalogue \
--v RELEASE_CANDIDATE="tag_version, e.g 1.1.0_rc.1" \
+-v RELEASE_CANDIDATE={VERSION} \
 -c ci/live-pipeline.yml
 ```
+
+Rollback of preprod and prod can be achieved via the rollback pipeline, run set-pipeline to pass the desired
+rollback tag version and then run the relevant environment via the concourse UI
+
+```shell
+fly set-pipeline \
+-t aws-sml \
+-p rollback-environment \
+-v ROLLBACK_TAG={VERSION} \
+-c ci/rollback-environment.yml
+```
+
