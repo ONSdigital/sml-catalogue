@@ -1,5 +1,16 @@
 <!--next-version-placeholder-->
 
+## v0.2.1-rc.1 (2023-11-21)
+
+### Feature
+
+* Thousand Pounds Correction moved to ready to use table ([`233b4e8`](https://github.com/ONSdigital/sml-catalogue/commit/233b4e82bc7b18b0d460069476f8c230a3e77e91))
+* SPP-8772-add-tac-to-ready-table ([#224](https://github.com/ONSdigital/sml-catalogue/issues/224)) ([`c4b74fe`](https://github.com/ONSdigital/sml-catalogue/commit/c4b74fefcaf2d7c717c0d27a1e61550541e43339))
+
+### Documentation
+
+* Amend commit message ([#222](https://github.com/ONSdigital/sml-catalogue/issues/222)) ([`448ad5b`](https://github.com/ONSdigital/sml-catalogue/commit/448ad5ba699d4c34af7917ed7c35de95400df73d))
+
 ## v0.3.0-rc.2 (2023-11-20)
 
 
