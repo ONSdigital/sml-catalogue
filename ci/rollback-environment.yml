@@ -63,7 +63,7 @@ resources:
     source:
       uri: https://github.com/ONSdigital/sml-catalogue.git
       branch: main
-      tag: ((ROLLBACK_TAG))
+      tag_filter: ((ROLLBACK_TAG))
       username: ((github_access_token))
       password: x-oauth-basic
 
