@@ -1,0 +1,138 @@
+env_setups:
+  general: &general_params
+    AWS_DEFAULT_REGION: eu-west-2
+    S3_KEY: sml-portal.tfstate
+    CONCOURSE_ACCESS_TOKEN: ((github_access_token))
+    SHARED_ACCOUNT_ROLE: &shared_account_role arn:aws:iam::289259348294:role/spp-concourse-access-prod
+
+  general_dev: &general_dev_params
+    TF_VAR_deployment_type: dev
+    S3_NAME: statistical-methods-library-tf-state
+    <<: *general_params
+
+  general_preprod: &general_preprod_params
+    S3_NAME: statistical-methods-library-tf-state-preprod
+    TF_VAR_deployment_type: preprod
+    <<: *general_params
+
+  general_prod: &general_prod_params
+    S3_NAME: statistical-methods-library-tf-state-prod
+    TF_VAR_deployment_type: prod
+    <<: *general_params
+
+  github_pull_creds: &github_pull_creds
+    username: ((github_access_token))
+    password: x-oauth-basic
+
+
+  # -------------------
+
+  sml_dev: &sml_dev_setup
+    <<: *general_dev_params
+    ACCOUNT_NAME: &account sml_dev
+    AWS_ACCOUNT_ID: ((aws_account_sml_dev))
+    AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_dev)):role/spp-concourse-sml-deployment-dev
+    TF_VAR_deployment_role: *role
+    TF_VAR_environment: dev
+    TF_VAR_account: *account
+
+  sml_preprod: &sml_preprod_setup
+    <<: *general_preprod_params
+    ACCOUNT_NAME: &account sml_preprod
+    AWS_ACCOUNT_ID: ((aws_account_sml_preprod))
+    AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_preprod)):role/spp-concourse-sml-deployment-preprod
+    TF_VAR_deployment_role: *role
+    TF_VAR_environment: preprod
+    TF_VAR_account: *account
+
+  sml_prod: &sml_prod_setup
+    <<: *general_prod_params
+    ACCOUNT_NAME: &account sml_prod
+    AWS_ACCOUNT_ID: ((aws_account_sml_prod))
+    AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_prod)):role/spp-concourse-sml-deployment-prod
+    TF_VAR_deployment_role: *role
+    TF_VAR_environment: prod
+    TF_VAR_account: *account
+
+resources:
+  - name: tag_commit
+    type: git
+    icon: github
+    check_every: never
+    webhook_token: gesture
+    source:
+      uri: https://github.com/ONSdigital/sml-catalogue.git
+      branch: main
+      tag: ((ROLLBACK_TAG))
+      username: ((github_access_token))
+      password: x-oauth-basic
+
+jobs:
+  - name: rollback_preprod
+    plan:
+      - do:
+          - get: repo
+            resource: tag_commit
+          - in_parallel:
+              - task: terraform-apply-environment
+                file: repo/ci/tasks/terraform/apply_terraform.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_preprod_setup
+                  TERRAFORM_SOURCE: repo/terraform
+                  WORKSPACE_KEY_INFIX: workspace
+                  TF_WORKSPACE: main
+
+              - task: build-files
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_preprod_setup
+                  BUILD_TYPE: 1
+                  GH_TOKEN: ((github_access_token))
+                  SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+                  ROLLBACK_TAG: ((ROLLBACK_TAG))
+
+          - task: deploy_code
+            file: repo/ci/tasks/build_and_deploy/deploy.yml
+            params:
+              <<: *github_pull_creds
+              <<: *sml_preprod_setup
+              workspace_name: main
+
+          - task: run-acceptance-tests
+            file: repo/ci/tasks/testing/run_bdd_tests.yml
+
+  - name: rollback_prod
+    plan:
+      - do:
+          - get: repo
+            resource: tag_commit
+          - in_parallel:
+              - task: terraform-apply-environment
+                file: repo/ci/tasks/terraform/apply_terraform.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_prod_setup
+                  TERRAFORM_SOURCE: repo/terraform
+                  WORKSPACE_KEY_INFIX: workspace
+                  TF_WORKSPACE: main
+
+              - task: build-files
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+                params:
+                  BUILD_TYPE: 2
+                  GH_TOKEN: ((github_access_token))
+                  SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+                  ROLLBACK_TAG: ((ROLLBACK_TAG))
+
+          - task: deploy_code
+            file: repo/ci/tasks/build_and_deploy/deploy.yml
+            params:
+              <<: *github_pull_creds
+              <<: *sml_prod_setup
+              workspace_name: main
+
+          - task: run-acceptance-tests
+            file: repo/ci/tasks/testing/run_bdd_tests.yml
+
