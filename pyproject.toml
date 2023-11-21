@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "sml-catalogue"
+version = "0.2.1-rc.1"
+description = "This repo contains the build environment and code to generate and upload the Statistical Methods Library (SML) Portal Web Application."
+authors = []
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+frozen-flask = "^0.18"
+jsonnet = "^0.20.0"
+markdown = "^3.4.4"
+flask-markdown = "^0.3"
+contentful = "^2.1.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+behave = "^1.2.6"
+selenium = "^4.10.0"
+flake8 = "^6.1.0"
+pylint = "3.0.1"
+bandit = "^1.7.5"
+isort = "^5.12.0"
+axe-selenium-python = "^2.1.6"
+python-semantic-release = "<8.0.0"
+werkzeug = "2.3.7"
+
+[tool.bandit]
+exclude_dirs = ["features", "./venv/"]
+
+[tool.isort]
+profile="black"
+known_third_party=["boto3","moto","pandas","numpy"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+version_variable = "pyproject.toml:version"
+branch = "main"
+upload_to_pypi = false
+build_command = "python freeze.py && mkdir dist/ && zip -r dist/build.zip build/"
+prerelease_tag = "rc"

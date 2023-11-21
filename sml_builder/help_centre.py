@@ -1,8 +1,11 @@
 from json import load
-from flask import render_template, url_for, Markup, escape
+
 import markdown
+from flask import render_template, url_for
+from markupsafe import Markup, escape
+
 from sml_builder import app
-from sml_builder.cms import getContent
+
 from .utils import _page_not_found
 
 externallink_help_categories = [
@@ -13,54 +16,36 @@ externallink_help_categories = [
     "expert-groups",
 ]
 
-# Checks to see if the category already exists, to prevent duplicate categories
-
-
-def checkDuplicateCategory(categories, item):
-    for i in categories:
-        if i["name"] == item["help_centre_sections_list"]:
-            return True
-    return None
-
 
 @app.route("/help-centre/index")
 def help_centre(category=None):
-    # Gets the methods for the help centre page
-    getHelpCentreItems = getContent("helpCentreInformation")
-
     categories = []
-
-    for item in getHelpCentreItems:
-        if not checkDuplicateCategory(categories, item):
+    try:
+        with open(
+            "./content/help_centre/help_centre.json", encoding="utf-8"
+        ) as help_contents_file:
+            contents = load(help_contents_file)
+        for category in contents[  # pylint: disable=redefined-argument-from-local
+            "categories"
+        ]:
             categories.append(
                 {
-                    "name": item["help_centre_sections_list"],
+                    "name": category["label"],
                     "subcategories": [
                         {
                             "url": url_for(
                                 "guidances",
-                                category=item["help_centre_sections_list"],
-                                sub_category=item["id"],
+                                category=category["name"],
+                                sub_category=sub_category["name"],
                             ),
-                            "text": item["title"],
+                            "text": sub_category["label"],
                         }
+                        for sub_category in category["subcategories"]
                     ],
                 }
             )
-        else:
-            for i in categories:
-                if i["name"] == item["help_centre_sections_list"]:
-                    i["subcategories"].append(
-                        {
-                            "url": url_for(
-                                "guidances",
-                                category=item["help_centre_sections_list"],
-                                sub_category=item["id"],
-                            ),
-                            "text": item["title"],
-                        }
-                    )
-
+    except OSError as e:
+        _page_not_found(e)
     return render_template(
         "help.html", help_categories=categories, selected_category=category
     )
@@ -122,10 +107,10 @@ def _get_category_labels(selected_category, selected_sub_category):
                 if sub_category["name"] == selected_sub_category:
                     sub_category_label = sub_category["label"]
                     return category_label, sub_category_label, selected_sub_category
-            raise Exception(
+            raise KeyError(
                 f"The sub category {selected_sub_category} was not found in the category '{selected_category}'"
             )
-    raise Exception(f"The category '{selected_category}' was not found")
+    raise KeyError(f"The category '{selected_category}' was not found")
 
 
 def _help_centre_nav(

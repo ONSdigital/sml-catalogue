@@ -7,14 +7,14 @@ rm -rf build/*
 echo "done"
 
 echo -n "Freezing site to static files..."
-pipenv run python freeze.py
+poetry run python freeze.py
 echo "done"
 
 echo -n "Uploading to S3 bucket..."
 aws s3 sync build s3://sml-portal-`git branch --show-current` --delete \
-  --content-type "text/html" --exclude "*.css"
+  --content-type "text/html" --exclude "*.css" --exclude "*.js"
 aws s3 sync build s3://sml-portal-`git branch --show-current` --delete \
-  --exclude "*" --include "*.css"
+  --exclude "*" --include "*.css" --include "*.js"
 echo "done"
 
 echo -n "Invalidating CloudFront cache..."

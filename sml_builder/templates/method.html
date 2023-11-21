@@ -1,6 +1,7 @@
 {%- extends "core.html" -%}
 {%- set page_title = method.name -%}
 {%- set current_path = url_for("display_methods") -%}
+{% from "components/external-link/_macro.njk" import onsExternalLink %}
 {%- set breadcrumbs = {
   "id":"breadcrumbs",
   "ariaLabel":"breadcrumbs",
@@ -12,6 +13,7 @@
     }
   ]
 } -%}
+{% from "components/status/_macro.njk" import onsStatus %}
 {%- block main -%}
 <h1 class="ons-u-mt-no">Method: {{ method.name }}</h1>
 <h2> Method summary </h2>
@@ -20,6 +22,7 @@
 <h2> Contact details for this method </h2>
 {% if method.contact_details %}
   {% from "components/external-link/_macro.njk" import onsExternalLink %}
+{% if page.contact_details %}
   {{
       onsExternalLink({
         "url": 'mailto:' ~ method.contact_details ,
@@ -30,13 +33,47 @@
 
 <hr class="ons-u-mb-m">
 {% from "components/metadata/_macro.njk" import onsMetadata %}
+{% set items = [] %}
+{% set status =  page.additional_data["Release Status"] %}
+{% for item in page.method_metadata %}
+{% set description = page.method_metadata[item] %}
 
-{% if method.code_available == True %}
-  {% set code_available = "Yes" %}
+{% do
+  items.append(
+    {
+        "term": item,
+        "descriptions": [
+            {
+                "description": description or "<em>n/a</em>"
+            }
+        ]
+    }
+  )
+%}
+{% endfor %}
+
+{% for item in items %}
+{% if item["term"]  == "Release" %}
+    {% set temp=item["descriptions"][0]["description"] %}
+
+{% if temp=="Not Released Yet" %}
+    {% set item=item["descriptions"][0].__setitem__("description", '<span class="ons-status ons-status--' + status + '">' + temp + '</span>') %}
+
 {% else %}
-  {% set code_available = "No" %}
-{% endif %}
+    {% set link = page.additional_data["Release Link"] %}
+    {% set item=item["descriptions"][0].__setitem__("description", 
+    '<span class="ons-status ons-status--' + status + '">
+      <a href='+ link + ' target="_blank" rel="noopener noreferrer">
+        <span class="ons-u-vh">Release version</span>
+        ' + temp + '
+        <span class="ons-u-vh">(opens in a new tab)</span>
+      </a>
+    </span>') %}
 
+{% endif %}
+{% endif %}
+{% endfor %}
+<hr class="ons-u-mb-m">
 {{
   onsMetadata({
     "classes": "ons-u-mb-no ",
@@ -98,36 +135,33 @@
 <hr class="ons-u-mb-m">
 
 <h2>GitHub resources</h2>
-{{ method.additional_information | paras }}
-{% if method.code_link %}
-{% from "components/external-link/_macro.njk" import onsExternalLink %}
+{{ page.additional_info | paras }}
+{% if page.specification_link %}
 {{
   onsExternalLink({
-    "url":method.code_link,
-    "linkText":"Go to code"
+    "url":page.specification_link,
+    "linkText":"Go to " ~ page.title ~ " specification on GitHub"
   })
 }}
-&nbsp;
+<br>
 {% endif %}
-{% if method.specification_link %}
-{% from "components/external-link/_macro.njk" import onsExternalLink %}
+{% if page.code_link %}
 {{
   onsExternalLink({
-    "url":method.specification_link,
-    "linkText":"Go to specification"
+    "url":page.code_link,
+    "linkText":"Go to " ~ page.title ~ " code on GitHub"
   })
 }}
-&nbsp;
+<br>
 {% endif %}
-{% if method.user_documentation_link %}
-{% from "components/external-link/_macro.njk" import onsExternalLink %}
+{% if page.user_documentation_link %}
 {{
   onsExternalLink({
-    "url":method.user_documentation_link,
-    "linkText":"Go to user documentation"
+    "url":page.user_documentation_link,
+    "linkText":"Go to "~ page.title ~" user documentation on GitHub"
   })
 }}
-&nbsp;
+
 {% endif %}
 
 {% endblock main -%}

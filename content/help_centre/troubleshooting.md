@@ -2,8 +2,7 @@ As issues using our methods are raised we will update this section with relevant
   
 #### Issues accessing a method on GitHub:  
 When following the links to the projects stored on GitHub you may receive a 404 error. Please ensure you are logged into
-GitHub and if you still see the error please ensure that you have the correct access to the project. GitHub will show a
-404 error to a user if they attempt to access the project but don't have the correct permissions.  
+GitHub.  
   
 
 #### Pip install issues:  

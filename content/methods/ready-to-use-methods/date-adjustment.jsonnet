@@ -6,11 +6,14 @@
     'Expert group': 'Editing & Imputation',
     Theme: 'Editing',
     Author: 'ONS',
-    Status: 'Complete',
-    'Programming language': 'Python/Pandas',
-    'Code available?': 'Yes',
+    'Languages': 'Python/Pandas',
+    "Release": "v1.0.0"
   },
-  specification_link: null,
+  additional_data: {
+    "Release Status": "success",
+    "Release Link": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.0.0"
+  },
+  specification_link: "https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/date_adjustment/methodological_specification.md",
   code_link: 'https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/date_adjustment.py',
   user_documentation_link: 'https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/date-adjustment/date_adjustment.md',
   description: |||

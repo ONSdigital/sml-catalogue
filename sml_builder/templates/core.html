@@ -1,17 +1,6 @@
 {% extends "layout/_template.njk" %}
-{%- if page_title -%} {%- set page_title_value = page_title + ' - Statistical Methods Library Portal' -%} {%- else -%} {%- set page_title_value = 'Statistical Methods Library Portal' -%} {%- endif -%}
-{% set pageConfig = { 
-    "title": page_title_value,
-    "header": {
-        "title": 'Statistical Methods Library Portal',
-        "orgLogoHref": 'https://www.ons.gov.uk',
-        "titleLogoHref": '/'
-    },
-    "mainCol":{
-      "columns": mainCols if mainCols else 12,
-      "classes": "ons-u-mt-m"
-    },
-    "breadcrumbs": breadcrumbs,
+{%- if page_title -%} {%- set page_title_value = page_title + ' - Statistical Methods Library - Office for National Statistics' -%} {%- else -%} {%- set page_title_value = 'Statistical Methods Library - Office for National Statistics' -%} {%- endif -%}
+{% set navigation= {
     "navigation": {
         "id": "main-navigation",
         "itemsList": [
@@ -27,7 +16,29 @@
         "title": "Glossary"},
         ],
         "currentPath": current_path
+        }
+    }
+%}
+{% set pageConfig = {
+    "meta": {
+        "canonicalUrl": "/",
+        "description": "/",
     },
+
+    "title": page_title_value,
+    "header": {
+        "title": 'Statistical Methods Library',
+        "orgLogoHref": 'https://www.ons.gov.uk',
+        "titleLogoHref": "/",
+        "mastheadLogo": "/",
+        "titleLogo": "/",
+        "navigation": navigation.navigation,
+    },
+    "pageColNumber": "12",
+    "sidebarColNumber": sidebarCols if sidebarCols else 12,
+    "mainClasses": "ons-u-mt-m",
+    "breadcrumbs": breadcrumbs,
+    "navigation": navigation.navigation,
     "footer": {
       "OGLLink": true,
       "legal": [
@@ -49,8 +60,6 @@
         }
       ]
     },
-
-    "asideCol":asideCol
   }
  %}
 
@@ -60,6 +69,17 @@
             onsCookiesBanner({
                 'serviceName': 'statisticalmethodslibrary.ons.gov.uk'
             })
+        }}
+        {% from "components/phase-banner/_macro.njk" import onsPhaseBanner %}
+
+        {% set feedbackLink %}
+          <a href="mailto:smlhelp@ons.gov.uk">give feedback</a>
+        {% endset %}
+
+        {{
+            onsPhaseBanner({
+                "html": "This is a new service. To help us improve it, " + feedbackLink
+          })
         }}
     {% endblock %}
 

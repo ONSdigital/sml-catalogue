@@ -69,7 +69,7 @@ resource "aws_cloudfront_distribution" "sml-catalogue" {
   viewer_certificate {
     acm_certificate_arn            = terraform.workspace == "main" ? module.route53[0].cert_arn : null
     ssl_support_method             = terraform.workspace == "main" ? "sni-only" : null
-    minimum_protocol_version       = terraform.workspace == "main" ? "TLSv1.2_2019" : null
+    minimum_protocol_version       = terraform.workspace == "main" ? "TLSv1.2_2021" : null
     cloudfront_default_certificate = terraform.workspace != "main"
   }
 }
@@ -82,6 +82,37 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
       header   = "X-Robots-Tag"
       override = true
       value    = "noindex"
+    }
+    items {
+      header   = "Permissions-Policy"
+      override = true
+      value    = "accelerometer=(),autoplay=(),camera=(),display-capture=(),encrypted-media=(),fullscreen=(),gamepad=(),geolocation=(),gyroscope=(),magnetometer=(),microphone=(),midi=(),payment=(),picture-in-picture=(),publickey-credentials-get=(),sync-xhr=(self),usb=(),screen-wake-lock=(),xr-spatial-tracking=()"
+    }
+  }
+  security_headers_config {
+    strict_transport_security {
+      override                   = true
+      access_control_max_age_sec = 31536000
+      include_subdomains         = true
+    }
+    content_type_options {
+      override = true
+    }
+    xss_protection {
+      override   = true
+      protection = true
+    }
+    frame_options {
+      override     = true
+      frame_option = "DENY"
+    }
+    content_security_policy {
+      override                = true
+      content_security_policy = "script-src 'self' 'sha256-AN/TTkrWvH4W7oCH0w79aph67vAli7rskVQ+0LFPnD4=' 'sha256-FM5wgoZgD+IUY/B3phTcQwLPjMdoyegYYa9Lfsx8a0Q=' https://cdn.ons.gov.uk"
+    }
+    referrer_policy {
+      override        = true
+      referrer_policy = "no-referrer"
     }
   }
 }

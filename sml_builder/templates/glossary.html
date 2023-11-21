@@ -8,18 +8,6 @@
 
 {%- block main -%}
 
-    {%- from "components/button/_macro.njk" import onsButton -%}
-    {{
-        onsButton({
-            "text": 'Back to top',
-            "title": 'Go to top',
-            "id": 'topBtn',
-            "url": "#",
-            "iconType": 'arrow-next',
-            "variants": ['secondary']
-        })
-    }}
-
     <h1 class="ons-u-mt-no">Library glossary</h1>
 
     <p id="page-subtitle">Definitions of words, phrases, and abbreviations used within the Statistical Methods Library</p>
@@ -78,8 +66,20 @@
         <hr>
     {%- endfor -%}
 
+    {%- from "components/button/_macro.njk" import onsButton -%}
+    {{
+        onsButton({
+            "text": 'Back to top',
+            "title": 'Go to top',
+            "id": 'topBtn',
+            "url": "#",
+            "iconType": 'arrow-next',
+            "variants": ['secondary']
+        })
+    }}
+
 {% endblock main -%}
 
 {%- block scripts -%}
-    <script type=text/javascript src="{{ url_for('static',filename='js/sml.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static',filename='js/glossary.js') }}"></script>
 {%- endblock scripts -%}

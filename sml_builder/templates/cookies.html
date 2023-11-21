@@ -3,13 +3,13 @@
 {%- from "components/radios/_macro.njk" import onsRadios -%}
 {%- from "components/button/_macro.njk" import onsButton -%}
 {%- from "components/panel/_macro.njk" import onsPanel -%}
-{%- from "components/collapsible/_macro.njk" import onsCollapsible -%}
+{%- from "components/details/_macro.njk" import onsDetails -%}
 {%- from "components/table/_macro.njk" import onsTable -%}
 {%- from "components/lists/_macro.njk" import onsList -%}
 
 {%- block main -%}
     <div class="ons-page__body">
-        <h1 class="ons-u-fs-xxl">Cookies on the statistical methods library portal</h1>
+        <h1 class="ons-u-fs-xxl">Cookies on the statistical methods library</h1>
         {%- call onsPanel({
             "classes": "ons-u-mb-m ons-u-d-no ons-cookies-confirmation-message",
             "type": "success",
@@ -67,10 +67,11 @@
                     <li>remember your progress through a form (for example, an ons study)</li>
                 </ul>
                 <p>They always need to be on.</p>
-                {%- call onsCollapsible({
+                {%- call onsDetails({
                     "id": "cookies-essential-details",
                     "classes": "ons-u-mb-l",
                     "title": "Learn more about these essential cookies",
+                    "titleTag": "h4",
                     "button": {
                         "close": "Hide this"
                     }

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CMDS=("pylint sml_builder" "flake8 sml_builder" "black --check --diff sml_builder" "bandit -r sml_builder")
+CMDS=("black --check --diff freeze.py sml_builder features" "pylint freeze.py sml_builder features" "flake8 freeze.py sml_builder features" "isort --check-only ." "bandit -c pyproject.toml -r .")
 
 for i in "${CMDS[@]}"
 do 

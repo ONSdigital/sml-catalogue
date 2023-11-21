@@ -20,3 +20,8 @@ Feature: Home page tests
         Given I'm an sml portal user on the home page
         When I click the "glossary" link in the header
         Then The title of this page is "Library glossary"
+        
+    Scenario: Beta banner feedback link check
+        Given I'm an sml portal user
+        When I click the "home" link in the header
+        Then The banner mailto address is "mailto:smlhelp@ons.gov.uk"

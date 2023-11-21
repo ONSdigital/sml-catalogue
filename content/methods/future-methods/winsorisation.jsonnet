@@ -6,12 +6,13 @@
     'Expert group': 'Sample Design & Estimation',
     Theme: 'Sample Design & Estimation',
     Author: 'ONS',
-    Status: 'In development',
-    'Programming language': 'Python/PySpark',
-    'Code available?': 'Yes',
+    'Languages': 'Python/PySpark',
+    "Release": "Not Released Yet"
+  },
+  additional_data: {
+    "Release Status": "pending"
   },
   specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/specs_from_current_sml_pages/sample_design_and_estimation/Winsorisation/SML_Winsorization_Specification.docx.rst',
-  code_link: 'https://github.com/ONSdigital/statistical-methods-library/blob/main/statistical_methods_library/outliering/winsorisation.py',
   description: |||
     In business surveys, some responses can be very large, and can distort estimates when such a
     business is selected.  Consequently, it is sometimes desirable to reduce the effect of these

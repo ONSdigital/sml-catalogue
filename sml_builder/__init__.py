@@ -6,18 +6,25 @@ from sml_builder.cms import getContent
 app = Flask(__name__)
 Markdown(app)
 
-app.jinja_env.add_extension("jinja2.ext.do")  # pylint: disable=no-member
+app.jinja_env.add_extension("jinja2.ext.do")
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
 app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
 app.config["FREEZER_DESTINATION"] = "../build"
 
-import sml_builder.method  # noqa: F401
-import sml_builder.page  # noqa: F401
-import sml_builder.glossary  # noqa: F401
-import sml_builder.utils  # noqa: F401
-import sml_builder.help_centre  # noqa: F401
+# F401 module import but unused
+# We have to import the modules below here and they get
+# used in other files later on so ignoring this F401 error
+# We import the utils module and do use
+# E402 module level import not at top of file
+# We import the python files/ flask routes into the __init__.py file and we can't
+# import them at the top of the file so ignoring them
+import sml_builder.glossary  # noqa: E402
+import sml_builder.help_centre  # noqa: E402
+import sml_builder.method  # noqa: E402
+import sml_builder.page  # noqa: E402
+import sml_builder.utils  # noqa: F401, E402
 from sml_builder.utils import checkEmptyList
 
 

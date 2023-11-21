@@ -3,9 +3,17 @@ resource "aws_s3_bucket" "sml-catalogue" {
   force_destroy = true
 }
 
-resource "aws_s3_bucket_acl" "sml-catalogue" {
+resource "aws_s3_bucket_ownership_controls" "sml-catalogue" {
   bucket = aws_s3_bucket.sml-catalogue.id
-  acl    = "private"
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
+resource "aws_s3_bucket_acl" "sml-catalogue" {
+  depends_on = [aws_s3_bucket_ownership_controls.sml-catalogue]
+  bucket     = aws_s3_bucket.sml-catalogue.id
+  acl        = "private"
 }
 
 data "aws_iam_policy_document" "s3_policy" {

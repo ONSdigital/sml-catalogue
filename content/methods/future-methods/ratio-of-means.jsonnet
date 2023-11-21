@@ -6,12 +6,13 @@
     'Expert group': 'Editing & Imputation',
     Theme: 'Imputation',
     Author: 'ONS',
-    Status: 'In development',
-    'Programming language': 'Python/PySpark',
-    'Code available?': 'Yes',
+    'Languages': 'Python/PySpark',
+    "Release": "Not Released Yet"
+  },
+  additional_data: {
+    "Release Status": "pending"
   },
   specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/ratio_of_means/methodological_specification.md',
-  code_link: 'https://github.com/ONSdigital/statistical-methods-library/blob/main/statistical_methods_library/imputation/ratio_of_means.py',
   description: |||
     Ratio of means is a standard imputation method used for business surveys. The method imputes for each non-responding
     contributor a single numeric target variable within the dataset for multiple periods simultaneously. It uses the
