@@ -37,7 +37,7 @@ git config user.email "spp@ons.gov.uk"
 git config user.name "SPP Machine User"
 git config user.signingkey 79DDAC12EE2E036D
 git config commit.gpgsign true
-if [ -n "$ROLLBACK_TAG" ]; then
+if [ ! -z "$ROLLBACK_TAG" ]; then
   git fetch
   run_linting
   python freeze.py
