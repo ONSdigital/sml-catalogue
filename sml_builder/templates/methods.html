@@ -102,21 +102,21 @@
   ]
 } %}
 
-{#
 {% set futureMethodsTableRows = [] %}
-{% for row in page.future_rows %}
+{% for method in methods %}
+  {#'<a href="' + url_for("display_method_summary", method=method.id, methodState="future-methods") + '">' + method.name + '</a>'#}
   {% do futureMethodsTableRows.append({
     "tds": [
       {
-          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="future-methods") + '">' + row.title + '</a>'
+          "value": method.name
+          
       },
-      {"value": row.theme},
-      {"value": row.exp_group},
-      {"value": row.language},
+      {"value": method.theme},
+      {"value": method.expert_group},
+      {"value": method.language},
     ]
   }) %}
 {% endfor %}
-#}
 
 {% do futureMethodsTable.update({"trs": futureMethodsTableRows}) %}
 {{
