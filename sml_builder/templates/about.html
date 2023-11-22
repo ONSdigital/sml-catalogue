@@ -3,6 +3,13 @@
 {%- set current_path = url_for("about") -%}
 {%- set sidebarCols = 8 -%}
 {%- block mainContent %}
+            <!-- Google Tag Manager (noscript) -->
+            <noscript>
+                <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK76MC47"
+                height="0" width="0" style="display:none;visibility:hidden">
+                </iframe>
+            </noscript>
+            <!-- End Google Tag Manager (noscript) -->
             {{ page_body }}
 {%- endblock mainContent -%}
 {%- block sidebarContent -%}
