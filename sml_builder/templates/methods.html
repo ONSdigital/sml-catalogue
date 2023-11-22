@@ -6,30 +6,26 @@
 
 {%- block main -%}
 
-<h1 class="ons-u-mt-no">Methods catalogue</h1>
-<p>Here you will discover statistical methods used by the Office for National Statistics.</p>
-
+<h1 class="ons-u-mt-no">{{ content.heading1 | markdown }}</h1>
+{{ content.paragraph | markdown }}
 {% from "components/details/_macro.njk" import onsDetails %}
-{% call onsDetails({
+{{ 
+  onsDetails({
       "id": "collapsible",
-      "title": content["detail"]
-}) %}
-<p>Methods are sorted in hierarchical order with expert groups as the top level.
-  For example, within an expert group are different themes, and within the themes
-  are different methods.</p>
+      "title": content["detail"],
+      "content":content["detail_content"]
+    })
+}}
 
-  <p>To find out more about expert groups and themes,
-    please visit the <a href="https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/" target="_blank">analysis function website<span class="ons-u-vh"> (opens in a new window)</span></a>.</p>
-    {% endcall %}
-
-  </br> 
+</br> 
 <h2>{{
   onsStatus({
       "label": 'Methods Ready to Use',
       "type": 'success'
   })
 }}</h2>
-<p>The following methods are released and ready to use</p>
+<p>The following methods are released and ready to use.</p>
+
 {% set methodsTable = {
   "id": "ready-table",
   "variants": ["sortable","responsive"],
@@ -52,19 +48,23 @@
     },
   ]
 } %}
+
 {% set methodsTableRows = [] %}
+
 {% for method in methods %}
   {% do methodsTableRows.append({
     "tds": [
       {
-          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="ready-to-use-methods") + '">' + row.title + '</a>'
+          "value": '<a href="#">' + method.name + '</a>'
       },
-      {"value": row.theme},
-      {"value": row.exp_group},
-      {"value": row.language},
+      {"value": method.theme},
+      {"value": method.expert_group},
+      {"value": method.language},
     ]
   }) %}
-{% endfor %}
+{% endfor %}{#
+#}
+
 {% do methodsTable.update({"trs": methodsTableRows}) %}
 {{
   onsTable(methodsTable)
@@ -77,6 +77,7 @@
   })
 }}</h2>
 <p>The following methods have been approved for development and will be included in future releases.</p>
+
 {% set futureMethodsTable = {
   "id": "future-table",
   "variants": ["sortable","responsive"],
@@ -99,6 +100,8 @@
     },
   ]
 } %}
+
+{#
 {% set futureMethodsTableRows = [] %}
 {% for row in page.future_rows %}
   {% do futureMethodsTableRows.append({
@@ -112,12 +115,15 @@
     ]
   }) %}
 {% endfor %}
+#}
+
 {% do futureMethodsTable.update({"trs": futureMethodsTableRows}) %}
 {{
   onsTable(futureMethodsTable)
 }}
 <p>These methods can be developed and extended after a formal release. ‘Code under development’ is tested and checked before it is made into a formal release. Usage of code prior to a formal release is at the user's own risk.</p>
 <p>The Statistical Methods Library will grow as more statistical methods are requested.</p>
+
 {% endblock main -%}
 
 {%- block scripts -%}
