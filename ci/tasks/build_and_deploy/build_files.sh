@@ -4,10 +4,10 @@
 : "${BUILD_TYPE}"
 : "${RELEASE_CANDIDATE}"
 : "${SIGNING_KEY}"
-: "${ROLLBACK_TAG:=''}"
+: "${ROLLBACK_TAG}"
 
 
-set -euo pipefail
+set -eo pipefail
 
 pip install --upgrade pip
 pip install poetry
