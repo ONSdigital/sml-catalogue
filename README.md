@@ -153,3 +153,5 @@ fly set-pipeline \
 -c ci/rollback-environment.yml
 ```
 
+Note: Due to changes in the ci/tasks files to allow this functionality rollback is only available on versions beginning
+with v1.0.0 or later
