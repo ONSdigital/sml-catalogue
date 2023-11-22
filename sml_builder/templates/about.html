@@ -13,7 +13,7 @@
 </script>
 <!-- End Google Tag Manager -->
 {%- endblock head -%}
-{%- block mainContent %}
+{%- block main %}
             <!-- Google Tag Manager (noscript) -->
             <noscript>
                 <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK76MC47"
@@ -22,7 +22,7 @@
             </noscript>
             <!-- End Google Tag Manager (noscript) -->
             {{ page_body }}
-{%- endblock mainContent -%}
+{%- endblock main -%}
 {%- block sidebarContent -%}
     {% from "components/related-content/_macro.njk" import onsRelatedContent %}
         {{
