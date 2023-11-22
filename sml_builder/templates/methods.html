@@ -52,18 +52,19 @@
 {% set methodsTableRows = [] %}
 
 {% for method in methods %}
-  {% do methodsTableRows.append({
-    "tds": [
-      {
-          "value": '<a href="#">' + method.name + '</a>'
-      },
-      {"value": method.theme},
-      {"value": method.expert_group},
-      {"value": method.language},
-    ]
-  }) %}
-{% endfor %}{#
-#}
+  {% if method.method_ready %}
+    {% do methodsTableRows.append({
+      "tds": [
+        {
+            "value": '<a href="#">' + method.name + '</a>'
+        },
+        {"value": method.theme},
+        {"value": method.expert_group},
+        {"value": method.language},
+      ]
+    }) %}
+  {% endif %}
+{% endfor %}
 
 {% do methodsTable.update({"trs": methodsTableRows}) %}
 {{
