@@ -49,6 +49,29 @@
   ]
 } %}
 
+{% set futureMethodsTable = {
+  "id": "future-table",
+  "variants": ["sortable","responsive"],
+  "tableClasses": "ons-u-mt-m",
+  "sortBy": "Sort by",
+  "ariaAsc": "ascending",
+  "ariaDesc": "descending",
+  "ths": [
+    {
+      "value": "Name."
+    },
+    {
+      "value": "Theme."
+    },
+    {
+      "value": "Expert group."
+    },
+    {
+      "value": "Languages."
+    },
+  ]
+} %}
+
 {% set methodsTableRows = [] %}
 {% set futureMethodsTableRows = [] %}
 
@@ -79,6 +102,8 @@
 {% endfor %}
 
 {% do methodsTable.update({"trs": methodsTableRows}) %}
+{% do futureMethodsTable.update({"trs": futureMethodsTableRows}) %}
+
 {{
   onsTable(methodsTable)
 }}
@@ -91,33 +116,10 @@
 }}</h2>
 <p>The following methods have been approved for development and will be included in future releases.</p>
 
-{% set futureMethodsTable = {
-  "id": "future-table",
-  "variants": ["sortable","responsive"],
-  "tableClasses": "ons-u-mt-m",
-  "sortBy": "Sort by",
-  "ariaAsc": "ascending",
-  "ariaDesc": "descending",
-  "ths": [
-    {
-      "value": "Name."
-    },
-    {
-      "value": "Theme."
-    },
-    {
-      "value": "Expert group."
-    },
-    {
-      "value": "Languages."
-    },
-  ]
-} %}
-
-{% do futureMethodsTable.update({"trs": futureMethodsTableRows}) %}
 {{
   onsTable(futureMethodsTable)
 }}
+
 <p>These methods can be developed and extended after a formal release. ‘Code under development’ is tested and checked before it is made into a formal release. Usage of code prior to a formal release is at the user's own risk.</p>
 <p>The Statistical Methods Library will grow as more statistical methods are requested.</p>
 
