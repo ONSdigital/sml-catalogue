@@ -66,6 +66,22 @@
   {% endif %}
 {% endfor %}
 
+{% set futureMethodsTableRows = [] %}
+{% for method in methods %}
+  {% if method.method_ready == False %}
+    {% do futureMethodsTableRows.append({
+      "tds": [
+        {
+            "value": '<a href="' + url_for("display_method", method=method.id, methodState="future-methods") + '">' + method.name + '</a>'
+        },
+        {"value": method.theme},
+        {"value": method.expert_group},
+        {"value": method.language},
+      ]
+    }) %}
+  {% endif %}
+{% endfor %}
+
 {% do methodsTable.update({"trs": methodsTableRows}) %}
 {{
   onsTable(methodsTable)
@@ -102,19 +118,7 @@
   ]
 } %}
 
-{% set futureMethodsTableRows = [] %}
-{% for method in methods %}
-  {% do futureMethodsTableRows.append({
-    "tds": [
-      {
-          "value": '<a href="' + url_for("display_method", method=method.id, methodState="future-methods") + '">' + method.name + '</a>'
-      },
-      {"value": method.theme},
-      {"value": method.expert_group},
-      {"value": method.language},
-    ]
-  }) %}
-{% endfor %}
+
 
 {% do futureMethodsTable.update({"trs": futureMethodsTableRows}) %}
 {{
