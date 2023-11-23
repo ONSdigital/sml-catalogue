@@ -50,6 +50,7 @@
 } %}
 
 {% set methodsTableRows = [] %}
+{% set futureMethodsTableRows = [] %}
 
 {% for method in methods %}
   {% if method.method_ready %}
@@ -62,13 +63,8 @@
         {"value": method.expert_group},
         {"value": method.language},
       ]
-    }) %}
-  {% endif %}
-{% endfor %}
-
-{% set futureMethodsTableRows = [] %}
-{% for method in methods %}
-  {% if method.method_ready == False %}
+    }) %}    
+  {% else %}
     {% do futureMethodsTableRows.append({
       "tds": [
         {
@@ -117,8 +113,6 @@
     },
   ]
 } %}
-
-
 
 {% do futureMethodsTable.update({"trs": futureMethodsTableRows}) %}
 {{
