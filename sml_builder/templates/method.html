@@ -20,9 +20,8 @@
 {{ method.description | markdown }}
 
 <h2> Contact details for this method </h2>
-{% if method.contact_details %}
   {% from "components/external-link/_macro.njk" import onsExternalLink %}
-{% if page.contact_details %}
+{% if method.contact_details %}
   {{
       onsExternalLink({
         "url": 'mailto:' ~ method.contact_details ,
@@ -34,8 +33,8 @@
 <hr class="ons-u-mb-m">
 {% from "components/metadata/_macro.njk" import onsMetadata %}
 {% set items = [] %}
-{% set status =  page.additional_data["Release Status"] %}
-{% for item in page.method_metadata %}
+{% set status =  method.method_ready | string %}
+{% for item in method.method_metadata %}
 {% set description = page.method_metadata[item] %}
 
 {% do
@@ -93,7 +92,7 @@
         "term": "Code available?",
         "descriptions": [
           {
-            "description": code_available
+            "description": status
           }
         ]
       },
@@ -117,7 +116,7 @@
         "term": "Status",
         "descriptions": [
           {
-            "description": '<span class="ons-status ons-status--' + status_class.get(method.status, "info") + '">' + method.status + '</span>'
+            "description": '<span class="ons-status ons-status--' + status_class.get(method.method_ready, "info") + '">' + status + '</span>'
           }
         ]
       },
@@ -135,30 +134,30 @@
 <hr class="ons-u-mb-m">
 
 <h2>GitHub resources</h2>
-{{ page.additional_info | paras }}
-{% if page.specification_link %}
+{{ method.additional_information | paras }}
+{% if method.specification_link %}
 {{
   onsExternalLink({
-    "url":page.specification_link,
-    "linkText":"Go to " ~ page.title ~ " specification on GitHub"
+    "url":method.specification_link,
+    "linkText":"Go to " ~ method.name ~ " specification on GitHub"
   })
 }}
 <br>
 {% endif %}
-{% if page.code_link %}
+{% if method.code_link %}
 {{
   onsExternalLink({
-    "url":page.code_link,
-    "linkText":"Go to " ~ page.title ~ " code on GitHub"
+    "url":method.code_link,
+    "linkText":"Go to " ~ method.name ~ " code on GitHub"
   })
 }}
 <br>
 {% endif %}
-{% if page.user_documentation_link %}
+{% if method.user_documentation_link %}
 {{
   onsExternalLink({
-    "url":page.user_documentation_link,
-    "linkText":"Go to "~ page.title ~" user documentation on GitHub"
+    "url":method.user_documentation_link,
+    "linkText":"Go to "~ method.name ~" user documentation on GitHub"
   })
 }}
 

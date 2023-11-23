@@ -10,9 +10,8 @@ from sml_builder.cms import getContent
 from sml_builder.utils import checkEmptyList, checkTypeList
 
 STATUS_CLASS = {
-    "In development": "pending",
-    "Complete": "success",
-    "Approved for development": "dead",
+    False: "pending",
+    True: "success",
 }
 
 
