@@ -30,10 +30,13 @@
   }}
 {% endif %}
 
-<hr class="ons-u-mb-m">
 {% from "components/metadata/_macro.njk" import onsMetadata %}
 {% set items = [] %}
-{% set status =  method.method_ready | string %}
+{% if method.method_ready %}
+  {% set status = 'success' %}
+{% else %}
+  {% set status = 'pending' %}
+{% endif %}
 {% for item in method.method_metadata %}
 {% set description = page.method_metadata[item] %}
 
@@ -51,27 +54,19 @@
 %}
 {% endfor %}
 
-{% for item in items %}
-{% if item["term"]  == "Release" %}
-    {% set temp=item["descriptions"][0]["description"] %}
-
-{% if temp=="Not Released Yet" %}
-    {% set item=item["descriptions"][0].__setitem__("description", '<span class="ons-status ons-status--' + status + '">' + temp + '</span>') %}
-
-{% else %}
-    {% set link = page.additional_data["Release Link"] %}
-    {% set item=item["descriptions"][0].__setitem__("description", 
-    '<span class="ons-status ons-status--' + status + '">
+{% if method.method_ready %}
+    {% set link = method.release_link %}
+    {% set release_temp=
+      '<span class="ons-status ons-status--' + status + '">
       <a href='+ link + ' target="_blank" rel="noopener noreferrer">
         <span class="ons-u-vh">Release version</span>
-        ' + temp + '
+        ' + method.release_version + '
         <span class="ons-u-vh">(opens in a new tab)</span>
       </a>
-    </span>') %}
-
+    </span>' %}
+{% else %}    
+  {% set release_temp='<span class="ons-status ons-status--' + status + '">Not Released Yet</span>' %}
 {% endif %}
-{% endif %}
-{% endfor %}
 <hr class="ons-u-mb-m">
 {{
   onsMetadata({
@@ -108,7 +103,7 @@
         "term": "Status",
         "descriptions": [
           {
-            "description": '<span class="ons-status ons-status--' + status_class.get(method.method_ready, "info") + '">' + status + '</span>'
+            "description": release_temp
           }
         ]
       },
