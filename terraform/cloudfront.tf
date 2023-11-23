@@ -108,7 +108,7 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
     }
     content_security_policy {
       override                = true
-      content_security_policy = "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'sha256-AN/TTkrWvH4W7oCH0w79aph67vAli7rskVQ+0LFPnD4=' 'sha256-FM5wgoZgD+IUY/B3phTcQwLPjMdoyegYYa9Lfsx8a0Q=' https://tagmanager.google.com/' 'https://www.googletagmanager.com/"
+      content_security_policy = "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'sha256-AN/TTkrWvH4W7oCH0w79aph67vAli7rskVQ+0LFPnD4=' 'sha256-FM5wgoZgD+IUY/B3phTcQwLPjMdoyegYYa9Lfsx8a0Q=' https://d1waq9urliqci9.cloudfront.net/"
     }
     referrer_policy {
       override        = true
