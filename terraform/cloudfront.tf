@@ -108,7 +108,7 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
     }
     content_security_policy {
       override                = true
-      content_security_policy = "script-src 'unsafe-eval' 'unsafe-inline'"
+      content_security_policy = "script-src-elem 'unsafe-eval' 'unsafe-inline'"
     }
     referrer_policy {
       override        = true
