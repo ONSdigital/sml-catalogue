@@ -108,7 +108,7 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
     }
     content_security_policy {
       override                = true
-      content_security_policy = "script-src 'nonce-{EDNnf03nceIOfn39fn3e9h3sdfa}'"
+      content_security_policy = "script-src 'unsafe-inline' 'nonce-{EDNnf03nceIOfn39fn3e9h3sdfa}'"
     }
     referrer_policy {
       override        = true
