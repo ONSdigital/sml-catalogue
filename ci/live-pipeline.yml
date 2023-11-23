@@ -159,8 +159,8 @@ jobs:
             <<: *github_pull_creds
             <<: *sml_dev_setup
 
-        # - task: run-acceptance-tests
-        #   file: repo/ci/tasks/testing/run_bdd_tests.yml
+        - task: run-acceptance-tests
+          file: repo/ci/tasks/testing/run_bdd_tests.yml
 
     on_success:
       put: repo
@@ -213,8 +213,8 @@ jobs:
             <<: *sml_dev_setup
             workspace_name: main
 
-        # - task: run-acceptance-tests
-        #   file: repo/ci/tasks/testing/run_bdd_tests.yml
+        - task: run-acceptance-tests
+          file: repo/ci/tasks/testing/run_bdd_tests.yml
 
   - name: build_and_deploy_preprod
     plan:
@@ -247,8 +247,8 @@ jobs:
             <<: *sml_preprod_setup
             workspace_name: main
 
-        # - task: run-acceptance-tests
-        #   file: repo/ci/tasks/testing/run_bdd_tests.yml
+        - task: run-acceptance-tests
+          file: repo/ci/tasks/testing/run_bdd_tests.yml
 
   - name: build_and_deploy_prod
     plan:
@@ -279,8 +279,8 @@ jobs:
             <<: *sml_prod_setup
             workspace_name: main
 
-        # - task: run-acceptance-tests
-        #   file: repo/ci/tasks/testing/run_bdd_tests.yml
+        - task: run-acceptance-tests
+          file: repo/ci/tasks/testing/run_bdd_tests.yml
 
   - name: destroy_workspace
     serial: true
