@@ -108,7 +108,7 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
     }
     content_security_policy {
       override                = true
-      content_security_policy = "script-src 'unsafe-inline'"
+      content_security_policy = "script-src 'self' 'unsafe-eval' https://www.googletagmanger.com 'unsafe-inline'; object-src 'self' "
     }
     referrer_policy {
       override        = true
