@@ -104,12 +104,10 @@
 
 {% set futureMethodsTableRows = [] %}
 {% for method in methods %}
-  {#'<a href="' + url_for("display_method_summary", method=method.id, methodState="future-methods") + '">' + method.name + '</a>'#}
   {% do futureMethodsTableRows.append({
     "tds": [
       {
-          "value": method.name
-          
+          "value": '<a href="' + url_for("display_method", method=method.id, methodState="future-methods") + '">' + method.name + '</a>'
       },
       {"value": method.theme},
       {"value": method.expert_group},
