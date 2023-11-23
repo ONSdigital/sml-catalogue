@@ -56,7 +56,7 @@
     {% do methodsTableRows.append({
       "tds": [
         {
-            "value": '<a href="#">' + method.name + '</a>'
+            "value": '<a href="' + url_for("display_method", method=method.id, methodState="ready-methods") + '">' + method.name + '</a>'
         },
         {"value": method.theme},
         {"value": method.expert_group},
