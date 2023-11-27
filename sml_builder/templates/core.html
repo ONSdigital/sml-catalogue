@@ -1,5 +1,6 @@
 {% extends "layout/_template.njk" %}
 {%- if page_title -%} {%- set page_title_value = page_title + ' - Statistical Methods Library - Office for National Statistics' -%} {%- else -%} {%- set page_title_value = 'Statistical Methods Library - Office for National Statistics' -%} {%- endif -%}
+
 {%- block head -%}
 <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -9,7 +10,9 @@
       })(window,document,'script','dataLayer','GTM-WK76MC47');
   </script>
 <!-- End Google Tag Manager -->
+
 {%- endblock head -%}
+
 {% set navigation= {
     "navigation": {
         "id": "main-navigation",
