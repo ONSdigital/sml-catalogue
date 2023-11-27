@@ -3,6 +3,7 @@
 {%- set current_path = url_for("display_glossary") -%}
 
 {%- block head -%}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/sml.css') }}" media="all" type="text/css">
 <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -11,7 +12,6 @@
         })(window,document,'script','dataLayer','GTM-WK76MC47');
     </script>
 <!-- End Google Tag Manager -->
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/sml.css') }}" media="all" type="text/css">
 {%- endblock head -%}
 
 {%- block main -%}
