@@ -16,7 +16,6 @@ def getContent(contentType):
     entries_by_content_type = getEntriesByContentType(content_type)
     print("entries_by_content_type: ", entries_by_content_type)
 
-
     content = compileContent(entries_by_content_type)
 
     return content
