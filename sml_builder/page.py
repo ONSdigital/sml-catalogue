@@ -1,11 +1,11 @@
-from flask import escape, Markup, render_template, abort
 import markdown
-from flask import render_template
+from flask import abort, render_template
 from markupsafe import Markup, escape
 
 from sml_builder import app
 from sml_builder.cms import getContent
 from sml_builder.utils import checkEmptyList
+
 from .utils import _page_not_found
 
 

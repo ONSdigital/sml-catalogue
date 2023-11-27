@@ -1,4 +1,5 @@
 import os
+
 import contentful
 
 # Will need a official contentful account for the project/ team, and then we can update
@@ -12,9 +13,9 @@ client = contentful.Client(SPACE_ID, CDA_KEY)
 # Returns the content depending on the content type
 def getContent(contentType):
     content_type = client.content_type(contentType)
-    print("content_type: ", content_type)
+    # print("content_type: ", content_type)
     entries_by_content_type = getEntriesByContentType(content_type)
-    print("entries_by_content_type: ", entries_by_content_type)
+    # print("entries_by_content_type: ", entries_by_content_type)
 
     content = compileContent(entries_by_content_type)
 
@@ -24,7 +25,7 @@ def getContent(contentType):
 # Gets the entries for the type of content passed into the function
 def getEntriesByContentType(contentType):
     entries_by_content_type = client.entries({"content_type": contentType.id})
-    print("entries_by_content_type2: ", entries_by_content_type)
+    # print("entries_by_content_type2: ", entries_by_content_type)
 
     return entries_by_content_type
 
@@ -39,6 +40,6 @@ def compileContent(entries_by_content_type):
         for entry in entries_by_content_type:
             entry_fields.append(entry.fields())
 
-    print("entry_fields2: ", entry_fields)
+    # print("entry_fields2: ", entry_fields)
 
     return entry_fields

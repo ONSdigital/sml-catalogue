@@ -1,17 +1,6 @@
-from flask import Flask, render_template, escape, Markup, abort
+from flask import Flask, abort, render_template
 from flaskext.markdown import Markdown
-from sml_builder.cms import getContent
-
-
-app = Flask(__name__)
-Markdown(app)
-
-app.jinja_env.add_extension("jinja2.ext.do")
-app.jinja_env.trim_blocks = True
-app.jinja_env.lstrip_blocks = True
-
-app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
-app.config["FREEZER_DESTINATION"] = "../build"
+from markupsafe import Markup, escape
 
 # F401 module import but unused
 # We have to import the modules below here and they get
@@ -25,7 +14,18 @@ import sml_builder.help_centre  # noqa: E402
 import sml_builder.method  # noqa: E402
 import sml_builder.page  # noqa: E402
 import sml_builder.utils  # noqa: F401, E402
+from sml_builder.cms import getContent
 from sml_builder.utils import checkEmptyList
+
+app = Flask(__name__)
+Markdown(app)
+
+app.jinja_env.add_extension("jinja2.ext.do")
+app.jinja_env.trim_blocks = True
+app.jinja_env.lstrip_blocks = True
+
+app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
+app.config["FREEZER_DESTINATION"] = "../build"
 
 
 @app.route("/")

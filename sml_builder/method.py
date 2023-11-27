@@ -1,11 +1,6 @@
-from json import loads
-from os import listdir
-
-from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
-from flask import render_template, abort
+from flask import abort, render_template
 
 from sml_builder import app
-from .utils import _page_not_found
 from sml_builder.cms import getContent
 from sml_builder.utils import checkEmptyList, checkTypeList
 
