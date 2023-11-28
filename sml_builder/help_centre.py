@@ -11,11 +11,6 @@ from sml_builder.utils import checkEmptyList
 from .utils import _page_not_found
 
 externallink_help_categories = [
-    "report-bug",
-    "provide-feedback",
-    "support",
-    "methods-request",
-    "expert-groups",
 ]
 
 
@@ -62,25 +57,22 @@ def guidances(category, sub_category=None):
     except Exception as e:  # pylint: disable=broad-except
         _page_not_found(e)
 
-    if sub_category not in externallink_help_categories:
-        try:
-            pages = getContent("helpCentreInformation")
-            print(pages)
-            if checkEmptyList(pages):
-                abort(404)
-            text = ""
-            for page in pages:
-                if page["id"] == sub_category:
-                    text = page["content"]
-                    break
-            if text == "":
-                abort(404)
-        except OSError as e:
-            _page_not_found(e)
-        escaped_text = escape(text)
-        body = Markup(markdown.markdown(escaped_text))
-    else:
-        body = False
+    try:
+        pages = getContent("helpCentreInformation")
+        print(pages)
+        if checkEmptyList(pages):
+            abort(404)
+        text = ""
+        for page in pages:
+            if page["id"] == sub_category:
+                text = page["content"]
+                break
+        if text == "":
+            abort(404)
+    except OSError as e:
+        _page_not_found(e)
+    escaped_text = escape(text)
+    body = Markup(markdown.markdown(escaped_text))
 
     help_centre_nav = _help_centre_nav(category)
 
