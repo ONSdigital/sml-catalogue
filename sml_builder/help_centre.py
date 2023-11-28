@@ -68,10 +68,13 @@ def guidances(category, sub_category=None):
             print(pages)
             if checkEmptyList(pages):
                 abort(404)
+            text = ""
             for page in pages:
                 if page["id"] == sub_category:
                     text = page["content"]
                     break
+            if text == "":
+                abort(404)
         except OSError as e:
             _page_not_found(e)
         escaped_text = escape(text)
@@ -85,7 +88,7 @@ def guidances(category, sub_category=None):
         "help-methods-request.html"
         if sub_category == "methods-request"
         else "help_category.html",
-        body=body, ##
+        body=body,
         category_label=category_label,
         sub_category_label=sub_category_label,
         category=category,
