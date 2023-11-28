@@ -1,11 +1,12 @@
 from json import load
 
 import markdown
-from flask import render_template, url_for
+from flask import render_template, url_for, abort
 from markupsafe import Markup, escape
 
 from sml_builder import app
 from sml_builder.cms import getContent
+from sml_builder.utils import checkEmptyList
 
 from .utils import _page_not_found
 
@@ -23,7 +24,8 @@ def help_centre(category=None):
     categories = []
     try:
         contents = getContent("helpCentreStructure")["structure"]
-        print(contents)
+        if checkEmptyList(contents):
+            abort(404)  
         for category in contents[  # pylint: disable=redefined-argument-from-local
             "categories"
         ]:
@@ -89,11 +91,9 @@ def guidances(category, sub_category=None):
 
 
 def _get_category_labels(selected_category, selected_sub_category):
-    with open(
-        "./content/help_centre/help_centre.json", encoding="utf-8"
-    ) as help_contents_file:
-        contents = load(help_contents_file)
-        contents = getContent("helpCentreStructure")["structure"]
+    contents = getContent("helpCentreStructure")["structure"]
+    if checkEmptyList(contents):
+        abort(404)  
     for category in contents["categories"]:
         if category["name"] == selected_category:
             category_label = category["label"]
@@ -116,11 +116,9 @@ def _get_category_labels(selected_category, selected_sub_category):
 def _help_centre_nav(
     current_category,
 ):
-    with open(
-        "./content/help_centre/help_centre.json", encoding="utf-8"
-    ) as help_contents_file:
-        contents = load(help_contents_file)
-        contents = getContent("helpCentreStructure")["structure"]
+    contents = getContent("helpCentreStructure")["structure"]
+    if checkEmptyList(contents):
+        abort(404)  
     return [
         {
             "title": category["label"],
