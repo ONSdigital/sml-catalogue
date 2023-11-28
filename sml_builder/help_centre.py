@@ -64,10 +64,14 @@ def guidances(category, sub_category=None):
 
     if sub_category not in externallink_help_categories:
         try:
-            with open(
-                f"./content/help_centre/{sub_category}.md", "r", encoding="utf-8"
-            ) as input_file:
-                text = input_file.read()
+            pages = getContent("helpCentreInformation")
+            print(pages)
+            if checkEmptyList(pages):
+                abort(404)
+            for page in pages:
+                if page["id"] == sub_category:
+                    text = page["content"]
+                    break
         except OSError as e:
             _page_not_found(e)
         escaped_text = escape(text)
@@ -81,12 +85,12 @@ def guidances(category, sub_category=None):
         "help-methods-request.html"
         if sub_category == "methods-request"
         else "help_category.html",
-        body=body,
+        body=body, ##
         category_label=category_label,
         sub_category_label=sub_category_label,
         category=category,
         sub_category=sub_category,
-        nav=help_centre_nav,
+        nav=help_centre_nav, ##
     )
 
 
