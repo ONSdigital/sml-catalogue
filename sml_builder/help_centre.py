@@ -5,6 +5,7 @@ from flask import render_template, url_for
 from markupsafe import Markup, escape
 
 from sml_builder import app
+from sml_builder.cms import getContent
 
 from .utils import _page_not_found
 
@@ -21,10 +22,8 @@ externallink_help_categories = [
 def help_centre(category=None):
     categories = []
     try:
-        with open(
-            "./content/help_centre/help_centre.json", encoding="utf-8"
-        ) as help_contents_file:
-            contents = load(help_contents_file)
+        contents = getContent("helpCentreStructure")["structure"]
+        print(contents)
         for category in contents[  # pylint: disable=redefined-argument-from-local
             "categories"
         ]:
