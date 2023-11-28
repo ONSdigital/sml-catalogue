@@ -10,9 +10,6 @@ from sml_builder.utils import checkEmptyList
 
 from .utils import _page_not_found
 
-externallink_help_categories = [
-]
-
 
 @app.route("/help-centre/index")
 def help_centre(category=None):
