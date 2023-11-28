@@ -93,6 +93,7 @@ def _get_category_labels(selected_category, selected_sub_category):
         "./content/help_centre/help_centre.json", encoding="utf-8"
     ) as help_contents_file:
         contents = load(help_contents_file)
+        contents = getContent("helpCentreStructure")["structure"]
     for category in contents["categories"]:
         if category["name"] == selected_category:
             category_label = category["label"]
@@ -119,6 +120,7 @@ def _help_centre_nav(
         "./content/help_centre/help_centre.json", encoding="utf-8"
     ) as help_contents_file:
         contents = load(help_contents_file)
+        contents = getContent("helpCentreStructure")["structure"]
     return [
         {
             "title": category["label"],
