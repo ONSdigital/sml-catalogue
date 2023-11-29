@@ -10,7 +10,7 @@ app.jinja_env.lstrip_blocks = True
 app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
 app.config["FREEZER_DESTINATION"] = "../build"
 
-import sml_builder.api_reference
+
 
 # F401 module import but unused
 # We have to import the modules below here and they get
@@ -19,6 +19,7 @@ import sml_builder.api_reference
 # E402 module level import not at top of file
 # We import the python files/ flask routes into the __init__.py file and we can't
 # import them at the top of the file so ignoring them
+import sml_builder.api_reference # noqa: E402
 import sml_builder.glossary  # noqa: E402
 import sml_builder.help_centre  # noqa: E402
 import sml_builder.method  # noqa: E402
