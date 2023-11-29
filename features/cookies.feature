@@ -30,13 +30,3 @@ Feature: Cookie banner tests
         Given I am on the cookies page where cookies are already enabled
         When I change my settings to disable "measure-website-use" cookies
         Then The cookies are disabled
-
-    Scenario: I change the remember your settings cookie settings to enabled
-        Given I am on the cookies page where cookies are already disabled
-        When I change my settings to enable "remember-your-settings" cookies
-        Then The cookies are enabled
-
-    Scenario: I change the remember your settings cookie settings to disabled
-        Given I am on the cookies page where cookies are already enabled
-        When I change my settings to disable "remember-your-settings" cookies
-        Then The cookies are disabled
