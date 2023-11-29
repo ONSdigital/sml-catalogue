@@ -1,4 +1,5 @@
 from json import load
+
 from flask import render_template, url_for
 
 from sml_builder import app
@@ -116,4 +117,3 @@ def _api_reference_nav(
         }
         for category in contents["categories"]
     ]
-
