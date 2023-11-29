@@ -26,11 +26,13 @@
 {% endblock %}
 
 {% block bodyStart %}
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLWR59T&gtm_auth=5Sz7OiVp0XSVwsUFunGpog&amp;gtm_preview=env-12&gtm_cookies_win=x"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK76MC47"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 {% endblock %}
+
 
 {%- block main -%}
 <div class="ons-page__body">
@@ -270,6 +272,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   {% block scripts %}
 
+    <script type=text/javascript src="{{ url_for('static',filename='js/cookies_function.js') }}"></script>
+
     <style>
       body {
         height: auto;
@@ -277,4 +281,3 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </style>
 
   {% endblock %}
-
