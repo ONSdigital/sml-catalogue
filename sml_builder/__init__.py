@@ -22,7 +22,7 @@ import sml_builder.help_centre  # noqa: E402
 import sml_builder.method  # noqa: E402
 import sml_builder.page  # noqa: E402
 import sml_builder.utils  # noqa: F401, E402
-
+import sml_builder.api_reference
 
 @app.route("/")
 def index():

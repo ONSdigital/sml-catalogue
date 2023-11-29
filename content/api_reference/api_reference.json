@@ -1,0 +1,54 @@
+{
+    "categories": [
+        {
+            "name": "home",
+            "label": "Home",
+            "subcategories": []
+        },
+        {
+            "name": "api-reference",
+            "label": "API Reference",
+            "subcategories": [
+
+                {
+                    "name": "date-adjustment",
+                    "label": "Date Adjustment"
+                },
+                {
+                    "name": "selective-editing",
+                    "label": "Selective Editing"
+                },
+                {
+                    "name": "thousand-pounds",
+                    "label": "Thousand Pounds"
+                },
+                {
+                    "name": "totals-and-components",
+                    "label": "Totals and Components"
+                }
+            ]
+        },
+        {
+            "name": "technical-documentation",
+            "label": "Technical Documentation",
+            "subcategories": [
+                {
+                    "name": "date-adjustment",
+                    "label": "Date Adjustment"
+                },
+                {
+                    "name": "selective-editing",
+                    "label": "Selective Editing"
+                },
+                {
+                    "name": "thousand-pounds",
+                    "label": "Thousand Pounds"
+                },
+                {
+                    "name": "totals-and-components",
+                    "label": "Totals and Components"
+                }
+            ]
+        }
+    ]
+}
