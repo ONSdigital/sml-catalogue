@@ -97,15 +97,11 @@ def _api_reference_nav(
     return [
         {
             "title": category["label"],
-            "url": url_for(
-                "guidances",
-                category=category["name"],
-            ),
             "anchors": [
                 {
                     "title": sub_category["label"],
                     "url": url_for(
-                        "guidances",
+                        "api_guidances",
                         category=category["name"],
                         sub_category=sub_category["name"],
                     ),
