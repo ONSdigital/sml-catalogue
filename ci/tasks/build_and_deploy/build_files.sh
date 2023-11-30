@@ -5,7 +5,7 @@
 : "${RELEASE_CANDIDATE}"
 : "${SIGNING_KEY}"
 : "${ROLLBACK_TAG}"
-: "${PARAMS_TF_VAR_evnvironment}"
+: "${TF_VAR_evnvironment}"
 
 
 set -eo pipefail
