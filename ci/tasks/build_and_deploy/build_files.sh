@@ -16,6 +16,7 @@ source venv/bin/activate
 
 run_linting(){
   poetry install --sync
+  echo "Build type is: ${BUILD_TYPE}"
   echo "Check if project toml file and poetry lock file are in sync"
   poetry check
   black --check --diff freeze.py sml_builder features
