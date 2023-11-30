@@ -5,7 +5,7 @@
 : "${RELEASE_CANDIDATE}"
 : "${SIGNING_KEY}"
 : "${ROLLBACK_TAG}"
-: "${ENV_NAME}
+: "${ENV_NAME}"
 
 
 set -eo pipefail
