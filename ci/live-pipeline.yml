@@ -152,6 +152,7 @@ jobs:
               BUILD_TYPE: 0
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+              ENV_NAME: "dev" 
 
         - task: deploy_code
           file: repo/ci/tasks/build_and_deploy/deploy.yml
