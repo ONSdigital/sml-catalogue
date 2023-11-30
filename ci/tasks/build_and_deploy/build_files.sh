@@ -7,6 +7,8 @@
 : "${ROLLBACK_TAG}"
 : "${TF_VAR_evnvironment}"
 
+echo "Available environment variables are:"
+env 
 
 set -eo pipefail
 
