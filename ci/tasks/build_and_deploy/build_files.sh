@@ -5,10 +5,14 @@
 : "${RELEASE_CANDIDATE}"
 : "${SIGNING_KEY}"
 : "${ROLLBACK_TAG}"
-: "${TF_VAR_evnvironment}"
+: "${TF_VAR_environment}"
+: "${STEVE_PARAM}
 
 echo "Available environment variables are:"
 env 
+
+echo "STEVE STEVE STEVE ${STEVE_PARAM}"
+echo "${STEVE_PARAM}x"
 
 set -eo pipefail
 
