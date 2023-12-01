@@ -5,7 +5,7 @@
 : "${RELEASE_CANDIDATE}"
 : "${SIGNING_KEY}"
 : "${ROLLBACK_TAG}"
-: "${ENV_NAME}"
+: "${TF_VAR_environment}"
 
 set -eo pipefail
 
@@ -16,7 +16,7 @@ source venv/bin/activate
 
 run_linting(){
   poetry install --sync
-  echo "Building environment: ${ENV_NAME}"
+  echo "Building environment: ${TF_VAR_environment}"
   echo "Check if project toml file and poetry lock file are in sync"
   poetry check
   black --check --diff freeze.py sml_builder features
