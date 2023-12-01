@@ -1,5 +1,8 @@
 from flask import Flask, render_template
 from markupsafe import Markup, escape
+from sml_builder.env_config import EnvConfig
+import os
+
 
 app = Flask(__name__)
 
@@ -24,9 +27,12 @@ import sml_builder.page  # noqa: E402
 import sml_builder.utils  # noqa: F401, E402
 
 
+environment = os.environ.get('ENV_NAME', 'dev')
+
+env_name = EnvConfig.get_environment_name(environment)
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html",env_name=env_name)
 
 
 @app.errorhandler(404)
