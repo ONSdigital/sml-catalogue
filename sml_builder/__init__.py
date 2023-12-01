@@ -29,7 +29,7 @@ import sml_builder.utils  # noqa: F401, E402
 
 environment = os.environ.get("ENV_NAME", "dev")
 
-env_name = EnvConfig.get_environment_name(environment)
+env_name = EnvConfig.get_environment_ga_code(environment)
 
 
 @app.route("/")
