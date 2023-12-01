@@ -27,12 +27,14 @@ import sml_builder.page  # noqa: E402
 import sml_builder.utils  # noqa: F401, E402
 
 
-environment = os.environ.get('ENV_NAME', 'dev')
+environment = os.environ.get("ENV_NAME", "dev")
 
 env_name = EnvConfig.get_environment_name(environment)
+
+
 @app.route("/")
 def index():
-    return render_template("index.html",env_name=env_name)
+    return render_template("index.html", env_name=env_name)
 
 
 @app.errorhandler(404)
