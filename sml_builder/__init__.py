@@ -1,5 +1,9 @@
+import os
+
 from flask import Flask, render_template
 from markupsafe import Markup, escape
+
+from sml_builder.env_config import EnvConfig
 
 app = Flask(__name__)
 
@@ -23,16 +27,20 @@ import sml_builder.method  # noqa: E402
 import sml_builder.page  # noqa: E402
 import sml_builder.utils  # noqa: F401, E402
 
+environment = os.environ.get("ENV_NAME", "dev")
+
+env_name = EnvConfig.get_environment_ga_code(environment)
+
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", env_name=env_name)
 
 
 @app.errorhandler(404)
 @app.route("/page-not-found")
 def page_not_found(e=None):
-    return render_template("404.html"), 404 if e else 200
+    return render_template("404.html", env_name=env_name), 404 if e else 200
 
 
 @app.template_filter("paras")

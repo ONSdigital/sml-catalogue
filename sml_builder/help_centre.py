@@ -1,12 +1,18 @@
 from json import load
+import os
 
 import markdown
 from flask import render_template, url_for
 from markupsafe import Markup, escape
 
 from sml_builder import app
+from sml_builder.env_config import EnvConfig
 
 from .utils import _page_not_found
+
+environment = os.environ.get("ENV_NAME", "dev")
+
+env_name = EnvConfig.get_environment_ga_code(environment)
 
 externallink_help_categories = [
     "report-bug",
@@ -47,7 +53,7 @@ def help_centre(category=None):
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "help.html", help_categories=categories, selected_category=category
+        "help.html", help_categories=categories, selected_category=category, env_name=env_name
     )
 
 
@@ -86,6 +92,7 @@ def guidances(category, sub_category=None):
         category=category,
         sub_category=sub_category,
         nav=help_centre_nav,
+        env_name=env_name
     )
 
 

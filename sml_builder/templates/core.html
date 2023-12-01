@@ -8,7 +8,7 @@
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=i3OWrpouWsvLzw4VGgIbjA&gtm_preview=env-1&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl+ `&gtm_auth={{env_name}}&gtm_preview=env-1&gtm_cookies_win=x`;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-WK76MC47');
         }
         var a = /^(.*)?\s*'usage':true\s*[^;]+(.*)?$/;
@@ -18,89 +18,88 @@
     </script>
     <!-- End Google Tag Manager -->
 {% endblock %}
-
 {% set navigation= {
-    "navigation": {
-        "id": "main-navigation",
-        "itemsList": [
-        {"url": url_for("index"),
-        "title": "Home"},
-        {"url": url_for("display_methods"),
-        "title": "Methods catalogue"},
-        {"url": url_for("help_centre"),
-        "title": "Help centre"},
-        {"url": url_for("about"),
-        "title": "About this library"},
-        {"url": url_for("display_glossary"),
-        "title": "Glossary"},
-        ],
-        "currentPath": current_path
-        }
-    }
+"navigation": {
+"id": "main-navigation",
+"itemsList": [
+{"url": url_for("index"),
+"title": "Home"},
+{"url": url_for("display_methods"),
+"title": "Methods catalogue"},
+{"url": url_for("help_centre"),
+"title": "Help centre"},
+{"url": url_for("about"),
+"title": "About this library"},
+{"url": url_for("display_glossary"),
+"title": "Glossary"},
+],
+"currentPath": current_path
+}
+}
 %}
 {% set pageConfig = {
-    "meta": {
-        "canonicalUrl": "/",
-        "description": "/",
-    },
+"meta": {
+"canonicalUrl": "/",
+"description": "/",
+},
 
-    "title": page_title_value,
-    "header": {
-        "title": 'Statistical Methods Library',
-        "orgLogoHref": 'https://www.ons.gov.uk',
-        "titleLogoHref": "/",
-        "mastheadLogo": "/",
-        "titleLogo": "/",
-        "navigation": navigation.navigation,
-    },
-    "pageColNumber": "12",
-    "sidebarColNumber": sidebarCols if sidebarCols else 12,
-    "mainClasses": "ons-u-mt-m",
-    "breadcrumbs": breadcrumbs,
-    "navigation": navigation.navigation,
-    "footer": {
-      "OGLLink": true,
-      "legal": [
-        {
-          "itemsList": [
-            {
-              "text": 'Cookies',
-              "url": url_for('cookies_page')
-            },
-            {
-              "text": 'Accessibility Statement',
-              "url": url_for('accessibility_page')
-            },
-            {
-              "text": 'Privacy and Data Protection',
-              "url": url_for('privacy_and_data_protection')
-            }
-          ]
-        }
-      ]
-    },
-  }
- %}
+"title": page_title_value,
+"header": {
+"title": 'Statistical Methods Library',
+"orgLogoHref": 'https://www.ons.gov.uk',
+"titleLogoHref": "/",
+"mastheadLogo": "/",
+"titleLogo": "/",
+"navigation": navigation.navigation,
+},
+"pageColNumber": "12",
+"sidebarColNumber": sidebarCols if sidebarCols else 12,
+"mainClasses": "ons-u-mt-m",
+"breadcrumbs": breadcrumbs,
+"navigation": navigation.navigation,
+"footer": {
+"OGLLink": true,
+"legal": [
+{
+"itemsList": [
+{
+"text": 'Cookies',
+"url": url_for('cookies_page')
+},
+{
+"text": 'Accessibility Statement',
+"url": url_for('accessibility_page')
+},
+{
+"text": 'Privacy and Data Protection',
+"url": url_for('privacy_and_data_protection')
+}
+]
+}
+]
+},
+}
+%}
 
-    {% block preHeader %}
-        {% from "components/cookies-banner/_macro.njk" import onsCookiesBanner %}
-        {{
-            onsCookiesBanner({
-                'serviceName': 'statisticalmethodslibrary.ons.gov.uk'
-            })
-        }}
-        {% from "components/phase-banner/_macro.njk" import onsPhaseBanner %}
+{% block preHeader %}
+{% from "components/cookies-banner/_macro.njk" import onsCookiesBanner %}
+{{
+onsCookiesBanner({
+'serviceName': 'statisticalmethodslibrary.ons.gov.uk'
+})
+}}
+{% from "components/phase-banner/_macro.njk" import onsPhaseBanner %}
 
-        {% set feedbackLink %}
-          <a href="mailto:smlhelp@ons.gov.uk">give feedback</a>
-        {% endset %}
+{% set feedbackLink %}
+<a href="mailto:smlhelp@ons.gov.uk">give feedback</a>
+{% endset %}
 
-        {{
-            onsPhaseBanner({
-                "html": "This is a new service. To help us improve it, " + feedbackLink
-          })
-        }}
-    {% endblock %}
+{{
+onsPhaseBanner({
+"html": "This is a new service. To help us improve it, " + feedbackLink
+})
+}}
+{% endblock %}
 
-  {%- block main -%}
-  {%- endblock main -%}
+{%- block main -%}
+{%- endblock main -%}

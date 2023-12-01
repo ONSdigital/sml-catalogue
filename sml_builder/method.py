@@ -1,12 +1,18 @@
 from json import loads
+import os
 from os import listdir
 
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
 from flask import render_template
 
 from sml_builder import app
+from sml_builder.env_config import EnvConfig
 
 from .utils import _page_not_found
+
+environment = os.environ.get("ENV_NAME", "dev")
+
+env_name = EnvConfig.get_environment_ga_code(environment)
 
 
 @app.route("/method/<methodState>/<method>")
@@ -28,7 +34,7 @@ def display_method_summary(method, methodState):
     page_data["method_metadata"] = {
         k: page_data["method_metadata"][k] for k in sorted_order
     }
-    return render_template("method.html", page=page_data)
+    return render_template("method.html", page=page_data, env_name=env_name)
 
 
 @app.route("/methods")
@@ -42,7 +48,7 @@ def display_methods():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "methods.html", page={"rows": methods, "future_rows": future_methods}
+        "methods.html", page={"rows": methods, "future_rows": future_methods, "env_name": env_name}
     )
 
 

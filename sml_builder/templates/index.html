@@ -5,102 +5,100 @@
 {% set containerClasses = "ons-container--full-width" %}
 {% block header %}
 {{
-    onsHeader({
-        "title": pageConfig.header.title | default(pageConfig.title),
-        "classes": pageConfig.header.classes,
-        "variants": pageConfig.header.variants,
-        "wide": pageConfig.wide,
-        "language": pageConfig.language,
-        "button": pageConfig.signoutButton,
-        "toggleNavigationButton": pageConfig.toggleNavigationButton,
-        "navigation": pageConfig.navigation,
-        "browserBanner": pageConfig.browserBanner,
-        "phase": pageConfig.phase,
-        "assetsURL": assetsURL,
-        "serviceLinks": pageConfig.serviceLinks,
-        "mastheadLogo": pageConfig.header.mastheadLogo,
-        "noMasthead": pageConfig.header.noMasthead,
-        "orgLogo": pageConfig.header.orgLogo,
-        "orgMobileLogo": pageConfig.header.orgMobileLogo,
-        "orgLogoAlt": pageConfig.header.orgLogoAlt,
-        "orgLogoHref": pageConfig.header.orgLogoHref,
-        "titleLogo": pageConfig.header.titleLogo,
-        "titleLogoClasses": pageConfig.header.titleLogoClasses,
-        "titleLogoMobile": pageConfig.header.titleLogoMobile,
-        "titleLogoMobileClasses": pageConfig.header.titleLogoMobileClasses,
-        "titleLogoAlt": pageConfig.header.titleLogoAlt,
-        "titleLogoHref": pageConfig.header.titleLogoHref,
-        "customHeaderLogo": pageConfig.header.customHeaderLogo
-    })
+onsHeader({
+"title": pageConfig.header.title | default(pageConfig.title),
+"classes": pageConfig.header.classes,
+"variants": pageConfig.header.variants,
+"wide": pageConfig.wide,
+"language": pageConfig.language,
+"button": pageConfig.signoutButton,
+"toggleNavigationButton": pageConfig.toggleNavigationButton,
+"navigation": pageConfig.navigation,
+"browserBanner": pageConfig.browserBanner,
+"phase": pageConfig.phase,
+"assetsURL": assetsURL,
+"serviceLinks": pageConfig.serviceLinks,
+"mastheadLogo": pageConfig.header.mastheadLogo,
+"noMasthead": pageConfig.header.noMasthead,
+"orgLogo": pageConfig.header.orgLogo,
+"orgMobileLogo": pageConfig.header.orgMobileLogo,
+"orgLogoAlt": pageConfig.header.orgLogoAlt,
+"orgLogoHref": pageConfig.header.orgLogoHref,
+"titleLogo": pageConfig.header.titleLogo,
+"titleLogoClasses": pageConfig.header.titleLogoClasses,
+"titleLogoMobile": pageConfig.header.titleLogoMobile,
+"titleLogoMobileClasses": pageConfig.header.titleLogoMobileClasses,
+"titleLogoAlt": pageConfig.header.titleLogoAlt,
+"titleLogoHref": pageConfig.header.titleLogoHref,
+"customHeaderLogo": pageConfig.header.customHeaderLogo
+})
 }}
 {% endblock %}
 
 {% block pageContent %}
 <main id="main-content">
     {{
-        onsHero({
-            "title": 'An open source library for statistical code approved by the ONS',
-            "button": {
-                "id": 'find-methods-button',
-                "url": url_for("display_methods"),
-                "text": 'Find methods'
-            },
-            wide:true
-        })
+    onsHero({
+    "title": 'An open source library for statistical code approved by the ONS',
+    "button": {
+    "id": 'find-methods-button',
+    "url": url_for("display_methods"),
+    "text": 'Find methods'
+    },
+    wide:true
+    })
     }}
-{% from "components/card/_macro.njk" import onsCard %}
-<div class="ons-page__container ons-container ons-u-pb-m">
-    
-    <section class="ons-u-pt-m">
+    {% from "components/card/_macro.njk" import onsCard %}
+    <div class="ons-page__container ons-container ons-u-pb-m">
 
-    <div class="ons-grid ons-grid--column@xxs@s">
-       
-        <div class="ons-grid__col ons-col-4@m">
-            {{ onsCard({
-                "id": 'title1',
-                "textId": 'text1',
-                "title": 'Methods catalogue',
-                "url": url_for("display_methods"),
-                "text": 'A catalogue to search approved methods'
-            }) }}
-        </div>
+        <section class="ons-u-pt-m">
 
-        <div class="ons-grid__col ons-col-4@m">
-            {{ onsCard({
-                "id": 'title2',
-                "textId": 'text2',
-                "title": 'Help centre',
-                "url": url_for('help_centre'),
-                "text": 'Information on how to use the Statistical Methods Library'
-            }) }}
-        </div>
+            <div class="ons-grid ons-grid--column@xxs@s">
 
-        <div class="ons-grid__col ons-col-4@m">
-            {{ onsCard({
-                "id": 'title3',
-                "textId": 'text3',
-                "title": 'Useful resources',
-                "url": none,
-                "text": '',
-                "itemsList": [
-                    {   
-                        "url": url_for("about"),
-                        "text": 'About this library'
+                <div class="ons-grid__col ons-col-4@m">
+                    {{ onsCard({
+                    "id": 'title1',
+                    "textId": 'text1',
+                    "title": 'Methods catalogue',
+                    "url": url_for("display_methods"),
+                    "text": 'A catalogue to search approved methods'
+                    }) }}
+                </div>
+
+                <div class="ons-grid__col ons-col-4@m">
+                    {{ onsCard({
+                    "id": 'title2',
+                    "textId": 'text2',
+                    "title": 'Help centre',
+                    "url": url_for('help_centre'),
+                    "text": 'Information on how to use the Statistical Methods Library'
+                    }) }}
+                </div>
+
+                <div class="ons-grid__col ons-col-4@m">
+                    {{ onsCard({
+                    "id": 'title3',
+                    "textId": 'text3',
+                    "title": 'Useful resources',
+                    "url": none,
+                    "text": '',
+                    "itemsList": [
+                    {
+                    "url": url_for("about"),
+                    "text": 'About this library'
                     },
                     {
-                        "url": url_for("display_glossary"),
-                        "text": 'Glossary'
+                    "url": url_for("display_glossary"),
+                    "text": 'Glossary'
                     }
-                ]
-            }) }}
-        </div>
+                    ]
+                    }) }}
+                </div>
+
+            </div>
+
+        </section>
 
     </div>
-
-    </section>
-    
-</div>
 </main>
 {% endblock %}
-
-

@@ -1,3 +1,4 @@
+import os
 from json import loads
 from os import listdir
 
@@ -5,8 +6,13 @@ from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
 from flask import render_template
 
 from sml_builder import app
+from sml_builder.env_config import EnvConfig
 
 from .utils import _page_not_found, convert_term
+
+environment = os.environ.get("ENV_NAME", "dev")
+
+env_name = EnvConfig.get_environment_ga_code(environment)
 
 
 @app.route("/resources/glossary")
@@ -43,5 +49,5 @@ def display_glossary():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "glossary.html", page={"glossary": glossary, "nav_options": nav_options}
+        "glossary.html", page={"glossary": glossary, "nav_options": nav_options, "env_name": env_name}
     )
