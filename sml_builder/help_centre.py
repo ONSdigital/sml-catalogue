@@ -56,7 +56,6 @@ def guidances(category, sub_category=None):
 
     try:
         pages = getContent("helpCentreInformation")
-        print(pages)
         if checkEmptyList(pages):
             abort(404)
         text = ""
@@ -72,7 +71,21 @@ def guidances(category, sub_category=None):
     body = Markup(markdown.markdown(escaped_text))
 
     help_centre_nav = _help_centre_nav(category)
+    print(sub_category)
+    if sub_category == "methods-request":
 
+        content = getContent("helpCentreMethodRequest")
+        print(content)
+        return render_template(
+            "help-methods-request.html",
+            body=body,
+            category_label=category_label,
+            sub_category_label=sub_category_label,
+            category=category,
+            sub_category=sub_category,
+            nav=help_centre_nav,
+            content=content,
+        )
     return render_template(
         "help_category.html",
         body=body,
