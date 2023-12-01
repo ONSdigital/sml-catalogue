@@ -10,18 +10,18 @@ env_setups:
     SHARED_ACCOUNT_ROLE: &shared_account_role arn:aws:iam::289259348294:role/spp-concourse-access-prod
 
   general_dev: &general_dev_params
-    TF_VAR_deployment_type: &deployment dev
+    TF_VAR_deployment_type: dev
     S3_NAME: statistical-methods-library-tf-state
     <<: *general_params
 
   general_preprod: &general_preprod_params
     S3_NAME: statistical-methods-library-tf-state-preprod
-    TF_VAR_deployment_type: &deployment preprod
+    TF_VAR_deployment_type: preprod
     <<: *general_params
 
   general_prod: &general_prod_params
     S3_NAME: statistical-methods-library-tf-state-prod
-    TF_VAR_deployment_type: &deployment prod
+    TF_VAR_deployment_type: prod
     <<: *general_params
 
   github_pull_creds: &github_pull_creds
@@ -37,7 +37,7 @@ env_setups:
     AWS_ACCOUNT_ID: ((aws_account_sml_dev))
     AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_dev)):role/spp-concourse-sml-deployment-dev
     TF_VAR_deployment_role: *role
-    TF_VAR_environment: dev
+    TF_VAR_environment: &env_name dev
     TF_VAR_account: *account
 
   sml_preprod: &sml_preprod_setup
@@ -46,7 +46,7 @@ env_setups:
     AWS_ACCOUNT_ID: ((aws_account_sml_preprod))
     AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_preprod)):role/spp-concourse-sml-deployment-preprod
     TF_VAR_deployment_role: *role
-    TF_VAR_environment: preprod
+    TF_VAR_environment: &env_name preprod
     TF_VAR_account: *account
 
   sml_prod: &sml_prod_setup
@@ -55,7 +55,7 @@ env_setups:
     AWS_ACCOUNT_ID: ((aws_account_sml_prod))
     AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_prod)):role/spp-concourse-sml-deployment-prod
     TF_VAR_deployment_role: *role
-    TF_VAR_environment: prod
+    TF_VAR_environment: &env_name prod
     TF_VAR_account: *account
 
 resource_types:
@@ -152,7 +152,7 @@ jobs:
               BUILD_TYPE: 0
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
-              ENV_NAME: *deployment
+              ENV_NAME: *env_name
 
         - task: deploy_code
           file: repo/ci/tasks/build_and_deploy/deploy.yml
