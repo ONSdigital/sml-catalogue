@@ -1,5 +1,6 @@
-from json import loads
+
 import os
+from json import loads
 from os import listdir
 
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
