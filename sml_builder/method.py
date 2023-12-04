@@ -50,7 +50,7 @@ def display_methods():
         _page_not_found(e)
     return render_template(
         "methods.html",
-        page={"rows": methods, "future_rows": future_methods, "env_name": env_name}
+        page={"rows": methods, "future_rows": future_methods, "env_name": env_name},
     )
 
 

@@ -51,7 +51,7 @@ def accessibility_page():
         _page_not_found(e)
     return render_template(
         "accessibility_statement.html", page_body=body, env_name=env_name
-        )
+    )
 
 
 @app.route("/.well-known/security.txt")
