@@ -1415,7 +1415,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p class=\"ons-phase-banner__desc ons-u-fs-s ons-u-mb-no\">This is a new service. To help us improve it,           <a href=\"mailto:smlhelp@ons.gov.uk\">give feedback</a>\n</p>",
+                    "html": "<p class=\"ons-phase-banner__desc ons-u-fs-s ons-u-mb-no\">This is a new service. To help us improve it, <a href=\"mailto:smlhelp@ons.gov.uk\">give feedback</a>\n</p>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -3162,7 +3162,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p class=\"ons-phase-banner__desc ons-u-fs-s ons-u-mb-no\">This is a new service. To help us improve it,           <a href=\"mailto:smlhelp@ons.gov.uk\">give feedback</a>\n</p>",
+                    "html": "<p class=\"ons-phase-banner__desc ons-u-fs-s ons-u-mb-no\">This is a new service. To help us improve it, <a href=\"mailto:smlhelp@ons.gov.uk\">give feedback</a>\n</p>",
                     "impact": null,
                     "none": [
                         {
@@ -4776,7 +4776,7 @@
             ]
         }
     ],
-    "timestamp": "2023-11-30T13:14:24.838Z",
+    "timestamp": "2023-12-04T09:07:08.060Z",
     "url": "http://127.0.0.1:8000/method/ready-to-use-methods/thousand-pound-correction",
     "violations": [
         {
@@ -4836,7 +4836,7 @@
                                     ]
                                 },
                                 {
-                                    "html": "<p class=\"ons-phase-banner__desc ons-u-fs-s ons-u-mb-no\">This is a new service. To help us improve it,           <a href=\"mailto:smlhelp@ons.gov.uk\">give feedback</a>\n</p>",
+                                    "html": "<p class=\"ons-phase-banner__desc ons-u-fs-s ons-u-mb-no\">This is a new service. To help us improve it, <a href=\"mailto:smlhelp@ons.gov.uk\">give feedback</a>\n</p>",
                                     "target": [
                                         ".ons-phase-banner__desc"
                                     ]
