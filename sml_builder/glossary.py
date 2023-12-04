@@ -49,5 +49,6 @@ def display_glossary():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "glossary.html", page={"glossary": glossary, "nav_options": nav_options, "env_name": env_name}
+        "glossary.html",
+        page={"glossary": glossary, "nav_options": nav_options, "env_name": env_name}
     )

@@ -49,7 +49,8 @@ def display_methods():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "methods.html", page={"rows": methods, "future_rows": future_methods, "env_name": env_name}
+        "methods.html",
+        page={"rows": methods, "future_rows": future_methods, "env_name": env_name}
     )
 
 

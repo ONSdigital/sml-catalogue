@@ -54,7 +54,10 @@ def help_centre(category=None):
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "help.html", help_categories=categories, selected_category=category, env_name=env_name
+        "help.html",
+        help_categories=categories,
+        selected_category=category,
+        env_name=env_name,
     )
 
 
@@ -93,7 +96,7 @@ def guidances(category, sub_category=None):
         category=category,
         sub_category=sub_category,
         nav=help_centre_nav,
-        env_name=env_name
+        env_name=env_name,
     )
 
 

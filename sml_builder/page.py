@@ -49,7 +49,9 @@ def accessibility_page():
             body = Markup(markdown.markdown(escaped_text))
     except OSError as e:
         _page_not_found(e)
-    return render_template("accessibility_statement.html", page_body=body, env_name=env_name)
+    return render_template(
+        "accessibility_statement.html", page_body=body, env_name=env_name
+        )
 
 
 @app.route("/.well-known/security.txt")
