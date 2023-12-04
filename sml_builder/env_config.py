@@ -1,6 +1,6 @@
 class EnvConfig:
     ENVIRONMENT_GA_CODE = {
-        "dev": "MBGteKWsXZpOgxp0C4pztA",
+        "dev": "i3OWrpouWsvLzw4VGgIbjA",
         "preprod": "v9By2ndgSQ5Jx7abY30mxw",
         "prod": "ETsGJBpGMS4CXqLVsXqy",
     }
