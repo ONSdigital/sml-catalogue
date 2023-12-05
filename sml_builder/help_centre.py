@@ -1,7 +1,5 @@
-from json import load
-
 import markdown
-from flask import render_template, url_for, abort
+from flask import abort, render_template, url_for
 from markupsafe import Markup, escape
 
 from sml_builder import app
@@ -17,7 +15,7 @@ def help_centre(category=None):
     try:
         contents = getContent("helpCentreStructure")["structure"]
         if checkEmptyList(contents):
-            abort(404)  
+            abort(404)
         for category in contents[  # pylint: disable=redefined-argument-from-local
             "categories"
         ]:
@@ -73,7 +71,6 @@ def guidances(category, sub_category=None):
     help_centre_nav = _help_centre_nav(category)
     print(sub_category)
     if sub_category == "methods-request":
-
         content = getContent("helpCentreMethodRequest")
         print(content)
         return render_template(
@@ -100,7 +97,7 @@ def guidances(category, sub_category=None):
 def _get_category_labels(selected_category, selected_sub_category):
     contents = getContent("helpCentreStructure")["structure"]
     if checkEmptyList(contents):
-        abort(404)  
+        abort(404)
     for category in contents["categories"]:
         if category["name"] == selected_category:
             category_label = category["label"]
@@ -125,7 +122,7 @@ def _help_centre_nav(
 ):
     contents = getContent("helpCentreStructure")["structure"]
     if checkEmptyList(contents):
-        abort(404)  
+        abort(404)
     return [
         {
             "title": category["label"],
