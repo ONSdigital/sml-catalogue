@@ -1727,7 +1727,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p> The method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent.</p>",
+                    "html": "<p>The method checks the ratio of a principal variable\nagainst a suitable predictor variable and makes an automatic correction\nif the calculated ratio is around 1000. The automatic correction is\napplied to all relevant variables for the respondent.\n</p>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1783,7 +1783,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][target=\"_blank\"] > .ons-external-link__text"
+                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][rel=\"noopener\"] > .ons-external-link__text"
                     ]
                 },
                 {
@@ -2026,24 +2026,24 @@
                         {
                             "data": {
                                 "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
+                                "contrastRatio": 6.62,
                                 "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
+                                "fgColor": "#206095",
                                 "fontSize": "13.5pt",
                                 "fontWeight": "normal",
                                 "missingData": null
                             },
                             "id": "color-contrast",
                             "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
+                            "message": "Element has sufficient color contrast of 6.62",
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<span class=\"ons-status ons-status--pending\">Not Released Yet</span>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-status"
+                        "a[rel=\"noopener\\ noreferrer\"]"
                     ]
                 },
                 {
@@ -2091,11 +2091,63 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p>No resources are currently available.\n</p>",
+                    "html": "<p>Links to the method code, specification and user documentation are provided for further reading.\n</p>",
                     "impact": null,
                     "none": [],
                     "target": [
                         "p:nth-child(11)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span class=\"ons-external-link__text\">Go to Thousand Pound Correction code on GitHub</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(12) > .ons-external-link__text"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span class=\"ons-external-link__text\">Go to Thousand Pound Correction user documentation on GitHub</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(14) > .ons-external-link__text"
                     ]
                 },
                 {
@@ -2225,7 +2277,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-footer__license > .ons-external-link[target=\"_blank\"][rel=\"noopener\"] > .ons-external-link__text"
+                        ".ons-footer__license > .ons-external-link[rel=\"noopener\"][target=\"_blank\"] > .ons-external-link__text"
                     ]
                 }
             ],
@@ -2454,7 +2506,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\"><span class=\"ons-status ons-status--pending\">Not Released Yet</span></dd>",
+                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -3398,7 +3450,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p> The method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent.</p>",
+                    "html": "<p>The method checks the ratio of a principal variable\nagainst a suitable predictor variable and makes an automatic correction\nif the calculated ratio is around 1000. The automatic correction is\napplied to all relevant variables for the respondent.\n</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3428,13 +3480,31 @@
                         }
                     ],
                     "target": [
-                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][target=\"_blank\"]"
+                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][rel=\"noopener\"]"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>No resources are currently available.\n</p>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[rel=\"noopener\\ noreferrer\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<p>Links to the method code, specification and user documentation are provided for further reading.\n</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3447,6 +3517,42 @@
                     ],
                     "target": [
                         "p:nth-child(11)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/thousand_pounds/thousand_pounds.py\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(12)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/thousand-pound-correction/thousand_pound_correction.md\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(14)"
                     ]
                 },
                 {
@@ -3572,7 +3678,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-footer__license > .ons-external-link[target=\"_blank\"][rel=\"noopener\"]"
+                        ".ons-footer__license > .ons-external-link[rel=\"noopener\"][target=\"_blank\"]"
                     ]
                 }
             ],
@@ -4098,7 +4204,85 @@
                         }
                     ],
                     "target": [
-                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][target=\"_blank\"]"
+                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][rel=\"noopener\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[rel=\"noopener\\ noreferrer\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/thousand_pounds/thousand_pounds.py\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(12)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/thousand-pound-correction/thousand_pound_correction.md\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(14)"
                     ]
                 },
                 {
@@ -4202,7 +4386,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-footer__license > .ons-external-link[target=\"_blank\"][rel=\"noopener\"]"
+                        ".ons-footer__license > .ons-external-link[rel=\"noopener\"][target=\"_blank\"]"
                     ]
                 }
             ],
@@ -4592,8 +4776,8 @@
             ]
         }
     ],
-    "timestamp": "2023-11-14T14:07:13.106Z",
-    "url": "http://127.0.0.1:8000/method/future-methods/thousand-pound-correction",
+    "timestamp": "2023-12-07T15:19:12.023Z",
+    "url": "http://127.0.0.1:8000/method/ready-to-use-methods/thousand-pound-correction",
     "violations": [
         {
             "description": "Ensures role attribute has an appropriate value for the element",
