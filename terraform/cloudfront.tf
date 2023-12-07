@@ -108,7 +108,7 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
     }
     content_security_policy {
       override                = true
-      content_security_policy = "script-src 'self' 'sha256-AN/TTkrWvH4W7oCH0w79aph67vAli7rskVQ+0LFPnD4=' 'sha256-FM5wgoZgD+IUY/B3phTcQwLPjMdoyegYYa9Lfsx8a0Q=' 'sha256-U8ubqILKi55jm+DB8PdIpsaeSGlMw7ojOd+USMt3+2U=' 'sha256-VFSAQegS8mTZ872sLRVI+/L8kdl8Jc8qcGF3hlVR8lI=' 'sha256-my6PUM5Kgt3Lb0i849R7BdyF+JEnesypA2QrJRdq85w=' 'sha256-lPX6CW7ExjNsDgKbXUD9ZxHvlDQh4pYkIH8U1+TkXek=' https://cdn.ons.gov.uk https://www.googletagmanager.com"
+      content_security_policy = "script-src 'self' 'sha256-AN/TTkrWvH4W7oCH0w79aph67vAli7rskVQ+0LFPnD4=' 'sha256-FM5wgoZgD+IUY/B3phTcQwLPjMdoyegYYa9Lfsx8a0Q=' 'sha256-U8ubqILKi55jm+DB8PdIpsaeSGlMw7ojOd+USMt3+2U=' 'sha256-VFSAQegS8mTZ872sLRVI+/L8kdl8Jc8qcGF3hlVR8lI=' 'sha256-my6PUM5Kgt3Lb0i849R7BdyF+JEnesypA2QrJRdq85w=' 'sha256-lPX6CW7ExjNsDgKbXUD9ZxHvlDQh4pYkIH8U1+TkXek=' 'sha256-Q4O2rhUMmr8+TEfwOvNpifyxca5GdOIvFNmVWyAt3Mg=' https://cdn.ons.gov.uk https://www.googletagmanager.com"
     }
     referrer_policy {
       override        = true
