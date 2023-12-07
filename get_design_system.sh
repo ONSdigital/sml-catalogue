@@ -4,7 +4,7 @@ set -e
 
 TMPFILE=`mktemp ./templates.XXXXXXXXXX`
 
-wget https://github.com/ONSdigital/design-system/releases/download/62.0.0/templates.zip -O $TMPFILE
+wget https://github.com/ONSdigital/design-system/releases/download/67.0.1/templates.zip -O $TMPFILE
 rm -rf sml_builder/templates/components
 rm -rf sml_builder/templates/layout
 
