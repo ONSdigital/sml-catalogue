@@ -19,7 +19,7 @@
         {%- if nav_options.append({"text": letter, "url": '#' + letter }) -%} {%- endif -%}
     {%- endfor -%}
 
-    {%- from "components/lists/_macro.njk" import onsList -%}
+    {%- from "/_macro.njk" import onsList -%}
     {{
         onsList({
             "variants": ['bare', 'inline'],
