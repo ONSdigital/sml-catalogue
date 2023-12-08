@@ -1,6 +1,6 @@
 {%- extends "sidebar.html" -%}
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
-{% from "components/lists/_macro.njk" import onsList %}
+{% from "components/list/_macro.njk" import onsList %}
 {%- set breadcrumbs = {
   "id":"breadcrumbs",
   "ariaLabel":"breadcrumbs",
@@ -48,14 +48,14 @@
 {%- block sidebar -%}
 <div class="ons-grid__col ons-col-5@m ons-u-mt-l ons-u-mb-l ons-related-content ons-push-1@m">
 {% block sidebarContent %}
-<h2 class="ons-related-content__title ons-u-fs-r--b ons-u-mb-xs">Other 'how to' list categories</h2>
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {{
     onsSectionNavigation({
         "variants": "vertical",
         "id": "section-menu",
         "currentPath": url_for("guidances", category=category),
-        "itemsList": nav
+        "sections": nav,
+        "headingLevel": 3
     })
 }}
 {{macros.sml_portal_related_content()}}
