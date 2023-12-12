@@ -49,6 +49,16 @@
                     "label": "Totals and Components"
                 }
             ]
+        },
+        {
+            "name": "method-specs",
+            "label": "Method Specifications",
+            "subcategories": [
+                {
+                    "name": "totals-and-components",
+                    "label": "Totals and Components"
+                }
+            ]
         }
     ]
 }

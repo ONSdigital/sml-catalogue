@@ -17,27 +17,34 @@
 {%- set page_title = "API Reference - "~sub_category_label -%}
 {%- set current_path = url_for("api_reference") -%}
 {%- block mainContent -%}
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
   <h1>API Reference- {{sub_category_label}}</h1>
     <h2>{{category_label}}</h2>
     {% if category == "api-reference" %}
         {%- if sub_category == "date-adjustment" %}
-            {% include "api-site/api-docs/date-adjustment/index.html" %}
+            {% include "api-docs/api-docs/api-docs/date-adjustment/index.html" %}
         {%- elif sub_category == "selective-editing" %}
-            {% include "api-site/api-docs/date-adjustment/index.html" %}
+            {% include "api-docs/api-docs/api-docs/selective-edit/index.html" %}
         {%- elif sub_category == "thousand-pounds" %}
-            {% include "api-site/api-docs/date-adjustment/index.html" %}
+            {% include "api-docs/api-docs/api-docs/thousand-pounds/index.html" %}
         {%- elif sub_category == "totals-and-components" %}
-            {% include "api-site/api-docs/date-adjustment/index.html" %}
+            {% include "api-docs/api-docs/api-docs/totals-and-components/index.html" %}
         {%- endif %}
     {% elif category == "technical-documentation" %}
         {%- if sub_category == "date-adjustment" %}
-            {% include "api-site/technical-specifications/date-adjustment/index.html" %}
+            {% include "api-docs/api-docs/technical-specifications/date-adjustment/index.html" %}
         {%- elif sub_category == "selective-editing" %}
-            {% include "api-site/technical-specifications/date-adjustment/index.html" %}
+            {% include "api-docs/api-docs/technical-specifications/selective-edit/index.html" %}
         {%- elif sub_category == "thousand-pounds" %}
-            {% include "api-site/technical-specifications/date-adjustment/index.html" %}
+            {% include "api-docs/api-docs/technical-specifications/thousand-pounds/index.html" %}
         {%- elif sub_category == "totals-and-components" %}
-            {% include "api-site/technical-specifications/date-adjustment/index.html" %}
+            {% include "api-docs/api-docs/technical-specifications/totals-and-components/index.html" %}
+        {%- endif %}
+    {% elif category == "method-specs" %}
+        {%- if sub_category == "totals-and-components" %}
+            {% include "api-docs/api-docs/method-specs/totals-and-components/index.html" %}
         {%- endif %}
     {% elif body %}
       {{body}}

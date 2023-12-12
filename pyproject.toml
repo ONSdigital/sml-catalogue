@@ -9,7 +9,9 @@ readme = "README.md"
 python = "^3.10"
 frozen-flask = "^0.18"
 jsonnet = "^0.20.0"
-markdown = "^3.4.4"
+markdown = "*"
+python-markdown-mathjax = "1.0.4"
+python-markdown-math="*"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.9.1"
