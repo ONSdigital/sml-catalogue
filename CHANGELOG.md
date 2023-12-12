@@ -1,5 +1,29 @@
 <!--next-version-placeholder-->
 
+## v1.0.0 (2023-11-22)
+
+
+
+## v1.0.0 (2023-11-22)
+
+
+
+## v1.0.0-rc.1 (2023-11-22)
+
+### Feature
+
+* Spp 9475 amend pipelines to allow rollback ([#231](https://github.com/ONSdigital/sml-catalogue/issues/231)) ([`791078e`](https://github.com/ONSdigital/sml-catalogue/commit/791078ea1dff9ca16432e42e1700c65a08457857))
+
+### Fix
+
+* Removing -u and default from rollback_tag ([#233](https://github.com/ONSdigital/sml-catalogue/issues/233)) ([`e76bed2`](https://github.com/ONSdigital/sml-catalogue/commit/e76bed22184259bc8c22d1ab098fea22f93c68d2))
+* Amending -n to ! -z on build_files.sh ([#232](https://github.com/ONSdigital/sml-catalogue/issues/232)) ([`f800f17`](https://github.com/ONSdigital/sml-catalogue/commit/f800f177698b06387b0c16961978b38e623866fe))
+* Amend details components to h3 level ([`bb3daa9`](https://github.com/ONSdigital/sml-catalogue/commit/bb3daa9e272cd184612d46e7b248fa88091ad12e))
+
+### Breaking
+
+* Rollback Functionality introduced, compatibility issues with verisons prior to 1.0.0 ([`791078e`](https://github.com/ONSdigital/sml-catalogue/commit/791078ea1dff9ca16432e42e1700c65a08457857))
+
 ## v0.2.1-rc.1 (2023-11-21)
 
 ### Feature
