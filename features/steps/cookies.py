@@ -90,7 +90,7 @@ def enable_cookie(context, cookie_type):
         lambda d: d.find_element(By.ID, f"on-{cookie_type}")
     ).click()
     WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.ID, "submit")
+        lambda d: d.find_element(By.ID, "ons_cookie_save_changes")
     ).click()
     WebDriverWait(driver, timeout=timeout).until(
         EC.presence_of_element_located((By.ID, "alert"))
@@ -103,7 +103,7 @@ def disable_cookie(context, cookie_type):
         lambda d: d.find_element(By.ID, f"off-{cookie_type}")
     ).click()
     WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.ID, "submit")
+        lambda d: d.find_element(By.ID, "ons_cookie_save_changes")
     ).click()
     WebDriverWait(driver, timeout=timeout).until(
         EC.presence_of_element_located((By.ID, "alert"))
