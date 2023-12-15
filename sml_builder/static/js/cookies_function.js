@@ -1,7 +1,7 @@
 const DEFAULT_COOKIE_CONSENT = {
     essential: true,
     settings: false,
-    usage: true,
+    usage: false,
     campaigns: false,
   };
   
