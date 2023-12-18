@@ -1,68 +1,68 @@
 # SML Portal - Content Management System using Contentful
 
-This repo contains the build environment and code to generate and upload the Statistical Methods Library (SML) Portal Web Application.
+This markdown document contains relevant information on the content management system (CMS), Contentful.
+
+Below are key information regarding setup and usage of the CMS.
 
 ## Prerequisites
 
-Before continuing, install the following tools:
+Before continuing, please make sure you know/ have already installed the prerequisites for the SML Portal website project, you can build and deploy the site locally. If not you can find instructions on how to do this here: [**SML Website Project README**](https://github.com/ONSdigital/sml-catalogue/blob/main/README.md)
 
-[**Homebrew**](https://brew.sh/): Follow the instructions on this page
+Now you will have installed the required packages including the `Contentful Python SDK` which is required to work with Contentful.
 
-[**Python**](https://www.python.org/downloads/macos/): To install the correct version of python on your local system, check the pyproject.toml and then install the relevant version.
+## Local setup
 
-You will need to install [poetry](https://python-poetry.org/docs/#installing-with-the-official-installer) to install the python dependencies. If you want to manage multiple versions of python you will need to install `pyenv`.
+For the Contentful API to work on your local machine, you also need to ensure that you have the API key and space ID defined in your zsh or bash profile.
 
-Refer to the [confluence page](https://confluence.ons.gov.uk/display/ESD/Guide+on+using+pipenv%2C+pyenv%2C+poetry+and+venv) for guidance on installing and using pyenv and poetry.
+These are accessible directly through the Contentful website if you have the correct permissions for the space you are working in.
 
-You will also need to have installed [wget](https://formulae.brew.sh/formula/wget) to fetch the `ONS Design System`.
+You can access the API key by navigating to Settings > API keys.
 
-If you have not set up a GPG key with your GitHub account you will need to also follow these [instructions on installing a gpg key](https://confluence.ons.gov.uk/display/ESD/Guide+on+adding+GPG+keys+and+signing+commits) before you can make a commit.
+If you don't have access to these, you likely don't have the right permissions and should contact the space owner.
 
-## Build and Deploy
+Open up your zsh or bash profile in an editor of your choice and define two variables:
 
-## Make the site
+ZSH:
 
-You will need to install the python dependencies, including `Frozen-Flask`, the static website generator:
-
-```bash
-poetry install --sync
+```zsh
+export SPACE_ID = "your_space_ID"
+export CDA_KEY = "your_cda_key"
 ```
 
-You can activate your virtual environment with the following command:
+BASH:
 
 ```bash
-poetry shell
+SPACE_ID = "your_space_ID"
+CDA_KEY = "your_cda_key"
 ```
 
-With Jsonnet content in the content/ directory, you should now be able to run the Flask demo server:
+## Build and deploy
 
-```bash
-poetry run flask --app sml_builder --debug run
-```
+You can find instructions on how to build and deploy the SML Portal website here: [**SML Website Project README**](https://github.com/ONSdigital/sml-catalogue/blob/main/README.md)
 
-If everything runs without errors, you should now be able to navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to view the site.
+Now when you navigate to the Contentful web interface, create new content or make any content changes, it should reflect the changes locally on the SML Portal website.
+
+## Key information regarding the CMS
+
+[**Content Management System Confluence Page**](https://confluence.ons.gov.uk/display/SML/Content+Management+System): This page contains scope of the project, technical and non technical presentation slides, pitch presentation video recording, lightning talk going through the technical aspects of the project etc.
+
+[**Contentful Overview**](https://www.contentful.com/help/contentful-101/): Contains guidance on getting started with setting up Contentful, content models, managing content, managing users etc.
+
+[**Contentful API Reference**](https://www.contentful.com/developers/docs/references/): Guidance on Content Delivery API (used to retrieve published content to display in your application), Content Management API, Content Preview API and various other APIs.
+
+[**Contentful Python SDK**](https://github.com/contentful/contentful.py): This Python SDK client library interacts with the Content Delivery API, a read-only API for retrieving content from Contentful. All content, both JSON and binary, is fetched from the server closest to a user's location using our global CDN.
+
+## Other Useful Links
+
+[**Python Client Libraries (SDK)**](https://www.contentful.com/developers/docs/python/sdks/)
+
+[**Python Tutorials/ Demos using Contentful**](https://www.contentful.com/developers/docs/python/tutorials/)
+
+[**Contentful Concepts**](https://www.contentful.com/developers/docs/concepts/)
 
 ## Troubleshooting
 
-### Access denied message when trying to reach CloudFront URL
+### Having issues when trying to pull down published content using the Content Delivery API (CDA)
 
-- One common cause of this error message is not having uploaded your site yet.
-- Are you coming from a non-UK IP address, possibly due to a VPN being active? If so, switch this off and try again. Geographical restrictions are in place.
-
-If you have any errors running the web app or any other errors, it maybe because of issues relating to your latest macOS version and Xcode command line tools installed. You can try the command below where you will remove and reinstall Xcode command line tools:
-
-```bash
-sudo rm -rf /Library/Developer/CommandLineTools
-xcode-select --install
-/usr/bin/xcodebuild -version
-```
-
-If you experience any problems launching the application check the version of macOS installed, as problems can arise if you are using macOS Monterey and following versions uses port 5000 for its control center causing a conflict.
-
-If another program is already using port 5000, you may see the error ```OSError: [Errno 98] or OSError: [WinError 10013]``` when the server tries to start.
-
-In this case run the following command, replacing it with the port you want the web app to run on, so that the application is launched on a different port.
-
-```bash
-poetry run flask --app sml_builder --debug run --port=8000
-```
+- This can occur when the owner of the workspace hasn't given you the correct roles and or permissions.
+- CDA Key and or Space ID are incorrect.
