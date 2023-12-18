@@ -12,7 +12,7 @@
 {% block mainContent %}
             <h1>Help centre</h1>
             {% for category in help_categories %}
-                <h2>{{category.name}}</h2>
+                <h3>{{category.name}}</h3>
                 {{
                     onsList({
                         "itemsList": category.subcategories,
