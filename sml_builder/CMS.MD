@@ -65,4 +65,4 @@ Now when you navigate to the Contentful web interface, create new content or mak
 ### Having issues when trying to pull down published content using the Content Delivery API (CDA)
 
 - This can occur when the owner of the workspace hasn't given you the correct roles and or permissions.
-- CDA Key and or Space ID are incorrect.
+- CDA Key and or Space ID are incorrect in your bash or zsh profile.
