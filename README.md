@@ -92,7 +92,7 @@ behave -D host=http://127.0.0.1:5000/
 ```
 
 This will run the behaviour test locally in a headless state. If you want to see the GUI browser tests running then go to the setupSelenium.py file and comment the headless boolean.
-
+trigger build
 Note: Investigation was undertaken to automate the behavior tests as part of the pipeline github action workflows.
 
 However, we discovered the github agents are hosted in the United States and when visiting our services url, the runner routed to our 'page not found' webpage.
