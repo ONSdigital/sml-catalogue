@@ -1,5 +1,5 @@
 {%- extends "sidebar.html" -%}
-{% from "components/card/_macro.njk" import onsCard %}
+{% from "components/list/_macro.njk" import onsList %}
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {% from "components/label/_macro.njk" import onsLabel %}
 
@@ -12,13 +12,15 @@
 {% block mainContent %}
             <h1>Help centre</h1>
             {% for category in help_categories %}
-                {{ onsCard({
-                "id": category.name,
-                "title": category.name,
-                "itemsList": category.subcategories
+                <h3>{{category.name}}</h3>
+                {{
+                    onsList({
+                        "itemsList": category.subcategories,
+                        "variants": "dashed"
                     })
                 }}
-            {% endfor%}
+            <br>
+            {% endfor %}
 
 {% endblock mainContent %}
 {% block sidebarContent %}

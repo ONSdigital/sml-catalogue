@@ -122,24 +122,29 @@ def _help_centre_nav(
         contents = load(help_contents_file)
     return [
         {
-            "title": category["label"],
-            "url": url_for(
-                "guidances",
-                category=category["name"],
-            ),
-            "anchors": [
+            "title": "Other 'how to' list categories",
+            "itemsList": [
                 {
-                    "title": sub_category["label"],
+                    "title": category["label"],
                     "url": url_for(
                         "guidances",
                         category=category["name"],
-                        sub_category=sub_category["name"],
                     ),
+                    "anchors": [
+                        {
+                            "title": sub_category["label"],
+                            "url": url_for(
+                                "guidances",
+                                category=category["name"],
+                                sub_category=sub_category["name"],
+                            ),
+                        }
+                        for sub_category in category["subcategories"]
+                    ]
+                    if category["name"] == current_category
+                    else None,
                 }
-                for sub_category in category["subcategories"]
-            ]
-            if category["name"] == current_category
-            else None,
+                for category in contents["categories"]
+            ],
         }
-        for category in contents["categories"]
     ]
