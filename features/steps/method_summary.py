@@ -36,17 +36,25 @@ def check_method_summary_title(context, title):
     
 # This test will check if the github resources are present.
 # If they cannot be found the test will fail with a timeout error so asserts are not needed here.
-@then("The method has the expected github resources")
-def check_method_has_github_resources(context):
+@then("The {method_name} method has the expected github resources")
+def check_method_has_github_resources(context, method_name):
+
+    method_name = method_name.strip('"')
+
+    method_spec_link_text = f"Go to {method_name} specification on GitHub"
+    code_link_text = f"Go to {method_name} code on GitHub"
+    user_docs_link_text = f"Go to {method_name} user documentation on GitHub"
+
+    print(method_spec_link_text)
 
     WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value="specification on GitHub")
+        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=method_spec_link_text)
     )
     WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value="code on GitHub")
+        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=code_link_text)
     )
     WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value="user documentation on GitHub")
+        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=user_docs_link_text)
     )
 
 
