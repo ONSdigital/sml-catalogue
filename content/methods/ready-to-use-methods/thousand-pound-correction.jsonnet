@@ -13,7 +13,7 @@
     "Release Status": "success",
     "Release Link": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0"
   },
-  specification_link: null,
+  specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/thousand_pounds_correction/thousand_pounds_correction.md',
   code_link: 'https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/thousand_pounds/thousand_pounds.py',
   user_documentation_link: 'https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/thousand-pound-correction/thousand_pound_correction.md',
   description: |||
