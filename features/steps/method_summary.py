@@ -45,8 +45,6 @@ def check_method_has_github_resources(context, method_name):
     code_link_text = f"Go to {method_name} code on GitHub"
     user_docs_link_text = f"Go to {method_name} user documentation on GitHub"
 
-    print(method_spec_link_text)
-
     WebDriverWait(driver, timeout=timeout).until(
         lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=method_spec_link_text)
     )
