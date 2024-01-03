@@ -11,6 +11,7 @@ Feature: Method summary page tests
         And The "Expert group" of the method is "Editing & Imputation"
         And The "Languages" of the method is "Python/Pandas"
         And The "Release" of the method is "v1.0.0"
+        And The method has the expected github resources
 
     Scenario: Thousand pound correction check
         Given I'm an sml portal user trying to get to the "thousand pound correction method" summary page
@@ -21,6 +22,7 @@ Feature: Method summary page tests
         And The "Expert group" of the method is "Editing & Imputation"
         And The "Languages" of the method is "Python/Pandas"
         And The "Release" of the method is "v1.1.0"
+        And The method has the expected github resources
 
     Scenario: Horvitz-thompson ratio estimator check
         Given I'm an sml portal user trying to get to the "ht/ratio estimation method" summary page
@@ -51,6 +53,7 @@ Feature: Method summary page tests
         And The "Expert group" of the method is "Editing & Imputation"
         And The "Languages" of the method is "Python/Pandas"
         And The "Release" of the method is "v1.0.0"
+        And The method has the expected github resources
 
     Scenario: Winsorisation check
         Given I'm an sml portal user trying to get to the "winsorisation method" summary page
@@ -71,6 +74,7 @@ Feature: Method summary page tests
         And The "Expert group" of the method is "Editing & Imputation"
         And The "Languages" of the method is "Python/Pandas"
         And The "Release" of the method is "v1.1.0"
+        And The method has the expected github resources
 
     Scenario: Mean of Ratios check
         Given I'm an sml portal user trying to get to the "mean of ratios method" summary page
