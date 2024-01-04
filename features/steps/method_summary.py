@@ -39,7 +39,6 @@ def check_method_summary_title(context, title):
 # If they cannot be found the test will fail with a timeout error so asserts are not needed here.
 @then("The {method_name} method has the expected github resources")
 def check_method_has_github_resources(context, method_name):
-
     method_name = method_name.strip('"')
 
     method_spec_link_text = f"Go to {method_name} specification on GitHub"
