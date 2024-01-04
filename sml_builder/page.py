@@ -18,7 +18,10 @@ def about():
 
 @app.route("/privacy-and-data-protection")
 def privacy_and_data_protection():
-    return render_template("content/privacy.html")
+    content = getContent("privacycontent")
+    if checkEmptyList(content):
+        abort(404)
+    return render_template("content/privacy.html", content=content)
 
 
 @app.route("/cookies")
