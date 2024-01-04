@@ -71,7 +71,7 @@ Feature: About library tests
     Scenario: Accessibility page accessibility check
         Given I'm an sml portal user
         When I navigate to "accessibility-statement"
-        Then The title of the page is "Accessibility statement"
+        Then The title of the page is "Accessibility Statement"
         And The accessibility test passes
 
     Scenario: Methods catalogue page accessibility check
