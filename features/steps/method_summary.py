@@ -33,7 +33,8 @@ def check_method_summary_title(context, title):
         .text
     )
     assert page_title == title
-    
+
+
 # This test will check if the github resources are present.
 # If they cannot be found the test will fail with a timeout error so asserts are not needed here.
 @then("The {method_name} method has the expected github resources")
@@ -80,6 +81,7 @@ def check_ons_meta_data(context, metaDataField, metaDataValue):
             assert False
     else:
         assert False
+
 
 def extract_ons_meta_data(context):
     main_content = WebDriverWait(driver, timeout=timeout).until(
