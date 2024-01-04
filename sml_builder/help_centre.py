@@ -52,6 +52,22 @@ def guidances(category, sub_category=None):
     except Exception as e:  # pylint: disable=broad-except
         _page_not_found(e)
 
+    help_centre_nav = _help_centre_nav(category)
+    if sub_category == "methods-request":
+        content = getContent("helpCentreMethodRequest")
+        if checkEmptyList(content):
+            abort(404)
+        return render_template(
+            "help-methods-request.html",
+            body=content,
+            category_label=category_label,
+            sub_category_label=sub_category_label,
+            category=category,
+            sub_category=sub_category,
+            nav=help_centre_nav,
+            content=content,
+        )
+    
     try:
         pages = getContent("helpCentreInformation")
         if checkEmptyList(pages):
@@ -68,21 +84,6 @@ def guidances(category, sub_category=None):
     escaped_text = escape(text)
     body = Markup(markdown.markdown(escaped_text))
 
-    help_centre_nav = _help_centre_nav(category)
-    print(sub_category)
-    if sub_category == "methods-request":
-        content = getContent("helpCentreMethodRequest")
-        print(content)
-        return render_template(
-            "help-methods-request.html",
-            body=body,
-            category_label=category_label,
-            sub_category_label=sub_category_label,
-            category=category,
-            sub_category=sub_category,
-            nav=help_centre_nav,
-            content=content,
-        )
     return render_template(
         "help_category.html",
         body=body,
