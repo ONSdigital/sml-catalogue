@@ -17,11 +17,11 @@
 
 {%- from "components/lists/_macro.njk" import onsList -%}
 {%- block main -%}
-{{ content.privacy_content | markdown }}
+{{ content.privacy_content_1 | markdown }}
 {{
     onsList({
-        "itemsList": content.list
+        "itemsList": content.bullet_list
     })
 }}
-{{ content.content2 | markdown }}
+{{ content.privacy_content_2 | markdown }}
 {% endblock main -%}
