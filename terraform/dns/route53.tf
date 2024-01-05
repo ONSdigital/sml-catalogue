@@ -80,9 +80,6 @@ resource "aws_cloudwatch_metric_alarm" "dev-healthcheck_alarm" {
   dimensions = {
       HealthCheckId = aws_route53_health_check.dev_healthcheck.id
    }
-  depends_on = [
-     aws_route53_health_check.dev_healthcheck
-    ]
 }
 
 output "sns_topic_arn" {
