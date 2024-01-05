@@ -19,6 +19,8 @@ def about():
 @app.route("/privacy-and-data-protection")
 def privacy_and_data_protection():
     content = getContent("privacycontent")
+    content["list"] = [{"text":item} for item in content["list"]]
+
     if checkEmptyList(content):
         abort(404)
     return render_template("content/privacy.html", content=content)

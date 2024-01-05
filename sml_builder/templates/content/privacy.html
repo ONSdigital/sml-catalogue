@@ -1,5 +1,5 @@
 {%- extends "core.html" -%}
-{%- set page_title = 'Privacy and Data Protection' -%}
+{%- set page_title = "Privacy and Data Protection" -%}
 {%- set mainCols=8 -%}
 
 {%- set breadcrumbs = {
@@ -18,7 +18,6 @@
 {%- from "components/lists/_macro.njk" import onsList -%}
 {%- block main -%}
 {{ content.privacy_content | markdown }}
-{{ content.list }}
 {{
     onsList({
         "itemsList": content.list
