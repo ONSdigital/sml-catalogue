@@ -16,3 +16,8 @@ output "cert_arn" {
 output "website_url" {
   value = "https://${var.domain_name_base}/"
 }
+
+variable "region" {
+  type    = string
+  default = "eu-west-1"
+}
