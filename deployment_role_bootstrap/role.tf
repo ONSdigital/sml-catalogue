@@ -124,6 +124,20 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 ]
             },
             {
+                "Sid": "AllowSNSAccess",
+                "Effect": "Allow",
+                "Action": [
+                    "sns:CreateTopic",
+                    "sns:ListTopics",
+                    "sns:SetTopicAttributes",
+                    "sns:DeleteTopic",
+                    "sns:Publish"
+                ],
+                "Resource": [
+                    "*"
+                ]
+            },
+            {
             "Sid": "AllowRoute53PlusACM",
             "Effect": "Allow",
             "Action": [
