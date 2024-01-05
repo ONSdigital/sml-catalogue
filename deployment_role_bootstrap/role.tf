@@ -127,11 +127,11 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "Sid": "AllowSNSAccess",
                 "Effect": "Allow",
                 "Action": [
-                    "sns:CreateTopic",
-                    "sns:ListTopics",
-                    "sns:SetTopicAttributes",
-                    "sns:DeleteTopic",
-                    "sns:Publish"
+                    "SNS:CreateTopic",
+                    "SNS:ListTopics",
+                    "SNS:SetTopicAttributes",
+                    "SNS:DeleteTopic",
+                    "SNS:Publish"
                 ],
                 "Resource": [
                     "*"
