@@ -47,7 +47,7 @@ resource "aws_route53_record" "cert-validations" {
 }
 
 resource "aws_route53_health_check" "dev_healthcheck" {
-  fqdn              = "dev-sml.aws.onsdigital.uk"
+  fqdn              = "dvyokpah4qml0.cloudfront.net"
   type              = "HTTPS"
   resource_path     = "/"
   failure_threshold = "5"
@@ -55,13 +55,4 @@ resource "aws_route53_health_check" "dev_healthcheck" {
   tags = {
     Name = "dev_healthchecks"
   }
-}
-
-resource "aws_sns_topic" "sns_topic" {
-    name = var.domain_name_base
-}
-
-
-output "sns_topic_arn" {
- value = aws_sns_topic.sns_topic.arn
 }
