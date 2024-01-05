@@ -45,3 +45,50 @@ resource "aws_route53_record" "cert-validations" {
   type            = each.value.type
   zone_id         = data.aws_route53_zone.sml.zone_id
 }
+
+
+resource "aws_route53_health_check" "dev_healthcheck" {
+  fqdn              = "dev-sml.aws.onsdigital.uk"
+  type              = "HTTPS"
+  resource_path     = "/"
+  failure_threshold = "5"
+  request_interval  = "30"
+  cloudwatch_alarm_name = aws_cloudwatch_metric_alarm.dev-healthcheck_alarm.name
+  cloudwatch_alarm_region = "${var.region}"
+  tags = {
+    Name = "dev_healthchecks"
+  }
+}
+
+resource "aws_sns_topic" "sns_topic" {
+    name = var.domain_name_base
+}
+
+resource "aws_cloudwatch_metric_alarm" "dev-healthcheck_alarm" {
+  alarm_name          = "dev-health_check_alarm"
+  comparison_operator = "GreaterThanOrEqualToThreshold"
+  evaluation_periods  = 1
+  metric_name         = "HealthCheckStatus"
+  namespace           = "AWS/Route53"
+  period              = 60
+  statistic           = "Minimum"
+  threshold           = 1
+  alarm_description   = "This metric monitors the sml portal dev environment healthchecks"
+  actions_enabled     = "true"
+  alarm_actions       = [aws_sns_topic.sns_topic.arn]
+  treat_missing_data  = "breaching"
+  dimensions = {
+      HealthCheckId = aws_route53_health_check.dev_healthcheck.id
+   }
+  depends_on = [
+     aws_route53_health_check.dev_healthcheck
+    ]
+}
+
+output "sns_topic_arn" {
+ value = aws_sns_topic.sns_topic.arn
+}
+
+output "cloudwatch_metric_alarm_arn" {
+ value = aws_cloudwatch_metric_alarm.dev-healthcheck_alarm.arn
+}
