@@ -135,7 +135,7 @@ module "route53" {
 }
 
 resource "aws_sns_topic" "sns_topic" {
-    name = var.domain_name_base
+    name = "jamesTestTopic"
 }
 
 output "sns_topic_arn" {
