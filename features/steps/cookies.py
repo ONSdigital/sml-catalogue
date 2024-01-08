@@ -84,10 +84,10 @@ def click_dropdown(context):
     )
 
 
-@when("I change my settings to enable cookies")
-def enable_cookie(context):
+@when('I change my settings to enable "{cookie_type}" cookies')
+def enable_cookie(context, cookie_type):
     WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.ID, "on-3-label")
+        lambda d: d.find_element(By.ID, f"on-{cookie_type}")
     ).click()
     WebDriverWait(driver, timeout=timeout).until(
         lambda d: d.find_element(By.ID, "ons_cookie_save_changes")
@@ -97,10 +97,10 @@ def enable_cookie(context):
     )
 
 
-@when("I change my settings to disable cookies")
-def disable_cookie(context):
+@when('I change my settings to disable "{cookie_type}" cookies')
+def disable_cookie(context, cookie_type):
     WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.ID, "off-3-label")
+        lambda d: d.find_element(By.ID, f"off-{cookie_type}")
     ).click()
     WebDriverWait(driver, timeout=timeout).until(
         lambda d: d.find_element(By.ID, "ons_cookie_save_changes")
@@ -151,7 +151,7 @@ def check_content_for_dropdown(context, content):
 def cookie_enabled_check(context):
     alert_content = (
         WebDriverWait(driver, timeout=timeout)
-        .until(lambda d: d.find_element(By.ID, "cookie_change_alert"))
+        .until(lambda d: d.find_element(By.ID, "cookie-change-alert"))
         .text
     )
     assert alert_content == "Your cookie settings have been saved"
@@ -161,7 +161,7 @@ def cookie_enabled_check(context):
 def cookie_disabled_check(context):
     alert_content = (
         WebDriverWait(driver, timeout=timeout)
-        .until(lambda d: d.find_element(By.ID, "cookie_change_alert"))
+        .until(lambda d: d.find_element(By.ID, "cookie-change-alert"))
         .text
     )
     assert alert_content == "Your cookie settings have been saved"
