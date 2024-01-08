@@ -47,13 +47,11 @@ resource "aws_route53_record" "cert-validations" {
   zone_id         = data.aws_route53_zone.sml.zone_id
 }
 
-resource "aws_route53_health_check" "dev_healthcheck" {
+resource "aws_route53_health_check" "dev" {
   fqdn              = "dvyokpah4qml0.cloudfront.net"
+  name    = var.domain_name_base
   type              = "HTTPS"
   resource_path     = "/"
   failure_threshold = "5"
   request_interval  = "30"
-  tags = {
-    Name = "dev_healthchecks"
-  }
 }
