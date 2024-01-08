@@ -25,6 +25,10 @@
                 {
                     "name": "totals-and-components",
                     "label": "Totals and Components"
+                },
+                {
+                    "name": "cell-key-perturbation",
+                    "label": "Cell Key Perturbation"
                 }
             ]
         },

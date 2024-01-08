@@ -1,0 +1,191 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+    
+    
+    
+    
+      <link rel="stylesheet" href="/static/assets/stylesheets/main.9d5733d3.min.css">
+      
+        
+        <link rel="stylesheet" href="/static/assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Introduction to cellkeyperturbation</h1>
+
+<pre><code class="language-r">library(cellkeyperturbation)
+</code></pre>
+<p>This vignette introduces the cellkeyperturbation package. The package contains the create_perturbed_table function which can be used to create a frequency table which has had a cell key perturbation technique applied to the counts according to rules supplied in a perturbation table.</p>
+<p>The perturbation adds a small amount of noise to some cells in a table, changing their values. This adds uncertainty to small values to reduce the risk of disclosure. It protects against the risk of disclosure by differencing since it cannot be determined whether a difference between two similar tables represents a real person, or is caused by the perturbation.</p>
+<p>Cell Key Perturbation is consistent and repeatable, so the same cells are always perturbed in the same way.</p>
+<h2 id="data">Data</h2>
+<p>The create_perturbed_table function needs to be supplied with</p>
+<ol>
+<li>
+<p>A data.table containing the data to be tabulated and perturbed. The data must contain a 'record key' variable and consist of one row per statistical unit (person, household, business or other) and one column per variable (age, sex, health status) as in the example data.table supplied with this package which is called micro.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>micro</td>
+<td>A small data set containing randomly generated data to showcase the cell key perturbation method.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>A data.table containing a p-table which provides the rules for the perturbation to be applied. The table must contain variables named 'pcv', 'ckey' and 'pvalue' as in the example ptable supplied with this package which is called ptable_10_5.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ptable_10_5</td>
+<td>A ptable containing the rules for applying a perturbation with a threshold of 10, and rounding to base 5.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<pre><code class="language-r">str(micro)
+#&gt; Classes 'data.table' and 'data.frame':   1000 obs. of  11 variables:
+#&gt;  $ record_key: int  84 108 212 212 86 19 169 66 118 210 ...
+#&gt;  $ var1      : int  2 1 1 2 2 2 5 2 2 4 ...
+#&gt;  $ var2      : int  2 2 1 2 2 2 2 2 2 1 ...
+#&gt;  $ var3      : int  2 3 1 1 4 2 4 1 2 4 ...
+#&gt;  $ var4      : int  2 3 2 4 2 3 1 3 4 2 ...
+#&gt;  $ var5      : int  9 9 1 2 4 7 1 10 1 10 ...
+#&gt;  $ var6      : int  5 2 1 1 2 2 1 5 2 3 ...
+#&gt;  $ var7      : int  1 4 3 3 1 2 3 1 2 2 ...
+#&gt;  $ var8      : chr  &quot;D&quot; &quot;C&quot; &quot;D&quot; &quot;A&quot; ...
+#&gt;  $ var9      : chr  &quot;C&quot; &quot;B&quot; &quot;H&quot; &quot;H&quot; ...
+#&gt;  $ var10     : int  2 34 12 45 10 3 2 44 31 40 ...
+#&gt;  - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt;
+
+str(ptable_10_5)
+#&gt; Classes 'data.table' and 'data.frame':   192000 obs. of  3 variables:
+#&gt;  $ pcv   : int  1 1 1 1 1 1 1 1 1 1 ...
+#&gt;  $ ckey  : int  0 1 2 3 4 5 6 7 8 9 ...
+#&gt;  $ pvalue: int  -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 ...
+#&gt;  - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt;
+</code></pre>
+<h2 id="example">Example</h2>
+<p>This example shows how the create_perturbed_table function can be called using the example data and ptable supplied with this package and specifying 'var1' as the geography level variable and 'var5' and 'var8' as other grouping variables.</p>
+<pre><code class="language-r">
+perturbed_table &lt;-create_perturbed_table(data = micro,
+                                          record_key = &quot;record_key&quot;,
+                                          geog = c(&quot;var1&quot;),
+                                          tab_vars = c(&quot;var5&quot;,&quot;var8&quot;),
+                                          ptable = ptable_10_5)
+</code></pre>
+<p>The returned data.table shows the resulting frequency table with perturbed counts and has the following format:</p>
+<pre><code class="language-r">str(perturbed_table)
+#&gt; Classes 'data.table' and 'data.frame':   200 obs. of  8 variables:
+#&gt;  $ ckey         : int  64 196 123 3 130 68 12 152 149 251 ...
+#&gt;  $ pcv          : int  16 5 10 10 5 4 3 7 12 10 ...
+#&gt;  $ var1         : chr  &quot;1&quot; &quot;1&quot; &quot;1&quot; &quot;1&quot; ...
+#&gt;  $ var5         : chr  &quot;1&quot; &quot;1&quot; &quot;1&quot; &quot;1&quot; ...
+#&gt;  $ var8         : chr  &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; ...
+#&gt;  $ pre_sdc_count: int  16 5 10 10 5 4 3 7 12 10 ...
+#&gt;  $ pvalue       : int  -1 -5 0 0 -5 -4 -3 -7 -2 0 ...
+#&gt;  $ count        : int  15 0 10 10 0 0 0 0 10 10 ...
+#&gt;  - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt; 
+#&gt;  - attr(*, &quot;index&quot;)= int(0) 
+#&gt;   ..- attr(*, &quot;__pre_sdc_count&quot;)= int [1:200] 24 64 102 103 104 105 107 108 141 144 ...
+</code></pre>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "/static/assets/javascripts/workers/search.5e67fbfe.min.js"}</script>
+    
+    
+      <script src="/static/assets/javascripts/bundle.e87a5f81.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

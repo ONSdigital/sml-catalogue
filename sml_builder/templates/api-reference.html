@@ -1,6 +1,6 @@
 {%- extends "sidebar.html" -%}
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
-{% from "components/lists/_macro.njk" import onsList %}
+{% from "components/list/_macro.njk" import onsList %}
 {%- set breadcrumbs = {
   "id":"breadcrumbs",
   "ariaLabel":"breadcrumbs",
@@ -31,6 +31,8 @@
             {% include "api-docs/api-docs/api-docs/thousand-pounds/index.html" %}
         {%- elif sub_category == "totals-and-components" %}
             {% include "api-docs/api-docs/api-docs/totals-and-components/index.html" %}
+        {%- elif sub_category == "cell-key-perturbation" %}
+            {% include "api-docs/api-docs/api-docs/cell-key-perturbation/intro_to_cellkeyperturbation.html" %}
         {%- endif %}
     {% elif category == "technical-documentation" %}
         {%- if sub_category == "date-adjustment" %}
@@ -60,7 +62,8 @@
         "variants": "vertical",
         "id": "section-menu",
         "currentPath": url_for("api_guidances", category=category),
-        "itemsList": nav
+        "itemsList": nav,
+        "headingLevel": 2,
     })
 }}
 {% endblock sidebarContent %}
