@@ -134,6 +134,14 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
+resource "aws_sns_topic" "sns_topic" {
+    name = "jamesTestTopic"
+}
+
+output "sns_topic_arn" {
+ value = aws_sns_topic.sns_topic.arn
+}
+
 output "cf_website_url" {
   value = "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
 }
