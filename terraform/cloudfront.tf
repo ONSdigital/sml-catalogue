@@ -134,6 +134,18 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
+resource "aws_route53_health_check" "dev" {
+  fqdn              = "dev-sml.aws.onsdigital.uk/"
+  type              = "HTTPS"
+  resource_path     = "/"
+  failure_threshold = "5"
+  request_interval  = "30"
+
+  tags = {
+    Name = "tf-test-health-check"
+  }
+}
+
 resource "aws_sns_topic" "sns_topic" {
     name = "DevTopic"
 }
