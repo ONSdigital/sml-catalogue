@@ -49,9 +49,12 @@ resource "aws_route53_record" "cert-validations" {
 
 resource "aws_route53_health_check" "dev" {
   fqdn              = "dev-sml.aws.onsdigital.uk/"
-  name    = aws_route53_record.sml.var.domain_name_base
   type              = "HTTPS"
   resource_path     = "/"
   failure_threshold = "5"
   request_interval  = "30"
+
+  tags = {
+    Name = "tf-test-health-check"
+  }
 }
