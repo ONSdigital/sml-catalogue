@@ -48,8 +48,8 @@ resource "aws_route53_record" "cert-validations" {
 }
 
 resource "aws_route53_health_check" "dev" {
-  fqdn              = "dvyokpah4qml0.cloudfront.net"
-  name    = var.domain_name_base
+  fqdn              = "dev-sml.aws.onsdigital.uk/"
+  name    = aws_route53_record.sml.var.domain_name_base
   type              = "HTTPS"
   resource_path     = "/"
   failure_threshold = "5"
