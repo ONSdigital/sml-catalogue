@@ -135,7 +135,7 @@ module "route53" {
 }
 
 resource "aws_sns_topic" "sns_topic" {
-    name = "aws_cloudfront_distribution.sml-catalogue.id"
+    name = "DevTopic"
 }
 
 output "sns_topic_arn" {
