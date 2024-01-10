@@ -146,10 +146,6 @@ resource "aws_route53_health_check" "sml" {
   }
 }
 
-output "sns_topic_arn" {
- value = aws_sns_topic.sns_topic.arn
-}
-
 output "cf_website_url" {
   value = "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
 }

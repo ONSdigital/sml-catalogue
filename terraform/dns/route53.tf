@@ -71,3 +71,7 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
 resource "aws_sns_topic" "sns_topic" {
     name   = "smlTopic"
 }
+
+output "sns_topic_arn" {
+ value = aws_sns_topic.sns_topic.arn
+}
