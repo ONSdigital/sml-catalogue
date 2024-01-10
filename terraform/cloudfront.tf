@@ -1,8 +1,3 @@
-provider "aws" {
-    alias = "us_east_1"
-    region = "us-east-1"
-   }
-
 locals {
   s3_origin_id = aws_s3_bucket.sml-catalogue.id
 }
@@ -128,7 +123,7 @@ resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 module "route53" {
   source = "./dns"
   count  = terraform.workspace == "main" ? 1 : 0
-  providers = aws.us_east_1
+  provider = aws.us_east_1
 
   s3_bucket = {
     domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
