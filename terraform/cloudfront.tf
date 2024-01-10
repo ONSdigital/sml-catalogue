@@ -134,22 +134,6 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
-output "cf_website_url" {
-  value = "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
-}
-
-output "cloudfront_id" {
-  value = aws_cloudfront_distribution.sml-catalogue.id
-}
-
-output "website_url" {
-  value = length(module.route53) > 0 ? module.route53[0].website_url : "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
-}
-
-providers = {
-  aws = aws.us_east_1
-}
-
 resource "aws_route53_health_check" "sml" {
   fqdn              = "dev-sml.aws.onsdigital.uk"
   type              = "HTTPS"
@@ -189,4 +173,16 @@ resource "aws_sns_topic" "sns_topic" {
 
 output "sns_topic_arn" {
  value = aws_sns_topic.sns_topic.arn
+}
+
+output "cf_website_url" {
+  value = "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
+}
+
+output "cloudfront_id" {
+  value = aws_cloudfront_distribution.sml-catalogue.id
+}
+
+output "website_url" {
+  value = length(module.route53) > 0 ? module.route53[0].website_url : "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
 }
