@@ -157,7 +157,6 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
   actions_enabled     = "true"
   alarm_actions       = [aws_sns_topic.sns_topic.arn]
   treat_missing_data  = "breaching"
-  notification_target = "aws_sns_topic.sns_topic.name"
   dimensions = {
       HealthCheckId = aws_route53_health_check.sml.id
    }
@@ -172,11 +171,9 @@ resource "aws_sns_topic" "sns_topic" {
 }
 
 resource "aws_sns_topic_subscription" "email-target" {
+  topic_arn = [aws_sns_topic.sns_topic.arn]
   protocol  = "email"
   endpoint  = "james.morgan@ons.gov.uk"
-  depends_on = [
-     aws_sns_topic.sns_topic.name
-    ]
 }
 
 output "sns_topic_arn" {
