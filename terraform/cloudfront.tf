@@ -141,6 +141,9 @@ resource "aws_route53_health_check" "sml" {
   resource_path     = "/"
   failure_threshold = "5"
   request_interval  = "30"
+  providers = {
+    aws = aws.us_east_1
+  }
   tags = {
     Name = "sml-health-check"
   }
@@ -159,6 +162,9 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
   actions_enabled     = "true"
   alarm_actions       = [aws_sns_topic.sns_topic.arn]
   treat_missing_data  = "breaching"
+  providers = {
+    aws = aws.us_east_1
+  }
   dimensions = {
       HealthCheckId = aws_route53_health_check.sml.id
    }
@@ -169,6 +175,9 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
 
 resource "aws_sns_topic" "sns_topic" {
     name   = "smlTopic"
+    providers = {
+      aws = aws.us_east_1
+    }
 }
 
 output "sns_topic_arn" {
