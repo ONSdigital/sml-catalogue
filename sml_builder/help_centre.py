@@ -67,7 +67,7 @@ def guidances(category, sub_category=None):
             nav=help_centre_nav,
             content=content,
         )
-    
+
     try:
         pages = getContent("helpCentreInformation")
         if checkEmptyList(pages):

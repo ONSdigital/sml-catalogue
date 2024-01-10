@@ -44,8 +44,6 @@ Now when you navigate to the Contentful web interface, create new content or mak
 
 ## Key information regarding the CMS
 
-[**Content Management System Confluence Page**](https://confluence.ons.gov.uk/display/SML/Content+Management+System): This page contains scope of the project, technical and non technical presentation slides, pitch presentation video recording, lightning talk going through the technical aspects of the project etc.
-
 [**Contentful Overview**](https://www.contentful.com/help/contentful-101/): Contains guidance on getting started with setting up Contentful, content models, managing content, managing users etc.
 
 [**Contentful API Reference**](https://www.contentful.com/developers/docs/references/): Guidance on Content Delivery API (used to retrieve published content to display in your application), Content Management API, Content Preview API and various other APIs.
