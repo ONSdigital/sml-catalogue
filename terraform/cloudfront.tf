@@ -134,6 +134,10 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
+provider "aws" {
+  region = "us-east-1"
+}
+
 resource "aws_route53_health_check" "sml" {
   fqdn              = "dev-sml.aws.onsdigital.uk"
   type              = "HTTPS"
