@@ -137,6 +137,7 @@ module "route53" {
 resource "aws_route53_health_check" "sml" {
   fqdn              = "dev-sml.aws.onsdigital.uk"
   type              = "HTTPS"
+  port              = "443"
   resource_path     = "/"
   failure_threshold = "5"
   request_interval  = "30"
