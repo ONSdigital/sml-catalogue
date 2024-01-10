@@ -141,8 +141,6 @@ resource "aws_route53_health_check" "sml" {
   resource_path     = "/"
   failure_threshold = "5"
   request_interval  = "30"
-  cloudwatch_alarm_name = aws_cloudwatch_metric_alarm.sml_healthcheck_alarm.name
-  cloudwatch_alarm_region = "us-east-1"
   tags = {
     Name = "sml-health-check"
   }
