@@ -134,6 +134,49 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
+resource "aws_route53_health_check" "sml" {
+  fqdn              = "dev-sml.aws.onsdigital.uk"
+  type              = "HTTPS"
+  port              = "443"
+  resource_path     = "/"
+  failure_threshold = "5"
+  request_interval  = "30"
+  tags = {
+    Name = "sml-health-check"
+  }
+}
+
+resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
+  provider            = "eu-west-1"
+  alarm_name          = "sml-route-53-health_check_alarm"
+  comparison_operator = "GreaterThanOrEqualToThreshold"
+  evaluation_periods  = 1
+  metric_name         = "HealthCheckStatus"
+  namespace           = "AWS/Route53"
+  period              = 60
+  statistic           = "Minimum"
+  threshold           = 1
+  alarm_description   = "This metric monitors sml-route-53-healthchecks"
+  actions_enabled     = "true"
+  alarm_actions       = [aws_sns_topic.sns_topic.arn]
+  treat_missing_data  = "breaching"
+  dimensions = {
+      HealthCheckId = aws_route53_health_check.sml.id
+   }
+  depends_on = [
+     aws_route53_health_check.sml
+    ]
+}
+
+resource "aws_sns_topic" "sns_topic" {
+  provider = "eu-west-1"
+    name   = "smlTopic"
+}
+
+output "sns_topic_arn" {
+ value = aws_sns_topic.sns_topic.arn
+}
+
 output "cf_website_url" {
   value = "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
 }
