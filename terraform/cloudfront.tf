@@ -1,3 +1,8 @@
+provider "aws" {
+    alias = "us_east_1"
+    region = "us-east-1"
+   }
+
 locals {
   s3_origin_id = aws_s3_bucket.sml-catalogue.id
 }
@@ -123,9 +128,7 @@ resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 module "route53" {
   source = "./dns"
   count  = terraform.workspace == "main" ? 1 : 0
-  providers = {
-    aws = aws.us_east_1
-  }
+  providers = aws.us_east_1
 
   s3_bucket = {
     domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
@@ -147,7 +150,7 @@ resource "aws_route53_health_check" "sml" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
-  provider            = "eu-west-1"
+  provider            = aws.us_east_1
   alarm_name          = "sml-route-53-health_check_alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1
@@ -169,8 +172,8 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
 }
 
 resource "aws_sns_topic" "sns_topic" {
-  provider = "eu-west-1"
-    name   = "smlTopic"
+  provider = aws.us_east_1
+  name     = "smlTopic"
 }
 
 output "sns_topic_arn" {
