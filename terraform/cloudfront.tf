@@ -134,21 +134,20 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
-resource "aws_route53_health_check" "dev" {
+resource "aws_route53_health_check" "sml" {
   fqdn              = "dev-sml.aws.onsdigital.uk"
   type              = "HTTPS"
   resource_path     = "/"
   failure_threshold = "5"
   request_interval  = "30"
-  cloudwatch_alarm_name = aws_cloudwatch_metric_alarm.dev_healthcheck_alarm.name
-  cloudwatch_alarm_region = "us-east-1"
+  cloudwatch_alarm_name = aws_cloudwatch_metric_alarm.sml_healthcheck_alarm.name
   tags = {
-    Name = "dev-health-check"
+    Name = "sml-health-check"
   }
 }
 
-resource "aws_cloudwatch_metric_alarm" "dev_healthcheck_alarm" {
-  alarm_name          = "dev-route-53-health_check_alarm"
+resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
+  alarm_name          = "sml-route-53-health_check_alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1
   metric_name         = "HealthCheckStatus"
@@ -156,20 +155,17 @@ resource "aws_cloudwatch_metric_alarm" "dev_healthcheck_alarm" {
   period              = 60
   statistic           = "Minimum"
   threshold           = 1
-  alarm_description   = "This metric monitors dev-route-53-healthchecks"
+  alarm_description   = "This metric monitors sml-route-53-healthchecks"
   actions_enabled     = "true"
   alarm_actions       = [aws_sns_topic.sns_topic.arn]
   treat_missing_data  = "breaching"
-  dimensions = {
-      HealthCheckId = aws_route53_health_check.dev.id
-   }
   depends_on = [
-     aws_route53_health_check.dev
+     aws_route53_health_check.sml
     ]
 }
 
 resource "aws_sns_topic" "sns_topic" {
-    name = "DevTopic"
+    name = "smlTopic"
 }
 
 output "sns_topic_arn" {
