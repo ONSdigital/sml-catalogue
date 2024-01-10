@@ -135,7 +135,7 @@ module "route53" {
 }
 
 resource "aws_route53_health_check" "dev" {
-  fqdn              = "dev-sml.aws.onsdigital.uk/"
+  fqdn              = "dev-sml.aws.onsdigital.uk"
   type              = "HTTPS"
   resource_path     = "/"
   failure_threshold = "5"
