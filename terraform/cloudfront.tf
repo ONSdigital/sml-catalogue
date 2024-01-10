@@ -124,7 +124,7 @@ module "route53" {
   source = "./dns"
   count  = terraform.workspace == "main" ? 1 : 0
   providers = {
-    aws = aws.eu-west-2
+    aws = aws.us_east_1
   }
 
   s3_bucket = {
@@ -132,6 +132,31 @@ module "route53" {
     hosted_zone_id = aws_cloudfront_distribution.sml-catalogue.hosted_zone_id
   }
   domain_name_base = local.domain_name_base[var.environment]
+
+  resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
+    alarm_name          = "sml-route-53-health_check_alarm"
+    comparison_operator = "GreaterThanOrEqualToThreshold"
+    evaluation_periods  = 1
+    metric_name         = "HealthCheckStatus"
+    namespace           = "AWS/Route53"
+    period              = 60
+    statistic           = "Minimum"
+    threshold           = 1
+    alarm_description   = "This metric monitors sml-route-53-healthchecks"
+    actions_enabled     = "true"
+    alarm_actions       = [aws_sns_topic.sns_topic.arn]
+    treat_missing_data  = "breaching"
+    dimensions = {
+        HealthCheckId = aws_route53_health_check.sml.id
+    }
+    depends_on = [
+      aws_route53_health_check.sml
+      ]
+  }
+
+  resource "aws_sns_topic" "sns_topic" {
+      name   = "smlTopic"
+  }
 }
 
 resource "aws_route53_health_check" "sml" {
@@ -144,31 +169,6 @@ resource "aws_route53_health_check" "sml" {
   tags = {
     Name = "sml-health-check"
   }
-}
-
-resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
-  alarm_name          = "sml-route-53-health_check_alarm"
-  comparison_operator = "GreaterThanOrEqualToThreshold"
-  evaluation_periods  = 1
-  metric_name         = "HealthCheckStatus"
-  namespace           = "AWS/Route53"
-  period              = 60
-  statistic           = "Minimum"
-  threshold           = 1
-  alarm_description   = "This metric monitors sml-route-53-healthchecks"
-  actions_enabled     = "true"
-  alarm_actions       = [aws_sns_topic.sns_topic.arn]
-  treat_missing_data  = "breaching"
-  dimensions = {
-      HealthCheckId = aws_route53_health_check.sml.id
-   }
-  depends_on = [
-     aws_route53_health_check.sml
-    ]
-}
-
-resource "aws_sns_topic" "sns_topic" {
-    name   = "smlTopic"
 }
 
 output "sns_topic_arn" {
