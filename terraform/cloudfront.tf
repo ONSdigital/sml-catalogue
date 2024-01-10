@@ -141,6 +141,8 @@ resource "aws_route53_health_check" "sml" {
   resource_path     = "/"
   failure_threshold = "5"
   request_interval  = "30"
+  cloudwatch_alarm_name = aws_cloudwatch_metric_alarm.sml_healthcheck_alarm.name
+  cloudwatch_alarm_region = "us-east-1"
   tags = {
     Name = "sml-health-check"
   }
@@ -152,6 +154,7 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
   evaluation_periods  = 1
   metric_name         = "HealthCheckStatus"
   namespace           = "AWS/Route53"
+  region              = "us-east-1"
   period              = 60
   statistic           = "Minimum"
   threshold           = 1
@@ -168,7 +171,8 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
 }
 
 resource "aws_sns_topic" "sns_topic" {
-    name = "smlTopic"
+    name   = "smlTopic"
+    region = "us-east-1"
 }
 
 output "sns_topic_arn" {
