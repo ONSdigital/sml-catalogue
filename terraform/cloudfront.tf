@@ -134,6 +134,19 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
+resource "aws_route53_health_check" "dev" {
+  fqdn              = "dev-sml.aws.onsdigital.uk"
+  type              = "HTTPS"
+  resource_path     = "/"
+  failure_threshold = "5"
+  request_interval  = "30"
+  cloudwatch_alarm_name = aws_cloudwatch_metric_alarm.dev_healthcheck_alarm.name
+  cloudwatch_alarm_region = "us-east-1"
+  tags = {
+    Name = "dev-health-check"
+  }
+}
+
 resource "aws_cloudwatch_metric_alarm" "dev_healthcheck_alarm" {
   alarm_name          = "dev-route-53-health_check_alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
@@ -153,19 +166,6 @@ resource "aws_cloudwatch_metric_alarm" "dev_healthcheck_alarm" {
   depends_on = [
      aws_route53_health_check.dev
     ]
-}
-
-resource "aws_route53_health_check" "dev" {
-  fqdn              = "dev-sml.aws.onsdigital.uk"
-  type              = "HTTPS"
-  resource_path     = "/"
-  failure_threshold = "5"
-  request_interval  = "30"
-  cloudwatch_alarm_name = aws_cloudwatch_metric_alarm.dev_healthcheck_alarm.name
-  cloudwatch_alarm_region = "us-east-1"
-  tags = {
-    Name = "dev-health-check"
-  }
 }
 
 resource "aws_sns_topic" "sns_topic" {
