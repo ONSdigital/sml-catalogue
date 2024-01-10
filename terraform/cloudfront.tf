@@ -152,7 +152,6 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
   evaluation_periods  = 1
   metric_name         = "HealthCheckStatus"
   namespace           = "AWS/Route53"
-  region              = "eu-west-2"
   period              = 60
   statistic           = "Minimum"
   threshold           = 1
