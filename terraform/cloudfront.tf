@@ -134,18 +134,6 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
-resource "aws_route53_health_check" "sml" {
-  fqdn              = "dev-sml.aws.onsdigital.uk"
-  type              = "HTTPS"
-  port              = "443"
-  resource_path     = "/"
-  failure_threshold = "5"
-  request_interval  = "30"
-  tags = {
-    Name = "sml-health-check"
-  }
-}
-
 output "cf_website_url" {
   value = "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
 }

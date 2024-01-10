@@ -47,6 +47,18 @@ resource "aws_route53_record" "cert-validations" {
   zone_id         = data.aws_route53_zone.sml.zone_id
 }
 
+resource "aws_route53_health_check" "sml" {
+  fqdn              = "dev-sml.aws.onsdigital.uk"
+  type              = "HTTPS"
+  port              = "443"
+  resource_path     = "/"
+  failure_threshold = "5"
+  request_interval  = "30"
+  tags = {
+    Name = "sml-health-check"
+  }
+}
+
 resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
   alarm_name          = "sml-route-53-health_check_alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
