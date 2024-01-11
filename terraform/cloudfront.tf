@@ -153,7 +153,7 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
   period              = 60
   statistic           = "Minimum"
   threshold           = 1
-  alarm_description   = "This metric monitors sml-route-53-healthchecks"
+  alarm_description   = "Alarm for ${var.environment}"
   actions_enabled     = "true"
   alarm_actions       = [aws_sns_topic.sns_topic.arn]
   treat_missing_data  = "breaching"
@@ -167,7 +167,7 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
 
 resource "aws_sns_topic" "sns_topic" {
   provider = aws.us_east_1
-  name     = "smlTopic"
+  name     = "smlPortalTopic"
 }
 
 resource "aws_sns_topic_subscription" "email_target" {
