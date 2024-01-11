@@ -131,20 +131,6 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
-resource "aws_lambda_function" "test_lambda" {
-  filename      = "./dns/lambda_functions/teams_healthcheck_notification.js"
-  function_name = "send_teams_message"
-  role          = var.deployment_role
-  handler       = "index.test"
-  runtime = "nodejs18.x"
-
-  environment {
-    variables = {
-      foo = "bar"
-    }
-  }
-}
-
 resource "aws_route53_health_check" "sml" {
   fqdn              = "dev-sml.aws.onsdigital.uk"
   type              = "HTTPS"
@@ -182,6 +168,13 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
 resource "aws_sns_topic" "sns_topic" {
   provider = aws.us_east_1
   name     = "smlTopic"
+}
+
+resource "aws_sns_topic_subscription" "email-target" {
+  topic_arn = arn:aws:sns:us-east-1:115311790871:smlTopic
+  
+  protocol  = "email"
+  endpoint  = "james.morgan@ons.gov.uk"
 }
 
 output "cf_website_url" {
