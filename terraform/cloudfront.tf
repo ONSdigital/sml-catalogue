@@ -170,7 +170,8 @@ resource "aws_sns_topic" "sns_topic" {
   name     = "smlTopic"
 }
 
-resource "aws_sns_topic_subscription" "email-target" {
+resource "aws_sns_topic_subscription" "email_target" {
+  provider = aws.us_east_1
   topic_arn = aws_sns_topic.sns_topic.arn
   
   protocol  = "email"
