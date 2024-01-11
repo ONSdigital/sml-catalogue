@@ -131,6 +131,17 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
+module "lambda" {
+  source = "./dns"
+  count  = terraform.workspace == "main" ? 1 : 0
+
+  s3_bucket = {
+    domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
+    hosted_zone_id = aws_cloudfront_distribution.sml-catalogue.hosted_zone_id
+  }
+  domain_name_base = local.domain_name_base[var.environment]
+}
+
 resource "aws_route53_health_check" "sml" {
   fqdn              = "dev-sml.aws.onsdigital.uk"
   type              = "HTTPS"
@@ -168,17 +179,6 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
 resource "aws_sns_topic" "sns_topic" {
   provider = aws.us_east_1
   name     = "smlTopic"
-}
-
-resource "aws_sns_topic_subscription" "email-target" {
-  topic_arn = arn:aws:sns:us-east-1:115311790871:smlTopic
-  
-  protocol  = "email"
-  endpoint  = "james.morgan@ons.gov.uk"
-}
-
-output "sns_topic_arn" {
- value = aws_sns_topic.sns_topic.arn
 }
 
 output "cf_website_url" {
