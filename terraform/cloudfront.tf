@@ -131,15 +131,22 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
-module "lambda" {
-  source = "./dns"
-  count  = terraform.workspace == "main" ? 1 : 0
+resource "aws_lambda_function" "test_lambda" {
+  # If the file is not in the current working directory you will need to include a
+  # path.module in the filename.
+  filename      = "./dns/lambda_functions/teams_healthcheck_notification"
+  function_name = "send_teams_message"
+  role          = var.deployment_role
 
-  s3_bucket = {
-    domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
-    hosted_zone_id = aws_cloudfront_distribution.sml-catalogue.hosted_zone_id
+  source_code_hash = data.archive_file.lambda.output_base64sha256
+
+  runtime = "nodejs18.x"
+
+  environment {
+    variables = {
+      foo = "bar"
+    }
   }
-  domain_name_base = local.domain_name_base[var.environment]
 }
 
 resource "aws_route53_health_check" "sml" {
