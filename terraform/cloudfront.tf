@@ -171,7 +171,7 @@ resource "aws_sns_topic" "sns_topic" {
 }
 
 resource "aws_sns_topic_subscription" "email-target" {
-  arn = "arn:aws:sns:us-east-1:115311790871:smlTopic"
+  topic_arn = aws_sns_topic.sns_topic.arn
   
   protocol  = "email"
   endpoint  = "d75953cc.OfficeNationalStatistics.onmicrosoft.com@uk.teams.ms"
