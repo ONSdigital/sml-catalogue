@@ -132,7 +132,7 @@ module "route53" {
 }
 
 resource "aws_lambda_function" "test_lambda" {
-  filename      = "./dns/lambda_functions/teams_healthcheck_notification"
+  filename      = "./dns/lambda_functions/teams_healthcheck_notification.js"
   function_name = "send_teams_message"
   role          = var.deployment_role
   handler       = "index.test"
