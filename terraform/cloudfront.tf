@@ -132,13 +132,9 @@ module "route53" {
 }
 
 resource "aws_lambda_function" "test_lambda" {
-  # If the file is not in the current working directory you will need to include a
-  # path.module in the filename.
   filename      = "./dns/lambda_functions/teams_healthcheck_notification"
   function_name = "send_teams_message"
   role          = var.deployment_role
-
-  source_code_hash = data.archive_file.lambda.output_base64sha256
 
   runtime = "nodejs18.x"
 
