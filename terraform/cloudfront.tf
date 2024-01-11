@@ -171,10 +171,10 @@ resource "aws_sns_topic" "sns_topic" {
 }
 
 resource "aws_sns_topic_subscription" "email-target" {
-  topic_arn = arn:aws:sns:us-east-1:115311790871:smlTopic
+  topic_arn = "arn:aws:sns:us-east-1:115311790871:smlTopic"
   
   protocol  = "email"
-  endpoint  = "james.morgan@ons.gov.uk"
+  endpoint  = "d75953cc.OfficeNationalStatistics.onmicrosoft.com@uk.teams.ms"
 }
 
 output "cf_website_url" {
