@@ -153,7 +153,7 @@ resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
   period              = 60
   statistic           = "Minimum"
   threshold           = 1
-  alarm_description   = "Alarm for ${var.environment}"
+  alarm_description   = "Alarm for ${var.environment} environment has been triggered"
   actions_enabled     = "true"
   alarm_actions       = [aws_sns_topic.sns_topic.arn]
   treat_missing_data  = "breaching"
@@ -175,7 +175,7 @@ resource "aws_sns_topic_subscription" "email_target" {
   topic_arn = aws_sns_topic.sns_topic.arn
   
   protocol  = "email"
-  endpoint  = "james.morgan@ons.gov.uk"
+  endpoint  = "2a5d1c42.OfficeNationalStatistics.onmicrosoft.com@uk.teams.ms"
 }
 
 output "cf_website_url" {
