@@ -21,12 +21,12 @@ Feature: Cookie banner tests
         When I click the view cookies link in the header
         Then I am taken to the "Cookies on the statistical methods library" page
 
-    Scenario: I change the cookie settings to enabled
+    Scenario: I change the measure website use cookie settings to enabled
         Given I am on the cookies page where cookies are already disabled
-        When I change my settings to enable cookies
+        When I change my settings to enable "measure-website-use" cookies
         Then The cookies are enabled
 
-    Scenario: I change the cookie settings to disabled
+    Scenario: I change the measure website use cookie settings to disabled
         Given I am on the cookies page where cookies are already enabled
-        When I change my settings to disable cookies
+        When I change my settings to disable "measure-website-use" cookies
         Then The cookies are disabled
