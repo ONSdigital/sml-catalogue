@@ -1,5 +1,5 @@
 {%- extends "sidebar.html" -%}
-{% from "components/card/_macro.njk" import onsCard %}
+{% from "components/list/_macro.njk" import onsList %}
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {% from "components/label/_macro.njk" import onsLabel %}
 
@@ -12,12 +12,13 @@
 {% block mainContent %}
     <h1>API Reference</h1>
     {% for category in help_categories %}
-        {{ onsCard({
-        "id": category.name,
-        "title": category.name,
+        <h3>{{category.name}}</h3>
+        {{ onsList({
+        "variants": "dashed",
         "itemsList": category.subcategories
             })
         }}
+    <br>
     {% endfor%}
 
 {% endblock mainContent %}

@@ -1,10 +1,8 @@
 from json import load
 
 from flask import render_template, url_for
-from markupsafe import Markup, escape
-import markdown
 from sml_builder import app
-from .utils import _page_not_found
+from sml_builder.utils import _page_not_found
 
 
 @app.route("/api_reference/index")
@@ -12,7 +10,7 @@ def api_reference(category=None):
     categories = []
     try:
         with open(
-            "./content/api_reference/api_reference.json", encoding="utf-8"
+                "./content/api_reference/api_reference.json", encoding="utf-8"
         ) as help_contents_file:
             contents = load(help_contents_file)
         for category in contents[  # pylint: disable=redefined-argument-from-local
@@ -52,9 +50,11 @@ def api_guidances(category, sub_category=None):
         _page_not_found(e)
 
     api_reference_nav = _api_reference_nav(category)
+    body = f"api-docs/{category}/{sub_category}/{sub_category}.html"
 
     return render_template(
         "api-reference.html",
+        body=body,
         category_label=category_label,
         sub_category_label=sub_category_label,
         category=category,
@@ -65,7 +65,7 @@ def api_guidances(category, sub_category=None):
 
 def _get_category_labels(selected_category, selected_sub_category):
     with open(
-        "./content/api_reference/api_reference.json", encoding="utf-8"
+            "./content/api_reference/api_reference.json", encoding="utf-8"
     ) as help_contents_file:
         contents = load(help_contents_file)
     for category in contents["categories"]:
@@ -88,28 +88,37 @@ def _get_category_labels(selected_category, selected_sub_category):
 
 
 def _api_reference_nav(
-    current_category,
+        current_category,
 ):
     with open(
-        "./content/api_reference/api_reference.json", encoding="utf-8"
+            "./content/api_reference/api_reference.json", encoding="utf-8"
     ) as help_contents_file:
         contents = load(help_contents_file)
     return [
         {
-            "title": category["label"],
-            "anchors": [
+            "title": "API Reference",
+            "itemsList": [
                 {
-                    "title": sub_category["label"],
+                    "title": category["label"],
                     "url": url_for(
                         "api_guidances",
                         category=category["name"],
-                        sub_category=sub_category["name"],
                     ),
+                    "anchors": [
+                        {
+                            "title": sub_category["label"],
+                            "url": url_for(
+                                "api_guidances",
+                                category=category["name"],
+                                sub_category=sub_category["name"],
+                            ),
+                        }
+                        for sub_category in category["subcategories"]
+                    ]
+                    if category["name"] == current_category
+                    else None,
                 }
-                for sub_category in category["subcategories"]
-            ]
-            if category["name"] == current_category
-            else None,
+                for category in contents["categories"]
+            ],
         }
-        for category in contents["categories"]
     ]

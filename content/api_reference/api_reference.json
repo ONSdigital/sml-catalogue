@@ -1,56 +1,30 @@
 {
     "categories": [
         {
-            "name": "home",
-            "label": "Home",
-            "subcategories": []
-        },
-        {
             "name": "api-reference",
             "label": "API Reference",
             "subcategories": [
-
-                {
-                    "name": "date-adjustment",
-                    "label": "Date Adjustment"
-                },
-                {
-                    "name": "selective-editing",
-                    "label": "Selective Editing"
-                },
-                {
-                    "name": "thousand-pounds",
-                    "label": "Thousand Pounds"
-                },
                 {
                     "name": "totals-and-components",
                     "label": "Totals and Components"
                 },
                 {
-                    "name": "cell-key-perturbation",
+                    "name": "create_perturbed_table",
                     "label": "Cell Key Perturbation"
                 }
             ]
         },
         {
-            "name": "technical-documentation",
-            "label": "Technical Documentation",
+            "name": "user-documentation",
+            "label": "User Documentation",
             "subcategories": [
-                {
-                    "name": "date-adjustment",
-                    "label": "Date Adjustment"
-                },
-                {
-                    "name": "selective-editing",
-                    "label": "Selective Editing"
-                },
-                {
-                    "name": "thousand-pounds",
-                    "label": "Thousand Pounds"
-                },
                 {
                     "name": "totals-and-components",
                     "label": "Totals and Components"
+                },
+                {
+                    "name": "intro_to_cellkeyperturbation",
+                    "label": "Cell Key Perturbation"
                 }
             ]
         },
