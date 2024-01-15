@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v1.1.0-rc.1 (2024-01-15)
+
+### Feature
+
+* Update website to latest design system version ([`ee05895`](https://github.com/ONSdigital/sml-catalogue/commit/ee058954f009d6f666a8437349969dcbf7299184))
+
 ## v1.0.0 (2023-11-22)
 
 
