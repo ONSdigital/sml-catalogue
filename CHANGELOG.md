@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v1.1.0-rc.3 (2024-01-15)
+
+### Fix
+
+* Spp 10641 deploy preprod and prod ([#254](https://github.com/ONSdigital/sml-catalogue/issues/254)) ([`b64989f`](https://github.com/ONSdigital/sml-catalogue/commit/b64989f063e9100bc77eecb4242809351fce44b0))
+
 ## v1.1.0-rc.2 (2024-01-15)
 
 
