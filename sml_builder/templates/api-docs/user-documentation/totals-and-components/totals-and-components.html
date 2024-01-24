@@ -20,8 +20,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Mono:300,300i,400,400i,700,700i%7COpen+Sans+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans Mono";--md-code-font:"Open Sans Mono"}</style>
       
     
     
@@ -51,7 +51,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#totals-and-components-technical-specification" class="md-skip">
+        <a href="#finding-and-installing-the-method" class="md-skip">
           Skip to content
         </a>
       
@@ -76,30 +76,23 @@
                 
 
 
-<h1 id="totals-and-components-technical-specification">Totals and Components technical specification</h1>
-<pre><code class="language-markdown">
-## Finding and Installing the Method
+  <h1>Totals and Components</h1>
 
-You can find instructions on downloading and installing the method in the [Help centre](https://statisticalmethodslibrary.ons.gov.uk/help-centre/access/run-a-method) of the [ONS Statistical Methods Library](https://statisticalmethodslibrary.ons.gov.uk)
-
-## Using the Method
-
-### Overview
-
-Once you have downloaded the sml-small wheel package you will be able to import the T&amp;C method and pass in data.
-
-The TCC markers returned determine if and what the method has corrected.
-
-* &quot;S&quot; is when the method stops early or the method is not completed
-* &quot;N&quot; is for no correction
-* &quot;M&quot; is for manual editing this is where the record needs to be reviewed by a user
-* &quot;C&quot; is for component correction where the final components are corrected
-* &quot;T&quot; is for totals correction where the final totals are corrected
-
-The core mathematical corrections are total correction and component correction shown below respectively from the methodology specification.
-
-```bash
-final_total = sum_of_components
+<h2 id="finding-and-installing-the-method">Finding and Installing the Method</h2>
+<p>You can find instructions on downloading and installing the method in the <a href="https://statisticalmethodslibrary.ons.gov.uk/help-centre/access/run-a-method">Help centre</a> of the <a href="https://statisticalmethodslibrary.ons.gov.uk">ONS Statistical Methods Library</a></p>
+<h2 id="using-the-method">Using the Method</h2>
+<h3 id="overview">Overview</h3>
+<p>Once you have downloaded the sml-small wheel package you will be able to import the T&amp;C method and pass in data.</p>
+<p>The TCC markers returned determine if and what the method has corrected.</p>
+<ul>
+<li>"S" is when the method stops early or the method is not completed</li>
+<li>"N" is for no correction</li>
+<li>"M" is for manual editing this is where the record needs to be reviewed by a user</li>
+<li>"C" is for component correction where the final components are corrected</li>
+<li>"T" is for totals correction where the final totals are corrected</li>
+</ul>
+<p>The core mathematical corrections are total correction and component correction shown below respectively from the methodology specification.</p>
+<pre><code class="language-bash">final_total = sum_of_components
 </code></pre>
 <p>and</p>
 <pre><code class="language-bash">final_component = (original_component / sum_of_components) * total
@@ -313,7 +306,6 @@ and a link to the github repository which contains detailed API information as p
 <h2 id="license">License</h2>
 <p>Unless stated otherwise, the SML codebase is released under the <a href="https://github.com/ONSdigital/sml-python-small/blob/main/LICENSE">MIT License</a>. This covers both the codebase and any sample code in the documentation.</p>
 <p>The documentation is available under the terms of the <a href="https://github.com/ONSdigital/sml-supporting-info/blob/main/LICENSE">Open Government 3.0 license</a>.</p>
-<p>```</p>
 
               
             </article>
