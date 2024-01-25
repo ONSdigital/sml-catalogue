@@ -45,45 +45,6 @@
                             ]
                         })
                     }}
-                <p>Method requests can be submitted to the ONS Statistical Methods Library via the IBM Business Automation Workflow (BAW). The BAW is used across the ONS for a variety of purposes, so you may have access to this tool already.</p>
-                <p>If you do not have access to the IBM Business Automation Workflow (BAW): </p>
-                    <ol class="ons-list">
-                                <li class="ons-list__item">You can gain access to the BAW via ServiceNow in “I Want Something > 04 – Software, Applications & Platforms > Automation Requests”.</li>
-                                <li class="ons-list__item">Fill in the fields as follows:
-                                <ol class="ons-list">
-                                    <li class="ons-list__item">Please choose an activity: “Access – add, change or remove”</li>
-            <li class="ons-list__item">Please select Access Type: “New Access”</li>
-            <li class="ons-list__item">Please select the Service: “BAW”</li>
-                                <li class="ons-list__item">Select the Solution this request relates to: “STATISTICAL METHODS LIBRARY”</li>
-            <li class="ons-list__item">Who is this request for: enter your name and the name of each other user you are requesting access for</li>
-                                </ol>
-                                </li>
-                                    <li class="ons-list__item">Click on the BAW spreadsheet link.</li>
-        <li class="ons-list__item">Enter your details and the details of each user you are requesting access form</li>
-        <li class="ons-list__item">Under “Environment(s) required”, enter ‘a’ under Production. Leave each other column blank</li>
-                                <li class="ons-list__item">Under ‘Application Group Names’ add ‘SML_REQUESTORS_PROD’ in place of ‘DAO Requestor’ and put ‘a’ in this column</li>
-                                    <li class="ons-list__item">Save and attach this spreadsheet to the ServiceNow request and submit your request (filling out other mandatory fields as appropriate)</li>
-                                </ol>
-                <p>If you already have access to the BAW, and want access to the SML forms, the same instructions above apply. </p>
-
-                <p>Once you have been granted access to the SML forms on the BAW, login to the BAW here:
-                    {% from "components/external-link/_macro.njk" import onsExternalLink %}
-                        {{
-                            onsExternalLink({
-                            "url": 'https://www.bpm.ibmcloud.com/auth/index.jsp',
-                            "linkText": 'Log in to IBM Business Automation Workflow (BAW)'
-                            })
-                        }}
-                </p>
-                <p>Click on “Process Portal”. In the left-hand menu you will see “Create SML Method Request” - if you cannot see a menu on the left-hand side of the screen, click the three horizontal lines at the top left corner of the screen.</p>
-                <p>Click on "Create SML Method Request”, and fill out the information in this form to create the desired request.</p>
-                <p>
-                    Once you have filled out the form, you will need to complete a method specification. Please use the following
-                    <a href="https://officenationalstatistics.sharepoint.com/sites/MTHIT/SysDev/Forms/AllItems.aspx?id=%2Fsites%2FMTHIT%2FSysDev%2FStatistical%5FMethods%5FLibrary%2FCommunication%2FSML%20methodological%20specification%20template%2Emd&parent=%2Fsites%2FMTHIT%2FSysDev%2FStatistical%5FMethods%5FLibrary%2FCommunication&p=true&ga=1">
-                        method specification template
-                    </a>
-                     to help you do this.
-                </p>
             {% endcall %}
 
             {% call onsDetails({
