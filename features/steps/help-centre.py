@@ -69,8 +69,8 @@ def check_dropdown_title(context, text):
     )
     try:
         assert dropdown_content == text
-    except:
-        raise AssertionError(f"Expected: {text} \nActual: {dropdown_content}")
+    except AssertionError as exc:
+        raise AssertionError(f"Expected: {text} \nActual: {dropdown_content}") from exc
 
 
 @then('The subtitle of the help centre page is "{subtitle}"')
