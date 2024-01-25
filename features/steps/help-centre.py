@@ -69,7 +69,7 @@ def check_dropdown_title(context, text):
     )
     try:
         assert dropdown_content == text
-    except AssertionError:
+    except:
         raise AssertionError(f"Expected: {text} \nActual: {dropdown_content}")
 
 
