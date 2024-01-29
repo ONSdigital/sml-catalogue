@@ -175,7 +175,7 @@ resource "aws_sns_topic_subscription" "email_target" {
   topic_arn = aws_sns_topic.sns_topic.arn
   
   protocol  = "email"
-  endpoint  = "2a5d1c42.OfficeNationalStatistics.onmicrosoft.com@uk.teams.ms"
+  endpoint  = "SMLAdmin@ons.gov.uk"
 }
 
 output "cf_website_url" {
