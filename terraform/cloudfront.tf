@@ -136,7 +136,7 @@ resource "aws_route53_health_check" "sml" {
   type              = "HTTPS"
   port              = "443"
   resource_path     = "/"
-  failure_threshold = "5"
+  failure_threshold = "1"
   request_interval  = "30"
   tags = {
     Name = "sml-health-check"
