@@ -1,6 +1,5 @@
 <!--next-version-placeholder-->
 
-
 ## v1.1.0-rc.4 (2024-01-15)
 
 ### Fix
