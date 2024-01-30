@@ -131,7 +131,7 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
-resource "aws_health_check" "dev_sml" {
+resource "aws_route53_health_check" "dev_sml" {
   fqdn              = "dev-sml.aws.onsdigital.uk"
   type              = "HTTPS"
   port              = "443"
@@ -158,10 +158,10 @@ resource "aws_cloudwatch_metric_alarm" "dev_environment_alarm" {
   alarm_actions       = [aws_sns_topic.sns_topic.arn]
   treat_missing_data  = "breaching"
   dimensions = {
-      HealthCheckId = aws_health_check.dev_sml.id
+      HealthCheckId = aws_route53_health_check.dev_sml.id
    }
   depends_on = [
-     aws_health_check.dev_sml
+     aws_route53_health_check.dev_sml
     ]
 }
 
