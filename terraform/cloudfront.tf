@@ -143,7 +143,7 @@ resource "aws_health_check" "dev_sml" {
   }
 }
 
-resource "aws_cloudwatch_metric_alarm" "${var.environment}_environment_alarm" {
+resource "aws_cloudwatch_metric_alarm" "dev_environment_alarm" {
   provider            = aws.us_east_1
   alarm_name          = "${var.environment}_environment_alarm"
   comparison_operator = "LessThanOrEqualToThreshold"
