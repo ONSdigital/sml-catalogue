@@ -67,10 +67,8 @@ def check_dropdown_title(context, text):
     dropdown_content = (
         dropdown_content.replace("(opens in a new tab)", "").replace("\n", "").rstrip()
     )
-    try:
-        assert dropdown_content == text
-    except AssertionError as exc:
-        raise AssertionError(f"Expected: {text} \nActual: {dropdown_content}") from exc
+    assert dropdown_content == text
+    
 
 
 @then('The subtitle of the help centre page is "{subtitle}"')
