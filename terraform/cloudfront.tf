@@ -146,7 +146,7 @@ resource "aws_route53_health_check" "sml" {
 resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
   provider            = aws.us_east_1
   alarm_name          = "sml-route-53-health_check_alarm"
-  comparison_operator = "Lower"
+  comparison_operator = "LessThanOrEqualToThreshold"
   evaluation_periods  = 1
   metric_name         = "HealthCheckStatus"
   namespace           = "AWS/Route53"
