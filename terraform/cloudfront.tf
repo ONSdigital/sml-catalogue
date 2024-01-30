@@ -131,37 +131,37 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
-resource "aws_route53_health_check" "sml" {
+resource "aws_health_check" "dev_sml" {
   fqdn              = "dev-sml.aws.onsdigital.uk"
   type              = "HTTPS"
   port              = "443"
   resource_path     = "/"
-  failure_threshold = "1"
-  request_interval  = "30"
+  failure_threshold = "3"
+  request_interval  = "60"
   tags = {
-    Name = "sml-health-check"
+    Name = "dev_sml_health_check"
   }
 }
 
-resource "aws_cloudwatch_metric_alarm" "sml_healthcheck_alarm" {
+resource "aws_cloudwatch_metric_alarm" "${var.environment}_environment_alarm" {
   provider            = aws.us_east_1
-  alarm_name          = "sml-route-53-health_check_alarm"
+  alarm_name          = "${var.environment}_environment_alarm"
   comparison_operator = "LessThanOrEqualToThreshold"
   evaluation_periods  = 1
-  metric_name         = "HealthCheckStatus"
+  metric_name         = "health_check_status"
   namespace           = "AWS/Route53"
-  period              = 60
+  period              = 3000
   statistic           = "Minimum"
-  threshold           = 1
+  threshold           = 3
   alarm_description   = "Alarm for ${var.environment} environment has been triggered"
   actions_enabled     = "true"
   alarm_actions       = [aws_sns_topic.sns_topic.arn]
   treat_missing_data  = "breaching"
   dimensions = {
-      HealthCheckId = aws_route53_health_check.sml.id
+      HealthCheckId = aws_health_check.dev_sml.id
    }
   depends_on = [
-     aws_route53_health_check.sml
+     aws_health_check.dev_sml
     ]
 }
 
