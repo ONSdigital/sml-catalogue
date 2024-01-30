@@ -45,6 +45,16 @@
                             ]
                         })
                     }}
+                <p>If you would like to make a suggestion
+                    for a new method, or to provide feedback about an existing method, please do so by emailing
+                    {% from "components/external-link/_macro.njk" import onsExternalLink %}
+                            {{
+                                onsExternalLink({
+                                "url": 'mailto:smlhelp@ons.gov.uk',
+                                "linkText": 'smlhelp@ons.gov.uk'
+                                })
+                            }}.
+                </p>
             {% endcall %}
 
             {% call onsDetails({
@@ -61,20 +71,8 @@
                                 })
                             }}. 
                 </p>
-
-
             {% endcall %}
-                <br>
-                <p>If you would like to make a suggestion
-                    for a new method, or to provide feedback about an existing method, please do so by emailing
-                    {% from "components/external-link/_macro.njk" import onsExternalLink %}
-                            {{
-                                onsExternalLink({
-                                "url": 'mailto:smlhelp@ons.gov.uk',
-                                "linkText": 'smlhelp@ons.gov.uk'
-                                })
-                            }}.
-                </p>
+
 
 {%- endblock mainContent-%}
 {%- block sidebar -%}
