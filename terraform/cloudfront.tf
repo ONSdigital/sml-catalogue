@@ -121,6 +121,7 @@ resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
 resource "aws_lambda_function" "healthcheck" {
+  provider = aws.us_east_1
   function_name = "${var.environment}-healthcheck"
 
   s3_bucket = {
