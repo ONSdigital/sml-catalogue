@@ -2,7 +2,7 @@
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {% from "components/list/_macro.njk" import onsList %}
 {% from "components/details/_macro.njk" import onsDetails %}
-{%- set sidebarCols = 7 -%}
+{%- set sidebarCols = 8 -%}
 {%- set breadcrumbs = {
   "id":"breadcrumbs",
   "ariaLabel":"breadcrumbs",
@@ -114,7 +114,7 @@
             {% endcall %}
 {%- endblock mainContent-%}
 {%- block sidebar -%}
-<div class="ons-grid__col ons-col-5@m ons-u-mt-l ons-u-mb-l ons-related-content ons-push-1@m">
+<div class="ons-grid__col ons-col-4@m ons-u-mt-l ons-u-mb-l ons-related-content ons-push-1@m">
 {%- block sidebarContent -%}
         {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
         {{
