@@ -120,6 +120,27 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
 resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
+module "lambda_function" {
+
+  function_name = "healthcheck_lambda"
+  description   = "Lambda function to check if SML Portal is healthy"
+  handler       = "index.lambda_handler"
+  runtime       = "python3.10"
+
+  source_path = "./dns"
+
+  s3_bucket = {
+    domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
+    hosted_zone_id = aws_cloudfront_distribution.sml-catalogue.hosted_zone_id
+  }
+
+  domain_name_base = local.domain_name_base[var.environment]
+
+  tags = {
+    Name = "healthcheck_lambda"
+  }
+}
+
 module "route53" {
   source = "./dns"
   count  = terraform.workspace == "main" ? 1 : 0
