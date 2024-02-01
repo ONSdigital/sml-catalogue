@@ -158,6 +158,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "lambda:TagResource",
                 "iam:PassRole",
                 "iam:DeleteRole",
+				        "sts:AssumeRole"
                 "cloudwatch:DeleteAlarms",
                 "cloudwatch:DescribeAlarms",
                 "cloudwatch:PutMetricAlarm",
