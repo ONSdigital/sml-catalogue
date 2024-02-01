@@ -120,11 +120,17 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
 resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
+data "archive_file" "zip_the_python_lambdas" {
+type        = "zip"
+source_dir  = "./lambda_functions/python"
+output_path = "./lambda_functions/zip/lambda_functions.zip"
+}
+
 resource "aws_lambda_function" "healthcheck" {
   provider = aws.us_east_1
   function_name = "${var.environment}-healthcheck"
 
-  filename = "./dns/handler.py"
+  filename = "./lambda_functions/lambda_healthcheck.zip"
 
   handler = "index.handler"
   runtime = "python3.10"
