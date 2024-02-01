@@ -145,7 +145,7 @@ resource "aws_iam_role" "lambda_healthcheck" {
 
 resource "aws_lambda_function" "healthcheck" {
   provider = aws.us_east_1
-  role = "${aws_iam_role.lambda_healthcheck}"
+  role = aws_iam_role.lambda_healthcheck.arn
 
   function_name = "${var.environment}-healthcheck"
 
