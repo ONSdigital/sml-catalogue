@@ -153,11 +153,18 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "lambda:ListFunctions",
                 "lambda:ListLayers",
                 "lambda:CreateFunction",
+                "lambda:GetFunction",
+                "lambda:DeleteFunction",
+                "lambda:ListVersionsByFunction",
                 "lambda:DeleteFunction",
                 "lambda:UpdateFunctionCode",
-                "lambda:TagResource",
+                "lambda:TagResource",lambda:GetFunctionCodeSigningConfig
                 "iam:PassRole",
                 "iam:DeleteRole",
+				        "iam:GetRole",
+                "iam:ListRolePolicies",
+                "iam:ListAttachedRolePolicies",lambda:GetFunctionCodeSigningConfig
+                "iam:ListInstanceProfilesForRole",
 				        "sts:AssumeRole"
                 "cloudwatch:DeleteAlarms",
                 "cloudwatch:DescribeAlarms",

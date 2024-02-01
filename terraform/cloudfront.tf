@@ -123,7 +123,7 @@ resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 data "archive_file" "zip_the_python_lambdas" {
 type        = "zip"
 source_file  = "./lambda_functions/healthcheck/healthcheck.py"
-output_path = "./lambda_functions/healthcheck.zip"
+output_path = "./lambda_functions/healthcheck/healthcheck.zip"
 }
 
 data "aws_iam_policy_document" "lambda_assume_role" {
@@ -144,17 +144,17 @@ resource "aws_iam_role" "lambda_healthcheck" {
 }
 
 resource "aws_lambda_function" "healthcheck" {
-  provider = aws.us_east_1
-  role = aws_iam_role.lambda_healthcheck.arn
+  provider      = aws.us_east_1
+  role          = aws_iam_role.lambda_healthcheck.arn
 
   function_name = "${var.environment}-healthcheck"
 
-  filename = "./lambda_functions/healthcheck.zip"
+  filename      = "./lambda_functions/healthcheck.zip"
 
-  handler = "index.handler"
-  runtime = "python3.10"
-  timeout     = 10
-  memory_size = 512
+  handler       = "index.handler"
+  runtime       = "python3.10"
+  timeout       = 10
+  memory_size   = 512
 
   environment {
     variables = {
