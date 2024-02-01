@@ -126,11 +126,26 @@ source_file  = "./lambda_functions/healthcheck/healthcheck.py"
 output_path = "./lambda_functions/healthcheck.zip"
 }
 
+data "aws_iam_policy_document" "lambda_assume_role" {
+  statement {
+    effect  = "Allow"
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      identifiers = ["lambda.amazonaws.com"]
+      type        = "Service"
+    }
+  }
+}
+
+resource "aws_iam_role" "lambda_healthcheck" {
+  name               = "local.domain_name_base[var.environment]-healthcheck"
+  assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
+}
+
 resource "aws_lambda_function" "healthcheck" {
   provider = aws.us_east_1
-  role = assume_role {
-    role_arn = var.deployment_role
-  }
+  role = aws_iam_role.lambda_healthcheck
 
   function_name = "${var.environment}-healthcheck"
 
