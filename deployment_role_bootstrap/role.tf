@@ -134,7 +134,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                     "lambda:UpdateFunctionCode"
                 ],
                 "Resource": [
-                    "*"
+                    "arn:aws:lambda:us-east-1::function:dev-healthcheck"
                 ]
             },
             {
