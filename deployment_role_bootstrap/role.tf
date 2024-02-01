@@ -131,7 +131,9 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                     "lambda:ListLayers",
                     "lambda:CreateFunction",
                     "lambda:DeleteFunction",
-                    "lambda:UpdateFunctionCode"
+                    "lambda:UpdateFunctionCode",
+                    "lambda:TagResource",
+                    "iam:PassRole",
                 ],
                 "Resource": [
                     "arn:aws:lambda:us-east-1:115311790871:function:dev-healthcheck"
