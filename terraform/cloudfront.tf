@@ -124,12 +124,9 @@ resource "aws_lambda_function" "healthcheck" {
   provider = aws.us_east_1
   function_name = "${var.environment}-healthcheck"
 
-  s3_bucket = {
-    domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
-    hosted_zone_id = aws_cloudfront_distribution.sml-catalogue.hosted_zone_id
-  }
+  filename = "./dns/handler.py"
 
-  handler = "./dns/handler.lambda_handler"
+  handler = "index.handler"
   runtime = "python3.10"
 
   timeout     = 10
