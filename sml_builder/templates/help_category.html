@@ -46,7 +46,7 @@
     {% endif %}
 {%- endblock mainContent-%}
 {%- block sidebar -%}
-<div class="ons-grid__col ons-col-5@m ons-u-mt-l ons-u-mb-l ons-related-content ons-push-1@m">
+<div class="ons-grid__col ons-col-{{ 12 - pageConfig.sidebarColNumber -1}}@m ons-u-mt-l ons-u-mb-l ons-related-content ons-push-1@m">
 {% block sidebarContent %} 
 {% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
 {{
