@@ -124,6 +124,19 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 ]
             },
             {
+                "Sid": "AllowLambdaAccess",
+                "Effect": "Allow",
+                "Action": [
+                    "lambda:ListFunctions",
+                    "lambda:CreateFunction",
+                    "lambda:DeleteFunction",
+                    "lambda:UpdateFunctionCode"
+                ],
+                "Resource": [
+                    "*"
+                ]
+            },
+            {
             "Sid": "AllowRoute53PlusACM",
             "Effect": "Allow",
             "Action": [
