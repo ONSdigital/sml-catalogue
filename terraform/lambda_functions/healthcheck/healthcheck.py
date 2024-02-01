@@ -4,9 +4,11 @@ import requests
 # title text and returns the expected status code. 
 def lambda_handler(event, context):
     url = 'https://dev-sml.aws.onsdigital.uk/'
+    timeout = 5
     
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=timeout)
+
 
         verify_text = 'An open source library for statistical code approved by the ONS'
         if verify_text in response.text:
