@@ -124,23 +124,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 ]
             },
             {
-                "Sid": "AllowLambdaAccess",
-                "Effect": "Allow",
-                "Action": [
-                    "lambda:ListFunctions",
-                    "lambda:ListLayers",
-                    "lambda:CreateFunction",
-                    "lambda:DeleteFunction",
-                    "lambda:UpdateFunctionCode",
-                    "lambda:TagResource",
-                    "iam:PassRole",
-                ],
-                "Resource": [
-                    "arn:aws:lambda:us-east-1:115311790871:function:dev-healthcheck"
-                ]
-            },
-            {
-            "Sid": "AllowRoute53PlusACM",
+            "Sid": "AllowRoute53PlusRelated",
             "Effect": "Allow",
             "Action": [
                 "route53:ListTagsForResources",
@@ -166,6 +150,14 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "sns:Subscribe",
                 "sns:Unsubscribe",
                 "sns:GetSubscriptionAttributes",
+                "lambda:ListFunctions",
+                "lambda:ListLayers",
+                "lambda:CreateFunction",
+                "lambda:DeleteFunction",
+                "lambda:UpdateFunctionCode",
+                "lambda:TagResource",
+                "iam:PassRole",
+                "iam:DeleteRole",
                 "cloudwatch:DeleteAlarms",
                 "cloudwatch:DescribeAlarms",
                 "cloudwatch:PutMetricAlarm",
