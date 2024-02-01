@@ -120,23 +120,48 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
 resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
+data "aws_iam_policy_document" "assume_role" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["lambda.amazonaws.com"]
+    }
+
+    actions = ["sts:AssumeRole"]
+  }
+}
+
+resource "aws_iam_role" "iam_for_lambda" {
+  name               = "iam_for_lambda"
+  assume_role_policy = data.aws_iam_policy_document.assume_role.json
+}
+
 data "archive_file" "zip_the_python_lambdas" {
 type        = "zip"
-source_dir  = "./lambda_functions/python"
-output_path = "./lambda_functions/zip/lambda_functions.zip"
+source_file  = "./lambda_functions/healthcheck/healthcheck.py"
+output_path = "./lambda_functions/healthcheck.zip"
 }
 
 resource "aws_lambda_function" "healthcheck" {
   provider = aws.us_east_1
   function_name = "${var.environment}-healthcheck"
 
-  filename = "./lambda_functions/lambda_healthcheck.zip"
+  filename = "./lambda_functions/healthcheck.zip"
+
+  role          = aws_iam_role.iam_for_lambda.arn
 
   handler = "index.handler"
   runtime = "python3.10"
 
   timeout     = 10
   memory_size = 512
+
+  environment {
+  variables = {
+    dev = "https://dev-sml.aws.onsdigital.uk/"
+  }
 
   tags = {
     Name = "${var.environment}_sml_lambda_health_check"
