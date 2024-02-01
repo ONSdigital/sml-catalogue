@@ -128,6 +128,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "Effect": "Allow",
                 "Action": [
                     "lambda:ListFunctions",
+                    "lambda:ListLayers",
                     "lambda:CreateFunction",
                     "lambda:DeleteFunction",
                     "lambda:UpdateFunctionCode"
