@@ -135,14 +135,18 @@ resource "aws_lambda_function" "healthcheck" {
   handler = "index.handler"
   runtime = "python3.10"
 
-  role = "arn:aws:iam::115311790871:role/spp-concourse-sml-deployment-dev"
+  role = assume_role {
+    role_arn = var.deployment_role
+  }
 
   timeout     = 10
   memory_size = 512
 
   environment {
     variables = {
-      dev = "https://dev-sml.aws.onsdigital.uk/"
+      dev = "local.domain_name_base[dev]",
+      preprod = "local.domain_name_base[dev]",
+      prod = "local.domain_name_base[prod]",
     }
   }
 
@@ -162,8 +166,8 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
-resource "aws_route53_health_check" "dev_sml" {
-  fqdn              = "dev-sml.aws.onsdigital.uk"
+resource "aws_route53_health_check" "sml" {
+  fqdn              = "${local.domain_name_base[var.environment]}"
   type              = "HTTPS"
   port              = "443"
   resource_path     = "/"
@@ -174,7 +178,7 @@ resource "aws_route53_health_check" "dev_sml" {
   }
 }
 
-resource "aws_cloudwatch_metric_alarm" "dev_environment_health_check_alarm" {
+resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
   provider            = aws.us_east_1
   alarm_name          = "${var.environment}_environment_alarm"
   comparison_operator = "LessThanOrEqualToThreshold"
@@ -189,10 +193,10 @@ resource "aws_cloudwatch_metric_alarm" "dev_environment_health_check_alarm" {
   alarm_actions       = [aws_sns_topic.sns_topic.arn]
   treat_missing_data  = "breaching"
   dimensions = {
-      HealthCheckId = aws_route53_health_check.dev_sml.id
+      HealthCheckId = aws_route53_health_check.sml.id
    }
   depends_on = [
-     aws_route53_health_check.dev_sml
+     aws_route53_health_check.sml
     ]
 }
 
