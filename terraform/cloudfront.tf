@@ -128,20 +128,16 @@ output_path = "./lambda_functions/healthcheck.zip"
 
 resource "aws_lambda_function" "healthcheck" {
   provider = aws.us_east_1
+  role = assume_role {
+    role_arn = var.deployment_role
+  }
+
   function_name = "${var.environment}-healthcheck"
 
   filename = "./lambda_functions/healthcheck.zip"
 
   handler = "index.handler"
   runtime = "python3.10"
-
-  role = assume_role {
-
-    role_arn = var.deployment_role
-    
-  }
-
-
   timeout     = 10
   memory_size = 512
 
@@ -156,6 +152,7 @@ resource "aws_lambda_function" "healthcheck" {
   tags = {
     Name = "${var.environment}_sml_lambda_health_check"
   }
+  
 }
 
 module "route53" {
