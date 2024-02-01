@@ -137,6 +137,7 @@ resource "aws_lambda_function" "healthcheck" {
 
   role_arn = arn:aws:iam::115311790871:role/spp-concourse-sml-deployment-dev
 
+  
   timeout     = 10
   memory_size = 512
 
