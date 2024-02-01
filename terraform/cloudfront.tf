@@ -136,8 +136,11 @@ resource "aws_lambda_function" "healthcheck" {
   runtime = "python3.10"
 
   role = assume_role {
+
     role_arn = var.deployment_role
+    
   }
+
 
   timeout     = 10
   memory_size = 512
