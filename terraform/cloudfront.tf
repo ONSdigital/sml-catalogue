@@ -202,11 +202,13 @@ module "route53" {
 
 resource "aws_route53_health_check" "sml" {
   fqdn              = arn:aws:lambda:eu-west-2:115311790871:function:dev-healthcheck
+
   type              = "HTTPS"
   port              = "443"
   resource_path     = "/"
   failure_threshold = "3"
   request_interval  = "30"
+  
   tags = {
     Name = "${var.environment}_sml_health_check"
   }
