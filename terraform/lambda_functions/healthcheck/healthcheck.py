@@ -1,8 +1,9 @@
+import os
 import requests # isort:skip
 
 def check_website_status(urls):
     timeout = 5
-    
+
     for url in urls:
 
         try:
@@ -18,9 +19,9 @@ def check_website_status(urls):
         
     return True
 
-def lambda_handler(event, context):
+def lambda_handler(event, context,):
     
-    websites = ['https://dev-sml.aws.onsdigital.uk', 'https://preprod-sml.aws.onsdigital.uk', 'https://statisticalmethodslibrary.ons.gov.uk']
+    websites = os.environ.get("site")
     
     result = check_website_status(websites)
 

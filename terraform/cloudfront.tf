@@ -159,9 +159,7 @@ resource "aws_lambda_function" "healthcheck" {
 
   environment {
     variables = {
-      dev = "local.domain_name_base[dev]",
-      preprod = "local.domain_name_base[dev]",
-      prod = "local.domain_name_base[prod]",
+      site = "local.domain_name_base[var.environment]",
     }
   }
 
