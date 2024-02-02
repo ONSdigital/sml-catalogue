@@ -158,7 +158,9 @@ resource "aws_lambda_function" "healthcheck" {
   memory_size   = 512
 
   environment {
+    variables = {
       site = local.domain_name_base[var.environment]
+    }
   }
 
   tags = {
