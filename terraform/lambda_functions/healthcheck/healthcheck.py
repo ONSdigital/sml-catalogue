@@ -9,6 +9,8 @@ def check_website_status(urls):
         try:
             response = requests.get(url, timeout=timeout)
 
+            print(url, response.text)
+
             if response.status_code != 200:
                 print(f"Url: {url} has a {response.status_code} status code")
                 return False
