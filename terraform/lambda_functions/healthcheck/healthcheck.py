@@ -1,4 +1,4 @@
-import os
+import os # isort:skip
 import requests # isort:skip
 
 def check_website_status(urls):
