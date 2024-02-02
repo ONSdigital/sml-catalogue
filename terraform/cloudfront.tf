@@ -150,8 +150,7 @@ resource "aws_lambda_function" "healthcheck" {
   function_name = "${var.environment}-healthcheck"
 
   filename      = "./lambda_functions/healthcheck.zip"
-
-  handler       = "index.handler"
+  
   runtime       = "python3.10"
   timeout       = 10
   memory_size   = 512
