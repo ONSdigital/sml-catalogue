@@ -1,32 +1,24 @@
-import requests # isort:skip
+import requests
 
-# Lambda function to check if specified site has the main
-# title text and returns the expected status code. 
-def lambda_handler(event, context):
-    urls_to_check = ['https://dev-sml.aws.onsdigital.uk/', 'https://preprod-sml.aws.onsdigital.uk/', 'https://statisticalmethodslibrary.ons.gov.uk/']
-    timeout = 5
-    
-    for url in urls_to_check:
+def check_website_status(urls):
+    for url in urls:
+
         try:
-            response = requests.get(url, timeout=timeout)
+            response = requests.get(url)
+            print(response, url)
+            if response.status_code != 200:
+                print(f"Url: {url} has a {response.status_code} status code")
+                return False
+        except Exception as e:
+            print(f"Error accessing {url}: {str(e)}")
+            return False
+        
+    return True
 
-
-            verify_text = 'An open source library for statistical code approved by the ONS'
-            if verify_text in response.text:
-                result = {
-                    'statusCode': response.status_code,
-                    'body': f'"{url}" is healthy'
-                }
-            else:
-                result = {
-                    'statusCode': response.status_code,
-                    'body': f'"{url}" is not healthy'
-                }
-
-        except requests.RequestException as e:
-            result = {
-                'statusCode': 500,
-                'body': f'Request error: {str(e)}'
-            }
+def lambda_handler(event, context):
+    
+    websites = ['https://dev-sml.aws.onsdigital.uk', 'https://preprod-sml.aws.onsdigital.uk', 'https://statisticalmethodslibrary.ons.gov.uk']
+    
+    result = check_website_status(websites)
 
     return result
