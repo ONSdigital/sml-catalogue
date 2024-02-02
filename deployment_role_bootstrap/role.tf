@@ -158,6 +158,9 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "lambda:ListVersionsByFunction",
                 "lambda:DeleteFunction",
                 "lambda:UpdateFunctionCode",
+				        "lambda:AddPermission",
+				        "lambda:GetPolicy",
+                "lambda:RemovePermission",
                 "lambda:UpdateFunctionConfiguration",
                 "lambda:TagResource",lambda:GetFunctionCodeSigningConfig
                 "iam:PassRole",
@@ -166,7 +169,17 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "iam:ListRolePolicies",
                 "iam:ListAttachedRolePolicies",lambda:GetFunctionCodeSigningConfig
                 "iam:ListInstanceProfilesForRole",
-				        "sts:AssumeRole"
+				        "sts:AssumeRole",
+                "events:PutRule",
+                "events:DescribeRule",
+                "events:DeleteRule",
+                "events:ListRules",
+                "events:ListRuleNamesByTarget",
+                "events:ListTagsForResource",
+                "events:PutTargets",
+                "lambda:GetPolicy",
+                "events:ListTargetsByRule",
+                "events:RemoveTargets"
                 "cloudwatch:DeleteAlarms",
                 "cloudwatch:DescribeAlarms",
                 "cloudwatch:PutMetricAlarm",
