@@ -159,7 +159,7 @@ resource "aws_lambda_function" "healthcheck" {
 
   environment {
     variables = {
-      site = local.domain_name_base[var.environment]
+      "site" = local.domain_name_base[var.environment]
     }
   }
 
