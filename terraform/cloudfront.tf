@@ -151,7 +151,7 @@ resource "aws_lambda_function" "healthcheck" {
 
   filename      = "./lambda_functions/healthcheck.zip"
 
-  handler       = "healthcheck.handler"
+  handler       = "handler"
 
   runtime       = "python3.10"
   timeout       = 10

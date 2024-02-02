@@ -158,6 +158,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "lambda:ListVersionsByFunction",
                 "lambda:DeleteFunction",
                 "lambda:UpdateFunctionCode",
+                "lambda:UpdateFunctionConfiguration",
                 "lambda:TagResource",lambda:GetFunctionCodeSigningConfig
                 "iam:PassRole",
                 "iam:DeleteRole",
