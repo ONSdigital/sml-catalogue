@@ -1,30 +1,35 @@
 import os # isort:skip
 import requests # isort:skip
+from bs4 import BeautifulSoup # isort:skip
 
-def check_website_status(urls):
+def check_website_status(site):
     timeout = 5
 
-    for url in urls:
+    try:
+        response = requests.get(site, timeout=timeout)
 
-        try:
-            response = requests.get(url, timeout=timeout)
+        # Parse the HTML content of the page
+        soup = BeautifulSoup(response.text, 'html.parser')
 
-            print(url, response.text)
+        # Extract the title of the page
+        title = soup.title.text.strip()
 
-            if response.status_code != 200:
-                print(f"Url: {url} has a {response.status_code} status code")
-                return False
-            
-        except Exception as e:
-            print(f"Error accessing {url}: {str(e)}")
+        print(title)
+
+        if response.status_code != 200:
+            print(f"site: {site} has a {response.status_code} status code")
             return False
+        
+    except Exception as e:
+        print(f"Error accessing {site}: {str(e)}")
+        return False
         
     return True
 
 def lambda_handler(event, context,):
     
-    websites = os.environ.get("site")
+    site = f"https://{os.environ.get('site')}"
     
-    result = check_website_status(websites)
+    result = check_website_status(site)
 
     return result
