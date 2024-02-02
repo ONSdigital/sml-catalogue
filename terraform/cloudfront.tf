@@ -120,6 +120,26 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
 resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
+resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
+    name = "${local.domain_name_base[var.environment]}-healthcheck-trigger"
+    description = "Fires the healthcheck lambda function every five minutes"
+    schedule_expression = "rate(5 minutes)"
+}
+
+resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
+    rule = "${aws_cloudwatch_event_rule.trigger_healthcheck.name}"
+    target_id = "check_sml_site"
+    arn = "${aws_lambda_function.healthcheck.arn}"
+}
+
+resource "aws_lambda_permission" "allow_cloudwatch_to_call_healthcheck" {
+    statement_id = "AllowExecutionFromCloudWatch"
+    action = "lambda:InvokeFunction"
+    function_name = "${aws_lambda_function.healthcheck.function_name}"
+    principal = "events.amazonaws.com"
+    source_arn = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
+}
+
 data "archive_file" "zip_the_python_lambdas" {
 type        = "zip"
 source_file  = "./lambda_functions/healthcheck/healthcheck.py"
