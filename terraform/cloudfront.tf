@@ -144,12 +144,12 @@ resource "aws_iam_role" "lambda_healthcheck" {
 }
 
 resource "aws_lambda_function" "healthcheck" {
-  provider      = aws.us_east_1
+  provider      = aws.eu-west-2
   role          = aws_iam_role.lambda_healthcheck.arn
 
   function_name = "${var.environment}-healthcheck"
 
-  filename      = "./lambda_functions/healthcheck.zip"
+  filename      = "./lambda_functions/healthcheck/healthcheck.zip"
 
   handler       = "healthcheck.lambda_handler"
 
