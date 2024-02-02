@@ -1,10 +1,12 @@
 import requests # isort:skip
 
 def check_website_status(urls):
+    timeout = 5
+    
     for url in urls:
 
         try:
-            response = requests.get(url)
+            response = requests.get(url, timeout=timeout)
 
             if response.status_code != 200:
                 print(f"Url: {url} has a {response.status_code} status code")
