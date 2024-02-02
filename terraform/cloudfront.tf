@@ -201,14 +201,14 @@ module "route53" {
 }
 
 resource "aws_route53_health_check" "sml" {
-  fqdn              = arn:aws:lambda:eu-west-2:115311790871:function:dev-healthcheck
+  fqdn              = "${local.domain_name_base[var.environment]}"
 
   type              = "HTTPS"
   port              = "443"
   resource_path     = "/"
   failure_threshold = "3"
   request_interval  = "30"
-  
+
   tags = {
     Name = "${var.environment}_sml_health_check"
   }
@@ -229,10 +229,10 @@ resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
   alarm_actions       = [aws_sns_topic.sns_topic.arn]
   treat_missing_data  = "breaching"
   dimensions = {
-      HealthCheckId = aws_route53_health_check.sml.id
+      HealthCheckId = aws_lambda_function.healthcheck.id
    }
   depends_on = [
-     aws_route53_health_check.sml
+     aws_lambda_function.healthcheck
     ]
 }
 
