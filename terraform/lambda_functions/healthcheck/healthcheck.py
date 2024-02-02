@@ -1,4 +1,4 @@
-import requests
+import requests # isort:skip
 
 def check_website_status(urls):
     for url in urls:

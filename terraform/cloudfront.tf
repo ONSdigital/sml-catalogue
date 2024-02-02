@@ -153,7 +153,7 @@ resource "aws_lambda_function" "healthcheck" {
 
   handler       = "healthcheck.lambda_handler"
 
-  runtime       = "python3.7"
+  runtime       = "python3.9"
   timeout       = 10
   memory_size   = 512
 
