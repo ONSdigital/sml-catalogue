@@ -161,6 +161,12 @@ data "aws_iam_policy_document" "lambda_assume_role" {
       type        = "Service"
     }
   }
+  statement {
+    effect  = "Allow"
+    actions = ["logs:CreateLogStream", "logs:PutLogsEvents"]
+
+    Resource = "arn:aws:logs:*:*:*"
+  }
 }
 
 resource "aws_iam_role" "lambda_healthcheck" {
@@ -181,6 +187,8 @@ resource "aws_lambda_function" "healthcheck" {
   runtime       = "python3.7"
   timeout       = 10
   memory_size   = 512
+
+  depends_on = [aws_cloudwatch_log_group.healthcheck_lambda_log_group]
 
   environment {
     variables = {
