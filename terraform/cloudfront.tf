@@ -120,6 +120,14 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
 resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
+resource "aws_cloudwatch_log_group" "lambda_log_group" {
+  name              = "{local.domain_name_base[var.environment]}-${aws_lambda_function.healthcheck.function_name}-logs"
+  retention_in_days = 7
+  lifecycle {
+    prevent_destroy = false
+  }
+}
+
 resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
     name = "${local.domain_name_base[var.environment]}-healthcheck-trigger"
     description = "Fires the healthcheck lambda function every five minutes"
@@ -177,6 +185,8 @@ resource "aws_lambda_function" "healthcheck" {
   timeout       = 10
   memory_size   = 512
 
+  depends_on    = [aws_cloudwatch_log_group.lambda_log_group]
+
   environment {
     variables = {
       "site" = local.domain_name_base[var.environment]
@@ -202,13 +212,11 @@ module "route53" {
 
 resource "aws_route53_health_check" "sml" {
   fqdn              = "${local.domain_name_base[var.environment]}"
-
   type              = "HTTPS"
   port              = "443"
   resource_path     = "/"
   failure_threshold = "3"
   request_interval  = "30"
-
   tags = {
     Name = "${var.environment}_sml_health_check"
   }
@@ -229,10 +237,10 @@ resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
   alarm_actions       = [aws_sns_topic.sns_topic.arn]
   treat_missing_data  = "breaching"
   dimensions = {
-      HealthCheckId = aws_lambda_function.healthcheck.id
+      HealthCheckId = aws_route53_health_check.sml.id
    }
   depends_on = [
-     aws_lambda_function.healthcheck
+     aws_route53_health_check.sml
     ]
 }
 
