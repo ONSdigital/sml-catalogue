@@ -120,12 +120,9 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
 resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
-resource "aws_cloudwatch_log_group" "lambda_log_group" {
-  name              = "${local.domain_name_base[var.environment]}-${aws_lambda_function.healthcheck.function_name}-logs"
+resource "aws_cloudwatch_log_group" "healthcheck_lambda_log_group" {
+  name              = "${local.domain_name_base[var.environment]}-healthcheck-logs"
   retention_in_days = 7
-  lifecycle {
-    prevent_destroy = false
-  }
 }
 
 resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
@@ -184,8 +181,6 @@ resource "aws_lambda_function" "healthcheck" {
   runtime       = "python3.7"
   timeout       = 10
   memory_size   = 512
-
-  depends_on    = [aws_cloudwatch_log_group.lambda_log_group]
 
   environment {
     variables = {
