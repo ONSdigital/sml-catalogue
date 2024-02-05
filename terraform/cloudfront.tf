@@ -160,7 +160,7 @@ resource "aws_iam_policy" "lambda_healthcheck" {
 
 # This attaches the policy needed for logging to the lambda's IAM role. #3
 resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
-  role       = "${aws_iam_role.lambda_role.name}"
+  role       = "${aws_iam_role.lambda_healthcheck.name}"
   policy_arn = "${aws_iam_policy.lambda_healthcheck.arn}"
 }
 
@@ -219,7 +219,7 @@ resource "aws_lambda_function" "healthcheck" {
     Name = "${var.environment}_sml_lambda_health_check"
   }
 
-  depends_on = ["aws_cloudwatch_log_group.healthcheck_lambda_log_group"]
+  depends_on = [aws_cloudwatch_log_group.healthcheck_lambda_log_group]
   
 }
 
