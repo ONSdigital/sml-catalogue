@@ -186,6 +186,8 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "logs:PutLogEvents",
                 "logs:DescribeLogStreams",
                 "logs:CreateLogStream",
+                "logs:DeleteRetentionPolicy",
+                "logs:PutRetentionPolicy",
                 "logs:CreateLogGroup",
                 "logs:DeleteLogGroup",
                 "iam:DeletePolicy",
@@ -213,9 +215,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "acm:AddTagsToCertificate",
                 "acm:ListTagsForCertificate",
                 "acm:ListCertificates",
-                "acm:RenewCertificate",
-                "logs:DeleteRetentionPolicy",
-                "logs:PutRetentionPolicy"
+                "acm:RenewCertificate"
             ],
             "Resource": "*"
         }
