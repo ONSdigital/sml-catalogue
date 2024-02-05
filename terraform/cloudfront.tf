@@ -121,7 +121,7 @@ resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
 resource "aws_cloudwatch_log_group" "lambda_log_group" {
-  name              = "{local.domain_name_base[var.environment]}-${aws_lambda_function.healthcheck.function_name}-logs"
+  name              = "${local.domain_name_base[var.environment]}-${aws_lambda_function.healthcheck.function_name}-logs"
   retention_in_days = 7
   lifecycle {
     prevent_destroy = false
