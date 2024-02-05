@@ -10,10 +10,8 @@ def check_website_status(site):
         response = requests.get(site, timeout=timeout)
 
         if response.status_code != 200:
-            print(f"site: {site} has a {response.status_code} status code")
             return False
         elif expected_string not in response.text:
-            print(f"site: {site} does not contain expected content")
             return False
         
     except Exception as e:
@@ -27,5 +25,10 @@ def lambda_handler(event, context,):
     site = f"https://{os.environ.get('site')}"
     
     result = check_website_status(site)
+
+    if result:
+        print(f"site: {site} is live and working")
+    else:
+        print(f"site: {site} has an issue")
 
     return result
