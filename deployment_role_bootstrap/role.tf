@@ -169,6 +169,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
 				        "iam:GetRole",
                 "iam:ListRolePolicies",
                 "iam:ListAttachedRolePolicies",
+                "iam:CreatePolicy",
                 "lambda:GetFunctionCodeSigningConfig",
                 "iam:ListInstanceProfilesForRole",
 				        "logs:CreateLogStream",
