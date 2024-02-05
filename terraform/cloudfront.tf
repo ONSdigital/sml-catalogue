@@ -137,6 +137,33 @@ resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
     arn = "${aws_lambda_function.healthcheck.arn}"
 }
 
+data "aws_iam_policy_document" "lambda_healthcheck" {
+  statement {
+    actions = [
+      "logs:CreateLogGroup",
+      "logs:CreateLogStream",
+      "logs:PutLogEvents",
+    ]
+
+    resources = [
+      "arn:aws:logs:*:*:*",
+    ]
+  }
+}
+
+# This creates the policy needed for a lambda to log. #2
+resource "aws_iam_policy" "lambda_healthcheck" {
+  name   = "lambda-healthcheck-logging"
+  path   = "/"
+  policy = "${data.aws_iam_policy_document.lambda_healthcheck.json}"
+}
+
+# This attaches the policy needed for logging to the lambda's IAM role. #3
+resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
+  role       = "${aws_iam_role.lambda_role.name}"
+  policy_arn = "${aws_iam_policy.lambda_healthcheck.arn}"
+}
+
 resource "aws_lambda_permission" "allow_cloudwatch_to_call_healthcheck" {
     statement_id = "AllowExecutionFromCloudWatch"
     action = "lambda:InvokeFunction"
@@ -151,7 +178,7 @@ source_file  = "./lambda_functions/healthcheck/healthcheck.py"
 output_path = "./lambda_functions/healthcheck/healthcheck.zip"
 }
 
-data "aws_iam_policy_document" "lambda_assume_role" {
+data "aws_iam_policy_document" "lambda_role" {
   statement {
     effect  = "Allow"
     actions = ["sts:AssumeRole"]
@@ -165,7 +192,7 @@ data "aws_iam_policy_document" "lambda_assume_role" {
 
 resource "aws_iam_role" "lambda_healthcheck" {
   name               = "${local.domain_name_base[var.environment]}-healthcheck"
-  assume_role_policy = data.aws_iam_policy_document.lambda_assume_role.json
+  assume_role_policy = data.aws_iam_policy_document.lambda_role.json
 }
 
 resource "aws_lambda_function" "healthcheck" {
