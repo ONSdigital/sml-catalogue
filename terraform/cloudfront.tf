@@ -192,7 +192,7 @@ resource "aws_lambda_function" "healthcheck" {
     Name = "${var.environment}_sml_lambda_health_check"
   }
 
-  depends_on = [aws_cloudwatch_log_group.healthcheck_lambda_log_group]
+  depends_on = ["aws_cloudwatch_log_group.healthcheck_lambda_log_group"]
   
 }
 
