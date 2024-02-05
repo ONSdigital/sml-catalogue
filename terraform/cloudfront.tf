@@ -161,12 +161,6 @@ data "aws_iam_policy_document" "lambda_assume_role" {
       type        = "Service"
     }
   }
-  statement {
-    effect  = "Allow"
-    actions = ["logs:CreateLogStream", "logs:PutLogsEvents"]
-
-    Resource = "arn:aws:logs:*:*:*"
-  }
 }
 
 resource "aws_iam_role" "lambda_healthcheck" {
