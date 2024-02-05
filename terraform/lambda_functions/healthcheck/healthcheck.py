@@ -6,29 +6,22 @@ def check_website_status(site):
 
     expected_string = "An open source library for statistical code approved by the ONS"
 
-    try:
-        response = requests.get(site, timeout=timeout)
+    response = requests.get(site, timeout=timeout)
 
-        if response.status_code != 200:
-            return False
-        elif expected_string not in response.text:
-            return False
+    if response.status_code != 200:
+        raise ValueError(f"Error: Status code is {response.status_code}")
+    elif expected_string not in response.text:
+        raise ValueError(f"Error: Status code is {response.status_code} but text does not match expected string")
+    else:
+        return {
+        'statusCode': 200,
+        'body': 'Success'
+        }
         
-    except Exception as e:
-        print(f"Error accessing {site}: {str(e)}")
-        return False
-        
-    return True
-
 def lambda_handler(event, context,):
     
     site = f"https://{os.environ.get('site')}"
     
     result = check_website_status(site)
-
-    if result:
-        print(f"site: {site} is live and working")
-    else:
-        print(f"site: {site} has an issue")
 
     return result
