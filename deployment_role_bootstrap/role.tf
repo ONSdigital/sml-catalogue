@@ -162,16 +162,25 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
 				        "lambda:GetPolicy",
                 "lambda:RemovePermission",
                 "lambda:UpdateFunctionConfiguration",
-                "lambda:TagResource",lambda:GetFunctionCodeSigningConfig
+                "lambda:TagResource",
+                "lambda:GetFunctionCodeSigningConfig",
                 "iam:PassRole",
                 "iam:DeleteRole",
 				        "iam:GetRole",
                 "iam:ListRolePolicies",
-                "iam:ListAttachedRolePolicies",lambda:GetFunctionCodeSigningConfig
+                "iam:ListAttachedRolePolicies",
+                "lambda:GetFunctionCodeSigningConfig",
                 "iam:ListInstanceProfilesForRole",
 				        "logs:CreateLogStream",
                 "logs:PutLogEvents",
                 "logs:DescribeLogStreams",
+                "logs:PutLogEvents",
+                "logs:DescribeLogStreams",
+                "logs:CreateLogStream",
+                "logs:CreateLogGroup",
+                "logs:DeleteLogGroup",
+                "logs:DescribeLogGroups",
+                "logs:ListTagsLogGroup",
 				        "sts:AssumeRole",
                 "events:PutRule",
                 "events:DescribeRule",
@@ -194,7 +203,9 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "acm:AddTagsToCertificate",
                 "acm:ListTagsForCertificate",
                 "acm:ListCertificates",
-                "acm:RenewCertificate"
+                "acm:RenewCertificate",
+                "logs:DeleteRetentionPolicy",
+                "logs:PutRetentionPolicy"
             ],
             "Resource": "*"
         }

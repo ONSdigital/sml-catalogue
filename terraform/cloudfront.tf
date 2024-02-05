@@ -182,8 +182,6 @@ resource "aws_lambda_function" "healthcheck" {
   timeout       = 10
   memory_size   = 512
 
-  depends_on = [aws_cloudwatch_log_group.healthcheck_lambda_log_group]
-
   environment {
     variables = {
       "site" = local.domain_name_base[var.environment]
@@ -193,6 +191,8 @@ resource "aws_lambda_function" "healthcheck" {
   tags = {
     Name = "${var.environment}_sml_lambda_health_check"
   }
+
+  depends_on = [aws_cloudwatch_log_group.healthcheck_lambda_log_group]
   
 }
 
