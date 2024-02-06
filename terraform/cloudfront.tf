@@ -238,13 +238,15 @@ resource "aws_route53_health_check" "sml" {
   type                            = "CLOUDWATCH_METRIC"
   cloudwatch_alarm_name           = aws_cloudwatch_metric_alarm.environment_health_check_alarm.alarm_name
   cloudwatch_alarm_region         = "us-east-1"
-  insufficient_data_health_status = "Healthy"
+  insufficient_data_health_status = "Unhealthy"
+
+  depends_on = [aws_cloudwatch_metric_alarm.environment_health_check_alarm]
 }
 
 resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
   provider            = aws.us_east_1
   alarm_name          = "${var.environment}_environment_alarm"
-  comparison_operator = "LessThanOrEqualToThreshold"
+  comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1
   metric_name         = "health_check_status"
   namespace           = "AWS/Route53"
@@ -255,6 +257,12 @@ resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
   actions_enabled     = "true"
   alarm_actions       = [aws_sns_topic.sns_topic.arn]
   treat_missing_data  = "breaching"
+
+  dimensions = {
+    FunctionName = "${aws_lambda_function.healthcheck}"
+  }
+
+  depends_on = [aws_lambda_function.healthcheck]
 }
 
 resource "aws_sns_topic" "sns_topic" {
