@@ -191,7 +191,7 @@ data "aws_iam_policy_document" "lambda_assumed_role" {
 }
 
 resource "aws_iam_role" "lambda_healthcheck_role" {
-  name               = "${local.domain_name_base[var.environment]}-healthcheck"
+  name               = "${local.domain_name_base[var.environment]}-healthcheck-role"
   assume_role_policy = data.aws_iam_policy_document.lambda_assumed_role.json
 }
 
