@@ -270,12 +270,12 @@ resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
 }
 
 resource "aws_sns_topic" "sns_topic" {
-  provider = aws.eu-west-2
+  provider = aws.us-east-1
   name     = "smlPortalTopic"
 }
 
 resource "aws_sns_topic_subscription" "email_target" {
-  provider = aws.eu-west-2
+  provider = aws.us-east-1
   topic_arn = aws_sns_topic.sns_topic.arn
 
   protocol  = "email"
