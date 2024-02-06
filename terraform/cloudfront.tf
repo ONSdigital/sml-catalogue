@@ -236,7 +236,7 @@ module "route53" {
 resource "aws_route53_health_check" "sml" {
   type                            = "CLOUDWATCH_METRIC"
   cloudwatch_alarm_name           = aws_cloudwatch_metric_alarm.environment_health_check_alarm.alarm_name
-  cloudwatch_alarm_region         = "us-east-1
+  cloudwatch_alarm_region         = "us-east-1"
   insufficient_data_health_status = "Unhealthy"
 
   tags = {
