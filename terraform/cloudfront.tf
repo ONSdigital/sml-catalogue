@@ -235,7 +235,6 @@ module "route53" {
 }
 
 resource "aws_route53_health_check" "sml" {
-  name                            = "${var.environment}_environment"
   type                            = "CLOUDWATCH_METRIC"
   cloudwatch_alarm_name           = aws_cloudwatch_metric_alarm.environment_health_check_alarm.alarm_name
   cloudwatch_alarm_region         = "eu-west-2"
