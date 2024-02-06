@@ -236,7 +236,7 @@ module "route53" {
 resource "aws_route53_health_check" "sml" {
   type                            = "CLOUDWATCH_METRIC"
   cloudwatch_alarm_name           = aws_cloudwatch_metric_alarm.environment_health_check_alarm.alarm_name
-  cloudwatch_alarm_region         = "us-east-1"
+  cloudwatch_alarm_region         = "eu-west-2"
   insufficient_data_health_status = "Healthy"
 
   tags = {
@@ -252,7 +252,7 @@ resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
   evaluation_periods  = 1
   metric_name         = "Errors"
   namespace           = "AWS/Lambda"
-  period              = 3000
+  period              = 30
   statistic           = "Minimum"
   threshold           = 1
   alarm_description   = "Alarm for ${local.domain_name_base[var.environment]} has been triggered"
