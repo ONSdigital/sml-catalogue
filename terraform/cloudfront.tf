@@ -120,166 +120,18 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
 resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
-resource "aws_cloudwatch_log_group" "healthcheck_lambda_log_group" {
-  name              = "/aws/lambda/${local.domain_name_base[var.environment]}-healthcheck"
-  retention_in_days = 7
-}
-
-resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
-    name = "${local.domain_name_base[var.environment]}-healthcheck-trigger"
-    description = "Fires the healthcheck lambda function every five minutes"
-    schedule_expression = "rate(5 minutes)"
-}
-
-resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
-    rule = "${aws_cloudwatch_event_rule.trigger_healthcheck.name}"
-    target_id = "check_sml_site"
-    arn = "${aws_lambda_function.healthcheck.arn}"
-}
-
-data "aws_iam_policy_document" "lambda_healthcheck" {
-  statement {
-    actions = [
-      "logs:CreateLogGroup",
-      "logs:CreateLogStream",
-      "logs:PutLogEvents",
-    ]
-
-    resources = [
-      "arn:aws:logs:*:*:*",
-    ]
-  }
-}
-
-# This creates the policy needed for a lambda to log. #2
-resource "aws_iam_policy" "lambda_healthcheck" {
-  name   = "lambda-healthcheck-logging"
-  path   = "/"
-  policy = "${data.aws_iam_policy_document.lambda_healthcheck.json}"
-}
-
-# This attaches the policy needed for logging to the lambda's IAM role. #3
-resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
-  role       = "${aws_iam_role.lambda_healthcheck.name}"
-  policy_arn = "${aws_iam_policy.lambda_healthcheck.arn}"
-}
-
-resource "aws_lambda_permission" "allow_cloudwatch_to_call_healthcheck" {
-    statement_id = "AllowExecutionFromCloudWatch"
-    action = "lambda:InvokeFunction"
-    function_name = "${aws_lambda_function.healthcheck.function_name}"
-    principal = "events.amazonaws.com"
-    source_arn = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
-}
-
-data "archive_file" "zip_the_python_lambdas" {
-type        = "zip"
-source_file  = "./lambda_functions/healthcheck/healthcheck.py"
-output_path = "./lambda_functions/healthcheck/healthcheck.zip"
-}
-
-data "aws_iam_policy_document" "lambda_role" {
-  statement {
-    effect  = "Allow"
-    actions = ["sts:AssumeRole"]
-
-    principals {
-      identifiers = ["lambda.amazonaws.com"]
-      type        = "Service"
-    }
-  }
-}
-
-resource "aws_iam_role" "lambda_healthcheck" {
-  name               = "${local.domain_name_base[var.environment]}-healthcheck"
-  assume_role_policy = data.aws_iam_policy_document.lambda_role.json
-}
-
-resource "aws_lambda_function" "healthcheck" {
-  provider      = aws.eu_east_2
-  role          = aws_iam_role.lambda_healthcheck.arn
-
-  function_name = "${local.domain_name_base[var.environment]}-healthcheck"
-
-  filename      = "./lambda_functions/healthcheck/healthcheck.zip"
-
-  handler       = "healthcheck.lambda_handler"
-
-  runtime       = "python3.7"
-  timeout       = 10
-  memory_size   = 512
-
-  environment {
-    variables = {
-      "site" = local.domain_name_base[var.environment]
-    }
-  }
-
-  tags = {
-    Name = "${local.domain_name_base[var.environment]}_sml_lambda_health_check"
-  }
-
-  depends_on = [aws_cloudwatch_log_group.healthcheck_lambda_log_group]
-
-}
-
 module "route53" {
   source = "./dns"
   count  = terraform.workspace == "main" ? 1 : 0
+  providers = {
+    aws = aws.us_east_1
+  }
 
   s3_bucket = {
     domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
     hosted_zone_id = aws_cloudfront_distribution.sml-catalogue.hosted_zone_id
   }
   domain_name_base = local.domain_name_base[var.environment]
-}
-
-resource "aws_route53_health_check" "sml" {
-  type                            = "CLOUDWATCH_METRIC"
-  cloudwatch_alarm_name           = aws_cloudwatch_metric_alarm.environment_health_check_alarm.alarm_name
-  cloudwatch_alarm_region         = aws.us_west_1
-  insufficient_data_health_status = "Unhealthy"
-
-  tags = {
-    Name = "${local.domain_name_base[var.environment]}_environment"
-  }
-
-  depends_on = [aws_cloudwatch_metric_alarm.environment_health_check_alarm]
-}
-
-resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
-  provider            = aws.eu_east_2
-  alarm_name          = "${local.domain_name_base[var.environment]}_environment_alarm"
-  comparison_operator = "GreaterThanOrEqualToThreshold"
-  evaluation_periods  = 1
-  metric_name         = "Errors"
-  namespace           = "AWS/Lambda"
-  period              = 3000
-  statistic           = "Minimum"
-  threshold           = 3
-  alarm_description   = "Alarm for ${local.domain_name_base[var.environment]} has been triggered"
-  actions_enabled     = "true"
-  alarm_actions       = [aws_sns_topic.sns_topic.arn]
-  treat_missing_data  = "breaching"
-
-  dimensions = {
-    FunctionName = aws_lambda_function.healthcheck.function_name
-  }
-
-  depends_on = [aws_lambda_function.healthcheck]
-}
-
-resource "aws_sns_topic" "sns_topic" {
-  provider = aws.eu_east_2
-  name     = "smlPortalTopic"
-}
-
-resource "aws_sns_topic_subscription" "email_target" {
-  provider = aws.eu_east_2
-  topic_arn = aws_sns_topic.sns_topic.arn
-
-  protocol  = "email"
-  endpoint  = "james.morgan@ons.gov.uk"
 }
 
 output "cf_website_url" {
