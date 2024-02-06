@@ -120,7 +120,7 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
 resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
-resource "aws_cloudwatch_log_group" "healthcheck_lambda_log_group" {
+resource "aws_cloudwatch_log_group" "healthcheck" {
   name              = "/aws/lambda/${local.domain_name_base[var.environment]}-healthcheck"
   retention_in_days = 7
 }
@@ -137,7 +137,7 @@ resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
     arn = "${aws_lambda_function.healthcheck.arn}"
 }
 
-data "aws_iam_policy_document" "lambda_healthcheck_policy" {
+data "aws_iam_policy_document" "lambda_healthcheck" {
   statement {
     actions = [
       "logs:CreateLogGroup",
@@ -153,14 +153,14 @@ data "aws_iam_policy_document" "lambda_healthcheck_policy" {
 
 # This creates the policy needed for a lambda to log. #2
 resource "aws_iam_policy" "lambda_healthcheck" {
-  name   = "lambda-healthcheck-log"
+  name   = "lambda-healthcheck"
   path   = "/"
-  policy = "${data.aws_iam_policy_document.lambda_healthcheck_policy.json}"
+  policy = "${data.aws_iam_policy_document.lambda_healthcheck.json}"
 }
 
 # This attaches the policy needed for logging to the lambda's IAM role. #3
 resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
-  role       = "${aws_iam_role.lambda_healthcheck_role.name}"
+  role       = "${aws_iam_role.lambda.name}"
   policy_arn = "${aws_iam_policy.lambda_healthcheck.arn}"
 }
 
@@ -178,7 +178,7 @@ source_file  = "./lambda_functions/healthcheck/healthcheck.py"
 output_path = "./lambda_functions/healthcheck/healthcheck.zip"
 }
 
-data "aws_iam_policy_document" "lambda_assumed_role" {
+data "aws_iam_policy_document" "lambda" {
   statement {
     effect  = "Allow"
     actions = ["sts:AssumeRole"]
@@ -190,13 +190,13 @@ data "aws_iam_policy_document" "lambda_assumed_role" {
   }
 }
 
-resource "aws_iam_role" "lambda_healthcheck_role" {
-  name               = "${local.domain_name_base[var.environment]}-healthcheck-role"
-  assume_role_policy = data.aws_iam_policy_document.lambda_assumed_role.json
+resource "aws_iam_role" "lambda" {
+  name               = "${var.environment}-healthcheck"
+  assume_role_policy = data.aws_iam_policy_document.lambda.json
 }
 
 resource "aws_lambda_function" "healthcheck" {
-  role          = aws_iam_role.lambda_healthcheck_role.arn
+  role          = aws_iam_role.lambda.arn
 
   function_name = "${var.environment}-healthcheck"
 
@@ -218,7 +218,7 @@ resource "aws_lambda_function" "healthcheck" {
     Name = "${var.environment}_sml_lambda_health_check"
   }
 
-  depends_on = [aws_cloudwatch_log_group.healthcheck_lambda_log_group]
+  depends_on = [aws_cloudwatch_log_group.healthcheck]
 
 }
 
@@ -235,7 +235,7 @@ module "route53" {
 
 resource "aws_route53_health_check" "sml" {
   type                            = "CLOUDWATCH_METRIC"
-  cloudwatch_alarm_name           = aws_cloudwatch_metric_alarm.environment_health_check_alarm.alarm_name
+  cloudwatch_alarm_name           = aws_cloudwatch_metric_alarm.healthcheck.alarm_name
   cloudwatch_alarm_region         = "eu-west-2"
   insufficient_data_health_status = "Healthy"
 
@@ -243,10 +243,10 @@ resource "aws_route53_health_check" "sml" {
     Name = "${var.environment}_environment"
   }
 
-  depends_on = [aws_cloudwatch_metric_alarm.environment_health_check_alarm]
+  depends_on = [aws_cloudwatch_metric_alarm.healthcheck]
 }
 
-resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
+resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   alarm_name          = "${var.environment}_environment_alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1
