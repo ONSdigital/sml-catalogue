@@ -196,7 +196,6 @@ resource "aws_iam_role" "lambda_healthcheck" {
 }
 
 resource "aws_lambda_function" "healthcheck" {
-  provider      = eu-east-2
   role          = aws_iam_role.lambda_healthcheck.arn
 
   function_name = "${local.domain_name_base[var.environment]}-healthcheck"
@@ -248,7 +247,6 @@ resource "aws_route53_health_check" "sml" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
-  provider            = eu-east-2
   alarm_name          = "${local.domain_name_base[var.environment]}_environment_alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1
@@ -270,12 +268,10 @@ resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
 }
 
 resource "aws_sns_topic" "sns_topic" {
-  provider = eu-east-2
   name     = "smlPortalTopic"
 }
 
 resource "aws_sns_topic_subscription" "email_target" {
-  provider = eu-east-2
   topic_arn = aws_sns_topic.sns_topic.arn
 
   protocol  = "email"
