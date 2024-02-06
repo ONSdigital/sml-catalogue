@@ -121,7 +121,7 @@ resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
 resource "aws_cloudwatch_log_group" "healthcheck_lambda_log_group" {
-  name              = "/aws/lambda/${var.environment}-healthcheck"
+  name              = "/aws/lambda/${local.domain_name_base[var.environment]}-healthcheck"
   retention_in_days = 7
 }
 
@@ -199,7 +199,7 @@ resource "aws_lambda_function" "healthcheck" {
   provider      = aws.eu_east_2
   role          = aws_iam_role.lambda_healthcheck.arn
 
-  function_name = "${var.environment}-healthcheck"
+  function_name = "${local.domain_name_base[var.environment]}-healthcheck"
 
   filename      = "./lambda_functions/healthcheck/healthcheck.zip"
 
@@ -216,7 +216,7 @@ resource "aws_lambda_function" "healthcheck" {
   }
 
   tags = {
-    Name = "${var.environment}_sml_lambda_health_check"
+    Name = "${local.domain_name_base[var.environment]}_sml_lambda_health_check"
   }
 
   depends_on = [aws_cloudwatch_log_group.healthcheck_lambda_log_group]
@@ -241,7 +241,7 @@ resource "aws_route53_health_check" "sml" {
   insufficient_data_health_status = "Unhealthy"
 
   tags = {
-    Name = "${var.environment}_environment"
+    Name = "${local.domain_name_base[var.environment]}_environment"
   }
 
   depends_on = [aws_cloudwatch_metric_alarm.environment_health_check_alarm]
@@ -249,7 +249,7 @@ resource "aws_route53_health_check" "sml" {
 
 resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
   provider            = aws.eu_east_2
-  alarm_name          = "${var.environment}_environment_alarm"
+  alarm_name          = "${local.domain_name_base[var.environment]}_environment_alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1
   metric_name         = "Errors"
@@ -257,7 +257,7 @@ resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
   period              = 3000
   statistic           = "Minimum"
   threshold           = 3
-  alarm_description   = "Alarm for ${var.environment} environment has been triggered"
+  alarm_description   = "Alarm for ${local.domain_name_base[var.environment]} has been triggered"
   actions_enabled     = "true"
   alarm_actions       = [aws_sns_topic.sns_topic.arn]
   treat_missing_data  = "breaching"
