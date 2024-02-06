@@ -274,6 +274,13 @@ resource "aws_sns_topic" "sns_topic" {
   name     = "smlPortalTopic"
 }
 
+resource "aws_sns_topic_subscription" "email_target" {
+  provider = aws.eu-west-2
+  topic_arn = aws_sns_topic.sns_topic.arn
+
+  protocol  = "email"
+  endpoint  = "james.morgan@ons.gov.uk"
+}
 
 output "cf_website_url" {
   value = "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
