@@ -121,7 +121,7 @@ resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
 resource "aws_cloudwatch_log_group" "healthcheck" {
-  name              = "/aws/lambda/${local.domain_name_base[var.environment]}-healthcheck"
+  name              = "/aws/lambda/${var.environment}-healthcheck"
   retention_in_days = 7
 }
 
