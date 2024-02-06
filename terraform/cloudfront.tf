@@ -235,9 +235,10 @@ module "route53" {
 }
 
 resource "aws_route53_health_check" "sml" {
+  name                            = "${var.environment}_environment"
   type                            = "CLOUDWATCH_METRIC"
   cloudwatch_alarm_name           = aws_cloudwatch_metric_alarm.environment_health_check_alarm.alarm_name
-  cloudwatch_alarm_region         = "us-east-1"
+  cloudwatch_alarm_region         = "eu-west-2"
   insufficient_data_health_status = "Healthy"
 
   tags = {
@@ -270,12 +271,12 @@ resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
 }
 
 resource "aws_sns_topic" "sns_topic" {
-  provider = aws.us-east-1
+  provider = aws.eu-west-2
   name     = "smlPortalTopic"
 }
 
 resource "aws_sns_topic_subscription" "email_target" {
-  provider = aws.us-east-1
+  provider = aws.eu-west-2
   topic_arn = aws_sns_topic.sns_topic.arn
 
   protocol  = "email"
