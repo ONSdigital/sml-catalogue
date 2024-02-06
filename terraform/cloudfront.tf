@@ -160,7 +160,7 @@ resource "aws_iam_policy" "lambda_healthcheck" {
 
 # This attaches the policy needed for logging to the lambda's IAM role. #3
 resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
-  role       = "${aws_iam_role.lambda_healthcheck.name}"
+  role       = "${aws_iam_role.lambda_healthcheck_role.name}"
   policy_arn = "${aws_iam_policy.lambda_healthcheck.arn}"
 }
 
@@ -190,13 +190,13 @@ data "aws_iam_policy_document" "lambda_assumed_role" {
   }
 }
 
-resource "aws_iam_role" "lambda_healthcheck" {
+resource "aws_iam_role" "lambda_healthcheck_role" {
   name               = "${local.domain_name_base[var.environment]}-healthcheck"
   assume_role_policy = data.aws_iam_policy_document.lambda_assumed_role.json
 }
 
 resource "aws_lambda_function" "healthcheck" {
-  role          = aws_iam_role.lambda_healthcheck.arn
+  role          = aws_iam_role.lambda_healthcheck_role.arn
 
   function_name = "${var.environment}-healthcheck"
 
