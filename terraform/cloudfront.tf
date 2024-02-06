@@ -198,7 +198,7 @@ resource "aws_iam_role" "lambda_healthcheck" {
 resource "aws_lambda_function" "healthcheck" {
   role          = aws_iam_role.lambda_healthcheck.arn
 
-  function_name = "${local.domain_name_base[var.environment]}-healthcheck"
+  function_name = "${var.environment}-healthcheck"
 
   filename      = "./lambda_functions/healthcheck/healthcheck.zip"
 
