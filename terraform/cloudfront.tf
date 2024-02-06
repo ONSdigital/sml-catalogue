@@ -259,7 +259,7 @@ resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
   treat_missing_data  = "breaching"
 
   dimensions = {
-    FunctionName = "${aws_lambda_function.healthcheck}"
+    FunctionName = aws_lambda_function.healthcheck
   }
 
   depends_on = [aws_lambda_function.healthcheck]
