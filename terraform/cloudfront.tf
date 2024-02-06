@@ -215,7 +215,7 @@ resource "aws_lambda_function" "healthcheck" {
   }
 
   tags = {
-    Name = "${local.domain_name_base[var.environment]}_sml_lambda_health_check"
+    Name = "${var.environment}_sml_lambda_health_check"
   }
 
   depends_on = [aws_cloudwatch_log_group.healthcheck_lambda_log_group]
@@ -240,14 +240,14 @@ resource "aws_route53_health_check" "sml" {
   insufficient_data_health_status = "Unhealthy"
 
   tags = {
-    Name = "${local.domain_name_base[var.environment]}_environment"
+    Name = "${var.environment}_environment"
   }
 
   depends_on = [aws_cloudwatch_metric_alarm.environment_health_check_alarm]
 }
 
 resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
-  alarm_name          = "${local.domain_name_base[var.environment]}_environment_alarm"
+  alarm_name          = "${var.environment}_environment_alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1
   metric_name         = "Errors"
