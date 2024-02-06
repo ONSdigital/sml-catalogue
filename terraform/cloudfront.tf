@@ -252,8 +252,8 @@ resource "aws_cloudwatch_metric_alarm" "environment_health_check_alarm" {
   evaluation_periods  = 1
   metric_name         = "Errors"
   namespace           = "AWS/Lambda"
-  period              = 30
-  statistic           = "Minimum"
+  period              = 300
+  statistic           = "Average"
   threshold           = 1
   alarm_description   = "Alarm for ${local.domain_name_base[var.environment]} has been triggered"
   actions_enabled     = "true"
