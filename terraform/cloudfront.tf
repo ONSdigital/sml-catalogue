@@ -238,7 +238,7 @@ resource "aws_lambda_function" "alerter" {
 
   environment {
     variables = {
-      "site" = local.domain_name_base[var.environment]
+      "environment" = local.domain_name_base[var.environment]
     }
   }
 
