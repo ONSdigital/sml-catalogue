@@ -1,10 +1,8 @@
 import os # isort:skip
 import requests # isort:skip
 
-def check_website_status(site):
+def check_website_status(site, expected_string):
     timeout = 5
-
-    expected_string = "An open source library for statistical code approved by the ONS"
 
     response = requests.get(site, timeout=timeout)
 
