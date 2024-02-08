@@ -276,7 +276,7 @@ resource "aws_sns_topic_subscription" "email_target" {
   topic_arn = aws_sns_topic.sns_topic.arn
 
   protocol  = "email"
-  endpoint  = "james.morgan@ons.gov.uk"
+  endpoint  = "sml-portal-aaaahclejmurfpbexktb6cxlfm@uk-ons.org.slack.com"
 }
 
 output "cf_website_url" {
