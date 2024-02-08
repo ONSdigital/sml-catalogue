@@ -4,6 +4,8 @@ import requests # isort:skip
 def check_website_status(site, expected_string):
     timeout = 5
 
+    print("Url: ", site, "Expected text: ", expected_string)
+
     response = requests.get(site, timeout=timeout)
 
     if response.status_code != 200:
@@ -16,10 +18,12 @@ def check_website_status(site, expected_string):
         'body': 'Success'
         }
         
-def lambda_handler(event, context,):
+def lambda_handler(event, context):
     
     site = f"https://{os.environ.get('site')}"
+
+    expected_string = f"{os.environ.get('expected_string')}"
     
-    result = check_website_status(site)
+    result = check_website_status(site, expected_string)
 
     return result
