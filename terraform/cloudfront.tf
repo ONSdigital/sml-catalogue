@@ -223,6 +223,33 @@ resource "aws_lambda_function" "healthcheck" {
 
 }
 
+resource "aws_lambda_function" "alerter" {
+  role          = aws_iam_role.lambda.arn
+
+  function_name = "${var.environment}-alerter"
+
+  filename      = "./lambda_functions/alerter/alerter.zip"
+
+  handler       = "alerter.lambda_handler"
+
+  runtime       = "python3.7"
+  timeout       = 10
+  memory_size   = 512
+
+  environment {
+    variables = {
+      "site" = local.domain_name_base[var.environment]
+    }
+  }
+
+  tags = {
+    Name = "${var.environment}_sml_lambda_alerter"
+  }
+
+  depends_on = [aws_sns_topic.sns_topic]
+
+}
+
 module "route53" {
   source = "./dns"
   count  = terraform.workspace == "main" ? 1 : 0
@@ -272,11 +299,11 @@ resource "aws_sns_topic" "sns_topic" {
   name     = "smlPortalTopic"
 }
 
-resource "aws_sns_topic_subscription" "email_target" {
+resource "aws_sns_topic_subscription" "slack_target" {
   topic_arn = aws_sns_topic.sns_topic.arn
 
-  protocol  = "email"
-  endpoint  = "sml-portal-aaaahclejmurfpbexktb6cxlfm@uk-ons.org.slack.com"
+  protocol  = "lambda"
+  endpoint  = aws_lambda_function.alerter.arn
 }
 
 output "cf_website_url" {
