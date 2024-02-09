@@ -5,7 +5,7 @@ import requests # isort:skip
 def lambda_handler(event, context):
     timeout=5
     environment = f"https://{os.environ.get('environment')}"
-    slack_webhook_url = "https://hooks.slack.com/triggers/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"
+    slack_webhook_url = f"{os.environ.get('slack_webhook_url')}"
     alert_message = {
         "AlarmName": f"{environment} issue",
         "NewStateValue": "ALARM",

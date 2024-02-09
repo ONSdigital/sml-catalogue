@@ -245,7 +245,7 @@ resource "aws_lambda_function" "alerter" {
   environment {
     variables = {
       "environment" = local.domain_name_base[var.environment],
-      "slack_webhook_url" = ""
+      "slack_webhook_url" = "https://hooks.slack.com/triggers/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"
     }
   }
 
@@ -292,7 +292,7 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   threshold           = 1
   alarm_description   = "Alarm for ${local.domain_name_base[var.environment]} has been triggered"
   actions_enabled     = "true"
-  alarm_actions       = [aws_lambda_function.alerter.function_name]
+  alarm_actions       = [aws_lambda_function.alerter]
   treat_missing_data  = "breaching"
 
   dimensions = {
