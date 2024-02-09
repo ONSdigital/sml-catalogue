@@ -125,11 +125,6 @@ resource "aws_cloudwatch_log_group" "healthcheck" {
   retention_in_days = 7
 }
 
-resource "aws_cloudwatch_log_group" "alerter" {
-  name              = "/aws/lambda/${var.environment}-alerter"
-  retention_in_days = 7
-}
-
 resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
     name = "${local.domain_name_base[var.environment]}-healthcheck-trigger"
     description = "Fires the healthcheck lambda function every five minutes"
@@ -258,8 +253,6 @@ resource "aws_lambda_function" "alerter" {
     Name = "${var.environment}_sml_lambda_alerter"
   }
 
-  depends_on = [aws_cloudwatch_log_group.alerter]
-
 }
 
 module "route53" {
@@ -316,13 +309,6 @@ resource "aws_sns_topic_subscription" "email_target" {
 
   protocol  = "email"
   endpoint  = "SMLAdmin@ons.gov.uk"
-}
-
-resource "aws_sns_topic_subscription" "slack_target" {
-  topic_arn = aws_sns_topic.sns_topic.arn
-
-  protocol  = "lambda"
-  endpoint  = aws_lambda_function.alerter.arn
 }
 
 output "cf_website_url" {

@@ -166,6 +166,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "lambda:RemovePermission",
                 "lambda:UpdateFunctionConfiguration",
                 "lambda:TagResource",
+                "lambda:InvokeFunction",
                 "lambda:GetFunctionCodeSigningConfig",
                 "iam:PassRole",
                 "iam:DeleteRole",
