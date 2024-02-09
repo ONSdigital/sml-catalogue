@@ -253,6 +253,8 @@ resource "aws_lambda_function" "alerter" {
     Name = "${var.environment}_sml_lambda_alerter"
   }
 
+  depends_on = [aws_cloudwatch_metric_alarm.healthcheck]
+
 }
 
 module "route53" {
