@@ -137,7 +137,7 @@ resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
     arn = "${aws_lambda_function.healthcheck.arn}"
 }
 
-data "aws_iam_policy_document" "lambda_healthcheck" {
+data "aws_iam_policy_document" "lambda" {
   statement {
     actions = [
       "logs:CreateLogGroup",
@@ -155,14 +155,14 @@ data "aws_iam_policy_document" "lambda_healthcheck" {
 resource "aws_iam_policy" "lambda_healthcheck" {
   name   = "lambda-healthcheck"
   path   = "/"
-  policy = "${data.aws_iam_policy_document.lambda_healthcheck.json}"
+  policy = "${data.aws_iam_policy_document.lambda.json}"
 }
 
 # This creates the policy needed for a lambda to log. #2
 resource "aws_iam_policy" "lambda_alerter" {
   name   = "lambda-alerter"
   path   = "/"
-  policy = "${data.aws_iam_policy_document.lambda_alerter.json}"
+  policy = "${data.aws_iam_policy_document.lambda.json}"
 }
 
 # This attaches the policy needed for logging to the lambda's IAM role. #3
@@ -190,7 +190,6 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_alerter" {
     action = "lambda:InvokeFunction"
     function_name = "${aws_lambda_function.alerter.function_name}"
     principal = "events.amazonaws.com"
-    source_arn = "${aws_cloudwatch_event_rule.trigger_alerter.arn}"
 }
 
 data "archive_file" "zip_the_python_healthcheck_lambda" {
