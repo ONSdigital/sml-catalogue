@@ -275,7 +275,7 @@ resource "aws_sns_topic" "sns_topic" {
 resource "aws_sns_topic_subscription" "slack_target" {
   topic_arn = aws_sns_topic.sns_topic.arn
 
-  protocol  = "endpoint"
+  protocol  = "https"
   endpoint  = "https://hooks.slack.com/triggers/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"
 }
 
