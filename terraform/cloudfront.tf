@@ -178,12 +178,6 @@ source_file  = "./lambda_functions/healthcheck/healthcheck.py"
 output_path = "./lambda_functions/healthcheck/healthcheck.zip"
 }
 
-data "archive_file" "zip_the_python_alerter_lambda" {
-type        = "zip"
-source_file  = "./lambda_functions/alerter/alerter.py"
-output_path = "./lambda_functions/alerter/alerter.zip"
-}
-
 data "aws_iam_policy_document" "lambda" {
   statement {
     effect  = "Allow"
@@ -226,33 +220,6 @@ resource "aws_lambda_function" "healthcheck" {
   }
 
   depends_on = [aws_cloudwatch_log_group.healthcheck]
-
-}
-
-resource "aws_lambda_function" "alerter" {
-  role          = aws_iam_role.lambda.arn
-
-  function_name = "${var.environment}-alerter"
-
-  filename      = "./lambda_functions/alerter/alerter.zip"
-
-  handler       = "alerter.lambda_handler"
-
-  runtime       = "python3.7"
-  timeout       = 10
-  memory_size   = 512
-
-  environment {
-    variables = {
-      "environment" = local.domain_name_base[var.environment]
-    }
-  }
-
-  tags = {
-    Name = "${var.environment}_sml_lambda_alerter"
-  }
-
-  depends_on = [aws_sns_topic.sns_topic]
 
 }
 
@@ -308,8 +275,8 @@ resource "aws_sns_topic" "sns_topic" {
 resource "aws_sns_topic_subscription" "slack_target" {
   topic_arn = aws_sns_topic.sns_topic.arn
 
-  protocol  = "lambda"
-  endpoint  = aws_lambda_function.alerter.arn
+  protocol  = "endpoint"
+  endpoint  = "https://hooks.slack.com/triggers/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"
 }
 
 output "cf_website_url" {
