@@ -126,7 +126,7 @@ resource "aws_cloudwatch_log_group" "healthcheck" {
 }
 
 resource "aws_cloudwatch_log_group" "alerter" {
-  name              = "/aws/lambda/${var.environment}-healthcheck"
+  name              = "/aws/lambda/${var.environment}-alerter"
   retention_in_days = 7
 }
 
