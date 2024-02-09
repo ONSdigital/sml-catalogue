@@ -158,6 +158,13 @@ resource "aws_iam_policy" "lambda_healthcheck" {
   policy = "${data.aws_iam_policy_document.lambda_healthcheck.json}"
 }
 
+# This creates the policy needed for a lambda to log. #2
+resource "aws_iam_policy" "lambda_alerter" {
+  name   = "lambda-alerter"
+  path   = "/"
+  policy = "${data.aws_iam_policy_document.lambda_alerter.json}"
+}
+
 # This attaches the policy needed for logging to the lambda's IAM role. #3
 resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
   role       = "${aws_iam_role.lambda_healthcheck.name}"
@@ -176,6 +183,14 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_healthcheck" {
     function_name = "${aws_lambda_function.healthcheck.function_name}"
     principal = "events.amazonaws.com"
     source_arn = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
+}
+
+resource "aws_lambda_permission" "allow_cloudwatch_to_call_alerter" {
+    statement_id = "AllowExecutionFromCloudWatch"
+    action = "lambda:InvokeFunction"
+    function_name = "${aws_lambda_function.alerter.function_name}"
+    principal = "events.amazonaws.com"
+    source_arn = "${aws_cloudwatch_event_rule.trigger_alerter.arn}"
 }
 
 data "archive_file" "zip_the_python_healthcheck_lambda" {
