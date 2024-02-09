@@ -218,7 +218,19 @@ source_file  = "./lambda_functions/alerter/alerter.py"
 output_path = "./lambda_functions/alerter/alerter.zip"
 }
 
-data "aws_iam_policy_document" "lambda" {
+data "aws_iam_policy_document" "lambda_healthcheck" {
+  statement {
+    effect  = "Allow"
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      identifiers = ["lambda.amazonaws.com"]
+      type        = "Service"
+    }
+  }
+}
+
+data "aws_iam_policy_document" "lambda_alerter" {
   statement {
     effect  = "Allow"
     actions = ["sts:AssumeRole"]
@@ -232,12 +244,12 @@ data "aws_iam_policy_document" "lambda" {
 
 resource "aws_iam_role" "lambda_healthcheck" {
   name               = "${var.environment}-healthcheck"
-  assume_role_policy = data.aws_iam_policy_document.lambda.json
+  assume_role_policy = data.aws_iam_policy_document.lambda_healthcheck.json
 }
 
 resource "aws_iam_role" "lambda_alerter" {
-  name               = "${var.environment}-healthcheck"
-  assume_role_policy = data.aws_iam_policy_document.lambda.json
+  name               = "${var.environment}-alerter"
+  assume_role_policy = data.aws_iam_policy_document.lambda_alerter.json
 }
 
 resource "aws_lambda_function" "healthcheck" {
