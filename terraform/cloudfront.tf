@@ -304,11 +304,18 @@ resource "aws_sns_topic" "sns_topic" {
   name     = "smlPortalTopic"
 }
 
-resource "aws_sns_topic_subscription" "slack_target" {
+resource "aws_sns_topic_subscription" "email_target" {
   topic_arn = aws_sns_topic.sns_topic.arn
 
   protocol  = "email"
   endpoint  = "SMLAdmin@ons.gov.uk"
+}
+
+resource "aws_sns_topic_subscription" "slack_target" {
+  topic_arn = aws_sns_topic.sns_topic.arn
+
+  protocol  = "lambda"
+  endpoint  = aws_lambda_function.alerter.arn
 }
 
 output "cf_website_url" {
