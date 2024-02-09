@@ -125,6 +125,11 @@ resource "aws_cloudwatch_log_group" "healthcheck" {
   retention_in_days = 7
 }
 
+resource "aws_cloudwatch_log_group" "alerter" {
+  name              = "/aws/lambda/${var.environment}-healthcheck"
+  retention_in_days = 7
+}
+
 resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
     name = "${local.domain_name_base[var.environment]}-healthcheck-trigger"
     description = "Fires the healthcheck lambda function every five minutes"
@@ -252,6 +257,8 @@ resource "aws_lambda_function" "alerter" {
   tags = {
     Name = "${var.environment}_sml_lambda_alerter"
   }
+
+  depends_on = [aws_cloudwatch_log_group.alerter]
 
 }
 
