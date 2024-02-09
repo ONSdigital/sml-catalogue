@@ -151,20 +151,6 @@ data "aws_iam_policy_document" "lambda_healthcheck" {
   }
 }
 
-data "aws_iam_policy_document" "lambda_alerter" {
-  statement {
-    actions = [
-      "logs:CreateLogGroup",
-      "logs:CreateLogStream",
-      "logs:PutLogEvents",
-    ]
-
-    resources = [
-      "arn:aws:logs:*:*:*",
-    ]
-  }
-}
-
 # This creates the policy needed for a lambda to log. #2
 resource "aws_iam_policy" "lambda_healthcheck" {
   name   = "lambda-healthcheck"
@@ -172,23 +158,10 @@ resource "aws_iam_policy" "lambda_healthcheck" {
   policy = "${data.aws_iam_policy_document.lambda_healthcheck.json}"
 }
 
-# This creates the policy needed for a lambda to log. #2
-resource "aws_iam_policy" "lambda_alerter" {
-  name   = "lambda-alerter"
-  path   = "/"
-  policy = "${data.aws_iam_policy_document.lambda_alerter.json}"
-}
-
 # This attaches the policy needed for logging to the lambda's IAM role. #3
 resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
-  role       = "${aws_iam_role.lambda_healthcheck.name}"
+  role       = "${aws_iam_role.lambda.name}"
   policy_arn = "${aws_iam_policy.lambda_healthcheck.arn}"
-}
-
-# This attaches the policy needed for logging to the lambda's IAM role. #3
-resource "aws_iam_role_policy_attachment" "lambda_alerter" {
-  role       = "${aws_iam_role.lambda_alerter.name}"
-  policy_arn = "${aws_iam_policy.lambda_alerter.arn}"
 }
 
 resource "aws_lambda_permission" "allow_cloudwatch_to_call_healthcheck" {
@@ -197,13 +170,6 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_healthcheck" {
     function_name = "${aws_lambda_function.healthcheck.function_name}"
     principal = "events.amazonaws.com"
     source_arn = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
-}
-
-resource "aws_lambda_permission" "allow_cloudwatch_to_call_alerter" {
-    statement_id = "AllowExecutionFromCloudWatch"
-    action = "lambda:InvokeFunction"
-    function_name = "${aws_lambda_function.alerter.function_name}"
-    principal = "events.amazonaws.com"
 }
 
 data "archive_file" "zip_the_python_healthcheck_lambda" {
@@ -218,7 +184,7 @@ source_file  = "./lambda_functions/alerter/alerter.py"
 output_path = "./lambda_functions/alerter/alerter.zip"
 }
 
-data "aws_iam_policy_document" "lambda_assume_role_healthcheck" {
+data "aws_iam_policy_document" "lambda" {
   statement {
     effect  = "Allow"
     actions = ["sts:AssumeRole"]
@@ -230,30 +196,13 @@ data "aws_iam_policy_document" "lambda_assume_role_healthcheck" {
   }
 }
 
-data "aws_iam_policy_document" "lambda_assume_role_alerter" {
-  statement {
-    effect  = "Allow"
-    actions = ["sts:AssumeRole"]
-
-    principals {
-      identifiers = ["lambda.amazonaws.com"]
-      type        = "Service"
-    }
-  }
-}
-
-resource "aws_iam_role" "lambda_healthcheck" {
+resource "aws_iam_role" "lambda" {
   name               = "${var.environment}-healthcheck"
-  assume_role_policy = data.aws_iam_policy_document.lambda_assume_role_healthcheck.json
-}
-
-resource "aws_iam_role" "lambda_alerter" {
-  name               = "${var.environment}-alerter"
-  assume_role_policy = data.aws_iam_policy_document.lambda_assume_role_alerter.json
+  assume_role_policy = data.aws_iam_policy_document.lambda.json
 }
 
 resource "aws_lambda_function" "healthcheck" {
-  role          = aws_iam_role.lambda_healthcheck.arn
+  role          = aws_iam_role.lambda.arn
 
   function_name = "${var.environment}-healthcheck"
 
@@ -281,7 +230,7 @@ resource "aws_lambda_function" "healthcheck" {
 }
 
 resource "aws_lambda_function" "alerter" {
-  role          = aws_iam_role.lambda_alerter.arn
+  role          = aws_iam_role.lambda.arn
 
   function_name = "${var.environment}-alerter"
 
