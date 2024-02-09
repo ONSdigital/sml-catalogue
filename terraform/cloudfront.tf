@@ -292,7 +292,7 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   threshold           = 1
   alarm_description   = "Alarm for ${local.domain_name_base[var.environment]} has been triggered"
   actions_enabled     = "true"
-  alarm_actions       = [aws_sns_topic.sns_topic.arn]
+  alarm_actions       = [aws_lambda_function.alerter.function_name]
   treat_missing_data  = "breaching"
 
   dimensions = {
@@ -300,17 +300,6 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   }
 
   depends_on = [aws_lambda_function.healthcheck]
-}
-
-resource "aws_sns_topic" "sns_topic" {
-  name     = "smlPortalTopic"
-}
-
-resource "aws_sns_topic_subscription" "slack_target" {
-  topic_arn = aws_sns_topic.sns_topic.arn
-
-  protocol  = "lambda"
-  endpoint  = aws_lambda_function.alerter.arn
 }
 
 output "cf_website_url" {
