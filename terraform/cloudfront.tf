@@ -196,13 +196,18 @@ data "aws_iam_policy_document" "lambda" {
   }
 }
 
-resource "aws_iam_role" "lambda" {
+resource "aws_iam_role" "lambda_healthcheck" {
+  name               = "${var.environment}-healthcheck"
+  assume_role_policy = data.aws_iam_policy_document.lambda.json
+}
+
+resource "aws_iam_role" "lambda_alerter" {
   name               = "${var.environment}-healthcheck"
   assume_role_policy = data.aws_iam_policy_document.lambda.json
 }
 
 resource "aws_lambda_function" "healthcheck" {
-  role          = aws_iam_role.lambda.arn
+  role          = aws_iam_role.lambda_healthcheck.arn
 
   function_name = "${var.environment}-healthcheck"
 
@@ -230,7 +235,7 @@ resource "aws_lambda_function" "healthcheck" {
 }
 
 resource "aws_lambda_function" "alerter" {
-  role          = aws_iam_role.lambda.arn
+  role          = aws_iam_role.lambda_alerter.arn
 
   function_name = "${var.environment}-alerter"
 
@@ -252,8 +257,6 @@ resource "aws_lambda_function" "alerter" {
   tags = {
     Name = "${var.environment}_sml_lambda_alerter"
   }
-
-  depends_on = [aws_cloudwatch_metric_alarm.healthcheck]
 
 }
 
