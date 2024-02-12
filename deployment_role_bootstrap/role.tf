@@ -212,6 +212,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "cloudwatch:DeleteAlarms",
                 "cloudwatch:DescribeAlarms",
                 "cloudwatch:PutMetricAlarm",
+                "cloudwatch:PutMetricData",
                 "cloudwatch:ListTagsForResource",
                 "acm:DeleteCertificate",
                 "acm:DescribeCertificate",
