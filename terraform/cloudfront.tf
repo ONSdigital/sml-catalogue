@@ -252,6 +252,11 @@ resource "aws_lambda_function" "alerter" {
   timeout       = 10
   memory_size   = 512
 
+  input               = jsonencode({
+                          "environment" = local.domain_name_base[var.environment],
+                          "slack_webhook_url" = "https://hooks.slack.com/triggers/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"
+                        })
+
   tags = {
     Name = "${var.environment}_sml_lambda_alerter"
   }
@@ -295,10 +300,6 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   actions_enabled     = "true"
   alarm_actions       = [aws_sns_topic.sns_topic.arn, aws_lambda_function.alerter.arn]
   treat_missing_data  = "breaching"
-  input               = jsonencode({
-                        "environment" = local.domain_name_base[var.environment],
-                        "slack_webhook_url" = "https://hooks.slack.com/triggers/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"
-                        })
 
   dimensions = {
     FunctionName = aws_lambda_function.healthcheck.function_name
