@@ -199,14 +199,6 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_healthcheck" {
     source_arn = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
 }
 
-resource "aws_lambda_permission" "allow_cloudwatch_to_call_alerter" {
-    statement_id = "AllowExecutionFromCloudWatch"
-    action = "lambda:InvokeFunction"
-    function_name = "${aws_lambda_function.alerter.function_name}"
-    principal = "events.amazonaws.com"
-    source_arn = "${aws_cloudwatch_event_rule.trigger_alerter.arn}"
-}
-
 data "archive_file" "zip_the_python_healthcheck_lambda" {
 type        = "zip"
 source_file  = "./lambda_functions/healthcheck/healthcheck.py"
