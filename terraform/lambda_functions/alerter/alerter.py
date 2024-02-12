@@ -3,9 +3,14 @@ import json # isort:skip
 import requests # isort:skip
 
 def lambda_handler(event, context):
+    
+    if 'environment' in event:
+        environment = event['environment'] 
+
+    if 'slack_webhook_url' in event:
+        slack_webhook_url = event['slack_webhook_url']
+
     timeout=5
-    environment = f"https://{os.environ.get('environment')}"
-    slack_webhook_url = f"{os.environ.get('slack_webhook_url')}"
     alert_message = {
         "AlarmName": f"{environment} issue",
         "NewStateValue": "ALARM",

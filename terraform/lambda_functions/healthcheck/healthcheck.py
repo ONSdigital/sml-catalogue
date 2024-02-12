@@ -20,10 +20,12 @@ def check_website_status(site, expected_string):
         
 def lambda_handler(event, context):
     
-    site = f"https://{os.environ.get('site')}"
+    if 'site' in event:
+        site = event['site'] 
 
-    expected_string = f"{os.environ.get('expected_string')}"
-    
+    if 'expected_string' in event:
+        expected_string = event['expected_string']
+        
     result = check_website_status(site, expected_string)
 
     return result
