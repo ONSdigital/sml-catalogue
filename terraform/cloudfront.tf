@@ -195,15 +195,15 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_healthcheck" {
     statement_id = "AllowExecutionFromCloudWatch"
     action = "lambda:InvokeFunction"
     function_name = "${aws_lambda_function.healthcheck.function_name}"
-    principal = "lambda.alarms.cloudwatch.amazonaws.com"
+    principal = "events.amazonaws.com"
     source_arn = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
 }
 
 resource "aws_lambda_permission" "allow_cloudwatch_to_call_alerter" {
-    statement_id = "AllowExecutionFromCloudWatch"
+    statement_id = "AlarmAction"
     action = "lambda:InvokeFunction"
     function_name = "${aws_lambda_function.alerter.function_name}"
-    principal = "events.amazonaws.com"
+    principal = "lambda.alarms.cloudwatch.amazonaws.com"
     source_arn = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
 }
 
