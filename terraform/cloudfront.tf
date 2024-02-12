@@ -153,7 +153,7 @@ data "aws_iam_policy_document" "lambda_log_function" {
 
 # This creates the policy needed for a lambda to log. #2
 resource "aws_iam_policy" "lambda_log_function" {
-  name   = "lambda-healthcheck"
+  name   = "lambda-healthcheck-logs"
   path   = "/"
   policy = "${data.aws_iam_policy_document.lambda_log_function.json}"
 }
