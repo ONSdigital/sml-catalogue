@@ -174,6 +174,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "iam:ListRolePolicies",
                 "iam:ListAttachedRolePolicies",
                 "iam:CreatePolicy",
+                "iam:CreatePolicyVersion",
                 "iam:GetPolicy",
                 "iam:ListPolicyTags",
                 "iam:GetGroupPolicy",

@@ -164,6 +164,7 @@ data "aws_iam_policy_document" "lambda_log_alerter" {
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
+      "iam:CreatePolicyVersion",
     ]
 
     resources = [
