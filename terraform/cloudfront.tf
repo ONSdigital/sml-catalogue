@@ -126,15 +126,15 @@ resource "aws_cloudwatch_log_group" "healthcheck" {
 }
 
 resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
-    name = "${local.domain_name_base[var.environment]}-healthcheck-trigger"
-    description = "Fires the healthcheck lambda function every five minutes"
+    name                = "${local.domain_name_base[var.environment]}-healthcheck-trigger"
+    description         = "Fires the healthcheck lambda function every five minutes"
     schedule_expression = "rate(5 minutes)"
 }
 
 resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
-    rule = "${aws_cloudwatch_event_rule.trigger_healthcheck.name}"
+    rule      = "${aws_cloudwatch_event_rule.trigger_healthcheck.name}"
     target_id = "check_sml_site"
-    arn = "${aws_lambda_function.healthcheck.arn}"
+    arn       = "${aws_lambda_function.healthcheck.arn}"
     input     = jsonencode({
                   "site"            = "https://${local.domain_name_base[var.environment]}",
                   "expected_string" = "An open source library for statistical code approved by the ONS"
@@ -169,30 +169,30 @@ resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
 }
 
 resource "aws_lambda_permission" "allow_cloudwatch_to_call_healthcheck" {
-    statement_id = "AllowExecutionFromCloudWatch"
-    action = "lambda:InvokeFunction"
+    statement_id  = "AllowExecutionFromCloudWatch"
+    action        = "lambda:InvokeFunction"
     function_name = "${aws_lambda_function.healthcheck.function_name}"
-    principal = "events.amazonaws.com"
-    source_arn = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
+    principal     = "events.amazonaws.com"
+    source_arn    = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
 }
 
 resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
-    statement_id = "AlarmAction"
-    action = "lambda:InvokeFunction"
+    statement_id  = "AlarmAction"
+    action        = "lambda:InvokeFunction"
     function_name = "${aws_lambda_function.alerter.function_name}"
-    principal = "lambda.alarms.cloudwatch.amazonaws.com"
-    source_arn = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
+    principal     = "lambda.alarms.cloudwatch.amazonaws.com"
+    source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
 }
 
 data "archive_file" "zip_the_python_healthcheck_lambda" {
 type        = "zip"
-source_file  = "./lambda_functions/healthcheck/healthcheck.py"
+source_file = "./lambda_functions/healthcheck/healthcheck.py"
 output_path = "./lambda_functions/healthcheck/healthcheck.zip"
 }
 
 data "archive_file" "zip_the_python_alerter_lambda" {
 type        = "zip"
-source_file  = "./lambda_functions/alerter/alerter.py"
+source_file = "./lambda_functions/alerter/alerter.py"
 output_path = "./lambda_functions/alerter/alerter.zip"
 }
 
