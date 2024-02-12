@@ -164,7 +164,6 @@ data "aws_iam_policy_document" "lambda_log_alerter" {
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
-      "iam:CreatePolicyVersion",
     ]
 
     resources = [
@@ -327,7 +326,7 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   treat_missing_data  = "breaching"
 
   dimensions = {
-    FunctionName = aws_lambda_function.alerter.function_name
+    FunctionName = aws_lambda_function.healthcheck.function_name
   }
 
   depends_on = [aws_lambda_function.healthcheck]
