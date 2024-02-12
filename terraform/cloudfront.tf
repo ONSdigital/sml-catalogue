@@ -172,7 +172,7 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_healthcheck" {
     source_arn = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
 }
 
-resource "aws_lambda_permission" "allow_cloudwatch_to_call_alerter" {
+resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     statement_id = "AlarmAction"
     action = "lambda:InvokeFunction"
     function_name = "${aws_lambda_function.alerter.function_name}"
