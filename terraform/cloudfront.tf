@@ -143,7 +143,6 @@ data "aws_iam_policy_document" "lambda_log_healthcheck" {
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
-      "lambda:InvokeFunction"
     ]
 
     resources = [
@@ -165,7 +164,6 @@ data "aws_iam_policy_document" "lambda_log_alerter" {
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
-      "lambda:InvokeFunction"
     ]
 
     resources = [
@@ -197,7 +195,7 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_healthcheck" {
     statement_id = "AllowExecutionFromCloudWatch"
     action = "lambda:InvokeFunction"
     function_name = "${aws_lambda_function.healthcheck.function_name}"
-    principal = "events.amazonaws.com"
+    principal = "lambda.alarms.cloudwatch.amazonaws.com"
     source_arn = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
 }
 
