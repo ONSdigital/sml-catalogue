@@ -230,7 +230,6 @@ resource "aws_lambda_function" "healthcheck" {
   runtime       = "python3.7"
   timeout       = 10
   memory_size   = 512
-  }
 
   tags = {
     Name = "${var.environment}_sml_lambda_health_check"
