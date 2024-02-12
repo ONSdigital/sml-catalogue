@@ -156,6 +156,7 @@ resource "aws_iam_policy" "lambda_log_healthcheck" {
   name   = "lambda-healthcheck"
   path   = "/"
   policy = "${data.aws_iam_policy_document.lambda_log_healthcheck.json}"
+}
 
 data "aws_iam_policy_document" "lambda_log_alerter" {
   statement {
