@@ -143,6 +143,7 @@ data "aws_iam_policy_document" "lambda_log_healthcheck" {
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
+      "lambda:InvokeFunction"
     ]
 
     resources = [
@@ -164,6 +165,7 @@ data "aws_iam_policy_document" "lambda_log_alerter" {
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
+      "lambda:InvokeFunction"
     ]
 
     resources = [
