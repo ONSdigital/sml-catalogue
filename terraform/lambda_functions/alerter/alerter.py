@@ -5,10 +5,15 @@ import requests # isort:skip
 def lambda_handler(event, context):
     
     if 'environment' in event:
-        environment = event['environment'] 
+        environment = event['environment']
+    else:
+        environment = f"https://{os.environ.get('environment')}"
 
     if 'slack_webhook_url' in event:
         slack_webhook_url = event['slack_webhook_url']
+    else:
+        slack_webhook_url = f"{os.environ.get('slack_webhook_url')}"
+
 
     timeout=5
     alert_message = {

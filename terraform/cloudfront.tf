@@ -132,27 +132,12 @@ resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
 }
 
 resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
-    rule      = "${aws_cloudwatch_event_rule.trigger_healthcheck.name}"
+    rule = "${aws_cloudwatch_event_rule.trigger_healthcheck.name}"
     target_id = "check_sml_site"
-    arn       = "${aws_lambda_function.healthcheck.arn}"
+    arn = "${aws_lambda_function.healthcheck.arn}"
     input     = jsonencode({
                   "site"            = local.domain_name_base[var.environment],
                   "expected_string" = "An open source library for statistical code approved by the ONS"
-                })
-}
-
-resource "aws_cloudwatch_event_rule" "trigger_alerter" {
-    name        = "${local.domain_name_base[var.environment]}-alerter-trigger"
-    description = "Fires the alerter lambda function when cloudwatch alarm is triggered"
-}
-
-resource "aws_cloudwatch_event_target" "sml_site_trigger_alerter" {
-    rule      = "${aws_cloudwatch_event_rule.trigger_alerter.name}"
-    target_id = "check_sml_site"
-    arn       = "${aws_lambda_function.alerter.arn}"
-    input     = jsonencode({
-                  "environment"       = local.domain_name_base[var.environment],
-                  "slack_webhook_url" = "https://hooks.slack.com/triggers/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"
                 })
 }
 
@@ -308,9 +293,16 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   threshold           = 1
   alarm_description   = "Alarm for ${local.domain_name_base[var.environment]} has been triggered"
   actions_enabled     = "true"
-  alarm_actions       = [aws_sns_topic.sns_topic.arn, aws_cloudwatch_event_target.sml_site_trigger_healthcheck.arn]
+  alarm_actions       = [aws_sns_topic.sns_topic.arn, aws_lambda_function.alerter.arn]
   treat_missing_data  = "breaching"
-  
+
+  environment {
+    variables = {
+      "environment" = local.domain_name_base[var.environment],
+      "slack_webhook_url" = "https://hooks.slack.com/triggers/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"
+    }
+  }
+
   dimensions = {
     FunctionName = aws_lambda_function.healthcheck.function_name
   }
