@@ -235,7 +235,7 @@ resource "aws_lambda_function" "healthcheck" {
     Name = "${var.environment}_sml_lambda_health_check"
   }
 
-  depends_on = [aws_cloudwatch_log_group.healthcheck]
+  depends_on    = [aws_cloudwatch_log_group.healthcheck]
 
 }
 
@@ -286,7 +286,7 @@ resource "aws_route53_health_check" "sml" {
     Name = "${var.environment}_environment"
   }
 
-  depends_on = [aws_cloudwatch_metric_alarm.healthcheck]
+  depends_on                      = [aws_cloudwatch_metric_alarm.healthcheck]
 }
 
 resource "aws_cloudwatch_metric_alarm" "healthcheck" {
@@ -307,7 +307,7 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
     FunctionName = aws_lambda_function.healthcheck.function_name
   }
 
-  depends_on = [aws_lambda_function.healthcheck]
+  depends_on          = [aws_lambda_function.healthcheck]
 }
 
 resource "aws_sns_topic" "sns_topic" {
