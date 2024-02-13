@@ -143,22 +143,22 @@ resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
 }
 
 data "aws_iam_policy_document" "lambda_log_function" {
-  Statement: [
+  Statement= [
             {
-                "Sid": "AllowCloudwatchMetrics",
-                "Effect": "Allow",
-                "Action": "cloudwatch:PutMetricData",
-                "Resource": "*"
+                "Sid"= "AllowCloudwatchMetrics",
+                "Effect"= "Allow",
+                "Action"= "cloudwatch:PutMetricData",
+                "Resource"= "*"
             },
             {
-                "Sid": "AllowLogs",
-                "Effect": "Allow",
-                "Action": [
+                "Sid"= "AllowLogs",
+                "Effect"= "Allow",
+                "Action"= [
                   "logs:CreateLogGroup",
                   "logs:CreateLogStream",
                   "logs:PutLogEvents",
                 ],
-                "Resource": "arn:aws:logs:*:*:*",
+                "Resource"= "arn:aws:logs:*:*:*",
             },
   ]
 }
