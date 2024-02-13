@@ -17,9 +17,9 @@ def lambda_handler(event, context):
 
     timeout=5
     alert_message = {
-        "AlarmName": f"{environment} \'s alarm has converted from an \'OK\' state to \'In alarm\' state",
-        "NewStateValue": "ALARM",
-        "NewStateReason": "Error has occurred because the site cannot be reached or content does not match expected values. Go to the healthcheck lambda log group for more information",
+        "Summary": f"{environment} \'s alarm has converted from an \'OK\' state to \'In alarm\' state",
+        "CurrentAlarmState": "ALARM",
+        "Reason": "Error has occurred because the site cannot be reached or content does not match expected values. Go to the healthcheck lambda log group for more information",
     }
     
     response = requests.post(
