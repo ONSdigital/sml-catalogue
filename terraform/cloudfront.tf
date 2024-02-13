@@ -147,20 +147,13 @@ data "aws_iam_policy_document" "lambda_log_function" {
     actions = [
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
-      "logs:PutLogEvents"
-    ]
-
-    resources = [
-      "arn:aws:logs:*:*:*",
-    ]
-  },
-  
-  statement {
-    actions = [
+      "logs:PutLogEvents",
       "cloudwatch:PutMetricData"
     ]
 
-    resources = [*]
+    resources = [
+      *
+    ]
   }
 }
 
