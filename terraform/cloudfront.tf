@@ -138,7 +138,7 @@ resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
     input     = jsonencode({
                   "site"            = "https://${local.domain_name_base[var.environment]}",
                   "env"             = "${var.environment}"
-                  "expected_string" = "An open source  for statistical code approved by the ONS"
+                  "expected_string" = "An open source library for statistical code approved by the ONS"
                 })
 }
 
