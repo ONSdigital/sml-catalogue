@@ -154,6 +154,7 @@ data "aws_iam_policy_document" "lambda_log_function" {
       "arn:aws:logs:*:*:*",
     ]
   },
+  
   statement {
     actions = [
       "cloudwatch:PutMetricData"
