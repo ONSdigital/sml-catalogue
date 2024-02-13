@@ -289,6 +289,11 @@ resource "aws_route53_health_check" "sml" {
   depends_on                      = [aws_cloudwatch_metric_alarm.healthcheck]
 }
 
+resource "aws_cloudwatch_metric" "metric" {
+  namespace  = "AWS/Lambda"
+  name       = "${var.environment}-healthcheck-metrics"
+}
+
 resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   alarm_name          = "${var.environment}_environment_alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
