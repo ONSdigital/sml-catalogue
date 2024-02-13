@@ -45,4 +45,6 @@ def lambda_handler(event, context):
         Namespace = 'AWS/Lamdda'
     )
 
+    print(response)
+
     return response
