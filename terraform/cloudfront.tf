@@ -143,26 +143,29 @@ resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
 }
 
 data "aws_iam_policy_document" "lambda_log_function" {
-  Statement= [
-            {
-                "Sid"= "AllowCloudwatchMetrics",
-                "Effect"= "Allow",
-                "Action"= "cloudwatch:PutMetricData",
-                "Resource"= "*"
-            },
-            {
-                "Sid"= "AllowLogs",
-                "Effect"= "Allow",
-                "Action"= [
-                  "logs:CreateLogGroup",
-                  "logs:CreateLogStream",
-                  "logs:PutLogEvents",
-                ],
-                "Resource"= "arn:aws:logs:*:*:*",
-            },
-  ]
-}
+  statement {
+    actions = [
+      "logs:CreateLogGroup",
+      "logs:CreateLogStream",
+      "logs:PutLogEvents"
+    ]
 
+    resources = [
+      "arn:aws:logs:*:*:*",
+    ]
+  }
+
+  statement {
+    actions = [
+      "cloudwatch:PutMetricData"
+    ]
+
+    resources = [
+      "*",
+    ]
+  }
+  
+}
 
 # This creates the policy needed for a lambda to log. #2
 resource "aws_iam_policy" "lambda_log_function" {
