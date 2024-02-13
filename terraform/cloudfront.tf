@@ -199,7 +199,10 @@ output_path = "./lambda_functions/alerter/alerter.zip"
 data "aws_iam_policy_document" "assume_role" {
   statement {
     effect  = "Allow"
-    actions = ["sts:AssumeRole"]
+    actions = [
+      "sts:AssumeRole",
+      "cloudwatch:PutMetricData"
+      ]
 
     principals {
       identifiers = ["lambda.amazonaws.com"]
@@ -287,11 +290,6 @@ resource "aws_route53_health_check" "sml" {
   }
 
   depends_on                      = [aws_cloudwatch_metric_alarm.healthcheck]
-}
-
-resource "aws_cloudwatch_metric" "metric" {
-  namespace  = "AWS/Lambda"
-  name       = "${var.environment}-healthcheck-metrics"
 }
 
 resource "aws_cloudwatch_metric_alarm" "healthcheck" {

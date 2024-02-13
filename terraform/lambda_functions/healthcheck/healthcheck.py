@@ -1,29 +1,30 @@
 import requests # isort:skip
 import boto3 # isort:skip
 
-def check_website_status(site, expected_string):
+def check_website_status(site, expected_string, env):
     timeout = 5
+    metric_message = "Success"
 
     print("Url: ", site, "Expected text: ", expected_string)
 
     response = requests.get(site, timeout=timeout)
 
     if response.status_code != 200:
-        error_message = f"Error: Status code is {response.status_code}"
+        metric_message = f"Error: Status code is {response.status_code}"
     elif expected_string not in response.text:
-        error_message = f"Error: Status code is {response.status_code} but text does not match expected string"
+        metric_message = f"Error: Status code is {response.status_code} but text does not match expected string"
 
-    if error_message:
+    if metric_message:
         cloudwatch = boto3.client('cloudwatch')
         response = cloudwatch.put_metric_data(
             MetricData = [
                 {
-                    'MetricName': '{env}-healthcheck-metrics',
+                    'MetricName': f'{env}-healthcheck',
                     'Unit': 'None',
                     'Value': 1
                 },
             ],
-            Namespace = 'CoolApp'
+            Namespace = 'AWS/Lamdda'
         )
         print(response)
     else:
