@@ -16,7 +16,7 @@ aws sts assume-role --output text \
 export AWS_ACCESS_KEY_ID="$(cat AccessKeyId)"
 export AWS_SECRET_ACCESS_KEY="$(cat SecretAccessKey)"
 export AWS_SESSION_TOKEN="$(cat SessionToken)"
-export TF_DIST_ID=$(sed -n 2p ../GITHUB_OUTPUT/output.txt && cut -c 15-)
+export TF_DIST_ID=$(sed -n "2p" ../GITHUB_OUTPUT/output.txt | cut -c 15-)
 
 aws s3 sync ./build s3://sml-portal-$TF_VAR_environment-$workspace_name --delete --content-type "text/html" --exclude "*.css" --exclude "*.js"
 aws s3 sync ./build s3://sml-portal-$TF_VAR_environment-$workspace_name --delete --exclude "*" --include "*.css" --include "*.js"
