@@ -21,4 +21,4 @@ export TF_DIST_ID=sed -n 2p ../GITHUB_OUTPUT/output.txt && cut -c 15-
 aws s3 sync ./build s3://sml-portal-$TF_VAR_environment-$workspace_name --delete --content-type "text/html" --exclude "*.css" --exclude "*.js"
 aws s3 sync ./build s3://sml-portal-$TF_VAR_environment-$workspace_name --delete --exclude "*" --include "*.css" --include "*.js"
 
-aws cloudfront create-invalidation --distribution-id $TF_DIST_ID -- paths "/*"
+aws cloudfront create-invalidation --distribution-id $TF_DIST_ID --paths "/*"
