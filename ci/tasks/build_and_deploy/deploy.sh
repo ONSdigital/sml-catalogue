@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Deploys build code to the s3 bucket
+# Cloudfront cache is also invalidated to refresh website instance
 
 set -euo pipefail
 
