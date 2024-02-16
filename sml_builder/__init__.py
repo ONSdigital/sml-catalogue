@@ -1,7 +1,8 @@
 import os
+
 from flask import Flask, abort, render_template
-from markupsafe import Markup, escape
 from flaskext.markdown import Markdown
+from markupsafe import Markup, escape
 
 from sml_builder.cms import getContent
 
@@ -29,23 +30,25 @@ import sml_builder.page  # noqa: E402
 import sml_builder.utils  # noqa: F401, E402
 from sml_builder.utils import checkEmptyList  # noqa: E402
 
-cms_active = os.environ.get("CMS_ACTIVE",False)
+cms_active = os.environ.get("CMS_ACTIVE", False)
+
 
 @app.route("/")
-def index():    
+def index():
     if cms_active:
         # Gets the content for the home page
         content = getContent("heroHomePage")
         if checkEmptyList(content):
             abort(404)
         return render_template("index.html", content=content, cms_active=cms_active)
-    else:   
-        return render_template("index.html", cms_active=cms_active)
+    return render_template("index.html", cms_active=cms_active)
+
 
 @app.errorhandler(404)
 @app.route("/page-not-found")
 def page_not_found(e=None):
     return render_template("404.html"), 404 if e else 200
+
 
 @app.template_filter("paras")
 def string_to_paragraph(value):

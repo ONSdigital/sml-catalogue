@@ -10,8 +10,10 @@ def convert_term(value):
     converted = re.sub("[^0-9a-z]+", "-", value.lower())
     return converted
 
+
 def checkEmptyList(data):
     return not data
+
 
 def _page_not_found(error):
     print(error)
