@@ -39,9 +39,9 @@
 <main id="main-content">
     {{cms_active}}
         {% if cms_active %}
-            {{set hero_title = content["hero_title"]}}
+            {% set hero_title = content["hero_title"] %}
         {% else %}
-            {{set hero_title = "CMS deactivated"}}
+            {% set hero_title = "CMS deactivated" %}
         {% endif %}
         {{
         onsHero({
