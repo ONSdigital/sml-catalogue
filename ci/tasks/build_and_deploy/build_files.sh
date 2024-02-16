@@ -36,7 +36,7 @@ run_linting(){
 FEATURES=$(cat config/feature.json | jq -r 'to_entries[] | "\(.name)=\(.enabled)"')
 # Export each feature as an environment variable
 while IFS='=' read -r name enabled; do
-  export "FEATURE_$name=$enabled"
+  export "$name=$enabled"
 done <<< "$FEATURES"
 
 
