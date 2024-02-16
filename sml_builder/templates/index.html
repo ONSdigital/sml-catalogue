@@ -37,13 +37,13 @@
 
 {% block pageContent %}
 <main id="main-content">
-    {{
-        {{cms_active}}
+    {{cms_active}}
         {% if cms_active %}
             {{set hero_title = content["hero_title"]}}
         {% else %}
             {{set hero_title = "CMS deactivated"}}
         {% endif %}
+        {{
         onsHero({
             "title": hero_title,
             "button": {
