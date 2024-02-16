@@ -6,9 +6,8 @@ import contentful
 # the space_id, content_delivery_api_key
 SPACE_ID = os.environ.get("SPACE_ID")
 CDA_KEY = os.environ.get("CDA_KEY")
-CMS_ACTIVE = os.environ.get("CMS_ACTIVE", False)
 
-if CMS_ACTIVE:
+if CMS_ACTIVE := os.environ.get("CMS_ACTIVE", False):
     client = contentful.Client(SPACE_ID, CDA_KEY)
 
 
