@@ -31,6 +31,14 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
+
+# Read and parse the feature.json file
+FEATURES = $(cat config/feature.json | jq -r 'features[] | "\(.name)=\(.enabled)"')
+for feature in $FEATURES; do
+  echo "Feature sml_builder found"
+done
+
+
 echo "${SIGNING_KEY}" > signingkey.key
 gpg --import signingkey.key
 git config user.email "spp@ons.gov.uk"
