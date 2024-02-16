@@ -28,7 +28,7 @@ def getEntriesByContentType(contentType):
     entries_by_content_type = client.entries({"content_type": contentType.id})
     # print("entries_by_content_type2: ", entries_by_content_type)
 
-    return entries_by_content_type
+    return entries_by_content_type 
 
 
 # Returns all the content depending if it's a list of content such as items on a table
