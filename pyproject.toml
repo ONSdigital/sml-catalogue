@@ -10,6 +10,8 @@ python = "^3.10"
 frozen-flask = "^0.18"
 jsonnet = "^0.20.0"
 markdown = "^3.4.4"
+flask-markdown = "^0.3"
+contentful = "^2.1.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.9.1"
