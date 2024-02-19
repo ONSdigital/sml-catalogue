@@ -127,8 +127,8 @@ resource "aws_cloudwatch_log_group" "healthcheck" {
 
 resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
     name                = "${local.domain_name_base[var.environment]}-healthcheck-trigger"
-    description         = "Fires the healthcheck lambda function every five minutes"
-    schedule_expression = "rate(5 minutes)"
+    description         = "Fires the healthcheck lambda function every minute"
+    schedule_expression = "rate(1 minutes)"
 }
 
 resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
@@ -310,8 +310,8 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   metric_name         = "Errors"
   namespace           = "AWS/Lambda"
   period              = 300
-  statistic           = "Average"
-  threshold           = 1
+  statistic           = "Sum"
+  threshold           = 3
   alarm_description   = "Alarm for ${local.domain_name_base[var.environment]} has been triggered"
   actions_enabled     = "true"
   alarm_actions       = [aws_sns_topic.sns_topic.arn, aws_lambda_function.alerter.arn]
