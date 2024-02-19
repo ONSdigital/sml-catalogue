@@ -31,15 +31,6 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
-
-# Read and parse the feature.json file
-FEATURES=$(cat config/feature.json | jq -r 'to_entries[] | "\(.name)=\(.enabled)"')
-# Export each feature as an environment variable
-while IFS='=' read -r name enabled; do
-  echo "$name=$enabled"
-  export "$name=$enabled"
-done <<< "$FEATURES"
-
 echo "${SIGNING_KEY}" > signingkey.key
 gpg --import signingkey.key
 git config user.email "spp@ons.gov.uk"

@@ -7,7 +7,12 @@ import contentful
 SPACE_ID = os.environ.get("SPACE_ID")
 CDA_KEY = os.environ.get("CDA_KEY")
 
-if CMS_ACTIVE := os.environ.get("CMS_ACTIVE", False):
+
+with open("config/feature.json", "r", encoding="utf-8") as features_file:
+    features = load(features_file)["features"]
+cms_active = features["CMS_ACTIVE"]
+
+if cms_active:
     client = contentful.Client(SPACE_ID, CDA_KEY)
 
 
