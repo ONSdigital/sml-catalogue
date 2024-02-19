@@ -1,4 +1,3 @@
-import os # isort:skip
 import requests # isort:skip
 import boto3 # isort:skip
 import logging # isort:skip
@@ -26,13 +25,15 @@ def check_website_status(site, expected_string, env):
 
     if healthcheck.status_code != 200:
         print("Metric Data: ", metric_data)
-        raise ValueError(f"Error: Status code expected to be 200 but is {healthcheck.status_code}")
+        raise logger.error(f"Error: Status code expected to be 200 but is {healthcheck.status_code}")
     
     elif expected_string not in healthcheck.text:
         print("Metric Data: ", metric_data)
         raise logger.error(f"Error: Status code is {healthcheck.status_code} but text is expected to be {expected_string} but is not found")
     
 def lambda_handler(event, context):
+
+    print(event)
     
     if 'site' in event:
         site = event['site']
@@ -42,7 +43,7 @@ def lambda_handler(event, context):
 
     if 'expected_string' in event:
         expected_string = event['expected_string']
-        
+    
     check_website_status(site, expected_string, env)
 
     
