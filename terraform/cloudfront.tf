@@ -134,8 +134,11 @@ module "route53" {
 module "healthcheck" {
   source = "./dns"
   count  = terraform.workspace == "main" ? 1 : 0
-  
-  environment = var.environment
+
+  s3_bucket = {
+    domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
+    hosted_zone_id = aws_cloudfront_distribution.sml-catalogue.hosted_zone_id
+  }
   domain_name_base = local.domain_name_base[var.environment]
 }
 
