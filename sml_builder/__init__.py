@@ -1,5 +1,4 @@
 from json import load
-import os
 
 from flask import Flask, abort, render_template
 from flaskext.markdown import Markdown
@@ -31,10 +30,7 @@ import sml_builder.page  # noqa: E402
 import sml_builder.utils  # noqa: F401, E402
 from sml_builder.utils import checkEmptyList  # noqa: E402
 
-
-with open(
-    "config/feature.json", "r", encoding="utf-8"
-) as features_file:
+with open("config/feature.json", "r", encoding="utf-8") as features_file:
     features = load(features_file)
 cms_active = features["CMS_ACTIVE"]
 
