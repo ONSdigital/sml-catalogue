@@ -10,10 +10,10 @@ def check_website_status(site, expected_string):
     response = requests.get(site, timeout=timeout)
 
     if response.status_code != 200:
-        raise ValueError(f"Error: Status code is {response.status_code}")
+        raise ValueError(f"Error: Status code expected to be 200 but is {response.status_code}")
     
     elif expected_string not in response.text:
-        raise ValueError(f"Error: Status code is {response.status_code} but text does not match expected string")
+        raise ValueError(f"Error: Status code is {response.status_code} but text is expected to be {expected_string} but is not found")
     else:
         return {
         'statusCode': 200,

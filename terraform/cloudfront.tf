@@ -120,11 +120,6 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
 resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
-resource "aws_cloudwatch_log_group" "healthcheck" {
-  name              = "/aws/lambda/${var.environment}-healthcheck"
-  retention_in_days = 7
-}
-
 resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
     name                = "${local.domain_name_base[var.environment]}-healthcheck-trigger"
     description         = "Fires the healthcheck lambda function every minute"
@@ -248,8 +243,6 @@ resource "aws_lambda_function" "healthcheck" {
   tags = {
     Name = "${var.environment}_sml_lambda_health_check"
   }
-
-  depends_on    = [aws_cloudwatch_log_group.healthcheck]
 
 }
 
