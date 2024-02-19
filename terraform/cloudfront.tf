@@ -128,6 +128,11 @@ module "route53" {
     domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
     hosted_zone_id = aws_cloudfront_distribution.sml-catalogue.hosted_zone_id
   }
+
+  environment = var.environment
+
+  deployment_role = var.deployment_role
+  
   domain_name_base = local.domain_name_base[var.environment]
 }
 
