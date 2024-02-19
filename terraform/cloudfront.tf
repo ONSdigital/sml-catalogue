@@ -128,7 +128,7 @@ resource "aws_cloudwatch_log_group" "healthcheck" {
 resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
     name                = "${local.domain_name_base[var.environment]}-healthcheck-trigger"
     description         = "Fires the healthcheck lambda function every minute"
-    schedule_expression = "rate(1 minutes)"
+    schedule_expression = "rate(1 minute)"
 }
 
 resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
@@ -268,7 +268,9 @@ resource "aws_lambda_function" "alerter" {
 
   environment {
     variables = {
-      "environment" = local.domain_name_base[var.environment],
+      "alarm_name" = "${var.environment}-environemnt-alarm",
+      "lambda_name" = "${var.environment}-healthcheck",
+      "url" = local.domain_name_base[var.environment],
       "slack_webhook_url" = "https://hooks.slack.com/triggers/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"
     }
   }
@@ -304,7 +306,7 @@ resource "aws_route53_health_check" "sml" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "healthcheck" {
-  alarm_name          = "${var.environment}_environment_alarm"
+  alarm_name          = "${var.environment}-environment-alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1
   metric_name         = "Errors"
