@@ -121,7 +121,7 @@ resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
 module "route53" {
-  source = "./dns"
+  source = "./dns/route53"
   count  = terraform.workspace == "main" ? 1 : 0
 
   s3_bucket = {
@@ -132,12 +132,12 @@ module "route53" {
   environment = var.environment
 
   deployment_role = var.deployment_role
-  
+
   domain_name_base = local.domain_name_base[var.environment]
 }
 
 module "healthcheck" {
-  source = "./dns"
+  source = "./dns/healthcheck"
   count  = terraform.workspace == "main" ? 1 : 0
 
   s3_bucket = {
