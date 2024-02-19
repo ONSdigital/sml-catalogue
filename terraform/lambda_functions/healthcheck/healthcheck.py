@@ -1,4 +1,6 @@
+
 import requests # isort:skip
+import os # isort:skip
 import boto3 # isort:skip
 import logging # isort:skip
 
@@ -37,12 +39,18 @@ def lambda_handler(event, context):
     
     if 'site' in event:
         site = event['site']
+    else:
+        site = f"https://{os.environ.get('site')}"
 
     if 'env' in event:
         env = event['env']
+    else:
+        env = os.environ.get('env')
 
     if 'expected_string' in event:
         expected_string = event['expected_string']
+    else:
+        expected_string = os.environ.get('expected_string')
     
     check_website_status(site, expected_string, env)
 
