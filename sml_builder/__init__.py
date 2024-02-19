@@ -31,7 +31,7 @@ import sml_builder.utils  # noqa: F401, E402
 from sml_builder.utils import checkEmptyList  # noqa: E402
 
 with open("config/feature.json", "r", encoding="utf-8") as features_file:
-    features = load(features_file)
+    features = load(features_file)["features"]
 cms_active = features["CMS_ACTIVE"]
 
 
