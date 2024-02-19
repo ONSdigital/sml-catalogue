@@ -7,12 +7,12 @@ def lambda_handler(event, context):
     if 'lambda_name' in event:
         lambda_name = event['lambda_name']
     else:
-        lambda_name = f"https://{os.environ.get('lambda_name')}"
+        lambda_name = os.environ.get('lambda_name')
     
     if 'alarm_name' in event:
         alarm_name = event['alarm_name']
     else:
-        alarm_name = f"https://{os.environ.get('alarm_name')}"
+        alarm_name = os.environ.get('alarm_name')
     
     if 'url' in event:
         url = event['url']
@@ -27,9 +27,9 @@ def lambda_handler(event, context):
 
     timeout=5
     alert_message = {
-        "Summary": f"The website at {url} is unreachable. Healthcheck failure",
+        "Summary": f"The website at {url} is unreachable. Healthcheck failure.",
         "Alarm": "Route53 Health Check Failure",
-        "Description": f"Website is unreachable or not returning the expected response. Check Amazon Cloudwatch Alarms {alarm_name} and Healthcheck Lambda {lambda_name}",
+        "Description": f"Website is unreachable or not returning the expected response. Check Amazon Cloudwatch Alarms \'{alarm_name}\' and Healthcheck Lambda \'{lambda_name}\'.",
     }
     
     response = requests.post(
