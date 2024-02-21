@@ -20,7 +20,3 @@ variable "s3_bucket" {
     hosted_zone_id = string
   })
 }
-
-variable "domain_name_base" {
-  type = string
-}
