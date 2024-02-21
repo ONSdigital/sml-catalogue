@@ -71,14 +71,14 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
 
 data "archive_file" "zip_the_python_healthcheck_lambda" {
 type        = "zip"
-source_file = "./terraform/dns/healthcheck/lambda_functions/healthcheck/healthcheck.py"
-output_path = "./terraform/dns/healthcheck/lambda_functions/healthcheck/healthcheck.zip"
+source_file = "./dns/healthcheck/lambda_functions/healthcheck/healthcheck.py"
+output_path = "./dns/healthcheck/lambda_functions/healthcheck/healthcheck.zip"
 }
 
 data "archive_file" "zip_the_python_alerter_lambda" {
 type        = "zip"
-source_file = "./terraform/dns/healthcheck/lambda_functions/alerter/alerter.py"
-output_path = "./terraform/dns/healthcheck/lambda_functions/alerter/alerter.zip"
+source_file = "./dns/healthcheck/lambda_functions/alerter/alerter.py"
+output_path = "./dns/healthcheck/lambda_functions/alerter/alerter.zip"
 }
 
 data "aws_iam_policy_document" "assume_role" {
@@ -110,7 +110,7 @@ resource "aws_lambda_function" "healthcheck" {
 
   function_name = "${var.environment}-healthcheck"
 
-  filename      = "./terraform/dns/healthcheck/lambda_functions/healthcheck/healthcheck.zip"
+  filename      = "./dns/healthcheck/lambda_functions/healthcheck/healthcheck.zip"
 
   handler       = "healthcheck.lambda_handler"
 
@@ -137,7 +137,7 @@ resource "aws_lambda_function" "alerter" {
 
   function_name = "${var.environment}-alerter"
 
-  filename      = "./terraform/dns/healthcheck/lambda_functions/alerter/alerter.zip"
+  filename      = "./dns/healthcheck/lambda_functions/alerter/alerter.zip"
 
   handler       = "alerter.lambda_handler"
 

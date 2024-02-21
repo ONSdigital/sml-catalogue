@@ -5,10 +5,6 @@ variable "s3_bucket" {
   })
 }
 
-variable "domain_name_base" {
-  type = string
-}
-
 output "cert_arn" {
   value = aws_acm_certificate.sml.arn
 }
