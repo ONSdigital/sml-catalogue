@@ -134,6 +134,8 @@ module "route53" {
 
 module "healthcheck" {
   source = "./healthcheck/"
+
+  environment = var.environment
 }
 
 output "cf_website_url" {

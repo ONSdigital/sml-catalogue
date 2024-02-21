@@ -11,27 +11,27 @@ logger.setLevel(logging.ERROR)
 def check_website_status(site, expected_string, env):
     timeout = 5
 
-    healthcheck = requests.get(site, timeout=timeout)
+    response = requests.get(site, timeout=timeout)
 
     cloudwatch = boto3.client('cloudwatch')
     metric_data = cloudwatch.put_metric_data(
         MetricData = [
             {
-                'MetricName': f'{env}-healthcheck',
+                'MetricName': f'{env}-response',
                 'Unit': 'None',
                 'Value': 1
             },
         ],
-        Namespace = 'AWS/Lamdda'
+        Namespace = 'AWS/Lambda'
     )
 
-    if healthcheck.status_code != 200:
+    if response.status_code != 200:
         print("Metric Data: ", metric_data)
-        raise logger.error(f"Error: Status code expected to be 200 but is {healthcheck.status_code}")
+        raise logger.error(f"Error: Status code expected to be 200 but is {response.status_code}")
     
-    elif expected_string not in healthcheck.text:
+    elif expected_string not in response.text:
         print("Metric Data: ", metric_data)
-        raise logger.error(f"Error: Status code is {healthcheck.status_code} but text is expected to be {expected_string} but is not found")
+        raise logger.error(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
     
 def lambda_handler(event, context):
 
