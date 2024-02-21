@@ -137,7 +137,7 @@ module "route53" {
 }
 
 module "healthcheck" {
-  source = "./dns/healthcheck"
+  source = "/"
 
   s3_bucket = {
     domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
