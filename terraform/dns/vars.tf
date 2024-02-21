@@ -5,6 +5,10 @@ variable "s3_bucket" {
   })
 }
 
+variable "environment" {
+  type = string
+}
+
 variable "domain_name_base" {
   type = string
 }
