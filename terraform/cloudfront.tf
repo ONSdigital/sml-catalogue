@@ -121,7 +121,7 @@ resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 }
 
 module "route53" {
-  source = "./dns/route53"
+  source = "./dns"
   count  = terraform.workspace == "main" ? 1 : 0
 
   s3_bucket = {
