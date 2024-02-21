@@ -1,11 +1,3 @@
-output "cert_arn" {
-  value = aws_acm_certificate.sml.arn
-}
-
-output "website_url" {
-  value = "https://${local.domain_name_base}/"
-}
-
 variable "environment" {
   type = string
 }
