@@ -13,10 +13,3 @@ locals {
     prod : "statisticalmethodslibrary.ons.gov.uk"
   }
 }
-
-variable "s3_bucket" {
-  type = object({
-    domain_name    = string
-    hosted_zone_id = string
-  })
-}
