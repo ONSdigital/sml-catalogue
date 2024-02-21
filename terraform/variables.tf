@@ -24,7 +24,3 @@ variable "s3_bucket" {
 variable "domain_name_base" {
   type = string
 }
-
-output "website_url" {
-  value = "https://${var.domain_name_base}/"
-}
