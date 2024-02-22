@@ -1,8 +1,8 @@
 
-import requests # isort:skip
 import os # isort:skip
 import boto3 # isort:skip
 import logging # isort:skip
+import requests # isort:skip
 
 # Configure logging
 logger = logging.getLogger()
