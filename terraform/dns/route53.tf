@@ -4,13 +4,13 @@
 # do not need to be memorable or static.
 
 data "aws_route53_zone" "sml" {
-  name         = var.domain_name_base[var.environment]
+  name         = var.domain_name_base
   private_zone = false
 }
 
 resource "aws_route53_record" "sml" {
   zone_id = data.aws_route53_zone.sml.zone_id
-  name    = var.domain_name_base[var.environment]
+  name    = var.domain_name_base
   type    = "A"
   alias {
     name                   = var.s3_bucket.domain_name
@@ -20,7 +20,7 @@ resource "aws_route53_record" "sml" {
 }
 
 resource "aws_acm_certificate" "sml" {
-  domain_name       = var.domain_name_base[var.environment]
+  domain_name       = var.domain_name_base
   validation_method = "DNS"
   #  provider          = aws.us_east_1
 }
