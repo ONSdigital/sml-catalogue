@@ -134,7 +134,10 @@ module "route53" {
 
 module "healthcheck" {
   source = "./healthcheck"
-  count  = terraform.workspace == "main" ? [local.domain_name_base[var.environment]] : null
+  
+  environment = var.environment
+
+  deployment_role = var.deployment_role
 
   domain_name_base = local.domain_name_base[var.environment]
 }
