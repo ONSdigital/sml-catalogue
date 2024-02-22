@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
-    name                = "${local.domain_name_base[var.environment]}-healthcheck-trigger"
+    name                = "${var.domain_name_base}-healthcheck-trigger"
     description         = "Fires the healthcheck lambda function every minute"
     schedule_expression = "rate(1 minute)"
 }
@@ -9,7 +9,7 @@ resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
     target_id = "check_sml_site"
     arn       = "${aws_lambda_function.healthcheck.arn}"
     input     = jsonencode({
-                  "site"            = "https://${local.domain_name_base[var.environment]}",
+                  "site"            = "https://${var.domain_name_base}",
                   "env"             = "${var.environment}"
                   "expected_string" = "An open source library for statistical code approved by the ONS"
                 })
@@ -126,7 +126,7 @@ resource "aws_lambda_function" "healthcheck" {
     variables = {
       "expected_string" = "An open source library for statistical code approved by the ONS",
       "env" = var.environment,
-      "site" = local.domain_name_base[var.environment],
+      "site" = var.domain_name_base,
     }
   }
 
@@ -149,7 +149,7 @@ resource "aws_lambda_function" "alerter" {
     variables = {
       "alarm_name" = "${var.environment}-environment-alarm",
       "lambda_name" = "${var.environment}-healthcheck",
-      "url" = local.domain_name_base[var.environment],
+      "url" = var.domain_name_base,
       "slack_webhook_url" = "https://hooks.slack.com/triggers/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"
     }
   }
@@ -182,7 +182,7 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   period              = 300
   statistic           = "Sum"
   threshold           = 3
-  alarm_description   = "Alarm for ${local.domain_name_base[var.environment]} has been triggered"
+  alarm_description   = "Alarm for ${var.domain_name_base} has been triggered"
   actions_enabled     = "true"
   alarm_actions       = [aws_sns_topic.sns_topic.arn, aws_lambda_function.alerter.arn]
   treat_missing_data  = "breaching"
