@@ -1,4 +1,4 @@
-# This rule triggers the healthcheck lambda every five minutes
+# This rule triggers the healthcheck lambda every minute
 resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
     name                = "${var.domain_name_base}-healthcheck-trigger"
     description         = "Fires the healthcheck lambda function every minute"
