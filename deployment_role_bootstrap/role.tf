@@ -163,6 +163,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "lambda:UpdateFunctionCode",
 				        "lambda:AddPermission",
 				        "lambda:GetPolicy",
+                "lambda:UpdateFunctionCode",
                 "lambda:RemovePermission",
                 "lambda:UpdateFunctionConfiguration",
                 "lambda:TagResource",
