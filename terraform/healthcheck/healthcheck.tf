@@ -71,14 +71,14 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
 
 data "archive_file" "zip_the_python_healthcheck_lambda" {
 type        = "zip"
-source_file = "./lambda_functions/healthcheck/healthcheck.py"
-output_path = "./lambda_functions/healthcheck/healthcheck.zip"
+source_file = "./healthcheck/lambda_functions/healthcheck/healthcheck.py"
+output_path = "./healthcheck/lambda_functions/healthcheck/healthcheck.zip"
 }
 
 data "archive_file" "zip_the_python_alerter_lambda" {
 type        = "zip"
-source_file = "./lambda_functions/alerter/alerter.py"
-output_path = "./lambda_functions/alerter/alerter.zip"
+source_file = "./healthcheck/lambda_functions/alerter/alerter.py"
+output_path = "./healthcheck/lambda_functions/alerter/alerter.zip"
 }
 
 data "aws_iam_policy_document" "assume_role" {
