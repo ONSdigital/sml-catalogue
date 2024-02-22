@@ -11,7 +11,7 @@ logger.setLevel(logging.ERROR)
 def check_website_health(site, expected_string, env):
     """
     check_website_health is a function that calls the site from the event (or environment variables)
-    and checks if the status code is 200 and the expected string exits on that site.
+    and checks if the status code is 200 and the expected string exists on that site.
 
     :param site: Url of site to be checked
     :type site: string
