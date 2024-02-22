@@ -40,7 +40,7 @@ def lambda_handler(event, context):
     if 'site' in event:
         site = event['site']
     else:
-        site = os.environ.get('site')
+        site = f"https://{os.environ.get('site')}"
 
     if 'env' in event:
         env = event['env']
