@@ -1,9 +1,11 @@
+# This rule triggers the healthcheck lambda every five minutes
 resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
     name                = "${var.domain_name_base}-healthcheck-trigger"
     description         = "Fires the healthcheck lambda function every minute"
     schedule_expression = "rate(1 minute)"
 }
 
+# Points to the healthcheck lambda
 resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
     rule      = "${aws_cloudwatch_event_rule.trigger_healthcheck.name}"
     target_id = "check_sml_site"
@@ -15,6 +17,7 @@ resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
                 })
 }
 
+# Permissions for lambda to log to a log group and for cloudwatch to put metric data
 data "aws_iam_policy_document" "lambda_log_function" {
   statement {
     actions = [
@@ -40,7 +43,7 @@ data "aws_iam_policy_document" "lambda_log_function" {
   
 }
 
-# This creates the policy needed for a lambda to log. #2
+# This creates the policy needed for a lambda to log.
 resource "aws_iam_policy" "lambda_log_function" {
   name   = "lambda-healthcheck-logs"
   path   = "/"
@@ -53,14 +56,7 @@ resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
   policy_arn = "${aws_iam_policy.lambda_log_function.arn}"
 }
 
-resource "aws_lambda_permission" "allow_cloudwatch_to_call_healthcheck" {
-    statement_id  = "AllowExecutionFromCloudWatch"
-    action        = "lambda:InvokeFunction"
-    function_name = "${aws_lambda_function.healthcheck.function_name}"
-    principal     = "events.amazonaws.com"
-    source_arn    = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
-}
-
+# Adds permission for cloudwatch to call alerter function
 resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     statement_id  = "AlarmAction"
     action        = "lambda:InvokeFunction"
@@ -69,18 +65,21 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
 }
 
+# zip healthcheck lambda for deployment to aws
 data "archive_file" "zip_the_python_healthcheck_lambda" {
 type        = "zip"
 source_file = "./healthcheck/lambda_functions/healthcheck/healthcheck.py"
 output_path = "./healthcheck/lambda_functions/healthcheck/healthcheck.zip"
 }
 
+# zip alerter lambda for deployment to aws
 data "archive_file" "zip_the_python_alerter_lambda" {
 type        = "zip"
 source_file = "./healthcheck/lambda_functions/alerter/alerter.py"
 output_path = "./healthcheck/lambda_functions/alerter/alerter.zip"
 }
 
+# Allow role to be assumed so lambdas can run
 data "aws_iam_policy_document" "assume_role" {
   statement {
     effect  = "Allow"
@@ -105,6 +104,7 @@ resource "aws_iam_role" "alerter" {
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
+# creates healthcheck lambda
 resource "aws_lambda_function" "healthcheck" {
   role          = aws_iam_role.healthcheck.arn
 
@@ -132,6 +132,7 @@ resource "aws_lambda_function" "healthcheck" {
 
 }
 
+# creates alerter lambda
 resource "aws_lambda_function" "alerter" {
   role          = aws_iam_role.alerter.arn
 
@@ -160,6 +161,7 @@ resource "aws_lambda_function" "alerter" {
 
 }
 
+# creates route53 and its dependency on cloudwatch alarms
 resource "aws_route53_health_check" "sml" {
   type                            = "CLOUDWATCH_METRIC"
   cloudwatch_alarm_name           = aws_cloudwatch_metric_alarm.healthcheck.alarm_name
@@ -173,6 +175,7 @@ resource "aws_route53_health_check" "sml" {
   depends_on                      = [aws_cloudwatch_metric_alarm.healthcheck]
 }
 
+# creates the cloudwatch alarm and its dependency on the healthcheck
 resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   alarm_name          = "${var.environment}-environment-alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
@@ -194,10 +197,12 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   depends_on          = [aws_lambda_function.healthcheck]
 }
 
+# creates and name the sns topic
 resource "aws_sns_topic" "sns_topic" {
   name     = "smlPortalTopic"
 }
 
+# assigns the team email to the sns topic as a subscription
 resource "aws_sns_topic_subscription" "email_target" {
   topic_arn = aws_sns_topic.sns_topic.arn
 

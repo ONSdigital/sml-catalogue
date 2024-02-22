@@ -132,6 +132,7 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
+# create the healthcheck using the healthcheck.tf file as a source
 module "healthcheck" {
   source = "./healthcheck"
   
