@@ -2,9 +2,9 @@ import os # isort:skip
 import json # isort:skip
 import urllib.request # isort:skip nosec
 
-def alerter(event, context):
+def lambda_handler(event, context):
     """
-    alerter The purpose of this lambda function is to alert the sml-portal-alert
+    lambda_handler The purpose of this lambda function is to alert the sml-portal-alert
     slack channel if an alarm is failing (failing alarm triggers lambda)
 
     :param event: Event is the message contents parsed to the lambda

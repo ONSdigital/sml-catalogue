@@ -47,11 +47,11 @@ def check_website_health(site, expected_string, env):
     # contain the expected string then we log an error and fail the lambda
     if status_code != 200:
         print("Metric Data: ", metric_data)
-        raise logger.error(f"Error: Status code expected to be 200 but is {response.status_code}")
+        raise logger.error(f"Error: Status code expected to be 200 but is {status_code}")
     
     elif expected_string not in response_text:
         print("Metric Data: ", metric_data)
-        raise logger.error(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
+        raise logger.error(f"Error: Status code is {status_code} but expected text \'{expected_string}\' is not found")
     
 def lambda_handler(event, context):
     """
