@@ -77,7 +77,7 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
 # zip healthcheck lambda functions for deployment to aws
 data "archive_file" "zip_the_python_healthcheck_lambda_functions" {
 type        = "zip"
-source_dir = "./healthcheck/lambda_functions/"
+source_dir = "./healthcheck/lambda_functions"
 output_path = "./healthcheck/lambda_functions/lambda_functions.zip"
 }
 
@@ -112,7 +112,7 @@ resource "aws_lambda_function" "healthcheck" {
 
   function_name = "${var.environment}-healthcheck"
 
-  filename      = "./healthcheck/lambda_functions/lambda_functions.zip/healthcheck.py"
+  filename      = data.archive_file.lambda_zip.output_path
 
   handler       = "healthcheck.lambda_handler"
 
