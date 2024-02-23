@@ -112,7 +112,7 @@ resource "aws_lambda_function" "healthcheck" {
 
   function_name = "${var.environment}-healthcheck"
 
-  filename      = data.archive_file.lambda_zip.output_path
+  filename      = data.archive_file.zip_the_python_healthcheck_lambda_functions.output_path
 
   handler       = "healthcheck.lambda_handler"
 
@@ -140,7 +140,7 @@ resource "aws_lambda_function" "alerter" {
 
   function_name = "${var.environment}-alerter"
 
-  filename      = "./healthcheck/lambda_functions/lambda_functions.zip/alerter.py"
+  filename      = data.archive_file.zip_the_python_healthcheck_lambda_functions.output_path
 
   handler       = "alerter.lambda_handler"
 
