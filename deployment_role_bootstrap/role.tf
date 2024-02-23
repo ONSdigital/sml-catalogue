@@ -162,6 +162,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "lambda:DeleteLayerVersion",
                 "lambda:AddLayerVersionPermission",
                 "lambda:RemoveLayerVersionPermission",
+                "lambda:GetLayerVersion",
                 "lambda:InvokeFunction",
                 "lambda:ListVersionsByFunction",
                 "lambda:GetFunctionCodeSigningConfig",
