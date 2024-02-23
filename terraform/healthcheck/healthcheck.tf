@@ -62,7 +62,7 @@ resource "aws_lambda_permission" "allow_event_to_invoke_healthcheck" {
     action        = "lambda:InvokeFunction"
     function_name = "${aws_lambda_function.healthcheck.function_name}"
     principal     = "events.amazonaws.com"
-    source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
+    source_arn    = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
 }
 
 # Adds permission for cloudwatch to invoke alerter function
