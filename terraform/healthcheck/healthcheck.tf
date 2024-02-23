@@ -182,6 +182,10 @@ resource "aws_lambda_function" "alerter" {
     }
   }
 
+  layers = [
+    aws_lambda_layer_version.python_layer.arn
+  ]
+
   tags = {
     Name = "${var.environment}_sml_lambda_alerter"
   }
