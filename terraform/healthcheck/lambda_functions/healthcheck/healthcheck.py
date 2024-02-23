@@ -2,7 +2,7 @@
 import os # isort:skip
 import boto3 # isort:skip
 import logging # isort:skip
-import requests # isort:skip
+import urllib.request # isort:skip
 
 # Configure logging
 logger = logging.getLogger()
@@ -21,12 +21,14 @@ def check_website_health(site, expected_string, env):
     :type env: string
     :raises logger.error: will log an error to the lambda log group
     :raises logger.error: variable
-    """    
-
-    timeout = 5
+    """
 
     # Ping the site
-    response = requests.get(site, timeout=timeout)
+    response = urllib.request.urlopen(site)
+        
+    # Get the status code from the response
+    status_code = response.getcode()
+    response_text = response.read().decode('utf-8')
 
     # Define metric data
     cloudwatch = boto3.client('cloudwatch')
@@ -43,11 +45,11 @@ def check_website_health(site, expected_string, env):
 
     # If the response code is not 200 or the response text does not 
     # contain the expected string then we log an error and fail the lambda
-    if response.status_code != 200:
+    if status_code != 200:
         print("Metric Data: ", metric_data)
         raise logger.error(f"Error: Status code expected to be 200 but is {response.status_code}")
     
-    elif expected_string not in response.text:
+    elif expected_string not in response_text:
         print("Metric Data: ", metric_data)
         raise logger.error(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
     

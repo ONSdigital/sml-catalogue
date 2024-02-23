@@ -12,7 +12,7 @@ resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
     arn       = "${aws_lambda_function.healthcheck.arn}"
     input     = jsonencode({
                   "site"            : "https://${var.domain_name_base}",
-                  "env"             : "${var.environment}"
+                  "env"             : "${var.environment}",
                   "expected_string" : "An open source library for statistical code approved by the ONS"
                 })
 }
@@ -123,7 +123,7 @@ resource "aws_lambda_function" "healthcheck" {
 
   handler       = "healthcheck.lambda_handler"
 
-  runtime       = "python3.7"
+  runtime       = "python3.12"
   timeout       = 10
   memory_size   = 512
 
@@ -151,7 +151,7 @@ resource "aws_lambda_function" "alerter" {
 
   handler       = "alerter.lambda_handler"
 
-  runtime       = "python3.7"
+  runtime       = "python3.12"
   timeout       = 10
   memory_size   = 512
 
