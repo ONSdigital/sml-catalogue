@@ -119,11 +119,11 @@ resource "aws_lambda_function" "healthcheck" {
 
   function_name = "${var.environment}-healthcheck"
 
-  filename      = "./healthcheck/lambda_functions/healthcheck/healthcheck.zip/healthcheck.py"
+  filename      = "./healthcheck/lambda_functions/healthcheck/healthcheck.zip"
 
   handler       = "healthcheck.lambda_handler"
 
-  runtime       = "python3.10"
+  runtime       = "python3.9"
   timeout       = 10
   memory_size   = 512
 
@@ -147,11 +147,11 @@ resource "aws_lambda_function" "alerter" {
 
   function_name = "${var.environment}-alerter"
 
-  filename      = "./healthcheck/lambda_functions/alerter/alerter.zip/alerter.py"
+  filename      = "./healthcheck/lambda_functions/alerter/alerter.zip"
 
   handler       = "alerter.lambda_handler"
 
-  runtime       = "python3.10"
+  runtime       = "python3.9"
   timeout       = 10
   memory_size   = 512
 
