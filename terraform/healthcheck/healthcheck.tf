@@ -74,17 +74,31 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
 }
 
+# Due to versioning and packages we need a lambda layer which zips the packahes
+data "archive_file" "python_layer_zip" {
+  type        = "zip"
+  source_dir  = "./healthcheck/lambda_functions/layer"
+  output_path = "./healthcheck/lambda_functions/layer/python_layer.zip"
+}
+
+# This then creates the layer
+resource "aws_lambda_layer_version" "python_layer" {
+  filename            = "./healthcheck/lambda_functions/layer/python_layer.zip"
+  layer_name          = "python_layer"
+  compatible_runtimes = ["python3.9"]
+}
+
 # zip healthcheck lambda for deployment to aws
 data "archive_file" "zip_the_python_healthcheck_lambda" {
 type        = "zip"
-source_dir = "./healthcheck/lambda_functions/healthcheck"
+source_file = "./healthcheck/lambda_functions/healthcheck/healthcheck.py"
 output_path = "./healthcheck/lambda_functions/healthcheck/healthcheck.zip"
 }
 
 # zip alerter lambda for deployment to aws
 data "archive_file" "zip_the_python_alerter_lambda" {
 type        = "zip"
-source_dir = "./healthcheck/lambda_functions/alerter"
+source_file = "./healthcheck/lambda_functions/alerter/alerter.py"
 output_path = "./healthcheck/lambda_functions/alerter/alerter.zip"
 }
 
@@ -119,13 +133,17 @@ resource "aws_lambda_function" "healthcheck" {
 
   function_name = "${var.environment}-healthcheck"
 
-  filename      = data.archive_file.zip_the_python_healthcheck_lambda.output_path
+  filename      = "./healthcheck/lambda_functions/healthcheck/healthcheck.zip"
 
   handler       = "healthcheck.lambda_handler"
 
-  runtime       = "python3.10"
+  runtime       = "python3.9"
   timeout       = 10
   memory_size   = 512
+
+  layers = [
+    aws_lambda_layer_version.python_layer.arn
+  ]
 
   tags = {
     Name = "${var.environment}_sml_lambda_health_check"
@@ -147,11 +165,11 @@ resource "aws_lambda_function" "alerter" {
 
   function_name = "${var.environment}-alerter"
 
-  filename      = data.archive_file.zip_the_python_alerter_lambda.output_path
+  filename      = "./healthcheck/lambda_functions/alerter/alerter.zip"
 
   handler       = "alerter.lambda_handler"
 
-  runtime       = "python3.10"
+  runtime       = "python3.9"
   timeout       = 10
   memory_size   = 512
 
