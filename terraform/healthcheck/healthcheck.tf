@@ -56,7 +56,7 @@ resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
   policy_arn = "${aws_iam_policy.lambda_log_function.arn}"
 }
 
-# Adds permission for cloudwatch to call alerter function
+# Adds permission for cloudwatch to invoke alerter function
 resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     statement_id  = "AlarmAction"
     action        = "lambda:InvokeFunction"
