@@ -56,6 +56,15 @@ resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
   policy_arn = "${aws_iam_policy.lambda_log_function.arn}"
 }
 
+# Adds permission for cloudwatch to invoke healthcheck function
+resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_healthcheck" {
+    statement_id  = "AlarmAction"
+    action        = "lambda:InvokeFunction"
+    function_name = "${aws_lambda_function.healthcheck.function_name}"
+    principal     = "lambda.alarms.cloudwatch.amazonaws.com"
+    source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
+}
+
 # Adds permission for cloudwatch to invoke alerter function
 resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     statement_id  = "AlarmAction"
