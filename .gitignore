@@ -26,8 +26,10 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-terraform/healthcheck/lambda_functions/healthcheck/packages/*
-terraform/healthcheck/lambda_functions/alerter/packages/*
+terraform/healthcheck/lambda_functions/healthcheck/
+terraform/healthcheck/lambda_functions/alerter/
+!terraform/healthcheck/lambda_functions/healthcheck/healthcheck.py
+!terraform/healthcheck/lambda_functions/alerter/alerter.py
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
