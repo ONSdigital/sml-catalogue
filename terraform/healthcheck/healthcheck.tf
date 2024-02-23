@@ -77,14 +77,14 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
 # zip healthcheck lambda for deployment to aws
 data "archive_file" "zip_the_python_healthcheck_lambda" {
 type        = "zip"
-source_file = "./healthcheck/lambda_functions/healthcheck/healthcheck.py"
+source_file = "./healthcheck/lambda_functions/healthcheck"
 output_path = "./healthcheck/lambda_functions/healthcheck/healthcheck.zip"
 }
 
 # zip alerter lambda for deployment to aws
 data "archive_file" "zip_the_python_alerter_lambda" {
 type        = "zip"
-source_file = "./healthcheck/lambda_functions/alerter/alerter.py"
+source_file = "./healthcheck/lambda_functions/alerter"
 output_path = "./healthcheck/lambda_functions/alerter/alerter.zip"
 }
 
@@ -123,7 +123,7 @@ resource "aws_lambda_function" "healthcheck" {
 
   handler       = "healthcheck.lambda_handler"
 
-  runtime       = "python3.8"
+  runtime       = "python3.12"
   timeout       = 10
   memory_size   = 512
 
@@ -151,7 +151,7 @@ resource "aws_lambda_function" "alerter" {
 
   handler       = "alerter.lambda_handler"
 
-  runtime       = "python3.8"
+  runtime       = "python3.12"
   timeout       = 10
   memory_size   = 512
 
