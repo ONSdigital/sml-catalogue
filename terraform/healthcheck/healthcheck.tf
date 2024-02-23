@@ -103,11 +103,13 @@ data "aws_iam_policy_document" "assume_role" {
   }
 }
 
+# creates iam role
 resource "aws_iam_role" "healthcheck" {
   name               = "${var.environment}-healthcheck"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
+# creates iam role
 resource "aws_iam_role" "alerter" {
   name               = "${var.environment}-alerter"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
