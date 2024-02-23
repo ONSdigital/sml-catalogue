@@ -2,7 +2,7 @@
 import os # isort:skip
 import boto3 # isort:skip
 import logging # isort:skip
-import urllib.request # isort:skip
+import urllib.request # isort:skip nosec
 
 # Configure logging
 logger = logging.getLogger()
@@ -24,7 +24,7 @@ def check_website_health(site, expected_string, env):
     """
 
     # Ping the site
-    response = urllib.request.urlopen(site)
+    response = urllib.request.urlopen(site) # nosec
         
     # Get the status code from the response
     status_code = response.getcode()

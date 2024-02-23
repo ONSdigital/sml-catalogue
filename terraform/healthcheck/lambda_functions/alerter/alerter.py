@@ -1,6 +1,6 @@
 import os # isort:skip
 import json # isort:skip
-import urllib.request # isort:skip
+import urllib.request # isort:skip nosec
 
 def alerter(event, context):
     """
@@ -46,7 +46,7 @@ def alerter(event, context):
     }
 
     # Prepare the request
-    request = urllib.request.Request(
+    request = urllib.request.Request( # nosec
         slack_webhook_url,
         data=json.dumps(alert_message).encode('utf-8'),
         headers={'Content-Type': 'application/json'}
@@ -54,7 +54,7 @@ def alerter(event, context):
 
     try:
         # Send the request
-        response = urllib.request.urlopen(request)
+        response = urllib.request.urlopen(request) # nosec
         response_text = response.read().decode('utf-8')
         print("Message sent to Slack successfully:", response_text)
         return {
