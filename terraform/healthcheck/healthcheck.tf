@@ -74,18 +74,11 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
 }
 
-# zip healthcheck lambda for deployment to aws
-data "archive_file" "zip_the_python_healthcheck_lambda" {
+# zip healthcheck lambda functions for deployment to aws
+data "archive_file" "zip_the_python_healthcheck_lambda_functions" {
 type        = "zip"
-source_dir = "./healthcheck/lambda_functions/healthcheck/*"
-output_path = "./healthcheck/lambda_functions/healthcheck/healthcheck.zip"
-}
-
-# zip alerter lambda for deployment to aws
-data "archive_file" "zip_the_python_alerter_lambda" {
-type        = "zip"
-source_dir = "./healthcheck/lambda_functions/alerter/*"
-output_path = "./healthcheck/lambda_functions/alerter/alerter.zip"
+source_dir = "./healthcheck/lambda_functions/"
+output_path = "./healthcheck/lambda_functions/lambda_functions.zip"
 }
 
 # Allow role to be assumed so lambdas can run
@@ -119,7 +112,7 @@ resource "aws_lambda_function" "healthcheck" {
 
   function_name = "${var.environment}-healthcheck"
 
-  filename      = "./healthcheck/lambda_functions/healthcheck/healthcheck.zip/healthcheck.py"
+  filename      = "./healthcheck/lambda_functions/lambda_functions.zip/healthcheck.py"
 
   handler       = "healthcheck.lambda_handler"
 
@@ -147,7 +140,7 @@ resource "aws_lambda_function" "alerter" {
 
   function_name = "${var.environment}-alerter"
 
-  filename      = "./healthcheck/lambda_functions/alerter/alerter.zip/alerter.py"
+  filename      = "./healthcheck/lambda_functions/lambda_functions.zip/alerter.py"
 
   handler       = "alerter.lambda_handler"
 
