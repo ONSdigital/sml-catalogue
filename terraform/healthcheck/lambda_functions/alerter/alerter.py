@@ -1,6 +1,6 @@
 import os # isort:skip
 import json # isort:skip
-import requests # isort:skip
+import urllib.request # isort:skip
 
 def alerter(event, context):
     """
@@ -38,31 +38,32 @@ def alerter(event, context):
     else:
         slack_webhook_url = f"{os.environ.get('slack_webhook_url')}"
 
-    timeout=5
-
     # Message sent to channel
     alert_message = {
         "Summary": f"The website at {url} is unreachable. Healthcheck failure.",
         "Alarm": "Route53 Health Check Failure",
         "Description": f"Website is unreachable or not returning the expected response. Check Amazon Cloudwatch Alarms \'{alarm_name}\' and Healthcheck Lambda \'{lambda_name}\'.",
     }
-    
-    # We post the message to the slack channel workflow
-    response = requests.post(
-        slack_webhook_url, 
-        data=json.dumps(alert_message),
-        headers={'Content-Type': 'application/json'},
-        timeout=timeout
-    )
-    
-    # Check if post was successful
-    if response.status_code == 200:
+
+    # Prepare the request
+    request = urllib.request.Request(
+        slack_webhook_url,
+        data=json.dumps(alert_message).encode('utf-8'),
+        headers={'Content-Type': 'application/json'}
+        )
+
+    try:
+        # Send the request
+        response = urllib.request.urlopen(request)
+        response_text = response.read().decode('utf-8')
+        print("Message sent to Slack successfully:", response_text)
         return {
             'statusCode': 200,
-            'body': json.dumps('Message sent successfully')
+            'body': json.dumps('Message sent to Slack successfully')
         }
-    else:
+    except Exception as e:
+        print("Error sending message to Slack:", str(e))
         return {
-            'statusCode': response.status_code,
-            'body': json.dumps('Failed to send message')
+            'statusCode': 500,
+            'body': json.dumps('Error sending message to Slack')
         }
