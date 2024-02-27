@@ -92,6 +92,12 @@ Feature: About library tests
         Then The title of the page is "Method: Winsorisation"
         And The accessibility test passes
 
+    Scenario: Cell Key Perturbation page accessibility check
+        Given I'm an sml portal user
+        When I navigate to the "Cell Key Perturbation" summary page
+        Then The title of the page is "Method: Cell Key Perturbation"
+        And The accessibility test passes
+
     Scenario: Totals and components page accessibility check
         Given I'm an sml portal user
         When I navigate to the "Totals and Components" summary page
