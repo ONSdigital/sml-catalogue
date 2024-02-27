@@ -6,7 +6,7 @@
     'Expert group': 'Statistical Disclosure Control',
     Theme: 'Statistical Disclosure Control',
     Author: 'ONS Community Method',
-    'Languages': 'Python/R',
+    'Languages': 'Python & R',
     "Release": "Not Released Yet"
   },
   additional_data: {

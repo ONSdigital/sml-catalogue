@@ -25,7 +25,7 @@ Feature: Methods catalogue tests
     Scenario: Cell Key Perturbation table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Cell Key Perturbation" "Statistical Disclosure Control" "Statistical Disclosure Control" "Python/R"
+        Then The "future" table row of the method are "Cell Key Perturbation" "Statistical Disclosure Control" "Statistical Disclosure Control" "Python & R"
 
     Scenario: Ratio of Means table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
