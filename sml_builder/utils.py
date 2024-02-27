@@ -17,6 +17,7 @@ def _page_not_found(error):
     abort(404)
 
 
+# For use with code optioning. This function reads the state of the specified feature from the feature.json file.
 def get_feature_config(feature_name: str):
     with open("config/feature.json", "r", encoding="utf-8") as features_file:
         features = load(features_file)["features"]
