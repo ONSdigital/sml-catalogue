@@ -28,7 +28,7 @@ import sml_builder.utils  # noqa: F401, E402
 def index():
     return render_template(
         "index.html",
-        feature_1_active=sml_builder.utils.get_feature_config("FEATURE_1_ACTIVE"),
+        feature_1_enabled=sml_builder.utils.get_feature_config("FEATURE_1"),
     )
 
 
