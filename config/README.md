@@ -15,6 +15,6 @@
  3. Set the corresponding flag to `true` or `false` to opt in or opt out of the feature.
  4. Save the file.
 
- By using the feature.json file, developers can easily manage and control the code features without the need for extensive code modifications or deployments.
-
- Please note that changes made in the feature.json file may require a restart or recompilation of the application for the changes to take ef
+ By using the feature.json file, developers can integrate new functionality in a controlled way, earlier in the development cycle. This functionality can be enabled once appropriate testing and acceptance has been performed.
+ 
+ Please note that changes made in the feature.json file  will require a rebuild and re-deploy of the website to take effect.
