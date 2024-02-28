@@ -13,7 +13,7 @@
     "Release Status": "success",
     "Release Link": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0"
   },
-  specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/totals_components/editing_and_imputation/totals_components.md',
+  specification_link: 'https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/totals_components/totals_components.md',
   code_link: 'https://github.com/ONSdigital/sml-python-small/tree/main/sml_small/editing/totals_and_components',
   user_documentation_link: 'https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/totals-and-components/totals-and-components.md',
   api_reference: 'totals-and-components',
