@@ -124,145 +124,27 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 ]
             },
             {
-                "Sid": "AllowCloudwatchLogAccess",
-                "Effect": "Allow",
-                "Action": [ "logs:PutLogEvents",
-                    "logs:DescribeLogStreams",
-                    "logs:CreateLogStream",
-                    "logs:CreateLogGroup",
-                    "logs:DeleteLogGroup",
-                    "logs:DescribeLogGroups",
-                    "logs:ListTagsLogGroup",
-                    "logs:DeleteRetentionPolicy",
-                    "logs:PutRetentionPolicy"
-                ],
-                "Resource": "arn:aws:lambda:::*"
-            },
-            {
-                "Sid": "AllowCloudwatchEventsAccess",
-                "Effect": "Allow",
-                "Action": [ "events:PutRule",
-                "events:DescribeRule",
-                "events:DeleteRule",
-                "events:ListRules",
-                "events:ListRuleNamesByTarget",
-                "events:ListTagsForResource",
-                "events:PutTargets",
-                "events:ListTargetsByRule",
-                "events:RemoveTargets"
-                ],
-                "Resource": "arn:aws:lambda:::*-healthcheck"
-            },
-            {
-                "Sid": "AllowSNSAccess",
-                "Effect": "Allow",
-                "Action": ["sns:CreateTopic",
-                "sns:ListTopics",
-                "sns:SetTopicAttributes",
-                "sns:GetTopicAttributes",
-                "sns:DeleteTopic",
-                "sns:Publish",
-                "sns:ListTagsForResource",
-                "sns:TagResource",
-                "sns:Subscribe",
-                "sns:Unsubscribe",
-                "sns:GetSubscriptionAttributes"
-                ],
-                "Resource": "arn:aws:sns:::smlPortalTopic"
-            },
-            {
-                "Sid": "AllowIamAccess",
-                "Effect": "Allow",
-                "Action": [ "iam:PassRole",
-                "iam:CreateRole",
-                "iam:DeleteRole",
-                "iam:GetRole",
-                "iam:DetachRolePolicy",
-                "iam:UpdateAssumeRolePolicy",
-                "iam:ListRolePolicies",
-                "iam:ListInstanceProfilesForRole",
-                "iam:CreatePolicyVersion",
-                "iam:DeletePolicyVersion",
-                "iam:ListAttachedRolePolicies",
-                "iam:CreatePolicy",
-                "iam:GetPolicy",
-                "iam:ListPolicyTags",
-                "iam:GetGroupPolicy",
-                "iam:GetPolicyVersion",
-                "iam:GetRolePolicy",
-                "iam:DeletePolicy",
-                "iam:ListPolicyVersions",
-                "iam:AttachRolePolicy"
-                ],
-                "Resource": "arn:aws:cloudwatch:::*-environment-alarm"
-            },
-            {
-                "Sid": "AllowLambdaAccess",
-                "Effect": "Allow",
-                "Action": [ "lambda:CreateFunction",
-                "lambda:GetFunction",
-                "lambda:TagResource",
-                "lambda:UpdateFunctionCode",
-                "lambda:RemovePermission",
-                "lambda:DeleteFunction",
-                "lambda:GetPolicy",
-                "lambda:PublishLayerVersion",
-                "lambda:ListLayers",
-                "lambda:DeleteLayerVersion",
-                "lambda:AddLayerVersionPermission",
-                "lambda:RemoveLayerVersionPermission",
-                "lambda:GetLayerVersion",
-                "lambda:InvokeFunction",
-                "lambda:ListVersionsByFunction",
-                "lambda:GetFunctionCodeSigningConfig",
-                "lambda:UpdateFunctionConfiguration",
-                "lambda:AddPermission"
-                ],
-                "Resource": "arn:aws:lambda:::*"
-            },
-            {
-                "Sid": "AllowCloudwatchAccess",
-                "Effect": "Allow",
-                "Action": [ "cloudwatch:DeleteAlarms",
-                "cloudwatch:DescribeAlarms",
-                "cloudwatch:PutMetricData",
-                "cloudwatch:PutMetricAlarm",
-                "cloudwatch:ListTagsForResource"
-                ],
-                "Resource": "arn:aws:cloudwatch:::*-environment-alarm"
-            },
-            {
-                "Sid": "AllowRoute53Access",
-                "Effect": "Allow",
-                "Action": [ "route53:CreateHealthCheck",
-                "route53:DeleteHealthCheck",
-                "route53:UpdateHealthCheck",
-                "route53:ChangeTagsForResource",
-                "route53:GetHealthCheck"
-                ],
-                "Resource": "arn:aws:route53:::*"
-            },
-            {
-                "Sid": "AllowRoute53PlusACM",
-                "Effect": "Allow",
-                "Action": [ "route53:GetHostedZone",
-                    "route53:ListHostedZones",
-                    "route53:ListTagsForResources",
-                    "route53:ListTagsForResource",
-                    "route53:ChangeResourceRecordSets",
-                    "route53:ListResourceRecordSets",
-                    "route53:GetChange",
-                    "acm:AddTagsToCertificate",
-                    "acm:RenewCertificate",
-                    "acm:ListTagsForCertificate",
-                    "acm:DescribeCertificate",
-                    "acm:DeleteCertificate",
-                    "acm:RequestCertificate",
-                    "acm:RemoveTagsFromCertificate",
-                    "acm:ListCertificates"
-                ],
-                "Resource": "*"
-            }
+            "Sid": "AllowRoute53PlusACM",
+            "Effect": "Allow",
+            "Action": [
+                "route53:GetHostedZone",
+                "route53:ListHostedZones",
+                "route53:ListTagsForResources",
+                "route53:ListTagsForResource",
+                "route53:ChangeResourceRecordSets",
+                "route53:ListResourceRecordSets",
+                "route53:GetChange",
+                "acm:DeleteCertificate",
+                "acm:DescribeCertificate",
+                "acm:RequestCertificate",
+                "acm:RemoveTagsFromCertificate",
+                "acm:AddTagsToCertificate",
+                "acm:ListTagsForCertificate",
+                "acm:ListCertificates",
+                "acm:RenewCertificate"
+            ],
+            "Resource": "*"
+        }
         ]
     }
     EOF
