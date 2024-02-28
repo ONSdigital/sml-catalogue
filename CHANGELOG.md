@@ -1,5 +1,16 @@
 <!--next-version-placeholder-->
 
+## v1.2.0-rc.1 (2024-02-28)
+
+### Feature
+
+* Add cell key perturbation to future methods table ([`528bafa`](https://github.com/ONSdigital/sml-catalogue/commit/528bafae63cfb17075d9d381472926ec99e947c2))
+
+### Fix
+
+* Removed BAW references ([#256](https://github.com/ONSdigital/sml-catalogue/issues/256)) ([`a0b754c`](https://github.com/ONSdigital/sml-catalogue/commit/a0b754cbb1e722263993061ea2c555e0afda959c))
+* SPP-10352 Amending Sidebar to correctly allign elements within 12 column grid ([#257](https://github.com/ONSdigital/sml-catalogue/issues/257)) ([`c0390ec`](https://github.com/ONSdigital/sml-catalogue/commit/c0390ec5579a863de5babb04ecb9aaab28c54f59))
+
 ## v1.1.0 (2024-01-31)
 
 
