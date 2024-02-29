@@ -7,47 +7,6 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
 }
 
-# Allow role to be assumed so lambdas can run
-data "aws_iam_policy_document" "assume_role" {
-  statement {
-    effect  = "Allow"
-    actions = [
-      "sts:AssumeRole",
-      ]
-
-    principals {
-      identifiers = ["lambda.amazonaws.com"]
-      type        = "Service"
-    }
-  }
-}
-
-# Permissions for lambda to log to a log group and for cloudwatch to put metric data
-data "aws_iam_policy_document" "lambda_log_function" {
-  statement {
-    actions = [
-      "logs:CreateLogGroup",
-      "logs:CreateLogStream",
-      "logs:PutLogEvents"
-    ]
-
-    resources = [
-      "arn:aws:logs:*:*:*",
-    ]
-  }
-
-  statement {
-    actions = [
-      "cloudwatch:PutMetricData"
-    ]
-
-    resources = [
-      "*",
-    ]
-  }
-  
-}
-
 # zip alerter lambda for deployment to aws
 data "archive_file" "zip_the_python_alerter_lambda" {
 type        = "zip"
