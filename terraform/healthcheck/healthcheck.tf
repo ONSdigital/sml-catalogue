@@ -1,5 +1,5 @@
 module "event" {
-  source = "./event"
+  source = "./"
   
   environment = var.environment
 
