@@ -16,7 +16,7 @@ resource "aws_cloudfront_distribution" "sml-catalogue" {
   is_ipv6_enabled     = true
   default_root_object = "index.html"
 
-  aliases = terraform.workspace == "main" ? [local.domain_name_base[var.environment][var.environment]] : null
+  aliases = terraform.workspace == "main" ? [local.domain_name_base[var.environment]] : null
 
   custom_error_response {
     error_code         = "403"
@@ -129,7 +129,7 @@ module "route53" {
     hosted_zone_id = aws_cloudfront_distribution.sml-catalogue.hosted_zone_id
   }
 
-  domain_name_base = local.domain_name_base[var.environment][var.environment]
+  domain_name_base = local.domain_name_base[var.environment]
 }
 
 output "cf_website_url" {
