@@ -1,20 +1,11 @@
-# This rule triggers the healthcheck lambda every minute
-resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
-    name                = "${var.domain_name_base}-healthcheck-trigger"
-    description         = "Fires the healthcheck lambda function every minute"
-    schedule_expression = "rate(1 minute)"
-}
+module "event" {
+  source = "./event"
+  
+  environment = var.environment
 
-# Points to the healthcheck lambda
-resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
-    rule      = "${aws_cloudwatch_event_rule.trigger_healthcheck.name}"
-    target_id = "check_sml_site"
-    arn       = "${aws_lambda_function.healthcheck.arn}"
-    input     = jsonencode({
-                  "site"            : "https://${var.domain_name_base}",
-                  "env"             : "${var.environment}",
-                  "expected_string" : "An open source library for statistical code approved by the ONS"
-                })
+  deployment_role = var.deployment_role
+
+  domain_name_base = local.domain_name_base[var.environment]
 }
 
 # Permissions for lambda to log to a log group and for cloudwatch to put metric data
@@ -62,7 +53,6 @@ resource "aws_lambda_permission" "allow_event_to_invoke_healthcheck" {
     action        = "lambda:InvokeFunction"
     function_name = "${aws_lambda_function.healthcheck.function_name}"
     principal     = "events.amazonaws.com"
-    source_arn    = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
 }
 
 # Adds permission for cloudwatch to invoke alerter function
