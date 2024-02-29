@@ -26,7 +26,7 @@ resource "aws_lambda_permission" "allow_event_to_invoke_healthcheck" {
     source_arn    = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
 }
 
-# creates iam role
+# Creates iam role
 resource "aws_iam_role" "healthcheck" {
   name               = "${var.environment}-healthcheck"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
@@ -86,14 +86,14 @@ resource "aws_iam_policy" "lambda_log_function" {
   policy = "${data.aws_iam_policy_document.lambda_log_function.json}"
 }
 
-# zip healthcheck lambda for deployment to aws
+# Zip healthcheck lambda for deployment to aws
 data "archive_file" "zip_the_python_healthcheck_lambda" {
 type        = "zip"
 source_file = "../lambda_functions/healthcheck/healthcheck.py"
 output_path = "../lambda_functions/healthcheck/healthcheck.zip"
 }
 
-# creates healthcheck lambda
+# Creates healthcheck lambda
 resource "aws_lambda_function" "healthcheck" {
   role          = aws_iam_role.healthcheck.arn
 

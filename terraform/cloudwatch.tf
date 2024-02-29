@@ -1,4 +1,4 @@
-# creates the cloudwatch alarm and its dependency on the healthcheck
+# Creates the cloudwatch alarm and its dependency on the healthcheck
 resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   alarm_name          = "${var.environment}-environment-alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"

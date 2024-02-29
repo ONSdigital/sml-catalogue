@@ -1,4 +1,4 @@
-# creates route53 and its dependency on cloudwatch alarms
+# Creates route53 and its dependency on cloudwatch alarms
 resource "aws_route53_health_check" "sml" {
   type                            = "CLOUDWATCH_METRIC"
   cloudwatch_alarm_name           = aws_cloudwatch_metric_alarm.healthcheck.alarm_name
