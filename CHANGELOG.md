@@ -1,5 +1,50 @@
 <!--next-version-placeholder-->
 
+## v1.2.0-rc.1 (2024-02-28)
+
+### Feature
+
+* Add cell key perturbation to future methods table ([`528bafa`](https://github.com/ONSdigital/sml-catalogue/commit/528bafae63cfb17075d9d381472926ec99e947c2))
+
+### Fix
+
+* Removed BAW references ([#256](https://github.com/ONSdigital/sml-catalogue/issues/256)) ([`a0b754c`](https://github.com/ONSdigital/sml-catalogue/commit/a0b754cbb1e722263993061ea2c555e0afda959c))
+* SPP-10352 Amending Sidebar to correctly allign elements within 12 column grid ([#257](https://github.com/ONSdigital/sml-catalogue/issues/257)) ([`c0390ec`](https://github.com/ONSdigital/sml-catalogue/commit/c0390ec5579a863de5babb04ecb9aaab28c54f59))
+
+## v1.1.0 (2024-01-31)
+
+
+
+## v1.1.0-rc.6 (2024-01-31)
+
+
+
+## v1.1.0-rc.5 (2024-01-31)
+
+
+
+## v1.1.0-rc.4 (2024-01-15)
+
+### Fix
+
+* Spp 10641 deploy preprod and prod ([#255](https://github.com/ONSdigital/sml-catalogue/issues/255)) ([`1187383`](https://github.com/ONSdigital/sml-catalogue/commit/11873830c945ab35988e380eaff8a572f69434bf))
+
+## v1.1.0-rc.3 (2024-01-15)
+
+### Fix
+
+* Spp 10641 deploy preprod and prod ([#254](https://github.com/ONSdigital/sml-catalogue/issues/254)) ([`b64989f`](https://github.com/ONSdigital/sml-catalogue/commit/b64989f063e9100bc77eecb4242809351fce44b0))
+
+## v1.1.0-rc.2 (2024-01-15)
+
+
+
+## v1.1.0-rc.1 (2024-01-15)
+
+### Feature
+
+* Update website to latest design system version ([`ee05895`](https://github.com/ONSdigital/sml-catalogue/commit/ee058954f009d6f666a8437349969dcbf7299184))
+
 ## v1.0.0 (2023-11-22)
 
 

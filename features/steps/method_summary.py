@@ -35,6 +35,27 @@ def check_method_summary_title(context, title):
     assert page_title == title
 
 
+# This test will check if the github resources are present.
+# If they cannot be found the test will fail with a timeout error so asserts are not needed here.
+@then("The {method_name} method has the expected github resources")
+def check_method_has_github_resources(context, method_name):
+    method_name = method_name.strip('"')
+
+    method_spec_link_text = f"Go to {method_name} specification on GitHub"
+    code_link_text = f"Go to {method_name} code on GitHub"
+    user_docs_link_text = f"Go to {method_name} user documentation on GitHub"
+
+    WebDriverWait(driver, timeout=timeout).until(
+        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=method_spec_link_text)
+    )
+    WebDriverWait(driver, timeout=timeout).until(
+        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=code_link_text)
+    )
+    WebDriverWait(driver, timeout=timeout).until(
+        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=user_docs_link_text)
+    )
+
+
 @then("The {metaDataField} of the method is {metaDataValue}")
 def check_ons_meta_data(context, metaDataField, metaDataValue):
     ons_meta_data_fields = extract_ons_meta_data(context)[0]

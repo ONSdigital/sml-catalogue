@@ -508,7 +508,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<nav class=\"ons-breadcrumb\" aria-label=\"breadcrumbs\" id=\"breadcrumbs\">",
+                    "html": "<nav class=\"ons-breadcrumbs\" aria-label=\"breadcrumbs\" id=\"breadcrumbs\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -639,7 +639,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<header class=\"ons-header \" role=\"banner\">",
+                    "html": "<header class=\"ons-header\" role=\"banner\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -689,7 +689,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<header class=\"ons-header \" role=\"banner\">",
+                    "html": "<header class=\"ons-header\" role=\"banner\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -739,7 +739,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<header class=\"ons-header \" role=\"banner\">",
+                    "html": "<header class=\"ons-header\" role=\"banner\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -795,7 +795,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<header class=\"ons-header \" role=\"banner\">",
+                    "html": "<header class=\"ons-header\" role=\"banner\">",
                     "impact": null,
                     "none": [
                         {
@@ -881,7 +881,7 @@
                         }
                     ],
                     "any": [],
-                    "html": "<svg class=\"ons-svg-logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-alt\">",
+                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-alt\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -931,7 +931,7 @@
                         }
                     ],
                     "any": [],
-                    "html": "<nav class=\"ons-breadcrumb\" aria-label=\"breadcrumbs\" id=\"breadcrumbs\">",
+                    "html": "<nav class=\"ons-breadcrumbs\" aria-label=\"breadcrumbs\" id=\"breadcrumbs\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -981,7 +981,7 @@
                         }
                     ],
                     "any": [],
-                    "html": "<svg class=\"ons-svg-logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\">",
+                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1031,7 +1031,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<svg class=\"ons-svg-logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-alt\">",
+                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-alt\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1067,7 +1067,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<nav class=\"ons-breadcrumb\" aria-label=\"breadcrumbs\" id=\"breadcrumbs\">",
+                    "html": "<nav class=\"ons-breadcrumbs\" aria-label=\"breadcrumbs\" id=\"breadcrumbs\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1103,7 +1103,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<svg class=\"ons-svg-logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\">",
+                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1389,11 +1389,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h3 class=\"ons-phase-banner__badge\">Beta</h3>",
+                    "html": "<strong class=\"ons-phase-banner__badge\">Beta</strong>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h3"
+                        "strong"
                     ]
                 },
                 {
@@ -1401,8 +1401,8 @@
                     "any": [
                         {
                             "data": {
-                                "bgColor": "#f5f5f6",
-                                "contrastRatio": 14.6,
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 15.9,
                                 "expectedContrastRatio": "4.5:1",
                                 "fgColor": "#222222",
                                 "fontSize": "10.5pt",
@@ -1411,7 +1411,7 @@
                             },
                             "id": "color-contrast",
                             "impact": "serious",
-                            "message": "Element has sufficient color contrast of 14.6",
+                            "message": "Element has sufficient color contrast of 15.9",
                             "relatedNodes": []
                         }
                     ],
@@ -1427,8 +1427,8 @@
                     "any": [
                         {
                             "data": {
-                                "bgColor": "#f5f5f6",
-                                "contrastRatio": 6.08,
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
                                 "expectedContrastRatio": "4.5:1",
                                 "fgColor": "#206095",
                                 "fontSize": "10.5pt",
@@ -1437,7 +1437,7 @@
                             },
                             "id": "color-contrast",
                             "impact": "serious",
-                            "message": "Element has sufficient color contrast of 6.08",
+                            "message": "Element has sufficient color contrast of 6.62",
                             "relatedNodes": []
                         }
                     ],
@@ -1493,7 +1493,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/\">Home</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/\">\nHome\n                            </a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1519,7 +1519,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1545,7 +1545,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/help-centre/index\">\nHelp centre\n                            </a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1571,7 +1571,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/resources/about\">About this library</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/resources/about\">\nAbout this library\n                            </a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1597,7 +1597,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/resources/glossary\">Glossary</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/resources/glossary\">\nGlossary\n                            </a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1623,7 +1623,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1727,7 +1727,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p> The method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent.</p>",
+                    "html": "<p>The method checks the ratio of a principal variable\nagainst a suitable predictor variable and makes an automatic correction\nif the calculated ratio is around 1000. The automatic correction is\napplied to all relevant variables for the respondent.\n</p>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1783,7 +1783,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][target=\"_blank\"] > .ons-external-link__text"
+                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][rel=\"noopener\"] > .ons-external-link__text"
                     ]
                 },
                 {
@@ -2026,24 +2026,24 @@
                         {
                             "data": {
                                 "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
+                                "contrastRatio": 6.62,
                                 "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
+                                "fgColor": "#206095",
                                 "fontSize": "13.5pt",
                                 "fontWeight": "normal",
                                 "missingData": null
                             },
                             "id": "color-contrast",
                             "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
+                            "message": "Element has sufficient color contrast of 6.62",
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<span class=\"ons-status ons-status--pending\">Not Released Yet</span>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-status"
+                        "a[rel=\"noopener\\ noreferrer\"]"
                     ]
                 },
                 {
@@ -2091,11 +2091,89 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p>No resources are currently available.\n</p>",
+                    "html": "<p>Links to the method code, specification and user documentation are provided for further reading.\n</p>",
                     "impact": null,
                     "none": [],
                     "target": [
                         "p:nth-child(11)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span class=\"ons-external-link__text\">Go to Thousand Pound Correction specification on GitHub</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(12) > .ons-external-link__text"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span class=\"ons-external-link__text\">Go to Thousand Pound Correction code on GitHub</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(14) > .ons-external-link__text"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 6.62,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#206095",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 6.62",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span class=\"ons-external-link__text\">Go to Thousand Pound Correction user documentation on GitHub</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(16) > .ons-external-link__text"
                     ]
                 },
                 {
@@ -2225,7 +2303,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-footer__license > .ons-external-link[target=\"_blank\"][rel=\"noopener\"] > .ons-external-link__text"
+                        ".ons-footer__license > .ons-external-link[rel=\"noopener\"][target=\"_blank\"] > .ons-external-link__text"
                     ]
                 }
             ],
@@ -2454,7 +2532,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\"><span class=\"ons-status ons-status--pending\">Not Released Yet</span></dd>",
+                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2518,7 +2596,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2636,7 +2714,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<nav class=\"ons-breadcrumb\" aria-label=\"breadcrumbs\" id=\"breadcrumbs\">",
+                    "html": "<nav class=\"ons-breadcrumbs\" aria-label=\"breadcrumbs\" id=\"breadcrumbs\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2654,7 +2732,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-breadcrumb__item\" id=\"breadcrumb-1\">",
+                    "html": "<li class=\"ons-breadcrumbs__item\" id=\"breadcrumb-1\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2709,24 +2787,6 @@
                     "none": [],
                     "target": [
                         ".ons-cookies-banner__title"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "has-visible-text",
-                            "impact": "minor",
-                            "message": "Element has text that is visible to screen readers",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h3 class=\"ons-phase-banner__badge\">Beta</h3>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "h3"
                     ]
                 },
                 {
@@ -2830,24 +2890,6 @@
                     "none": [],
                     "target": [
                         ".ons-cookies-banner__title"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": 3,
-                            "id": "heading-order",
-                            "impact": "moderate",
-                            "message": "Heading order valid",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h3 class=\"ons-phase-banner__badge\">Beta</h3>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "h3"
                     ]
                 },
                 {
@@ -3146,7 +3188,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-skip-link\" href=\"#main-content\">Skip to main content</a>",
+                    "html": "<a class=\"ons-skip-to-content\" href=\"#main-content\">Skip to main content</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3158,13 +3200,13 @@
                         }
                     ],
                     "target": [
-                        ".ons-skip-link"
+                        ".ons-skip-to-content"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/\">Home</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/\">\nHome\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3182,7 +3224,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/\">Home</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/\">\nHome\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -3200,7 +3242,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                            <a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3218,7 +3260,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -3236,7 +3278,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/help-centre/index\">\nHelp centre\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3254,7 +3296,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/help-centre/index\">\nHelp centre\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -3272,7 +3314,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/resources/about\">About this library</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/resources/about\">\nAbout this library\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3290,7 +3332,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/resources/about\">About this library</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/resources/about\">\nAbout this library\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -3308,7 +3350,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/resources/glossary\">Glossary</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/resources/glossary\">\nGlossary\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3326,7 +3368,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/resources/glossary\">Glossary</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/resources/glossary\">\nGlossary\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -3344,7 +3386,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-breadcrumb__item\" id=\"breadcrumb-1\">",
+                    "html": "<li class=\"ons-breadcrumbs__item\" id=\"breadcrumb-1\">",
                     "impact": null,
                     "none": [
                         {
@@ -3362,7 +3404,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3398,7 +3440,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p> The method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent.</p>",
+                    "html": "<p>The method checks the ratio of a principal variable\nagainst a suitable predictor variable and makes an automatic correction\nif the calculated ratio is around 1000. The automatic correction is\napplied to all relevant variables for the respondent.\n</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3428,13 +3470,31 @@
                         }
                     ],
                     "target": [
-                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][target=\"_blank\"]"
+                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][rel=\"noopener\"]"
                     ]
                 },
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>No resources are currently available.\n</p>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[rel=\"noopener\\ noreferrer\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<p>Links to the method code, specification and user documentation are provided for further reading.\n</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3452,7 +3512,61 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/cookies\" class=\"ons-list__link\">Cookies</a>                </li>",
+                    "html": "<a href=\"https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/thousand_pounds_correction/thousand_pounds_correction.md\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(12)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/thousand_pounds/thousand_pounds.py\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(14)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/thousand-pound-correction/thousand_pound_correction.md\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(16)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<li class=\"ons-list__item\">\n \n<a href=\"/cookies\" class=\"ons-list__link\">Cookies</a>                </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3488,7 +3602,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/accessibility-statement\" class=\"ons-list__link\">Accessibility Statement</a>                </li>",
+                    "html": "<li class=\"ons-list__item\">\n \n<a href=\"/accessibility-statement\" class=\"ons-list__link\">Accessibility Statement</a>                </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3524,7 +3638,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/privacy-and-data-protection\" class=\"ons-list__link\">Privacy and Data Protection</a>                </li>",
+                    "html": "<li class=\"ons-list__item\">\n \n<a href=\"/privacy-and-data-protection\" class=\"ons-list__link\">Privacy and Data Protection</a>                </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3572,7 +3686,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-footer__license > .ons-external-link[target=\"_blank\"][rel=\"noopener\"]"
+                        ".ons-footer__license > .ons-external-link[rel=\"noopener\"][target=\"_blank\"]"
                     ]
                 }
             ],
@@ -3601,7 +3715,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<header class=\"ons-header \" role=\"banner\">",
+                    "html": "<header class=\"ons-header\" role=\"banner\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -3697,7 +3811,7 @@
                             "message": "Document has no more than one banner landmark",
                             "relatedNodes": [
                                 {
-                                    "html": "<header class=\"ons-header \" role=\"banner\">",
+                                    "html": "<header class=\"ons-header\" role=\"banner\">",
                                     "target": [
                                         "header"
                                     ]
@@ -3904,7 +4018,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-skip-link\" href=\"#main-content\">Skip to main content</a>",
+                    "html": "<a class=\"ons-skip-to-content\" href=\"#main-content\">Skip to main content</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3916,7 +4030,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-skip-link"
+                        ".ons-skip-to-content"
                     ]
                 },
                 {
@@ -3930,7 +4044,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/\">Home</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/\">\nHome\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -3956,7 +4070,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -3982,7 +4096,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/help-centre/index\">\nHelp centre\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -4008,7 +4122,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/resources/about\">About this library</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/resources/about\">\nAbout this library\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -4034,7 +4148,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/resources/glossary\">Glossary</a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/resources/glossary\">\nGlossary\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -4060,7 +4174,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumb__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [
                         {
@@ -4098,7 +4212,111 @@
                         }
                     ],
                     "target": [
-                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][target=\"_blank\"]"
+                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][rel=\"noopener\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[rel=\"noopener\\ noreferrer\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/thousand_pounds_correction/thousand_pounds_correction.md\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(12)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/thousand_pounds/thousand_pounds.py\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(14)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/thousand-pound-correction/thousand_pound_correction.md\" class=\"ons-external-link\" target=\"_blank\" rel=\"noopener\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(16)"
                     ]
                 },
                 {
@@ -4202,7 +4420,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-footer__license > .ons-external-link[target=\"_blank\"][rel=\"noopener\"]"
+                        ".ons-footer__license > .ons-external-link[rel=\"noopener\"][target=\"_blank\"]"
                     ]
                 }
             ],
@@ -4243,7 +4461,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<ol class=\"ons-breadcrumb__items ons-u-fs-s\">",
+                    "html": "<ol class=\"ons-breadcrumbs__items ons-u-fs-s\">",
                     "impact": null,
                     "none": [
                         {
@@ -4301,7 +4519,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/\">Home</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/\">\nHome\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4319,7 +4537,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                           <a class=\"ons-navigation__link\" href=\"/methods\">Methods catalogue</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                            <a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4337,7 +4555,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/help-centre/index\">Help centre</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/help-centre/index\">\nHelp centre\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4355,7 +4573,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/resources/about\">About this library</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/resources/about\">\nAbout this library\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4373,7 +4591,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item \">\n                           <a class=\"ons-navigation__link\" href=\"/resources/glossary\">Glossary</a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item \">\n                            <a class=\"ons-navigation__link\" href=\"/resources/glossary\">\nGlossary\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4391,7 +4609,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-breadcrumb__item\" id=\"breadcrumb-1\">",
+                    "html": "<li class=\"ons-breadcrumbs__item\" id=\"breadcrumb-1\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4409,7 +4627,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/cookies\" class=\"ons-list__link\">Cookies</a>                </li>",
+                    "html": "<li class=\"ons-list__item\">\n \n<a href=\"/cookies\" class=\"ons-list__link\">Cookies</a>                </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4427,7 +4645,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/accessibility-statement\" class=\"ons-list__link\">Accessibility Statement</a>                </li>",
+                    "html": "<li class=\"ons-list__item\">\n \n<a href=\"/accessibility-statement\" class=\"ons-list__link\">Accessibility Statement</a>                </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4445,7 +4663,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-list__item\">\n\n<a href=\"/privacy-and-data-protection\" class=\"ons-list__link\">Privacy and Data Protection</a>                </li>",
+                    "html": "<li class=\"ons-list__item\">\n \n<a href=\"/privacy-and-data-protection\" class=\"ons-list__link\">Privacy and Data Protection</a>                </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4578,11 +4796,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-skip-link\" href=\"#main-content\">Skip to main content</a>",
+                    "html": "<a class=\"ons-skip-to-content\" href=\"#main-content\">Skip to main content</a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-skip-link"
+                        ".ons-skip-to-content"
                     ]
                 }
             ],
@@ -4592,8 +4810,8 @@
             ]
         }
     ],
-    "timestamp": "2023-11-14T14:07:13.106Z",
-    "url": "http://127.0.0.1:8000/method/future-methods/thousand-pound-correction",
+    "timestamp": "2024-01-31T09:55:49.199Z",
+    "url": "http://127.0.0.1:8000/method/ready-to-use-methods/thousand-pound-correction",
     "violations": [
         {
             "description": "Ensures role attribute has an appropriate value for the element",
@@ -4616,7 +4834,7 @@
                         }
                     ],
                     "failureSummary": "Fix any of the following:\n  role banner  is not allowed for given element",
-                    "html": "<header class=\"ons-header \" role=\"banner\">",
+                    "html": "<header class=\"ons-header\" role=\"banner\">",
                     "impact": "minor",
                     "none": [],
                     "target": [
@@ -4646,9 +4864,9 @@
                             "message": "Some page content is not contained by landmarks",
                             "relatedNodes": [
                                 {
-                                    "html": "<h3 class=\"ons-phase-banner__badge\">Beta</h3>",
+                                    "html": "<strong class=\"ons-phase-banner__badge\">Beta</strong>",
                                     "target": [
-                                        "h3"
+                                        "strong"
                                     ]
                                 },
                                 {
@@ -4658,9 +4876,9 @@
                                     ]
                                 },
                                 {
-                                    "html": "<a class=\"ons-skip-link\" href=\"#main-content\">Skip to main content</a>",
+                                    "html": "<a class=\"ons-skip-to-content\" href=\"#main-content\">Skip to main content</a>",
                                     "target": [
-                                        ".ons-skip-link"
+                                        ".ons-skip-to-content"
                                     ]
                                 }
                             ]

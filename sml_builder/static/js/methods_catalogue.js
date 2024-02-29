@@ -13,7 +13,7 @@ function updateTableHeaders() {
     const buttons = futureTable.querySelectorAll(".ons-table__sort-button");
 
     for (let i = 0; i < buttons.length; i++) {
-        let sortIcon = `${headers[i]}<svg id="sort-sprite-name-${i}" class="ons-svg-icon" viewBox="0 0 12 19" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
+        let sortIcon = `${headers[i]}<svg id="sort-sprite-name-${i}" class="ons-icon" viewBox="0 0 12 19" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
             <path class="ons-topTriangle" d="M6 0l6 7.2H0L6 0zm0 18.6l6-7.2H0l6 7.2zm0 3.6l6 7.2H0l6-7.2z"></path>
             <path class="ons-bottomTriangle" d="M6 18.6l6-7.2H0l6 7.2zm0 3.6l6 7.2H0l6-7.2z"></path>
         </svg>
