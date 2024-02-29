@@ -13,3 +13,7 @@ locals {
     prod : "statisticalmethodslibrary.ons.gov.uk"
   }
 }
+
+variable "domain_name_base" {
+  type = string
+}

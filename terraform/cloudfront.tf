@@ -132,17 +132,6 @@ module "route53" {
   domain_name_base = local.domain_name_base[var.environment]
 }
 
-# create the healthcheck using the healthcheck.tf file as a source
-module "healthcheck" {
-  source = "./healthcheck"
-  
-  environment = var.environment
-
-  deployment_role = var.deployment_role
-
-  domain_name_base = local.domain_name_base[var.environment]
-}
-
 output "cf_website_url" {
   value = "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
 }

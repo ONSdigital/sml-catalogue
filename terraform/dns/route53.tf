@@ -30,6 +30,7 @@ resource "aws_acm_certificate_validation" "sml" {
   validation_record_fqdns = [for record in aws_route53_record.cert-validations : record.fqdn]
   #  provider                = aws.us_east_1
 }
+
 resource "aws_route53_record" "cert-validations" {
   for_each = {
     for dvo in aws_acm_certificate.sml.domain_validation_options : dvo.domain_name => {
@@ -44,4 +45,18 @@ resource "aws_route53_record" "cert-validations" {
   ttl             = 60
   type            = each.value.type
   zone_id         = data.aws_route53_zone.sml.zone_id
+}
+
+# creates route53 and its dependency on cloudwatch alarms
+resource "aws_route53_health_check" "sml" {
+  type                            = "CLOUDWATCH_METRIC"
+  cloudwatch_alarm_name           = aws_cloudwatch_metric_alarm.healthcheck.alarm_name
+  cloudwatch_alarm_region         = "eu-west-2"
+  insufficient_data_health_status = "Healthy"
+
+  tags = {
+    Name = "${var.environment}_environment"
+  }
+
+  depends_on                      = [aws_cloudwatch_metric_alarm.healthcheck]
 }
