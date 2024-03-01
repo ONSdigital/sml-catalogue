@@ -31,32 +31,24 @@ data "aws_iam_policy_document" "lambda_log_function" {
     actions = [
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
-      "logs:PutLogEvents",
-      "cloudwatch:PutMetricData"
+      "logs:PutLogEvents"
     ]
 
     resources = [
-      "arn:aws:logs:*:*:lambda-healthcheck-logs",
+      "arn:aws:logs:*:*:*",
     ]
   }
 
   statement {
     actions = [
-                "events:PutRule",
-                "events:DescribeRule",
-                "events:DeleteRule",
-                "events:ListRules",
-                "events:ListRuleNamesByTarget",
-                "events:ListTagsForResource",
-                "events:PutTargets",
-                "events:ListTargetsByRule",
-                "events:RemoveTargets"
+      "cloudwatch:PutMetricData"
     ]
 
     resources = [
-                "arn:aws:events:eu-west-2:115311790871:rule/${local.domain_name_base[var.environment]}-healthcheck-trigger"
+      "*",
     ]
   }
+  
 }
 
 # This creates the policy needed for a lambda to log.
