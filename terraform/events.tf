@@ -5,7 +5,7 @@ resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
     schedule_expression = "rate(1 minute)"
 }
 
-# Points to the healthcheck lambda
+# Targets the healthcheck lambda
 resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
     rule      = "${aws_cloudwatch_event_rule.trigger_healthcheck.name}"
     target_id = "check_sml_site"
