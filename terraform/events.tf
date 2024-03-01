@@ -3,7 +3,7 @@ resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
     name                = "${local.domain_name_base[var.environment]}-healthcheck-trigger"
     description         = "Fires the healthcheck lambda function every minute"
     schedule_expression = "rate(1 minute)"
-    policy = aws_iam_policy_document.event.arn
+    policy_arn = aws_iam_policy_document.event.arn
 }
 
 # Points to the healthcheck lambda
