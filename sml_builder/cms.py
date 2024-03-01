@@ -1,7 +1,6 @@
 import os
 
 import contentful
-import os
 
 # Will need a official contentful account for the project/ team, and then we can update
 # the space_id, content_delivery_api_key
