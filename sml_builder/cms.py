@@ -6,7 +6,7 @@ import os
 # Will need a official contentful account for the project/ team, and then we can update
 # the space_id, content_delivery_api_key
 SPACE_ID = os.environ.get("POETRY_SPACE_ID")
-CDA_KEY = os.environ.get("POETRY_CDA_KEY")
+CDA_KEY = os.environ.get("POETRY_CDA_KEY") 
 
 client = contentful.Client(SPACE_ID, CDA_KEY)
 
