@@ -5,19 +5,8 @@ import os
 
 # Will need a official contentful account for the project/ team, and then we can update
 # the space_id, content_delivery_api_key
-SPACE_ID = ""
-CDA_KEY = ""
-
-try:
-    with open("cms_tokens.txt", "r") as file:
-        CDA_KEY = file.readline()
-        SPACE_ID = file.readline()
-except FileNotFoundError:
-    print("cms_tokens.txt file not found")
-    SPACE_ID = os.environ.get("SPACE_ID")
-    CDA_KEY = os.environ.get("CDA_KEY")
-except Exception as e:
-    print("Error reading cms_tokens.txt:", str(e))
+SPACE_ID = os.environ.get("POETRY_SPACE_ID")
+CDA_KEY = os.environ.get("POETRY_CDA_KEY")
 
 client = contentful.Client(SPACE_ID, CDA_KEY)
 

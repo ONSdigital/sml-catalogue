@@ -33,8 +33,8 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
-read $CDA_KEY << cms_tokens.txt
-read $SPACE_ID << cms_tokens.txt
+export POETRY_CDA_KEY=$CDA_KEY
+export POETRY_SPACE_ID=$SPACE_ID
 
 echo "${SIGNING_KEY}" > signingkey.key
 gpg --import signingkey.key
