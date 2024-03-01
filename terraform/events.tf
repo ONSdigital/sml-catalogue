@@ -38,7 +38,7 @@ data "aws_iam_policy_document" "event" {
                     "events:PutTargets",
                     "events:ListTargetsByRule",
                     "events:RemoveTargets"
-                ],
+                ]
 
         resources = [
         "arn:aws:events:eu-west-2:115311790871:rule/${local.domain_name_base[var.environment]}-healthcheck-trigger",
