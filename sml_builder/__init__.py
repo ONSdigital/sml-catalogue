@@ -1,7 +1,13 @@
-from flask import Flask, render_template
+from json import load
+
+from flask import Flask, abort, render_template
+from flaskext.markdown import Markdown
 from markupsafe import Markup, escape
 
+from sml_builder.cms import getContent
+
 app = Flask(__name__)
+Markdown(app)
 
 app.jinja_env.add_extension("jinja2.ext.do")
 app.jinja_env.trim_blocks = True
@@ -22,11 +28,22 @@ import sml_builder.help_centre  # noqa: E402
 import sml_builder.method  # noqa: E402
 import sml_builder.page  # noqa: E402
 import sml_builder.utils  # noqa: F401, E402
+from sml_builder.utils import checkEmptyList  # noqa: E402
+
+with open("config/feature.json", "r", encoding="utf-8") as features_file:
+    features = load(features_file)["features"]
+cms_active = features["CMS_ACTIVE"]
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    if cms_active:
+        # Gets the content for the home page
+        content = getContent("heroHomePage")
+        if checkEmptyList(content):
+            abort(404)
+        return render_template("index.html", content=content, cms_active=cms_active)
+    return render_template("index.html", cms_active=cms_active)
 
 
 @app.errorhandler(404)

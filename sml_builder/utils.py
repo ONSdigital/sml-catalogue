@@ -11,6 +11,10 @@ def convert_term(value):
     return converted
 
 
+def checkEmptyList(data):
+    return not data
+
+
 def _page_not_found(error):
     print(error)
     abort(404)
