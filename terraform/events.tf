@@ -4,34 +4,34 @@ resource "aws_cloudwatch_event_rule" "trigger_healthcheck" {
     description         = "Fires the healthcheck lambda function every minute"
     schedule_expression = "rate(1 minute)"
 
-policy = jsonencode({
-    #tfsec:ignore:aws-iam-no-policy-wildcards
-    Version = "2012-10-17",
-    Statement = [
-      {
-        Effect   = "Allow",
-        Action   = [
-                    "events:PutRule",
-                    "events:DescribeRule",
-                    "events:DeleteRule",
-                    "events:ListRules",
-                    "events:ListRuleNamesByTarget",
-                    "events:ListTagsForResource",
-                    "events:PutTargets",
-                    "events:ListTargetsByRule",
-                    "events:RemoveTargets"
-                    ],
-        Resource = [
-            "arn:aws:events:eu-west-2:115311790871:rule/${local.domain_name_base[var.environment]}-healthcheck-trigger"
+    policy = jsonencode({
+        #tfsec:ignore:aws-iam-no-policy-wildcards
+        Version = "2012-10-17",
+        Statement = [
+        {
+            Effect   = "Allow",
+            Action   = [
+                        "events:PutRule",
+                        "events:DescribeRule",
+                        "events:DeleteRule",
+                        "events:ListRules",
+                        "events:ListRuleNamesByTarget",
+                        "events:ListTagsForResource",
+                        "events:PutTargets",
+                        "events:ListTargetsByRule",
+                        "events:RemoveTargets"
+                        ],
+            Resource = [
+                "arn:aws:events:eu-west-2:115311790871:rule/${local.domain_name_base[var.environment]}-healthcheck-trigger"
+            ]
+        },
+        {
+            Effect   = "Allow"
+            Action   = ["kms:Decrypt"]
+            Resource = ["*"]
+        }
         ]
-      },
-      {
-        Effect   = "Allow"
-        Action   = ["kms:Decrypt"]
-        Resource = ["*"]
-      }
-    ]
-  })
+    })
 }
 
 # Points to the healthcheck lambda
