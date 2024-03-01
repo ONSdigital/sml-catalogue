@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for, request
 from markupsafe import Markup, escape
 
 app = Flask(__name__)
@@ -45,3 +45,22 @@ def string_to_paragraph(value):
     """Wraps passed string in <p> tags and converts newlines to <p> pairs"""
     body = escape(value).replace("\n\n", Markup("</p><p>"))
     return Markup(f"<p>{body}</p>")
+
+
+@app.context_processor
+def set_variables():
+    mkdocs = sml_builder.utils.get_feature_config("MKDOCS")
+    navigation = {"navigation": {}}
+    if mkdocs["ACTIVE"] is True:
+        nav_version = "true_navigation"
+    else:
+        nav_version = "false_navigation"
+    navigation["navigation"]["id"] = mkdocs["VARIABLES"][nav_version]["id"]
+    navigation["navigation"]["itemsList"] = []
+    for item in mkdocs["VARIABLES"][nav_version]["itemsList"]:
+        navigation["navigation"]["itemsList"].append(
+            {"url": url_for(item["url"]), "title": item["title"]}
+        )
+    navigation["current_path"] = request.path
+    return {"navigation": navigation, "mkdocs_active": mkdocs["ACTIVE"]}
+

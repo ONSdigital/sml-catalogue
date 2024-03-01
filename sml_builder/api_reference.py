@@ -2,65 +2,72 @@ from json import load
 
 from flask import render_template, url_for
 from sml_builder import app
-from sml_builder.utils import _page_not_found
+from sml_builder.utils import _page_not_found, get_feature_config
 
 
 @app.route("/api_reference/index")
 def api_reference(category=None):
-    categories = []
-    try:
-        with open(
-                "./content/api_reference/api_reference.json", encoding="utf-8"
-        ) as help_contents_file:
-            contents = load(help_contents_file)
-        for category in contents[  # pylint: disable=redefined-argument-from-local
-            "categories"
-        ]:
-            categories.append(
-                {
-                    "name": category["label"],
-                    "subcategories": [
-                        {
-                            "url": url_for(
-                                "api_guidances",
-                                category=category["name"],
-                                sub_category=sub_category["name"],
-                            ),
-                            "text": sub_category["label"],
-                        }
-                        for sub_category in category["subcategories"]
-                    ],
-                }
-            )
-    except OSError as e:
-        _page_not_found(e)
-    return render_template(
-        "api-index.html", help_categories=categories, selected_category=category
-    )
+    mkdocs = get_feature_config("MKDOCS")
+    if mkdocs["ACTIVE"] is False:
+        _page_not_found(ValueError("Feature not active"))
+    else:
+        categories = []
+        try:
+            with open(
+                    "./content/api_reference/api_reference.json", encoding="utf-8"
+            ) as help_contents_file:
+                contents = load(help_contents_file)
+            for category in contents[  # pylint: disable=redefined-argument-from-local
+                "categories"
+            ]:
+                categories.append(
+                    {
+                        "name": category["label"],
+                        "subcategories": [
+                            {
+                                "url": url_for(
+                                    "api_guidances",
+                                    category=category["name"],
+                                    sub_category=sub_category["name"],
+                                ),
+                                "text": sub_category["label"],
+                            }
+                            for sub_category in category["subcategories"]
+                        ],
+                    }
+                )
+        except OSError as e:
+            _page_not_found(e)
+        return render_template(
+            "api-index.html", help_categories=categories, selected_category=category
+        )
 
 
 @app.route("/api_reference/<category>/index")
 @app.route("/api_reference/<category>/<sub_category>")
 def api_guidances(category, sub_category=None):
-    try:
-        category_label, sub_category_label, sub_category = _get_category_labels(
-            category, sub_category
+    mkdocs = get_feature_config("MKDOCS")
+    if mkdocs["ACTIVE"] is False:
+        _page_not_found(ValueError("Feature not active"))
+    else:
+        try:
+            category_label, sub_category_label, sub_category = _get_category_labels(
+                category, sub_category
+            )
+        except Exception as e:  # pylint: disable=broad-except
+            _page_not_found(e)
+
+        api_reference_nav = _api_reference_nav(category)
+        body = f"api-docs/{category}/{sub_category}/{sub_category}.html"
+        return render_template(
+            "api-reference.html",
+            body=body,
+            category_label=category_label,
+            sub_category_label=sub_category_label,
+            category=category,
+            sub_category=sub_category,
+            nav=api_reference_nav,
         )
-    except Exception as e:  # pylint: disable=broad-except
-        _page_not_found(e)
-
-    api_reference_nav = _api_reference_nav(category)
-    body = f"api-docs/{category}/{sub_category}/{sub_category}.html"
-
-    return render_template(
-        "api-reference.html",
-        body=body,
-        category_label=category_label,
-        sub_category_label=sub_category_label,
-        category=category,
-        sub_category=sub_category,
-        nav=api_reference_nav,
-    )
 
 
 def _get_category_labels(selected_category, selected_sub_category):
