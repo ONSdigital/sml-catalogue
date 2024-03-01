@@ -33,8 +33,9 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
-export CDA_KEY=$CDA_KEY
-export SPACE_ID=$SPACE_ID
+read $CDA_KEY << cms_tokens.txt
+read $SPACE_ID << cms_tokens.txt
+
 echo "${SIGNING_KEY}" > signingkey.key
 gpg --import signingkey.key
 git config user.email "spp@ons.gov.uk"
