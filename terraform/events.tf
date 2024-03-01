@@ -39,7 +39,7 @@ resource "aws_lambda_permission" "allow_event_to_invoke_healthcheck" {
             Resource = [
                 "arn:aws:events:eu-west-2:115311790871:rule/${local.domain_name_base[var.environment]}-healthcheck-trigger"
             ]
-        }
+        },
         {
             Effect   = "Allow",
             Action   = [
