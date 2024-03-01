@@ -1,4 +1,4 @@
-# Creates and name the sns topic
+# Creates and name the sns topic and assigns target email
 resource "aws_sns_topic" "sns_topic" {
   name     = "smlPortalTopic"
 }
