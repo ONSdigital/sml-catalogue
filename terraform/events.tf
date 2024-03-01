@@ -19,36 +19,9 @@ resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
 
 # Adds permission for event to invoke healthcheck function
 resource "aws_lambda_permission" "allow_event_to_invoke_healthcheck" {
-    policy = jsonencode({
-        #tfsec:ignore:aws-iam-no-policy-wildcards
-        Version = "2012-10-17",
-        Statement = [
-        {
-            Effect   = "Allow",
-            Action   = [
-                        "events:PutRule",
-                        "events:DescribeRule",
-                        "events:DeleteRule",
-                        "events:ListRules",
-                        "events:ListRuleNamesByTarget",
-                        "events:ListTagsForResource",
-                        "events:PutTargets",
-                        "events:ListTargetsByRule",
-                        "events:RemoveTargets"
-                        ],
-            Resource = [
-                "arn:aws:events:eu-west-2:115311790871:rule/${local.domain_name_base[var.environment]}-healthcheck-trigger"
-            ]
-        },
-        {
-            Effect   = "Allow",
-            Action   = [
-                        "lambda:InvokeFunction"
-                        ],
-            Resource = [
-                "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
-            ]
-        }
-        ]
-    })
+    statement_id  = "AlarmAction"
+    action        = "lambda:InvokeFunction"
+    function_name = "${aws_lambda_function.healthcheck.function_name}"
+    principal     = "events.amazonaws.com"
+    source_arn    = "${aws_cloudwatch_event_rule.trigger_healthcheck.arn}"
 }
