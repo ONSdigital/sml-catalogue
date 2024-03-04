@@ -26,10 +26,7 @@ import sml_builder.utils  # noqa: F401, E402
 
 @app.route("/")
 def index():
-    return render_template(
-        "index.html",
-        feature_1_enabled=sml_builder.utils.get_feature_config("FEATURE_1"),
-    )
+    return render_template("index.html")
 
 
 @app.errorhandler(404)

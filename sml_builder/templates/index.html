@@ -37,15 +37,9 @@
 
 {% block pageContent %}
 <main id="main-content">        
-    {% if feature_1_enabled %}
-        {% set hero_title = "Feature 1 Enabled" %}
-    {% else %}
-        {% set hero_title = "An open source library for statistical code approved by the ONS" %}
-    {% endif %}
     {{
-
         onsHero({
-            "title": hero_title,
+            "title": 'An open source library for statistical code approved by the ONS',
             "button": {
                 "id": 'find-methods-button',
                 "url": url_for("display_methods"),
