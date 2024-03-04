@@ -10,7 +10,6 @@ app.jinja_env.lstrip_blocks = True
 app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
 app.config["FREEZER_DESTINATION"] = "../build"
 
-
 # F401 module import but unused
 # We have to import the modules below here and they get
 # used in other files later on so ignoring this F401 error
@@ -51,10 +50,7 @@ def string_to_paragraph(value):
 def set_variables():
     mkdocs = sml_builder.utils.get_feature_config("MKDOCS")
     navigation = {"navigation": {}}
-    if mkdocs["ACTIVE"] is True:
-        nav_version = "true_navigation"
-    else:
-        nav_version = "false_navigation"
+    nav_version = "false_navigation" if mkdocs["ACTIVE"] is not True else "true_navigation"
     navigation["navigation"]["id"] = mkdocs["VARIABLES"][nav_version]["id"]
     navigation["navigation"]["itemsList"] = []
     for item in mkdocs["VARIABLES"][nav_version]["itemsList"]:
@@ -63,4 +59,3 @@ def set_variables():
         )
     navigation["current_path"] = request.path
     return {"navigation": navigation, "mkdocs_active": mkdocs["ACTIVE"]}
-
