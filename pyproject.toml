@@ -10,6 +10,8 @@ python = "^3.10"
 frozen-flask = "^0.18"
 jsonnet = "^0.20.0"
 markdown = "^3.4.4"
+urllib3 = "2.0.7"
+werkzeug = "2.3.8"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.9.1"
@@ -21,7 +23,8 @@ bandit = "^1.7.5"
 isort = "^5.12.0"
 axe-selenium-python = "^2.1.6"
 python-semantic-release = "<8.0.0"
-werkzeug = "2.3.7"
+urllib3 = "2.0.7"
+werkzeug = "2.3.8"
 
 [tool.bandit]
 exclude_dirs = ["features", "./venv/"]
