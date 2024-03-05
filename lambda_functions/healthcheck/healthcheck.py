@@ -78,16 +78,13 @@ def lambda_handler(event, context):
     
     # To make the lambda reusable we have the option of parsing event data
     # Assign event data
-    if 'url' in event:
+    if 'url' and 'env' and 'expected_string' in event:
         url = event['url']
-
-    if 'env' in event:
         env = event['env']
-
-    if 'expected_string' in event:
         expected_string = event['expected_string']
-    
-    # Check if weburl is healthy
-    check_web_url_health(url, expected_string, env)
+        # Check if weburl is healthy
+        check_web_url_health(url, expected_string, env)
+    else:
+        logger.error("The lambda event has missing values, we expect a value for the url, env and expected string")
 
     

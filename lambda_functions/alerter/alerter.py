@@ -1,6 +1,11 @@
 import json
 import os
 import requests
+import logging
+
+# Configure logging
+logger = logging.getLogger()
+logger.setLevel(logging.ERROR)
 
 def lambda_handler(event, context):
     """
@@ -25,16 +30,11 @@ def lambda_handler(event, context):
     # If no event data is provided we default to environment variables
     if 'lambda_name' in event:
         lambda_name = event['lambda_name']
-    
-    if 'alarm_name' in event:
         alarm_name = event['alarm_name']
-    
-    if 'url' in event:
         url = event['url']
-
-    # Slack channel link for alerting purposes
-    if 'slack_webhook_url' in event:
         slack_webhook_url = event['slack_webhook_url']
+    else:
+        logger.error("The lambda event has missing values, we expect a value for the url, env and expected string")
 
     # Message sent to channel
     alert_message = {
@@ -45,19 +45,18 @@ def lambda_handler(event, context):
 
     try:
         # Send the request
-        response = requests.get(
+        requests.get(
             slack_webhook_url,
             data=json.dumps(alert_message).encode('utf-8'),
             headers={'Content-Type': 'application/json'}
         )
 
-        print("Message sent to Slack successfully:", response.text)
         return {
             'statusCode': 200,
             'body': json.dumps('Message sent to Slack successfully')
         }
     except Exception as e:
-        print("Error sending message to Slack:", str(e))
+        logger.error("Error sending message to Slack:", str(e))
         return {
             'statusCode': 500,
             'body': json.dumps('Error sending message to Slack')
