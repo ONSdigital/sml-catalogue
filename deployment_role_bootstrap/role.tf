@@ -108,8 +108,8 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
               "Effect": "Allow",
               "Action": "s3:*",
               "Resource": [
-                "arn:aws:s3:::sml-portal-*",
-                "arn:aws:s3:::sml-portal-*/*"
+                  "arn:aws:s3:::sml-portal-*",
+                  "arn:aws:s3:::sml-portal-*/*"
               ]
             },
             {
@@ -120,7 +120,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "s3:PutBucketAcl"
               ],
               "Resource": [
-                "arn:aws:s3:::statistical-methods-library-cf-logs*"
+                  "arn:aws:s3:::statistical-methods-library-cf-logs*"
               ]
             },
             {
@@ -138,12 +138,12 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "logs:PutRetentionPolicy"
               ],
               "Resource": [
-                "arn:aws:lambda:eu-west-2:115311790871:function:dev-healthcheck",
-                "arn:aws:lambda:eu-west-2:115311790871:function:dev-alerter",
-                "arn:aws:lambda:eu-west-2:115311790871:function:preprod-healthcheck",
-                "arn:aws:lambda:eu-west-2:115311790871:function:preprod-alerter",
-                "arn:aws:lambda:eu-west-2:115311790871:function:prod-healthcheck",
-                "arn:aws:lambda:eu-west-2:115311790871:function:prod-alerter"
+                  "arn:aws:lambda:eu-west-2:115311790871:function:dev-healthcheck",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:dev-alerter",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:preprod-healthcheck",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:preprod-alerter",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:prod-healthcheck",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:prod-alerter"
               ]
             },
             {
@@ -161,9 +161,9 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "events:RemoveTargets"
               ],
               "Resource": [
-                "arn:aws:events:eu-west-2:115311790871:rule/dev-sml.aws.onsdigital.uk-healthcheck-trigger",
-                "arn:aws:events:eu-west-2:115311790871:rule/preprod-sml.aws.onsdigital.uk-healthcheck-trigger",
-                "arn:aws:events:eu-west-2:115311790871:rule/statisticalmethodslibrary.ons.gov.uk"
+                  "arn:aws:events:eu-west-2:115311790871:rule/dev-sml.aws.onsdigital.uk-healthcheck-trigger",
+                  "arn:aws:events:eu-west-2:115311790871:rule/preprod-sml.aws.onsdigital.uk-healthcheck-trigger",
+                  "arn:aws:events:eu-west-2:115311790871:rule/statisticalmethodslibrary.ons.gov.uk"
               ]
             },
             {
@@ -210,12 +210,12 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "iam:AttachRolePolicy"
               ],
               "Resource": [
-                "arn:aws:iam::115311790871:role/dev-healthcheck",
-                "arn:aws:iam::115311790871:role/dev-alerter",
-                "arn:aws:iam::115311790871:role/preprod-healthcheck",
-                "arn:aws:iam::115311790871:role/preprod-alerter",
-                "arn:aws:iam::115311790871:role/prod-alerter",
-                "arn:aws:iam::115311790871:policy/lambda-healthcheck-logs"
+                  "arn:aws:iam::115311790871:role/dev-healthcheck",
+                  "arn:aws:iam::115311790871:role/dev-alerter",
+                  "arn:aws:iam::115311790871:role/preprod-healthcheck",
+                  "arn:aws:iam::115311790871:role/preprod-alerter",
+                  "arn:aws:iam::115311790871:role/prod-healthcheck",
+                  "arn:aws:iam::115311790871:role/prod-alerter"
               ]
             },
             {
@@ -242,12 +242,12 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "lambda:AddPermission"
               ],
               "Resource": [
-                "arn:aws:lambda:eu-west-2:115311790871:function:dev-healthcheck",
-                "arn:aws:lambda:eu-west-2:115311790871:function:dev-alerter",
-                "arn:aws:lambda:eu-west-2:115311790871:function:preprod-healthcheck",
-                "arn:aws:lambda:eu-west-2:115311790871:function:preprod-alerter",
-                "arn:aws:lambda:eu-west-2:115311790871:function:prod-healthcheck",
-                "arn:aws:lambda:eu-west-2:115311790871:function:prod-alerter"
+                  "arn:aws:lambda:eu-west-2:115311790871:function:dev-healthcheck",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:dev-alerter",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:preprod-healthcheck",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:preprod-alerter",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:prod-healthcheck",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:prod-alerter"
               ]
             },
             {
@@ -261,9 +261,9 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "cloudwatch:ListTagsForResource"
               ],
               "Resource": [
-                "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:dev-environment-alarm",
-                "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:preprod-environment-alarm",
-                "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:prod-environement-alarm"
+                  "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:dev-environment-alarm",
+                  "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:preprod-environment-alarm",
+                  "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:prod-environement-alarm"
               ]
             },
             {
@@ -323,8 +323,8 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
               "Effect": "Allow",
               "Action": "s3:*",
               "Resource": [
-                "arn:aws:s3:::sml-portal-*",
-                "arn:aws:s3:::sml-portal-*/*"
+                  "arn:aws:s3:::sml-portal-*",
+                  "arn:aws:s3:::sml-portal-*/*"
               ]
             }
         ]

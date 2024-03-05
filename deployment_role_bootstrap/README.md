@@ -2,8 +2,7 @@
 
 This README is to outline the purpose of the role.tf located within this directory.
 
-The purpose of the role.tf is to keep a note of what we currently have deployed in
-AWS IAM role policy named DeploymentRoleSMLPolicy.
+The purpose of the role.tf is not for deployment but instead to track what has been manually deployed in the AWS console.
 
 The content of this policy is found in a resource within role.tf called aws_iam_policy.deployment_role_sml_policy. 
 

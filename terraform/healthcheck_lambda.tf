@@ -83,12 +83,4 @@ resource "aws_lambda_function" "healthcheck" {
     Name = "${var.environment}_sml_lambda_health_check"
   }
 
-  environment {
-    variables = {
-      "expected_string" = "An open source library for statistical code approved by the ONS",
-      "env" = var.environment,
-      "site" = local.domain_name_base[var.environment],
-    }
-  }
-
 }

@@ -34,15 +34,6 @@ resource "aws_lambda_function" "alerter" {
   timeout       = 10
   memory_size   = 512
 
-  environment {
-    variables = {
-      "alarm_name" = "${var.environment}-environment-alarm",
-      "lambda_name" = "${var.environment}-healthcheck",
-      "url" = local.domain_name_base[var.environment],
-      "slack_webhook_url" = "https://hooks.slack.com/triggers/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"
-    }
-  }
-
   tags = {
     Name = "${var.environment}_sml_lambda_alerter"
   }

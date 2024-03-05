@@ -1,4 +1,4 @@
-# Creates and name the sns topic and assigns target email
+# Create and name the sns topic and assigns target email
 resource "aws_sns_topic" "sns_topic" {
   name     = "smlPortalTopic"
 }
@@ -8,5 +8,5 @@ resource "aws_sns_topic_subscription" "email_target" {
   topic_arn = aws_sns_topic.sns_topic.arn
 
   protocol  = "email"
-  endpoint  = "SMLAdmin@ons.gov.uk"
+  endpoint  = "${var.sml_admin}"
 }

@@ -7,7 +7,13 @@ def lambda_handler(event, context):
     lambda_handler The purpose of this lambda function is to alert the sml-portal-alert
     slack channel if an alarm is failing (failing alarm triggers lambda)
 
-    :param event: Event is the message contents parsed to the lambda
+    :param event: Event is the message contents parsed to the lambda e.g.
+                  {
+                  "alarm_name" = "${var.environment}-environment-alarm",
+                  "lambda_name" = "${var.environment}-healthcheck",
+                  "url" = local.domain_name_base[var.environment],
+                  "slack_webhook_url" = ""
+                  }
     :type event: string
     :param context: General Lambda term (not used in this case but needed for general setup)
     :type context: N/A
@@ -19,24 +25,16 @@ def lambda_handler(event, context):
     # If no event data is provided we default to environment variables
     if 'lambda_name' in event:
         lambda_name = event['lambda_name']
-    else:
-        lambda_name = os.environ.get('lambda_name')
     
     if 'alarm_name' in event:
         alarm_name = event['alarm_name']
-    else:
-        alarm_name = os.environ.get('alarm_name')
     
     if 'url' in event:
         url = event['url']
-    else:
-        url = f"https://{os.environ.get('url')}"
 
     # Slack channel link for alerting purposes
     if 'slack_webhook_url' in event:
         slack_webhook_url = event['slack_webhook_url']
-    else:
-        slack_webhook_url = f"{os.environ.get('slack_webhook_url')}"
 
     # Message sent to channel
     alert_message = {
