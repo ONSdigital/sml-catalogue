@@ -1,6 +1,7 @@
-import os # isort:skip
-import json # isort:skip
-import urllib.request # isort:skip nosec
+import json
+import os
+import urllib.request
+
 
 def lambda_handler(event, context):
     """
