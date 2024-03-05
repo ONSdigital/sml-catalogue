@@ -2,7 +2,7 @@ terraform {
   required_providers {
     archive = {
       source = "hashicorp/archive"
-      version = "2.4.2"
+      version = "2.4.3"
     }
   }
 }
@@ -14,13 +14,6 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     function_name = "${aws_lambda_function.alerter.function_name}"
     principal     = "lambda.alarms.cloudwatch.amazonaws.com"
     source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
-}
-
-# Zip alerter lambda for deployment to aws
-data "archive_file" "zip_the_python_alerter_lambda" {
-type        = "zip"
-source_file = "../../lambda_functions/alerter/alerter.py"
-output_path = "../../lambda_functions/alerter/alerter.zip"
 }
 
 # Creates iam role

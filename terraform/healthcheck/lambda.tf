@@ -2,7 +2,7 @@ terraform {
   required_providers {
     archive = {
       source = "hashicorp/archive"
-      version = "2.4.2"
+      version = "2.4.3"
     }
   }
 }
@@ -32,13 +32,6 @@ data "aws_iam_policy_document" "assume_role" {
       type        = "Service"
     }
   }
-}
-
-# Zip healthcheck lambda for deployment to aws
-data "archive_file" "zip_the_python_healthcheck_lambda" {
-type        = "zip"
-source_file = "../../lambda_functions/healthcheck/healthcheck.py"
-output_path = "../../lambda_functions/healthcheck/healthcheck.zip"
 }
 
 # Permissions for lambda to log to a log group and for cloudwatch to put metric data
