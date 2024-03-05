@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, request, url_for
 from markupsafe import Markup, escape
 
 app = Flask(__name__)
@@ -50,7 +50,9 @@ def string_to_paragraph(value):
 def set_variables():
     mkdocs = sml_builder.utils.get_feature_config("MKDOCS")
     navigation = {"navigation": {}}
-    nav_version = "false_navigation" if mkdocs["ACTIVE"] is not True else "true_navigation"
+    nav_version = (
+        "false_navigation" if mkdocs["ACTIVE"] is not True else "true_navigation"
+    )
     navigation["navigation"]["id"] = mkdocs["VARIABLES"][nav_version]["id"]
     navigation["navigation"]["itemsList"] = []
     for item in mkdocs["VARIABLES"][nav_version]["itemsList"]:

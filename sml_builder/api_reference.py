@@ -1,8 +1,14 @@
 from json import load
 
-from flask import render_template, url_for, Response
+from flask import Response, render_template, url_for
+
 from sml_builder import app
-from sml_builder.utils import _page_not_found, get_feature_config
+from sml_builder.utils import (
+    _page_not_found,
+    category_labels,
+    contents_helper,
+    get_feature_config,
+)
 
 
 @app.route("/api_reference/index")
@@ -10,31 +16,12 @@ def api_reference(category=None):
     mkdocs = get_feature_config("MKDOCS")
     if mkdocs["ACTIVE"] is False:
         return Response("Feature is a work in Progress")
-    categories = []
     try:
         with open(
-                "./content/api_reference/api_reference.json", encoding="utf-8"
+            "./content/api_reference/api_reference.json", encoding="utf-8"
         ) as help_contents_file:
             contents = load(help_contents_file)
-        for category in contents[  # pylint: disable=redefined-argument-from-local
-            "categories"
-        ]:
-            categories.append(
-                {
-                    "name": category["label"],
-                    "subcategories": [
-                        {
-                            "url": url_for(
-                                "api_guidances",
-                                category=category["name"],
-                                sub_category=sub_category["name"],
-                            ),
-                            "text": sub_category["label"],
-                        }
-                        for sub_category in category["subcategories"]
-                    ],
-                }
-            )
+            categories = contents_helper(contents)
     except OSError as e:
         _page_not_found(e)
     return render_template(
@@ -49,8 +36,8 @@ def api_guidances(category, sub_category=None):
     if mkdocs["ACTIVE"] is False:
         return Response("Feature is a work in progress")
     try:
-        category_label, sub_category_label, sub_category = _get_category_labels(
-            category, sub_category
+        category_label, sub_category_label, sub_category = category_labels(
+            "./content/api_reference/api_reference.json", category, sub_category
         )
     except Exception as e:  # pylint: disable=broad-except
         _page_not_found(e)
@@ -68,35 +55,11 @@ def api_guidances(category, sub_category=None):
     )
 
 
-def _get_category_labels(selected_category, selected_sub_category):
-    with open(
-            "./content/api_reference/api_reference.json", encoding="utf-8"
-    ) as help_contents_file:
-        contents = load(help_contents_file)
-    for category in contents["categories"]:
-        if category["name"] == selected_category:
-            category_label = category["label"]
-            if selected_sub_category is None:
-                return (
-                    category_label,
-                    category["subcategories"][0]["label"],
-                    category["subcategories"][0]["name"],
-                )
-            for sub_category in category["subcategories"]:
-                if sub_category["name"] == selected_sub_category:
-                    sub_category_label = sub_category["label"]
-                    return category_label, sub_category_label, selected_sub_category
-            raise KeyError(
-                f"The sub category {selected_sub_category} was not found in the category '{selected_category}'"
-            )
-    raise KeyError(f"The category '{selected_category}' was not found")
-
-
 def _api_reference_nav(
-        current_category,
+    current_category,
 ):
     with open(
-            "./content/api_reference/api_reference.json", encoding="utf-8"
+        "./content/api_reference/api_reference.json", encoding="utf-8"
     ) as help_contents_file:
         contents = load(help_contents_file)
     return [
