@@ -1,7 +1,6 @@
 import json
 import os
-import urllib.request
-
+import requests
 
 def lambda_handler(event, context):
     """
@@ -12,7 +11,7 @@ def lambda_handler(event, context):
                   {
                   "alarm_name" = "${var.environment}-environment-alarm",
                   "lambda_name" = "${var.environment}-healthcheck",
-                  "url" = local.domain_name_base[var.environment],
+                  "url" = var.domain_name_base[var.environment],
                   "slack_webhook_url" = ""
                   }
     :type event: string
@@ -44,18 +43,15 @@ def lambda_handler(event, context):
         "Description": f"Website is unreachable or not returning the expected response. Check Amazon Cloudwatch Alarms \'{alarm_name}\' and Healthcheck Lambda \'{lambda_name}\'.",
     }
 
-    # Prepare the request
-    request = urllib.request.Request( # nosec
-        slack_webhook_url,
-        data=json.dumps(alert_message).encode('utf-8'),
-        headers={'Content-Type': 'application/json'}
-        )
-
     try:
         # Send the request
-        response = urllib.request.urlopen(request) # nosec
-        response_text = response.read().decode('utf-8')
-        print("Message sent to Slack successfully:", response_text)
+        response = requests.get(
+            slack_webhook_url,
+            data=json.dumps(alert_message).encode('utf-8'),
+            headers={'Content-Type': 'application/json'}
+        )
+
+        print("Message sent to Slack successfully:", response.text)
         return {
             'statusCode': 200,
             'body': json.dumps('Message sent to Slack successfully')

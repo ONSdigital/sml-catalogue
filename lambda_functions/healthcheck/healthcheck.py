@@ -1,8 +1,7 @@
 
 import logging
 import os
-import urllib.request
-
+import requests
 import boto3
 
 # Configure logging
@@ -25,11 +24,7 @@ def check_web_url_health(url, expected_string, env):
     """
 
     # Ping the url
-    response = urllib.request.urlopen(url) # nosec
-        
-    # Get the status code from the response
-    status_code = response.getcode()
-    response_text = response.read().decode('utf-8')
+    response = requests.get(url)
 
     # Define metric data
     cloudwatch = boto3.client('cloudwatch')
@@ -37,10 +32,16 @@ def check_web_url_health(url, expected_string, env):
         MetricData = [
             {
                 'MetricName': f'{env}-response',
-                Dimensions: [
-                    Name: 'EndpointUrl'
-                    Value: '',
-                    Name: 'ExpectedString',
+                'Dimensions': [
+                    {
+                    'Name': 'EndpointUrl',
+                    'Value': '',
+                    },
+                    {
+                    'Name': 'ExpectedString',
+                    'Value': '',
+                    }
+                ],
                 'Unit': 'None',
                 'Value': 1
             },
@@ -50,13 +51,13 @@ def check_web_url_health(url, expected_string, env):
 
     # If the response code is not 200 or the response text does not 
     # contain the expected string then we log an error and fail the lambda
-    if status_code != 200:
-        logger.info("Metric Data: ", metric_data)
-        raise logger.error(f"Error: Status code expected to be 200 but is {status_code}")
+    if response.status_code != 200:
+        logger.info(f"Metric Data: , {metric_data}")
+        raise logger.error(f"Error: Status code expected to be 200 but is {response.status_code}")
     
-    elif expected_string not in response_text:
-        logger.info("Metric Data: ", metric_data)
-        raise logger.error(f"Error: Status code is {status_code} but expected text \'{expected_string}\' is not found")
+    elif expected_string not in response.text:
+        logger.info(f"Metric Data: , {metric_data}")
+        raise logger.error(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
     
 def lambda_handler(event, context):
     """

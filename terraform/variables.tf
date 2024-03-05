@@ -13,7 +13,3 @@ locals {
     prod : "statisticalmethodslibrary.ons.gov.uk"
   }
 }
-
-variable "email" {
-  sml_admin = "SMLAdmin@ons.gov.uk"
-}

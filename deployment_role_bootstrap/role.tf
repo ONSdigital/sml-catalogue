@@ -138,12 +138,8 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "logs:PutRetentionPolicy"
               ],
               "Resource": [
-                  "arn:aws:lambda:eu-west-2:115311790871:function:dev-healthcheck",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:dev-alerter",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:preprod-healthcheck",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:preprod-alerter",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:prod-healthcheck",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:prod-alerter"
+                  "arn:aws:lambda:eu-west-2:115311790871:function:<environment>-healthcheck",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:<environment>-alerter"
               ]
             },
             {
@@ -161,9 +157,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "events:RemoveTargets"
               ],
               "Resource": [
-                  "arn:aws:events:eu-west-2:115311790871:rule/dev-sml.aws.onsdigital.uk-healthcheck-trigger",
-                  "arn:aws:events:eu-west-2:115311790871:rule/preprod-sml.aws.onsdigital.uk-healthcheck-trigger",
-                  "arn:aws:events:eu-west-2:115311790871:rule/statisticalmethodslibrary.ons.gov.uk"
+                  "arn:aws:events:eu-west-2:115311790871:rule/<environment-url>-healthcheck-trigger",
               ]
             },
             {
@@ -210,12 +204,8 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "iam:AttachRolePolicy"
               ],
               "Resource": [
-                  "arn:aws:iam::115311790871:role/dev-healthcheck",
-                  "arn:aws:iam::115311790871:role/dev-alerter",
-                  "arn:aws:iam::115311790871:role/preprod-healthcheck",
-                  "arn:aws:iam::115311790871:role/preprod-alerter",
-                  "arn:aws:iam::115311790871:role/prod-healthcheck",
-                  "arn:aws:iam::115311790871:role/prod-alerter"
+                  "arn:aws:iam::115311790871:role/<environment>-healthcheck",
+                  "arn:aws:iam::115311790871:role/<environment>-alerter"
               ]
             },
             {
@@ -242,12 +232,8 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "lambda:AddPermission"
               ],
               "Resource": [
-                  "arn:aws:lambda:eu-west-2:115311790871:function:dev-healthcheck",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:dev-alerter",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:preprod-healthcheck",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:preprod-alerter",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:prod-healthcheck",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:prod-alerter"
+                  "arn:aws:lambda:eu-west-2:115311790871:function:<environment>-healthcheck",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:<environment>-alerter",
               ]
             },
             {
@@ -261,9 +247,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "cloudwatch:ListTagsForResource"
               ],
               "Resource": [
-                  "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:dev-environment-alarm",
-                  "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:preprod-environment-alarm",
-                  "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:prod-environement-alarm"
+                  "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:<environment>-environment-alarm"
               ]
             },
             {
