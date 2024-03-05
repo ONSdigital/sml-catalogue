@@ -6,7 +6,7 @@ import contentful
 # the space_id, content_delivery_api_key
 SPACE_ID = os.environ.get("POETRY_SPACE_ID")
 CDA_KEY = os.environ.get("POETRY_CDA_KEY")
-print(SPACE_ID, CDA_KEY)
+print("TEST1234:", SPACE_ID, CDA_KEY)
 client = contentful.Client(SPACE_ID, CDA_KEY)
 
 
