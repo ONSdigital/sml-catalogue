@@ -58,20 +58,13 @@ resource "aws_iam_policy" "lambda_log_function" {
   policy = "${data.aws_iam_policy_document.lambda_log_function.json}"
 }
 
-# Zip healthcheck lambda for deployment to aws
-data "archive_file" "zip_the_python_healthcheck_lambda" {
-type        = "zip"
-source_file = "./lambda_functions/healthcheck/healthcheck.py"
-output_path = "./lambda_functions/healthcheck/healthcheck.zip"
-}
-
 # Creates healthcheck lambda
 resource "aws_lambda_function" "healthcheck" {
   role          = aws_iam_role.healthcheck.arn
 
   function_name = "${var.environment}-healthcheck"
 
-  filename      = "./lambda_functions/healthcheck/healthcheck.zip"
+  filename      = "../../lambda_functions.zip/healthcheck.py"
 
   handler       = "healthcheck.lambda_handler"
 
