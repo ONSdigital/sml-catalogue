@@ -52,9 +52,7 @@ def category_labels(file_path, selected_category, selected_sub_category):
 
 def contents_helper(contents):
     categories = []
-    for category in contents[
-        "categories"
-    ]:
+    for category in contents["categories"]:
         categories.append(
             {
                 "name": category["label"],
