@@ -16,6 +16,13 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
 }
 
+# Zip alerter lambda for deployment to aws
+data "archive_file" "zip_the_python_alerter_lambda" {
+type        = "zip"
+source_file = "../../lambda_functions/alerter/alerter.py"
+output_path = "../../lambda_functions/alerter/alerter.zip"
+}
+
 # Creates iam role
 resource "aws_iam_role" "alerter" {
   name               = "${var.environment}-alerter"

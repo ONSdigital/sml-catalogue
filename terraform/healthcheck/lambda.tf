@@ -34,6 +34,13 @@ data "aws_iam_policy_document" "assume_role" {
   }
 }
 
+# Zip healthcheck lambda for deployment to aws
+data "archive_file" "zip_the_python_healthcheck_lambda" {
+type        = "zip"
+source_file = "../../lambda_functions/healthcheck/healthcheck.py"
+output_path = "../../lambda_functions/healthcheck/healthcheck.zip"
+}
+
 # Permissions for lambda to log to a log group and for cloudwatch to put metric data
 data "aws_iam_policy_document" "lambda_log_function" {
   statement {
