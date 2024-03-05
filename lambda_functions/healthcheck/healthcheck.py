@@ -1,8 +1,9 @@
 
-import os # isort:skip
-import boto3 # isort:skip
-import logging # isort:skip
-import urllib.request # isort:skip nosec
+import logging
+import os
+import urllib.request
+
+import boto3
 
 # Configure logging
 logger = logging.getLogger()
