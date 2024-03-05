@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    archive = {
+      source = "hashicorp/archive"
+      version = "2.4.2"
+    }
+  }
+}
+
 # Creates iam role
 resource "aws_iam_role" "healthcheck" {
   name               = "${var.environment}-healthcheck"
