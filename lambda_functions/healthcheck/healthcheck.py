@@ -34,11 +34,11 @@ def check_web_url_health(url, expected_string, env):
                 'Dimensions': [
                     {
                     'Name': 'EndpointUrl',
-                    'Value': '',
+                    'Value': '1',
                     },
                     {
                     'Name': 'ExpectedString',
-                    'Value': '',
+                    'Value': '1',
                     }
                 ],
                 'Unit': 'None',
