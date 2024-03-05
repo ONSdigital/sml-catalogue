@@ -64,7 +64,7 @@ resource "aws_lambda_function" "healthcheck" {
 
   function_name = "${var.environment}-healthcheck"
 
-  filename      = "../../lambda_functions.zip/healthcheck.py"
+  filename      = "../../lambda_functions/healthcheck/healthcheck.zip"
 
   handler       = "healthcheck.lambda_handler"
 
