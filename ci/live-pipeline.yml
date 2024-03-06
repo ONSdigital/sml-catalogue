@@ -152,8 +152,8 @@ jobs:
               BUILD_TYPE: 0
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
-              POETRY_SPACE_ID: ((contentful_space_id))
-              POETRY_CDA_KEY: ((contentful_delivery_api_key))
+              POETRY_SPACE_ID: ((github_access_token))
+              POETRY_CDA_KEY: ((github_access_token))
 
         - task: deploy_code
           file: repo/ci/tasks/build_and_deploy/deploy.yml
