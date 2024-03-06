@@ -2,7 +2,7 @@
 resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     statement_id  = "AlarmAction"
     action        = "lambda:InvokeFunction"
-    function_name = "${local.domain_name_base[var.environment]}-alerter"
+    function_name = "${var.environment}-alerter"
     principal     = "lambda.alarms.cloudwatch.amazonaws.com"
     source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
 }
