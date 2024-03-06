@@ -1,0 +1,3 @@
+module "alerter" {
+  source = "./alerter"
+}
