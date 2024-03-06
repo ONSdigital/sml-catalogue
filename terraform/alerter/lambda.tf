@@ -1,3 +1,13 @@
+# Add required providers
+terraform {
+  required_providers {
+    archive = {
+      source = "hashicorp/archive"
+      version = "2.4.2"
+    }
+  }
+}
+
 # Adds permission for cloudwatch to invoke alerter function
 resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     statement_id  = "AlarmAction"
