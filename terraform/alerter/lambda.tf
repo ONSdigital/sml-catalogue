@@ -17,6 +17,21 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
 }
 
+# Allow role to be assumed so lambdas can run
+data "aws_iam_policy_document" "assume_role" {
+  statement {
+    effect  = "Allow"
+    actions = [
+      "sts:AssumeRole",
+      ]
+
+    principals {
+      identifiers = ["lambda.amazonaws.com"]
+      type        = "Service"
+    }
+  }
+}
+
 # Creates iam role
 resource "aws_iam_role" "alerter" {
   name               = "${var.environment}-alerter"
