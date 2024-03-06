@@ -1,7 +1,4 @@
 # Define a variable to store the retrieved secret value
-variable "slack_webhook_secret" {
-  type = string
-}
 
 # Retrieve the secret from AWS Secrets Manager
 data "aws_secretsmanager_secret" "my_secret" {
@@ -15,5 +12,6 @@ data "aws_secretsmanager_secret_version" "my_secret_version" {
 
 # Assign the secret value to the variable
 variable "slack_webhook_secret" {
+  type = string
   default = data.aws_secretsmanager_secret_version.my_secret_version.secret_string
 }
