@@ -34,6 +34,7 @@ run_linting(){
   echo "Freezing flask"
 }
 echo "BEFORE EXPORTING:"
+echo $SIGNING_KEY
 echo $CDA_KEY
 echo $SPACE_ID
 export CDA_KEY="$CDA_KEY"
