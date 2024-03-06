@@ -33,14 +33,6 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
-echo "BEFORE EXPORTING:"
-echo $CDA_KEY
-echo $SPACE_ID
-export CDA_KEY="$CDA_KEY"
-export SPACE_ID="$SPACE_ID"
-echo "AFTER EXPORTING"
-echo $CDA_KEY
-echo $SPACE_ID
 
 echo "${SIGNING_KEY}" > signingkey.key
 gpg --import signingkey.key
