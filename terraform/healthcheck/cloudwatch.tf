@@ -1,11 +1,3 @@
-module "alerter" {
-  source = "./alerter"
-
-  environment = var.environment
-
-  domain_name_base = local.domain_name_base[var.environment]
-}
-
 # Creates the cloudwatch alarm and its dependency on the healthcheck
 resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   alarm_name          = "${var.environment}-environment-alarm"
@@ -18,7 +10,7 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   threshold           = 3
   alarm_description   = "Alarm for ${local.domain_name_base[var.environment]} has been triggered"
   actions_enabled     = "true"
-  alarm_actions       = [aws_sns_topic.sns_topic.arn, module.alerter.aws_lambda_function.alerter.arn]
+  alarm_actions       = [aws_sns_topic.sns_topic.arn, var.alerter]
   treat_missing_data  = "breaching"
 
   dimensions = {

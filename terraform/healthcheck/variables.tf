@@ -19,3 +19,7 @@ variable "email" {
   type = string
   default = "SMLAdmin@ons.gov.uk"
 }
+
+variable "sns_topic" {
+  type = string
+}
