@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    archive = {
+      source = "hashicorp/archive"
+      version = "2.4.2"
+    }
+  }
+}
+
 provider "aws" {
   alias  = "eu-west-2"
   region = "eu-west-2"
