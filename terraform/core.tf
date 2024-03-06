@@ -81,6 +81,9 @@ terraform {
       version = "2.4.2"
     }
   }
+}
+
+provider "archive" {
   assume_role {
     role_arn = var.deployment_role
   }
