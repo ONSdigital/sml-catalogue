@@ -1,7 +1,7 @@
-
 import logging
-import requests
+
 import boto3
+import requests
 
 # Configure logging
 logger = logging.getLogger()
@@ -23,7 +23,7 @@ def check_web_url_health(url, expected_string, env):
     """
 
     # Ping the url
-    response = requests.get(url)
+    response = requests.get(url, timeout=5)
 
     # Define metric data
     cloudwatch = boto3.client('cloudwatch')

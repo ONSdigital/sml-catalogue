@@ -1,6 +1,7 @@
 import json
-import requests
 import logging
+
+import requests
 
 # Configure logging
 logger = logging.getLogger()
@@ -23,7 +24,7 @@ def lambda_handler(event, context):
     :type context: N/A
     :return: Return a success or failure outcome on whether the slack message was sent
     :rtype: json
-    """    
+    """ 
     
     # To make the lambda reusable we have the option of parsing event data
     # If no event data is provided we default to environment variables
@@ -46,6 +47,7 @@ def lambda_handler(event, context):
         # Send the request
         requests.get(
             slack_webhook_url,
+            timeout=5,
             data=json.dumps(alert_message).encode('utf-8'),
             headers={'Content-Type': 'application/json'}
         )
