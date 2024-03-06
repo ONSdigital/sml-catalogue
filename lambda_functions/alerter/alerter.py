@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 
 import requests
 
@@ -30,11 +31,24 @@ def lambda_handler(event, context):
     # If no event data is provided we default to environment variables
     if 'lambda_name' in event:
         lambda_name = event['lambda_name']
+    else:
+        logger.error("Lambda name is missing")
+
+    if 'alarm_name' in event:
         alarm_name = event['alarm_name']
+    else:
+        logger.error("Alarm name is missing")
+
+    if 'url' in event:
         url = event['url']
+    else:
+        logger.error("Url is missing")
+
+    if slack_webhook_url in event:
         slack_webhook_url = event['slack_webhook_url']
     else:
-        logger.error("The lambda event has missing values, we expect a value for the url, env and expected string")
+        logger.error("Slack webhook url is missing")
+        slack_webhook_url = os.environ.get("WEBHOOK_SLACK")
 
     # Message sent to channel
     alert_message = {

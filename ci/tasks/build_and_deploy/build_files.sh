@@ -5,6 +5,7 @@
 : "${RELEASE_CANDIDATE}"
 : "${SIGNING_KEY}"
 : "${ROLLBACK_TAG}"
+: "${WEBHOOK_SLACK}"
 
 
 set -eo pipefail
@@ -31,6 +32,10 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
+
+export WEBHOOK_SLACK = "$WEBHOOK_SLACK"
+
+
 echo "${SIGNING_KEY}" > signingkey.key
 gpg --import signingkey.key
 git config user.email "spp@ons.gov.uk"
