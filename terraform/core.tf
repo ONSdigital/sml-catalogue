@@ -73,3 +73,15 @@ provider "aws" {
     role_arn = var.deployment_role
   }
 }
+
+terraform {
+  required_providers {
+    archive = {
+      source = "hashicorp/archive"
+      version = "2.4.2"
+    }
+  }
+  assume_role {
+    role_arn = var.deployment_role
+  }
+}
