@@ -11,9 +11,9 @@ resource "aws_cloudwatch_event_target" "sml_site_trigger_healthcheck" {
     target_id = "check_sml_site"
     arn       = "${aws_lambda_function.healthcheck.arn}"
     input     = jsonencode({
-                  "url"            : "${var.input.url}",
+                  "url"            : "${var.link}",
                   "env"             : "${var.environment}",
-                  "expected_string" : "${var.input.text}"
+                  "expected_string" : "${var.expected_string}"
                 })
 }
 
