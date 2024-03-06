@@ -4,6 +4,13 @@ terraform {
       source = "hashicorp/archive"
       version = "2.4.2"
     }
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+    backend "s3" {
+      region   = "eu-west-2"
+    }
   }
 }
 
@@ -50,21 +57,6 @@ provider "aws" {
 
 
     }
-  }
-}
-
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
-    }
-  }
-
-
-
-  backend "s3" {
-    region   = "eu-west-2"
   }
 }
 
