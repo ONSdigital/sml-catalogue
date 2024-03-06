@@ -33,7 +33,7 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
-echo "BEFORE EXPORTING:"
+echo "BEFORE EXPORTING:" 
 echo $CDA_KEY
 echo $SPACE_ID
 export CDA_KEY="$CDA_KEY"
