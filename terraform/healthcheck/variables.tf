@@ -20,6 +20,6 @@ variable "email" {
   default = "SMLAdmin@ons.gov.uk"
 }
 
-variable "sns_topic" {
+variable "alerter" {
   type = string
 }

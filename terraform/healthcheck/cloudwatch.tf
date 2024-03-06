@@ -1,3 +1,12 @@
+# Adds permission for cloudwatch to invoke alerter function
+resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
+    statement_id  = "AlarmAction"
+    action        = "lambda:InvokeFunction"
+    function_name = "${local.domain_name_base[var.environment]}-alerter"
+    principal     = "lambda.alarms.cloudwatch.amazonaws.com"
+    source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
+}
+
 # Creates the cloudwatch alarm and its dependency on the healthcheck
 resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   alarm_name          = "${var.environment}-environment-alarm"

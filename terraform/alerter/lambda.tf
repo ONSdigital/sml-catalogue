@@ -8,15 +8,6 @@ terraform {
   }
 }
 
-# Adds permission for cloudwatch to invoke alerter function
-resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
-    statement_id  = "AlarmAction"
-    action        = "lambda:InvokeFunction"
-    function_name = "${aws_lambda_function.alerter.function_name}"
-    principal     = "lambda.alarms.cloudwatch.amazonaws.com"
-    source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
-}
-
 # Allow role to be assumed so lambdas can run
 data "aws_iam_policy_document" "assume_role" {
   statement {
