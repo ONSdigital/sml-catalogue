@@ -1,3 +1,4 @@
+# Add required providers
 terraform {
   required_providers {
     archive = {
