@@ -1,5 +1,5 @@
 {%- extends "core.html" -%}
-{%- set page_title = 'Privacy and Data Protection' -%}
+{%- set page_title = 'Accessibility Statement' -%}
 {%- set mainCols=8 -%}
 
 {%- set breadcrumbs = {
@@ -17,5 +17,5 @@
 
 {%- from "components/list/_macro.njk" import onsList -%}
 {%- block main -%}
-  {{ page_body }}
+  {{ content.main_content | markdown }}
 {% endblock main -%}

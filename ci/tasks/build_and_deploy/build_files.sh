@@ -5,6 +5,8 @@
 : "${RELEASE_CANDIDATE}"
 : "${SIGNING_KEY}"
 : "${ROLLBACK_TAG}"
+: "${SPACE_ID}"
+: "${CDA_KEY}"
 
 
 set -eo pipefail
@@ -31,6 +33,7 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
+
 echo "${SIGNING_KEY}" > signingkey.key
 gpg --import signingkey.key
 git config user.email "spp@ons.gov.uk"

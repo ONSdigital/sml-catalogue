@@ -25,52 +25,18 @@
 
             {% call onsDetails({
                   "id": "collapsibleONSInternalUserId",
-                  "title": "I am an ONS internal user",
+                  "title": content.internal_user_title,
                   "titleTag" : "h3"
             }) %}
-                <p>Method requests can be raised to:</p>
-                    {{
-                        onsList({
-                            "variants": 'bullet',
-                            "itemsList": [
-                                {
-                                    "text": 'Have new methods developed for the Statistical Methods Library.'
-                                },
-                                {
-                                    "text": 'Add existing code to the Statistical Methods Library.'
-                                },
-                                {
-                                    "text": 'Change existing methods held within the Statistical Methods Library.'
-                                }
-                            ]
-                        })
-                    }}
-                <p>If you would like to make a suggestion
-                    for a new method, or to provide feedback about an existing method, please do so by emailing
-                    {% from "components/external-link/_macro.njk" import onsExternalLink %}
-                            {{
-                                onsExternalLink({
-                                "url": 'mailto:smlhelp@ons.gov.uk',
-                                "linkText": 'smlhelp@ons.gov.uk'
-                                })
-                            }}.
-                </p>
+                {{content.internal_user_content | markdown}}
             {% endcall %}
 
             {% call onsDetails({
                   "id": "collapsibleONSExternalUserId",
-                  "title": "I am a user from outside the ONS",
+                  "title": content.external_user_title,
                   "titleTag" : "h3"
             }) %}
-                <p>Currently we do not accept formal method submissions or change requests from external users. In future, we will accept certain method requests via the
-                    {% from "components/external-link/_macro.njk" import onsExternalLink %}
-                            {{
-                                onsExternalLink({
-                                "url": 'https://integrateddataservice.gov.uk/',
-                                "linkText": 'Integrated Data Service'
-                                })
-                            }}. 
-                </p>
+                {{content.external_user_content | markdown}}
             {% endcall %}
 
 

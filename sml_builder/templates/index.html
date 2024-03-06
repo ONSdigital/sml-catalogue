@@ -39,11 +39,11 @@
 <main id="main-content">        
     {{
         onsHero({
-            "title": 'An open source library for statistical code approved by the ONS',
+            "title": content["hero_title"],
             "button": {
                 "id": 'find-methods-button',
                 "url": url_for("display_methods"),
-                "text": 'Find methods'
+                "text": content["hero_button"]
             },
             wide:true
         })
