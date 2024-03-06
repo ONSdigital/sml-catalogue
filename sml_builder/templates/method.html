@@ -1,5 +1,5 @@
 {%- extends "core.html" -%}
-{%- set page_title = page.title -%}
+{%- set page_title = method.name -%}
 {%- set current_path = url_for("display_methods") -%}
 {% from "components/external-link/_macro.njk" import onsExternalLink %}
 {%- set breadcrumbs = {
@@ -15,24 +15,29 @@
 } -%}
 {% from "components/status/_macro.njk" import onsStatus %}
 {%- block main -%}
-<h1 class="ons-u-mt-no">Method: {{ page.title }}</h1>
+<h1 class="ons-u-mt-no">Method: {{ method.name }}</h1>
 <h2> Method summary </h2>
-{{ page.description | paras }}
+{{ method.description | markdown }}
 
 <h2> Contact details for this method </h2>
-{% if page.contact_details %}
+  {% from "components/external-link/_macro.njk" import onsExternalLink %}
+{% if method.contact_details %}
   {{
       onsExternalLink({
-        "url": 'mailto:' ~ page.contact_details ,
-        "linkText": page.contact_details  
+        "url": 'mailto:' ~ method.contact_details ,
+        "linkText": method.contact_details  
       })
   }}
 {% endif %}
 
 {% from "components/metadata/_macro.njk" import onsMetadata %}
 {% set items = [] %}
-{% set status =  page.additional_data["Release Status"] %}
-{% for item in page.method_metadata %}
+{% if method.method_ready %}
+  {% set status = 'success' %}
+{% else %}
+  {% set status = 'pending' %}
+{% endif %}
+{% for item in method.method_metadata %}
 {% set description = page.method_metadata[item] %}
 
 {% do
@@ -49,64 +54,97 @@
 %}
 {% endfor %}
 
-{% for item in items %}
-{% if item["term"]  == "Release" %}
-    {% set temp=item["descriptions"][0]["description"] %}
-
-{% if temp=="Not Released Yet" %}
-    {% set item=item["descriptions"][0].__setitem__("description", '<span class="ons-status ons-status--' + status + '">' + temp + '</span>') %}
-
-{% else %}
-    {% set link = page.additional_data["Release Link"] %}
-    {% set item=item["descriptions"][0].__setitem__("description", 
-    '<span class="ons-status ons-status--' + status + '">
+{% if method.method_ready %}
+    {% set link = method.release_link %}
+    {% set release_temp=
+      '<span class="ons-status ons-status--' + status + '">
       <a href='+ link + ' target="_blank" rel="noopener noreferrer">
         <span class="ons-u-vh">Release version</span>
-        ' + temp + '
+        ' + method.release_version + '
         <span class="ons-u-vh">(opens in a new tab)</span>
       </a>
-    </span>') %}
-
+    </span>' %}
+{% else %}    
+  {% set release_temp='<span class="ons-status ons-status--' + status + '">Not Released Yet</span>' %}
 {% endif %}
-{% endif %}
-{% endfor %}
 <hr class="ons-u-mb-m">
 {{
   onsMetadata({
-      "classes": "ons-u-mb-no ",
-      "metadataLabel": "Method information",
-      "termCol": "3",
-      "descriptionCol": "9",
-      "itemsList": items
+    "classes": "ons-u-mb-no ",
+    "metadataLabel": "Method information",
+    "termCol": "3",
+    "descriptionCol": "9",
+    "itemsList": [
+      {
+        "term": "Author",
+        "descriptions": [
+          {
+            "description": method.author
+          }
+        ]
+      },
+      {
+        "term": "Expert group",
+        "descriptions": [
+          {
+            "description": method.expert_group
+          }
+        ]
+      },      
+      {
+        "term": "Theme",
+        "descriptions": [
+          {
+            "description": method.theme
+          }
+        ]
+      },
+      {
+        "term": "Languages",
+        "descriptions": [
+          {
+            "description": method.language
+          }
+        ]
+      },
+      {
+        "term": "Release",
+        "descriptions": [
+          {
+            "description": release_temp
+          }
+        ]
+      },
+    ]
   })
 }}
 <hr class="ons-u-mb-m">
 
 <h2>GitHub resources</h2>
-{{ page.additional_info | paras }}
-{% if page.specification_link %}
+{{ method.additional_information | paras }}
+{% if method.specification_link %}
 {{
   onsExternalLink({
-    "url":page.specification_link,
-    "linkText":"Go to " ~ page.title ~ " specification on GitHub"
+    "url":method.specification_link,
+    "linkText":"Go to " ~ method.name ~ " specification on GitHub"
   })
 }}
 <br>
 {% endif %}
-{% if page.code_link %}
+{% if method.code_link %}
 {{
   onsExternalLink({
-    "url":page.code_link,
-    "linkText":"Go to " ~ page.title ~ " code on GitHub"
+    "url":method.code_link,
+    "linkText":"Go to " ~ method.name ~ " code on GitHub"
   })
 }}
 <br>
 {% endif %}
-{% if page.user_documentation_link %}
+{% if method.user_documentation_link %}
 {{
   onsExternalLink({
-    "url":page.user_documentation_link,
-    "linkText":"Go to "~ page.title ~" user documentation on GitHub"
+    "url":method.user_documentation_link,
+    "linkText":"Go to "~ method.name ~" user documentation on GitHub"
   })
 }}
 

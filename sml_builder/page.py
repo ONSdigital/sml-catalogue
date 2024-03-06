@@ -1,29 +1,29 @@
-import markdown
-from flask import render_template
-from markupsafe import Markup, escape
+from flask import abort, render_template
 
 from sml_builder import app
+from sml_builder.cms import getContent
+from sml_builder.utils import checkEmptyList
 
 from .utils import _page_not_found
 
 
 @app.route("/resources/about")
 def about():
-    try:
-        with open(
-            "./content/about/about-this-library.md", "r", encoding="utf-8"
-        ) as input_file:
-            text = input_file.read()
-            escaped_text = escape(text)
-            body = Markup(markdown.markdown(escaped_text))
-    except OSError as e:
-        _page_not_found(e)
-    return render_template("about.html", page_body=body)
+    # Gets the content for the about page
+    content = getContent("about")
+    if checkEmptyList(content):
+        abort(404)
+    return render_template("about.html", content=content)
 
 
 @app.route("/privacy-and-data-protection")
 def privacy_and_data_protection():
-    return render_template("content/privacy.html")
+    content = getContent("privacycontent")
+    content["bullet_list"] = [{"text": item} for item in content["bullet_list"]]
+
+    if checkEmptyList(content):
+        abort(404)
+    return render_template("content/privacy.html", content=content)
 
 
 @app.route("/cookies")
@@ -33,16 +33,10 @@ def cookies_page():
 
 @app.route("/accessibility-statement")
 def accessibility_page():
-    try:
-        with open(
-            "./content/accessibility/accessibility-statement.md", "r", encoding="utf-8"
-        ) as input_file:
-            text = input_file.read()
-            escaped_text = escape(text)
-            body = Markup(markdown.markdown(escaped_text))
-    except OSError as e:
-        _page_not_found(e)
-    return render_template("accessibility_statement.html", page_body=body)
+    content = getContent("accessibilityPage")
+    if checkEmptyList(content):
+        abort(404)
+    return render_template("accessibility_statement.html", content=content)
 
 
 @app.route("/.well-known/security.txt")
