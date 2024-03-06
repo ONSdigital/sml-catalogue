@@ -16,12 +16,12 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   threshold           = 3
   alarm_description   = "Alarm for ${local.domain_name_base[var.environment]} has been triggered"
   actions_enabled     = "true"
-  alarm_actions       = [aws_sns_topic.sns_topic.arn, alerter.aws_lambda_function.alerter.arn]
+  alarm_actions       = [module.healthcheck.aws_sns_topic.sns_topic.arn, module.alerter.aws_lambda_function.alerter.arn]
   treat_missing_data  = "breaching"
 
   dimensions = {
-    FunctionName = aws_lambda_function.healthcheck.function_name
+    FunctionName = module.healthcheck.aws_lambda_function.healthcheck.function_name
   }
 
-  depends_on          = [aws_lambda_function.healthcheck]
+  depends_on          = [module.healthcheck.aws_lambda_function.healthcheck]
 }
