@@ -33,7 +33,7 @@ run_linting(){
   echo "Freezing flask"
 }
 
-export WEBHOOK_SLACK = "$WEBHOOK_SLACK"
+export WEBHOOK_SLACK="$WEBHOOK_SLACK"
 
 
 echo "${SIGNING_KEY}" > signingkey.key
