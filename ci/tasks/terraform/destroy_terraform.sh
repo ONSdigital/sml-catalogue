@@ -22,11 +22,6 @@ export TF_VAR_head_sha_short=$(cat .git/resource/head_sha_short)
 cd terraform
 
 
--upgrade \
--backend-config "bucket=${S3_NAME}" \
--backend-config "key=${S3_KEY}" \
--backend-config "workspace_key_prefix=${WORKSPACE_KEY_INFIX}" \
--backend-config "role_arn=${TF_VAR_deployment_role}"
 
 # --------------------------
 
