@@ -44,7 +44,7 @@ resource "aws_lambda_function" "alerter" {
 
   function_name = "${var.environment}-alerter"
 
-  filename      = "../../lambda_functions/alerter/alerter.zip"
+  filename      = "../../../lambda_functions/alerter/alerter.zip"
 
   handler       = "alerter.lambda_handler"
 
