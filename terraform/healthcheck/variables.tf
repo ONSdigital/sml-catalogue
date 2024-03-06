@@ -6,9 +6,12 @@ variable "environment" {
   type = string
 }
 
-variable "url" {
-  type = string
-  default = "https://${var.domain_name_base[var.environment]}"
+locals {
+  url = {
+    dev : "dev-sml.aws.onsdigital.uk"
+    preprod : "preprod-sml.aws.onsdigital.uk"
+    prod : "statisticalmethodslibrary.ons.gov.uk"
+  }
 }
 
 variable "expected_string" {
