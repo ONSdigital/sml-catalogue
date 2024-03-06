@@ -38,8 +38,13 @@
 {% block pageContent %}
 <main id="main-content">        
     {{
+        {% if cms_enabled %}
+            {% set hero_title = content["hero_title"] %}
+        {% else %}
+            {% set hero_title = "An open source library for statistical code approved by the ONS" %}
+        {% endif %}
         onsHero({
-            "title": content["hero_title"],
+            "title": hero_title,
             "button": {
                 "id": 'find-methods-button',
                 "url": url_for("display_methods"),
