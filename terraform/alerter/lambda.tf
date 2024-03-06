@@ -53,5 +53,6 @@ resource "aws_lambda_function" "alerter" {
       "lambda_name" = "${var.environment}-healthcheck",
       "url" = var.domain_name_base,
     }
+  }
 
 }
