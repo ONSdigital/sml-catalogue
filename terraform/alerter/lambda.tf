@@ -47,4 +47,11 @@ resource "aws_lambda_function" "alerter" {
     Name = "${var.environment}_sml_lambda_alerter"
   }
 
+  environment {
+    variables = {
+      "alarm_name" = "${var.environment}-environment-alarm",
+      "lambda_name" = "${var.environment}-healthcheck",
+      "url" = var.domain_name_base,
+    }
+
 }
