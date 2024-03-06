@@ -1,4 +1,5 @@
 from flask import abort, render_template
+from markupsafe import Markup, escape
 
 from sml_builder import app
 from sml_builder.cms import getContent
@@ -18,7 +19,16 @@ def about():
         if checkEmptyList(content):
             abort(404)
         return render_template("about.html", content=content, cms_enabled=cms_enabled)
-    return render_template("about.html", cms_enabled=cms_enabled)
+    try:
+        with open(
+            "./content/about/about-this-library.md", "r", encoding="utf-8"
+        ) as input_file:
+            text = input_file.read()
+            escaped_text = escape(text)
+            body = Markup(markdown.markdown(escaped_text))
+    except OSError as e:
+        _page_not_found(e)
+    return render_template("about.html", page_body=body, cms_enabled=cms_enabled)
 
 
 @app.route("/privacy-and-data-protection")
