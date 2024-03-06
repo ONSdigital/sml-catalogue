@@ -133,5 +133,7 @@ sml_builder/templates/components
 sml_builder/templates/layout
 .DS_Store
 lambda_functions/.DS_Store
+lambda_functions/alerter/.DS_Store
+lambda_functions/healthcheck.DS_Store
 content/.DS_Store
 /.idea

@@ -1,19 +1,3 @@
-terraform {
-  required_providers {
-    archive = {
-      source = "hashicorp/archive"
-      version = "2.4.2"
-    }
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
-    }
-  }
-  backend "s3" {
-    region   = "eu-west-2"
-  }
-}
-
 provider "aws" {
   alias  = "eu-west-2"
   region = "eu-west-2"
@@ -60,13 +44,22 @@ provider "aws" {
   }
 }
 
-provider "aws" {
-  assume_role {
-    role_arn = var.deployment_role
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+
+
+
+  backend "s3" {
+    region   = "eu-west-2"
   }
 }
 
-provider "archive" {
+provider "aws" {
   assume_role {
     role_arn = var.deployment_role
   }
