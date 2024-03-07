@@ -27,6 +27,7 @@ env_setups:
   github_pull_creds: &github_pull_creds
     username: ((github_access_token))
     password: x-oauth-basic
+    
 
   # -------------------
 
@@ -78,7 +79,6 @@ resources:
       tag_filter: ((RELEASE_CANDIDATE))
       username: ((github_access_token))
       password: x-oauth-basic
-      commit_verification_keys: ((github_ons_spp_machine_user_gpg_key_private)
   - name: main
     type: git
     icon: github
@@ -89,11 +89,10 @@ resources:
       branch: main
       username: ((github_access_token))
       password: x-oauth-basic
-      commit_verification_keys: ((github_ons_spp_machine_user_gpg_key_private)
   - name: main-updated
     type: git
     icon: github
-    check_every: never
+    check_every: 1m
     webhook_token: gesture
     source:
       uri: https://github.com/ONSdigital/sml-catalogue.git
@@ -107,7 +106,7 @@ resources:
   - name: pr-open
     type: pull-request
     icon: github
-    check_every: never
+    check_every: 1m
     webhook_token: gesture
     source:
       repository: ONSdigital/sml-catalogue
@@ -118,7 +117,7 @@ resources:
   - name: pr-done
     type: pull-request
     icon: github
-    check_every: never
+    check_every: 1m
     webhook_token: gesture
     source:
       repository: ONSdigital/sml-catalogue
@@ -174,15 +173,17 @@ jobs:
         status: success
         context: Deploying_Dev
         comment_file: GITHUB_OUTPUT/output.txt
+        delete_previous_comments: true
 
     on_failure:
       put: repo
       resource: pr-open
       params:
         path: repo
-        status: success
+        status: failure
         context: Deploying_Dev
         comment_file: GITHUB_OUTPUT/output.txt
+        delete_previous_comments: true
 
   - name: build_and_deploy_dev
     plan:
@@ -206,7 +207,7 @@ jobs:
             params:
               BUILD_TYPE: 0
               GH_TOKEN: ((github_access_token))
-              SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))]
+              SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
 
         - task: deploy_code
           file: repo/ci/tasks/build_and_deploy/deploy.yml
@@ -318,5 +319,5 @@ jobs:
       resource: pr-done
       params:
         path: repo
-        status: success
+        status: failure
         context: Deleting Workspace
