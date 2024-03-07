@@ -52,7 +52,9 @@ def lambda_handler(event, context):
         slack_webhook_url = event['slack_webhook_url']
     else:
         logger.info("Slack webhook url is missing")
-        slack_webhook_url = os.environ.get("slack_url")
+        slack_url_prefix = os.environ.get("slack_url")
+        webhook_secret = os.environ.get("WEBHOOK_SLACK")
+        slack_webhook_url = f"{slack_url_prefix}/{webhook_secret}"
 
     print("slack webhook", slack_webhook_url)
 
