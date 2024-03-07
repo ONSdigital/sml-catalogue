@@ -70,7 +70,7 @@ def lambda_handler(event, context):
         requests.get(
             slack_webhook_url,
             timeout=5,
-            data=json.dumps(alert_message).encode('utf-8'),
+            data=json.dumps(alert_message),
             headers={'Content-Type': 'application/json'}
         )
 
