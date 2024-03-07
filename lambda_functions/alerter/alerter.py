@@ -56,8 +56,6 @@ def lambda_handler(event, context):
         slack_webhook_secret = os.environ.get("slack_secret")
         slack_webhook_url = f"{slack_url_prefix}/{slack_webhook_secret}"
 
-    print('slack_webhook_url', slack_webhook_url)
-
     # Message sent to channel
     alert_message = {
         "Summary": f"The website at {url} is unreachable. Healthcheck failure.",
@@ -67,7 +65,7 @@ def lambda_handler(event, context):
 
     try:
         # Send the request
-        requests.get(
+        requests.post(
             slack_webhook_url,
             timeout=5,
             data=json.dumps(alert_message),
