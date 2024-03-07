@@ -2,6 +2,10 @@ variable "environment" {
   type = string
 }
 
+variable "slack_alert_token" {
+  type = string
+}
+
 variable "deployment_role" {
   type = string
 }
