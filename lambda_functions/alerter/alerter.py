@@ -32,25 +32,25 @@ def lambda_handler(event, context):
     if 'lambda_name' in event:
         lambda_name = event['lambda_name']
     else:
-        logger.error("Lambda name is missing switching to default")
+        logger.error("Lambda name is missing")
         lambda_name = os.environ.get("lambda_name")
 
     if 'alarm_name' in event:
         alarm_name = event['alarm_name']
     else:
-        logger.error("Alarm name is missing switching to default")
+        logger.error("Alarm name is missing")
         alarm_name = os.environ.get("alarm_name")
 
     if 'url' in event:
         url = event['url']
     else:
-        logger.error("Url is missing switching to default")
+        logger.error("Url is missing")
         url = os.environ.get("url")
 
     if slack_webhook_url in event:
         slack_webhook_url = event['slack_webhook_url']
     else:
-        logger.error("Slack webhook url is missing switching to default")
+        logger.error("Slack webhook url is missing")
         slack_webhook_url = os.environ.get("WEBHOOK_SLACK")
 
     # Message sent to channel
