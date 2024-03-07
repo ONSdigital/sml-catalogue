@@ -92,7 +92,6 @@ jobs:
                   GH_TOKEN: ((github_access_token))
                   SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
                   ROLLBACK_TAG: ((ROLLBACK_TAG))
-                  WEBHOOK_SLACK: ((slack_webhook_sml_portal_alerts))
 
           - task: deploy_code
             file: repo/ci/tasks/build_and_deploy/deploy.yml
@@ -126,7 +125,6 @@ jobs:
                   GH_TOKEN: ((github_access_token))
                   SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
                   ROLLBACK_TAG: ((ROLLBACK_TAG))
-                  WEBHOOK_SLACK: ((slack_webhook_sml_portal_alerts))
 
           - task: deploy_code
             file: repo/ci/tasks/build_and_deploy/deploy.yml
