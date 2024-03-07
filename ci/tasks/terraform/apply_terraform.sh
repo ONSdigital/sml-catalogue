@@ -5,7 +5,7 @@
 set -euo pipefail
 
 : ${TERRAFORM_SOURCE}
-: ${TF_VAR_slack_alert_token}
+: ${TF_VAR_environment}
 : ${TF_VAR_deployment_role}
 : ${WORKSPACE_KEY_INFIX}
 : ${AWS_DEFAULT_REGION}
@@ -33,7 +33,7 @@ terraform plan -out=plan.tfstate
 echo "starting terraform apply"
 terraform apply \
     -auto-approve \
-    -var="environment=${TF_VAR_environment}"
+    -var="environment=${TF_VAR_environment}" \
 rm plan.tfstate
 echo "done"
 echo "DEPLOY_URL=`terraform output -raw website_url`" > ../../GITHUB_OUTPUT/output.txt
