@@ -47,7 +47,7 @@ def lambda_handler(event, context):
         logger.error("Url is missing")
         url = os.environ.get("url")
 
-    if slack_webhook_url in event:
+    if 'slack_webhook_url' in event:
         slack_webhook_url = event['slack_webhook_url']
     else:
         logger.error("Slack webhook url is missing")
