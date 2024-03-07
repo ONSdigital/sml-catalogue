@@ -80,7 +80,7 @@ resource "aws_lambda_function" "alerter" {
       "alarm_name" = "${var.environment}-environment-alarm",
       "lambda_name" = "${var.environment}-alerter",
       "url" = var.domain_name_base,
-      "slack_url" = "${local.slack_url_prefix}/${os.environ.get("WEBHOOK_SLACK")}"
+      "slack_url" = "${var.slack_url}"
     }
   }
 
