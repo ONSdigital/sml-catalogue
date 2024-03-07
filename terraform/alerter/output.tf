@@ -3,6 +3,5 @@ output "alerter_lambda" {
 }
 
 output "slack_secret" {
-  type = string
-  default = data.aws_secretsmanager_secret_version.current.secret_string
+  value = data.aws_secretsmanager_secret_version.current.secret_string
 }
