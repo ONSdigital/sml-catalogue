@@ -23,6 +23,34 @@ data "aws_iam_policy_document" "assume_role" {
   }
 }
 
+# This attaches the policy needed for logging to the lambda's IAM role. #3
+resource "aws_iam_role_policy_attachment" "lambda_alerter" {
+  role       = "${aws_iam_role.alerter.name}"
+  policy_arn = "${aws_iam_policy.lambda_log_function.arn}"
+}
+
+# Permissions for lambda to log to a log group
+data "aws_iam_policy_document" "lambda_log_function" {
+  statement {
+    actions = [
+      "logs:CreateLogGroup",
+      "logs:CreateLogStream",
+      "logs:PutLogEvents"
+    ]
+
+    resources = [
+      "arn:aws:logs:*:*:*",
+    ]
+  }
+}
+
+# This creates the policy needed for a lambda to log.
+resource "aws_iam_policy" "lambda_log_function" {
+  name   = "lambda-alerter-logs"
+  path   = "/"
+  policy = "${data.aws_iam_policy_document.lambda_log_function.json}"
+}
+
 # Creates iam role
 resource "aws_iam_role" "alerter" {
   name               = "${var.environment}-alerter"
@@ -50,7 +78,7 @@ resource "aws_lambda_function" "alerter" {
   environment {
     variables = {
       "alarm_name" = "${var.environment}-environment-alarm",
-      "lambda_name" = "${var.environment}-healthcheck",
+      "lambda_name" = "${var.environment}-alerter",
       "url" = var.domain_name_base,
     }
   }

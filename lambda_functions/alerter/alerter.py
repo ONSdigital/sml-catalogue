@@ -18,7 +18,7 @@ def lambda_handler(event, context):
                   "alarm_name" = "${var.environment}-environment-alarm",
                   "lambda_name" = "${var.environment}-healthcheck",
                   "url" = var.domain_name_base[var.environment],
-                  "slack_webhook_url" = ""
+                  "slack_webhook_url" = aws secret
                   }
     :type event: string
     :param context: General Lambda term (not used in this case but needed for general setup)
@@ -26,32 +26,35 @@ def lambda_handler(event, context):
     :return: Return a success or failure outcome on whether the slack message was sent
     :rtype: json
     """ 
+    print(event)
     
     # To make the lambda reusable we have the option of parsing event data
     # If no event data is provided we default to environment variables
     if 'lambda_name' in event:
         lambda_name = event['lambda_name']
     else:
-        logger.error("Lambda name is missing")
+        logger.info("Lambda name is missing")
         lambda_name = os.environ.get("lambda_name")
 
     if 'alarm_name' in event:
         alarm_name = event['alarm_name']
     else:
-        logger.error("Alarm name is missing")
+        logger.info("Alarm name is missing")
         alarm_name = os.environ.get("alarm_name")
 
     if 'url' in event:
         url = event['url']
     else:
-        logger.error("Url is missing")
+        logger.info("Url is missing")
         url = os.environ.get("url")
 
     if 'slack_webhook_url' in event:
         slack_webhook_url = event['slack_webhook_url']
     else:
-        logger.error("Slack webhook url is missing")
+        logger.info("Slack webhook url is missing")
         slack_webhook_url = os.environ.get("WEBHOOK_SLACK")
+
+    print(slack_webhook_url)
 
     # Message sent to channel
     alert_message = {
