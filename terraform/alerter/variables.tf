@@ -6,7 +6,7 @@ variable "environment" {
   type = string
 }
 
-variable "slack_url" {
+variable "slack_secret" {
   type = string
   default = "https://hooks.slack.com/triggers/E04RP3ZJ3QF/6739592211926"
 }
