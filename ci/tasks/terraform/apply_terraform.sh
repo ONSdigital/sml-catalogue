@@ -6,6 +6,7 @@ set -euo pipefail
 
 : ${TERRAFORM_SOURCE}
 : ${TF_VAR_environment}
+: ${TF_VAR_slack_alert_token}
 : ${TF_VAR_deployment_role}
 : ${WORKSPACE_KEY_INFIX}
 : ${AWS_DEFAULT_REGION}
