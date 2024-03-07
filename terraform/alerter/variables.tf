@@ -13,5 +13,4 @@ variable "slack_url" {
 
 variable "slack_secret" {
   type = string
-  value = "${var.slack_alert_token}"
 }
