@@ -10,6 +10,14 @@ locals {
   }
 }
 
+locals {
+  schema_domain_name_base = {
+    dev : "https://dev-sml.aws.onsdigital.uk"
+    preprod : "https://preprod-sml.aws.onsdigital.uk"
+    prod : "https://statisticalmethodslibrary.ons.gov.uk"
+  }
+}
+
 variable "expected_string" {
   type = string
   default = "An open source library for statistical code approved by the ONS"
