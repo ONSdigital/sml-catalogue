@@ -1,7 +1,7 @@
 module "alerter" {
   source = "./alerter"
 
-  slack_secret = var.slack_alert_token
+  slack_webhook_token = var.slack_alert_token
 
   environment = var.environment
 

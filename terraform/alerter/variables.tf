@@ -11,6 +11,6 @@ variable "slack_url" {
   default = "https://hooks.slack.com/triggers/E04RP3ZJ3QF/6739592211926"
 }
 
-variable "slack_secret" {
+variable "slack_webhook_token" {
   type = string
 }

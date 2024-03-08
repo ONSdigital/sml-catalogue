@@ -13,48 +13,23 @@ def lambda_handler(event, context):
     lambda_handler The purpose of this lambda function is to alert the sml-portal-alert
     slack channel if an alarm is failing (failing alarm triggers lambda)
 
-    :param event: Event is the message contents parsed to the lambda e.g.
-                  {
-                  "alarm_name" = "${var.environment}-environment-alarm",
-                  "lambda_name" = "${var.environment}-healthcheck",
-                  "url" = var.domain_name_base[var.environment],
-                  "slack_webhook_url" = aws secret
-                  }
-    :type event: string
+    
+    :param event: General Lambda term (not used in this case but needed for general setup)
+    :type event: N/A
     :param context: General Lambda term (not used in this case but needed for general setup)
     :type context: N/A
     :return: Return a success or failure outcome on whether the slack message was sent
     :rtype: json
     """ 
-    print(event)
     
-    # To make the lambda reusable we have the option of parsing event data
-    # If no event data is provided we default to environment variables
-    if 'lambda_name' in event:
-        lambda_name = event['lambda_name']
-    else:
-        logger.info("Lambda name is missing")
-        lambda_name = os.environ.get("lambda_name")
-
-    if 'alarm_name' in event:
-        alarm_name = event['alarm_name']
-    else:
-        logger.info("Alarm name is missing")
-        alarm_name = os.environ.get("alarm_name")
-
-    if 'url' in event:
-        url = event['url']
-    else:
-        logger.info("Url is missing")
-        url = os.environ.get("url")
-
-    if 'slack_webhook_url' in event:
-        slack_webhook_url = event['slack_webhook_url']
-    else:
-        logger.info("Slack webhook url is missing")
-        slack_url_prefix = os.environ.get("slack_url")
-        slack_webhook_secret = os.environ.get("slack_secret")
-        slack_webhook_url = f"{slack_url_prefix}/{slack_webhook_secret}"
+    # Get the needed variables
+    lambda_name = os.environ.get("lambda_name")
+    alarm_name = os.environ.get("alarm_name")
+    url = os.environ.get("url")
+    # The slack token is formed here to push the message to the correct channel
+    slack_url_prefix = os.environ.get("slack_url")
+    slack_webhook_token = os.environ.get("slack_webhook_token")
+    slack_webhook_url = f"{slack_url_prefix}/{slack_webhook_token}"
 
     # Message sent to channel
     alert_message = {

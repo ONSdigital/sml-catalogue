@@ -81,7 +81,7 @@ resource "aws_lambda_function" "alerter" {
       "lambda_name" = "${var.environment}-alerter",
       "url" = var.domain_name_base,
       "slack_url" = "${var.slack_url}"
-      "slack_secret" = "${var.slack_secret}"
+      "slack_webhook_token" = "${var.slack_webhook_token}"
     }
   }
 
