@@ -7,6 +7,63 @@ import requests
 logger = logging.getLogger()
 logger.setLevel(logging.ERROR)
 
+class HealthCheckException(Exception):
+    """
+    HealthCheckException Our custom healthcheck exception is to customise our response to the user.
+
+    :param Exception: Exception message to be logged to the healthcheck lambda log group
+    :type Exception: string
+    """    
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
+
+    def __str__(self):
+        return f'Custom Exception: {self.message}'
+
+def failing_metric(url, env, expected_string, status_code):
+    """
+    failing_metric This function wll be triggered if our healthcheck fails.
+    It will log custom metric data to AWS Cloudwatch Metrics
+
+    :param url: Url of url to be checked
+    :type url: string
+    :param expected_string: String of text to be checked
+    :type expected_string: String
+    :param env: This is for us to distinguish the message between the dev, preprod and prod environments
+    :type env: string
+    :param status_code: The status code value we received from the healthcheck.
+    :type status_code: string
+    """    
+    # Define metric data
+    cloudwatch = boto3.client('cloudwatch')
+    metric_data = cloudwatch.put_metric_data(
+        MetricData = [
+            {
+                'MetricName': f'{env}-healthcheck-failures',
+                'Dimensions': [
+                    {
+                    'Name': 'EndpointUrl',
+                    'Value': url,
+                    },
+                    {
+                    'Name': 'ExpectedString',
+                    'Value': expected_string,
+                    },
+                    {
+                    'Name': 'ResponseStatus',
+                    'Value': status_code,
+                    },
+                ],
+                'Unit': 'None',
+                'Value': 1,
+            },
+        ],
+        Namespace = 'SML-Healthcheck.'
+    )
+
+    print("Metric Data: ", metric_data)
+
 def check_web_url_health(url, env, expected_string):
     """
     check_web_url_health is a function that calls the url from the event
@@ -18,45 +75,20 @@ def check_web_url_health(url, env, expected_string):
     :type expected_string: String
     :param env: This is for us to distinguish the message between the dev, preprod and prod environments
     :type env: string
-    :raises RuntimeError: will raise a error if the response is not received.
-    :raises RuntimeError: error
-    :raises ValueError: will raise a error if the status code returned by the healthcheck ping is not 200 or the text does not match the expected string.
-    :raises ValueError: error
+    :raises HealthCheckException: will raise a custom exception if the response does not match our expected values.
+    :raises HealthCheckException: error
     """
     response = requests.get(url, timeout=5)
-
-    # Define metric data
-    cloudwatch = boto3.client('cloudwatch')
-    metric_data = cloudwatch.put_metric_data(
-        MetricData = [
-            {
-                'MetricName': f'{env}-response',
-                'Dimensions': [
-                    {
-                    'Name': 'EndpointUrl',
-                    'Value': url,
-                    },
-                    {
-                    'Name': 'ExpectedString',
-                    'Value': expected_string,
-                    }
-                ],
-                'Unit': 'None',
-                'Value': 1
-            },
-        ],
-        Namespace = 'SML-Healthcheck.'
-    )
 
     # If the response code is not 200 or the response text does not 
     # contain the expected string then we log an error and fail the lambda
     if response.status_code != 200:
-        print(f"Metric Data: , {metric_data}")
-        raise logger.error(f"Error: Status code expected to be 200 but is {response.status_code}")
+        failing_metric(url, env, expected_string, response.status_code)
+        raise HealthCheckException(f"Error: Status code expected to be 200 but is {response.status_code}")
 
     elif expected_string not in response.text:
-        print(f"Metric Data: , {metric_data}")
-        raise logger.error(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
+        failing_metric(url, env, expected_string, response.status_code)
+        raise HealthCheckException(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
     
 def lambda_handler(event, context):
     """
@@ -71,13 +103,14 @@ def lambda_handler(event, context):
     :type event: string
     :param context: General Lambda term (not used in this case but needed for general setup)
     :type context: N/A
+    :raises Exception: will raise a error if there is an issue with the healthcheck.
+    :raises Exception: error
     """    
 
     print("Event: ", event)
 
-    if 'url' and 'env' and 'expected_string' in event:
-        check_web_url_health(url=event['url'], env=event['env'], expected_string=event['expected_string'])
-    else:
-        raise logger.error("The lambda event has missing values, we expect a value for the url, env and expected string")
+    try: check_web_url_health(url=event['url'], env=event['env'], expected_string=event['expected_string'])
+    except Exception as e:
+        raise Exception("Error with lambda: {e}")
 
     

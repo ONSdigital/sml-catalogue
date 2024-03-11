@@ -77,7 +77,7 @@ resource "aws_lambda_function" "alerter" {
 
   environment {
     variables = {
-      "alarm_name" = "${var.environment}-environment-alarm",
+      "alarm_name" = "${var.environment}-environment-healthcheck-alarm",
       "lambda_name" = "${var.environment}-alerter",
       "url" = var.domain_name_base,
       "slack_url" = "${var.slack_url}"

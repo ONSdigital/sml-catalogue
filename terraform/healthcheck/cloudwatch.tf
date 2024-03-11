@@ -9,7 +9,7 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
 
 # Creates the cloudwatch alarm and its dependency on the healthcheck
 resource "aws_cloudwatch_metric_alarm" "healthcheck" {
-  alarm_name          = "${var.environment}-environment-alarm"
+  alarm_name          = "${var.environment}-environment-healthcheck-alarm"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = 1
   metric_name         = "Errors"

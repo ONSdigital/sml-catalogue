@@ -249,7 +249,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "cloudwatch:ListTagsForResource"
               ],
               "Resource": [
-                  "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:<environment>-environment-alarm"
+                  "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:<environment>-environment-healthcheck-alarm"
               ]
             },
             {
