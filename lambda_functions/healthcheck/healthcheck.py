@@ -13,10 +13,10 @@ def check_web_url_health(url, expected_string, env):
     :type expected_string: String
     :param env: This is for us to distinguish the message between the dev, preprod and prod environments
     :type env: string
-    :raises RuntimeError: will raise a runtime error if the status code returned by the healthcheck ping is not 200 or the text does not match the expected string.
+    :raises RuntimeError: will raise a error if the response is not received.
     :raises RuntimeError: error
-    :raises Exeption: will raise a runtime error if the status code returned by the healthcheck ping is not 200 or the text does not match the expected string.
-    :raises Exeption: error
+    :raises ValueError: will raise a error if the status code returned by the healthcheck ping is not 200 or the text does not match the expected string.
+    :raises ValueError: error
     """
 
     try:
@@ -52,11 +52,11 @@ def check_web_url_health(url, expected_string, env):
     # contain the expected string then we log an error and fail the lambda
     if response.status_code != 200:
         print(f"Metric Data: , {metric_data}")
-        raise Exception(f"Error: Status code expected to be 200 but is {response.status_code}")
+        raise ValueError(f"Error: Status code expected to be 200 but is {response.status_code}")
     
     elif expected_string not in response.text:
         print(f"Metric Data: , {metric_data}")
-        raise Exception(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
+        raise ValueError(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
     
 def lambda_handler(event, context):
     """

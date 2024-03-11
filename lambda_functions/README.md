@@ -11,11 +11,10 @@ You can complete the upload using the below guide.
 Run the following commands to update the healthcheck.zip (starting in the lambda_functions/healthcheck directory)
 
 ```
-    mkdir packages
-    cd packages
-    pip install requests
-    pip install boto3
-    pip install <any packages you need>
+    mkdir package
+    pip install --target ./package requests
+    pip install --target ./package boto3
+    cd package
     zip -r ../healthcheck.zip .
     cd ..
     zip healthcheck.zip healthcheck.py
@@ -28,10 +27,9 @@ This will allow your lambda to use package dependencies.
 Run the following commands to update the alerter.zip (starting in the lambda_functions/alerter directory)
 
 ```
-    mkdir packages
-    cd packages
-    pip install requests
-    pip install <any packages you need>
+    mkdir package
+    pip install --target ./package requests
+    cd package
     zip -r ../alerter.zip .
     cd ..
     zip alerter.zip alerter.py
