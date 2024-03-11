@@ -16,6 +16,7 @@ if [ -f .git/resource/metadata.json ]; then
   PR="$(cat pr)"
   HEAD_NAME="$(cat head_name)"
 
+
   cd ../..
   printf "%s\n" "Deriving workspace name from PR name"
   printf "%s" "${PR}-${HEAD_NAME}" | sed 's/[^a-zA-Z0-9]/-/g' | tr '[:upper:]' '[:lower:]' | sed 's/cognito/cogneeto/g'| cut -c1-13 | sed 's/-$//' > .workspace
