@@ -12,9 +12,10 @@ Run the following commands to update the healthcheck.zip (starting in the lambda
 
 ```
     mkdir packages
-    pip install --target ./packages requests
-    pip install --target ./packages boto3
-    pip install --target ./packages <any packages you need>
+    cd packages
+    pip install requests
+    pip install boto3
+    pip install <any packages you need>
     zip -r ../healthcheck.zip .
     cd ..
     zip healthcheck.zip healthcheck.py
@@ -28,8 +29,9 @@ Run the following commands to update the alerter.zip (starting in the lambda_fun
 
 ```
     mkdir packages
-    pip install --target ./packages requests
-    pip install --target ./packages <any packages you need>
+    cd packages
+    pip install requests
+    pip install <any packages you need>
     zip -r ../alerter.zip .
     cd ..
     zip alerter.zip alerter.py
