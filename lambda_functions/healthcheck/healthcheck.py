@@ -73,7 +73,7 @@ def lambda_handler(event, context):
     :type context: N/A
     """    
 
-    print(event)
+    print("Event:", event)
     
     # Check if weburl is healthy
     check_web_url_health(event['url'], event['env'], event['expected_string'])
