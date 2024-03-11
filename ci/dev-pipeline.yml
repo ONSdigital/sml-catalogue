@@ -150,6 +150,13 @@ jobs:
               TERRAFORM_SOURCE: repo/terraform
               WORKSPACE_KEY_INFIX: workspace
 
+          - task: zip-lambda
+            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+            params:
+              BUILD_TYPE: 0
+              GH_TOKEN: ((github_access_token))
+              SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
@@ -201,6 +208,13 @@ jobs:
               WORKSPACE_KEY_INFIX: workspace
               TF_WORKSPACE: main
 
+          - task: zip-lambda
+            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+            params:
+              BUILD_TYPE: 0
+              GH_TOKEN: ((github_access_token))
+              SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
@@ -232,6 +246,13 @@ jobs:
               TERRAFORM_SOURCE: repo/terraform
               WORKSPACE_KEY_INFIX: workspace
               TF_WORKSPACE: main
+
+          - task: zip-lambda
+            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+            params:
+              BUILD_TYPE: 0
+              GH_TOKEN: ((github_access_token))
+              SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
@@ -266,6 +287,13 @@ jobs:
               TERRAFORM_SOURCE: repo/terraform
               WORKSPACE_KEY_INFIX: workspace
               TF_WORKSPACE: main
+
+          - task: zip-lambda
+            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+            params:
+              BUILD_TYPE: 0
+              GH_TOKEN: ((github_access_token))
+              SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
