@@ -75,6 +75,6 @@ def lambda_handler(event, context):
     print(event)
     
     # Check if weburl is healthy
-    check_web_url_health(event['url'], event['env'], event['expected_string'])
+    check_web_url_health(url=event['url'], env=event['env'], expected_string=event['expected_string'])
 
     
