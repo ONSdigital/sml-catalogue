@@ -141,6 +141,10 @@ jobs:
             path: repo
             status: pending
             context: Deploying_Dev
+
+        - task: zip-lambda
+            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -149,9 +153,6 @@ jobs:
               <<: *sml_dev_setup
               TERRAFORM_SOURCE: repo/terraform
               WORKSPACE_KEY_INFIX: workspace
-
-          - task: zip-lambda
-            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
@@ -194,6 +195,10 @@ jobs:
           resource: main-updated
           trigger: true
           version: every
+
+        - task: zip-lambda
+            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -203,9 +208,6 @@ jobs:
               TERRAFORM_SOURCE: repo/terraform
               WORKSPACE_KEY_INFIX: workspace
               TF_WORKSPACE: main
-
-          - task: zip-lambda
-            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
@@ -229,6 +231,10 @@ jobs:
       - do:
         - get: repo
           resource: main
+
+        - task: zip-lambda
+            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+            
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -238,9 +244,6 @@ jobs:
               TERRAFORM_SOURCE: repo/terraform
               WORKSPACE_KEY_INFIX: workspace
               TF_WORKSPACE: main
-
-          - task: zip-lambda
-            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
@@ -266,6 +269,10 @@ jobs:
       - do:
         - get: repo
           resource: tag_commit
+
+        - task: zip-lambda
+            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -275,9 +282,6 @@ jobs:
               TERRAFORM_SOURCE: repo/terraform
               WORKSPACE_KEY_INFIX: workspace
               TF_WORKSPACE: main
-
-          - task: zip-lambda
-            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
