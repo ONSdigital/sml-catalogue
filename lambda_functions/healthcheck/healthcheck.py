@@ -1,11 +1,5 @@
-import logging
-
 import boto3
 import requests
-
-# Configure logging
-logger = logging.getLogger()
-logger.setLevel(logging.ERROR)
 
 def check_web_url_health(url, expected_string, env):
     """
@@ -18,8 +12,10 @@ def check_web_url_health(url, expected_string, env):
     :type expected_string: String
     :param env: This is for us to distinguish the message between the dev, preprod and prod environments
     :type env: string
-    :raises RuntimeError: will log an error to the lambda log group
-    :raises RuntimeError: variable
+    :raises RuntimeError: will raise a runtime error if appropriate
+    :raises RuntimeError: error
+    :raises Exeption: will raise a runtime error if appropriate
+    :raises Exeption: error
     """
 
     try:
@@ -54,12 +50,12 @@ def check_web_url_health(url, expected_string, env):
     # If the response code is not 200 or the response text does not 
     # contain the expected string then we log an error and fail the lambda
     if response.status_code != 200:
-        logger.info(f"Metric Data: , {metric_data}")
-        raise logger.error(f"Error: Status code expected to be 200 but is {response.status_code}")
+        print(f"Metric Data: , {metric_data}")
+        raise Exception(f"Error: Status code expected to be 200 but is {response.status_code}")
     
     elif expected_string not in response.text:
-        logger.info(f"Metric Data: , {metric_data}")
-        raise logger.error(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
+        print(f"Metric Data: , {metric_data}")
+        raise Exception(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
     
 def lambda_handler(event, context):
     """

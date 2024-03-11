@@ -1,12 +1,7 @@
 import json
-import logging
 import os
 
 import requests
-
-# Configure logging
-logger = logging.getLogger()
-logger.setLevel(logging.ERROR)
 
 def lambda_handler(event, context):
     """
@@ -20,6 +15,8 @@ def lambda_handler(event, context):
     :type context: N/A
     :return: Return a success or failure outcome on whether the slack message was sent
     :rtype: json
+    :raises Exeption: will raise a runtime error if appropriate
+    :raises Exeption: error
     """ 
     
     # Get the needed variables
