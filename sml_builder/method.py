@@ -21,12 +21,12 @@ def display_method_summary(method, methodState):  # pylint: disable=inconsistent
                 if method == item["id"]:
                     content = item
                     return render_template(
-                        "method.html", method=content, methodState=methodState
+                        "method.html", method=content, methodState=methodState, cms_enabled=cms_enabled
                     )
 
         elif method == getMethodsTableItems["id"]:
             content = getMethodsTableItems
-            return render_template("method.html", method=content, methodState=methodState)
+            return render_template("method.html", method=content, methodState=methodState, cms_enabled=cms_enabled)
         abort(404) 
     else:
         page_data = loads(
@@ -46,7 +46,7 @@ def display_method_summary(method, methodState):  # pylint: disable=inconsistent
         page_data["method_metadata"] = {
             k: page_data["method_metadata"][k] for k in sorted_order
         }
-        return render_template("method.html", page=page_data)
+        return render_template("method.html", page=page_data, cms_enabled=cms_enabled)
 
 
 @app.route("/methods")
@@ -65,7 +65,7 @@ def display_methods():
         else:
             methods.append(getMethodsTableItems)
         return render_template(
-            "methods.html", methods=methods, content=content
+            "methods.html", methods=methods, content=content, cms_enabled=cms_enabled
         )
     else:
         methods_dir = "./content/methods/ready-to-use-methods"
@@ -77,7 +77,7 @@ def display_methods():
         except OSError as e:
             _page_not_found(e)
         return render_template(
-            "methods.html", page={"rows": methods, "future_rows": future_methods}
+            "methods.html", page={"rows": methods, "future_rows": future_methods}, cms_enabled=cms_enabled
         )
 
 def appendRow(methods_dir):
