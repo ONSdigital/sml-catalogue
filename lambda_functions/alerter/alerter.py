@@ -16,7 +16,7 @@ def lambda_handler(event, context):
     :type context: N/A
     :return: Return a success or failure outcome on whether the slack message was sent
     :rtype: json
-    :raises Exeption: will raise a runtime error if appropriate
+    :raises Exeption: will raise a runtime error if the post fails to send.
     :raises Exeption: error
     """ 
     

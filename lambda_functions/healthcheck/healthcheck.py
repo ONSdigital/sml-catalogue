@@ -13,9 +13,9 @@ def check_web_url_health(url, expected_string, env):
     :type expected_string: String
     :param env: This is for us to distinguish the message between the dev, preprod and prod environments
     :type env: string
-    :raises RuntimeError: will raise a runtime error if appropriate
+    :raises RuntimeError: will raise a runtime error if the status code returned by the healthcheck ping is not 200 or the text does not match the expected string.
     :raises RuntimeError: error
-    :raises Exeption: will raise a runtime error if appropriate
+    :raises Exeption: will raise a runtime error if the status code returned by the healthcheck ping is not 200 or the text does not match the expected string.
     :raises Exeption: error
     """
 
