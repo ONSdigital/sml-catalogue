@@ -1,5 +1,9 @@
 {%- extends "core.html" -%}
-{%- set page_title = method.name -%}
+{% if cms_enabled %}
+  {%- set page_title = method.name -%}
+{% else %}
+  {%- set page_title = page.title -%}
+{% endif %}
 {%- set current_path = url_for("display_methods") -%}
 {% from "components/external-link/_macro.njk" import onsExternalLink %}
 {%- set breadcrumbs = {
