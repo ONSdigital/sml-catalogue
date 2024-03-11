@@ -1,8 +1,13 @@
+import logging
+
 import boto3
 import requests
 
+# Configure logging
+logger = logging.getLogger()
+logger.setLevel(logging.ERROR)
 
-def check_web_url_health(url, expected_string, env):
+def check_web_url_health(url, env, expected_string):
     """
     check_web_url_health is a function that calls the url from the event
     and checks if the status code is 200 and the expected string exists on that url.
@@ -18,12 +23,7 @@ def check_web_url_health(url, expected_string, env):
     :raises ValueError: will raise a error if the status code returned by the healthcheck ping is not 200 or the text does not match the expected string.
     :raises ValueError: error
     """
-
-    try:
-        # Ping the url
-        response = requests.get(url, timeout=5)
-    except Exception as e:
-        raise RuntimeError(f"Error sending message to Slack: {e}") from None
+    response = requests.get(url, timeout=5)
 
     # Define metric data
     cloudwatch = boto3.client('cloudwatch')
@@ -52,11 +52,11 @@ def check_web_url_health(url, expected_string, env):
     # contain the expected string then we log an error and fail the lambda
     if response.status_code != 200:
         print(f"Metric Data: , {metric_data}")
-        raise ValueError(f"Error: Status code expected to be 200 but is {response.status_code}")
-    
+        raise logger.error(f"Error: Status code expected to be 200 but is {response.status_code}")
+
     elif expected_string not in response.text:
         print(f"Metric Data: , {metric_data}")
-        raise ValueError(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
+        raise logger.error(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
     
 def lambda_handler(event, context):
     """
@@ -74,8 +74,10 @@ def lambda_handler(event, context):
     """    
 
     print("Event: ", event)
-    
-    # Check if weburl is healthy
-    check_web_url_health(event['url'], event['env'], event['expected_string'])
+
+    if 'url' and 'env' and 'expected_string' in event:
+        check_web_url_health(url=event['url'], env=event['env'], expected_string=event['expected_string'])
+    else:
+        raise logger.error("The lambda event has missing values, we expect a value for the url, env and expected string")
 
     
