@@ -150,7 +150,7 @@ jobs:
               WORKSPACE_KEY_INFIX: workspace
 
           - task: zip-lambda
-            file: repo/ci/tasks/zip_and_deploy/build_lambda.yml
+            file: repo/ci/tasks/zip_and_deploy/zip_lambda.yml
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
@@ -206,7 +206,7 @@ jobs:
               TF_WORKSPACE: main
 
           - task: zip-lambda
-            file: repo/ci/tasks/zip_and_deploy/build_lambda.yml
+            file: repo/ci/tasks/zip_and_deploy/zip_lambda.yml
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
@@ -241,7 +241,7 @@ jobs:
               TF_WORKSPACE: main
 
           - task: zip-lambda
-            file: repo/ci/tasks/zip_and_deploy/build_lambda.yml
+            file: repo/ci/tasks/zip_and_deploy/zip_lambda.yml
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
@@ -278,7 +278,7 @@ jobs:
               TF_WORKSPACE: main
 
           - task: zip-lambda
-            file: repo/ci/tasks/zip_and_deploy/build_lambda.yml
+            file: repo/ci/tasks/zip_and_deploy/zip_lambda.yml
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
