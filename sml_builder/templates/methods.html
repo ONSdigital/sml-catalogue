@@ -76,7 +76,7 @@
       {% do methodsTableRows.append({
         "tds": [
           {
-              "value": '<a href="' + url_for("display_method", method=method.id, methodState="ready-methods") + '">' + method.name + '</a>'
+              "value": '<a href="' + url_for("display_method_summary", method=method.id, methodState="ready-methods") + '">' + method.name + '</a>'
           },
           {"value": method.theme},
           {"value": method.expert_group},
@@ -87,7 +87,7 @@
       {% do futureMethodsTableRows.append({
         "tds": [
           {
-              "value": '<a href="' + url_for("display_method", method=method.id, methodState="future-methods") + '">' + method.name + '</a>'
+              "value": '<a href="' + url_for("display_method_summary", method=method.id, methodState="future-methods") + '">' + method.name + '</a>'
           },
           {"value": method.theme},
           {"value": method.expert_group},
