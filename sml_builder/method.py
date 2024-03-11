@@ -1,17 +1,25 @@
-from flask import abort, render_template
 from json import loads
 from os import listdir
 
-from _jsonnet import evaluate_file #pylint: disable=no-name-in-module
+from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
+from flask import abort, render_template
+
 from sml_builder import app
 from sml_builder.cms import getContent
-from sml_builder.utils import checkEmptyList, checkTypeList, _page_not_found, get_feature_config
+from sml_builder.utils import (
+    _page_not_found,
+    checkEmptyList,
+    checkTypeList,
+    get_feature_config,
+)
 
 cms_enabled = get_feature_config("CONTENT_MANAGEMENT_SYSTEM")
 
 
 @app.route("/method/<methodState>/<method>")
-def display_method_summary(method, methodState):  # pylint: disable=inconsistent-return-statements
+def display_method_summary(
+    method, methodState
+):  # pylint: disable=inconsistent-return-statements
     if cms_enabled:
         # Gets the methods for the individual method page
         getMethodsTableItems = getContent("catalogueTableOfMethods2")
@@ -21,13 +29,21 @@ def display_method_summary(method, methodState):  # pylint: disable=inconsistent
                 if method == item["id"]:
                     content = item
                     return render_template(
-                        "method.html", method=content, methodState=methodState, cms_enabled=cms_enabled
+                        "method.html",
+                        method=content,
+                        methodState=methodState,
+                        cms_enabled=cms_enabled,
                     )
 
         elif method == getMethodsTableItems["id"]:
             content = getMethodsTableItems
-            return render_template("method.html", method=content, methodState=methodState, cms_enabled=cms_enabled)
-        abort(404) 
+            return render_template(
+                "method.html",
+                method=content,
+                methodState=methodState,
+                cms_enabled=cms_enabled,
+            )
+        abort(404)
     else:
         page_data = loads(
             evaluate_file(f"./content/methods/{methodState}/{method}.jsonnet")
@@ -67,18 +83,21 @@ def display_methods():
         return render_template(
             "methods.html", methods=methods, content=content, cms_enabled=cms_enabled
         )
-    else:
-        methods_dir = "./content/methods/ready-to-use-methods"
-        future_methods_dir = "./content/methods/future-methods"
-        try:
-            methods = appendRow(methods_dir)
-            future_methods = appendRow(future_methods_dir)
 
-        except OSError as e:
-            _page_not_found(e)
-        return render_template(
-            "methods.html", page={"rows": methods, "future_rows": future_methods}, cms_enabled=cms_enabled
-        )
+    methods_dir = "./content/methods/ready-to-use-methods"
+    future_methods_dir = "./content/methods/future-methods"
+    try:
+        methods = appendRow(methods_dir)
+        future_methods = appendRow(future_methods_dir)
+
+    except OSError as e:
+        _page_not_found(e)
+    return render_template(
+        "methods.html",
+        page={"rows": methods, "future_rows": future_methods},
+        cms_enabled=cms_enabled,
+    )
+
 
 def appendRow(methods_dir):
     methods = []

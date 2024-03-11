@@ -30,6 +30,8 @@ from sml_builder.utils import checkEmptyList  # noqa: E402
 from sml_builder.utils import get_feature_config  # noqa: E402
 
 cms_enabled = get_feature_config("CONTENT_MANAGEMENT_SYSTEM")
+
+
 @app.route("/")
 def index():
     # Gets the content for the home page
@@ -37,7 +39,7 @@ def index():
         content = getContent("heroHomePage")
         if checkEmptyList(content):
             abort(404)
-        
+
         return render_template("index.html", content=content, cms_enabled=cms_enabled)
     return render_template("index.html", cms_enabled=cms_enabled)
 
