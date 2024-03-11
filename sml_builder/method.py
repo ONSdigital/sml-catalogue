@@ -11,7 +11,7 @@ cms_enabled = get_feature_config("CONTENT_MANAGEMENT_SYSTEM")
 
 
 @app.route("/method/<methodState>/<method>")
-def display_method(method, methodState):  # pylint: disable=inconsistent-return-statements
+def display_method_summary(method, methodState):  # pylint: disable=inconsistent-return-statements
     if cms_enabled:
         # Gets the methods for the individual method page
         getMethodsTableItems = getContent("catalogueTableOfMethods2")
