@@ -3,6 +3,7 @@ import os
 
 import requests
 
+
 def lambda_handler(event, context):
     """
     lambda_handler The purpose of this lambda function is to alert the sml-portal-alert
