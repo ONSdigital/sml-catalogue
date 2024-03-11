@@ -65,7 +65,7 @@ def display_methods():
         else:
             methods.append(getMethodsTableItems)
         return render_template(
-            "methods.html", methods=methods, status_class=STATUS_CLASS, content=content
+            "methods.html", methods=methods, content=content
         )
     else:
         methods_dir = "./content/methods/ready-to-use-methods"
