@@ -52,8 +52,4 @@ def lambda_handler(event, context):
             'body': json.dumps('Message sent to Slack successfully')
         }
     except Exception as e:
-        logger.error("Error sending message to Slack:", str(e))
-        return {
-            'statusCode': 500,
-            'body': json.dumps('Error sending message to Slack')
-        }
+        raise RuntimeError(f"Error sending message to Slack: {e}") from None

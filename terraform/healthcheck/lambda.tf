@@ -14,7 +14,7 @@ resource "aws_iam_role" "healthcheck" {
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
-# This attaches the policy needed for logging to the lambda's IAM role. #3
+# This attaches the policy needed for logging to the lambda's IAM role.
 resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
   role       = "${aws_iam_role.healthcheck.name}"
   policy_arn = "${aws_iam_policy.lambda_log_function.arn}"

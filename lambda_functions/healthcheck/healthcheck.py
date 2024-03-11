@@ -18,12 +18,15 @@ def check_web_url_health(url, expected_string, env):
     :type expected_string: String
     :param env: This is for us to distinguish the message between the dev, preprod and prod environments
     :type env: string
-    :raises logger.error: will log an error to the lambda log group
-    :raises logger.error: variable
+    :raises RuntimeError: will log an error to the lambda log group
+    :raises RuntimeError: variable
     """
 
-    # Ping the url
-    response = requests.get(url, timeout=5)
+    try:
+        # Ping the url
+        response = requests.get(url, timeout=5)
+    except Exception as e:
+        raise RuntimeError(f"Error sending message to Slack: {e}") from None
 
     # Define metric data
     cloudwatch = boto3.client('cloudwatch')
@@ -75,15 +78,7 @@ def lambda_handler(event, context):
 
     print(event)
     
-    # To make the lambda reusable we have the option of parsing event data
-    # Assign event data
-    if 'url' and 'env' and 'expected_string' in event:
-        url = event['url']
-        env = event['env']
-        expected_string = event['expected_string']
-        # Check if weburl is healthy
-        check_web_url_health(url, expected_string, env)
-    else:
-        logger.error("The lambda event has missing values, we expect a value for the url, env and expected string")
+    # Check if weburl is healthy
+    check_web_url_health(url = event['url'], env = event['env'], expected_string = event['expected_string'])
 
     

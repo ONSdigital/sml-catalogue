@@ -23,7 +23,7 @@ data "aws_iam_policy_document" "assume_role" {
   }
 }
 
-# This attaches the policy needed for logging to the lambda's IAM role. #3
+# This attaches the policy needed for logging to the lambda's IAM role.
 resource "aws_iam_role_policy_attachment" "lambda_alerter" {
   role       = "${aws_iam_role.alerter.name}"
   policy_arn = "${aws_iam_policy.lambda_log_function.arn}"
