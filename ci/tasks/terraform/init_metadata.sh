@@ -2,7 +2,6 @@
 
 set -eu
 
-cd repo
 
 if [ -f .git/resource/metadata.json ]; then
 
