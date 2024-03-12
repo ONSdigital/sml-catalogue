@@ -1,4 +1,4 @@
-# Accessibility statement
+# Accessibility Statement
 
 This accessibility statement applies to the Office for National Statistics (ONS) Statistical Methods Library.  
 
