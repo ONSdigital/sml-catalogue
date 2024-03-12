@@ -84,8 +84,6 @@ def check_web_url_health(url, env, expected_string):
     """
     response = requests.get(url, timeout=5)
 
-    response.status_code = 500
-
     # If the response code is not 200 or the response text does not 
     # contain the expected string then we log an error and fail the lambda
     if response.status_code != 200:
