@@ -197,7 +197,7 @@ jobs:
           version: every
 
         - task: zip-lambda
-            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+          file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
         - in_parallel:
           - task: terraform-apply-environment
@@ -233,7 +233,7 @@ jobs:
           resource: main
 
         - task: zip-lambda
-            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+          file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
             
         - in_parallel:
           - task: terraform-apply-environment
@@ -271,7 +271,7 @@ jobs:
           resource: tag_commit
 
         - task: zip-lambda
-            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+          file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
         - in_parallel:
           - task: terraform-apply-environment
