@@ -28,6 +28,8 @@ share/python-wheels/
 MANIFEST
 lambda_functions/healthcheck/package
 lambda_functions/alerter/package
+lambda_functions/healthcheck/healthcheck.zip
+lambda_functions/alerter/alerter.zip
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
