@@ -34,6 +34,8 @@ def failing_metric(url, env, expected_string, status_code, failure_type):
     :type env: string
     :param status_code: The status code value we received from the healthcheck.
     :type status_code: string
+    :param failure_type: The failure type helps to distinguish between a response and content failure for metric collection.
+    :type failure_type: string
     """    
     # Define metric data
     cloudwatch = boto3.client('cloudwatch')
@@ -79,6 +81,8 @@ def check_web_url_health(url, env, expected_string):
     :type expected_string: String
     :param env: This is for us to distinguish the message between the dev, preprod and prod environments
     :type env: string
+    :param failure_type: The failure type helps to distinguish between a response and content failure for metric collection.
+    :type failure_type: string
     :raises HealthCheckException: this custom exception will trigger if the response does not match our expected values.
     :raises HealthCheckException: error
     """
