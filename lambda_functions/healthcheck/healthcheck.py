@@ -52,10 +52,10 @@ def failing_metric(url, env, expected_string, status_code):
                     },
                     {
                     'Name': 'ResponseStatus',
-                    'Value': status_code,
+                    'Value': str(status_code),
                     },
                 ],
-                'Unit': 'None',
+                'Unit': 'Count',
                 'Value': 1,
             },
         ],
@@ -75,7 +75,7 @@ def check_web_url_health(url, env, expected_string):
     :type expected_string: String
     :param env: This is for us to distinguish the message between the dev, preprod and prod environments
     :type env: string
-    :raises HealthCheckException: will raise a custom exception if the response does not match our expected values.
+    :raises HealthCheckException: this custom exception will trigger if the response does not match our expected values.
     :raises HealthCheckException: error
     """
     response = requests.get(url, timeout=5)
@@ -84,11 +84,11 @@ def check_web_url_health(url, env, expected_string):
     # contain the expected string then we log an error and fail the lambda
     if response.status_code != 200:
         failing_metric(url, env, expected_string, response.status_code)
-        raise HealthCheckException(f"Error: Status code expected to be 200 but is {response.status_code}")
+        raise HealthCheckException(f"Status code expected to be 200 but is {response.status_code}")
 
     elif expected_string not in response.text:
         failing_metric(url, env, expected_string, response.status_code)
-        raise HealthCheckException(f"Error: Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
+        raise HealthCheckException(f"Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
     
 def lambda_handler(event, context):
     """
@@ -111,6 +111,6 @@ def lambda_handler(event, context):
 
     try: check_web_url_health(url=event['url'], env=event['env'], expected_string=event['expected_string'])
     except Exception as e:
-        raise Exception("Error with lambda: {e}")
+        raise Exception(f"Lambda Exception: {e}")
 
     
