@@ -13,7 +13,7 @@ cd package
 zip -r ../healthcheck.zip .
 cd ..
 zip healthcheck.zip healthcheck.py
-rm -f "package"
+rm -rf package
 cd ../alerter
 mkdir package
 pip install --target ./package requests
@@ -22,5 +22,5 @@ cd package
 zip -r ../alerter.zip .
 cd ..
 zip alerter.zip alerter.py
-rm -f "package"
+rm -rf package
 cd ../..
