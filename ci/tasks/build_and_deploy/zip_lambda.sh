@@ -24,3 +24,4 @@ cd ..
 zip alerter.zip alerter.py
 rm -rf package
 cd ../..
+rm -rf tempenv
