@@ -18,4 +18,5 @@ run:
     - |
       apk add --update --no-progress bash jq
       apk add --no-cache --no-progress aws-cli
+      bash ./ci/tasks/terraform/init_metadata.sh
       bash ./ci/tasks/build_and_deploy/deploy.sh
