@@ -21,7 +21,7 @@ class HealthCheckException(Exception):
     def __str__(self):
         return f'Custom Exception: {self.message}'
 
-def failing_metric(url, env, expected_string, status_code):
+def failing_metric(url, env, expected_string, status_code, failure_type):
     """
     failing_metric This function wll be triggered if our healthcheck fails.
     It will log custom metric data to AWS Cloudwatch Metrics
@@ -54,6 +54,10 @@ def failing_metric(url, env, expected_string, status_code):
                     'Name': 'ResponseStatus',
                     'Value': str(status_code),
                     },
+                    {
+                    'Name': 'FailureType',
+                    'Value': failure_type,
+                    },
                 ],
                 'Unit': 'Count',
                 'Value': 1,
@@ -83,11 +87,13 @@ def check_web_url_health(url, env, expected_string):
     # If the response code is not 200 or the response text does not 
     # contain the expected string then we log an error and fail the lambda
     if response.status_code != 200:
-        failing_metric(url, env, expected_string, response.status_code)
+        failure_type = "UnexpectedResponseCode"
+        failing_metric(url, env, expected_string, response.status_code, failure_type)
         raise HealthCheckException(f"Status code expected to be 200 but is {response.status_code}")
 
     elif expected_string not in response.text:
-        failing_metric(url, env, expected_string, response.status_code)
+        failure_type = "UnexpectedResponseContent"
+        failing_metric(url, env, expected_string, response.status_code, failure_type)
         raise HealthCheckException(f"Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
     
 def lambda_handler(event, context):
