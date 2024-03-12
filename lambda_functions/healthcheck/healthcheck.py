@@ -117,6 +117,6 @@ def lambda_handler(event, context):
 
     try: check_web_url_health(url=event['url'], env=event['env'], expected_string=event['expected_string'])
     except Exception as e:
-        raise Exception(f"Lambda Exception: {e}")
+        raise Exception(f"Lambda Error: {e}")
 
     
