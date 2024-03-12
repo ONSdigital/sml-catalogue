@@ -11,7 +11,8 @@ inputs:
   - name: repo
 
 run:
-  path: repo
+  path: sh
+  dir: repo
   args:
     - -exc
     - |
