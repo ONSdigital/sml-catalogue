@@ -143,7 +143,7 @@ jobs:
             context: Deploying_Dev
 
         - task: zip-lambda
-            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+          file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
         - in_parallel:
           - task: terraform-apply-environment
