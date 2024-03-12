@@ -1,7 +1,7 @@
 pip install --upgrade pip
 pip install poetry
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv tempenv
+source tempenv/bin/activate
 
 poetry install --sync
 echo "Zip Lambdas"
