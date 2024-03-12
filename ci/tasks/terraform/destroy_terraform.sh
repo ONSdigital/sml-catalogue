@@ -7,8 +7,6 @@ export HOME=$(pwd)
 echo "machine github.com login ${CONCOURSE_ACCESS_TOKEN} password x-oauth-basic" > ~/.netrc
 chmod 600 ~/.netrc
 
-cd repo
-
 # --------------------------
 
 export TF_VAR_head_sha=$(cat .git/resource/head_sha)
@@ -30,7 +28,7 @@ terraform init \
 
 # --------------------------
 
-export TF_WORKSPACE=`cat ../.git/resource/head_name | tr "[:upper:]" "[:lower:]"`
+export TF_WORKSPACE=`cat ../.workspace | tr "[:upper:]" "[:lower:]"`
 echo "Workspace: ${TF_WORKSPACE}"
 
 # --------------------------
