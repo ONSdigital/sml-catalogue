@@ -2,6 +2,10 @@ variable "domain_name_base" {
   type = string
 }
 
+variable "deployment_role" {
+  type = string
+}
+
 variable "environment" {
   type = string
 }

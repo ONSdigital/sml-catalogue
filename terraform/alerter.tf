@@ -5,5 +5,7 @@ module "alerter" {
 
   environment = var.environment
 
+  deployment_role = var.deployment_role
+
   domain_name_base = local.domain_name_base[var.environment]
 }
