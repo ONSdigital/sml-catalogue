@@ -324,8 +324,6 @@ jobs:
              path: repo
              status: pending
              context: Deleting Workspace
-        - task: init-metadata
-          file: repo/ci/tasks/terraform/init_metadata.yml
         - task: terraform
           file: repo/ci/tasks/terraform/destroy_terraform.yml
           params:
