@@ -27,7 +27,7 @@ terraform init \
     -backend-config "workspace_key_prefix=${WORKSPACE_KEY_INFIX}" \
     -backend-config "role_arn=${TF_VAR_deployment_role}"
 echo "starting terraform plan"
-if [ -z ${TF_WORKSPACE+x} ]; then export TF_WORKSPACE=`cat ../.git/resource/head_name | tr "[:upper:]" "[:lower:]"`; else echo "Workspace already set"; fi
+if [ -z ${TF_WORKSPACE+x} ]; then export TF_WORKSPACE=`cat ../.workspace | tr "[:upper:]" "[:lower:]"`; else echo "Workspace already set"; fi
 echo Workspace: ${TF_WORKSPACE}
 terraform plan -out=plan.tfstate
 echo "starting terraform apply"

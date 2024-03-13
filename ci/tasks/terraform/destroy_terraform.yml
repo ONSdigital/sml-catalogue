@@ -12,8 +12,10 @@ inputs:
 
 run:
   path: sh
+  dir: repo
   args:
     - -exc
     - |
       apk add --update --no-progress bash jq
-      bash ./repo/ci/tasks/terraform/destroy_terraform.sh
+      bash ./ci/tasks/terraform/init_metadata.sh
+      bash ./ci/tasks/terraform/destroy_terraform.sh

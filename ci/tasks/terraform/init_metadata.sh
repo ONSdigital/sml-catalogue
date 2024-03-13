@@ -2,7 +2,6 @@
 
 set -eu
 
-cd repo
 
 if [ -f .git/resource/metadata.json ]; then
 
@@ -16,6 +15,7 @@ if [ -f .git/resource/metadata.json ]; then
 
   PR="$(cat pr)"
   HEAD_NAME="$(cat head_name)"
+
 
   cd ../..
   printf "%s\n" "Deriving workspace name from PR name"
