@@ -8,6 +8,8 @@ env_setups:
     S3_KEY: sml-portal.tfstate
     CONCOURSE_ACCESS_TOKEN: ((github_access_token))
     SHARED_ACCOUNT_ROLE: &shared_account_role arn:aws:iam::289259348294:role/spp-concourse-access-prod
+    SPACE_ID: ((contentful_space_id))
+    CDA_KEY: ((contentful_delivery_api_key))
 
   general_dev: &general_dev_params
     TF_VAR_deployment_type: dev
