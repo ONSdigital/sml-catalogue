@@ -9,12 +9,11 @@ def lambda_handler(event, context):
     lambda_handler The purpose of this lambda function is to alert the sml-portal-alert
     slack channel if an alarm is failing (failing alarm triggers lambda)
 
-    
-    :param event: General Lambda term (not used in this case but needed for general setup)
+    :param event: General Lambda term (not used in this case but needed for general setup).
     :type event: N/A
-    :param context: General Lambda term (not used in this case but needed for general setup)
+    :param context: General Lambda term (not used in this case but needed for general setup).
     :type context: N/A
-    :return: Return a success or failure outcome on whether the slack message was sent
+    :return: Return a success or failure outcome on whether the slack message was sent.
     :rtype: json
     :raises Exeption: will raise a runtime error if the post fails to send.
     :raises Exeption: error
