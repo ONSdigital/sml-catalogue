@@ -86,8 +86,9 @@ def check_web_url_health(url, env, expected_string):
     :raises HealthCheckException: this custom exception will trigger if the response does not match our expected values.
     :raises HealthCheckException: error
     """
+
     try:
-        response = requests.get(url)  
+        response = requests.get(url, timeout=5)  
    
         # If the response code is not 200 or the response text does not 
             # contain the expected string then we log an error and fail the lambda
