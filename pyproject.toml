@@ -14,7 +14,7 @@ markdown = "^3.4.4"
 [tool.poetry.group.dev.dependencies]
 black = "^23.9.1"
 behave = "^1.2.6"
-selenium = "^4.10.0"
+selenium = "^4.18.1"
 flake8 = "^6.1.0"
 pylint = "3.0.1"
 bandit = "^1.7.8"
