@@ -2,7 +2,7 @@
 resource "aws_lambda_permission" "allow_cloudwatch_to_invoke_alerter" {
     statement_id  = "AlarmAction"
     action        = "lambda:InvokeFunction"
-    function_name = "${var.environment}-alerter-${local.lambda_name_suffix}"
+    function_name = "${var.environment}-alerter-${terraform.workspace}"
     principal     = "lambda.alarms.cloudwatch.amazonaws.com"
     source_arn    = "${aws_cloudwatch_metric_alarm.healthcheck.arn}"
 }

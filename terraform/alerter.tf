@@ -5,7 +5,5 @@ module "alerter" {
 
   environment = var.environment
 
-  lambda_name_suffix = var.lambda_name_suffix
-
   domain_name_base = local.domain_name_base[var.environment]
 }
