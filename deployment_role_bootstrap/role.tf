@@ -204,8 +204,8 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "iam:AttachRolePolicy"
               ],
               "Resource": [
-                  "arn:aws:iam::115311790871:role/<environment>-healthcheck",
-                  "arn:aws:iam::115311790871:role/<environment>-alerter",
+                  "arn:aws:iam::115311790871:role/<environment>-healthcheck*",
+                  "arn:aws:iam::115311790871:role/<environment>-alerter*",
                   "arn:aws:iam::115311790871:policy/lambda-healthcheck-logs*",
                   "arn:aws:iam::115311790871:policy/lambda-alerter-logs*"
               ]
@@ -234,8 +234,8 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "lambda:AddPermission"
               ],
               "Resource": [
-                  "arn:aws:lambda:eu-west-2:115311790871:function:<environment>-healthcheck",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:<environment>-alerter",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:<environment>-healthcheck*",
+                  "arn:aws:lambda:eu-west-2:115311790871:function:<environment>-alerter*",
               ]
             },
             {
