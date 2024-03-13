@@ -12,7 +12,7 @@ jsonnet = "^0.20.0"
 markdown = "^3.4.4"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.9.1"
+black = "^24.2.0"
 behave = "^1.2.6"
 selenium = "^4.10.0"
 flake8 = "^6.1.0"
