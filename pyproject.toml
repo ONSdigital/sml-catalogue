@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-frozen-flask = "^0.18"
+frozen-flask = "^1.0"
 jsonnet = "^0.20.0"
 markdown = "^3.4.4"
 
