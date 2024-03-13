@@ -10,7 +10,7 @@ terraform {
 
 # Creates iam role
 resource "aws_iam_role" "healthcheck" {
-  name               = "${var.environment}-healthcheck-${terraform.workspace}"
+  name               = "DeploymentRoleSMLPolicy"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
@@ -63,7 +63,7 @@ data "aws_iam_policy_document" "lambda_log_function" {
 
 # This creates the policy needed for a lambda to log.
 resource "aws_iam_policy" "lambda_log_function" {
-  name   = ""DeploymentRoleSMLPolicy""
+  name   = "DeploymentRoleSMLPolicy"
   path   = "/"
   policy = "${data.aws_iam_policy_document.lambda_log_function.json}"
 }
