@@ -53,7 +53,7 @@ resource "aws_iam_policy" "lambda_log_function" {
 
 # Creates iam role
 resource "aws_iam_role" "alerter" {
-  name               = "${var.environment}-alerter-{terraform.workspace}"
+  name               = "${var.environment}-alerter-${local.lambda_name_suffix}"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
@@ -61,7 +61,7 @@ resource "aws_iam_role" "alerter" {
 resource "aws_lambda_function" "alerter" {
   role          = aws_iam_role.alerter.arn
 
-  function_name = "${var.environment}-alerter-{terraform.workspace}"
+  function_name = "${var.environment}-alerter-${local.lambda_name_suffix}"
 
   filename      = "../lambda_functions/alerter/alerter.zip"
 
@@ -78,7 +78,7 @@ resource "aws_lambda_function" "alerter" {
   environment {
     variables = {
       "alarm_name" = "${var.environment}-environment-healthcheck-alarm",
-      "lambda_name" = "${var.environment}-alerter-{terraform.workspace}",
+      "lambda_name" = "${var.environment}-alerter-${local.lambda_name_suffix}",
       "url" = var.domain_name_base,
       "slack_url" = "${var.slack_url}"
       "slack_webhook_token" = "${var.slack_webhook_token}"

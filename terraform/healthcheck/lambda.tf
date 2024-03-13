@@ -10,7 +10,7 @@ terraform {
 
 # Creates iam role
 resource "aws_iam_role" "healthcheck" {
-  name               = "${var.environment}-healthcheck-{terraform.workspace}"
+  name               = "${var.environment}-healthcheck-${local.lambda_name_suffix}"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
@@ -72,7 +72,7 @@ resource "aws_iam_policy" "lambda_log_function" {
 resource "aws_lambda_function" "healthcheck" {
   role          = aws_iam_role.healthcheck.arn
 
-  function_name = "${var.environment}-healthcheck-{terraform.workspace}"
+  function_name = "${var.environment}-healthcheck-${local.lambda_name_suffix}"
 
   filename      = "../lambda_functions/healthcheck/healthcheck.zip"
 

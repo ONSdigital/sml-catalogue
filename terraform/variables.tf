@@ -1,3 +1,12 @@
+resource "lambda_name" "suffix" {
+  length = 16
+  special = false
+}
+
+locals {
+  lambda_name_suffix = lambda_name.suffix
+}
+
 variable "environment" {
   type = string
 }
