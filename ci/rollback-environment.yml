@@ -35,6 +35,7 @@ env_setups:
     TF_VAR_deployment_role: *role
     TF_VAR_environment: dev
     TF_VAR_account: *account
+    TF_VAR_slack_alert_token: ((slack_webhook_sml_portal_alerts))
 
   sml_preprod: &sml_preprod_setup
     <<: *general_preprod_params
@@ -44,6 +45,7 @@ env_setups:
     TF_VAR_deployment_role: *role
     TF_VAR_environment: preprod
     TF_VAR_account: *account
+    TF_VAR_slack_alert_token: ((slack_webhook_sml_portal_alerts))
 
   sml_prod: &sml_prod_setup
     <<: *general_prod_params
@@ -53,6 +55,7 @@ env_setups:
     TF_VAR_deployment_role: *role
     TF_VAR_environment: prod
     TF_VAR_account: *account
+    TF_VAR_slack_alert_token: ((slack_webhook_sml_portal_alerts))
 
 resources:
   - name: tag_commit
@@ -82,6 +85,16 @@ jobs:
                   TERRAFORM_SOURCE: repo/terraform
                   WORKSPACE_KEY_INFIX: workspace
                   TF_WORKSPACE: main
+
+              - task: build-zip-lambda
+                file: repo/ci/tasks/build_and_deploy/build_zip_lambda.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_preprod_setup
+                  BUILD_TYPE: 1
+                  GH_TOKEN: ((github_access_token))
+                  SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+                  ROLLBACK_TAG: ((ROLLBACK_TAG))
 
               - task: build-files
                 file: repo/ci/tasks/build_and_deploy/build_files.yml
@@ -117,6 +130,16 @@ jobs:
                   TERRAFORM_SOURCE: repo/terraform
                   WORKSPACE_KEY_INFIX: workspace
                   TF_WORKSPACE: main
+
+              - task: build-zip-lambda
+                file: repo/ci/tasks/build_and_deploy/build_zip_lambda.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_preprod_setup
+                  BUILD_TYPE: 1
+                  GH_TOKEN: ((github_access_token))
+                  SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+                  ROLLBACK_TAG: ((ROLLBACK_TAG))
 
               - task: build-files
                 file: repo/ci/tasks/build_and_deploy/build_files.yml

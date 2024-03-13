@@ -38,6 +38,7 @@ env_setups:
     TF_VAR_deployment_role: *role
     TF_VAR_environment: dev
     TF_VAR_account: *account
+    TF_VAR_slack_alert_token: ((slack_webhook_sml_portal_alerts))
 
   sml_preprod: &sml_preprod_setup
     <<: *general_preprod_params
@@ -47,6 +48,7 @@ env_setups:
     TF_VAR_deployment_role: *role
     TF_VAR_environment: preprod
     TF_VAR_account: *account
+    TF_VAR_slack_alert_token: ((slack_webhook_sml_portal_alerts))
 
   sml_prod: &sml_prod_setup
     <<: *general_prod_params
@@ -56,6 +58,7 @@ env_setups:
     TF_VAR_deployment_role: *role
     TF_VAR_environment: prod
     TF_VAR_account: *account
+    TF_VAR_slack_alert_token: ((slack_webhook_sml_portal_alerts))
 
 resource_types:
   - name: pull-request
@@ -138,6 +141,10 @@ jobs:
             path: repo
             status: pending
             context: Deploying_Dev
+
+        - task: zip-lambda
+          file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -188,6 +195,10 @@ jobs:
           resource: main-updated
           trigger: true
           version: every
+
+        - task: zip-lambda
+          file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -220,6 +231,10 @@ jobs:
       - do:
         - get: repo
           resource: main
+
+        - task: zip-lambda
+          file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+            
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -254,6 +269,10 @@ jobs:
       - do:
         - get: repo
           resource: tag_commit
+
+        - task: zip-lambda
+          file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml

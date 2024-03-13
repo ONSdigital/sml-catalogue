@@ -24,7 +24,7 @@ python-semantic-release = "<8.0.0"
 werkzeug = "2.3.8"
 
 [tool.bandit]
-exclude_dirs = ["features", "./venv/"]
+exclude_dirs = ["features", "./venv/", "/tempenv/"]
 
 [tool.isort]
 profile="black"
