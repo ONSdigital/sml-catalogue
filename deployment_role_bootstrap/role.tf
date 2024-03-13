@@ -138,8 +138,9 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "logs:PutRetentionPolicy"
               ],
               "Resource": [
-                  "arn:aws:lambda:eu-west-2:115311790871:function:<environment>-healthcheck",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:<environment>-alerter"
+                "arn:aws:lambda:eu-west-2:115311790871:function:dev-healthcheck*",
+                "arn:aws:lambda:eu-west-2:115311790871:function:dev-alerter*",
+                "arn:aws:logs:*:*:*"
               ]
             },
             {
@@ -157,7 +158,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "events:RemoveTargets"
               ],
               "Resource": [
-                  "arn:aws:events:eu-west-2:115311790871:rule/<environment-url>-healthcheck-trigger",
+                "arn:aws:events:eu-west-2:115311790871:rule/dev-sml.aws.onsdigital.uk-healthcheck-trigger"
               ]
             },
             {
@@ -204,7 +205,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "iam:AttachRolePolicy"
               ],
               "Resource": [
-                  "arn:aws:iam::115311790871:role/spp-concourse-sml-deployment-dev"
+                "arn:aws:iam::115311790871:role/spp-concourse-sml-deployment-dev"
               ]
             },
             {
@@ -231,8 +232,8 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
                 "lambda:AddPermission"
               ],
               "Resource": [
-                  "arn:aws:lambda:eu-west-2:115311790871:function:<environment>-healthcheck*",
-                  "arn:aws:lambda:eu-west-2:115311790871:function:<environment>-alerter*",
+                "arn:aws:lambda:eu-west-2:115311790871:function:dev-healthcheck*",
+                "arn:aws:lambda:eu-west-2:115311790871:function:dev-alerter*"
               ]
             },
             {
@@ -241,12 +242,21 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
               "Action": [
                 "cloudwatch:DeleteAlarms",
                 "cloudwatch:DescribeAlarms",
-                "cloudwatch:PutMetricData",
                 "cloudwatch:PutMetricAlarm",
                 "cloudwatch:ListTagsForResource"
               ],
               "Resource": [
-                  "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:<environment>-environment-healthcheck-alarm"
+                "arn:aws:cloudwatch:eu-west-2:115311790871:alarm:dev-environment-healthcheck-alarm"
+              ]
+            },
+            {
+              "Sid": "AllowCloudwatchSTSAccess",
+              "Effect": "Allow",
+              "Action": [
+                "cloudwatch:PutMetricData"
+              ],
+              "Resource": [
+                "*"
               ]
             },
             {

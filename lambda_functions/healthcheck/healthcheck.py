@@ -112,9 +112,9 @@ def lambda_handler(event, context):
 
     :param event: Event is the message contents passes to the lambda e.g.
                     {
-                        "expected_string" = "An open source library for statistical code approved by the ONS",
-                        "env" = "dev",
-                        "url" = "https://dev-sml.aws.onsdigital.uk/"
+                        "expected_string" : "An open source library for statistical code approved by the ONS",
+                        "env" : "dev",
+                        "url" : "https://dev-sml.aws.onsdigital.uk/"
                     }
     :type event: string
     :param context: General Lambda term (not used in this case but needed for general setup)
