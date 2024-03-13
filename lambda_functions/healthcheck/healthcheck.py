@@ -100,7 +100,7 @@ def check_web_url_health(url, env, expected_string):
         elif expected_string not in response.text:
                 failure_type = "UnexpectedResponseContent"
                 failing_metric(url, env, expected_string, response.status_code, failure_type)
-                raise HealthCheckException(f"Status code is {response.status_code} but expected text \'{expected_string}\' is not found") 
+                raise HealthCheckException(f"Status code is {response.status_code} but expected text \'{expected_string}\' is not found.") 
     except requests.RequestException as e:  
         raise HealthCheckException(f"Request failed: {e}")
     except Exception as e:  
