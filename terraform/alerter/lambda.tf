@@ -8,58 +8,9 @@ terraform {
   }
 }
 
-# Allow role to be assumed so lambdas can run
-data "aws_iam_policy_document" "assume_role" {
-  statement {
-    effect  = "Allow"
-    actions = [
-      "sts:AssumeRole",
-      ]
-
-    principals {
-      identifiers = ["lambda.amazonaws.com"]
-      type        = "Service"
-    }
-  }
-}
-
-# This attaches the policy needed for logging to the lambda's IAM role.
-resource "aws_iam_role_policy_attachment" "lambda_alerter" {
-  role       = "${aws_iam_role.alerter.name}"
-  policy_arn = "${aws_iam_policy.lambda_log_function.arn}"
-}
-
-# Permissions for lambda to log to a log group
-data "aws_iam_policy_document" "lambda_log_function" {
-  statement {
-    actions = [
-      "logs:CreateLogGroup",
-      "logs:CreateLogStream",
-      "logs:PutLogEvents"
-    ]
-
-    resources = [
-      "arn:aws:logs:*:*:*",
-    ]
-  }
-}
-
-# This creates the policy needed for a lambda to log.
-resource "aws_iam_policy" "lambda_log_function" {
-  name   = "DeploymentRoleSMLPolicy"
-  path   = "/"
-  policy = "${data.aws_iam_policy_document.lambda_log_function.json}"
-}
-
-# Creates iam role
-resource "aws_iam_role" "alerter" {
-  name               = "DeploymentRoleSMLPolicy"
-  assume_role_policy = data.aws_iam_policy_document.assume_role.json
-}
-
 # Creates alerter lambda
 resource "aws_lambda_function" "alerter" {
-  role          = aws_iam_role.alerter.arn
+  role          = "DeploymentRoleSMLPolicy"
 
   function_name = "${var.environment}-alerter-${terraform.workspace}"
 

@@ -8,69 +8,9 @@ terraform {
   }
 }
 
-# Creates iam role
-resource "aws_iam_role" "healthcheck" {
-  name               = "DeploymentRoleSMLPolicy"
-  assume_role_policy = data.aws_iam_policy_document.assume_role.json
-}
-
-# This attaches the policy needed for logging to the lambda's IAM role.
-resource "aws_iam_role_policy_attachment" "lambda_healthcheck" {
-  role       = "${aws_iam_role.healthcheck.name}"
-  policy_arn = "${aws_iam_policy.lambda_log_function.arn}"
-}
-
-# Allow role to be assumed so lambdas can run
-data "aws_iam_policy_document" "assume_role" {
-  statement {
-    effect  = "Allow"
-    actions = [
-      "sts:AssumeRole",
-      ]
-
-    principals {
-      identifiers = ["lambda.amazonaws.com"]
-      type        = "Service"
-    }
-  }
-}
-
-# Permissions for lambda to log to a log group and for cloudwatch to put metric data
-data "aws_iam_policy_document" "lambda_log_function" {
-  statement {
-    actions = [
-      "logs:CreateLogGroup",
-      "logs:CreateLogStream",
-      "logs:PutLogEvents"
-    ]
-
-    resources = [
-      "arn:aws:logs:*:*:*",
-    ]
-  }
-
-  statement {
-    actions = [
-      "cloudwatch:PutMetricData"
-    ]
-
-    resources = [
-      "*",
-    ]
-  }
-  
-}
-
-# This creates the policy needed for a lambda to log.
-resource "aws_iam_policy" "lambda_log_function" {
-  name   = "DeploymentRoleSMLPolicy"
-  path   = "/"
-  policy = "${data.aws_iam_policy_document.lambda_log_function.json}"
-}
-
 # Creates healthcheck lambda
 resource "aws_lambda_function" "healthcheck" {
-  role          = aws_iam_role.healthcheck.arn
+  role          = "DeploymentRoleSMLPolicy"
 
   function_name = "${var.environment}-healthcheck-${terraform.workspace}"
 
