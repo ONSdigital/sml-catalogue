@@ -206,8 +206,8 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
               "Resource": [
                   "arn:aws:iam::115311790871:role/<environment>-healthcheck",
                   "arn:aws:iam::115311790871:role/<environment>-alerter",
-                  "arn:aws:iam::115311790871:policy/lambda-healthcheck-logs",
-                  "arn:aws:iam::115311790871:policy/lambda-alerter-logs"
+                  "arn:aws:iam::115311790871:policy/lambda-healthcheck-logs*",
+                  "arn:aws:iam::115311790871:policy/lambda-alerter-logs*"
               ]
             },
             {

@@ -46,14 +46,14 @@ data "aws_iam_policy_document" "lambda_log_function" {
 
 # This creates the policy needed for a lambda to log.
 resource "aws_iam_policy" "lambda_log_function" {
-  name   = "lambda-alerter-logs"
+  name   = "lambda-alerter-logs-${terraform.workspace}"
   path   = "/"
   policy = "${data.aws_iam_policy_document.lambda_log_function.json}"
 }
 
 # Creates iam role
 resource "aws_iam_role" "alerter" {
-  name               = "${var.environment}-alerter-${terraform.workspace}"
+  name               = "DeploymentRoleSMLPolicy"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
