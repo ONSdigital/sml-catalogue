@@ -1,3 +1,4 @@
+# This yaml will take the zip_lambda script to package and zip our lambdas.
 ---
 platform: linux
 

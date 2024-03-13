@@ -86,19 +86,24 @@ def check_web_url_health(url, env, expected_string):
     :raises HealthCheckException: this custom exception will trigger if the response does not match our expected values.
     :raises HealthCheckException: error
     """
-    response = requests.get(url, timeout=5)
-
-    # If the response code is not 200 or the response text does not 
-    # contain the expected string then we log an error and fail the lambda
-    if response.status_code != 200:
-        failure_type = "UnexpectedResponseCode"
-        failing_metric(url, env, expected_string, response.status_code, failure_type)
-        raise HealthCheckException(f"Status code expected to be 200 but is {response.status_code}")
-
-    elif expected_string not in response.text:
-        failure_type = "UnexpectedResponseContent"
-        failing_metric(url, env, expected_string, response.status_code, failure_type)
-        raise HealthCheckException(f"Status code is {response.status_code} but expected text \'{expected_string}\' is not found")
+    try:
+        response = requests.get(url)  
+   
+        # If the response code is not 200 or the response text does not 
+            # contain the expected string then we log an error and fail the lambda
+        if response.status_code != 200:
+            failure_type = "UnexpectedResponseCode"
+            failing_metric(url, env, expected_string, response.status_code, failure_type)
+            raise HealthCheckException(f"Status code expected to be 200 but is {response.status_code}")
+        
+        elif expected_string not in response.text:
+                failure_type = "UnexpectedResponseContent"
+                failing_metric(url, env, expected_string, response.status_code, failure_type)
+                raise HealthCheckException(f"Status code is {response.status_code} but expected text \'{expected_string}\' is not found") 
+    except requests.RequestException as e:  
+        raise HealthCheckException(f"Request failed: {e}")
+    except Exception as e:  
+        raise HealthCheckException(f"Unexpected error: {e}")
     
 def lambda_handler(event, context):
     """
@@ -115,12 +120,17 @@ def lambda_handler(event, context):
     :type context: N/A
     :raises Exception: will raise a error if there is an issue with the healthcheck.
     :raises Exception: error
-    """    
+    """
 
-    print("Event: ", event)
-
-    try: check_web_url_health(url=event['url'], env=event['env'], expected_string=event['expected_string'])
-    except Exception as e:
-        raise Exception(f"Lambda Error: {e}")
+    try:  
+        check_web_url_health(url=event['url'], env=event['env'], expected_string=event['expected_string'])
+    except HealthCheckException as e:  
+        error_message = f"Health check failed - {e}"  
+        print(error_message) 
+        raise Exception(f"Lambda Error: {error_message}")  
+    except Exception as e:  
+        error_message = f"Unexpected error - {e}"
+        print(error_message)
+        raise Exception(f"Lambda Error: {error_message}")  
 
     

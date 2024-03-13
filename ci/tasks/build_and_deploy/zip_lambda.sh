@@ -1,3 +1,5 @@
+# This file is to take the lambda function and make it available to be deployed into AWS via terraform and concourse.
+# To to this we have to add dependencies and zip the lambda using the following commands.
 pip install --upgrade pip
 pip install poetry
 python3 -m venv tempenv
