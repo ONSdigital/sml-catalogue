@@ -11,7 +11,7 @@ class HealthCheckException(Exception):
     """
     HealthCheckException Our custom healthcheck exception is to customise our response to the user.
 
-    :param Exception: Exception message to be logged to the healthcheck lambda log group
+    :param Exception: Exception message to be logged to the healthcheck lambda log group.
     :type Exception: string
     """    
     def __init__(self, message):
