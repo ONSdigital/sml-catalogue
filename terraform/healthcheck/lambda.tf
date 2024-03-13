@@ -10,7 +10,7 @@ terraform {
 
 # Creates healthcheck lambda
 resource "aws_lambda_function" "healthcheck" {
-  role          = "DeploymentRoleSMLPolicy"
+  role          = "${var.deployment_role}"
 
   function_name = "${var.environment}-healthcheck-${terraform.workspace}"
 

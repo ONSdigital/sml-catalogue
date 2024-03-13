@@ -10,7 +10,7 @@ terraform {
 
 # Creates alerter lambda
 resource "aws_lambda_function" "alerter" {
-  role          = "DeploymentRoleSMLPolicy"
+  role          = "${var.deployment_role}"
 
   function_name = "${var.environment}-alerter-${terraform.workspace}"
 
