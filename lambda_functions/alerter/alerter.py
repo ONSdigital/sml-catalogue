@@ -50,4 +50,4 @@ def lambda_handler(event, context):
             'body': json.dumps('Message sent to Slack successfully.')
         }
     except Exception as e:
-        raise RuntimeError(f"Error sending message to Slack: {e}") from None
+        raise RuntimeError(f"Error sending message to Slack: {e}.") from None
