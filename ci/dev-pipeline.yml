@@ -1,4 +1,4 @@
-# This is the dev pipeline to run the BDD tests on prod, pre-prod and dev.
+# This is the prod pipeline to run the BDD tests on prod, pre-prod and dev.
 
 # Build type 0 = freeze files, 1 = freeze and publish as release candidate, 2 = freeze and publish as
 # final version
@@ -27,6 +27,7 @@ env_setups:
   github_pull_creds: &github_pull_creds
     username: ((github_access_token))
     password: x-oauth-basic
+
 
   # -------------------
 
@@ -78,7 +79,6 @@ resources:
       tag_filter: ((RELEASE_CANDIDATE))
       username: ((github_access_token))
       password: x-oauth-basic
-      commit_verification_keys: ((github_ons_spp_machine_user_gpg_key_private)
   - name: main
     type: git
     icon: github
@@ -89,7 +89,6 @@ resources:
       branch: main
       username: ((github_access_token))
       password: x-oauth-basic
-      commit_verification_keys: ((github_ons_spp_machine_user_gpg_key_private)
   - name: main-updated
     type: git
     icon: github
@@ -178,15 +177,17 @@ jobs:
         status: success
         context: Deploying_Dev
         comment_file: GITHUB_OUTPUT/output.txt
+        delete_previous_comments: true
 
     on_failure:
       put: repo
       resource: pr-open
       params:
         path: repo
-        status: success
+        status: failure
         context: Deploying_Dev
         comment_file: GITHUB_OUTPUT/output.txt
+        delete_previous_comments: true
 
   - name: build_and_deploy_dev
     plan:
@@ -234,7 +235,7 @@ jobs:
 
         - task: zip-lambda
           file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
-            
+
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -332,5 +333,5 @@ jobs:
       resource: pr-done
       params:
         path: repo
-        status: success
+        status: failure
         context: Deleting Workspace
