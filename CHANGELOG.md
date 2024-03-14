@@ -1,5 +1,9 @@
 <!--next-version-placeholder-->
 
+## v1.3.0-rc.2 (2024-03-14)
+
+
+
 ## v1.3.0-rc.1 (2024-03-14)
 
 ### Feature
