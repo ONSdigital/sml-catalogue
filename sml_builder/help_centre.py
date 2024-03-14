@@ -18,14 +18,14 @@ externallink_help_categories = [
     "expert-groups",
 ]
 
-cms_enabled = get_feature_config("CONTENT_MANAGEMENT_SYSTEM")
+content_management = get_feature_config("content_management")
 
 
 @app.route("/help-centre/index")
 def help_centre(category=None):
     categories = []
     try:
-        if cms_enabled:
+        if content_management["enabled"]:
             contents = getContent("helpCentreStructure")["structure"]
             if checkEmptyList(contents):
                 abort(404)
@@ -71,7 +71,7 @@ def guidances(category, sub_category=None):
         _page_not_found(e)
     help_centre_nav = _help_centre_nav(category)
 
-    if cms_enabled:
+    if content_management["enabled"]:
         if sub_category == "methods-request":
             content = getContent("helpCentreMethodRequest")
             if checkEmptyList(content):
@@ -85,7 +85,7 @@ def guidances(category, sub_category=None):
                 sub_category=sub_category,
                 nav=help_centre_nav,
                 content=content,
-                cms_enabled=cms_enabled,
+                cms_enabled=content_management["enabled"],
             )
 
         try:
@@ -112,7 +112,7 @@ def guidances(category, sub_category=None):
             category=category,
             sub_category=sub_category,
             nav=help_centre_nav,
-            cms_enabled=cms_enabled,
+            cms_enabled=content_management["enabled"],
         )
 
     if sub_category not in externallink_help_categories:
@@ -139,12 +139,12 @@ def guidances(category, sub_category=None):
         category=category,
         sub_category=sub_category,
         nav=help_centre_nav,
-        cms_enabled=cms_enabled,
+        cms_enabled=content_management["enabled"],
     )
 
 
 def _get_category_labels(selected_category, selected_sub_category):
-    if cms_enabled:
+    if content_management["enabled"]:
         contents = getContent("helpCentreStructure")["structure"]
         if checkEmptyList(contents):
             abort(404)
@@ -175,7 +175,7 @@ def _get_category_labels(selected_category, selected_sub_category):
 def _help_centre_nav(
     current_category,
 ):
-    if cms_enabled:
+    if content_management["enabled"]:
         contents = getContent("helpCentreStructure")["structure"]
         if checkEmptyList(contents):
             abort(404)

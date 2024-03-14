@@ -13,14 +13,14 @@ from sml_builder.utils import (
     get_feature_config,
 )
 
-cms_enabled = get_feature_config("CONTENT_MANAGEMENT_SYSTEM")
+content_management = get_feature_config("content_management")
 
 
 @app.route("/method/<methodState>/<method>")
 def display_method_summary(
     method, methodState
 ):  # pylint: disable=inconsistent-return-statements
-    if cms_enabled:
+    if content_management["enabled"]:
         # Gets the methods for the individual method page
         getMethodsTableItems = getContent("catalogueTableOfMethods2")
         content = None
@@ -32,7 +32,7 @@ def display_method_summary(
                         "method.html",
                         method=content,
                         methodState=methodState,
-                        cms_enabled=cms_enabled,
+                        cms_enabled=content_management["enabled"],
                     )
 
         elif method == getMethodsTableItems["id"]:
@@ -41,7 +41,7 @@ def display_method_summary(
                 "method.html",
                 method=content,
                 methodState=methodState,
-                cms_enabled=cms_enabled,
+                cms_enabled=content_management["enabled"],
             )
         abort(404)
     else:
@@ -62,12 +62,12 @@ def display_method_summary(
         page_data["method_metadata"] = {
             k: page_data["method_metadata"][k] for k in sorted_order
         }
-        return render_template("method.html", page=page_data, cms_enabled=cms_enabled)
+        return render_template("method.html", page=page_data, cms_enabled=content_management["enabled"])
 
 
 @app.route("/methods")
 def display_methods():
-    if cms_enabled:
+    if content_management["enabled"]:
         # Gets the content for the methods catalogue page
         content = getContent("methodsCatalogue")
         # Gets the methods table items for the methods catalogue page
@@ -81,7 +81,7 @@ def display_methods():
         else:
             methods.append(getMethodsTableItems)
         return render_template(
-            "methods.html", methods=methods, content=content, cms_enabled=cms_enabled
+            "methods.html", methods=methods, content=content, cms_enabled=content_management["enabled"]
         )
 
     methods_dir = "./content/methods/ready-to-use-methods"
@@ -95,7 +95,7 @@ def display_methods():
     return render_template(
         "methods.html",
         page={"rows": methods, "future_rows": future_methods},
-        cms_enabled=cms_enabled,
+        cms_enabled=content_management["enabled"],
     )
 
 

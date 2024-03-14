@@ -8,17 +8,17 @@ from sml_builder.utils import checkEmptyList, get_feature_config
 
 from .utils import _page_not_found
 
-cms_enabled = get_feature_config("CONTENT_MANAGEMENT_SYSTEM")
+content_management = get_feature_config("content_management")
 
 
 @app.route("/resources/about")
 def about():
     # Gets the content for the about page
-    if cms_enabled:
+    if content_management["enabled"]:
         content = getContent("about")
         if checkEmptyList(content):
             abort(404)
-        return render_template("about.html", content=content, cms_enabled=cms_enabled)
+        return render_template("about.html", content=content, cms_enabled=content_management["enabled"])
 
     try:
         with open(
@@ -29,21 +29,21 @@ def about():
             body = Markup(markdown.markdown(escaped_text))
     except OSError as e:
         _page_not_found(e)
-    return render_template("about.html", page_body=body, cms_enabled=cms_enabled)
+    return render_template("about.html", page_body=body, cms_enabled=content_management["enabled"])
 
 
 @app.route("/privacy-and-data-protection")
 def privacy_and_data_protection():
-    if cms_enabled:
+    if content_management["enabled"]:
         content = getContent("privacycontent")
         content["bullet_list"] = [{"text": item} for item in content["bullet_list"]]
 
         if checkEmptyList(content):
             abort(404)
         return render_template(
-            "content/privacy.html", content=content, cms_enabled=cms_enabled
+            "content/privacy.html", content=content, cms_enabled=content_management["enabled"]
         )
-    return render_template("content/privacy.html", cms_enabled=cms_enabled)
+    return render_template("content/privacy.html", cms_enabled=content_management["enabled"])
 
 
 @app.route("/cookies")
@@ -53,12 +53,12 @@ def cookies_page():
 
 @app.route("/accessibility-statement")
 def accessibility_page():
-    if cms_enabled:
+    if content_management["enabled"]:
         content = getContent("accessibilityPage")
         if checkEmptyList(content):
             abort(404)
         return render_template(
-            "accessibility_statement.html", content=content, cms_enabled=cms_enabled
+            "accessibility_statement.html", content=content, cms_enabled=content_management["enabled"]
         )
 
     try:
@@ -71,7 +71,7 @@ def accessibility_page():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "accessibility_statement.html", page_body=body, cms_enabled=cms_enabled
+        "accessibility_statement.html", page_body=body, cms_enabled=content_management["enabled"]
     )
 
 

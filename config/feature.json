@@ -1,5 +1,7 @@
 {
     "features": {
-        "CONTENT_MANAGEMENT_SYSTEM": false
+        "content_management": {
+            "enabled": true
+        }
     }
 }
