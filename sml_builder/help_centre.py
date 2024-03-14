@@ -128,9 +128,11 @@ def guidances(category, sub_category=None):
     else:
         body = None
     return render_template(
-        "help-methods-request.html"
-        if sub_category == "methods-request"
-        else "help_category.html",
+        (
+            "help-methods-request.html"
+            if sub_category == "methods-request"
+            else "help_category.html"
+        ),
         body=body,
         category_label=category_label,
         sub_category_label=sub_category_label,
@@ -192,19 +194,21 @@ def _help_centre_nav(
                         "guidances",
                         category=category["name"],
                     ),
-                    "anchors": [
-                        {
-                            "title": sub_category["label"],
-                            "url": url_for(
-                                "guidances",
-                                category=category["name"],
-                                sub_category=sub_category["name"],
-                            ),
-                        }
-                        for sub_category in category["subcategories"]
-                    ]
-                    if category["name"] == current_category
-                    else None,
+                    "anchors": (
+                        [
+                            {
+                                "title": sub_category["label"],
+                                "url": url_for(
+                                    "guidances",
+                                    category=category["name"],
+                                    sub_category=sub_category["name"],
+                                ),
+                            }
+                            for sub_category in category["subcategories"]
+                        ]
+                        if category["name"] == current_category
+                        else None
+                    ),
                 }
                 for category in contents["categories"]
             ],

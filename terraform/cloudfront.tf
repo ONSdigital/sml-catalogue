@@ -122,7 +122,7 @@ resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 
 module "route53" {
   source = "./dns"
-  count  = terraform.workspace == "main" ? 1 : 0
+  count  = terraform.workspace == "main" ? 1 : 0  
   providers = {
     aws = aws.us_east_1
   }
@@ -131,17 +131,6 @@ module "route53" {
     domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
     hosted_zone_id = aws_cloudfront_distribution.sml-catalogue.hosted_zone_id
   }
+
   domain_name_base = local.domain_name_base[var.environment]
-}
-
-output "cf_website_url" {
-  value = "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
-}
-
-output "cloudfront_id" {
-  value = aws_cloudfront_distribution.sml-catalogue.id
-}
-
-output "website_url" {
-  value = length(module.route53) > 0 ? module.route53[0].website_url : "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
 }
