@@ -1,5 +1,19 @@
 <!--next-version-placeholder-->
 
+## v1.3.0-rc.3 (2024-03-14)
+
+
+
+## v1.3.0-rc.2 (2024-03-14)
+
+
+
+## v1.3.0-rc.1 (2024-03-14)
+
+### Feature
+
+* SPP-10835-introduce-code-optioning ([#275](https://github.com/ONSdigital/sml-catalogue/issues/275)) ([`3a0d897`](https://github.com/ONSdigital/sml-catalogue/commit/3a0d89707607bb3badba888ef42760baab046cef))
+
 ## v1.2.0 (2024-03-01)
 
 
