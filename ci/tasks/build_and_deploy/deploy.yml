@@ -8,11 +8,11 @@ image_resource:
     tag: 1
 
 inputs:
-  - name: repo
+  - name: repo_built
   - name: GITHUB_OUTPUT
 run:
   path: sh
-  dir: repo
+  dir: repo_built
   args:
     - -exc
     - |
