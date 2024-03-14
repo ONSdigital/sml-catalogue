@@ -40,7 +40,9 @@ def index():
         if checkEmptyList(content):
             abort(404)
 
-        return render_template("index.html", content=content, cms_enabled=content_management["enabled"])
+        return render_template(
+            "index.html", content=content, cms_enabled=content_management["enabled"]
+        )
     return render_template("index.html", cms_enabled=content_management["enabled"])
 
 

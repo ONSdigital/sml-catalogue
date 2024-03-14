@@ -62,7 +62,9 @@ def display_method_summary(
         page_data["method_metadata"] = {
             k: page_data["method_metadata"][k] for k in sorted_order
         }
-        return render_template("method.html", page=page_data, cms_enabled=content_management["enabled"])
+        return render_template(
+            "method.html", page=page_data, cms_enabled=content_management["enabled"]
+        )
 
 
 @app.route("/methods")
@@ -81,7 +83,10 @@ def display_methods():
         else:
             methods.append(getMethodsTableItems)
         return render_template(
-            "methods.html", methods=methods, content=content, cms_enabled=content_management["enabled"]
+            "methods.html",
+            methods=methods,
+            content=content,
+            cms_enabled=content_management["enabled"],
         )
 
     methods_dir = "./content/methods/ready-to-use-methods"

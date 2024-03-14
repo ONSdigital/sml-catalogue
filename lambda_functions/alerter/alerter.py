@@ -17,8 +17,8 @@ def lambda_handler(event, context):
     :rtype: json
     :raises Exeption: will raise a runtime error if the post fails to send.
     :raises Exeption: error
-    """ 
-    
+    """
+
     # Get the needed variables
     lambda_name = os.environ.get("lambda_name")
     alarm_name = os.environ.get("alarm_name")
@@ -32,7 +32,7 @@ def lambda_handler(event, context):
     alert_message = {
         "Summary": f"The website at {url} is unreachable. Healthcheck failure.",
         "Alarm": "Route53 Health Check Failure.",
-        "Description": f"Website is unreachable or not returning the expected response. Check Amazon Cloudwatch Alarms \'{alarm_name}\' and Healthcheck Lambda \'{lambda_name}\'.",
+        "Description": f"Website is unreachable or not returning the expected response. Check Amazon Cloudwatch Alarms '{alarm_name}' and Healthcheck Lambda '{lambda_name}'.",
     }
 
     try:
@@ -41,12 +41,12 @@ def lambda_handler(event, context):
             slack_webhook_url,
             timeout=5,
             data=json.dumps(alert_message),
-            headers={'Content-Type': 'application/json'}
+            headers={"Content-Type": "application/json"},
         )
 
         return {
-            'statusCode': 200,
-            'body': json.dumps('Message sent to Slack successfully.')
+            "statusCode": 200,
+            "body": json.dumps("Message sent to Slack successfully."),
         }
     except Exception as e:
         raise RuntimeError(f"Error sending message to Slack: {e}.") from None

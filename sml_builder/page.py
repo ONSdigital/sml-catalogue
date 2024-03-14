@@ -18,7 +18,9 @@ def about():
         content = getContent("about")
         if checkEmptyList(content):
             abort(404)
-        return render_template("about.html", content=content, cms_enabled=content_management["enabled"])
+        return render_template(
+            "about.html", content=content, cms_enabled=content_management["enabled"]
+        )
 
     try:
         with open(
@@ -29,7 +31,9 @@ def about():
             body = Markup(markdown.markdown(escaped_text))
     except OSError as e:
         _page_not_found(e)
-    return render_template("about.html", page_body=body, cms_enabled=content_management["enabled"])
+    return render_template(
+        "about.html", page_body=body, cms_enabled=content_management["enabled"]
+    )
 
 
 @app.route("/privacy-and-data-protection")
@@ -41,9 +45,13 @@ def privacy_and_data_protection():
         if checkEmptyList(content):
             abort(404)
         return render_template(
-            "content/privacy.html", content=content, cms_enabled=content_management["enabled"]
+            "content/privacy.html",
+            content=content,
+            cms_enabled=content_management["enabled"],
         )
-    return render_template("content/privacy.html", cms_enabled=content_management["enabled"])
+    return render_template(
+        "content/privacy.html", cms_enabled=content_management["enabled"]
+    )
 
 
 @app.route("/cookies")
@@ -58,7 +66,9 @@ def accessibility_page():
         if checkEmptyList(content):
             abort(404)
         return render_template(
-            "accessibility_statement.html", content=content, cms_enabled=content_management["enabled"]
+            "accessibility_statement.html",
+            content=content,
+            cms_enabled=content_management["enabled"],
         )
 
     try:
@@ -71,7 +81,9 @@ def accessibility_page():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "accessibility_statement.html", page_body=body, cms_enabled=content_management["enabled"]
+        "accessibility_statement.html",
+        page_body=body,
+        cms_enabled=content_management["enabled"],
     )
 
 
