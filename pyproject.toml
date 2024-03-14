@@ -7,26 +7,26 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-frozen-flask = "^0.18"
+frozen-flask = "^1.0"
 jsonnet = "^0.20.0"
 markdown = "^3.5.1"
 python-markdown-mathjax = "1.0.4"
 python-markdown-math="^0.8"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.9.1"
+black = "^24.2.0"
 behave = "^1.2.6"
 selenium = "^4.10.0"
 flake8 = "^6.1.0"
 pylint = "3.0.1"
-bandit = "^1.7.5"
+bandit = "^1.7.8"
 isort = "^5.12.0"
 axe-selenium-python = "^2.1.6"
 python-semantic-release = "<8.0.0"
-werkzeug = "2.3.7"
+werkzeug = "2.3.8"
 
 [tool.bandit]
-exclude_dirs = ["features", "./venv/"]
+exclude_dirs = ["features", "./venv/", "/tempenv/"]
 
 [tool.isort]
 profile="black"

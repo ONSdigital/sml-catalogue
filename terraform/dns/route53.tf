@@ -30,6 +30,7 @@ resource "aws_acm_certificate_validation" "sml" {
   validation_record_fqdns = [for record in aws_route53_record.cert-validations : record.fqdn]
   #  provider                = aws.us_east_1
 }
+
 resource "aws_route53_record" "cert-validations" {
   for_each = {
     for dvo in aws_acm_certificate.sml.domain_validation_options : dvo.domain_name => {
