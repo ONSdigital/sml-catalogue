@@ -26,7 +26,7 @@ def api_reference(category=None):
         return render_template(
             "api-index.html", help_categories=categories, selected_category=category
         )
-    return Response("Feature is a work in Progress")
+    return Response("Feature is a work in progress")
 
 
 @app.route("/api_reference/<category>/index")
