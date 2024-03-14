@@ -8,8 +8,6 @@ env_setups:
     S3_KEY: sml-portal.tfstate
     CONCOURSE_ACCESS_TOKEN: ((github_access_token))
     SHARED_ACCOUNT_ROLE: &shared_account_role arn:aws:iam::289259348294:role/spp-concourse-access-prod
-    SPACE_ID: ((contentful_space_id))
-    CDA_KEY: ((contentful_delivery_api_key))
 
   general_dev: &general_dev_params
     TF_VAR_deployment_type: dev
@@ -29,6 +27,10 @@ env_setups:
   github_pull_creds: &github_pull_creds
     username: ((github_access_token))
     password: x-oauth-basic
+
+  contentful_creds: &contentful_creds
+    SPACE_ID: ((contentful_space_id))
+    CDA_KEY: ((contentful_delivery_api_key))
 
   # -------------------
 
@@ -159,7 +161,7 @@ jobs:
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
-              <<: *general_params
+              <<: *contentful_creds
               BUILD_TYPE: 0
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
@@ -215,7 +217,7 @@ jobs:
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
-              <<: *general_params
+              <<: *contentful_creds
               BUILD_TYPE: 0
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
@@ -290,7 +292,7 @@ jobs:
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
-              <<: *general_params
+              <<: *contentful_creds
               BUILD_TYPE: 2
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
