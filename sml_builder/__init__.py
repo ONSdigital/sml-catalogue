@@ -60,4 +60,7 @@ def set_variables():
             {"url": url_for(item["url"]), "title": item["title"]}
         )
     navigation["current_path"] = request.path
-    return {"navigation": navigation, "docs_integration_active": docs_integration["enabled"]}
+    return {
+        "navigation": navigation,
+        "docs_integration_active": docs_integration["enabled"],
+    }
