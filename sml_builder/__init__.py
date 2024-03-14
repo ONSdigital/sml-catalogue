@@ -27,10 +27,7 @@ import sml_builder.utils  # noqa: F401, E402
 
 @app.route("/")
 def index():
-    return render_template(
-        "index.html",
-        feature_1_enabled=sml_builder.utils.get_feature_config("feature_1"),
-    )
+    return render_template("index.html")
 
 
 @app.errorhandler(404)
@@ -50,18 +47,17 @@ def string_to_paragraph(value):
 # inside the dictionary to be directly accessed within the template files
 @app.context_processor
 def set_variables():
-    mkdocs = sml_builder.utils.get_feature_config("docs_integration")
+    docs_integration = sml_builder.utils.get_feature_config("docs_integration")
     navigation = {"navigation": {}}
-    nav_version = (
-        "feature_disabled_navigation"
-        if mkdocs["enabled"] is not True
-        else "feature_active_navigation"
-    )
-    navigation["navigation"]["id"] = mkdocs["variables"][nav_version]["id"]
+    if docs_integration["enabled"] is False:
+        nav_version = "feature_disabled_navigation"
+    else:
+        nav_version = "feature_active_navigation"
+    navigation["navigation"]["id"] = docs_integration["variables"][nav_version]["id"]
     navigation["navigation"]["itemsList"] = []
-    for item in mkdocs["variables"][nav_version]["itemsList"]:
+    for item in docs_integration["variables"][nav_version]["itemsList"]:
         navigation["navigation"]["itemsList"].append(
             {"url": url_for(item["url"]), "title": item["title"]}
         )
     navigation["current_path"] = request.path
-    return {"navigation": navigation, "mkdocs_active": mkdocs["enabled"]}
+    return {"navigation": navigation, "docs_integration_active": docs_integration["enabled"]}

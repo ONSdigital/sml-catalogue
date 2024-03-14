@@ -1,6 +1,5 @@
 {
     "features": {
-        "feature_1": false,
         "docs_integration": {
             "enabled": false,
             "variables": {
