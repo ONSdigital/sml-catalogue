@@ -53,7 +53,9 @@ def set_variables():
     mkdocs = sml_builder.utils.get_feature_config("docs_integration")
     navigation = {"navigation": {}}
     nav_version = (
-        "feature_disabled_navigation" if mkdocs["enabled"] is not True else "feature_active_navigation"
+        "feature_disabled_navigation"
+        if mkdocs["enabled"] is not True
+        else "feature_active_navigation"
     )
     navigation["navigation"]["id"] = mkdocs["variables"][nav_version]["id"]
     navigation["navigation"]["itemsList"] = []

@@ -74,19 +74,21 @@ def _api_reference_nav(
                         "api_guidances",
                         category=category["name"],
                     ),
-                    "anchors": [
-                        {
-                            "title": sub_category["label"],
-                            "url": url_for(
-                                "api_guidances",
-                                category=category["name"],
-                                sub_category=sub_category["name"],
-                            ),
-                        }
-                        for sub_category in category["subcategories"]
-                    ]
-                    if category["name"] == current_category
-                    else None,
+                    "anchors": (
+                        [
+                            {
+                                "title": sub_category["label"],
+                                "url": url_for(
+                                    "api_guidances",
+                                    category=category["name"],
+                                    sub_category=sub_category["name"],
+                                ),
+                            }
+                            for sub_category in category["subcategories"]
+                        ]
+                        if category["name"] == current_category
+                        else None
+                    ),
                 }
                 for category in contents["categories"]
             ],
