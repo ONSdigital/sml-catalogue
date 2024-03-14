@@ -113,8 +113,8 @@
 <br>
 {% if mkdocs_active == True %}
     {% if page.api_reference %}
-    {%- set api_url = url_for(".api_guidances", category="api-reference", subcategory="totals-and-components") -%}
-    <a href={{ api_url }}> {{ "Go to "~ page.title ~" Api Reference "}}</a>
+        {%- set api_url = url_for(".api_guidances", category="api-reference", subcategory="totals-and-components") -%}
+        <a href={{ api_url }}> {{ "Go to "~ page.title ~" Api Reference "}}</a>
     {% endif %}
 {% endif %}
 {% endblock main -%}

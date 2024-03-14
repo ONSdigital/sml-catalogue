@@ -29,7 +29,7 @@ import sml_builder.utils  # noqa: F401, E402
 def index():
     return render_template(
         "index.html",
-        feature_1_enabled=sml_builder.utils.get_feature_config("FEATURE_1"),
+        feature_1_enabled=sml_builder.utils.get_feature_config("feature_1"),
     )
 
 
@@ -46,18 +46,20 @@ def string_to_paragraph(value):
     return Markup(f"<p>{body}</p>")
 
 
+# Method provides a dictionary to the jinja templates, allowing variables
+# inside the dictionary to be directly accessed within the template files
 @app.context_processor
 def set_variables():
-    mkdocs = sml_builder.utils.get_feature_config("MKDOCS")
+    mkdocs = sml_builder.utils.get_feature_config("docs_integration")
     navigation = {"navigation": {}}
     nav_version = (
-        "false_navigation" if mkdocs["ACTIVE"] is not True else "true_navigation"
+        "feature_disabled_navigation" if mkdocs["enabled"] is not True else "feature_active_navigation"
     )
-    navigation["navigation"]["id"] = mkdocs["VARIABLES"][nav_version]["id"]
+    navigation["navigation"]["id"] = mkdocs["variables"][nav_version]["id"]
     navigation["navigation"]["itemsList"] = []
-    for item in mkdocs["VARIABLES"][nav_version]["itemsList"]:
+    for item in mkdocs["variables"][nav_version]["itemsList"]:
         navigation["navigation"]["itemsList"].append(
             {"url": url_for(item["url"]), "title": item["title"]}
         )
     navigation["current_path"] = request.path
-    return {"navigation": navigation, "mkdocs_active": mkdocs["ACTIVE"]}
+    return {"navigation": navigation, "mkdocs_active": mkdocs["enabled"]}

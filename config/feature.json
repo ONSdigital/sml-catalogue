@@ -1,10 +1,10 @@
 {
     "features": {
-        "FEATURE_1": false,
-        "MKDOCS": {
-            "ACTIVE": false,
-            "VARIABLES": {
-                 "true_navigation": {
+        "feature_1": false,
+        "docs_integration": {
+            "enabled": false,
+            "variables": {
+                 "feature_active_navigation": {
                     "id": "main-navigation",
                     "itemsList": [
                     {"url": "index",
@@ -21,7 +21,7 @@
                     "title": "Methods API"}
                     ]
                     },
-                 "false_navigation": {
+                 "feature_disabled_navigation": {
                     "id": "main-navigation",
                     "itemsList": [
                     {"url": "index",
