@@ -32,6 +32,6 @@ variable "email" {
   default = "SMLAdmin@ons.gov.uk"
 }
 
-variable "alerter" {
+variable "terraform_workspace" {
   type = string
 }
