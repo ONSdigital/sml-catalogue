@@ -24,8 +24,7 @@ terraform init \
 -backend-config "bucket=${S3_NAME}" \
 -backend-config "key=${S3_KEY}" \
 -backend-config "workspace_key_prefix=${WORKSPACE_KEY_INFIX}" \
--backend-config "role_arn=${TF_VAR_deployment_role}" \
--backend-config "aws_account_id=${AWS_ACCOUNT_ID}"
+-backend-config "role_arn=${TF_VAR_deployment_role}"
 
 # --------------------------
 

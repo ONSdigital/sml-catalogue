@@ -5,8 +5,6 @@ module "healthcheck" {
 
   deployment_role = var.deployment_role
 
-  aws_account_id = var.aws_account_id
-
-  terraform_workspace = terraform.workspace
-
+  alerter = arn:aws:lambda:eu-west-2:var.aws_account_id:function:var.deployment_role-alerter-var.terraform.workspace
+  
 }

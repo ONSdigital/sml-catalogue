@@ -2,10 +2,6 @@ variable "environment" {
   type = string
 }
 
-variable "aws_account_id" {
-  type = string
-}
-
 variable "deployment_role" {
   type = string
 }
@@ -36,6 +32,6 @@ variable "email" {
   default = "SMLAdmin@ons.gov.uk"
 }
 
-variable "terraform_workspace" {
+variable "alerter" {
   type = string
 }
