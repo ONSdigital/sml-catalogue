@@ -21,7 +21,7 @@ resource "aws_cloudwatch_metric_alarm" "healthcheck" {
   actions_enabled     = "true"
   alarm_actions       = [
                           aws_sns_topic.sns_topic.arn,
-                          arn:aws:lambda:eu-west-2:var.aws_account_id:function:var.deployment_role-alerter-var.terraform.workspace
+                          arn:aws:lambda:eu-west-2:var.aws_account_id:function:var.deployment_role-alerter-var.terraform.workspace"
                         ]
   treat_missing_data  = "notBreaching"
 
