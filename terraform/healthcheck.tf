@@ -6,5 +6,5 @@ module "healthcheck" {
 
   deployment_role = var.deployment_role
 
-  alerter = module.alerter.alerter_lambda
+  alerter = module.alerter[0].alerter_lambda
 }
