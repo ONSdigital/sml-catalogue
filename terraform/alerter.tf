@@ -1,6 +1,5 @@
 module "alerter" {
   source = "./alerter"
-  count  = terraform.workspace == "main" ? 1 : 0
 
   slack_webhook_token = var.slack_alert_token
 
