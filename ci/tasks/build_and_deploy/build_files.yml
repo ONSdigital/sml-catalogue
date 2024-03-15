@@ -10,7 +10,7 @@ image_resource:
 inputs:
   - name: repo
 outputs:
-  - name: repo_built
+  - name: repo
 
 run:
   path: sh

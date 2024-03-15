@@ -8,15 +8,14 @@ image_resource:
     tag: 1
 
 inputs:
-  - name: repo_built
+  - name: repo
   - name: GITHUB_OUTPUT
 run:
   path: sh
-  dir: repo_built
+  dir: repo
   args:
     - -exc
     - |
-      ls
       apk add --update --no-progress bash jq
       apk add --no-cache --no-progress aws-cli
       bash ./ci/tasks/terraform/init_metadata.sh
