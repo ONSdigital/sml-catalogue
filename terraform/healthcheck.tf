@@ -6,5 +6,5 @@ module "healthcheck" {
 
   deployment_role = var.deployment_role
 
-  alerter = module.alerter.alerter_lambda
+  alerter = arn:aws:lambda:eu-west-2:115311790871:function:dev-alerter-main
 }
