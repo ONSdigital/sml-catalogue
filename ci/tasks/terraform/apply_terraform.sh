@@ -5,6 +5,7 @@
 set -euo pipefail
 
 : ${TERRAFORM_SOURCE}
+: ${AWS_ACCOUNT_ID}
 : ${TF_VAR_environment}
 : ${TF_VAR_slack_alert_token}
 : ${TF_VAR_deployment_role}

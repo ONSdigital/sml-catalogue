@@ -7,6 +7,6 @@ module "healthcheck" {
 
   aws_account_id = var.aws_account_id
 
-  terraform_workspace = var.terraform.workspace
+  terraform_workspace = terraform.workspace
 
 }
