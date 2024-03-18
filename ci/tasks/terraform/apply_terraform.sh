@@ -21,7 +21,7 @@ rm -f $HOME/.netrc
 echo "default login $username password $password" >> "${HOME}/.netrc"
 echo "starting terraform init"
 cd ./terraform
-export TF_VAR_AWS_ACCOUNT_ID = $AWS_ACCOUNT_ID
+export TF_VAR_AWS_ACCOUNT_ID=$AWS_ACCOUNT_ID
 terraform init \
     -upgrade \
     -backend-config "bucket=${S3_NAME}" \
