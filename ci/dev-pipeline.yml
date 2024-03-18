@@ -40,7 +40,7 @@ env_setups:
     TF_VAR_environment: dev
     TF_VAR_account: *account
     TF_VAR_slack_alert_token: ((slack_webhook_sml_portal_alerts))
-    TF_VAR_AWS_ACCOUNT_ID: ((aws_account_sml_dev))
+    TF_VAR_aws_account_id: ((aws_account_sml_dev))
 
   sml_preprod: &sml_preprod_setup
     <<: *general_preprod_params
@@ -51,7 +51,7 @@ env_setups:
     TF_VAR_environment: preprod
     TF_VAR_account: *account
     TF_VAR_slack_alert_token: ((slack_webhook_sml_portal_alerts))
-    TF_VAR_AWS_ACCOUNT_ID: ((aws_account_sml_dev))
+    TF_VAR_aws_account_id: ((aws_account_sml_dev))
 
   sml_prod: &sml_prod_setup
     <<: *general_prod_params
@@ -62,7 +62,7 @@ env_setups:
     TF_VAR_environment: prod
     TF_VAR_account: *account
     TF_VAR_slack_alert_token: ((slack_webhook_sml_portal_alerts))
-    TF_VAR_AWS_ACCOUNT_ID: ((aws_account_sml_dev))
+    TF_VAR_aws_account_id: ((aws_account_sml_dev))
 
 resource_types:
   - name: pull-request
