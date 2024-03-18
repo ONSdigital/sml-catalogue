@@ -122,7 +122,7 @@ resource "aws_cloudfront_origin_access_identity" "sml-catalogue" {
 
 module "route53" {
   source = "./dns"
-  count  = terraform.workspace == "main" ? 1 : 0  
+  count  = terraform.workspace == "main" ? 1 : 0
   providers = {
     aws = aws.us_east_1
   }
