@@ -23,6 +23,79 @@
     {% endcall %}
 
   </br> 
+
+  <h2>Search Tool</h2> 
+
+<p>Search for existing methods.</p>
+
+<div class="search nav-search--hidden print--hide" id="searchBar">
+  <div class="wrapper" role="search">
+    <form class="col-wrap search__form" action="/search/<>">
+      <input type="text" autocomplete="off" class="search__input col col--md-21 col--lg-32" id="nav-search" name="search-methods" placeholder="Find a method">
+      <button type="submit" class="ons-btn ons-btn--small search__button col--md-3 col--lg-3" id="nav-search-submit">
+        <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Search</span>
+        </span>
+      </button>
+    </form>
+  </div>
+</div>
+<br>
+
+<!-- <div hidden="true"> -->
+<p>Search results are shown in the table below</p>
+{% set searchMethodsTable = {
+  "id": "search-table",
+  "variants": ["sortable","responsive"],
+  "tableClasses": "ons-u-mt-m",
+  "sortBy": "Sort by",
+  "ariaAsc": "ascending",
+  "ariaDesc": "descending",
+  "ths": [
+    {
+      "value": "Name"
+    },
+    {
+      "value": "Theme"
+    },
+    {
+      "value": "Expert group"
+    },
+    {
+      "value": "Languages"
+    },
+  ]
+} %}
+{% set searchMethodsTableRows = [] %}
+{% for row in page.rows %}
+  {% do searchMethodsTableRows.append({
+    "tds": [
+      {
+          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="ready-to-use-methods") + '">' + row.title + '</a>'
+      },
+      {"value": row.theme},
+      {"value": row.exp_group},
+      {"value": row.language},
+    ]
+  }) %}
+{% endfor %}
+{% for row in page.future_rows %}
+  {% do searchMethodsTableRows.append({
+    "tds": [
+      {
+          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="future-methods") + '">' + row.title + '</a>'
+      },
+      {"value": row.theme},
+      {"value": row.exp_group},
+      {"value": row.language},
+    ]
+  }) %}
+{% endfor %}
+{% do searchMethodsTable.update({"trs": searchMethodsTableRows}) %}
+{{
+  onsTable(searchMethodsTable)
+}}
+<!-- </div> -->
+
 <h2>{{
   onsStatus({
       "label": 'Methods Ready to Use',

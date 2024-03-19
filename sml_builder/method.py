@@ -30,6 +30,10 @@ def display_method_summary(method, methodState):
     }
     return render_template("method.html", page=page_data)
 
+@app.route("/methods/search/<searchQuery>")
+def display_search_results():
+    # run python script using searchQuery
+    # display results 
 
 @app.route("/methods")
 def display_methods():
