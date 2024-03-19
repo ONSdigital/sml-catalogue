@@ -5,6 +5,7 @@
 set -euo pipefail
 
 : ${TERRAFORM_SOURCE}
+: ${AWS_ACCOUNT_ID}
 : ${TF_VAR_environment}
 : ${TF_VAR_slack_alert_token}
 : ${TF_VAR_deployment_role}
@@ -20,6 +21,7 @@ rm -f $HOME/.netrc
 echo "default login $username password $password" >> "${HOME}/.netrc"
 echo "starting terraform init"
 cd ./terraform
+export TF_VAR_aws_account_id=$AWS_ACCOUNT_ID
 terraform init \
     -upgrade \
     -backend-config "bucket=${S3_NAME}" \
@@ -35,7 +37,7 @@ terraform apply \
     -auto-approve \
     -var="environment=${TF_VAR_environment}" \
     -var="slack_alert_token=${TF_VAR_slack_alert_token}" \
-    -var="deployment_role=${TF_VAR_deployment_role}"
+    -var="aws_account_id=${TF_VAR_aws_account_id}"
 rm plan.tfstate
 echo "done"
 echo "DEPLOY_URL=`terraform output -raw website_url`" > ../../GITHUB_OUTPUT/output.txt

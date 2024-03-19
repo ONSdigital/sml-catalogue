@@ -215,9 +215,6 @@ jobs:
               WORKSPACE_KEY_INFIX: workspace
               TF_WORKSPACE: main
 
-          - task: zip-lambda
-            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
-
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
@@ -254,9 +251,6 @@ jobs:
               TERRAFORM_SOURCE: repo/terraform
               WORKSPACE_KEY_INFIX: workspace
               TF_WORKSPACE: main
-
-          - task: zip-lambda
-            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
@@ -295,9 +289,6 @@ jobs:
               TERRAFORM_SOURCE: repo/terraform
               WORKSPACE_KEY_INFIX: workspace
               TF_WORKSPACE: main
-
-          - task: zip-lambda
-            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
