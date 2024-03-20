@@ -38,165 +38,172 @@
       }
     </script>
 
-    <form class="col-wrap search__form" action="{{ url_for('display_search_results', searchQuery=getSearchQuery()) }}">
+    <form class="col-wrap search__form" method="post" action='{{ url_for("display_search_results") }}'>
       <input type="text" autocomplete="off" class="search__input col col--md-21 col--lg-32" id="nav-search" name="search-methods" placeholder="Find a method">
       <button type="submit" class="ons-btn ons-btn--small search__button col--md-3 col--lg-3" id="nav-search-submit">
         <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Search</span>
         </span>
       </button>
+      <a href="{{ url_for('display_methods') }}"> 
+      <button type="button" class="ons-btn ons-btn--small ons-btn--secondary search__button col--md-3 col--lg-3" id="nav-search-submit">
+        <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Clear</span>
+        </span>
+      </button>
+      </a>
     </form>
   </div>
 </div>
 <br>
 
-<!-- <div hidden="true"> -->
-<p>Search results are shown in the table below</p>
-{% set searchMethodsTable = {
-  "id": "search-table",
-  "variants": ["sortable","responsive"],
-  "tableClasses": "ons-u-mt-m",
-  "sortBy": "Sort by",
-  "ariaAsc": "ascending",
-  "ariaDesc": "descending",
-  "ths": [
-    {
-      "value": "Name"
-    },
-    {
-      "value": "Theme"
-    },
-    {
-      "value": "Expert group"
-    },
-    {
-      "value": "Languages"
-    },
-  ]
-} %}
-{% set searchMethodsTableRows = [] %}
-{% for row in page.rows %}
-  {% do searchMethodsTableRows.append({
-    "tds": [
+{% if search %}
+  <p>Search results are shown in the table below</p>
+  {% set searchMethodsTable = {
+    "id": "search-table",
+    "variants": ["sortable","responsive"],
+    "tableClasses": "ons-u-mt-m",
+    "sortBy": "Sort by",
+    "ariaAsc": "ascending",
+    "ariaDesc": "descending",
+    "ths": [
       {
-          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="ready-to-use-methods") + '">' + row.title + '</a>'
+        "value": "Name"
       },
-      {"value": row.theme},
-      {"value": row.exp_group},
-      {"value": row.language},
-    ]
-  }) %}
-{% endfor %}
-{% for row in page.future_rows %}
-  {% do searchMethodsTableRows.append({
-    "tds": [
       {
-          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="future-methods") + '">' + row.title + '</a>'
+        "value": "Theme"
       },
-      {"value": row.theme},
-      {"value": row.exp_group},
-      {"value": row.language},
+      {
+        "value": "Expert group"
+      },
+      {
+        "value": "Languages"
+      },
     ]
-  }) %}
-{% endfor %}
-{% do searchMethodsTable.update({"trs": searchMethodsTableRows}) %}
-{{
-  onsTable(searchMethodsTable)
-}}
-<!-- </div> -->
+  } %}
+  {% set searchMethodsTableRows = [] %}
+  {% for row in page.rows %}
+    {% do searchMethodsTableRows.append({
+      "tds": [
+        {
+            "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="ready-to-use-methods") + '">' + row.title + '</a>'
+        },
+        {"value": row.theme},
+        {"value": row.exp_group},
+        {"value": row.language},
+      ]
+    }) %}
+  {% endfor %}
+  {% for row in page.future_rows %}
+    {% do searchMethodsTableRows.append({
+      "tds": [
+        {
+            "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="future-methods") + '">' + row.title + '</a>'
+        },
+        {"value": row.theme},
+        {"value": row.exp_group},
+        {"value": row.language},
+      ]
+    }) %}
+  {% endfor %}
+  {% do searchMethodsTable.update({"trs": searchMethodsTableRows}) %}
+  {{
+    onsTable(searchMethodsTable)
+  }}
+{% else %}
+  <h2>{{
+    onsStatus({
+        "label": 'Methods Ready to Use',
+        "type": 'success'
+    })
+  }}</h2>
+  <p>The following methods are released and ready to use</p>
+  {% set methodsTable = {
+    "id": "ready-table",
+    "variants": ["sortable","responsive"],
+    "tableClasses": "ons-u-mt-m",
+    "sortBy": "Sort by",
+    "ariaAsc": "ascending",
+    "ariaDesc": "descending",
+    "ths": [
+      {
+        "value": "Name"
+      },
+      {
+        "value": "Theme"
+      },
+      {
+        "value": "Expert group"
+      },
+      {
+        "value": "Languages"
+      },
+    ]
+  } %}
+  {% set methodsTableRows = [] %}
+  {% for row in page.rows %}
+    {% do methodsTableRows.append({
+      "tds": [
+        {
+            "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="ready-to-use-methods") + '">' + row.title + '</a>'
+        },
+        {"value": row.theme},
+        {"value": row.exp_group},
+        {"value": row.language},
+      ]
+    }) %}
+  {% endfor %}
+  {% do methodsTable.update({"trs": methodsTableRows}) %}
+  {{
+    onsTable(methodsTable)
+  }}
 
-<h2>{{
-  onsStatus({
-      "label": 'Methods Ready to Use',
-      "type": 'success'
-  })
-}}</h2>
-<p>The following methods are released and ready to use</p>
-{% set methodsTable = {
-  "id": "ready-table",
-  "variants": ["sortable","responsive"],
-  "tableClasses": "ons-u-mt-m",
-  "sortBy": "Sort by",
-  "ariaAsc": "ascending",
-  "ariaDesc": "descending",
-  "ths": [
-    {
-      "value": "Name"
-    },
-    {
-      "value": "Theme"
-    },
-    {
-      "value": "Expert group"
-    },
-    {
-      "value": "Languages"
-    },
-  ]
-} %}
-{% set methodsTableRows = [] %}
-{% for row in page.rows %}
-  {% do methodsTableRows.append({
-    "tds": [
+  <h2>{{
+    onsStatus({
+        "label": 'Future Methods',
+        "type": 'pending'
+    })
+  }}</h2>
+  <p>The following methods have been approved for development and will be included in future releases.</p>
+  {% set futureMethodsTable = {
+    "id": "future-table",
+    "variants": ["sortable","responsive"],
+    "tableClasses": "ons-u-mt-m",
+    "sortBy": "Sort by",
+    "ariaAsc": "ascending",
+    "ariaDesc": "descending",
+    "ths": [
       {
-          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="ready-to-use-methods") + '">' + row.title + '</a>'
+        "value": "Name."
       },
-      {"value": row.theme},
-      {"value": row.exp_group},
-      {"value": row.language},
+      {
+        "value": "Theme."
+      },
+      {
+        "value": "Expert group."
+      },
+      {
+        "value": "Languages."
+      },
     ]
-  }) %}
-{% endfor %}
-{% do methodsTable.update({"trs": methodsTableRows}) %}
-{{
-  onsTable(methodsTable)
-}}
+  } %}
+  {% set futureMethodsTableRows = [] %}
+  {% for row in page.future_rows %}
+    {% do futureMethodsTableRows.append({
+      "tds": [
+        {
+            "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="future-methods") + '">' + row.title + '</a>'
+        },
+        {"value": row.theme},
+        {"value": row.exp_group},
+        {"value": row.language},
+      ]
+    }) %}
+  {% endfor %}
+  {% do futureMethodsTable.update({"trs": futureMethodsTableRows}) %}
+  {{
+    onsTable(futureMethodsTable)
+  }}
+{% endif %}
 
-<h2>{{
-  onsStatus({
-      "label": 'Future Methods',
-      "type": 'pending'
-  })
-}}</h2>
-<p>The following methods have been approved for development and will be included in future releases.</p>
-{% set futureMethodsTable = {
-  "id": "future-table",
-  "variants": ["sortable","responsive"],
-  "tableClasses": "ons-u-mt-m",
-  "sortBy": "Sort by",
-  "ariaAsc": "ascending",
-  "ariaDesc": "descending",
-  "ths": [
-    {
-      "value": "Name."
-    },
-    {
-      "value": "Theme."
-    },
-    {
-      "value": "Expert group."
-    },
-    {
-      "value": "Languages."
-    },
-  ]
-} %}
-{% set futureMethodsTableRows = [] %}
-{% for row in page.future_rows %}
-  {% do futureMethodsTableRows.append({
-    "tds": [
-      {
-          "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="future-methods") + '">' + row.title + '</a>'
-      },
-      {"value": row.theme},
-      {"value": row.exp_group},
-      {"value": row.language},
-    ]
-  }) %}
-{% endfor %}
-{% do futureMethodsTable.update({"trs": futureMethodsTableRows}) %}
-{{
-  onsTable(futureMethodsTable)
-}}
 <p>These methods can be developed and extended after a formal release. ‘Code under development’ is tested and checked before it is made into a formal release. Usage of code prior to a formal release is at the user's own risk.</p>
 <p>The Statistical Methods Library will grow as more statistical methods are requested.</p>
 {% endblock main -%}

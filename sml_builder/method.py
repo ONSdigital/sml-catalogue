@@ -2,7 +2,7 @@ from json import loads
 from os import listdir
 
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
-from flask import render_template
+from flask import render_template, request
 
 from sml_builder import app
 
@@ -32,14 +32,24 @@ def display_method_summary(method, methodState):
     }
     return render_template("method.html", page=page_data)
 
-@app.route("/methods/search/<searchQuery>")
-def display_search_results(searchQuery):
+@app.route("/methods/search/", methods=['POST'])
+def display_search_results():
+    searchQuery = request.form['search-methods']
     # run python script using searchQuery
     print(searchQuery)
     results = search_partial(query=searchQuery)
     print(results)
     # display results 
-    return results
+    methods_dir = "./content/methods/ready-to-use-methods"
+    future_methods_dir = "./content/methods/future-methods"
+    try:
+        methods = appendRow(methods_dir)
+        future_methods = appendRow(future_methods_dir)
+    except OSError as e:
+        _page_not_found(e)
+    return render_template(
+        "methods.html", page={"rows": methods, "future_rows": future_methods}, search=True
+    )
 
 @app.route("/methods")
 def display_methods():
@@ -52,7 +62,7 @@ def display_methods():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "methods.html", page={"rows": methods, "future_rows": future_methods}
+        "methods.html", page={"rows": methods, "future_rows": future_methods}, search=False
     )
 
 
