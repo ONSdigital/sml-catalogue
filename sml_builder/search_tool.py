@@ -12,9 +12,10 @@ data = {
 df = pd.DataFrame(data)
 
 # Function to search for partial matches
-def search_partial(df, query):
-    result = df[df.apply(lambda row: row.astype(str).str.contains(query, case=False).any(), axis=1)]
-    return result
+def search_partial(df=df, query=""):
+    # result = df[df.apply(lambda row: row.astype(str).str.contains(query, case=False).any(), axis=1)]
+    # return result
+    return query
 
 # Example usage
 query = 'To'  # Partial search query

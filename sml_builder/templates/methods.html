@@ -30,7 +30,15 @@
 
 <div class="search nav-search--hidden print--hide" id="searchBar">
   <div class="wrapper" role="search">
-    <form class="col-wrap search__form" action="/search/<>">
+
+    <script type="text/javascript">
+      function getSearchQuery() {
+        const searchQuery = document.getElementById("nav-search");
+        return searchQuery.value;
+      }
+    </script>
+
+    <form class="col-wrap search__form" action="{{ url_for('display_search_results', searchQuery=getSearchQuery()) }}">
       <input type="text" autocomplete="off" class="search__input col col--md-21 col--lg-32" id="nav-search" name="search-methods" placeholder="Find a method">
       <button type="submit" class="ons-btn ons-btn--small search__button col--md-3 col--lg-3" id="nav-search-submit">
         <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Search</span>

@@ -8,6 +8,8 @@ from sml_builder import app
 
 from .utils import _page_not_found
 
+from .search_tool import search_partial
+
 
 @app.route("/method/<methodState>/<method>")
 def display_method_summary(method, methodState):
@@ -31,9 +33,13 @@ def display_method_summary(method, methodState):
     return render_template("method.html", page=page_data)
 
 @app.route("/methods/search/<searchQuery>")
-def display_search_results():
+def display_search_results(searchQuery):
     # run python script using searchQuery
+    print(searchQuery)
+    results = search_partial(query=searchQuery)
+    print(results)
     # display results 
+    return results
 
 @app.route("/methods")
 def display_methods():
