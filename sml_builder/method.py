@@ -1,3 +1,4 @@
+import pandas as pd
 from json import loads
 from os import listdir
 
@@ -34,21 +35,45 @@ def display_method_summary(method, methodState):
 
 @app.route("/methods/search/", methods=['POST'])
 def display_search_results():
+    data = []
     searchQuery = request.form['search-methods']
-    # run python script using searchQuery
-    print(searchQuery)
-    results = search_partial(query=searchQuery)
-    print(results)
-    # display results 
+
     methods_dir = "./content/methods/ready-to-use-methods"
     future_methods_dir = "./content/methods/future-methods"
+
+    # Display results
+    methods = appendRow(methods_dir, filter=None)
+    future_methods = appendRow(future_methods_dir, filter=None)
+
+    data = methods + future_methods
+
+    ids = [item['id'] for item in data]
+    names = [item['title'] for item in data]
+    themes = [item['theme'] for item in data]
+    exp_groups = [item['exp_group'] for item in data]
+    languages = [item['language'] for item in data]
+
+    method_data = {
+            "id" : ids,
+            "Name" : names,
+            "Theme" : themes,
+            "Expert Group" : exp_groups,
+            "Language" : languages,
+    }
+
+    # Creating DataFrame
+    data_frame = pd.DataFrame(method_data)
+
+    search_results_rows = search_partial(data_frame=data_frame, query=searchQuery)
+    filter = search_results_rows["id"].tolist()
     try:
-        methods = appendRow(methods_dir)
-        future_methods = appendRow(future_methods_dir)
+        # append methods only if found in search results
+        methods = appendRow(methods_dir, filter=filter)
+        future_methods = appendRow(future_methods_dir, filter=filter)
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "methods.html", page={"rows": methods, "future_rows": future_methods}, search=True
+        "methods.html", page={"rows": methods, "future_rows":future_methods}, search=True, query=searchQuery
     )
 
 @app.route("/methods")
@@ -66,8 +91,9 @@ def display_methods():
     )
 
 
-def appendRow(methods_dir):
+def appendRow(methods_dir, filter=None):
     methods = []
+    filtered_methods = []
     for file in listdir(methods_dir):
         method = loads(evaluate_file(f"{methods_dir}/{file}"))
 
@@ -80,4 +106,7 @@ def appendRow(methods_dir):
                 "language": method["method_metadata"]["Languages"],
             }
         )
+    if filter is not None:
+        filtered_methods = [method for method in methods if method["id"] in filter]
+        methods = filtered_methods
     return methods
