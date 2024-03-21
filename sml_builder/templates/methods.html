@@ -22,88 +22,37 @@
     please visit the <a href="https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/" target="_blank">analysis function website<span class="ons-u-vh"> (opens in a new window)</span></a>.</p>
     {% endcall %}
 
-  </br> 
+  </br>
 
-  <h2>Search Tool</h2> 
-
-<p>Search for existing methods.</p>
-
-<div class="search nav-search--hidden print--hide" id="searchBar">
-  <div class="wrapper" role="search">
-
-    <form class="col-wrap search__form" method="post" action='{{ url_for("display_search_results") }}'>
-      <span class="ons-grid--flex  ons-input_search-button">
-        <input type="text" autocomplete="off" class="ons-input ons-input--text ons-input-type__input" id="nav-search" name="search-methods" placeholder="Find a method", value="{{ query }}">
-        <button type="submit" class="ons-btn ons-btn--small search__button col--md-3 col--lg-3" id="nav-search-submit">
-          <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Search</span>
+{% from "components/details/_macro.njk" import onsDetails %}
+{% call onsDetails({
+      "id": "collapsible-search",
+      "title": "How do I search for a method?",
+      "open": search_details_open
+}) %}
+  <div class="container">
+    <p>Search for existing methods.</p>
+    <div class="search nav-search--hidden print--hide" id="searchBar">
+      <div class="wrapper" role="search">
+        <form class="col-wrap search__form" method="post" action='{{ url_for("display_search_results") }}'>
+          <span class="ons-grid--flex ons-input_search-button">
+            <input type="text" autocomplete="off" class="ons-input ons-input--text ons-input-type__input" id="nav-search" name="search-methods" placeholder="Find a method", value="{{ query }}" required>
+              <button type="submit" class="ons-btn ons-btn--small search__button col--md-3 col--lg-3" id="nav-search-submit" name="search-button">
+                <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Search</span>
+              </button>
+              <a href="{{ url_for('display_methods') }}">
+              <button type="button" class="ons-btn ons-btn--small ons-btn--secondary search__button col--md-3 col--lg-3" id="nav-search-submit">
+                <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Clear</span>
+              </button>
+            </a>
           </span>
-        </button>
-        <a href="{{ url_for('display_methods') }}">
-        <button type="button" class="ons-btn ons-btn--small ons-btn--secondary search__button col--md-3 col--lg-3" id="nav-search-submit">
-          <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Clear</span>
-          </span>
-        </button>
-        </a>
-      </span>
-    </form>
+        </form>
+      </div>
+    </div>
   </div>
-</div>
-<br>
+{% endcall %}
 
-{% if search %}
-  <p>Search results are shown in the table below</p>
-  {% set searchMethodsTable = {
-    "id": "search-table",
-    "variants": ["sortable","responsive"],
-    "tableClasses": "ons-u-mt-m",
-    "sortBy": "Sort by",
-    "ariaAsc": "ascending",
-    "ariaDesc": "descending",
-    "ths": [
-      {
-        "value": "Name"
-      },
-      {
-        "value": "Theme"
-      },
-      {
-        "value": "Expert group"
-      },
-      {
-        "value": "Languages"
-      },
-    ]
-  } %}
-  {% set searchMethodsTableRows = [] %}
-  {% for row in page.rows %}
-    {% do searchMethodsTableRows.append({
-      "tds": [
-        {
-            "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="ready-to-use-methods") + '">' + row.title + '</a>'
-        },
-        {"value": row.theme},
-        {"value": row.exp_group},
-        {"value": row.language},
-      ]
-    }) %}
-  {% endfor %}
-  {% for row in page.future_rows %}
-    {% do searchMethodsTableRows.append({
-      "tds": [
-        {
-            "value": '<a href="' + url_for("display_method_summary", method=row.id, methodState="future-methods") + '">' + row.title + '</a>'
-        },
-        {"value": row.theme},
-        {"value": row.exp_group},
-        {"value": row.language},
-      ]
-    }) %}
-  {% endfor %}
-  {% do searchMethodsTable.update({"trs": searchMethodsTableRows}) %}
-  {{
-    onsTable(searchMethodsTable)
-  }}
-{% else %}
+  <br>
   <h2>{{
     onsStatus({
         "label": 'Methods Ready to Use',
@@ -111,6 +60,7 @@
     })
   }}</h2>
   <p>The following methods are released and ready to use</p>
+{% if page.rows %}
   {% set methodsTable = {
     "id": "ready-table",
     "variants": ["sortable","responsive"],
@@ -150,7 +100,11 @@
   {{
     onsTable(methodsTable)
   }}
-
+{% else %}
+  <p class="ons-panel__error" id="search-alert">
+    <strong>No ready to use methods found, please enter another search term or clear the search to return to the original tables.</strong>
+  </p>
+{% endif %}
   <h2>{{
     onsStatus({
         "label": 'Future Methods',
@@ -158,6 +112,7 @@
     })
   }}</h2>
   <p>The following methods have been approved for development and will be included in future releases.</p>
+{% if page.future_rows %}
   {% set futureMethodsTable = {
     "id": "future-table",
     "variants": ["sortable","responsive"],
@@ -197,7 +152,12 @@
   {{
     onsTable(futureMethodsTable)
   }}
+{% else %}
+  <p class="ons-panel__error" id="future-search-alert">
+    <strong>No future methods found, please enter another search term or clear the search to return to the original tables.</strong>
+  </p>
 {% endif %}
+  
 
 <p>These methods can be developed and extended after a formal release. ‘Code under development’ is tested and checked before it is made into a formal release. Usage of code prior to a formal release is at the user's own risk.</p>
 <p>The Statistical Methods Library will grow as more statistical methods are requested.</p>

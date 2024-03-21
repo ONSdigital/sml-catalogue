@@ -73,7 +73,7 @@ def display_search_results():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "methods.html", page={"rows": methods, "future_rows":future_methods}, search=True, query=searchQuery
+        "methods.html", page={"rows": methods, "future_rows":future_methods}, query=searchQuery, search_details_open=True
     )
 
 @app.route("/methods")
@@ -87,7 +87,7 @@ def display_methods():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "methods.html", page={"rows": methods, "future_rows": future_methods}, search=False
+        "methods.html", page={"rows": methods, "future_rows": future_methods}, search=False, search_details_open=False
     )
 
 
