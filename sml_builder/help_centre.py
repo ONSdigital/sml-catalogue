@@ -24,7 +24,7 @@ def help_centre(category=None):
             "./content/help_centre/help_centre.json", encoding="utf-8"
         ) as help_contents_file:
             contents = load(help_contents_file)
-            categories = contents_helper(contents)
+            categories = contents_helper(contents, "guidances")
 
     except OSError as e:
         _page_not_found(e)

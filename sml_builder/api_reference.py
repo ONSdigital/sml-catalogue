@@ -20,7 +20,8 @@ def api_reference(category=None):
                 "./content/api_reference/api_reference.json", encoding="utf-8"
             ) as help_contents_file:
                 contents = load(help_contents_file)
-                categories = contents_helper(contents)
+                categories = contents_helper(contents, "api_guidances")
+                print(categories)
         except OSError as e:
             _page_not_found(e)
         return render_template(

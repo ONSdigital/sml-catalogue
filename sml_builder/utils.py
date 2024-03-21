@@ -50,7 +50,7 @@ def category_labels(file_path, selected_category, selected_sub_category):
     raise KeyError(f"The category '{selected_category}' was not found")
 
 
-def contents_helper(contents):
+def contents_helper(contents, content_section):
     categories = []
     for category in contents["categories"]:
         categories.append(
@@ -59,7 +59,7 @@ def contents_helper(contents):
                 "subcategories": [
                     {
                         "url": url_for(
-                            "guidances",
+                            content_section,
                             category=category["name"],
                             sub_category=sub_category["name"],
                         ),
