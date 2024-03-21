@@ -1,7 +1,7 @@
 {
     "features": {
         "docs_integration": {
-            "enabled": false,
+            "enabled": true,
             "variables": {
                  "feature_active_navigation": {
                     "id": "main-navigation",
