@@ -51,7 +51,9 @@ def set_variables():
     navigation = {"navigation": {}}
     if docs_integration["enabled"] is True:
         nav_version = "feature_active_navigation"
-        navigation["navigation"]["id"] = docs_integration["variables"][nav_version]["id"]
+        navigation["navigation"]["id"] = docs_integration["variables"][nav_version][
+            "id"
+        ]
         navigation["navigation"]["itemsList"] = []
         for item in docs_integration["variables"][nav_version]["itemsList"]:
             navigation["navigation"]["itemsList"].append(
@@ -63,5 +65,5 @@ def set_variables():
             "docs_integration_active": docs_integration["enabled"],
         }
     return {
-         "docs_integration_active": docs_integration["enabled"],
+        "docs_integration_active": docs_integration["enabled"],
     }
