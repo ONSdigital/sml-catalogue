@@ -1,0 +1,160 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+    
+    
+    
+    
+      <link rel="stylesheet" href="/static/assets/stylesheets/main.9d5733d3.min.css">
+      
+        
+        <link rel="stylesheet" href="/static/assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#create_perturbed_table" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="create_perturbed_table"><code>create_perturbed_table</code></h1>
+<p>Create a frequency table with cell key perturbation applied</p>
+<h2 id="description">Description</h2>
+<p>'create_perturbed_table()' creates a frequency table which has had
+ cell key perturbation applied to the counts.
+ A p-table file needs to be supplied which determines which cells are
+ perturbed.
+ The data needs to contain a 'record key' variable which along with the
+ ptable allows the process to be repeatable and consistent.</p>
+<h2 id="usage">Usage</h2>
+<pre><code class="language-r">create_perturbed_table(data, geog, tab_vars, record_key_arg, ptable)
+</code></pre>
+<h2 id="arguments">Arguments</h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td>A data.table containing the data to be tabulated and perturbed</td>
+</tr>
+<tr>
+<td><code>geog</code></td>
+<td>A string vector giving the column name in 'data' that contains the desired geography level for the frequency table. This can be the empty vector, c(), if no geography level is required.</td>
+</tr>
+<tr>
+<td><code>tab_vars</code></td>
+<td>A string vector giving the column names in 'data' of the variables to be tabulated.</td>
+</tr>
+<tr>
+<td><code>record_key_arg</code></td>
+<td>A String containing the column name in 'data' giving the record keys required for perturbation.</td>
+</tr>
+<tr>
+<td><code>ptable</code></td>
+<td>A data.table containing the 'ptable' file which determines when perturbation is applied.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="value">Value</h2>
+<p>Returns a data.table giving a frequency table which has had cell key
+ perturbation applied according to the ptable supplied.</p>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-r">geog &lt;- c(&quot;var1&quot;)
+tab_vars &lt;- c(&quot;var5&quot;,&quot;var8&quot;)
+record_key &lt;-&quot;record_key&quot;
+
+perturbed_table &lt;-
+create_perturbed_table(micro, geog, tab_vars, record_key, ptable_10_5)
+
+perturbed_table &lt;-create_perturbed_table(data = micro,
+record_key_arg = &quot;record_key&quot;,
+geog = c(),
+tab_vars = c(&quot;var1&quot;,&quot;var5&quot;,&quot;var8&quot;),
+ptable = ptable_10_5)
+</code></pre>
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "/static/assets/javascripts/workers/search.5e67fbfe.min.js"}</script>
+    
+    
+      <script src="/static/assets/javascripts/bundle.e87a5f81.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

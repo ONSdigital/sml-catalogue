@@ -1,0 +1,42 @@
+{
+    "categories": [
+        {
+            "name": "api-reference",
+            "label": "API Reference",
+            "subcategories": [
+                {
+                    "name": "totals-and-components",
+                    "label": "Totals and Components"
+                },
+                {
+                    "name": "create_perturbed_table",
+                    "label": "Cell Key Perturbation"
+                }
+            ]
+        },
+        {
+            "name": "user-documentation",
+            "label": "User Documentation",
+            "subcategories": [
+                {
+                    "name": "totals-and-components",
+                    "label": "Totals and Components"
+                },
+                {
+                    "name": "intro_to_cellkeyperturbation",
+                    "label": "Cell Key Perturbation"
+                }
+            ]
+        },
+        {
+            "name": "method-specs",
+            "label": "Method Specifications",
+            "subcategories": [
+                {
+                    "name": "totals-and-components",
+                    "label": "Totals and Components"
+                }
+            ]
+        }
+    ]
+}
