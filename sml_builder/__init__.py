@@ -49,18 +49,19 @@ def string_to_paragraph(value):
 def set_variables():
     docs_integration = sml_builder.utils.get_feature_config("docs_integration")
     navigation = {"navigation": {}}
-    if docs_integration["enabled"] is False:
-        nav_version = "feature_disabled_navigation"
-    else:
+    if docs_integration["enabled"] is True:
         nav_version = "feature_active_navigation"
-    navigation["navigation"]["id"] = docs_integration["variables"][nav_version]["id"]
-    navigation["navigation"]["itemsList"] = []
-    for item in docs_integration["variables"][nav_version]["itemsList"]:
-        navigation["navigation"]["itemsList"].append(
-            {"url": url_for(item["url"]), "title": item["title"]}
-        )
-    navigation["current_path"] = request.path
+        navigation["navigation"]["id"] = docs_integration["variables"][nav_version]["id"]
+        navigation["navigation"]["itemsList"] = []
+        for item in docs_integration["variables"][nav_version]["itemsList"]:
+            navigation["navigation"]["itemsList"].append(
+                {"url": url_for(item["url"]), "title": item["title"]}
+            )
+        navigation["current_path"] = request.path
+        return {
+            "navigation": navigation,
+            "docs_integration_active": docs_integration["enabled"],
+        }
     return {
-        "navigation": navigation,
-        "docs_integration_active": docs_integration["enabled"],
+         "docs_integration_active": docs_integration["enabled"],
     }
