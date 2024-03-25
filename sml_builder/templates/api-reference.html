@@ -1,0 +1,41 @@
+{%- extends "sidebar.html" -%}
+{% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
+{% from "components/list/_macro.njk" import onsList %}
+{%- set breadcrumbs = {
+  "id":"breadcrumbs",
+  "ariaLabel":"breadcrumbs",
+  "itemsList":[
+    {
+      "url": url_for("api_reference"),
+      "id": "back",
+      "text": 'Back',
+    }
+  ]
+} -%}
+
+{% set sidebarCols = 9 %}
+{%- set page_title = "API Reference - "~sub_category_label -%}
+{%- set current_path = url_for("api_reference") -%}
+{%- block mainContent -%}
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  <h1>{{category_label}} - {{sub_category_label}}</h1>
+        {% include body %}
+{%- endblock mainContent-%}
+{%- block sidebar -%}
+<div class="ons-grid__col ons-col-3@m ons-u-mt-l ons-u-mb-l ons-related-content ons-push-1@m">
+{% block sidebarContent %}
+{% from "components/section-navigation/_macro.njk" import onsSectionNavigation %}
+{{
+    onsSectionNavigation({
+        "variants": "vertical",
+        "id": "section-menu",
+        "currentPath": url_for("api_guidances", category=category),
+        "sections": nav,
+        "headingLevel": 3,
+    })
+}}
+{% endblock sidebarContent %}
+</div>
+{%- endblock sidebar -%}

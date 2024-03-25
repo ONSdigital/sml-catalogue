@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for
 from markupsafe import Markup, escape
 
 app = Flask(__name__)
@@ -17,6 +17,7 @@ app.config["FREEZER_DESTINATION"] = "../build"
 # E402 module level import not at top of file
 # We import the python files/ flask routes into the __init__.py file and we can't
 # import them at the top of the file so ignoring them
+import sml_builder.api_reference  # noqa: E402
 import sml_builder.glossary  # noqa: E402
 import sml_builder.help_centre  # noqa: E402
 import sml_builder.method  # noqa: E402
@@ -40,3 +41,29 @@ def string_to_paragraph(value):
     """Wraps passed string in <p> tags and converts newlines to <p> pairs"""
     body = escape(value).replace("\n\n", Markup("</p><p>"))
     return Markup(f"<p>{body}</p>")
+
+
+# Method provides a dictionary to the jinja templates, allowing variables
+# inside the dictionary to be directly accessed within the template files
+@app.context_processor
+def set_variables():
+    docs_integration = sml_builder.utils.get_feature_config("docs_integration")
+    navigation = {"navigation": {}}
+    if docs_integration["enabled"] is True:
+        nav_version = "feature_active_navigation"
+        navigation["navigation"]["id"] = docs_integration["variables"][nav_version][
+            "id"
+        ]
+        navigation["navigation"]["itemsList"] = []
+        for item in docs_integration["variables"][nav_version]["itemsList"]:
+            navigation["navigation"]["itemsList"].append(
+                {"url": url_for(item["url"]), "title": item["title"]}
+            )
+        navigation["current_path"] = request.path
+        return {
+            "navigation": navigation,
+            "docs_integration_active": docs_integration["enabled"],
+        }
+    return {
+        "docs_integration_active": docs_integration["enabled"],
+    }
