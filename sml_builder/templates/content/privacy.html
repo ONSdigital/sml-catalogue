@@ -19,13 +19,7 @@
 {%- block main -%}
 {% if cms_enabled %}
 
-  {{ content.privacy_content_1 | markdown }}
-  {{
-      onsList({
-          "itemsList": content.bullet_list
-      })
-  }}
-  {{ content.privacy_content_2 | markdown }}
+  {{ content.privacy_content | markdown }}
 
 {% else %}
   <h1>Privacy and Data Protection</h1>
