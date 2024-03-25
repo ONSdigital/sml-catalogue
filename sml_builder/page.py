@@ -17,7 +17,7 @@ def about():
     if content_management["enabled"]:
         content = getContent("about")
         if checkEmptyList(content):
-            abort(404)
+            _page_not_found("About content not found")
         return render_template(
             "about.html", content=content, cms_enabled=content_management["enabled"]
         )
@@ -40,10 +40,8 @@ def about():
 def privacy_and_data_protection():
     if content_management["enabled"]:
         content = getContent("privacycontent")
-        content["bullet_list"] = [{"text": item} for item in content["bullet_list"]]
-
         if checkEmptyList(content):
-            abort(404)
+            _page_not_found("Privacy content not found")
         return render_template(
             "content/privacy.html",
             content=content,
@@ -64,7 +62,7 @@ def accessibility_page():
     if content_management["enabled"]:
         content = getContent("accessibilityPage")
         if checkEmptyList(content):
-            abort(404)
+            _page_not_found("Accessibility content not found")
         return render_template(
             "accessibility_statement.html",
             content=content,

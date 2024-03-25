@@ -43,7 +43,7 @@ def display_method_summary(
                 methodState=methodState,
                 cms_enabled=content_management["enabled"],
             )
-        abort(404)
+        _page_not_found("Method summary content not found")
     else:
         page_data = loads(
             evaluate_file(f"./content/methods/{methodState}/{method}.jsonnet")
@@ -75,7 +75,7 @@ def display_methods():
         # Gets the methods table items for the methods catalogue page
         getMethodsTableItems = getContent("catalogueTableOfMethods2")
         if checkEmptyList(getMethodsTableItems) or checkEmptyList(content):
-            abort(404)
+            _page_not_found("Methods content not found")
         methods = []
         if checkTypeList(getMethodsTableItems):
             for method in getMethodsTableItems:

@@ -28,7 +28,7 @@ def help_centre(category=None):
         if content_management["enabled"]:
             contents = getContent("helpCentreStructure")["structure"]
             if checkEmptyList(contents):
-                abort(404)
+                _page_not_found("helpCentreStructure content not found")
         else:
             with open(
                 "./content/help_centre/help_centre.json", encoding="utf-8"
@@ -75,7 +75,7 @@ def guidances(category, sub_category=None):
         if sub_category == "methods-request":
             content = getContent("helpCentreMethodRequest")
             if checkEmptyList(content):
-                abort(404)
+                _page_not_found("helpCentreMethodRequest content not found")
             return render_template(
                 "help-methods-request.html",
                 body=content,
@@ -91,14 +91,14 @@ def guidances(category, sub_category=None):
         try:
             pages = getContent("helpCentreInformation")
             if checkEmptyList(pages):
-                abort(404)
+                _page_not_found("helpCentreInformation content not found")
             text = ""
             for page in pages:
                 if page["id"] == sub_category:
                     text = page["content"]
                     break
             if text == "":
-                abort(404)
+                _page_not_found(f"Page {sub_category} content not found")
         except OSError as e:
             _page_not_found(e)
         escaped_text = escape(text)
@@ -147,7 +147,7 @@ def _get_category_labels(selected_category, selected_sub_category):
     if content_management["enabled"]:
         contents = getContent("helpCentreStructure")["structure"]
         if checkEmptyList(contents):
-            abort(404)
+            _page_not_found("helpCentreStructure content not found")
     else:
         with open(
             "./content/help_centre/help_centre.json", encoding="utf-8"
@@ -178,7 +178,7 @@ def _help_centre_nav(
     if content_management["enabled"]:
         contents = getContent("helpCentreStructure")["structure"]
         if checkEmptyList(contents):
-            abort(404)
+            _page_not_found("helpCentreStructure content not found")
     else:
         with open(
             "./content/help_centre/help_centre.json", encoding="utf-8"
