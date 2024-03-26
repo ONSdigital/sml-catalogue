@@ -1,12 +1,17 @@
 from json import loads
 from os import listdir
 
+import pandas as pd
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
-from flask import render_template
+from flask import render_template, request
 
 from sml_builder import app
 
-from .utils import _page_not_found
+from .search_tool import search_partial
+from .utils import _page_not_found, get_feature_config
+
+method_search = get_feature_config("method_search")
+search_results_info_panel = False
 
 
 @app.route("/method/<methodState>/<method>")
@@ -31,6 +36,54 @@ def display_method_summary(method, methodState):
     return render_template("method.html", page=page_data)
 
 
+@app.route("/methods/search/", methods=["POST"])
+def display_search_results():
+    data = []
+    searchQuery = request.form["search-methods"]
+
+    methods_dir = "./content/methods/ready-to-use-methods"
+    future_methods_dir = "./content/methods/future-methods"
+
+    # Display results
+    methods = appendRow(methods_dir, filter_methods=None)
+    future_methods = appendRow(future_methods_dir, filter_methods=None)
+
+    data = methods + future_methods
+
+    ids = [item["id"] for item in data]
+    names = [item["title"] for item in data]
+    themes = [item["theme"] for item in data]
+    exp_groups = [item["exp_group"] for item in data]
+    languages = [item["language"] for item in data]
+
+    method_data = {
+        "id": ids,
+        "Name": names,
+        "Theme": themes,
+        "Expert Group": exp_groups,
+        "Language": languages,
+    }
+
+    # Creating DataFrame
+    data_frame = pd.DataFrame(method_data)
+
+    search_results_rows = search_partial(data_frame=data_frame, query=searchQuery)
+    filter_methods = search_results_rows["id"].tolist()
+    try:
+        # Append methods only if found in search results
+        methods = appendRow(methods_dir, filter_methods=filter_methods)
+        future_methods = appendRow(future_methods_dir, filter_methods=filter_methods)
+    except OSError as e:
+        _page_not_found(e)
+    return render_template(
+        "methods.html",
+        page={"rows": methods, "future_rows": future_methods},
+        query=searchQuery,
+        method_search=method_search["enabled"],
+        search_results_info_panel=True,
+    )
+
+
 @app.route("/methods")
 def display_methods():
     methods_dir = "./content/methods/ready-to-use-methods"
@@ -42,12 +95,16 @@ def display_methods():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "methods.html", page={"rows": methods, "future_rows": future_methods}
+        "methods.html",
+        page={"rows": methods, "future_rows": future_methods},
+        method_search=method_search["enabled"],
+        search_results_info_panel=False,
     )
 
 
-def appendRow(methods_dir):
+def appendRow(methods_dir, filter_methods=None):
     methods = []
+    filtered_methods = []
     for file in listdir(methods_dir):
         method = loads(evaluate_file(f"{methods_dir}/{file}"))
 
@@ -60,4 +117,9 @@ def appendRow(methods_dir):
                 "language": method["method_metadata"]["Languages"],
             }
         )
+    if filter_methods is not None:
+        filtered_methods = [
+            method for method in methods if method["id"] in filter_methods
+        ]
+        methods = filtered_methods
     return methods
