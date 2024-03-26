@@ -6,7 +6,7 @@ from markupsafe import Markup, escape
 
 from sml_builder import app
 
-from .utils import _page_not_found
+from .utils import _page_not_found, category_labels, contents_helper
 
 externallink_help_categories = [
     "report-bug",
@@ -19,31 +19,13 @@ externallink_help_categories = [
 
 @app.route("/help-centre/index")
 def help_centre(category=None):
-    categories = []
     try:
         with open(
             "./content/help_centre/help_centre.json", encoding="utf-8"
         ) as help_contents_file:
             contents = load(help_contents_file)
-        for category in contents[  # pylint: disable=redefined-argument-from-local
-            "categories"
-        ]:
-            categories.append(
-                {
-                    "name": category["label"],
-                    "subcategories": [
-                        {
-                            "url": url_for(
-                                "guidances",
-                                category=category["name"],
-                                sub_category=sub_category["name"],
-                            ),
-                            "text": sub_category["label"],
-                        }
-                        for sub_category in category["subcategories"]
-                    ],
-                }
-            )
+            categories = contents_helper(contents, "guidances")
+
     except OSError as e:
         _page_not_found(e)
     return render_template(
@@ -55,8 +37,8 @@ def help_centre(category=None):
 @app.route("/help-centre/<category>/<sub_category>")
 def guidances(category, sub_category=None):
     try:
-        category_label, sub_category_label, sub_category = _get_category_labels(
-            category, sub_category
+        category_label, sub_category_label, sub_category = category_labels(
+            "./content/help_centre/help_centre.json", category, sub_category
         )
     except Exception as e:  # pylint: disable=broad-except
         _page_not_found(e)
@@ -89,30 +71,6 @@ def guidances(category, sub_category=None):
         sub_category=sub_category,
         nav=help_centre_nav,
     )
-
-
-def _get_category_labels(selected_category, selected_sub_category):
-    with open(
-        "./content/help_centre/help_centre.json", encoding="utf-8"
-    ) as help_contents_file:
-        contents = load(help_contents_file)
-    for category in contents["categories"]:
-        if category["name"] == selected_category:
-            category_label = category["label"]
-            if selected_sub_category is None:
-                return (
-                    category_label,
-                    category["subcategories"][0]["label"],
-                    category["subcategories"][0]["name"],
-                )
-            for sub_category in category["subcategories"]:
-                if sub_category["name"] == selected_sub_category:
-                    sub_category_label = sub_category["label"]
-                    return category_label, sub_category_label, selected_sub_category
-            raise KeyError(
-                f"The sub category {selected_sub_category} was not found in the category '{selected_category}'"
-            )
-    raise KeyError(f"The category '{selected_category}' was not found")
 
 
 def _help_centre_nav(
