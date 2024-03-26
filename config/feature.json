@@ -1,7 +1,7 @@
 {
     "features": {
         "method_search" : {
-            "enabled" : true
+            "enabled" : false
         },
         "docs_integration": {
             "enabled": false,
