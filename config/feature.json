@@ -1,5 +1,7 @@
 {
     "features": {
-        "FEATURE_1": false
+        "search_feature" : {
+            "enabled" : false
+        }
     }
 }

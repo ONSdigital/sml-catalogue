@@ -22,37 +22,40 @@
     please visit the <a href="https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/" target="_blank">analysis function website<span class="ons-u-vh"> (opens in a new window)</span></a>.</p>
     {% endcall %}
 
-  </br>
-
 {% from "components/details/_macro.njk" import onsDetails %}
-{% call onsDetails({
-      "id": "collapsible-search",
-      "title": "How do I search for a method?",
-      "open": search_details_open
-}) %}
-  <div class="container">
-    <p>Search for existing methods.</p>
-    <div class="search nav-search--hidden print--hide" id="searchBar">
-      <div class="wrapper" role="search">
-        <form class="col-wrap search__form" method="post" action='{{ url_for("display_search_results") }}'>
-          <span class="ons-grid--flex ons-input_search-button">
-            <input type="text" autocomplete="off" class="ons-input ons-input--text ons-input-type__input" id="nav-search" name="search-methods" placeholder="Find a method", value="{{ query }}" required pattern="\S(.*\S)?">
-              <button type="submit" class="ons-btn ons-btn--small search__button col--md-3 col--lg-3" id="nav-search-submit" name="search-button">
-                <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Search</span>
-              </button>
-              <a href="{{ url_for('display_methods') }}">
-              <button type="button" class="ons-btn ons-btn--small ons-btn--secondary search__button col--md-3 col--lg-3" id="nav-search-submit">
-                <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Clear</span>
-              </button>
-            </a>
-          </span>
-        </form>
+
+</br>
+
+{% if search_feature %}
+  {% call onsDetails({
+        "id": "collapsible-search",
+        "title": "How do I search for a method?",
+        "open": search_details_open
+  }) %}
+    <div class="container">
+      <p>Search for existing methods.</p>
+      <div class="search nav-search--hidden print--hide" id="searchBar">
+        <div class="wrapper" role="search">
+          <form class="col-wrap search__form" method="post" action='{{ url_for("display_search_results") }}'>
+            <span class="ons-grid--flex ons-input_search-button">
+              <input type="text" autocomplete="off" class="ons-input ons-input--text ons-input-type__input" id="nav-search" name="search-methods" placeholder="Find a method", value="{{ query }}" required pattern="\S(.*\S)?">
+                <button type="submit" class="ons-btn ons-btn--small search__button col--md-3 col--lg-3" id="nav-search-submit" name="search-button">
+                  <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Search</span>
+                </button>
+                <a href="{{ url_for('display_methods') }}">
+                <button type="button" class="ons-btn ons-btn--small ons-btn--secondary search__button col--md-3 col--lg-3" id="nav-search-submit">
+                  <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Clear</span>
+                </button>
+              </a>
+            </span>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-{% endcall %}
-
+  {% endcall %}
   <br>
+{% endif %}
+
   <h2>{{
     onsStatus({
         "label": 'Methods Ready to Use',
