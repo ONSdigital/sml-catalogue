@@ -45,8 +45,8 @@ def display_search_results():
     future_methods_dir = "./content/methods/future-methods"
 
     # Display results
-    methods = appendRow(methods_dir, filter=None)
-    future_methods = appendRow(future_methods_dir, filter=None)
+    methods = appendRow(methods_dir, filter_methods=None)
+    future_methods = appendRow(future_methods_dir, filter_methods=None)
 
     data = methods + future_methods
 
@@ -68,11 +68,11 @@ def display_search_results():
     data_frame = pd.DataFrame(method_data)
 
     search_results_rows = search_partial(data_frame=data_frame, query=searchQuery)
-    filter = search_results_rows["id"].tolist()
+    filter_methods = search_results_rows["id"].tolist()
     try:
         # Append methods only if found in search results
-        methods = appendRow(methods_dir, filter=filter)
-        future_methods = appendRow(future_methods_dir, filter=filter)
+        methods = appendRow(methods_dir, filter_methods=filter_methods)
+        future_methods = appendRow(future_methods_dir, filter_methods=filter_methods)
     except OSError as e:
         _page_not_found(e)
     return render_template(
@@ -102,7 +102,7 @@ def display_methods():
     )
 
 
-def appendRow(methods_dir, filter=None):
+def appendRow(methods_dir, filter_methods=None):
     methods = []
     filtered_methods = []
     for file in listdir(methods_dir):
@@ -117,7 +117,7 @@ def appendRow(methods_dir, filter=None):
                 "language": method["method_metadata"]["Languages"],
             }
         )
-    if filter is not None:
-        filtered_methods = [method for method in methods if method["id"] in filter]
+    if filter_methods is not None:
+        filtered_methods = [method for method in methods if method["id"] in filter_methods]
         methods = filtered_methods
     return methods
