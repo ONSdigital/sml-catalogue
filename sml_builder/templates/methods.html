@@ -36,7 +36,7 @@
       <div class="wrapper" role="search">
         <form class="col-wrap search__form" method="post" action='{{ url_for("display_search_results") }}'>
           <span class="ons-grid--flex ons-input_search-button">
-            <input type="text" autocomplete="off" class="ons-input ons-input--text ons-input-type__input" id="nav-search" name="search-methods" placeholder="Find a method", value="{{ query }}" required>
+            <input type="text" autocomplete="off" class="ons-input ons-input--text ons-input-type__input" id="nav-search" name="search-methods" placeholder="Find a method", value="{{ query }}" required pattern="\S(.*\S)?">
               <button type="submit" class="ons-btn ons-btn--small search__button col--md-3 col--lg-3" id="nav-search-submit" name="search-button">
                 <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Search</span>
               </button>
@@ -102,7 +102,7 @@
   }}
 {% else %}
   <p class="ons-panel__error" id="search-alert">
-    <strong>No ready to use methods found, please enter another search term or clear the search to return to the original tables.</strong>
+    <strong>No ready to use methods found, please enter another search term.</strong>
   </p>
 {% endif %}
   <h2>{{
@@ -154,7 +154,7 @@
   }}
 {% else %}
   <p class="ons-panel__error" id="future-search-alert">
-    <strong>No future methods found, please enter another search term or clear the search to return to the original tables.</strong>
+    <strong>No future methods found, please enter another search term.</strong>
   </p>
 {% endif %}
   
