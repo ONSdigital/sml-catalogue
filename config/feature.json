@@ -1,7 +1,7 @@
 {
     "features": {
-        "search_feature" : {
-            "enabled" : false
+        "method_search" : {
+            "enabled" : true
         }
     }
 }

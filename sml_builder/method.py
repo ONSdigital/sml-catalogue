@@ -11,7 +11,7 @@ from .utils import _page_not_found, get_feature_config
 
 from .search_tool import search_partial
 
-search_feature = get_feature_config("search_feature")
+method_search = get_feature_config("method_search")
 
 @app.route("/method/<methodState>/<method>")
 def display_method_summary(method, methodState):
@@ -74,7 +74,7 @@ def display_search_results():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "methods.html", page={"rows": methods, "future_rows":future_methods}, query=searchQuery, search_details_open=True, search_feature=search_feature["enabled"]
+        "methods.html", page={"rows": methods, "future_rows":future_methods}, query=searchQuery, search_details_open=True, method_search=method_search["enabled"]
     )
 
 @app.route("/methods")
@@ -88,7 +88,7 @@ def display_methods():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "methods.html", page={"rows": methods, "future_rows": future_methods}, search=False, search_details_open=False, search_feature=search_feature["enabled"]
+        "methods.html", page={"rows": methods, "future_rows": future_methods}, search=False, search_details_open=False, method_search=method_search["enabled"]
     )
 
 
