@@ -118,6 +118,8 @@ def appendRow(methods_dir, filter_methods=None):
             }
         )
     if filter_methods is not None:
-        filtered_methods = [method for method in methods if method["id"] in filter_methods]
+        filtered_methods = [
+            method for method in methods if method["id"] in filter_methods
+        ]
         methods = filtered_methods
     return methods
