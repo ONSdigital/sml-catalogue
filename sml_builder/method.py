@@ -69,7 +69,7 @@ def display_search_results():
     search_results_rows = search_partial(data_frame=data_frame, query=searchQuery)
     filter = search_results_rows["id"].tolist()
     try:
-        # append methods only if found in search results
+        # Append methods only if found in search results
         methods = appendRow(methods_dir, filter=filter)
         future_methods = appendRow(future_methods_dir, filter=filter)
     except OSError as e:
