@@ -8,7 +8,7 @@ from sml_builder import app
 from sml_builder.cms import getContent
 from sml_builder.utils import checkEmptyList, get_feature_config
 
-from .utils import _page_not_found
+from .utils import _page_not_found, category_labels, contents_helper
 
 externallink_help_categories = [
     "report-bug",
@@ -23,7 +23,6 @@ content_management = get_feature_config("content_management")
 
 @app.route("/help-centre/index")
 def help_centre(category=None):
-    categories = []
     try:
         if content_management["enabled"]:
             contents = getContent("helpCentreStructure")["structure"]
@@ -34,25 +33,8 @@ def help_centre(category=None):
                 "./content/help_centre/help_centre.json", encoding="utf-8"
             ) as help_contents_file:
                 contents = load(help_contents_file)
-        for category in contents[  # pylint: disable=redefined-argument-from-local
-            "categories"
-        ]:
-            categories.append(
-                {
-                    "name": category["label"],
-                    "subcategories": [
-                        {
-                            "url": url_for(
-                                "guidances",
-                                category=category["name"],
-                                sub_category=sub_category["name"],
-                            ),
-                            "text": sub_category["label"],
-                        }
-                        for sub_category in category["subcategories"]
-                    ],
-                }
-            )
+            categories = contents_helper(contents, "guidances")
+
     except OSError as e:
         _page_not_found(e)
     return render_template(
@@ -64,8 +46,8 @@ def help_centre(category=None):
 @app.route("/help-centre/<category>/<sub_category>")
 def guidances(category, sub_category=None):
     try:
-        category_label, sub_category_label, sub_category = _get_category_labels(
-            category, sub_category
+        category_label, sub_category_label, sub_category = category_labels(
+            "./content/help_centre/help_centre.json", category, sub_category
         )
     except Exception as e:  # pylint: disable=broad-except
         _page_not_found(e)

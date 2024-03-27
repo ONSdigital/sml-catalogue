@@ -94,34 +94,39 @@
     }}
   <hr class="ons-u-mb-m">
 
-  <h2>GitHub resources</h2>
-
-  {{ page.additional_info | paras }}
-  {% if page.specification_link %}
-  {{
-    onsExternalLink({
-      "url": page.specification_link,
-      "linkText":"Go to " ~ page.title ~ " specification on GitHub"
-    })
-  }}
-  <br>
-  {% endif %}
-  {% if page.code_link %}
-  {{
-    onsExternalLink({
-      "url":page.code_link,
-      "linkText":"Go to " ~ page.title ~ " code on GitHub"
-    })
-  }}
-  <br>
-  {% endif %}
-  {% if page.user_documentation_link %}
-  {{
-    onsExternalLink({
-      "url":page.user_documentation_link,
-      "linkText":"Go to "~ page.title ~" user documentation on GitHub"
-    })
-  }}
-  {% endif %}
+<h2>GitHub resources</h2>
+{{ page.additional_info | paras }}
+{% if page.specification_link %}
+{{
+  onsExternalLink({
+    "url":page.specification_link,
+    "linkText":"Go to " ~ page.title ~ " specification on GitHub"
+  })
+}}
+<br>
+{% endif %}
+{% if page.code_link %}
+{{
+  onsExternalLink({
+    "url":page.code_link,
+    "linkText":"Go to " ~ page.title ~ " code on GitHub"
+  })
+}}
+<br>
+{% endif %}
+{% if page.user_documentation_link %}
+{{
+  onsExternalLink({
+    "url":page.user_documentation_link,
+    "linkText":"Go to "~ page.title ~" user documentation on GitHub"
+  })
+}}
+{% endif %}
+<br>
+{% if docs_integration_active == True %}
+    {% if page.api_reference %}
+        {%- set api_url = url_for(".api_guidances", category="api-reference", subcategory="totals-and-components") -%}
+        <a href={{ api_url }}> {{ "Go to "~ page.title ~" Api Reference "}}</a>
+    {% endif %}
 {% endif %}
 {%- endblock main -%}
