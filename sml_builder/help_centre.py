@@ -1,7 +1,7 @@
 from json import load
 
 import markdown
-from flask import abort, render_template, url_for
+from flask import render_template, url_for
 from markupsafe import Markup, escape
 
 from sml_builder import app
@@ -123,35 +123,6 @@ def guidances(category, sub_category=None):
         nav=help_centre_nav,
         cms_enabled=content_management["enabled"],
     )
-
-
-def _get_category_labels(selected_category, selected_sub_category):
-    if content_management["enabled"]:
-        contents = getContent("helpCentreStructure")["structure"]
-        if checkEmptyList(contents):
-            _page_not_found("helpCentreStructure content not found")
-    else:
-        with open(
-            "./content/help_centre/help_centre.json", encoding="utf-8"
-        ) as help_contents_file:
-            contents = load(help_contents_file)
-    for category in contents["categories"]:
-        if category["name"] == selected_category:
-            category_label = category["label"]
-            if selected_sub_category is None:
-                return (
-                    category_label,
-                    category["subcategories"][0]["label"],
-                    category["subcategories"][0]["name"],
-                )
-            for sub_category in category["subcategories"]:
-                if sub_category["name"] == selected_sub_category:
-                    sub_category_label = sub_category["label"]
-                    return category_label, sub_category_label, selected_sub_category
-            raise KeyError(
-                f"The sub category {selected_sub_category} was not found in the category '{selected_category}'"
-            )
-    raise KeyError(f"The category '{selected_category}' was not found")
 
 
 def _help_centre_nav(

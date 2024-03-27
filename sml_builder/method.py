@@ -2,7 +2,7 @@ from json import loads
 from os import listdir
 
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
-from flask import abort, render_template
+from flask import render_template
 
 from sml_builder import app
 from sml_builder.cms import getContent
@@ -17,9 +17,9 @@ content_management = get_feature_config("content_management")
 
 
 @app.route("/method/<methodState>/<method>")
-def display_method_summary(
+def display_method_summary(  # pylint: disable=inconsistent-return-statements
     method, methodState
-):  # pylint: disable=inconsistent-return-statements
+):
     if content_management["enabled"]:
         # Gets the methods for the individual method page
         getMethodsTableItems = getContent("catalogueTableOfMethods2")

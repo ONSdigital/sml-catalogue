@@ -1,5 +1,5 @@
 import markdown
-from flask import abort, render_template
+from flask import render_template
 from markupsafe import Markup, escape
 
 from sml_builder import app
