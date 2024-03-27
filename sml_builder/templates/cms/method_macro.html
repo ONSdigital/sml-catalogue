@@ -1,0 +1,135 @@
+{% macro cms_method_macro(params) %}
+<h1 class="ons-u-mt-no">Method: {{ params.name }}</h1>
+<h2> Method summary </h2>
+{{ params.description | markdown }}
+
+<h2> Contact details for this method </h2>
+  {% from "components/external-link/_macro.njk" import onsExternalLink %}
+{% if params.contact_details %}
+  {{
+      onsExternalLink({
+        "url": 'mailto:' ~ params.contact_details ,
+        "linkText": params.contact_details  
+      })
+  }}
+{% endif %}
+{% from "components/metadata/_macro.njk" import onsMetadata %}
+{% set items = [] %}
+{% if params.method_ready %}
+  {% set status = 'success' %}
+{% else %}
+  {% set status = 'pending' %}
+{% endif %}
+{% for item in params.method_metadata %}
+{% set description = params.method_metadata[item] %}
+{% do
+  items.append(
+    {
+        "term": item,
+        "descriptions": [
+            {
+                "description": description or "<em>n/a</em>"
+            }
+        ]
+    }
+  )
+%}
+{% endfor %}
+{% if params.method_ready %}
+    {% set link = params.release_link %}
+    {% set release_temp=
+      '<span class="ons-status ons-status--' + status + '">
+      <a href='+ link + ' target="_blank" rel="noopener noreferrer">
+        <span class="ons-u-vh">Release version</span>
+        ' + params.release_version + '
+        <span class="ons-u-vh">(opens in a new tab)</span>
+      </a>
+    </span>' %}
+{% else %}    
+  {% set release_temp='<span class="ons-status ons-status--' + status + '">Not Released Yet</span>' %}
+{% endif %}
+<hr class="ons-u-mb-m">
+{{
+  onsMetadata({
+    "classes": "ons-u-mb-no ",
+    "metadataLabel": "Method information",
+    "termCol": "3",
+    "descriptionCol": "9",
+    "itemsList": [
+      {
+        "term": "Author",
+        "descriptions": [
+          {
+            "description": params.author
+          }
+        ]
+      },
+      {
+        "term": "Theme",
+        "descriptions": [
+          {
+            "description": params.theme
+          }
+        ]
+      },      
+      {
+        "term": "Expert group",
+        "descriptions": [
+          {
+            "description": params.expert_group
+          }
+        ]
+      },
+      {
+        "term": "Languages",
+        "descriptions": [
+          {
+            "description": params.language
+          }
+        ]
+      },
+      {
+        "term": "Release",
+        "descriptions": [
+          {
+            "description": release_temp
+          }
+        ]
+      },
+    ]
+  })
+}}
+
+<hr class="ons-u-mb-m">
+
+<h2>GitHub resources</h2>
+
+{{ params.additional_info | paras}}
+{% if params.specification_link %}
+{{
+  onsExternalLink({
+    "url": params.specification_link,
+    "linkText":"Go to " ~ params.name ~ " specification on GitHub"
+  })
+}}
+<br>
+{% endif %}
+{% if params.code_link %}
+{{
+  onsExternalLink({
+    "url":code_link,
+    "linkText":"Go to " ~ params.name ~ " code on GitHub"
+  })
+}}
+<br>
+{% endif %}
+{% if params.user_documentation_link %}
+{{
+  onsExternalLink({
+    "url":params.user_documentation_link,
+    "linkText":"Go to "~ params.name ~" user documentation on GitHub"
+  })
+}}
+{% endif %}
+
+{% endmacro %}

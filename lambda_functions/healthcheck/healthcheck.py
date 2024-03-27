@@ -7,19 +7,22 @@ import requests
 logger = logging.getLogger()
 logger.setLevel(logging.ERROR)
 
+
 class HealthCheckException(Exception):
     """
     HealthCheckException Our custom healthcheck exception is to customise our response to the user.
 
     :param Exception: Exception message to be logged to the healthcheck lambda log group.
     :type Exception: string
-    """    
+    """
+
     def __init__(self, message):
         self.message = message
         super().__init__(self.message)
 
     def __str__(self):
-        return f'Custom Exception: {self.message}'
+        return f"Custom Exception: {self.message}"
+
 
 def failing_metric(url, env, expected_string, status_code, failure_type):
     """
@@ -36,39 +39,40 @@ def failing_metric(url, env, expected_string, status_code, failure_type):
     :type status_code: string
     :param failure_type: The failure type helps to distinguish between a response and content failure for metric collection.
     :type failure_type: string
-    """    
+    """
     # Define metric data
-    cloudwatch = boto3.client('cloudwatch')
+    cloudwatch = boto3.client("cloudwatch")
     metric_data = cloudwatch.put_metric_data(
-        MetricData = [
+        MetricData=[
             {
-                'MetricName': f'{env}-healthcheck-failures',
-                'Dimensions': [
+                "MetricName": f"{env}-healthcheck-failures",
+                "Dimensions": [
                     {
-                    'Name': 'EndpointUrl',
-                    'Value': url,
+                        "Name": "EndpointUrl",
+                        "Value": url,
                     },
                     {
-                    'Name': 'ExpectedString',
-                    'Value': expected_string,
+                        "Name": "ExpectedString",
+                        "Value": expected_string,
                     },
                     {
-                    'Name': 'ResponseStatus',
-                    'Value': str(status_code),
+                        "Name": "ResponseStatus",
+                        "Value": str(status_code),
                     },
                     {
-                    'Name': 'FailureType',
-                    'Value': failure_type,
+                        "Name": "FailureType",
+                        "Value": failure_type,
                     },
                 ],
-                'Unit': 'Count',
-                'Value': 1,
+                "Unit": "Count",
+                "Value": 1,
             },
         ],
-        Namespace = 'SML-Healthcheck.'
+        Namespace="SML-Healthcheck.",
     )
 
     print("Metric Data: ", metric_data)
+
 
 def check_web_url_health(url, env, expected_string):
     """
@@ -88,24 +92,33 @@ def check_web_url_health(url, env, expected_string):
     """
 
     try:
-        response = requests.get(url, timeout=5)  
-   
-        # If the response code is not 200 or the response text does not 
-            # contain the expected string then we log an error and fail the lambda
+        response = requests.get(url, timeout=5)
+
+        # If the response code is not 200 or the response text does not
+        # contain the expected string then we log an error and fail the lambda
         if response.status_code != 200:
             failure_type = "UnexpectedResponseCode"
-            failing_metric(url, env, expected_string, response.status_code, failure_type)
-            raise HealthCheckException(f"Status code expected to be 200 but is {response.status_code}")
-        
+            failing_metric(
+                url, env, expected_string, response.status_code, failure_type
+            )
+            raise HealthCheckException(
+                f"Status code expected to be 200 but is {response.status_code}"
+            )
+
         elif expected_string not in response.text:
-                failure_type = "UnexpectedResponseContent"
-                failing_metric(url, env, expected_string, response.status_code, failure_type)
-                raise HealthCheckException(f"Status code is {response.status_code} but expected text \'{expected_string}\' is not found.") 
-    except requests.RequestException as e:  
+            failure_type = "UnexpectedResponseContent"
+            failing_metric(
+                url, env, expected_string, response.status_code, failure_type
+            )
+            raise HealthCheckException(
+                f"Status code is {response.status_code} but expected text '{expected_string}' is not found."
+            )
+    except requests.RequestException as e:
         raise HealthCheckException(f"Request failed: {e}")
-    except Exception as e:  
+    except Exception as e:
         raise HealthCheckException(f"Unexpected error: {e}")
-    
+
+
 def lambda_handler(event, context):
     """
     lambda_handler takes variables from the event and calls the healthcheck function
@@ -123,15 +136,15 @@ def lambda_handler(event, context):
     :raises Exception: error
     """
 
-    try:  
-        check_web_url_health(url=event['url'], env=event['env'], expected_string=event['expected_string'])
-    except HealthCheckException as e:  
-        error_message = f"Health check failed - {e}"  
-        print(error_message) 
-        raise Exception(f"Lambda Error: {error_message}")  
-    except Exception as e:  
+    try:
+        check_web_url_health(
+            url=event["url"], env=event["env"], expected_string=event["expected_string"]
+        )
+    except HealthCheckException as e:
+        error_message = f"Health check failed - {e}"
+        print(error_message)
+        raise Exception(f"Lambda Error: {error_message}")
+    except Exception as e:
         error_message = f"Unexpected error - {e}"
         print(error_message)
-        raise Exception(f"Lambda Error: {error_message}")  
-
-    
+        raise Exception(f"Lambda Error: {error_message}")

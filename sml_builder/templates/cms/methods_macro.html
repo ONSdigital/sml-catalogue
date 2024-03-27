@@ -1,0 +1,111 @@
+{% from "components/status/_macro.njk" import onsStatus %}
+{% from "components/table/_macro.njk" import onsTable %}
+
+{% macro cms_methods_macro(params) %}
+<h1 class="ons-u-mt-no">{{ params.heading1 | markdown }}</h1>
+{{ params.paragraph | markdown }}
+{% from "components/details/_macro.njk" import onsDetails %}
+{{ 
+  onsDetails({
+      "id": "collapsible",
+      "title": params.detail,
+      "content": params.detail_content | markdown
+    })
+}}
+</br> 
+<h2>{{
+  onsStatus({
+      "label": 'Methods Ready to Use',
+      "type": 'success'
+  })
+}}</h2>
+<p>The following methods are released and ready to use.</p>
+{% set methodsTable = {
+  "id": "ready-table",
+  "variants": ["sortable","responsive"],
+  "tableClasses": "ons-u-mt-m",
+  "sortBy": "Sort by",
+  "ariaAsc": "ascending",
+  "ariaDesc": "descending",
+  "ths": [
+    {
+      "value": "Name"
+    },
+    {
+      "value": "Theme"
+    },
+    {
+      "value": "Expert group"
+    },
+    {
+      "value": "Languages"
+    },
+  ]
+} %}
+{% set futureMethodsTable = {
+  "id": "future-table",
+  "variants": ["sortable","responsive"],
+  "tableClasses": "ons-u-mt-m",
+  "sortBy": "Sort by",
+  "ariaAsc": "ascending",
+  "ariaDesc": "descending",
+  "ths": [
+    {
+      "value": "Name."
+    },
+    {
+      "value": "Theme."
+    },
+    {
+      "value": "Expert group."
+    },
+    {
+      "value": "Languages."
+    },
+  ]
+} %}
+{% set methodsTableRows = [] %}
+{% set futureMethodsTableRows = [] %}
+{% for method in params.methods %}
+  {% if method.method_ready %}
+    {% do methodsTableRows.append({
+      "tds": [
+        {
+            "value": '<a href="' + url_for("display_method_summary", method=method.id, methodState="ready-methods") + '">' + method.name + '</a>'
+        },
+        {"value": method.theme},
+        {"value": method.expert_group},
+        {"value": method.language},
+      ]
+    }) %}    
+  {% else %}
+    {% do futureMethodsTableRows.append({
+      "tds": [
+        {
+            "value": '<a href="' + url_for("display_method_summary", method=method.id, methodState="future-methods") + '">' + method.name + '</a>'
+        },
+        {"value": method.theme},
+        {"value": method.expert_group},
+        {"value": method.language},
+      ]
+    }) %}
+  {% endif %}
+{% endfor %}
+{% do methodsTable.update({"trs": methodsTableRows}) %}
+{% do futureMethodsTable.update({"trs": futureMethodsTableRows}) %}
+{{
+  onsTable(methodsTable)
+}}
+<h2>{{
+  onsStatus({
+      "label": 'Future Methods',
+      "type": 'pending'
+  })
+}}</h2>
+<p>The following methods have been approved for development and will be included in future releases.</p>
+{{
+  onsTable(futureMethodsTable)
+}}
+<p>These methods can be developed and extended after a formal release. ‘Code under development’ is tested and checked before it is made into a formal release. Usage of code prior to a formal release is at the user's own risk.</p>
+<p>The Statistical Methods Library will grow as more statistical methods are requested.</p>
+{% endmacro %}

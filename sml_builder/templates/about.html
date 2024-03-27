@@ -3,7 +3,12 @@
 {%- set current_path = url_for("about") -%}
 {%- set sidebarCols = 7 -%}
 {%- block mainContent %}
-            {{ page_body }}
+{% if cms_enabled %}
+    {{ content.about | markdown }}
+{% else %}
+    {{ page_body }}
+{% endif %}
+    
 {%- endblock mainContent -%}
 {%- block sidebarContent -%}
     {% from "components/related-content/_macro.njk" import onsRelatedContent %}
