@@ -1,7 +1,7 @@
 {
     "features": {
         "content_management": {
-            "enabled": true
+            "enabled": false
         },
         "docs_integration": {
             "enabled": false,

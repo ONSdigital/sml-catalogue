@@ -34,7 +34,8 @@ run_linting(){
   echo "Freezing flask"
 }
 
-
+export CDA_KEY="$CDA_KEY"
+export SPACE_ID="$SPACE_ID"
 
 echo "${SIGNING_KEY}" > signingkey.key
 gpg --import signingkey.key
