@@ -5,34 +5,90 @@ from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
 from flask import render_template
 
 from sml_builder import app
+from sml_builder.cms import getContent
+from sml_builder.utils import (
+    _page_not_found,
+    checkEmptyList,
+    checkTypeList,
+    get_feature_config,
+)
 
-from .utils import _page_not_found
+content_management = get_feature_config("content_management")
 
 
 @app.route("/method/<methodState>/<method>")
-def display_method_summary(method, methodState):
-    page_data = loads(
-        evaluate_file(f"./content/methods/{methodState}/{method}.jsonnet")
-    )
-    # Manually sorting the order of the method_metadata dictionary, the jsonnet library automatically sorts the
-    # resulting dictionary and nested dictionaries alphabetically, this lets us select the desired order when using the
-    # onsMetadata component
+def display_method_summary(  # pylint: disable=inconsistent-return-statements
+    method, methodState
+):
+    if content_management["enabled"]:
+        # Gets the methods for the individual method page
+        getMethodsTableItems = getContent("catalogueTableOfMethods2")
+        content = None
+        if checkTypeList(getMethodsTableItems):
+            for item in getMethodsTableItems:
+                if method == item["id"]:
+                    content = item
+                    return render_template(
+                        "method.html",
+                        method=content,
+                        methodState=methodState,
+                        cms_enabled=content_management["enabled"],
+                    )
 
-    sorted_order = [
-        "Author",
-        "Theme",
-        "Expert group",
-        "Languages",
-        "Release",
-    ]
-    page_data["method_metadata"] = {
-        k: page_data["method_metadata"][k] for k in sorted_order
-    }
-    return render_template("method.html", page=page_data)
+        elif method == getMethodsTableItems["id"]:
+            content = getMethodsTableItems
+            return render_template(
+                "method.html",
+                method=content,
+                methodState=methodState,
+                cms_enabled=content_management["enabled"],
+            )
+        _page_not_found("Method summary content not found")
+    else:
+        page_data = loads(
+            evaluate_file(f"./content/methods/{methodState}/{method}.jsonnet")
+        )
+        # Manually sorting the order of the method_metadata dictionary, the jsonnet library automatically sorts the
+        # resulting dictionary and nested dictionaries alphabetically, this lets us select the desired order when using the
+        # onsMetadata component
+
+        sorted_order = [
+            "Author",
+            "Theme",
+            "Expert group",
+            "Languages",
+            "Release",
+        ]
+        page_data["method_metadata"] = {
+            k: page_data["method_metadata"][k] for k in sorted_order
+        }
+        return render_template(
+            "method.html", page=page_data, cms_enabled=content_management["enabled"]
+        )
 
 
 @app.route("/methods")
 def display_methods():
+    if content_management["enabled"]:
+        # Gets the content for the methods catalogue page
+        content = getContent("methodsCatalogue")
+        # Gets the methods table items for the methods catalogue page
+        getMethodsTableItems = getContent("catalogueTableOfMethods2")
+        if checkEmptyList(getMethodsTableItems) or checkEmptyList(content):
+            _page_not_found("Methods content not found")
+        methods = []
+        if checkTypeList(getMethodsTableItems):
+            for method in getMethodsTableItems:
+                methods.append(method)
+        else:
+            methods.append(getMethodsTableItems)
+        return render_template(
+            "methods.html",
+            methods=methods,
+            content=content,
+            cms_enabled=content_management["enabled"],
+        )
+
     methods_dir = "./content/methods/ready-to-use-methods"
     future_methods_dir = "./content/methods/future-methods"
     try:
@@ -42,7 +98,9 @@ def display_methods():
     except OSError as e:
         _page_not_found(e)
     return render_template(
-        "methods.html", page={"rows": methods, "future_rows": future_methods}
+        "methods.html",
+        page={"rows": methods, "future_rows": future_methods},
+        cms_enabled=content_management["enabled"],
     )
 
 
@@ -50,7 +108,6 @@ def appendRow(methods_dir):
     methods = []
     for file in listdir(methods_dir):
         method = loads(evaluate_file(f"{methods_dir}/{file}"))
-
         methods.append(
             {
                 "id": file.split(".")[0],

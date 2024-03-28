@@ -10,6 +10,8 @@ python = "^3.10"
 frozen-flask = "^1.0"
 jsonnet = "^0.20.0"
 markdown = "^3.6"
+flask-markdown = "^0.3"
+contentful = "^2.1.1"
 python-markdown-mathjax = "1.0.4"
 python-markdown-math="^0.8"
 

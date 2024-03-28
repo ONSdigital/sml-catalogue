@@ -1,5 +1,8 @@
 {
     "features": {
+        "content_management": {
+            "enabled": false
+        },
         "docs_integration": {
             "enabled": false,
             "variables": {

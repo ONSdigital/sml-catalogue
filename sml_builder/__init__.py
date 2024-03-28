@@ -1,7 +1,11 @@
 from flask import Flask, render_template, request, url_for
+from flaskext.markdown import Markdown
 from markupsafe import Markup, escape
 
+from sml_builder.cms import getContent
+
 app = Flask(__name__)
+Markdown(app)
 
 app.jinja_env.add_extension("jinja2.ext.do")
 app.jinja_env.trim_blocks = True
@@ -23,11 +27,24 @@ import sml_builder.help_centre  # noqa: E402
 import sml_builder.method  # noqa: E402
 import sml_builder.page  # noqa: E402
 import sml_builder.utils  # noqa: F401, E402
+from sml_builder.utils import get_feature_config  # noqa: E402
+from sml_builder.utils import _page_not_found, checkEmptyList  # noqa: E402
+
+content_management = get_feature_config("content_management")
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    # Gets the content for the home page
+    if content_management["enabled"]:
+        content = getContent("heroHomePage")
+        if checkEmptyList(content):
+            _page_not_found("heroHomePage content not found")
+
+        return render_template(
+            "index.html", content=content, cms_enabled=content_management["enabled"]
+        )
+    return render_template("index.html", cms_enabled=content_management["enabled"])
 
 
 @app.errorhandler(404)
