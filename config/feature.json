@@ -3,6 +3,9 @@
         "method_search" : {
             "enabled" : false
         },
+        "content_management": {
+            "enabled": false
+        },
         "docs_integration": {
             "enabled": false,
             "variables": {
