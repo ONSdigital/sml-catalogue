@@ -2,9 +2,13 @@ import os
 
 import contentful
 
-SPACE_ID = os.environ.get("SPACE_ID")
-CDA_KEY = os.environ.get("CDA_KEY")
-client = contentful.Client(SPACE_ID, CDA_KEY)
+from sml_builder.utils import get_feature_config
+
+cms = get_feature_config("content_management")
+if cms["enabled"]:
+    SPACE_ID = os.environ.get("SPACE_ID")
+    CDA_KEY = os.environ.get("CDA_KEY")
+    client = contentful.Client(SPACE_ID, CDA_KEY)
 
 
 # Returns the content depending on the content type
