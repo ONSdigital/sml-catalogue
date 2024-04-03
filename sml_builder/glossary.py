@@ -1,3 +1,4 @@
+import re
 from json import loads
 from os import listdir
 
@@ -6,7 +7,13 @@ from flask import render_template
 
 from sml_builder import app
 
-from .utils import _page_not_found, convert_term
+from .utils import _page_not_found
+
+
+@app.template_filter("convert_name")
+def convert_term(value):
+    converted = re.sub("[^0-9a-z]+", "-", value.lower())
+    return converted
 
 
 @app.route("/resources/glossary")
