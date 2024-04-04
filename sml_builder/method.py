@@ -68,48 +68,47 @@ def display_method_summary(  # pylint: disable=inconsistent-return-statements
         )
 
 
-@app.route("/methods/search/", methods=["POST"])
+@app.route("/methods/search", methods=["POST"])
 def display_search_results():
-    if request.method == "POST":
-        data = []
-        searchQuery = request.form["search-methods"]
+    data = []
+    searchQuery = request.form["search-methods"]
 
-        methods_dir = "./content/methods/ready-to-use-methods"
-        future_methods_dir = "./content/methods/future-methods"
+    methods_dir = "./content/methods/ready-to-use-methods"
+    future_methods_dir = "./content/methods/future-methods"
 
-        # Display results
-        methods = appendRow(methods_dir, filter_methods=None)
-        future_methods = appendRow(future_methods_dir, filter_methods=None)
+    # Display results
+    methods = appendRow(methods_dir, filter_methods=None)
+    future_methods = appendRow(future_methods_dir, filter_methods=None)
 
-        data = methods + future_methods
+    data = methods + future_methods
 
-        ids = [item["id"] for item in data]
-        names = [item["title"] for item in data]
-        themes = [item["theme"] for item in data]
-        exp_groups = [item["exp_group"] for item in data]
-        languages = [item["language"] for item in data]
+    ids = [item["id"] for item in data]
+    names = [item["title"] for item in data]
+    themes = [item["theme"] for item in data]
+    exp_groups = [item["exp_group"] for item in data]
+    languages = [item["language"] for item in data]
 
-        method_data = {
-            "id": ids,
-            "Name": names,
-            "Theme": themes,
-            "Expert Group": exp_groups,
-            "Language": languages,
-        }
+    method_data = {
+        "id": ids,
+        "Name": names,
+        "Theme": themes,
+        "Expert Group": exp_groups,
+        "Language": languages,
+    }
 
-        # Creating DataFrame
-        data_frame = pd.DataFrame(method_data)
+    # Creating DataFrame
+    data_frame = pd.DataFrame(method_data)
 
-        search_results_rows = search_partial(data_frame=data_frame, query=searchQuery)
-        filter_methods = search_results_rows["id"].tolist()
-        try:
-            # Append methods only if found in search results
-            methods = appendRow(methods_dir, filter_methods=filter_methods)
-            future_methods = appendRow(
-                future_methods_dir, filter_methods=filter_methods
-            )
-        except OSError as e:
-            _page_not_found(e)
+    search_results_rows = search_partial(data_frame=data_frame, query=searchQuery)
+    filter_methods = search_results_rows["id"].tolist()
+    try:
+        # Append methods only if found in search results
+        methods = appendRow(methods_dir, filter_methods=filter_methods)
+        future_methods = appendRow(
+            future_methods_dir, filter_methods=filter_methods
+        )
+    except OSError as e:
+        _page_not_found(e)
     return render_template(
         "methods.html",
         page={"rows": methods, "future_rows": future_methods},
