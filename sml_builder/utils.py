@@ -2,6 +2,7 @@ from json import load
 
 from flask import abort, url_for
 
+
 def checkTypeList(data):
     return isinstance(data, list)
 
