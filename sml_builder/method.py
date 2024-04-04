@@ -104,9 +104,7 @@ def display_search_results():
     try:
         # Append methods only if found in search results
         methods = appendRow(methods_dir, filter_methods=filter_methods)
-        future_methods = appendRow(
-            future_methods_dir, filter_methods=filter_methods
-        )
+        future_methods = appendRow(future_methods_dir, filter_methods=filter_methods)
     except OSError as e:
         _page_not_found(e)
     return render_template(
