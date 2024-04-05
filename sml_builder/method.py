@@ -7,10 +7,14 @@ from flask import render_template, request
 
 from sml_builder import app
 from sml_builder.cms import getContent
-from sml_builder.utils import checkEmptyList, checkTypeList
+from sml_builder.utils import (
+    _page_not_found,
+    checkEmptyList,
+    checkTypeList,
+    get_feature_config,
+)
 
 from .search_tool import search_partial
-from .utils import _page_not_found, get_feature_config
 
 method_search = get_feature_config("method_search")
 search_results_info_panel = False
