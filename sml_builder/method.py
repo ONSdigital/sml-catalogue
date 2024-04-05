@@ -7,7 +7,7 @@ from flask import render_template, request
 
 from sml_builder import app
 from sml_builder.cms import getContent
-from sml_builder.utils import (
+from .utils import (
     _page_not_found,
     checkEmptyList,
     checkTypeList,
