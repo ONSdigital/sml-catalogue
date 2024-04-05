@@ -71,9 +71,9 @@ def display_method_summary(  # pylint: disable=inconsistent-return-statements
 def display_search_results():
     data = []
 
-    try:
+    if request.method == "POST":
         searchQuery = request.form["search-methods"]
-    except Exception:
+    else:
         searchQuery = ""
 
     methods_dir = "./content/methods/ready-to-use-methods"
