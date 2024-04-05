@@ -67,10 +67,14 @@ def display_method_summary(  # pylint: disable=inconsistent-return-statements
         )
 
 
-@app.route("/methods/search", methods=['GET', 'POST'])
+@app.route("/methods/search", methods=["GET", "POST"])
 def display_search_results():
     data = []
-    searchQuery = request.form["search-methods"]
+
+    try:
+        searchQuery = request.form["search-methods"]
+    except Exception:
+        searchQuery = ""
 
     methods_dir = "./content/methods/ready-to-use-methods"
     future_methods_dir = "./content/methods/future-methods"
