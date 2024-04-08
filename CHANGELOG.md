@@ -1,5 +1,16 @@
 <!--next-version-placeholder-->
 
+## v1.4.0-rc.1 (2024-04-08)
+
+### Feature
+
+* SPP-10827-integrate-CMS-with-main ([#282](https://github.com/ONSdigital/sml-catalogue/issues/282)) ([`27ccb56`](https://github.com/ONSdigital/sml-catalogue/commit/27ccb566db2f014722b979a25e35a5cc6b86451b))
+* Mkdocs initial POC with code optioning ([#236](https://github.com/ONSdigital/sml-catalogue/issues/236)) ([`4f275df`](https://github.com/ONSdigital/sml-catalogue/commit/4f275df1404a08e8b25653683f23d399dda0272d))
+
+### Fix
+
+* SPP-11063-option-cms.py ([#309](https://github.com/ONSdigital/sml-catalogue/issues/309)) ([`8989a05`](https://github.com/ONSdigital/sml-catalogue/commit/8989a05ee1b779c853ebff69a95ec217335d1b22))
+
 ## v1.3.0 (2024-03-14)
 
 
