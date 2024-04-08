@@ -76,7 +76,7 @@ Feature: About library tests
 
     Scenario: Methods catalogue page accessibility check
         Given I'm an sml portal user
-        When I navigate to "methods"
+        When I navigate to "methods/index"
         Then The title of the page is "Methods catalogue"
         And The accessibility test passes
 
