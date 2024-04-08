@@ -913,10 +913,10 @@
             "id": "ldcm7uk1vtxb"
           }
         },
-        "id": "test",
+        "id": "test1",
         "type": "ContentType",
-        "createdAt": "2024-04-08T10:04:32.816Z",
-        "updatedAt": "2024-04-08T10:04:33.152Z",
+        "createdAt": "2024-04-08T14:52:22.457Z",
+        "updatedAt": "2024-04-08T14:52:22.878Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -925,8 +925,8 @@
           }
         },
         "publishedVersion": 1,
-        "publishedAt": "2024-04-08T10:04:33.152Z",
-        "firstPublishedAt": "2024-04-08T10:04:33.152Z",
+        "publishedAt": "2024-04-08T14:52:22.878Z",
+        "firstPublishedAt": "2024-04-08T14:52:22.878Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -950,15 +950,15 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "urn": "crn:contentful:::content:spaces/ldcm7uk1vtxb/environments/dev/content_types/test"
+        "urn": "crn:contentful:::content:spaces/ldcm7uk1vtxb/environments/dev/content_types/test1"
       },
-      "displayField": "title",
-      "name": "test",
+      "displayField": "test1",
+      "name": "test1",
       "description": "",
       "fields": [
         {
-          "id": "title",
-          "name": "title",
+          "id": "test1",
+          "name": "test1",
           "type": "Symbol",
           "localized": false,
           "required": false,
@@ -1880,7 +1880,7 @@
           }
         },
         "version": 2,
-        "createdAt": "2024-04-08T10:04:33.239Z",
+        "createdAt": "2024-04-08T14:52:22.991Z",
         "createdBy": {
           "sys": {
             "id": "0RE3J0ImbZ27ZHNVtOJhsd",
@@ -1888,7 +1888,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-04-08T10:04:33.879Z",
+        "updatedAt": "2024-04-08T14:52:23.620Z",
         "updatedBy": {
           "sys": {
             "id": "0RE3J0ImbZ27ZHNVtOJhsd",
@@ -1898,7 +1898,7 @@
         },
         "contentType": {
           "sys": {
-            "id": "test",
+            "id": "test1",
             "type": "Link",
             "linkType": "ContentType"
           }
@@ -1913,7 +1913,7 @@
       },
       "controls": [
         {
-          "fieldId": "title",
+          "fieldId": "test1",
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
         }
@@ -4142,6 +4142,73 @@
         },
         "releaseVersion": {
           "en-US": "Not Released Yet"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "ldcm7uk1vtxb"
+          }
+        },
+        "id": "23iqhiMzhdbR7SzFGgFntq",
+        "type": "Entry",
+        "createdAt": "2024-04-08T15:44:35.678Z",
+        "updatedAt": "2024-04-08T15:44:40.139Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2024-04-08T15:44:40.139Z",
+        "firstPublishedAt": "2024-04-08T15:44:40.139Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "test1"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/ldcm7uk1vtxb/environments/dev/entries/23iqhiMzhdbR7SzFGgFntq"
+      },
+      "fields": {
+        "test1": {
+          "en-US": "test"
         }
       }
     }
