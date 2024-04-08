@@ -1519,11 +1519,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/methods/index/\">\nMethods catalogue\n                            </a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__link[href$=\"methods\"]"
+                        ".ons-navigation__link[href=\"/methods/index/\"]"
                     ]
                 },
                 {
@@ -1623,7 +1623,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods/index/\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2039,7 +2039,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n            <span class=\"ons-u-vh\">Release version</span>\n            v1.1.0\n            <span class=\"ons-u-vh\">(opens in a new tab)</span>\n          </a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2596,7 +2596,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods/index/\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -3242,7 +3242,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                            <a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                            <a class=\"ons-navigation__link\" href=\"/methods/index/\">\nMethods catalogue\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3260,7 +3260,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/methods/index/\">\nMethods catalogue\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -3272,7 +3272,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"methods\"]"
+                        ".ons-navigation__link[href=\"/methods/index/\"]"
                     ]
                 },
                 {
@@ -3404,7 +3404,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods/index/\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [
                         {
@@ -3476,7 +3476,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n            <span class=\"ons-u-vh\">Release version</span>\n            v1.1.0\n            <span class=\"ons-u-vh\">(opens in a new tab)</span>\n          </a>",
                     "impact": null,
                     "none": [
                         {
@@ -4070,7 +4070,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/methods/index/\">\nMethods catalogue\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -4082,7 +4082,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"methods\"]"
+                        ".ons-navigation__link[href=\"/methods/index/\"]"
                     ]
                 },
                 {
@@ -4174,7 +4174,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods/index/\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [
                         {
@@ -4226,7 +4226,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n            <span class=\"ons-u-vh\">Release version</span>\n            v1.1.0\n            <span class=\"ons-u-vh\">(opens in a new tab)</span>\n          </a>",
                     "impact": null,
                     "none": [
                         {
@@ -4537,7 +4537,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                            <a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                            <a class=\"ons-navigation__link\" href=\"/methods/index/\">\nMethods catalogue\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -4810,7 +4810,7 @@
             ]
         }
     ],
-    "timestamp": "2024-03-26T13:41:00.061Z",
+    "timestamp": "2024-04-08T08:34:28.342Z",
     "url": "http://127.0.0.1:8000/method/ready-to-use-methods/thousand-pound-correction",
     "violations": [
         {
