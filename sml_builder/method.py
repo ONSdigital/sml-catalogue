@@ -124,7 +124,7 @@ def display_search_results():
     )
 
 
-@app.route("/methods/")
+@app.route("/methods")
 def display_methods():
     if content_management["enabled"]:
         # Gets the content for the methods catalogue page
