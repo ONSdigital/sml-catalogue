@@ -1,0 +1,1 @@
+contentful merge export --source-environment-id dev --target-environment-id preprod --management-token $CLI_KEY --space-id $SPACE_ID
