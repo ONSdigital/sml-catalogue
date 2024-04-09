@@ -1,13 +1,22 @@
 #!/bin/bash
 source_environment=$1
 target_environment=$2
+
+allowed_envs='^(dev|preprod|prod)$'
+
 if  [ -z "$source_environment" ] || [ -z "$target_environment" ]; then
   echo "Usage: ./migrate.sh <source_environment> <target_environment>"
   echo " -- Example: ./migrate.sh dev preprod"
+  exit 1
+elif [ "$source_environment" == "$target_environment" ]; then
+  echo "Usage: ./migrate.sh <source_environment> <target_environment>"
+  echo " -- Source and target environments must be different"
+  exit 1
+elif [[ ! "$source_environment" =~ $allowed_envs ]] || [[ ! "$target_environment" =~ $allowed_envs ]]; then
+  echo "Usage: ./migrate.sh <source_environment> <target_environment>"
   echo " -- Environment must be one of: dev, preprod, prod"
   exit 1
 fi
-
 
 # migrate content types first
 contentful merge export --te $target_environment --se $source_environment --management-token $CLI_KEY --output-file ./contentful-data/migrations/${source_environment}-export.js
@@ -22,6 +31,7 @@ timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
 migration_log="${timestamp}: Migrated content from $source_environment to $target_environment"
 echo $migration_log
 echo $migration_log >> ./contentful-data/migration-log.txt
+
 #  TODO: create a backup to allow rollbacks
 #  TODO: restructure to account for content deletion
 #  TODO: check that the input env is one of dev, preprod, prod
