@@ -24,5 +24,4 @@ echo $migration_log
 echo $migration_log >> ./contentful-data/migration-log.txt
 #  TODO: create a backup to allow rollbacks
 #  TODO: restructure to account for content deletion
-#  TODO: add a log to track migrations
 #  TODO: check that the input env is one of dev, preprod, prod
