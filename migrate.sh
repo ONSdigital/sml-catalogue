@@ -19,6 +19,5 @@ contentful space export --management-token $CLI_KEY --export-dir ./contentful-ex
 contentful space import --management-token $CLI_KEY --environment-id $target_environment --content-file contentful-export/${source_environment}-export.json
 
 #  TODO: create a backup to allow rollbacks
-#  TODO: add variables to migrate.sh to allow export to occur between both dev-preprod and preprod-prod
 #  TODO: restructure to account for content deletion
 #  TODO: add a log to track migrations
