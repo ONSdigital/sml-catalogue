@@ -1,4 +1,5 @@
 from json import load
+import json
 
 from flask import abort, url_for
 
@@ -23,6 +24,24 @@ def get_feature_config(feature_name: str):
 
     try:
         return features[feature_name]
+    except KeyError as e:
+        raise KeyError(f"Feature '{feature_name}' not found in features.") from e
+    
+# For use with code optioning. This function reads the state of the specified feature from the feature.json file and updates it.
+def update_feature_config(feature_name: str, feature_value: bool):
+    try:
+        # reads data
+        with open("config/feature.json", "r", encoding="utf-8") as features_file:
+            data = json.load(features_file)
+            print(data)
+
+        # updates data with new user
+        data["features"][feature_name]["enabled"] = feature_value
+
+        # overwrite the json file with new data
+        with open("config/feature.json", "w", encoding="utf-8") as features_file:
+            json.dump(data, features_file, indent=4)
+
     except KeyError as e:
         raise KeyError(f"Feature '{feature_name}' not found in features.") from e
 
