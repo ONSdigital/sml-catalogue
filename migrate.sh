@@ -18,6 +18,15 @@ elif [[ ! "$source_environment" =~ $allowed_envs ]] || [[ ! "$target_environment
   exit 1
 fi
 
+
+# need to figure out what order to migrate content types / entries
+# depends on whether content types are deleted or not.
+# if no deletions, then migrate content types first, then entries
+# if deletions, then ...
+
+# deleting content does not delete the respective content in another env when using migrate.sh
+# deleting the content model works as expected as long as there are no entries in the content model in the target
+
 # migrate content types first
 contentful merge export --te $target_environment --se $source_environment --management-token $CLI_KEY --output-file ./contentful-data/migrations/${source_environment}-export.js
 contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/migrations/${source_environment}-export.js
@@ -34,3 +43,4 @@ echo $migration_log >> ./contentful-data/migration-log.txt
 
 #  TODO: create a backup to allow rollbacks
 #  TODO: restructure to account for content deletion
+#  TODO: add error handling, quit if any command fails (possibly rollback)
