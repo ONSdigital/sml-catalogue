@@ -1,4 +1,3 @@
-
 #!/bin/bash
 source_environment=$1
 target_environment=$2
@@ -19,10 +18,10 @@ contentful space export --management-token $CLI_KEY --export-dir ./contentful-da
 contentful space import --management-token $CLI_KEY --environment-id $target_environment --content-file ./contentful-data/content-exports/${source_environment}-export.json
 
 # log the migration
-echo "Migrated content from $source_environment to $target_environment"
-
 timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
-echo "${timestamp}: Migrated content from $source_environment to $target_environment" > ./contentful-data/migration-log.txt
+migration_log="${timestamp}: Migrated content from $source_environment to $target_environment"
+echo $migration_log
+echo $migration_log >> ./contentful-data/migration-log.txt
 #  TODO: create a backup to allow rollbacks
 #  TODO: restructure to account for content deletion
 #  TODO: add a log to track migrations
