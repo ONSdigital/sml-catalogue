@@ -1,22 +1,42 @@
 #!/bin/bash
 set -eo pipefail
 
-source_environment=$1
-target_environment=$2
+while getopts s:t:r opt; do
+  case "${opt}" in
+    s)
+      source_environment=${OPTARG}
+      ;;
+    t)
+      target_environment=${OPTARG}
+      ;;
+    r)
+      echo "rollback requested"
+      ;;
+    ?)
+      echo "Invalid option: -${OPTARG}."
+      exit 1
+      ;;
+  esac
+done
 
 allowed_envs='^(dev|preprod|prod)$'
 
 if  [ -z "$source_environment" ] || [ -z "$target_environment" ]; then
-  echo "Usage: ./migrate.sh <source_environment> <target_environment>"
-  echo " -- Example: ./migrate.sh dev preprod"
+  echo "Usage: ./migrate.sh -s <source_environment> -t <target_environment> [-r]"
+  echo " -- Use the flag -r to initiate a rollback"
+  echo " -- Example: ./migrate.sh -s dev -t preprod"
   exit 1
 elif [ "$source_environment" == "$target_environment" ]; then
-  echo "Usage: ./migrate.sh <source_environment> <target_environment>"
+  echo "Usage: ./migrate.sh -s <source_environment> -t <target_environment> [-r]"
+  echo " -- Use the flag -r to initiate a rollback"
   echo " -- Source and target environments must be different"
+
   exit 1
 elif [[ ! "$source_environment" =~ $allowed_envs ]] || [[ ! "$target_environment" =~ $allowed_envs ]]; then
-  echo "Usage: ./migrate.sh <source_environment> <target_environment>"
+  echo "Usage: ./migrate.sh -s <source_environment> -t <target_environment> [-r]"
+  echo " -- Use the flag -r to initiate a rollback"
   echo " -- Environment must be one of: dev, preprod, prod"
+
   exit 1
 fi
 
@@ -35,7 +55,6 @@ contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --en
 
 # then merge entries
 contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/content-exports --environment-id $source_environment --content-file ${source_environment}-export.json
-
 contentful space import --management-token $CLI_KEY --environment-id $target_environment --content-file ./contentful-data/content-exports/${source_environment}-export.json
 
 # log the migration
