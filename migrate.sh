@@ -1,4 +1,6 @@
 #!/bin/bash
+set -eo pipefail
+
 source_environment=$1
 target_environment=$2
 
@@ -33,6 +35,7 @@ contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --en
 
 # then merge entries
 contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/content-exports --environment-id $source_environment --content-file ${source_environment}-export.json
+
 contentful space import --management-token $CLI_KEY --environment-id $target_environment --content-file ./contentful-data/content-exports/${source_environment}-export.json
 
 # log the migration
@@ -43,4 +46,5 @@ echo $migration_log >> ./contentful-data/migration-log.txt
 
 #  TODO: create a backup to allow rollbacks
 #  TODO: restructure to account for content deletion
-#  TODO: add error handling, quit if any command fails (possibly rollback)
+#  TODO: (maybe) rollback on failure
+#  TODO: log error on failure
