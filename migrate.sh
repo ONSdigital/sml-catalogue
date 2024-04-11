@@ -49,6 +49,12 @@ fi
 # deleting content does not delete the respective content in another env when using migrate.sh
 # deleting the content model works as expected as long as there are no entries in the content model in the target
 
+# create backup files
+# store all the content entries and types in the target environment
+contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/rollbacks --environment-id $target_environment --content-file ${target_environment}-export.json
+# store the migration that would be required to revert the target environment to its original state
+contentful merge export --te $source_environment --se $target_environment --management-token $CLI_KEY --output-file ./contentful-data/rollbacks/${target_environment}-export.js
+
 # migrate content types first
 contentful merge export --te $target_environment --se $source_environment --management-token $CLI_KEY --output-file ./contentful-data/migrations/${source_environment}-export.js
 contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/migrations/${source_environment}-export.js
