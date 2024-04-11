@@ -903,6 +903,71 @@
           "omitted": false
         }
       ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "ldcm7uk1vtxb"
+          }
+        },
+        "id": "test",
+        "type": "ContentType",
+        "createdAt": "2024-04-11T15:51:34.526Z",
+        "updatedAt": "2024-04-11T15:51:34.927Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-04-11T15:51:34.927Z",
+        "firstPublishedAt": "2024-04-11T15:51:34.927Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/ldcm7uk1vtxb/environments/dev/content_types/test"
+      },
+      "displayField": "test",
+      "name": "test",
+      "description": "",
+      "fields": [
+        {
+          "id": "test",
+          "name": "test",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
     }
   ],
   "tags": [
@@ -1799,6 +1864,57 @@
         {
           "fieldId": "mainContent",
           "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "ldcm7uk1vtxb",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2024-04-11T15:51:35.031Z",
+        "createdBy": {
+          "sys": {
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2024-04-11T15:51:35.632Z",
+        "updatedBy": {
+          "sys": {
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "test",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "test",
+          "widgetId": "singleLine",
           "widgetNamespace": "builtin"
         }
       ]
@@ -4026,6 +4142,73 @@
         },
         "releaseVersion": {
           "en-US": "Not Released Yet"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "ldcm7uk1vtxb"
+          }
+        },
+        "id": "4Z9OV1Ag7n5XEdJeG5uC1y",
+        "type": "Entry",
+        "createdAt": "2024-04-11T15:51:39.077Z",
+        "updatedAt": "2024-04-11T15:51:45.197Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2024-04-11T15:51:45.197Z",
+        "firstPublishedAt": "2024-04-11T15:51:45.197Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "test"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/ldcm7uk1vtxb/environments/dev/entries/4Z9OV1Ag7n5XEdJeG5uC1y"
+      },
+      "fields": {
+        "test": {
+          "en-US": "test title"
         }
       }
     }
