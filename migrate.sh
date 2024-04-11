@@ -69,7 +69,7 @@ migration_log="${timestamp}: Migrated content from $source_environment to $targe
 echo $migration_log
 echo $migration_log >> ./contentful-data/migration-log.txt
 
-#  TODO: create a backup to allow rollbacks
 #  TODO: restructure to account for content deletion
 #  TODO: (maybe) rollback on failure
 #  TODO: log error on failure
+#  TODO: attempt a rollback when -r is triggered
