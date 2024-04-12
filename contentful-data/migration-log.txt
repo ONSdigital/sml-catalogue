@@ -13,3 +13,24 @@
 2024.04.11-16.36.15: Migrated content from dev to preprod
 2024.04.11-16.44.16: Migrated content from dev to preprod
 2024.04.11-16.53.43: Migrated content from dev to preprod
+2024.04.12-10.44.29: Migrated content from dev to preprod
+2024.04.12-14.56.28: Migrated content from dev to preprod
+2024.04.12-15.52.15: Error raised while migrating content from dev to preprod
+2024.04.12-15.59.57: Error raised while migrating content from dev to preprod
+2024.04.12-16.03.01: Error raised while migrating content from dev to preprod
+2024.04.12-16.06.13: Error raised while migrating content from dev to preprod
+2024.04.12-16.07.34: Error raised while migrating content from dev to preprod
+Failing command: contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/rollbacks/${target_environment}-export.js \n Exit code: 1
+2024.04.12-16.09.07: Error raised while migrating content from dev to preprod 
+ Failing command: contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/rollbacks/${target_environment}-export.js 
+ Exit code: 1
+2024.04.12-16.11.56: Error raised while migrating content from dev to preprod 
+ - Failing command: contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/rollbacks/${target_environment}-export.js 
+ - Exit code: 1
+2024.04.12-16.17.07: Error raised while migrating content from dev to preprod 
+ - Failing command: contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/rollbacks/${target_environment}-export.js 
+ - Exit code: 1
+2024.04.12-16.18.50: Error raised while migrating content from dev to preprod 
+ - Failing command: contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/rollbacks/${target_environment}-export.js 
+ - Exit code: 1
+2024.04.12-16.20.01: Performed rollback on environment preprod
