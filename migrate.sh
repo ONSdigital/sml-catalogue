@@ -56,6 +56,8 @@ err_handler() {
   migration_log="${timestamp}: Error raised while migrating content from $source_environment to $target_environment \n - Failing command: ${1} \n - Exit code: ${2}"
   echo -e $migration_log
   echo -e $migration_log >> ./contentful-data/migration-log.txt
+  echo "Consider triggering a rollback with the -r flag:"
+  echo "./migrate.sh -s $source_environment -t $target_environment -r"
   exit $2
 }
 
