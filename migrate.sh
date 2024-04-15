@@ -1,4 +1,5 @@
 #!/bin/bash
+# Usage: ./migrate.sh -s <source_environment> -t <target_environment> [-r]
 set -eo pipefail
 
 while getopts s:t:r opt; do
@@ -38,17 +39,6 @@ elif [[ ! "$source_environment" =~ $allowed_envs ]] || [[ ! "$target_environment
   echo " -- Environment must be one of: dev, preprod, prod"
   exit 1
 fi
-
-
-# need to figure out what order to migrate content types / entries
-# depends on whether content types are deleted or not.
-# if no deletions, then migrate content types first, then entries
-# if deletions, then ...
-
-# deleting content does not delete the respective content in another env when using migrate.sh
-# deleting the content model works as expected as long as there are no entries in the content model in the target
-
-# can skip migration confirmation with the -y flag
 
 err_handler() {
   # log the error
