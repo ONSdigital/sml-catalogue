@@ -1,5 +1,9 @@
 #!/bin/bash
 # Usage: ./migrate.sh -s <source_environment> -t <target_environment> [-r]
+# -- Use the flag -r to initiate a rollback
+# -- Example: ./migrate.sh -s dev -t preprod
+# Used to migrate content between environments in Contentful (not to be confused with Concourse).
+
 set -eo pipefail
 
 while getopts s:t:r opt; do
