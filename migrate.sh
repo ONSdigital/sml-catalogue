@@ -93,6 +93,3 @@ else
   echo $migration_log
   echo $migration_log >> ./contentful-data/migration-log.txt
 fi
-
-#  TODO: delete entries using the sdk
-#  TODO: (maybe) rollback on failure
