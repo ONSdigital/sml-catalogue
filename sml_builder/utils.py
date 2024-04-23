@@ -27,6 +27,7 @@ def get_feature_config(feature_name: str):
     except KeyError as e:
         raise KeyError(f"Feature '{feature_name}' not found in features.") from e
     
+    
 # For use with code optioning. This function reads the state of the specified feature from the feature.json file and updates it.
 def update_feature_config(feature_name: str, feature_value: bool):
     try:
