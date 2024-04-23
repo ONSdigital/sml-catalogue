@@ -14,7 +14,7 @@ from sml_builder.utils import (
     get_feature_config,
 )
 
-from .search_tool import search_partial
+from sml_builder.search_tool import search_partial
 
 method_search = get_feature_config("method_search")
 search_results_info_panel = False
