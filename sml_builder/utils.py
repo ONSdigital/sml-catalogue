@@ -1,5 +1,5 @@
-from json import load
 import json
+from json import load
 
 from flask import abort, url_for
 
