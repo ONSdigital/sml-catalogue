@@ -46,16 +46,18 @@ def navigate_to_url(context):
 
 @then('I see the dropdown content "{text}"')
 def check_dropdown_content(context, text):
-    dropdown_content = WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.ID, value="collapsible-content")
-    ).get_attribute("innerText")
-    dropdown_content = dropdown_content.replace(
-        " (opens in a new window)", ""
-    ).replace("\n", "").rstrip().lstrip()
-    try:
-        assert dropdown_content == text
-    except AssertionError:
-        raise AssertionError(f"Expected: {text} but got: {dropdown_content}")
+    dropdown_content = (
+        WebDriverWait(driver, timeout=timeout)
+        .until(lambda d: d.find_element(By.ID, value="collapsible-content"))
+        .get_attribute("innerText")
+    )
+    dropdown_content = (
+        dropdown_content.replace(" (opens in a new window)", "")
+        .replace("\n", "")
+        .rstrip()
+        .lstrip()
+    )
+    assert dropdown_content == text
 
 
 def extractMethodTableContent(context, table):
