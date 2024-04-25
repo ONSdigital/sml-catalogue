@@ -51,9 +51,8 @@ def check_dropdown_content(context, text):
         .until(lambda d: d.find_element(By.ID, value="collapsible-content"))
         .get_attribute("innerText")
     )
-    dropdown_content = (
-        dropdown_content.replace("(opens in a new window)", "")
-        .replace("\n", "")
+    dropdown_content = dropdown_content.replace("(opens in a new window)", "").replace(
+        "\n", ""
     )
     assert dropdown_content == text
 
