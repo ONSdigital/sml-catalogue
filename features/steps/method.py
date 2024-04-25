@@ -52,10 +52,8 @@ def check_dropdown_content(context, text):
         .get_attribute("innerText")
     )
     dropdown_content = (
-        dropdown_content.replace(" (opens in a new window)", "")
+        dropdown_content.replace("(opens in a new window)", "")
         .replace("\n", "")
-        .rstrip()
-        .lstrip()
     )
     assert dropdown_content == text
 
