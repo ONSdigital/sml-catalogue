@@ -48,12 +48,18 @@ def check_method_has_github_resources(context, method_name):
     WebDriverWait(driver, timeout=timeout).until(
         lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=method_spec_link_text)
     )
-    WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=code_link_text)
-    )
+
     WebDriverWait(driver, timeout=timeout).until(
         lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=user_docs_link_text)
     )
+
+    link_for_code_repo = WebDriverWait(driver, timeout=timeout).until(
+        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=code_link_text)
+    )
+
+    url_for_code_repo_href = link_for_code_repo.get_attribute("href")
+
+    assert url_for_code_repo_href.endswith(".py")
 
 
 @then("The {metaDataField} of the method is {metaDataValue}")

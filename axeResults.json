@@ -134,21 +134,6 @@
             ]
         },
         {
-            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
-            "help": "Images must have alternate text",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/image-alt?application=axeAPI",
-            "id": "image-alt",
-            "impact": null,
-            "nodes": [],
-            "tags": [
-                "cat.text-alternatives",
-                "wcag2a",
-                "wcag111",
-                "section508",
-                "section508.22.a"
-            ]
-        },
-        {
             "description": "Ensures <input type=\"image\"> elements have alternate text",
             "help": "Image buttons must have alternate text",
             "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/input-image-alt?application=axeAPI",
@@ -881,31 +866,6 @@
                         }
                     ],
                     "any": [],
-                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-alt\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "svg[aria-labelledby=\"ons-logo-en-alt\"]"
-                    ]
-                },
-                {
-                    "all": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr-value",
-                            "impact": "critical",
-                            "message": "ARIA attribute values are valid",
-                            "relatedNodes": []
-                        },
-                        {
-                            "data": null,
-                            "id": "aria-errormessage",
-                            "impact": "critical",
-                            "message": "Uses a supported aria-errormessage technique",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "any": [],
                     "html": "<nav class=\"ons-navigation ons-navigation--main ons-js-navigation\" id=\"main-navigation\" aria-label=\"Main menu\" data-analytics=\"header-navigation\">",
                     "impact": null,
                     "none": [],
@@ -985,7 +945,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        "svg[aria-labelledby=\"ons-logo-en-footer-alt\"]"
+                        ".ons-icon--logo"
                     ]
                 }
             ],
@@ -1031,24 +991,6 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-alt\">",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "svg[aria-labelledby=\"ons-logo-en-alt\"]"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": null,
-                            "id": "aria-valid-attr",
-                            "impact": "critical",
-                            "message": "ARIA attribute name are valid",
-                            "relatedNodes": []
-                        }
-                    ],
                     "html": "<nav class=\"ons-navigation ons-navigation--main ons-js-navigation\" id=\"main-navigation\" aria-label=\"Main menu\" data-analytics=\"header-navigation\">",
                     "impact": null,
                     "none": [],
@@ -1107,7 +1049,7 @@
                     "impact": null,
                     "none": [],
                     "target": [
-                        "svg[aria-labelledby=\"ons-logo-en-footer-alt\"]"
+                        ".ons-icon--logo"
                     ]
                 }
             ],
@@ -2039,7 +1981,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n            <span class=\"ons-u-vh\">Release version</span>\n            v1.1.0\n            <span class=\"ons-u-vh\">(opens in a new tab)</span>\n          </a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2621,42 +2563,6 @@
                     "all": [],
                     "any": [
                         {
-                            "data": "ons-logo-en-alt",
-                            "id": "duplicate-id-aria",
-                            "impact": "critical",
-                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<title id=\"ons-logo-en-alt\">Office for National Statistics logo</title>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#ons-logo-en-alt"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": "ons-logo-stacked-en-alt",
-                            "id": "duplicate-id-aria",
-                            "impact": "critical",
-                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<title id=\"ons-logo-stacked-en-alt\">Office for National Statistics logo</title>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#ons-logo-stacked-en-alt"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
                             "data": "ons-logo-en-footer-alt",
                             "id": "duplicate-id-aria",
                             "impact": "critical",
@@ -3032,6 +2938,40 @@
                 "cat.language",
                 "wcag2a",
                 "wcag311"
+            ]
+        },
+        {
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/image-alt?application=axeAPI",
+            "id": "image-alt",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-alt",
+                            "impact": "critical",
+                            "message": "Element has an alt attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<img class=\"logo\" src=\"https://cdn.ons.gov.uk/assets/images/ons-logo/v2/ons-logo.svg\" height=\"150\" width=\"250\" alt=\"Office for National Statistics logo\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-header__org-logo--large > img"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a"
             ]
         },
         {
@@ -3476,7 +3416,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n            <span class=\"ons-u-vh\">Release version</span>\n            v1.1.0\n            <span class=\"ons-u-vh\">(opens in a new tab)</span>\n          </a>",
                     "impact": null,
                     "none": [
                         {
@@ -4226,7 +4166,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n            <span class=\"ons-u-vh\">Release version</span>\n            v1.1.0\n            <span class=\"ons-u-vh\">(opens in a new tab)</span>\n          </a>",
                     "impact": null,
                     "none": [
                         {
@@ -4810,7 +4750,7 @@
             ]
         }
     ],
-    "timestamp": "2024-03-12T09:49:24.323Z",
+    "timestamp": "2024-04-29T15:05:21.624Z",
     "url": "http://127.0.0.1:8000/method/ready-to-use-methods/thousand-pound-correction",
     "violations": [
         {
