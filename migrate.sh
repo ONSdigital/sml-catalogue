@@ -6,6 +6,10 @@
 
 set -eo pipefail
 
+GREEN="\033[32m"
+RED="\033[31m"
+NC="\033[0m"
+
 while getopts s:t:r opt; do
   case "${opt}" in
     s)
@@ -16,7 +20,6 @@ while getopts s:t:r opt; do
       ;;
     r)
       rollback_requested=true
-      echo "Performing rollback..."
       ;;
     ?)
       echo "Invalid option: -${OPTARG}."
@@ -44,6 +47,8 @@ elif [[ ! "$source_environment" =~ $allowed_envs ]] || [[ ! "$target_environment
   exit 1
 fi
 
+
+
 err_handler() {
   # log the error
   timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
@@ -58,6 +63,14 @@ err_handler() {
 trap 'err_handler "$BASH_COMMAND" "$?"' ERR
 
 if [ -z "$rollback_requested" ]; then
+  # Confirmation step
+  read -p "Are you sure you want to migrate content from $source_environment to $target_environment? (y/n): " confirm
+  if [[ $confirm != [yY] ]]; then
+    echo -e "${RED}Migration cancelled.${NC}"
+    exit 0
+  else
+    echo -e "${GREEN}Proceeding with migration.${NC}"
+  fi
   echo "Migrating content from $source_environment to $target_environment"
   # create backup files
   # store all the content entries and types in the target environment
@@ -80,6 +93,14 @@ if [ -z "$rollback_requested" ]; then
   echo $migration_log >> ./contentful-data/migration-log.txt
 
 else
+  # Confirmation step
+  read -p "Are you sure you want to rollback content in $target_environment? (y/n): " confirm
+  if [[ $confirm != [yY] ]]; then
+    echo -e "${RED}Rollback cancelled.${NC}"
+    exit 0
+  else
+    echo -e "${GREEN}Proceeding with rollback.${NC}"
+  fi
   echo "Rolling back content in $target_environment"
   contentful space import --management-token $CLI_KEY --environment-id $target_environment --content-file ./contentful-data/rollbacks/${target_environment}-export.json
   contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/rollbacks/${target_environment}-export.js
