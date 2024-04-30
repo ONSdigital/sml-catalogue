@@ -36,7 +36,7 @@ def check_method_summary_title(context, title):
 
 
 # This test will check if the github resources are present.
-# If they cannot be found the test will fail with a timeout error so asserts are not needed here.
+# Testing of links without asserts will fail due to a timeout.
 @then("The {method_name} method has the expected github resources")
 def check_method_has_github_resources(context, method_name):
     method_name = method_name.strip('"')
