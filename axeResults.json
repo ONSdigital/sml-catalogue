@@ -1461,11 +1461,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/methods/index\">\nMethods catalogue\n                            </a>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        ".ons-navigation__link[href$=\"methods\"]"
+                        ".ons-navigation__link[href=\"/methods/index\"]"
                     ]
                 },
                 {
@@ -1565,7 +1565,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods/index\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2538,7 +2538,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods/index\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -3182,7 +3182,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                            <a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                            <a class=\"ons-navigation__link\" href=\"/methods/index\">\nMethods catalogue\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [
                         {
@@ -3200,7 +3200,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/methods/index\">\nMethods catalogue\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -3212,7 +3212,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"methods\"]"
+                        ".ons-navigation__link[href=\"/methods/index\"]"
                     ]
                 },
                 {
@@ -3344,7 +3344,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods/index\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [
                         {
@@ -4010,7 +4010,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>",
+                    "html": "<a class=\"ons-navigation__link\" href=\"/methods/index\">\nMethods catalogue\n                            </a>",
                     "impact": null,
                     "none": [
                         {
@@ -4022,7 +4022,7 @@
                         }
                     ],
                     "target": [
-                        ".ons-navigation__link[href$=\"methods\"]"
+                        ".ons-navigation__link[href=\"/methods/index\"]"
                     ]
                 },
                 {
@@ -4114,7 +4114,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods\" id=\"back\">Back</a>",
+                    "html": "<a class=\"ons-breadcrumbs__link\" href=\"/methods/index\" id=\"back\">Back</a>",
                     "impact": null,
                     "none": [
                         {
@@ -4477,7 +4477,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                            <a class=\"ons-navigation__link\" href=\"/methods\">\nMethods catalogue\n                            </a>\n                        </li>",
+                    "html": "<li class=\"ons-navigation__item  ons-navigation__item--active\">\n                            <a class=\"ons-navigation__link\" href=\"/methods/index\">\nMethods catalogue\n                            </a>\n                        </li>",
                     "impact": null,
                     "none": [],
                     "target": [

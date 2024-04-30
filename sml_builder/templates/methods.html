@@ -31,7 +31,46 @@
       please visit the <a href="https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/" target="_blank">analysis function website<span class="ons-u-vh"> (opens in a new window)</span></a>.</p>
       {% endcall %}
 
-    </br> 
+{% from "components/details/_macro.njk" import onsDetails %}
+
+</br>
+
+{% if method_search %}
+  <div class="container" id="searchBar">
+    <div class="ons-field" role="search">
+      <form class="col-wrap search__form" method="post" action='{{ url_for("display_search_results") }}'>
+      <label class="ons-label ons-u-pb-xxs ons-u-mb-no" for="search-field">Search for existing methods.</label>
+      <span class="ons-grid--flex  ons-input_search-button">
+        <input type="search" id="search-field" class="ons-input ons-input--text ons-input-type__input ons-search__input"  id="nav-search" name="search-methods" placeholder="Find a method", value="{{ query }}" required pattern="\S(.*\S)?"/>
+        <button type="submit" class="ons-btn ons-search__btn ons-btn--small" alt="Search">
+          <span class="ons-btn__inner"><svg class="ons-icon" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true" fill="currentColor">
+              <path
+                d="M11.86 10.23 8.62 6.99a4.63 4.63 0 1 0-6.34 1.64 4.55 4.55 0 0 0 2.36.64 4.65 4.65 0 0 0 2.33-.65l3.24 3.23a.46.46 0 0 0 .65 0l1-1a.48.48 0 0 0 0-.62Zm-5-3.32a3.28 3.28 0 0 1-2.31.93 3.22 3.22 0 1 1 2.35-.93Z" />
+            </svg><span class="ons-btn__text ons-u-vh@xxs@s"><span class="ons-u-vh">Search</span></span>
+          </span>
+        </button>
+        <a href="{{ url_for('display_methods') }}">
+        <button type="button" class="ons-btn ons-btn--small ons-btn--secondary search__button col--md-3 col--lg-3" id="nav-search-submit">
+          <span class="ons-btn__inner"><span class="ons-btn__text visuallyhidden">Clear</span>
+        </button>
+        </a>
+      </span>
+    </form>
+    </div>
+  </div>
+  <br>
+  {% if search_results_info_panel %}
+    {% from "components/panel/_macro.njk" import onsPanel %}
+    {{
+        onsPanel({
+            "body": '<p>Your search results (if found) are shown in the tables below.</p>'
+        })
+    }}
+    <br>
+  {% endif %}
+{% endif %}
+
   <h2>{{
     onsStatus({
         "label": 'Methods Ready to Use',
@@ -39,6 +78,8 @@
     })
   }}</h2>
   <p>The following methods are released and ready to use</p>
+
+{% if page.rows %}
   {% set methodsTable = {
     "id": "ready-table",
     "variants": ["sortable","responsive"],
@@ -78,7 +119,11 @@
   {{
     onsTable(methodsTable)
   }}
-
+{% else %}
+  <p class="ons-panel__error" id="search-alert">
+    <strong>No methods found under Methods Ready to Use, please try another search term</strong>
+  </p>
+{% endif %}
   <h2>{{
     onsStatus({
         "label": 'Future Methods',
@@ -86,6 +131,8 @@
     })
   }}</h2>
   <p>The following methods have been approved for development and will be included in future releases.</p>
+
+{% if page.future_rows %}
   {% set futureMethodsTable = {
     "id": "future-table",
     "variants": ["sortable","responsive"],
@@ -125,12 +172,17 @@
   {{
     onsTable(futureMethodsTable)
   }}
-  <p>These methods can be developed and extended after a formal release. ‘Code under development’ is tested and checked before it is made into a formal release. Usage of code prior to a formal release is at the user's own risk.</p>
-  <p>The Statistical Methods Library will grow as more statistical methods are requested.</p>
-
+{% else %}
+  <p class="ons-panel__error" id="future-search-alert">
+    <strong>No methods found under Future Methods, please try another search term.</strong>
+  </p>
 {% endif %}
+  
 
-{% endblock main -%}
+<p>These methods can be developed and extended after a formal release. ‘Code under development’ is tested and checked before it is made into a formal release. Usage of code prior to a formal release is at the user's own risk.</p>
+<p>The Statistical Methods Library will grow as more statistical methods are requested.</p>
+{% endif %}
+{%- endblock main -%}
 
 {%- block scripts -%}
     <script type=text/javascript src="{{ url_for('static',filename='js/methods_catalogue.js') }}"></script>

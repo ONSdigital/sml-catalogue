@@ -32,7 +32,7 @@ def lambda_handler(event, context):
     alert_message = {
         "Summary": f"The website at {url} is unreachable. Healthcheck failure.",
         "Alarm": "Route53 Health Check Failure.",
-        "Description": f"Website is unreachable or not returning the expected response. Check Amazon Cloudwatch Alarms \'{alarm_name}\' and Healthcheck Lambda \'{lambda_name}\'.", # fmt: skip # noqa: E501
+        "Description": f"Website is unreachable or not returning the expected response. Check Amazon Cloudwatch Alarms \'{alarm_name}\' and Healthcheck Lambda \'{lambda_name}\'.",  # fmt: skip # noqa: E501
     }
 
     try:
