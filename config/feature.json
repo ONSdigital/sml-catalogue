@@ -1,5 +1,8 @@
 {
     "features": {
+        "method_search" : {
+            "enabled" : false
+        },
         "content_management": {
             "enabled": false
         },

@@ -31,7 +31,7 @@ def check_methods_catalogue_title(context, title):
 
 @given("I am on the methods catalogue page")
 def auth_user(context):
-    driver.get(f'{context.config.userdata.get("host")}methods')
+    driver.get(f'{context.config.userdata.get("host")}methods/index')
 
 
 @when("I click on the collapsible drop down")
