@@ -56,7 +56,8 @@ err_handler() {
 trap 'err_handler "$BASH_COMMAND" "$?"' ERR
 
 # Confirmation step
-read -p "Are you sure you want to migrate content from $source_environment to $target_environment? (y/n): " confirm
+echo -e "You are about to migrate content from ${GREEN}$source_environment${NC} to ${GREEN}$target_environment${NC}."
+read -p "Are you sure you want to proceed? (y/n): " confirm
 if [[ $confirm != [yY] ]]; then
   echo -e "${RED}Migration cancelled.${NC}"
   exit 0
