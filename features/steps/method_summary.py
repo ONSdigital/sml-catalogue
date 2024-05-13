@@ -36,7 +36,7 @@ def check_method_summary_title(context, title):
 
 
 # This test will check if the github resources are present.
-# If they cannot be found the test will fail with a timeout error so asserts are not needed here.
+# Testing of links without asserts will fail due to a timeout.
 @then("The {method_name} method has the expected github resources")
 def check_method_has_github_resources(context, method_name):
     method_name = method_name.strip('"')
@@ -48,12 +48,18 @@ def check_method_has_github_resources(context, method_name):
     WebDriverWait(driver, timeout=timeout).until(
         lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=method_spec_link_text)
     )
-    WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=code_link_text)
-    )
+
     WebDriverWait(driver, timeout=timeout).until(
         lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=user_docs_link_text)
     )
+
+    code_link = (
+        WebDriverWait(driver, timeout=timeout)
+        .until(lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=code_link_text))
+        .get_attribute("href")
+    )
+
+    assert code_link.endswith(".py")
 
 
 @then("The {metaDataField} of the method is {metaDataValue}")

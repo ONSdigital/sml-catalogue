@@ -5,7 +5,7 @@
 set -euo pipefail
 
 : ${TERRAFORM_SOURCE}
-: ${AWS_ACCOUNT_ID}
+: ${TF_VAR_aws_account_id}
 : ${TF_VAR_environment}
 : ${TF_VAR_slack_alert_token}
 : ${TF_VAR_deployment_role}
@@ -21,7 +21,6 @@ rm -f $HOME/.netrc
 echo "default login $username password $password" >> "${HOME}/.netrc"
 echo "starting terraform init"
 cd ./terraform
-export TF_VAR_aws_account_id=$AWS_ACCOUNT_ID
 terraform init \
     -upgrade \
     -backend-config "bucket=${S3_NAME}" \

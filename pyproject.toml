@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sml-catalogue"
-version = "1.3.0"
+version = "1.4.0"
 description = "This repo contains the build environment and code to generate and upload the Statistical Methods Library (SML) Portal Web Application."
 authors = []
 readme = "README.md"
@@ -16,12 +16,13 @@ python-markdown-mathjax = "1.0.4"
 python-markdown-math="^0.8"
 
 [tool.poetry.group.dev.dependencies]
-black = "^24.3.0"
+black = "^24.4.0"
 behave = "^1.2.6"
 selenium = "^4.19.0"
 flake8 = "^7.0.0"
 pylint = "3.1.0"
 bandit = "^1.7.8"
+pandas = "^2.2.1"
 isort = "^5.12.0"
 axe-selenium-python = "^2.1.6"
 python-semantic-release = "<8.0.0"
