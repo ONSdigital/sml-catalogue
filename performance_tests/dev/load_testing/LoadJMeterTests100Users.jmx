@@ -280,7 +280,7 @@ log.info(&apos;response message: &apos; + vars.get(&apos;response_message&apos;)
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">/Users/<your_name>/Documents/JMeterResults/ViewResultsTree/dev/load_testing/100_users/test1.csv</stringProp>
+        <stringProp name="filename"><path_to_your_directory>/dev/load_testing/100_users/test1.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
