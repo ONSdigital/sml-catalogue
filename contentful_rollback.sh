@@ -2,6 +2,9 @@
 # Usage: ./contentful_rollback.sh -t <target_environment>
 # -- Example: ./contentful_rollback.sh -t preprod
 # Used to rollback content in an environment in Contentful (not to be confused with Concourse).
+# Before a migration is completed, the migration script stores a snapshot of the target environment in the `contentful-data/rollbacks` directory.
+# This script will import the snapshot and rollback the target environment to the state it was in before the migration.
+# It is also expected that the files in the contentful-data directory are committed to git.
 
 set -eo pipefail
 
