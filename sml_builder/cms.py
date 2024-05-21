@@ -7,7 +7,13 @@ from sml_builder.utils import get_feature_config
 cms = get_feature_config("content_management")
 if cms["enabled"]:
     SPACE_ID = os.environ.get("SPACE_ID")
-    CDA_KEY = os.environ.get("CDA_KEY")
+    key_names = {
+        "dev": "CDA_DEV_KEY",
+        "preprod": "CDA_PREPROD_KEY",
+        "prod": "CDA_PROD_KEY"
+    }
+    selected_environment = cms["variables"]["active_environment"]
+    CDA_KEY = os.environ.get(key_names[selected_environment])
     client = contentful.Client(SPACE_ID, CDA_KEY)
 
 
