@@ -31,7 +31,9 @@ env_setups:
 
   contentful_creds: &contentful_creds
     SPACE_ID: ((contentful_space_id))
-    CDA_KEY: ((contentful_delivery_api_key))
+    CDA_DEV_KEY: ((contentful_delivery_api_key_dev))
+    CDA_PREPROD_KEY: ((contentful_delivery_api_key_preprod))
+    CDA_PROD_KEY: ((contentful_delivery_api_key_prod))
 
   # -------------------
 
