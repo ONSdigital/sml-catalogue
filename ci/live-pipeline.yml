@@ -341,7 +341,7 @@ jobs:
       put: repo
       resource: pr-done
       params:
-        path: repo)
+        path: repo
 
 
         status: failure
