@@ -11,7 +11,7 @@ if cms["enabled"]:
     key_names = {
         "dev": "CDA_DEV_KEY",
         "preprod": "CDA_PREPROD_KEY",
-        "prod": "CDA_PROD_KEY"
+        "prod": "CDA_PROD_KEY",
     }
     # active environment is determined by the feature.json file
     # the content displayed is dependent on the environment selected
