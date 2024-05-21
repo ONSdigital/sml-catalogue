@@ -6,7 +6,9 @@
 : "${SIGNING_KEY}"
 : "${ROLLBACK_TAG}"
 : "${SPACE_ID}"
-: "${CDA_KEY}"
+: "${CDA_DEV_KEY}"
+: "${CDA_PREPROD_KEY}"
+: "${CDA_PROD_KEY}"
 
 
 set -eo pipefail
