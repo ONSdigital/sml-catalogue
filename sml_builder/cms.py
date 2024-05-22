@@ -16,7 +16,12 @@ if cms["enabled"]:
     # active environment is determined by the feature.json file
     # the content displayed is dependent on the environment selected
     active_environment = cms["variables"]["active_environment"]
-    CDA_KEY = os.environ.get(key_names[active_environment])
+    try:
+        CDA_KEY = os.environ.get(key_names[active_environment])
+    except KeyError:
+        raise ValueError(
+            f"Selected environment \'{active_environment}\' in feature.json is not a valid Contentful environment. Please choose one of {list(key_names.keys())}"
+        )
     client = contentful.Client(SPACE_ID, CDA_KEY, environment=active_environment)
 
 
