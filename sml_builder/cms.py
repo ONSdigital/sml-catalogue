@@ -18,10 +18,10 @@ if cms["enabled"]:
     active_environment = cms["variables"]["active_environment"]
     try:
         CDA_KEY = os.environ.get(key_names[active_environment])
-    except KeyError:
+    except KeyError as exc:
         raise ValueError(
-            f"Selected environment \'{active_environment}\' in feature.json is not a valid Contentful environment. Please choose one of {list(key_names.keys())}"
-        )
+            f"Selected environment '{active_environment}' in feature.json is not a valid Contentful environment. Please choose one of {list(key_names.keys())}"
+        ) from exc
     client = contentful.Client(SPACE_ID, CDA_KEY, environment=active_environment)
 
 
