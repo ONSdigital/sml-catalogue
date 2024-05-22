@@ -17,7 +17,7 @@ if cms["enabled"]:
     # the content displayed is dependent on the environment selected
     active_environment = cms["variables"]["active_environment"]
     CDA_KEY = os.environ.get(key_names[active_environment])
-    client = contentful.Client(SPACE_ID, CDA_KEY)
+    client = contentful.Client(SPACE_ID, CDA_KEY, environment=active_environment)
 
 
 # Returns the content depending on the content type
