@@ -1,4 +1,4 @@
-### Performance tests
+# Performance tests
 
 This readme is to show the reader how to run a .jmx file to display our sites JMeter performance tests results.
 
