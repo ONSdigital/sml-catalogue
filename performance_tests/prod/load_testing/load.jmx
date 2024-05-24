@@ -6,6 +6,8 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -20,12 +22,22 @@
             <stringProp name="Argument.value">test_number</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="staff_name" elementType="Argument">
+            <stringProp name="Argument.name">staff_name</stringProp>
+            <stringProp name="Argument.value">staff_name</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ramp_up_period" elementType="Argument">
+            <stringProp name="Argument.name">ramp_up_period</stringProp>
+            <stringProp name="Argument.value">ramp_up_period</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
         <stringProp name="ThreadGroup.num_threads">${number_of_users}</stringProp>
-        <intProp name="ThreadGroup.ramp_time">300</intProp>
+        <stringProp name="ThreadGroup.ramp_time">${ramp_up_period}</stringProp>
         <longProp name="ThreadGroup.duration">500</longProp>
         <longProp name="ThreadGroup.delay">30</longProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
@@ -293,7 +305,7 @@ log.info(&apos;response message: &apos; + vars.get(&apos;response_message&apos;)
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">/Users/<your_staff_space>/Documents/JMeterResults/ViewResultsTree/prod/load_testing/${number_of_users}_users/test${test_number}.csv</stringProp>
+        <stringProp name="filename">/Users/${staff_name}/Documents/JMeterResults/ViewResultsTree/prod/load_testing/${number_of_users}_users/test${test_number}.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">

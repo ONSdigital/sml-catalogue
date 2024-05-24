@@ -21,7 +21,7 @@ Your JMeter window will open. You can click the open icon and navigate to this d
 
 Selecting one of the .jmx files will open up the details of the test in your JMeter window.
 
-You can amend the test or run it using the play icon. Note if you want to run a test, under 'User Defined Variables' you will need to specify the number of users in the test and test number.
+You can amend the test or run it using the play icon. Note if you want to run a test, under 'User Defined Variables' you will need to specify the number of users in the test, your staff name for the path e.g. john_smith, ramp up time and test number.
 
 The test will then ramp up the users and check site responses.
 
