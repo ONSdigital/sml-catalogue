@@ -24,7 +24,7 @@
       </Arguments>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
-        <stringProp name="ThreadGroup.num_threads">${numer_of_users}</stringProp>
+        <stringProp name="ThreadGroup.num_threads">${number_of_users}</stringProp>
         <intProp name="ThreadGroup.ramp_time">300</intProp>
         <longProp name="ThreadGroup.duration">500</longProp>
         <longProp name="ThreadGroup.delay">30</longProp>
