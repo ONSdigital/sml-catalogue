@@ -11,7 +11,7 @@
     </TestPlan>
     <hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
-        <intProp name="ThreadGroup.num_threads">500</intProp>
+        <intProp name="ThreadGroup.num_threads"><number_of_users></intProp>
         <intProp name="ThreadGroup.ramp_time">60</intProp>
         <longProp name="ThreadGroup.duration">500</longProp>
         <longProp name="ThreadGroup.delay">30</longProp>
@@ -23,8 +23,8 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk/" enabled="true">
-          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk/</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk/">
+          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -53,8 +53,8 @@ log.info(&apos;response message: &apos; + vars.get(&apos;response_message&apos;)
           </ConstantTimer>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk/methods" enabled="true">
-          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk/</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk/methods">
+          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk</stringProp>
           <stringProp name="HTTPSampler.port">0</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/methods</stringProp>
@@ -88,8 +88,8 @@ log.info(&apos;response message: &apos; + vars.get(&apos;response_message&apos;)
           </ConstantTimer>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk/method/future-methods/cell-key-perturbation" enabled="true">
-          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk/</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk/method/future-methods/cell-key-perturbation">
+          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk</stringProp>
           <stringProp name="HTTPSampler.port">0</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/method/future-methods/cell-key-perturbation</stringProp>
@@ -119,8 +119,8 @@ log.info(&apos;response message: &apos; + vars.get(&apos;response_message&apos;)
           </ConstantTimer>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk/" enabled="true">
-          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk/</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk/">
+          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk</stringProp>
           <stringProp name="HTTPSampler.port">0</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/methods</stringProp>
@@ -150,8 +150,8 @@ log.info(&apos;response message: &apos; + vars.get(&apos;response_message&apos;)
           </ConstantTimer>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk/method/ready-to-use-methods/selective-editing" enabled="true">
-          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk/</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk/method/ready-to-use-methods/selective-editing">
+          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk</stringProp>
           <stringProp name="HTTPSampler.port">0</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/method/ready-to-use-methods/selective-editing</stringProp>
@@ -181,8 +181,8 @@ log.info(&apos;response message: &apos; + vars.get(&apos;response_message&apos;)
           </ConstantTimer>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk//help-centre/index" enabled="true">
-          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk/</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk//help-centre/index">
+          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk</stringProp>
           <stringProp name="HTTPSampler.port">0</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/help-centre/index</stringProp>
@@ -212,8 +212,8 @@ log.info(&apos;response message: &apos; + vars.get(&apos;response_message&apos;)
           </ConstantTimer>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk/help-centre/information/methods-request" enabled="true">
-          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk/</stringProp>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://statisticalmethodslibrary.ons.gov.uk/help-centre/information/methods-request">
+          <stringProp name="HTTPSampler.domain">statisticalmethodslibrary.ons.gov.uk</stringProp>
           <stringProp name="HTTPSampler.port">0</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.path">/help-centre/information/methods-request</stringProp>
@@ -244,7 +244,7 @@ log.info(&apos;response message: &apos; + vars.get(&apos;response_message&apos;)
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -280,7 +280,7 @@ log.info(&apos;response message: &apos; + vars.get(&apos;response_message&apos;)
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename"><path_to_your_directory>/prod/sustained_load_testing/1_hour/100_users/test1.csv</stringProp>
+        <stringProp name="filename"><path_to_your_directory>/prod/sustained_load_testing/1_hour/<number_of_users>_users/test<test_number>.csv </stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
