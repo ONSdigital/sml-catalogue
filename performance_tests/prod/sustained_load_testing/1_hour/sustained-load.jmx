@@ -293,7 +293,7 @@ log.info(&apos;response message: &apos; + vars.get(&apos;response_message&apos;)
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">/Users/jamesmorgan/Documents/JMeterResults/ViewResultsTree/prod/sustained_load_testing/1_hour/${number_of_users}_users/test${test_number}.csv </stringProp>
+        <stringProp name="filename">/Users/<your_staff_space>/Documents/JMeterResults/ViewResultsTree/prod/sustained_load_testing/1_hour/${number_of_users}_users/test${test_number}.csv </stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
