@@ -21,7 +21,7 @@ Your JMeter window will open. You can click the open icon and navigate to this d
 
 Selecting one of the .jmx files will open up the details of the test in your JMeter window.
 
-You can amend the test and run it using the play icon. Note if you want to run a test, under 'User Defined Variables' you will need to specify the number of users in the test, staff name, ramp up period and test number. To understand this further please see [JMeter Reults](https://confluence.ons.gov.uk/display/SML/JMeter+Results).
+You can amend the test and run it using the play icon. Note if you want to run a test, under 'User Defined Variables' you will need to specify the number of users in the test, staff name, ramp up period and test number. To understand this further with an example, please see [JMeter Results](https://confluence.ons.gov.uk/display/SML/JMeter+Results).
 
 Each test has a constant timer designed to make it last for 3 minutes. If you want to change how long the test runs for you can change the loop count. The loop count works in the following way 1 = 3 minutes test run, 20 = 1 hour test run, 60 = 3 hour test run, 100 = 5 hour test run.
 
