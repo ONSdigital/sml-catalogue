@@ -67,6 +67,9 @@
   {% endif %}
 {% endif %}
 
+
+
+{% if page.rows %}  
   <h2>{{
     onsStatus({
         "label": 'Methods Ready to Use',
@@ -74,8 +77,6 @@
     })
   }}</h2>
   <p>The following methods are released and ready to use</p>
-
-{% if page.rows %}
   {% set methodsTable = {
     "id": "ready-table",
     "variants": ["sortable","responsive"],
@@ -116,10 +117,15 @@
     onsTable(methodsTable)
   }}
 {% else %}
-  <p class="ons-panel__error" id="search-alert">
-    <strong>No methods found under Methods Ready to Use, please try another search term</strong>
-  </p>
+  {% if method_search %}
+    <p class="ons-panel__error" id="search-alert">
+      <strong>No methods found under Methods Ready to Use, please try another search term</strong>
+    </p>
+  {% endif %}
 {% endif %}
+
+
+{% if page.future_rows %}
   <h2>{{
     onsStatus({
         "label": 'Future Methods',
@@ -127,8 +133,6 @@
     })
   }}</h2>
   <p>The following methods have been approved for development and will be included in future releases.</p>
-
-{% if page.future_rows %}
   {% set futureMethodsTable = {
     "id": "future-table",
     "variants": ["sortable","responsive"],
@@ -169,9 +173,11 @@
     onsTable(futureMethodsTable)
   }}
 {% else %}
-  <p class="ons-panel__error" id="future-search-alert">
-    <strong>No methods found under Future Methods, please try another search term.</strong>
-  </p>
+  {% if method_search %}
+    <p class="ons-panel__error" id="future-search-alert">
+      <strong>No methods found under Future Methods, please try another search term.</strong>
+    </p>
+  {% endif %}
 {% endif %}
   
 
