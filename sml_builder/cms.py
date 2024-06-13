@@ -7,22 +7,9 @@ from sml_builder.utils import get_feature_config
 cms = get_feature_config("content_management")
 if cms["enabled"]:
     SPACE_ID = os.environ.get("SPACE_ID")
-    # map the environment names to their respective key variable names
-    key_names = {
-        "dev": "CDA_DEV_KEY",
-        "preprod": "CDA_PREPROD_KEY",
-        "prod": "CDA_PROD_KEY",
-    }
-    # active environment is determined by the feature.json file
-    # the content displayed is dependent on the environment selected
-    active_environment = cms["variables"]["active_environment"]
-    try:
-        CDA_KEY = os.environ.get(key_names[active_environment])
-    except KeyError as exc:
-        raise ValueError(
-            f"Selected environment '{active_environment}' in feature.json is not a valid Contentful environment. Please choose one of {list(key_names.keys())}"
-        ) from exc
-    client = contentful.Client(SPACE_ID, CDA_KEY, environment=active_environment)
+    CDA_KEY = os.environ.get("CDA_KEY")
+    CONTENTFUL_ENVIRONMENT = os.environ.get("CONTENTFUL_ENVIRONMENT")
+    client = contentful.Client(SPACE_ID, CDA_KEY, environment=CONTENTFUL_ENVIRONMENT)
 
 
 # Returns the content depending on the content type

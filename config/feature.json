@@ -4,10 +4,7 @@
             "enabled" : false
         },
         "content_management": {
-            "enabled": false,
-            "variables": {
-                "active_environment": "prod"
-            }
+            "enabled": false
         },
         "docs_integration": {
             "enabled": false,
