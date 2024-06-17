@@ -18,7 +18,7 @@ jobs:
         run: |
           curl --request GET https://api.contentful.com/spaces/${{ github.event.client_payload.spaceID }}/users/ \
           ${{ github.event.client_payload.userID }} -H 'Authorization: Bearer ${{ secrets.CONTENTFUL_TOKEN }}' | \
-          jq '.firstName + " " + .lastName + "made a change to contentful"' > CONTENTFUL_CHANGELOG.md 
+          jq '.firstName + " " + .lastName + " made a change to contentful"' > CONTENTFUL_CHANGELOG.md 
 
 
       - name: Commit and Push Changes
