@@ -22,7 +22,7 @@ jobs:
 
 
       - name: Commit and Push Changes
-        uses: actions-js/push:master
+        uses: actions-js/push@master
         with:
           github_token: ${{ secrets.CONTENTFUL_GITHUB_TOKEN }}
           message: ${{ github.event.client_payload.commit_message }}
