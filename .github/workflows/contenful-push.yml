@@ -25,4 +25,4 @@ jobs:
         uses: actions-js/push@master
         with:
           github_token: ${{ secrets.CONTENTFUL_GITHUB_TOKEN }}
-          message: ${{ github.event.client_payload.commit_message }}
+          message: "feat: User update to content models on contentful"
