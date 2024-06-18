@@ -11,6 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
         with:
+          token: ${{ secrets.CONTENTFUL_GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Create changes from webhook payload
