@@ -1,5 +1,21 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.1 (2024-06-18)
+
+### Feature
+
+* User changes to contentful content model ([`5240b8c`](https://github.com/ONSdigital/sml-catalogue/commit/5240b8c442e96d3ffccb78053c1585ac6cac7da4))
+* User changes to contentful content model ([`d183ace`](https://github.com/ONSdigital/sml-catalogue/commit/d183ace54d82745048b536a9aa6e7ecf9549b9a6))
+* User changes to contentful content model ([`ed4eaab`](https://github.com/ONSdigital/sml-catalogue/commit/ed4eaab09aaade5d45df9ef465749dee7afcec21))
+* User changes to contentful content model ([`caa396b`](https://github.com/ONSdigital/sml-catalogue/commit/caa396b99bffc67594d0eef845a964d0a6bbc138))
+* Spp 11082 create content migration scripts ([#312](https://github.com/ONSdigital/sml-catalogue/issues/312)) ([`42e55c6`](https://github.com/ONSdigital/sml-catalogue/commit/42e55c62f17fd9861ddef7d3079b446c87b0e1c2))
+* Spp 11254 update design system ([#315](https://github.com/ONSdigital/sml-catalogue/issues/315)) ([`04feca1`](https://github.com/ONSdigital/sml-catalogue/commit/04feca187f0aa1ed0d6f4ac50d78563efa4d4fb0))
+* Spp-10350-increase-logo-visibility ([`a35ff48`](https://github.com/ONSdigital/sml-catalogue/commit/a35ff48c841b469a02614d22f56d760347c3e2d8))
+
+### Fix
+
+* Update future methods table ([#328](https://github.com/ONSdigital/sml-catalogue/issues/328)) ([`067892d`](https://github.com/ONSdigital/sml-catalogue/commit/067892d979c6d4efea24c5cb47222c91eead7765))
+
 ## v1.4.0 (2024-04-22)
 
 
