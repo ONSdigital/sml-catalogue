@@ -21,6 +21,9 @@ jobs:
 
       - name: Import GPG
         uses: crazy-max/ghaction-import-gpg@v6.1.0
+        with:
+          gpg_private_key: ${{ secrets.SIGNING_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
 
       - name: Commit and Push Changes
         run: |
