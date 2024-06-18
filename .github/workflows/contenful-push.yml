@@ -21,7 +21,7 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          echo ${ secrets.SIGNING_KEY } > signingkey.key
+          echo ${{ secrets.SIGNING_KEY }} > signingkey.key
           gpg --import signingkey.key
           git config user.email "jason.bell@ons.gov.uk"
           git config user.name "jasonbellONS"
