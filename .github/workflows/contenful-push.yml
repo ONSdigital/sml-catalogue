@@ -20,11 +20,9 @@ jobs:
 
 
       - name: Import GPG
-        needs: Create changes from webhook payload
         uses: crazy-max/ghaction-import-gpg@v6.1.0
 
       - name: Commit and Push Changes
-        needs: Import GPG
         run: |
           echo ${{ secrets.SIGNING_KEY }} > signingkey.key
           gpg --import signingkey.key
