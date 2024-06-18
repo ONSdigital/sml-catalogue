@@ -25,13 +25,12 @@ jobs:
         uses: crazy-max/ghaction-import-gpg@v6.1.0
         with:
           gpg_private_key: ${{ secrets.SIGNING_KEY }}
-          passphrase: ${{ secrets.PASSPHRASE }}
 
       - name: Commit and Push Changes
         run: |
-          git config user.email "jason.bell@ons.gov.uk"
-          git config user.name "jasonbellONS"
-          git config user.signingkey 4EBD94281429A316
+          git config user.email "spp@ons.gov.uk"
+          git config user.name "SPP Machine User"
+          git config user.signingkey 79DDAC12EE2E036D
           git config commit.gpgsign true
-          git commit -am "User changes to contentful content model"
+          git commit -am "feat: User changes to contentful content model"
           git push
