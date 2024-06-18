@@ -5,6 +5,8 @@ on:
 permissions:
   id-token: write
   contents: write    # This is required for actions/checkout
+concurrency:
+  group: contentful_updates
 jobs:
   commit_changes:
     runs-on: ubuntu-latest
