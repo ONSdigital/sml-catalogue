@@ -19,7 +19,12 @@ jobs:
           curl --request GET https://api.contentful.com/spaces/${{ github.event.client_payload.spaceID }}/users/${{ github.event.client_payload.userID }} -H 'Authorization: Bearer ${{ secrets.CONTENTFUL_TOKEN }}' | jq '.firstName + " " + .lastName + " made a change to contentful"' > CONTENTFUL_CHANGELOG.md 
 
 
+      - name: Import GPG
+        needs: Create changes from webhook payload
+        uses: crazy-max/ghaction-import-gpg@v6.1.0
+
       - name: Commit and Push Changes
+        needs: Import GPG
         run: |
           echo ${{ secrets.SIGNING_KEY }} > signingkey.key
           gpg --import signingkey.key
