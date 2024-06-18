@@ -4,7 +4,7 @@ on:
     types: [contentful_update]
 permissions:
   id-token: write
-  contents: read    # This is required for actions/checkout
+  contents: write    # This is required for actions/checkout
 jobs:
   commit_changes:
     runs-on: ubuntu-latest
