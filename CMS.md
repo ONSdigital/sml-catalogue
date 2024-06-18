@@ -20,21 +20,29 @@ You can access the API key by navigating to Settings > API keys.
 
 If you don't have access to these, you likely don't have the right permissions and should contact the space owner.
 
-Open up your zsh or bash profile in an editor of your choice and define two variables:
+Open up your zsh or bash profile in an editor of your choice and define these variables:
 
 ZSH:
 
 ```zsh
-export SPACE_ID = "your_space_ID"
-export CDA_KEY = "your_cda_key"
+export SPACE_ID="your_space_ID"
+export CONTENTFUL_ENVIRONMENT="prod"
+export CDA_KEY="your_prod_cda_key"
 ```
 
 BASH:
 
 ```bash
-SPACE_ID = "your_space_ID"
-CDA_KEY = "your_cda_key"
+SPACE_ID="your_space_ID"
+CONTENTFUL_ENVIRONMENT="prod"
+CDA_KEY="your_prod_cda_key"
 ```
+
+The prod CDA key can be obtained by asking the admin of your Contentful space. 
+
+When developing locally, the CONTENTFUL_ENVIRONMENT variable should be set to "prod" (short for the production environment).
+The CDA_KEY variable should also be set to the relevant prod CDA key, which can be obtained by asking the admin of your Contentful space.
+If you want to develop using a different Contentful environment, this will require a different CDA key, and you will need to reassign the CDA_KEY variable in your zsh/bash profile appropriately. You should also change the CONTENTFUL_ENVIRONMENT variable to the corresponding environment name - this should be one of "prod", "preprod", or "dev".
 
 ## Build and deploy
 
