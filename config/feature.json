@@ -4,7 +4,7 @@
             "enabled" : false
         },
         "content_management": {
-            "enabled": false
+            "enabled": false 
         },
         "docs_integration": {
             "enabled": false,
@@ -25,7 +25,7 @@
                     {"url":"api_reference",
                     "title": "Methods API"}
                     ]
-                 }
+                }
             }
         }
     }

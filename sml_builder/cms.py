@@ -8,7 +8,8 @@ cms = get_feature_config("content_management")
 if cms["enabled"]:
     SPACE_ID = os.environ.get("SPACE_ID")
     CDA_KEY = os.environ.get("CDA_KEY")
-    client = contentful.Client(SPACE_ID, CDA_KEY)
+    CONTENTFUL_ENVIRONMENT = os.environ.get("CONTENTFUL_ENVIRONMENT")
+    client = contentful.Client(SPACE_ID, CDA_KEY, environment=CONTENTFUL_ENVIRONMENT)
 
 
 # Returns the content depending on the content type

@@ -17,4 +17,4 @@
 
  By using the feature.json file, developers can integrate new functionality in a controlled way, earlier in the development cycle. This functionality can be enabled once appropriate testing and acceptance has been performed.
  
- Please note that changes made in the feature.json file  will require a rebuild and re-deploy of the website to take effect.
+ Please note that changes made in the feature.json file will require a rebuild and re-deploy of the website to take effect.
