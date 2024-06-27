@@ -31,7 +31,7 @@ def check_methods_catalogue_title(context, title):
 
 @given("I am on the methods catalogue page")
 def auth_user(context):
-    driver.get(f'{context.config.userdata.get("host")}methods')
+    driver.get(f'{context.config.userdata.get("host")}methods/index')
 
 
 @when("I click on the collapsible drop down")
@@ -46,19 +46,14 @@ def navigate_to_url(context):
 
 @then('I see the dropdown content "{text}"')
 def check_dropdown_content(context, text):
-    content_div = WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.ID, value="collapsible-content")
+    dropdown_content = (
+        WebDriverWait(driver, timeout=timeout)
+        .until(lambda d: d.find_element(By.ID, value="collapsible-content"))
+        .get_attribute("innerText")
     )
-    dropdown_content_elements = content_div.find_elements(By.TAG_NAME, "p")
-    dropdown_content = ""
-
-    for element in dropdown_content_elements:
-        dropdown_content += element.text
-        dropdown_content += " "
-
-    dropdown_content = dropdown_content.replace(
-        "\n(opens in a new window)\n", ""
-    ).rstrip()
+    dropdown_content = dropdown_content.replace("(opens in a new window)", "").replace(
+        "\n", ""
+    )
     assert dropdown_content == text
 
 

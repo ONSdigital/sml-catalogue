@@ -27,36 +27,38 @@ env_setups:
   github_pull_creds: &github_pull_creds
     username: ((github_access_token))
     password: x-oauth-basic
-    
 
   # -------------------
 
   sml_dev: &sml_dev_setup
     <<: *general_dev_params
     ACCOUNT_NAME: &account sml_dev
-    AWS_ACCOUNT_ID: ((aws_account_sml_dev))
     AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_dev)):role/spp-concourse-sml-deployment-dev
+    TF_VAR_aws_account_id: ((aws_account_sml_dev))
     TF_VAR_deployment_role: *role
     TF_VAR_environment: dev
     TF_VAR_account: *account
+    TF_VAR_slack_alert_token: ((slack_webhook_sml_portal_alerts))
 
   sml_preprod: &sml_preprod_setup
     <<: *general_preprod_params
     ACCOUNT_NAME: &account sml_preprod
-    AWS_ACCOUNT_ID: ((aws_account_sml_preprod))
     AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_preprod)):role/spp-concourse-sml-deployment-preprod
+    TF_VAR_aws_account_id: ((aws_account_sml_preprod))
     TF_VAR_deployment_role: *role
     TF_VAR_environment: preprod
     TF_VAR_account: *account
+    TF_VAR_slack_alert_token: ((slack_webhook_sml_portal_alerts))
 
   sml_prod: &sml_prod_setup
     <<: *general_prod_params
     ACCOUNT_NAME: &account sml_prod
-    AWS_ACCOUNT_ID: ((aws_account_sml_prod))
     AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_prod)):role/spp-concourse-sml-deployment-prod
+    TF_VAR_aws_account_id: ((aws_account_sml_prod))
     TF_VAR_deployment_role: *role
     TF_VAR_environment: prod
     TF_VAR_account: *account
+    TF_VAR_slack_alert_token: ((slack_webhook_sml_portal_alerts))
 
 resource_types:
   - name: pull-request
@@ -86,6 +88,18 @@ resources:
       branch: main
       username: ((github_access_token))
       password: x-oauth-basic
+  - name: contentful_change
+    type: git
+    icon: github
+    check_every: 1m
+    webhook_token: gesture
+    source:
+      uri: https://github.com/ONSdigital/sml-catalogue.git
+      branch: main
+      username: ((github_access_token))
+      password: x-oauth-basic
+      paths:
+      - CONTENTFUL_CHANGELOG.md
   - name: main-updated
     type: git
     icon: github
@@ -137,6 +151,10 @@ jobs:
             path: repo
             status: pending
             context: Deploying_Dev
+
+        - task: zip-lambda
+          file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -149,6 +167,9 @@ jobs:
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
+              SPACE_ID: ((contentful_space_id))
+              CDA_KEY: ((contentful_delivery_api_key_dev))
+              CONTENTFUL_ENVIRONMENT: dev
               BUILD_TYPE: 0
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
@@ -191,6 +212,10 @@ jobs:
           resource: main-updated
           trigger: true
           version: every
+
+        - task: zip-lambda
+          file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -204,6 +229,9 @@ jobs:
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
+              SPACE_ID: ((contentful_space_id))
+              CDA_KEY: ((contentful_delivery_api_key_dev))
+              CONTENTFUL_ENVIRONMENT: dev
               BUILD_TYPE: 0
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
@@ -223,6 +251,10 @@ jobs:
       - do:
         - get: repo
           resource: main
+
+        - task: zip-lambda
+          file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -252,11 +284,58 @@ jobs:
         - task: run-acceptance-tests
           file: repo/ci/tasks/testing/run_bdd_tests.yml
 
+  - name: build_and_deploy_preprod_contentful
+    serial: true
+    plan:
+      - do:
+          - get: repo
+            resource: contentful_change
+            trigger: true
+            version: every
+
+          - task: zip-lambda
+            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+
+          - in_parallel:
+              - task: terraform-apply-environment
+                file: repo/ci/tasks/terraform/apply_terraform.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_preprod_setup
+                  TERRAFORM_SOURCE: repo/terraform
+                  WORKSPACE_KEY_INFIX: workspace
+                  TF_WORKSPACE: main
+
+              - task: build-files
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+                params:
+                  SPACE_ID: ((contentful_space_id))
+              CDA_KEY: ((contentful_delivery_api_key_preprod))
+              CONTENTFUL_ENVIRONMENT: preprod<<: *github_pull_creds
+                  <<: *sml_preprod_setup
+                  BUILD_TYPE: 1
+                  GH_TOKEN: ((github_access_token))
+                  SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+
+          - task: deploy_code
+            file: repo/ci/tasks/build_and_deploy/deploy.yml
+            params:
+              <<: *github_pull_creds
+              <<: *sml_preprod_setup
+              workspace_name: main
+
+          - task: run-acceptance-tests
+            file: repo/ci/tasks/testing/run_bdd_tests.yml
+
   - name: build_and_deploy_prod
     plan:
       - do:
         - get: repo
           resource: tag_commit
+
+        - task: zip-lambda
+          file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -270,6 +349,9 @@ jobs:
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
+              SPACE_ID: ((contentful_space_id))
+              CDA_KEY: ((contentful_delivery_api_key_prod))
+              CONTENTFUL_ENVIRONMENT: prod
               BUILD_TYPE: 2
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
@@ -298,8 +380,6 @@ jobs:
              path: repo
              status: pending
              context: Deleting Workspace
-        - task: init-metadata
-          file: repo/ci/tasks/terraform/init_metadata.yml
         - task: terraform
           file: repo/ci/tasks/terraform/destroy_terraform.yml
           params:
@@ -318,5 +398,7 @@ jobs:
       resource: pr-done
       params:
         path: repo
+
+
         status: failure
         context: Deleting Workspace

@@ -1,0 +1,36 @@
+name: deploy
+on:
+  repository_dispatch:
+    types: [contentful_update]
+permissions:
+  id-token: write
+  contents: write    # This is required for actions/checkout
+concurrency:
+  group: contentful_updates
+jobs:
+  commit_changes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          token: ${{ secrets.CONTENTFUL_GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Create changes from webhook payload
+        run: |
+          curl --request GET https://api.contentful.com/spaces/${{ github.event.client_payload.spaceID }}/users/${{ github.event.client_payload.userID }} -H 'Authorization: Bearer ${{ secrets.CONTENTFUL_TOKEN }}' | jq '.firstName + " " + .lastName + " made a change to contentful"' >> CONTENTFUL_CHANGELOG.md 
+
+
+      - name: Import GPG
+        uses: crazy-max/ghaction-import-gpg@v6.1.0
+        with:
+          gpg_private_key: ${{ secrets.SIGNING_KEY }}
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.email "spp@ons.gov.uk"
+          git config user.name "SPP Machine User"
+          git config user.signingkey 79DDAC12EE2E036D
+          git config commit.gpgsign true
+          git commit -am "feat: User changes to contentful content model"
+          git push

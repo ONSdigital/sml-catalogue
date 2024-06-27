@@ -108,7 +108,7 @@ resource "aws_cloudfront_response_headers_policy" "noindex" {
     }
     content_security_policy {
       override                = true
-      content_security_policy = "script-src 'self' 'sha256-AN/TTkrWvH4W7oCH0w79aph67vAli7rskVQ+0LFPnD4=' 'sha256-FM5wgoZgD+IUY/B3phTcQwLPjMdoyegYYa9Lfsx8a0Q=' 'sha256-Khdmw7GCwPLFjfMGBMpTNcdMf4c+bxQbA3kB831L6KM=' 'sha256-wVoJJ46dUdegqo0mzHo83JJUyjS8RdEfN7I1OlrdMOU=' 'sha256-Lp8Q2eLwjHw/eWeZ5jdkGBt5wP7gIjrZXTt4JuVpYQs=' 'sha256-EMdG31ovSprR0tF3JVid3tnd4Db/rb+0c27xK7EAVts=' https://cdn.ons.gov.uk https://www.googletagmanager.com"
+      content_security_policy = "script-src 'self' 'sha256-AN/TTkrWvH4W7oCH0w79aph67vAli7rskVQ+0LFPnD4=' 'sha256-FM5wgoZgD+IUY/B3phTcQwLPjMdoyegYYa9Lfsx8a0Q=' 'sha256-FM5wgoZgD+IUY/B3phTcQwLPjMdoyegYYa9Lfsx8a0Q=' 'sha256-QTkwzjnbU+Qv8p+Xz6cexltGK9UI2ShI34bF9k9DpXs=' 'sha256-EMdG31ovSprR0tF3JVid3tnd4Db/rb+0c27xK7EAVts=' 'sha256-Khdmw7GCwPLFjfMGBMpTNcdMf4c+bxQbA3kB831L6KM=' 'sha256-wVoJJ46dUdegqo0mzHo83JJUyjS8RdEfN7I1OlrdMOU=' 'sha256-Lp8Q2eLwjHw/eWeZ5jdkGBt5wP7gIjrZXTt4JuVpYQs=' 'sha256-EMdG31ovSprR0tF3JVid3tnd4Db/rb+0c27xK7EAVts=' 'sha256-MZRMmy4t8+Y7OQhnHvDIRZvVbaD3wlPljc68qLMInQA=' https://cdn.ons.gov.uk https://www.googletagmanager.com https://cdnjs.cloudflare.com"
     }
     referrer_policy {
       override        = true
@@ -131,17 +131,6 @@ module "route53" {
     domain_name    = aws_cloudfront_distribution.sml-catalogue.domain_name
     hosted_zone_id = aws_cloudfront_distribution.sml-catalogue.hosted_zone_id
   }
+
   domain_name_base = local.domain_name_base[var.environment]
-}
-
-output "cf_website_url" {
-  value = "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
-}
-
-output "cloudfront_id" {
-  value = aws_cloudfront_distribution.sml-catalogue.id
-}
-
-output "website_url" {
-  value = length(module.route53) > 0 ? module.route53[0].website_url : "https://${aws_cloudfront_distribution.sml-catalogue.domain_name}/"
 }

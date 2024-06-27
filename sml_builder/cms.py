@@ -2,20 +2,20 @@ import os
 
 import contentful
 
-# Will need a official contentful account for the project/ team, and then we can update
-# the space_id, content_delivery_api_key
-SPACE_ID = os.environ.get("POETRY_SPACE_ID")
-CDA_KEY = os.environ.get("POETRY_CDA_KEY")
-print("TEST1234:", SPACE_ID, CDA_KEY)
-client = contentful.Client(SPACE_ID, CDA_KEY)
+from sml_builder.utils import get_feature_config
+
+cms = get_feature_config("content_management")
+if cms["enabled"]:
+    SPACE_ID = os.environ.get("SPACE_ID")
+    CDA_KEY = os.environ.get("CDA_KEY")
+    CONTENTFUL_ENVIRONMENT = os.environ.get("CONTENTFUL_ENVIRONMENT")
+    client = contentful.Client(SPACE_ID, CDA_KEY, environment=CONTENTFUL_ENVIRONMENT)
 
 
 # Returns the content depending on the content type
 def getContent(contentType):
     content_type = client.content_type(contentType)
-    # print("content_type: ", content_type)
     entries_by_content_type = getEntriesByContentType(content_type)
-    # print("entries_by_content_type: ", entries_by_content_type)
 
     content = compileContent(entries_by_content_type)
 
@@ -25,7 +25,6 @@ def getContent(contentType):
 # Gets the entries for the type of content passed into the function
 def getEntriesByContentType(contentType):
     entries_by_content_type = client.entries({"content_type": contentType.id})
-    # print("entries_by_content_type2: ", entries_by_content_type)
 
     return entries_by_content_type
 
@@ -39,7 +38,5 @@ def compileContent(entries_by_content_type):
     else:
         for entry in entries_by_content_type:
             entry_fields.append(entry.fields())
-
-    # print("entry_fields2: ", entry_fields)
 
     return entry_fields

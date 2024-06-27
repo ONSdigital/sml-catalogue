@@ -1,29 +1,55 @@
-from flask import abort, render_template
+import markdown
+from flask import render_template
+from markupsafe import Markup, escape
 
 from sml_builder import app
 from sml_builder.cms import getContent
-from sml_builder.utils import checkEmptyList
+from sml_builder.utils import checkEmptyList, get_feature_config
 
 from .utils import _page_not_found
+
+content_management = get_feature_config("content_management")
 
 
 @app.route("/resources/about")
 def about():
     # Gets the content for the about page
-    content = getContent("about")
-    if checkEmptyList(content):
-        abort(404)
-    return render_template("about.html", content=content)
+    if content_management["enabled"]:
+        content = getContent("about")
+        if checkEmptyList(content):
+            _page_not_found("About content not found")
+        return render_template(
+            "about.html", content=content, cms_enabled=content_management["enabled"]
+        )
+
+    try:
+        with open(
+            "./content/about/about-this-library.md", "r", encoding="utf-8"
+        ) as input_file:
+            text = input_file.read()
+            escaped_text = escape(text)
+            body = Markup(markdown.markdown(escaped_text))
+    except OSError as e:
+        _page_not_found(e)
+    return render_template(
+        "about.html", page_body=body, cms_enabled=content_management["enabled"]
+    )
 
 
 @app.route("/privacy-and-data-protection")
 def privacy_and_data_protection():
-    content = getContent("privacycontent")
-    content["bullet_list"] = [{"text": item} for item in content["bullet_list"]]
-
-    if checkEmptyList(content):
-        abort(404)
-    return render_template("content/privacy.html", content=content)
+    if content_management["enabled"]:
+        content = getContent("privacycontent")
+        if checkEmptyList(content):
+            _page_not_found("Privacy content not found")
+        return render_template(
+            "content/privacy.html",
+            content=content,
+            cms_enabled=content_management["enabled"],
+        )
+    return render_template(
+        "content/privacy.html", cms_enabled=content_management["enabled"]
+    )
 
 
 @app.route("/cookies")
@@ -33,10 +59,30 @@ def cookies_page():
 
 @app.route("/accessibility-statement")
 def accessibility_page():
-    content = getContent("accessibilityPage")
-    if checkEmptyList(content):
-        abort(404)
-    return render_template("accessibility_statement.html", content=content)
+    if content_management["enabled"]:
+        content = getContent("accessibilityPage")
+        if checkEmptyList(content):
+            _page_not_found("Accessibility content not found")
+        return render_template(
+            "accessibility_statement.html",
+            content=content,
+            cms_enabled=content_management["enabled"],
+        )
+
+    try:
+        with open(
+            "./content/accessibility/accessibility-statement.md", "r", encoding="utf-8"
+        ) as input_file:
+            text = input_file.read()
+            escaped_text = escape(text)
+            body = Markup(markdown.markdown(escaped_text))
+    except OSError as e:
+        _page_not_found(e)
+    return render_template(
+        "accessibility_statement.html",
+        page_body=body,
+        cms_enabled=content_management["enabled"],
+    )
 
 
 @app.route("/.well-known/security.txt")

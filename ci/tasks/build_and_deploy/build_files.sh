@@ -5,8 +5,8 @@
 : "${RELEASE_CANDIDATE}"
 : "${SIGNING_KEY}"
 : "${ROLLBACK_TAG}"
-: "${POETRY_SPACE_ID}"
-: "${POETRY_CDA_KEY}"
+: "${SPACE_ID}"
+: "${CDA_KEY}"
 
 
 set -eo pipefail
@@ -33,8 +33,8 @@ run_linting(){
   ./get_design_system.sh
   echo "Freezing flask"
 }
-export POETRY_CDA_KEY="$POETRY_CDA_KEY"
-export POETRY_SPACE_ID="$POETRY_SPACE_ID"
+
+
 
 echo "${SIGNING_KEY}" > signingkey.key
 gpg --import signingkey.key

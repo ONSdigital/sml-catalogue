@@ -26,6 +26,10 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+lambda_functions/healthcheck/package
+lambda_functions/alerter/package
+lambda_functions/healthcheck/healthcheck.zip
+lambda_functions/alerter/alerter.zip
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -129,5 +133,9 @@ dmypy.json
 output/*
 sml_builder/templates/components
 sml_builder/templates/layout
+.DS_Store
+lambda_functions/.DS_Store
+lambda_functions/alerter/.DS_Store
+lambda_functions/healthcheck.DS_Store
 content/.DS_Store
 /.idea

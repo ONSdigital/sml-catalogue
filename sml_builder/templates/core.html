@@ -18,25 +18,27 @@
     </script>
     <!-- End Google Tag Manager -->
 {% endblock %}
-{% set navigation= {
-    "navigation": {
-        "id": "main-navigation",
-        "itemsList": [
-        {"url": url_for("index"),
-        "title": "Home"},
-        {"url": url_for("display_methods"),
-        "title": "Methods catalogue"},
-        {"url": url_for("help_centre"),
-        "title": "Help centre"},
-        {"url": url_for("about"),
-        "title": "About this library"},
-        {"url": url_for("display_glossary"),
-        "title": "Glossary"},
-        ],
-        "currentPath": current_path
+{% if docs_integration_active == False %}
+    {% set navigation= {
+        "navigation": {
+            "id": "main-navigation",
+            "itemsList": [
+            {"url": url_for("index"),
+            "title": "Home"},
+            {"url": url_for("display_methods"),
+            "title": "Methods catalogue"},
+            {"url": url_for("help_centre"),
+            "title": "Help centre"},
+            {"url": url_for("about"),
+            "title": "About this library"},
+            {"url": url_for("display_glossary"),
+            "title": "Glossary"},
+            ],
+            "currentPath": current_path
+            }
         }
-    }
-%}
+    %}
+{% endif %}
 {% set pageConfig = {
     "meta": {
         "canonicalUrl": "/",
@@ -48,7 +50,9 @@
         "title": 'Statistical Methods Library',
         "orgLogoHref": 'https://www.ons.gov.uk',
         "titleLogoHref": "/",
-        "mastheadLogo": "/",
+        "mastheadLogo": {
+          "large": '<img class="logo" src="https://cdn.ons.gov.uk/assets/images/ons-logo/v2/ons-logo.svg" height="150" width="250" alt="Office for National Statistics logo">'
+        },
         "titleLogo": "/",
         "navigation": navigation.navigation,
     },

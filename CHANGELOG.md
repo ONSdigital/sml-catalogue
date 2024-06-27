@@ -1,5 +1,78 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.3 (2024-06-19)
+
+### Feature
+
+* User changes to contentful content model ([`89e59d1`](https://github.com/ONSdigital/sml-catalogue/commit/89e59d1043fb9fd00a07991509c1ea58a9fd0b85))
+
+## v1.5.0-rc.2 (2024-06-18)
+
+### Feature
+
+* User changes to contentful content model ([`3c71573`](https://github.com/ONSdigital/sml-catalogue/commit/3c715731d3c0383a2ee2911dcf3b8048dc22a597))
+
+## v1.5.0-rc.1 (2024-06-18)
+
+### Feature
+
+* User changes to contentful content model ([`5240b8c`](https://github.com/ONSdigital/sml-catalogue/commit/5240b8c442e96d3ffccb78053c1585ac6cac7da4))
+* User changes to contentful content model ([`d183ace`](https://github.com/ONSdigital/sml-catalogue/commit/d183ace54d82745048b536a9aa6e7ecf9549b9a6))
+* User changes to contentful content model ([`ed4eaab`](https://github.com/ONSdigital/sml-catalogue/commit/ed4eaab09aaade5d45df9ef465749dee7afcec21))
+* User changes to contentful content model ([`caa396b`](https://github.com/ONSdigital/sml-catalogue/commit/caa396b99bffc67594d0eef845a964d0a6bbc138))
+* Spp 11082 create content migration scripts ([#312](https://github.com/ONSdigital/sml-catalogue/issues/312)) ([`42e55c6`](https://github.com/ONSdigital/sml-catalogue/commit/42e55c62f17fd9861ddef7d3079b446c87b0e1c2))
+* Spp 11254 update design system ([#315](https://github.com/ONSdigital/sml-catalogue/issues/315)) ([`04feca1`](https://github.com/ONSdigital/sml-catalogue/commit/04feca187f0aa1ed0d6f4ac50d78563efa4d4fb0))
+* Spp-10350-increase-logo-visibility ([`a35ff48`](https://github.com/ONSdigital/sml-catalogue/commit/a35ff48c841b469a02614d22f56d760347c3e2d8))
+
+### Fix
+
+* Update future methods table ([#328](https://github.com/ONSdigital/sml-catalogue/issues/328)) ([`067892d`](https://github.com/ONSdigital/sml-catalogue/commit/067892d979c6d4efea24c5cb47222c91eead7765))
+
+## v1.4.0 (2024-04-22)
+
+
+
+## v1.4.0-rc.2 (2024-04-08)
+
+
+
+## v1.4.0-rc.1 (2024-04-08)
+
+### Feature
+
+* SPP-10827-integrate-CMS-with-main ([#282](https://github.com/ONSdigital/sml-catalogue/issues/282)) ([`27ccb56`](https://github.com/ONSdigital/sml-catalogue/commit/27ccb566db2f014722b979a25e35a5cc6b86451b))
+* Mkdocs initial POC with code optioning ([#236](https://github.com/ONSdigital/sml-catalogue/issues/236)) ([`4f275df`](https://github.com/ONSdigital/sml-catalogue/commit/4f275df1404a08e8b25653683f23d399dda0272d))
+
+### Fix
+
+* SPP-11063-option-cms.py ([#309](https://github.com/ONSdigital/sml-catalogue/issues/309)) ([`8989a05`](https://github.com/ONSdigital/sml-catalogue/commit/8989a05ee1b779c853ebff69a95ec217335d1b22))
+
+## v1.3.0 (2024-03-14)
+
+
+
+## v1.3.0-rc.4 (2024-03-14)
+
+
+
+## v1.3.0-rc.3 (2024-03-14)
+
+
+
+## v1.3.0-rc.2 (2024-03-14)
+
+
+
+## v1.3.0-rc.1 (2024-03-14)
+
+### Feature
+
+* SPP-10835-introduce-code-optioning ([#275](https://github.com/ONSdigital/sml-catalogue/issues/275)) ([`3a0d897`](https://github.com/ONSdigital/sml-catalogue/commit/3a0d89707607bb3badba888ef42760baab046cef))
+
+## v1.2.0 (2024-03-01)
+
+
+
 ## v1.2.0-rc.1 (2024-02-28)
 
 ### Feature

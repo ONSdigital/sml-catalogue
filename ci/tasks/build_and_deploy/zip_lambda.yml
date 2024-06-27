@@ -1,0 +1,23 @@
+# This yaml will take the zip_lambda script to package and zip our lambdas.
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: public.ecr.aws/ons-spp/python-selenium
+    tag: 4
+
+inputs:
+  - name: repo
+outputs:
+  - name: repo
+
+run:
+  path: sh
+  dir: repo
+  args:
+    - -exc
+    - |
+      apt-get -y update && apt-get install -y zip zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev
+      bash ./ci/tasks/build_and_deploy/zip_lambda.sh
