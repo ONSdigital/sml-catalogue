@@ -16,3 +16,4 @@
 "Joseph Percival made a change to contentful"
 "Joseph Percival made a change to contentful"
 "Joseph Percival made a change to contentful"
+"  made a change to contentful"
