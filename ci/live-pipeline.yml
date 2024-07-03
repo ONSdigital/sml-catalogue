@@ -44,6 +44,7 @@ env_setups:
     <<: *general_preprod_params
     ACCOUNT_NAME: &account sml_preprod
     AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_preprod)):role/spp-concourse-sml-deployment-preprod
+    cms_email_list: ((cms_email_list))
     TF_VAR_aws_account_id: ((aws_account_sml_preprod))
     TF_VAR_deployment_role: *role
     TF_VAR_environment: preprod
@@ -65,6 +66,10 @@ resource_types:
     type: docker-image
     source:
       repository: teliaoss/github-pr-resource
+  - name: email
+    type: docker-image
+    source:
+      repository: pcfseceng/email-resource
 
 resources:
   - name: tag_commit
@@ -136,6 +141,15 @@ resources:
       base_branch: main
       disable_forks: true
       states: ["CLOSED", "MERGED"]
+      resources:
+  - name: send-an-email
+    type: email
+    source:
+      smtp:
+        host: smtp.example.com
+        port: "587" # this must be a string
+        anonymous: true
+      from: SML_Preprod@test.com
 
 jobs:
   - name: build_and_deploy_dev_branch
@@ -297,6 +311,11 @@ jobs:
             file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
           - in_parallel:
+              - task: email_metadata
+                file: repo/ci/tasks/util/email_metadata.yml
+                params:
+                  <<: *sml_preprod_setup
+
               - task: terraform-apply-environment
                 file: repo/ci/tasks/terraform/apply_terraform.yml
                 params:
@@ -310,8 +329,8 @@ jobs:
                 file: repo/ci/tasks/build_and_deploy/build_files.yml
                 params:
                   SPACE_ID: ((contentful_space_id))
-              CDA_KEY: ((contentful_delivery_api_key_preprod))
-              CONTENTFUL_ENVIRONMENT: preprod<<: *github_pull_creds
+                  CDA_KEY: ((contentful_delivery_api_key_preprod))
+                  CONTENTFUL_ENVIRONMENT: preprod
                   <<: *sml_preprod_setup
                   BUILD_TYPE: 1
                   GH_TOKEN: ((github_access_token))
@@ -326,6 +345,20 @@ jobs:
 
           - task: run-acceptance-tests
             file: repo/ci/tasks/testing/run_bdd_tests.yml
+
+    on_success:
+      - put: send-an-email
+        params:
+          subject: "SML Library Preprod Deployment Success"
+          body: email/body
+          to: email/email
+
+    on_failure:
+      - put: send-an-email
+        params:
+          subject: "SML Library Preprod Deployment Failure"
+          body: email/body
+          to: email/email
 
   - name: build_and_deploy_prod
     plan:
