@@ -379,13 +379,13 @@ files = [
 
 [[package]]
 name = "contentful"
-version = "2.1.1"
+version = "2.2.0"
 description = "Contentful Delivery API Client"
 optional = false
 python-versions = "*"
 files = [
-    {file = "contentful-2.1.1-py3-none-any.whl", hash = "sha256:6be3fe980cc68cf2eab2b39958df3ae9b7c4d2b26ee92a4926dd8fdd88bf20c0"},
-    {file = "contentful-2.1.1.tar.gz", hash = "sha256:7e83776577326c5f088771a83455c2e0eb23c5ee571d024812159b39bb03d206"},
+    {file = "contentful-2.2.0-py3-none-any.whl", hash = "sha256:11a63bbb7963fd905a3408aed2064b0468cd44969c6e99ab43923073113b80af"},
+    {file = "contentful-2.2.0.tar.gz", hash = "sha256:c181c94f9d9d7fa3a9124b0538492f9c8cc01a1be9550598b170ce43402d89c0"},
 ]
 
 [package.dependencies]
@@ -1903,4 +1903,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "9402edf90876ebe0c1937de6855a53440d8a0ac26c1429125ff5a28a3cb44a3d"
+content-hash = "8d741861277935fbfc56c2a7c7aebe0e7f5eadd9f48d0f184b13f11abe6bed92"
