@@ -268,6 +268,9 @@ jobs:
           - task: build-files
             file: repo/ci/tasks/build_and_deploy/build_files.yml
             params:
+              SPACE_ID: ((contentful_space_id))
+              CDA_KEY: ((contentful_delivery_api_key_preprod))
+              CONTENTFUL_ENVIRONMENT: preprod
               <<: *github_pull_creds
               <<: *sml_preprod_setup
               BUILD_TYPE: 1
