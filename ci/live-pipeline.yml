@@ -7,7 +7,7 @@ env_setups:
     AWS_DEFAULT_REGION: eu-west-2
     S3_KEY: sml-portal.tfstate
     CONCOURSE_ACCESS_TOKEN: ((github_access_token))
-    SHARED_ACCOUNT_ROLE: &shared_account_role arn:aws:iam::289259348294:role/spp-concourse-access-prod  
+    SHARED_ACCOUNT_ROLE: &shared_account_role arn:aws:iam::289259348294:role/spp-concourse-access-prod
 
   general_dev: &general_dev_params
     TF_VAR_deployment_type: dev
@@ -27,7 +27,7 @@ env_setups:
   github_pull_creds: &github_pull_creds
     username: ((github_access_token))
     password: x-oauth-basic
-    
+
   # -------------------
 
   sml_dev: &sml_dev_setup
@@ -88,6 +88,18 @@ resources:
       branch: main
       username: ((github_access_token))
       password: x-oauth-basic
+  - name: contentful_change
+    type: git
+    icon: github
+    check_every: 1m
+    webhook_token: gesture
+    source:
+      uri: https://github.com/ONSdigital/sml-catalogue.git
+      branch: main
+      username: ((github_access_token))
+      password: x-oauth-basic
+      paths:
+      - CONTENTFUL_CHANGELOG.md
   - name: main-updated
     type: git
     icon: github
@@ -161,6 +173,8 @@ jobs:
               BUILD_TYPE: 0
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+              POETRY_SPACE_ID: ((github_access_token))
+              POETRY_CDA_KEY: ((github_access_token))
 
         - task: deploy_code
           file: repo/ci/tasks/build_and_deploy/deploy.yml
@@ -273,6 +287,50 @@ jobs:
         - task: run-acceptance-tests
           file: repo/ci/tasks/testing/run_bdd_tests.yml
 
+  - name: build_and_deploy_preprod_contentful
+    serial: true
+    plan:
+      - do:
+          - get: repo
+            resource: contentful_change
+            trigger: true
+            version: every
+
+          - task: zip-lambda
+            file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
+
+          - in_parallel:
+              - task: terraform-apply-environment
+                file: repo/ci/tasks/terraform/apply_terraform.yml
+                params:
+                  <<: *github_pull_creds
+                  <<: *sml_preprod_setup
+                  TERRAFORM_SOURCE: repo/terraform
+                  WORKSPACE_KEY_INFIX: workspace
+                  TF_WORKSPACE: main
+
+              - task: build-files
+                file: repo/ci/tasks/build_and_deploy/build_files.yml
+                params:
+                  SPACE_ID: ((contentful_space_id))
+                  CDA_KEY: ((contentful_delivery_api_key_preprod))
+                  CONTENTFUL_ENVIRONMENT: preprod
+                  <<: *github_pull_creds
+                  <<: *sml_preprod_setup
+                  BUILD_TYPE: 1
+                  GH_TOKEN: ((github_access_token))
+                  SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
+
+          - task: deploy_code
+            file: repo/ci/tasks/build_and_deploy/deploy.yml
+            params:
+              <<: *github_pull_creds
+              <<: *sml_preprod_setup
+              workspace_name: main
+
+          - task: run-acceptance-tests
+            file: repo/ci/tasks/testing/run_bdd_tests.yml
+
   - name: build_and_deploy_prod
     plan:
       - do:
@@ -281,7 +339,7 @@ jobs:
 
         - task: zip-lambda
           file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
-          
+
         - in_parallel:
           - task: terraform-apply-environment
             file: repo/ci/tasks/terraform/apply_terraform.yml
