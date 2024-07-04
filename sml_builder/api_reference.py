@@ -36,8 +36,10 @@ def api_guidances(category, sub_category=None):
     mkdocs = get_feature_config("docs_integration")
     if mkdocs["enabled"] is True:
         try:
+            with open("./content/api_reference/api_reference.json", encoding="utf-8") as help_contents_file:
+                contents = load(help_contents_file)
             category_label, sub_category_label, sub_category = category_labels(
-                "./content/api_reference/api_reference.json", category, sub_category
+                contents, category, sub_category
             )
         except Exception as e:  # pylint: disable=broad-except
             _page_not_found(e)

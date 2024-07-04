@@ -27,9 +27,7 @@ def get_feature_config(feature_name: str):
         raise KeyError(f"Feature '{feature_name}' not found in features.") from e
 
 
-def category_labels(file_path, selected_category, selected_sub_category):
-    with open(file_path, encoding="utf-8") as help_contents_file:
-        contents = load(help_contents_file)
+def category_labels(contents, selected_category, selected_sub_category):
     for category in contents["categories"]:
         if category["name"] == selected_category:
             category_label = category["label"]
