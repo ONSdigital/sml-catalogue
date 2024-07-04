@@ -1612,13 +1612,13 @@ jeepney = ">=0.6"
 
 [[package]]
 name = "selenium"
-version = "4.20.0"
-description = ""
+version = "4.22.0"
+description = "Official Python bindings for Selenium WebDriver"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "selenium-4.20.0-py3-none-any.whl", hash = "sha256:b1d0c33b38ca27d0499183e48e1dd09ff26973481f5d3ef2983073813ae6588d"},
-    {file = "selenium-4.20.0.tar.gz", hash = "sha256:0bd564ee166980d419a8aaf4ac00289bc152afcf2eadca5efe8c8e36711853fd"},
+    {file = "selenium-4.22.0-py3-none-any.whl", hash = "sha256:e424991196e9857e19bf04fe5c1c0a4aac076794ff5e74615b1124e729d93104"},
+    {file = "selenium-4.22.0.tar.gz", hash = "sha256:903c8c9d61b3eea6fcc9809dc7d9377e04e2ac87709876542cc8f863e482c4ce"},
 ]
 
 [package.dependencies]
@@ -1627,6 +1627,7 @@ trio = ">=0.17,<1.0"
 trio-websocket = ">=0.9,<1.0"
 typing_extensions = ">=4.9.0"
 urllib3 = {version = ">=1.26,<3", extras = ["socks"]}
+websocket-client = ">=1.8.0"
 
 [[package]]
 name = "semver"
@@ -1841,6 +1842,22 @@ socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
+name = "websocket-client"
+version = "1.8.0"
+description = "WebSocket client for Python with low level API options"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "websocket_client-1.8.0-py3-none-any.whl", hash = "sha256:17b44cc997f5c498e809b22cdf2d9c7a9e71c02c8cc2b6c56e7c2d1239bfa526"},
+    {file = "websocket_client-1.8.0.tar.gz", hash = "sha256:3239df9f44da632f96012472805d40a23281a991027ce11d2f45a6f24ac4c3da"},
+]
+
+[package.extras]
+docs = ["Sphinx (>=6.0)", "myst-parser (>=2.0.0)", "sphinx-rtd-theme (>=1.1.0)"]
+optional = ["python-socks", "wsaccel"]
+test = ["websockets"]
+
+[[package]]
 name = "werkzeug"
 version = "2.3.8"
 description = "The comprehensive WSGI web application library."
@@ -1903,4 +1920,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "8d741861277935fbfc56c2a7c7aebe0e7f5eadd9f48d0f184b13f11abe6bed92"
+content-hash = "88627dfed35070a483033c1b571a70bc34017894f75661bc6beb03f4b7b37bdc"
