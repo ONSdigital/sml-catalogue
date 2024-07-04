@@ -96,9 +96,11 @@ def guidances(category, sub_category=None):
             nav=help_centre_nav,
             cms_enabled=content_management["enabled"],
         )
-    
+
     try:
-        with open("./content/help_centre/help_centre.json", encoding="utf-8") as help_contents_file:
+        with open(
+            "./content/help_centre/help_centre.json", encoding="utf-8"
+        ) as help_contents_file:
             contents = load(help_contents_file)
         category_label, sub_category_label, sub_category = category_labels(
             contents, category, sub_category

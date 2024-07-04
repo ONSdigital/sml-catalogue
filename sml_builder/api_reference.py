@@ -36,7 +36,9 @@ def api_guidances(category, sub_category=None):
     mkdocs = get_feature_config("docs_integration")
     if mkdocs["enabled"] is True:
         try:
-            with open("./content/api_reference/api_reference.json", encoding="utf-8") as help_contents_file:
+            with open(
+                "./content/api_reference/api_reference.json", encoding="utf-8"
+            ) as help_contents_file:
                 contents = load(help_contents_file)
             category_label, sub_category_label, sub_category = category_labels(
                 contents, category, sub_category
