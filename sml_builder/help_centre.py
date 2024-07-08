@@ -45,15 +45,15 @@ def help_centre(category=None):
 @app.route("/help-centre/<category>/index")
 @app.route("/help-centre/<category>/<sub_category>")
 def guidances(category, sub_category=None):
-    try:
-        category_label, sub_category_label, sub_category = category_labels(
-            "./content/help_centre/help_centre.json", category, sub_category
-        )
-    except Exception as e:  # pylint: disable=broad-except
-        _page_not_found(e)
     help_centre_nav = _help_centre_nav(category)
 
     if content_management["enabled"]:
+        contents = getContent("helpCentreStructure")["structure"]
+        if checkEmptyList(contents):
+            _page_not_found("helpCentreStructure content not found")
+        category_label, sub_category_label, sub_category = category_labels(
+            contents, category, sub_category
+        )
         if sub_category == "methods-request":
             content = getContent("helpCentreMethodRequest")
             if checkEmptyList(content):
@@ -96,6 +96,17 @@ def guidances(category, sub_category=None):
             nav=help_centre_nav,
             cms_enabled=content_management["enabled"],
         )
+
+    try:
+        with open(
+            "./content/help_centre/help_centre.json", encoding="utf-8"
+        ) as help_contents_file:
+            contents = load(help_contents_file)
+        category_label, sub_category_label, sub_category = category_labels(
+            contents, category, sub_category
+        )
+    except Exception as e:  # pylint: disable=broad-except
+        _page_not_found(e)
 
     if sub_category not in externallink_help_categories:
         try:
