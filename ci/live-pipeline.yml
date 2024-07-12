@@ -95,7 +95,7 @@ resources:
     webhook_token: gesture
     source:
       uri: https://github.com/ONSdigital/sml-catalogue.git
-      branch: main
+      branch: cms-end-to-end-demo
       username: ((github_access_token))
       password: x-oauth-basic
       paths:
