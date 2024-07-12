@@ -32,3 +32,4 @@
 "Joseph Percival made a change to contentful"
 "Joseph Percival made a change to contentful"
 "Joseph Percival made a change to contentful"
+"Joseph Percival made a change to contentful"
