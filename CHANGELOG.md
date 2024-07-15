@@ -1,5 +1,45 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.4 (2024-07-15)
+
+### Feature
+
+* User changes to contentful content model ([`eccb74e`](https://github.com/ONSdigital/sml-catalogue/commit/eccb74e6f729c9124ca5d2d3f97c1f2fed0afd61))
+* User changes to contentful content model ([`f27e60f`](https://github.com/ONSdigital/sml-catalogue/commit/f27e60fb79a6f882d403fa25c16de009b56521f6))
+* User changes to contentful content model ([`5e75a91`](https://github.com/ONSdigital/sml-catalogue/commit/5e75a91ac14ecb405d3e029e44d36bc3be3c44e8))
+* User changes to contentful content model ([`08a35c9`](https://github.com/ONSdigital/sml-catalogue/commit/08a35c9ec8038a9454ddbe37ed36cac6da55c936))
+* User changes to contentful content model ([`1e8cf73`](https://github.com/ONSdigital/sml-catalogue/commit/1e8cf731f1a217b3eaa14e99852886237026152b))
+* User changes to contentful content model ([`ce2bb91`](https://github.com/ONSdigital/sml-catalogue/commit/ce2bb91f437fb332fdf3bd3042f87bea85e0ff51))
+* User changes to contentful content model ([`9005542`](https://github.com/ONSdigital/sml-catalogue/commit/90055427b98380240971095bea6df7816c36a5f6))
+* User changes to contentful content model ([`4bf030a`](https://github.com/ONSdigital/sml-catalogue/commit/4bf030a0c73de64200cc98dd11c468040b524d7d))
+* User changes to contentful content model ([`ac49a95`](https://github.com/ONSdigital/sml-catalogue/commit/ac49a9568fc3985d28e885739592b23427bcf48c))
+* User changes to contentful content model ([`dcf7866`](https://github.com/ONSdigital/sml-catalogue/commit/dcf78668d124891443c0fd591e719e7d0415a3d4))
+* User changes to contentful content model ([`7f44839`](https://github.com/ONSdigital/sml-catalogue/commit/7f448397b23a9288c48f5a3959943d3b453ce737))
+* User changes to contentful content model ([`1508b29`](https://github.com/ONSdigital/sml-catalogue/commit/1508b29c57ab76a827f9f6164139dfde945535a7))
+* User changes to contentful content model ([`b1781eb`](https://github.com/ONSdigital/sml-catalogue/commit/b1781eb62ca05fe882e444fc49d129cf29ef26df))
+* User changes to contentful content model ([`f430a32`](https://github.com/ONSdigital/sml-catalogue/commit/f430a321a4fbee677325b3fcc6f575e37fc22363))
+* User changes to contentful content model ([`a2ea0e5`](https://github.com/ONSdigital/sml-catalogue/commit/a2ea0e5d48db8a041f7816a33d629fd01811534e))
+* User changes to contentful content model ([`0b101d2`](https://github.com/ONSdigital/sml-catalogue/commit/0b101d26912ea90b4262bae9ba7e9c5ae125b163))
+* User changes to contentful content model ([`ee7c3f2`](https://github.com/ONSdigital/sml-catalogue/commit/ee7c3f2d2d64f5641e104d1d8bc19116f9a07790))
+* User changes to contentful content model ([`d1cf007`](https://github.com/ONSdigital/sml-catalogue/commit/d1cf00700bfa7adb40c836fd92ae28e8800e3229))
+* User changes to contentful content model ([`cbc6c65`](https://github.com/ONSdigital/sml-catalogue/commit/cbc6c652cd01bc7d0a822db774686366cab9ff39))
+* User changes to contentful content model ([`5413f32`](https://github.com/ONSdigital/sml-catalogue/commit/5413f32ba558d81c124dcd20e0721721af1178f7))
+* User changes to contentful content model ([`5ed8d92`](https://github.com/ONSdigital/sml-catalogue/commit/5ed8d920bc0e9fccbb08bf87a2ae1aa65d816e23))
+* User changes to contentful content model ([`e8db3f8`](https://github.com/ONSdigital/sml-catalogue/commit/e8db3f8c2d93a7443176c9a051fb6bd1ee1f52e5))
+* User changes to contentful content model ([`7e427a7`](https://github.com/ONSdigital/sml-catalogue/commit/7e427a79024f9232e3b8d36441f46271f99d2308))
+* User changes to contentful content model ([`7ee19e1`](https://github.com/ONSdigital/sml-catalogue/commit/7ee19e114bf0e0d9d38f5eb7c32dd2e769de4a13))
+* User changes to contentful content model ([`e152166`](https://github.com/ONSdigital/sml-catalogue/commit/e1521668fa4712e9cb7609dc47a680bb44e198f4))
+* User changes to contentful content model ([`73810de`](https://github.com/ONSdigital/sml-catalogue/commit/73810deefaf38f05c930f9407d913f3676e0ad3d))
+* User changes to contentful content model ([`576927d`](https://github.com/ONSdigital/sml-catalogue/commit/576927d5c8036f0f3af09232981848bcfd672ad9))
+* User changes to contentful content model ([`92f71a1`](https://github.com/ONSdigital/sml-catalogue/commit/92f71a1421e08587de61243ee7d82cbe468a19a8))
+* User changes to contentful content model ([`d71c49c`](https://github.com/ONSdigital/sml-catalogue/commit/d71c49c89f8dee9cb39651847371e218f20905f7))
+* User changes to contentful content model ([`1350339`](https://github.com/ONSdigital/sml-catalogue/commit/13503399a898c98530a6db1250921bdd3fab247f))
+* SPP-11336-update-contentful-keys ([#327](https://github.com/ONSdigital/sml-catalogue/issues/327)) ([`35eddbd`](https://github.com/ONSdigital/sml-catalogue/commit/35eddbd64ce39caa4bb5c3c430e29debf6a64be0))
+
+### Fix
+
+* Rewrite contents_helper for compatibility with CMS ([#338](https://github.com/ONSdigital/sml-catalogue/issues/338)) ([`ed5ce23`](https://github.com/ONSdigital/sml-catalogue/commit/ed5ce23db62e25d785721de52f85fc275a684ffa))
+
 ## v1.5.0-rc.3 (2024-06-19)
 
 ### Feature
