@@ -144,6 +144,7 @@ resources:
       states: ["CLOSED", "MERGED"]
       resources:
 
+
 jobs:
   - name: build_and_deploy_dev_branch
     plan:
@@ -422,7 +423,5 @@ jobs:
       resource: pr-done
       params:
         path: repo
-
-
         status: failure
         context: Deleting Workspace

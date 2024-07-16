@@ -9,8 +9,7 @@ image_resource:
 
 inputs:
   - name: repo
-output:
-  - name: email
+
 run:
   path: sh
   dir: repo
