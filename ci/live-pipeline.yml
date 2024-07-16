@@ -142,7 +142,7 @@ resources:
       base_branch: main
       disable_forks: true
       states: ["CLOSED", "MERGED"]
-      resources:
+
 
 jobs:
   - name: build_and_deploy_dev_branch
@@ -422,7 +422,5 @@ jobs:
       resource: pr-done
       params:
         path: repo
-
-
         status: failure
         context: Deleting Workspace
