@@ -45,6 +45,7 @@ env_setups:
     ACCOUNT_NAME: &account sml_preprod
     AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_preprod)):role/spp-concourse-sml-deployment-preprod
     cms_email_list: ((cms_email_list))
+    GOV_NOTIFY: ((gov_notify_test))
     TF_VAR_aws_account_id: ((aws_account_sml_preprod))
     TF_VAR_deployment_role: *role
     TF_VAR_environment: preprod
@@ -311,10 +312,6 @@ jobs:
             file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
           - in_parallel:
-              - task: email_metadata
-                file: repo/ci/tasks/util/email_metadata.yml
-                params:
-                  <<: *sml_preprod_setup
 
               - task: terraform-apply-environment
                 file: repo/ci/tasks/terraform/apply_terraform.yml
@@ -347,18 +344,18 @@ jobs:
             file: repo/ci/tasks/testing/run_bdd_tests.yml
 
     on_success:
-      - put: send-an-email
+      - task: email_metadata & send
+        file: repo/ci/tasks/util/email_metadata.yml
         params:
-          subject: "SML Library Preprod Deployment Success"
-          body: email/body
-          to: email/email
+          <<: *sml_preprod_setup
+          status: "pass"
 
     on_failure:
-      - put: send-an-email
+      - task: email_metadata & send
+        file: repo/ci/tasks/util/email_metadata.yml
         params:
-          subject: "SML Library Preprod Deployment Failure"
-          body: email/body
-          to: email/email
+          <<: *sml_preprod_setup
+          status: "failure"
 
   - name: build_and_deploy_prod
     plan:

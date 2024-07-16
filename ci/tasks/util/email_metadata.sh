@@ -5,10 +5,14 @@
 set -euo pipefail
 
 : ${cms_email_list}
+: ${gov_notify_test}
+: ${status}
 
 tag=$( tail -n 1 CONTENTFUL_CHANGELOG.md )
 arr=($tag)
-firstname=${arr[*]:0:1}
-surname=${arr[*]:1:2}
-grep "$firstname $surname" "$cms_email_list" | sed -n -e 's/^.*: //p' > email/email
-echo "$firstname $surname made a change in contentful triggering the following build on Concourse SML: ${BUILD_ID}. Please contact the SML team if the pipeline has failed " > email/body
+export STATUS=$status
+export FIRSTNAME=${arr[*]:0:1}
+export SURNAME=${arr[*]:1:2}
+export EMAIL=${grep "$firstname $surname" "$cms_email_list" | sed -n -e 's/^.*: //p'}
+export GOVNOTIFYAPIKEY=$gov_notify_test
+python ci/tasks/util/send_email.py
