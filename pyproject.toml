@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sml-catalogue"
-version = "1.5.0-rc.3"
+version = "1.5.0-rc.12"
 description = "This repo contains the build environment and code to generate and upload the Statistical Methods Library (SML) Portal Web Application."
 authors = []
 readme = "README.md"
@@ -11,7 +11,7 @@ frozen-flask = "^1.0"
 jsonnet = "^0.20.0"
 markdown = "^3.6"
 flask-markdown = "^0.3"
-contentful = "^2.1.1"
+contentful = "^2.2.0"
 python-markdown-mathjax = "1.0.4"
 python-markdown-math="^0.8"
 
