@@ -143,14 +143,6 @@ resources:
       disable_forks: true
       states: ["CLOSED", "MERGED"]
       resources:
-  - name: send-an-email
-    type: email
-    source:
-      smtp:
-        host: smtp.example.com
-        port: "587" # this must be a string
-        anonymous: true
-      from: SML_Preprod@test.com
 
 jobs:
   - name: build_and_deploy_dev_branch
@@ -312,7 +304,6 @@ jobs:
             file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
           - in_parallel:
-
               - task: terraform-apply-environment
                 file: repo/ci/tasks/terraform/apply_terraform.yml
                 params:
@@ -344,18 +335,18 @@ jobs:
             file: repo/ci/tasks/testing/run_bdd_tests.yml
 
     on_success:
-      - task: email_metadata & send
-        file: repo/ci/tasks/util/email_metadata.yml
-        params:
-          <<: *sml_preprod_setup
-          status: "pass"
+      task: email_user
+      file: repo/ci/tasks/util/email_metadata.yml
+      params:
+        <<: *sml_preprod_setup
+        status: "pass"
 
     on_failure:
-      - task: email_metadata & send
-        file: repo/ci/tasks/util/email_metadata.yml
-        params:
-          <<: *sml_preprod_setup
-          status: "failure"
+      task: email_user
+      file: repo/ci/tasks/util/email_metadata.yml
+      params:
+        <<: *sml_preprod_setup
+        status: "failure"
 
   - name: build_and_deploy_prod
     plan:
