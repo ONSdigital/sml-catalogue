@@ -44,6 +44,8 @@ env_setups:
     <<: *general_preprod_params
     ACCOUNT_NAME: &account sml_preprod
     AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_preprod)):role/spp-concourse-sml-deployment-preprod
+    cms_email_list: ((cms_email_list))
+    GOV_NOTIFY: ((gov_notify_test))
     TF_VAR_aws_account_id: ((aws_account_sml_preprod))
     TF_VAR_deployment_role: *role
     TF_VAR_environment: preprod
@@ -65,6 +67,10 @@ resource_types:
     type: docker-image
     source:
       repository: teliaoss/github-pr-resource
+  - name: email
+    type: docker-image
+    source:
+      repository: pcfseceng/email-resource
 
 resources:
   - name: tag_commit
@@ -136,6 +142,7 @@ resources:
       base_branch: main
       disable_forks: true
       states: ["CLOSED", "MERGED"]
+      resources:
 
 jobs:
   - name: build_and_deploy_dev_branch
@@ -315,7 +322,6 @@ jobs:
                   SPACE_ID: ((contentful_space_id))
                   CDA_KEY: ((contentful_delivery_api_key_preprod))
                   CONTENTFUL_ENVIRONMENT: preprod
-                  <<: *github_pull_creds
                   <<: *sml_preprod_setup
                   BUILD_TYPE: 1
                   GH_TOKEN: ((github_access_token))
@@ -330,6 +336,20 @@ jobs:
 
           - task: run-acceptance-tests
             file: repo/ci/tasks/testing/run_bdd_tests.yml
+
+    on_success:
+      task: email_user
+      file: repo/ci/tasks/util/email_metadata.yml
+      params:
+        <<: *sml_preprod_setup
+        status: "pass"
+
+    on_failure:
+      task: email_user
+      file: repo/ci/tasks/util/email_metadata.yml
+      params:
+        <<: *sml_preprod_setup
+        status: "failure"
 
   - name: build_and_deploy_prod
     plan:

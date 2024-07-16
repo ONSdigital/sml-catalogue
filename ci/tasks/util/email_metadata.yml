@@ -1,0 +1,20 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: public.ecr.aws/ons-spp/terraform
+    tag: 1
+
+inputs:
+  - name: repo
+output:
+  - name: email
+run:
+  path: sh
+  dir: repo
+  args:
+    - -exc
+    - |
+      bash ./ci/tasks/util/email_metadata.sh
