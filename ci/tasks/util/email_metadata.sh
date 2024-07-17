@@ -11,10 +11,9 @@ set -euo pipefail
 pip install notifications-python-client
 
 tag=$( tail -n 1 CONTENTFUL_CHANGELOG.md )
-arr=($tag)
 export STATUS=$status
-export FIRSTNAME=${arr[*]:0:1}
-export SURNAME=${arr[*]:1:2}
+export FIRSTNAME=$(echo "${tag//\"}" | awk '{print $1;}')
+export SURNAME=$(echo "${tag//\"}" | awk '{print $2;}')
 export EMAIL=$(echo "$CMS_EMAIL_LIST" | grep "$FIRSTNAME $SURNAME" | sed 's/.*://')
 export GOVNOTIFYAPIKEY=$GOV_NOTIFY
 python ci/tasks/util/send_email.py
