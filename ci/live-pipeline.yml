@@ -101,7 +101,7 @@ resources:
     webhook_token: gesture
     source:
       uri: https://github.com/ONSdigital/sml-catalogue.git
-      branch: contentful-integration-email
+      branch: main
       username: ((github_access_token))
       password: x-oauth-basic
       paths:
