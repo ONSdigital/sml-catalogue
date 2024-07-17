@@ -4,8 +4,8 @@
 
 set -euo pipefail
 
-: ${cms_email_list}
-: ${gov_notify_test}
+: ${CMS_EMAIL_LIST}
+: ${GOV_NOTIFY}
 : ${status}
 
 pip install notifications-python-client
@@ -15,6 +15,6 @@ arr=($tag)
 export STATUS=$status
 export FIRSTNAME=${arr[*]:0:1}
 export SURNAME=${arr[*]:1:2}
-export EMAIL=${grep "$firstname $surname" "$cms_email_list" | sed -n -e 's/^.*: //p'}
-export GOVNOTIFYAPIKEY=$gov_notify_test
+export EMAIL=${echo "$CMS_EMAIL_LIST" | grep "$firstname $surname"| sed 's/.*://'}
+export GOVNOTIFYAPIKEY=$GOV_NOTIFY
 python ci/tasks/util/send_email.py

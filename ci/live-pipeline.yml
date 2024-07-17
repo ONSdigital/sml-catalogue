@@ -44,8 +44,8 @@ env_setups:
     <<: *general_preprod_params
     ACCOUNT_NAME: &account sml_preprod
     AWS_SERVICE_ROLE: &role arn:aws:iam::((aws_account_sml_preprod)):role/spp-concourse-sml-deployment-preprod
-    cms_email_list: ((cms_email_list))
-    GOV_NOTIFY: ((gov_notify_test))
+    CMS_EMAIL_LIST: ((cms_email_list))
+    GOV_NOTIFY: ((gov_notify_live))
     TF_VAR_aws_account_id: ((aws_account_sml_preprod))
     TF_VAR_deployment_role: *role
     TF_VAR_environment: preprod
