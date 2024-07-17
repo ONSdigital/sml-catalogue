@@ -5,7 +5,7 @@ image_resource:
   type: registry-image
   source:
     repository: public.ecr.aws/ons-spp/python-selenium
-    tag: 1
+    tag: 4
 
 inputs:
   - name: repo
