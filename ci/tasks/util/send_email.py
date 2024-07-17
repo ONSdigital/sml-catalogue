@@ -18,4 +18,5 @@ notifications_client = NotificationsAPIClient(api_key)
 response = notifications_client.send_email_notification(
     email, template, personalisation
 )
+print(response)
 print("email sent")
