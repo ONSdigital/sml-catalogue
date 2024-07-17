@@ -8,6 +8,8 @@ set -euo pipefail
 : ${gov_notify_test}
 : ${status}
 
+pip install notifications-python-client
+
 tag=$( tail -n 1 CONTENTFUL_CHANGELOG.md )
 arr=($tag)
 export STATUS=$status
