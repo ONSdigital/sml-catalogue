@@ -13,7 +13,9 @@ template = (
     else "45a2acad-7f3b-4993-aac5-2ed618c26787"
 )
 personalisation = {"name": firstname, "surname": surname}
+print(f'values are {firstname} {surname} {email} {end_state} {template}')
 notifications_client = NotificationsAPIClient(api_key)
 response = notifications_client.send_email_notification(
     email, template, personalisation
 )
+print("email sent")
