@@ -2,6 +2,11 @@
 
 # This script is used to update the CONTENTFUL_CHANGELOG.md file with the details of the latest Contentful update.
 # Concourse pipeline detects changes to the changelog file to trigger a preprod build for CMS content review.
+# Uage:
+# ./update_changelog.sh <environment - preprod|prod|dev>
+#
+# The CONTENTFUL_CDA_TOKEN envvironment variable must be set to the
+# API Token matching the passed environment parameter. 
 
 # Stop on first error
 set -e
@@ -103,6 +108,15 @@ get_entry_by_id() {
 }
 
 
+# Check if the environment parameter is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 <environment>"
+    exit 1
+fi
+
+# Assign the first parameter to a variable
+environment="$1"
+
 # Replace these with actual space and user IDs as necessary
 space_id="${GITHUB_EVENT_SPACE_ID}"
 user_id="${GITHUB_EVENT_USER_ID}"
@@ -118,7 +132,7 @@ if [ $? -eq 0 ]; then
 
     # Get the entry by ID
     entry_id="${GITHUB_EVENT_ENTITY_ID}"
-    get_entry_by_id "$space_id" "prod" "$entry_id" "$CONTENTFUL_CDA_TOKEN"
+    get_entry_by_id "$space_id" "$environment" "$entry_id" "$CONTENTFUL_CDA_TOKEN"
 
     # Check the return from the function
     if [ $? -eq 0 ]; then
@@ -127,11 +141,11 @@ if [ $? -eq 0 ]; then
 
         # Detect if GNU date is available
         if date --version &>/dev/null; then
-        # GNU date (Linux)
-        formatted_timestamp=$(date -d "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
+            # GNU date (Linux)
+            formatted_timestamp=$(date -d "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
         else
-        # macOS date
-        formatted_timestamp=$(date -j -f "%Y-%m-%d %H:%M:%S" "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
+            # macOS date
+            formatted_timestamp=$(date -j -f "%Y-%m-%d %H:%M:%S" "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
         fi
 
         fields=$(echo "${update_details["fields"]}" | jq -r 'to_entries[] | "\(.key): \(.value)"')
