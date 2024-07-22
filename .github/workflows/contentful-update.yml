@@ -28,7 +28,7 @@ jobs:
           CONTENTFUL_CDA_TOKEN: ${{ secrets.CONTENTFUL_CDA_TOKEN }}
         run: |
           chmod +x scripts/update_changelog.sh
-          scripts/update_changelog.sh
+          scripts/update_changelog.sh || exit 1
 
       - name: Import GPG
         uses: crazy-max/ghaction-import-gpg@v6.1.0
