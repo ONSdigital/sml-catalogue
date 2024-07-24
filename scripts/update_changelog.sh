@@ -176,11 +176,11 @@ if [ $? -eq 0 ]; then
 
     else
         echo "Failed to retrieve entry details."
-        #exit 1
+        exit 1
     fi
 
 else
     echo "Failed to retrieve user full name."
-    #exit 1
+    exit 1
 fi
 
