@@ -177,7 +177,7 @@ jobs:
             params:
               SPACE_ID: ((contentful_space_id))
               CDA_KEY: ((contentful_delivery_api_key_dev))
-              CONTENTFUL_ENVIRONMENT: dev
+              CONTENTFUL_ENVIRONMENT: prod
               BUILD_TYPE: 0
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
@@ -239,7 +239,7 @@ jobs:
             params:
               SPACE_ID: ((contentful_space_id))
               CDA_KEY: ((contentful_delivery_api_key_dev))
-              CONTENTFUL_ENVIRONMENT: dev
+              CONTENTFUL_ENVIRONMENT: prod
               BUILD_TYPE: 0
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
@@ -278,7 +278,7 @@ jobs:
             params:
               SPACE_ID: ((contentful_space_id))
               CDA_KEY: ((contentful_delivery_api_key_preprod))
-              CONTENTFUL_ENVIRONMENT: preprod
+              CONTENTFUL_ENVIRONMENT: prod
               <<: *github_pull_creds
               <<: *sml_preprod_setup
               BUILD_TYPE: 1
