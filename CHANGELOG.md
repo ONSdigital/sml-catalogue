@@ -1,5 +1,15 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.24 (2024-07-26)
+
+### Feature
+
+* User changes to contentful content model ([`72e3797`](https://github.com/ONSdigital/sml-catalogue/commit/72e379753826020a2366196f35882fb46d39bd05))
+
+### Fix
+
+* Cms end to end demo ([#339](https://github.com/ONSdigital/sml-catalogue/issues/339)) ([`f181559`](https://github.com/ONSdigital/sml-catalogue/commit/f18155948aa3e345a97a48b0a95935cd45f5bc22))
+
 ## v1.5.0-rc.23 (2024-07-26)
 
 ### Feature
