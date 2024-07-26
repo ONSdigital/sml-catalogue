@@ -1,5 +1,12 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.23 (2024-07-26)
+
+### Feature
+
+* User changes to contentful content model ([`5df374f`](https://github.com/ONSdigital/sml-catalogue/commit/5df374f85f12b3166163389de7a8f146240d807d))
+* Pass env to CMS Changelog Script ([#354](https://github.com/ONSdigital/sml-catalogue/issues/354)) ([`3f4376e`](https://github.com/ONSdigital/sml-catalogue/commit/3f4376ed05d4d1701eaa1289f22827b1c9867e2c))
+
 ## v1.5.0-rc.22 (2024-07-22)
 
 ### Feature
