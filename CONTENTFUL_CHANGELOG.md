@@ -180,3 +180,24 @@ heroButton: Find methods
 
 — 26/07/2024 at 02:30:33 PM —
 
+# CMS Update: 26/07/2024 at 02:56:45 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: heroHomePage
+
+Revision: 22
+
+Updated At: 2024-07-26T14:56:45.304Z
+
+Content Updated:
+
+```txt
+heroTitle: An open source library for statistical code approved by the ONS
+heroButton: Find methods
+```
+
+— 26/07/2024 at 02:56:45 PM —
+
