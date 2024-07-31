@@ -1,5 +1,15 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.32 (2024-07-31)
+
+### Feature
+
+* User changes to contentful content model ([`e73ce35`](https://github.com/ONSdigital/sml-catalogue/commit/e73ce358ac1da57b8e37ae310c550ea4d363a72c))
+
+### Fix
+
+* Assign correct environment keys ([#356](https://github.com/ONSdigital/sml-catalogue/issues/356)) ([`4ce25cf`](https://github.com/ONSdigital/sml-catalogue/commit/4ce25cfaf1d91ceb720ba0902d13e4fb3a428b18))
+
 ## v1.5.0-rc.31 (2024-07-29)
 
 ### Feature
