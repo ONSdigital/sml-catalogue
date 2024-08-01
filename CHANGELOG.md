@@ -1,5 +1,15 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.45 (2024-08-01)
+
+### Feature
+
+* User changes to contentful content model ([`a5fbd67`](https://github.com/ONSdigital/sml-catalogue/commit/a5fbd67c36b4df49208f294c163d6a42d9368c57))
+* User changes to contentful content model ([`8bfa7ff`](https://github.com/ONSdigital/sml-catalogue/commit/8bfa7fffef1751d6d6aad7c8c0ca43f87e01db95))
+* User changes to contentful content model ([`03e57b7`](https://github.com/ONSdigital/sml-catalogue/commit/03e57b7129186066a81841445529a436f10c48ef))
+* User changes to contentful content model ([`4a617f1`](https://github.com/ONSdigital/sml-catalogue/commit/4a617f1f45863ba1620e65671ffaeb602275d085))
+* User changes to contentful content model ([`92eda46`](https://github.com/ONSdigital/sml-catalogue/commit/92eda46c54a4423463db4993f3e309631dac2fb9))
+
 ## v1.5.0-rc.44 (2024-08-01)
 
 ### Feature
