@@ -831,3 +831,24 @@ userDocumentationLink: https://github.com/ONSdigital/cell-key-perturbation/blob/
 
 — 01/08/2024 at 01:14:33 PM —
 
+# CMS Update: 01/08/2024 at 01:16:03 PM
+
+Editor: Steve Gibbard
+
+Environment: preprod
+
+Content Type: heroHomePage
+
+Revision: 26
+
+Updated At: 2024-08-01T13:16:03.775Z
+
+Content Updated:
+
+```txt
+heroTitle: An open source library for statistical code approved by the ONS STEVE CHANGE
+heroButton: Find methods
+```
+
+— 01/08/2024 at 01:16:03 PM —
+
