@@ -997,3 +997,24 @@ releaseLink:
 
 — 01/08/2024 at 02:00:38 PM —
 
+# CMS Update: 02/08/2024 at 11:35:08 AM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: heroHomePage
+
+Revision: 29
+
+Updated At: 2024-08-02T11:35:08.562Z
+
+Content Updated:
+
+```txt
+heroTitle: An open source library for statistical code approved by the ONS test
+heroButton: Find methods
+```
+
+— 02/08/2024 at 11:35:08 AM —
+
