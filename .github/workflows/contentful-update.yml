@@ -7,10 +7,17 @@ permissions:
   contents: write    # This is required for actions/checkout
 concurrency:
   group: contentful_updates
+  cancel-in-progress: false # This will allow the workflow to run even if another one is already running
 jobs:
   commit_changes:
     runs-on: ubuntu-latest
     steps:
+      - name: Random sleep to avoid race condition that doesn't detect concurrency
+        run: |
+          time=$((RANDOM % 5 + RANDOM % 5))s
+          echo "Random sleep for $time seconds"
+          sleep $time
+
       - uses: actions/checkout@master
         with:
           token: ${{ secrets.CONTENTFUL_GITHUB_TOKEN }}
