@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.55 (2024-08-06)
+
+### Fix
+
+* Increase delay to Contentful Action and Rebase ([#360](https://github.com/ONSdigital/sml-catalogue/issues/360)) ([`d4056b5`](https://github.com/ONSdigital/sml-catalogue/commit/d4056b5cf544ea5e644324440346ba9461c9990f))
+
 ## v1.5.0-rc.54 (2024-08-05)
 
 ### Feature
