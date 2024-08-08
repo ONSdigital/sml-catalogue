@@ -142,7 +142,6 @@ resources:
       base_branch: main
       disable_forks: true
       states: ["CLOSED", "MERGED"]
-      resources:
 
 
 jobs:
