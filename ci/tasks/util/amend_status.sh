@@ -8,7 +8,7 @@ set -euo pipefail
 : ${STATE}
 : ${TOKEN}
 
-curl -L \
+curl -b -L \
   -X POST \
   -H "Accept: application/vnd.github+json" \
   -H "Authorization: Bearer $TOKEN" \
