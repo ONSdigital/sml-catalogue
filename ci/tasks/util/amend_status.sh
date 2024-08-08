@@ -14,7 +14,7 @@ id=$(curl -L \
   -H "Authorization: Bearer $TOKEN" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/repos/ONSdigital/sml-catalogue/deployments \
-  -d "{'ref':'spp11763','environment':'$ENVIRONMENT'}" | jq -r '.id')
+  -d "{'ref':'spp11763','environment':'$ENVIRONMENT', 'required_contexts':'{}'}" | jq -r '.id')
 
 curl -L \
   -X POST \
