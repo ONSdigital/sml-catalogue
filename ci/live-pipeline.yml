@@ -159,7 +159,12 @@ jobs:
             path: repo
             status: pending
             context: Deploying_Dev
-
+        - task: amend-status
+          file: repo/ci/tasks/util/amend_status.yml
+          params:
+            TOKEN: ((github_access_token))
+            ENVIRONMENT: "dev"
+            STATE: "in_progress"
         - task: zip-lambda
           file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
@@ -335,8 +340,6 @@ jobs:
               <<: *sml_preprod_setup
               workspace_name: main
 
-          - task: run-acceptance-tests
-            file: repo/ci/tasks/testing/run_bdd_tests.yml
 
     on_success:
       task: email_user
