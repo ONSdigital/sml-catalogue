@@ -8,7 +8,7 @@ set -euo pipefail
 : ${STATE}
 : ${TOKEN}
 
-curl -b cookiefile -L \
+curl -b 'session=1' -L \
   -X POST \
   -H "Accept: application/vnd.github+json" \
   -H "Authorization: Bearer $TOKEN" \
