@@ -162,7 +162,7 @@ jobs:
           file: repo/ci/tasks/util/amend_status.yml
           params:
             TOKEN: ((github_access_token))
-            ENVIRONMENT: "dev"
+            ENVIRONMENT: "test"
             STATE: "in_progress"
         - task: zip-lambda
           file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
