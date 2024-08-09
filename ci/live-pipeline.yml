@@ -97,7 +97,7 @@ resources:
   - name: contentful_change
     type: git
     icon: github
-    check_every: 1m
+    check_every: 5m
     webhook_token: gesture
     source:
       uri: https://github.com/ONSdigital/sml-catalogue.git
@@ -142,7 +142,6 @@ resources:
       base_branch: main
       disable_forks: true
       states: ["CLOSED", "MERGED"]
-      resources:
 
 
 jobs:
@@ -296,13 +295,19 @@ jobs:
           file: repo/ci/tasks/testing/run_bdd_tests.yml
 
   - name: build_and_deploy_preprod_contentful
-    serial: true
+    max_in_flight: 1
     plan:
       - do:
           - get: repo
             resource: contentful_change
             trigger: true
-            version: every
+            version: latest
+
+          - task: email_user
+            file: repo/ci/tasks/util/email_metadata.yml
+            params:
+              <<: *sml_preprod_setup
+              status: "build_started"
 
           - task: zip-lambda
             file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
@@ -335,8 +340,6 @@ jobs:
               <<: *sml_preprod_setup
               workspace_name: main
 
-          - task: run-acceptance-tests
-            file: repo/ci/tasks/testing/run_bdd_tests.yml
 
     on_success:
       task: email_user
