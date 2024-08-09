@@ -220,12 +220,6 @@ jobs:
           trigger: true
           version: every
 
-        - task: email_user
-          file: repo/ci/tasks/util/email_metadata.yml
-          params:
-            <<: *sml_preprod_setup
-            status: "build_started"
-
         - task: zip-lambda
           file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
 
@@ -308,6 +302,12 @@ jobs:
             resource: contentful_change
             trigger: true
             version: latest
+
+          - task: email_user
+            file: repo/ci/tasks/util/email_metadata.yml
+            params:
+              <<: *sml_preprod_setup
+              status: "build_started"
 
           - task: zip-lambda
             file: repo/ci/tasks/build_and_deploy/zip_lambda.yml
