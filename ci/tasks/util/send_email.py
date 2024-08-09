@@ -5,7 +5,7 @@ from notifications_python_client.notifications import NotificationsAPIClient
 templates = {
     "pass": "94772cac-74b6-4b12-afca-11e525e3365a",
     "fail": "45a2acad-7f3b-4993-aac5-2ed618c26787",
-    "in_progress": "fd5fb69b-ec9c-408b-b761-5ff11266f50b"
+    "build_started": "fd5fb69b-ec9c-408b-b761-5ff11266f50b"
 }
 firstname = os.environ["FIRSTNAME"]
 surname = os.environ["SURNAME"]
