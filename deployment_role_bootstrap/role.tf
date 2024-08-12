@@ -214,6 +214,7 @@ resource "aws_iam_policy" "deployment_role_sml_policy" {
               "Action": [
                 "lambda:CreateFunction",
                 "lambda:GetFunction",
+                "lambda:ListTags",
                 "lambda:TagResource",
                 "lambda:UpdateFunctionCode",
                 "lambda:RemovePermission",
