@@ -63,7 +63,7 @@ echo "Rolling back content in $target_environment"
 # export the current state of the environment for use in deletion_changeset.py
 contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/content-exports --environment-id $target_environment --content-file ${target_environment}-export.json
 # delete all entries using deletion_changeset.py
-python deletion_changeset.py $target_environment
+python deletion_changeset.py $target_environment ./contentful-data/content-exports/${target_environment}-export.json
 contentful-merge apply --space $SPACE_ID --environment $target_environment --cma-token $CLI_KEY --file ./contentful-data/migrations/deletion-changeset.json
 # perform any necessary content type changes
 contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/rollbacks/${target_environment}-export.js

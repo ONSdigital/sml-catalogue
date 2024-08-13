@@ -5,10 +5,13 @@ import sys
 
 if __name__ == "__main__":
     allowed_environments = ["dev", "preprod", "prod"]
-    if len(sys.argv) == 2:
+    if len(sys.argv) == 3:
         target_environment = sys.argv[1]
+        env_export_filepath = sys.argv[2]
     else:
-        print("Usage: python deletion_changeset.py <target_environment>")
+        print(
+            "Usage: python deletion_changeset.py <target_environment> <path_to_target_environment_export_file>"
+        )
         sys.exit(1)
     if target_environment not in allowed_environments:
         print("Invalid environment. Allowed environments are dev, preprod, prod.")
@@ -18,7 +21,7 @@ if __name__ == "__main__":
     ) as deletion_changeset_file:
         deletion_changeset = load(deletion_changeset_file)
     with open(
-        f"./contentful-data/content-exports/{target_environment}-export.json",
+        env_export_filepath,
         encoding="utf-8",
     ) as target_file:
         target_environment_data = load(target_file)
