@@ -12,7 +12,7 @@
         "id": "heroHomePage",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.195Z",
-        "updatedAt": "2024-08-09T11:40:20.076Z",
+        "updatedAt": "2024-08-09T16:50:48.161Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -20,8 +20,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:20.076Z",
+        "publishedVersion": 17,
+        "publishedAt": "2024-08-09T16:50:48.161Z",
         "firstPublishedAt": "2024-05-09T15:45:17.455Z",
         "createdBy": {
           "sys": {
@@ -37,8 +37,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 9,
+        "version": 18,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -97,7 +97,7 @@
         "id": "catalogueTableOfMethods2",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.239Z",
-        "updatedAt": "2024-08-09T11:40:20.722Z",
+        "updatedAt": "2024-08-09T16:50:48.737Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -105,8 +105,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 35,
-        "publishedAt": "2024-08-09T11:40:20.722Z",
+        "publishedVersion": 37,
+        "publishedAt": "2024-08-09T16:50:48.737Z",
         "firstPublishedAt": "2024-05-09T15:45:18.379Z",
         "createdBy": {
           "sys": {
@@ -122,8 +122,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 18,
-        "version": 36,
+        "publishedCounter": 19,
+        "version": 38,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -322,7 +322,7 @@
         "id": "methodsCatalogue",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.379Z",
-        "updatedAt": "2024-08-09T11:40:21.524Z",
+        "updatedAt": "2024-08-09T16:50:49.577Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -330,8 +330,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:21.524Z",
+        "publishedVersion": 17,
+        "publishedAt": "2024-08-09T16:50:49.577Z",
         "firstPublishedAt": "2024-05-09T15:45:17.922Z",
         "createdBy": {
           "sys": {
@@ -347,8 +347,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 9,
+        "version": 18,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -429,7 +429,7 @@
         "id": "helpCentreInformation",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.403Z",
-        "updatedAt": "2024-08-09T11:40:22.108Z",
+        "updatedAt": "2024-08-09T16:50:50.279Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -437,8 +437,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:22.108Z",
+        "publishedVersion": 17,
+        "publishedAt": "2024-08-09T16:50:50.279Z",
         "firstPublishedAt": "2024-05-09T15:45:19.286Z",
         "createdBy": {
           "sys": {
@@ -454,8 +454,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 9,
+        "version": 18,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -522,7 +522,7 @@
         "id": "privacycontent",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.412Z",
-        "updatedAt": "2024-08-09T11:40:25.563Z",
+        "updatedAt": "2024-08-09T16:50:50.888Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -530,8 +530,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:25.563Z",
+        "publishedVersion": 17,
+        "publishedAt": "2024-08-09T16:50:50.888Z",
         "firstPublishedAt": "2024-05-09T15:45:19.916Z",
         "createdBy": {
           "sys": {
@@ -547,8 +547,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 9,
+        "version": 18,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -587,7 +587,7 @@
         "id": "about",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.430Z",
-        "updatedAt": "2024-08-09T11:40:26.130Z",
+        "updatedAt": "2024-08-09T16:50:51.361Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -595,8 +595,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:26.130Z",
+        "publishedVersion": 17,
+        "publishedAt": "2024-08-09T16:50:51.361Z",
         "firstPublishedAt": "2024-05-09T15:45:18.862Z",
         "createdBy": {
           "sys": {
@@ -612,8 +612,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 9,
+        "version": 18,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -652,7 +652,7 @@
         "id": "helpCentreStructure",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.978Z",
-        "updatedAt": "2024-08-09T11:40:26.774Z",
+        "updatedAt": "2024-08-09T16:50:51.901Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -660,8 +660,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:26.774Z",
+        "publishedVersion": 17,
+        "publishedAt": "2024-08-09T16:50:51.901Z",
         "firstPublishedAt": "2024-05-09T15:45:20.279Z",
         "createdBy": {
           "sys": {
@@ -677,8 +677,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 9,
+        "version": 18,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -728,7 +728,7 @@
         "id": "accessibilityPage",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.988Z",
-        "updatedAt": "2024-08-09T11:40:27.358Z",
+        "updatedAt": "2024-08-09T16:50:52.663Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -736,8 +736,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:27.358Z",
+        "publishedVersion": 17,
+        "publishedAt": "2024-08-09T16:50:52.663Z",
         "firstPublishedAt": "2024-05-09T15:45:21.171Z",
         "createdBy": {
           "sys": {
@@ -753,8 +753,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 9,
+        "version": 18,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -804,7 +804,7 @@
         "id": "helpCentreMethodRequest",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:17.086Z",
-        "updatedAt": "2024-08-09T11:40:28.325Z",
+        "updatedAt": "2024-08-09T16:50:53.204Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -812,8 +812,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:28.325Z",
+        "publishedVersion": 17,
+        "publishedAt": "2024-08-09T16:50:53.204Z",
         "firstPublishedAt": "2024-05-09T15:45:20.687Z",
         "createdBy": {
           "sys": {
@@ -829,8 +829,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 9,
+        "version": 18,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -916,7 +916,7 @@
             "linkType": "Space"
           }
         },
-        "version": 16,
+        "version": 18,
         "createdAt": "2024-05-09T15:45:17.596Z",
         "createdBy": {
           "sys": {
@@ -925,7 +925,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-08-09T11:40:30.527Z",
+        "updatedAt": "2024-08-09T16:50:56.274Z",
         "updatedBy": {
           "sys": {
             "id": "0RE3J0ImbZ27ZHNVtOJhsd",
@@ -1042,7 +1042,7 @@
             "linkType": "Space"
           }
         },
-        "version": 36,
+        "version": 38,
         "createdAt": "2024-05-09T15:45:18.538Z",
         "createdBy": {
           "sys": {
@@ -1051,7 +1051,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-08-09T11:40:30.153Z",
+        "updatedAt": "2024-08-09T16:50:55.617Z",
         "updatedBy": {
           "sys": {
             "id": "0RE3J0ImbZ27ZHNVtOJhsd",
@@ -1266,7 +1266,7 @@
             "linkType": "Space"
           }
         },
-        "version": 16,
+        "version": 18,
         "createdAt": "2024-05-09T15:45:18.071Z",
         "createdBy": {
           "sys": {
@@ -1275,7 +1275,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-08-09T11:40:31.099Z",
+        "updatedAt": "2024-08-09T16:50:55.621Z",
         "updatedBy": {
           "sys": {
             "id": "0RE3J0ImbZ27ZHNVtOJhsd",
@@ -1408,7 +1408,7 @@
             "linkType": "Space"
           }
         },
-        "version": 16,
+        "version": 18,
         "createdAt": "2024-05-09T15:45:19.588Z",
         "createdBy": {
           "sys": {
@@ -1417,7 +1417,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-08-09T11:40:30.135Z",
+        "updatedAt": "2024-08-09T16:50:55.232Z",
         "updatedBy": {
           "sys": {
             "id": "0RE3J0ImbZ27ZHNVtOJhsd",
@@ -1478,7 +1478,7 @@
             "linkType": "Space"
           }
         },
-        "version": 16,
+        "version": 18,
         "createdAt": "2024-05-09T15:45:19.965Z",
         "createdBy": {
           "sys": {
@@ -1487,7 +1487,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-08-09T11:40:30.149Z",
+        "updatedAt": "2024-08-09T16:50:55.934Z",
         "updatedBy": {
           "sys": {
             "id": "0RE3J0ImbZ27ZHNVtOJhsd",
@@ -1552,7 +1552,7 @@
             "linkType": "Space"
           }
         },
-        "version": 16,
+        "version": 18,
         "createdAt": "2024-05-09T15:45:18.951Z",
         "createdBy": {
           "sys": {
@@ -1561,7 +1561,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-08-09T11:40:30.148Z",
+        "updatedAt": "2024-08-09T16:50:56.270Z",
         "updatedBy": {
           "sys": {
             "id": "0RE3J0ImbZ27ZHNVtOJhsd",
@@ -1606,7 +1606,7 @@
             "linkType": "Space"
           }
         },
-        "version": 16,
+        "version": 18,
         "createdAt": "2024-05-09T15:45:20.382Z",
         "createdBy": {
           "sys": {
@@ -1615,7 +1615,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-08-09T11:40:31.105Z",
+        "updatedAt": "2024-08-09T16:50:55.634Z",
         "updatedBy": {
           "sys": {
             "id": "0RE3J0ImbZ27ZHNVtOJhsd",
@@ -1662,7 +1662,7 @@
             "linkType": "Space"
           }
         },
-        "version": 16,
+        "version": 18,
         "createdAt": "2024-05-09T15:45:21.269Z",
         "createdBy": {
           "sys": {
@@ -1671,7 +1671,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-08-09T11:40:31.103Z",
+        "updatedAt": "2024-08-09T16:50:56.964Z",
         "updatedBy": {
           "sys": {
             "id": "0RE3J0ImbZ27ZHNVtOJhsd",
@@ -1720,7 +1720,7 @@
             "linkType": "Space"
           }
         },
-        "version": 16,
+        "version": 18,
         "createdAt": "2024-05-09T15:45:20.835Z",
         "createdBy": {
           "sys": {
@@ -1729,7 +1729,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-08-09T11:40:31.106Z",
+        "updatedAt": "2024-08-09T16:50:57.289Z",
         "updatedBy": {
           "sys": {
             "id": "0RE3J0ImbZ27ZHNVtOJhsd",
@@ -1817,87 +1817,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "5WYN3VRdVncydnbqCYupCM",
-        "type": "Entry",
-        "createdAt": "2024-05-09T15:45:24.174Z",
-        "updatedAt": "2024-08-09T11:40:36.175Z",
-        "environment": {
-          "sys": {
-            "id": "dev",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 29,
-        "publishedAt": "2024-08-09T11:40:36.175Z",
-        "firstPublishedAt": "2024-05-09T15:45:28.013Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "publishedCounter": 15,
-        "version": 30,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "heroHomePage"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/5WYN3VRdVncydnbqCYupCM"
-      },
-      "fields": {
-        "heroTitle": {
-          "en-US": "An open source library for statistical code approved by the ONS"
-        },
-        "heroButton": {
-          "en-US": "Find methods"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
         "id": "68ETsCxLbjjKpd0j9fuvWk",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:24.202Z",
-        "updatedAt": "2024-08-09T11:40:36.695Z",
+        "createdAt": "2024-08-09T16:50:57.746Z",
+        "updatedAt": "2024-08-09T16:51:02.790Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -1905,9 +1828,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:36.695Z",
-        "firstPublishedAt": "2024-05-09T15:45:28.844Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:02.790Z",
+        "firstPublishedAt": "2024-08-09T16:51:02.790Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -1922,8 +1845,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2001,200 +1924,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "6zPvs42JQdbLc1vCJMQUgs",
-        "type": "Entry",
-        "createdAt": "2024-05-09T15:45:24.208Z",
-        "updatedAt": "2024-08-09T11:40:37.567Z",
-        "environment": {
-          "sys": {
-            "id": "dev",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:37.567Z",
-        "firstPublishedAt": "2024-05-09T15:45:29.412Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "publishedCounter": 8,
-        "version": 16,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "catalogueTableOfMethods2"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/6zPvs42JQdbLc1vCJMQUgs"
-      },
-      "fields": {
-        "id": {
-          "en-US": "ratio-of-means"
-        },
-        "name": {
-          "en-US": "Ratio of Means"
-        },
-        "theme": {
-          "en-US": "Imputation"
-        },
-        "expertGroup": {
-          "en-US": "Editing & Imputation"
-        },
-        "language": {
-          "en-US": "Python/PySpark"
-        },
-        "author": {
-          "en-US": "ONS"
-        },
-        "description": {
-          "en-US": "Ratio of means is a standard imputation method used for business surveys. The method imputes for each non-responding contributor a single numeric target variable within the dataset for multiple periods simultaneously. It uses the relationship between the target variable of interest and a predictive value and/or auxiliary variable to inform the imputed value. Due to its robust nature, it does not use any form of trimming or outliering.\n\nAs imputation can be carried out for multiple periods simultaneously, the method can apply forward, backward or construction imputation. The type of imputation used will vary for each non-respondent in each period depending on whether data is available in the predictive period."
-        },
-        "contactDetails": {
-          "en-US": "smlhelp@ons.gov.uk"
-        },
-        "methodReady": {
-          "en-US": false
-        },
-        "releaseVersion": {
-          "en-US": "Not Released Yet"
-        },
-        "additionalInformation": {
-          "en-US": "Links to the method code and specification are provided for further reading."
-        },
-        "specificationLink": {
-          "en-US": "https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/ratio_of_means/methodological_specification.md"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "78d7qRmxYSzox6ccAwoPII",
-        "type": "Entry",
-        "createdAt": "2024-05-09T15:45:24.214Z",
-        "updatedAt": "2024-08-09T11:40:38.818Z",
-        "environment": {
-          "sys": {
-            "id": "dev",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:38.818Z",
-        "firstPublishedAt": "2024-05-09T15:45:28.441Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "publishedCounter": 8,
-        "version": 16,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "methodsCatalogue"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/78d7qRmxYSzox6ccAwoPII"
-      },
-      "fields": {
-        "heading1": {
-          "en-US": "Methods catalogue"
-        },
-        "paragraph": {
-          "en-US": "Here you will discover statistical methods used by the Office for National Statistics."
-        },
-        "detail": {
-          "en-US": "What are method themes and expert groups?"
-        },
-        "detailContent": {
-          "en-US": "Methods are sorted in hierarchical order with expert groups as the top level. For example, within an expert group are different themes, and within the themes are different methods.\n\nTo find out more about expert groups and themes, please visit the [analysis function website.](https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/)"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
         "id": "9aLYC0VKLFNUkzW8RYhUO",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:24.218Z",
-        "updatedAt": "2024-08-09T11:40:39.725Z",
+        "createdAt": "2024-08-09T16:50:57.757Z",
+        "updatedAt": "2024-08-09T16:51:05.067Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -2202,9 +1935,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:39.725Z",
-        "firstPublishedAt": "2024-05-09T15:45:27.566Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:05.067Z",
+        "firstPublishedAt": "2024-08-09T16:51:05.067Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2219,8 +1952,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2265,117 +1998,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "3uxHIlnhHqztRAuHNQ0CHA",
-        "type": "Entry",
-        "createdAt": "2024-05-09T15:45:24.220Z",
-        "updatedAt": "2024-08-09T11:40:40.325Z",
-        "environment": {
-          "sys": {
-            "id": "dev",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:40.325Z",
-        "firstPublishedAt": "2024-05-09T15:45:29.833Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "publishedCounter": 8,
-        "version": 16,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "catalogueTableOfMethods2"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/3uxHIlnhHqztRAuHNQ0CHA"
-      },
-      "fields": {
-        "id": {
-          "en-US": "winsorisation"
-        },
-        "name": {
-          "en-US": "Winsorisation"
-        },
-        "theme": {
-          "en-US": "Sample Design & Estimation"
-        },
-        "expertGroup": {
-          "en-US": "Sample Design & Estimation"
-        },
-        "language": {
-          "en-US": "Python/PySpark"
-        },
-        "author": {
-          "en-US": "ONS"
-        },
-        "description": {
-          "en-US": "In business surveys, some responses can be very large, and can distort estimates when such a business is selected. Consequently, it is sometimes desirable to reduce the effect of these businesses. This is known as outlier treatment. This SML method applies a technique known as one-sided winsorisation. The objective of the method is to introduce a small bias, while reducing the variance. This is intended to reduce the mean squared error of the total, a measure of overall accuracy. The method works for stratified expansion estimation and combined ratio estimation, which are commonly used in business surveys."
-        },
-        "contactDetails": {
-          "en-US": "smlhelp@ons.gov.uk"
-        },
-        "methodReady": {
-          "en-US": false
-        },
-        "releaseVersion": {
-          "en-US": "Not Released Yet"
-        },
-        "additionalInformation": {
-          "en-US": "Links to the method code and specification are provided for further reading."
-        },
-        "specificationLink": {
-          "en-US": "https://github.com/ONSdigital/Statistical-Method-Specifications/blob/specs_from_current_sml_pages/sample_design_and_estimation/Winsorisation/SML_Winsorization_Specification.docx.rst"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
         "id": "7ald28ahkCJgBJu1oKhUmI",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:24.223Z",
-        "updatedAt": "2024-08-09T11:40:40.905Z",
+        "createdAt": "2024-08-09T16:50:57.762Z",
+        "updatedAt": "2024-08-09T16:51:06.293Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -2383,9 +2009,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:40.905Z",
-        "firstPublishedAt": "2024-05-09T15:45:30.275Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:06.293Z",
+        "firstPublishedAt": "2024-08-09T16:51:06.293Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2400,8 +2026,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2488,10 +2114,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "37TwJlBJgUvgCRJ7Tq30pt",
+        "id": "5WYN3VRdVncydnbqCYupCM",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:25.169Z",
-        "updatedAt": "2024-08-09T11:40:42.464Z",
+        "createdAt": "2024-08-09T16:50:57.764Z",
+        "updatedAt": "2024-08-09T16:51:02.292Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -2499,9 +2125,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:42.464Z",
-        "firstPublishedAt": "2024-05-09T15:45:33.205Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:02.292Z",
+        "firstPublishedAt": "2024-08-09T16:51:02.292Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2516,8 +2142,382 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "heroHomePage"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/5WYN3VRdVncydnbqCYupCM"
+      },
+      "fields": {
+        "heroTitle": {
+          "en-US": "An open source library for statistical code approved by the ONS"
+        },
+        "heroButton": {
+          "en-US": "Find methods"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "6zPvs42JQdbLc1vCJMQUgs",
+        "type": "Entry",
+        "createdAt": "2024-08-09T16:50:57.767Z",
+        "updatedAt": "2024-08-09T16:51:03.416Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:03.416Z",
+        "firstPublishedAt": "2024-08-09T16:51:03.416Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "catalogueTableOfMethods2"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/6zPvs42JQdbLc1vCJMQUgs"
+      },
+      "fields": {
+        "id": {
+          "en-US": "ratio-of-means"
+        },
+        "name": {
+          "en-US": "Ratio of Means"
+        },
+        "theme": {
+          "en-US": "Imputation"
+        },
+        "expertGroup": {
+          "en-US": "Editing & Imputation"
+        },
+        "language": {
+          "en-US": "Python/PySpark"
+        },
+        "author": {
+          "en-US": "ONS"
+        },
+        "description": {
+          "en-US": "Ratio of means is a standard imputation method used for business surveys. The method imputes for each non-responding contributor a single numeric target variable within the dataset for multiple periods simultaneously. It uses the relationship between the target variable of interest and a predictive value and/or auxiliary variable to inform the imputed value. Due to its robust nature, it does not use any form of trimming or outliering.\n\nAs imputation can be carried out for multiple periods simultaneously, the method can apply forward, backward or construction imputation. The type of imputation used will vary for each non-respondent in each period depending on whether data is available in the predictive period."
+        },
+        "contactDetails": {
+          "en-US": "smlhelp@ons.gov.uk"
+        },
+        "methodReady": {
+          "en-US": false
+        },
+        "releaseVersion": {
+          "en-US": "Not Released Yet"
+        },
+        "additionalInformation": {
+          "en-US": "Links to the method code and specification are provided for further reading."
+        },
+        "specificationLink": {
+          "en-US": "https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/ratio_of_means/methodological_specification.md"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "78d7qRmxYSzox6ccAwoPII",
+        "type": "Entry",
+        "createdAt": "2024-08-09T16:50:57.784Z",
+        "updatedAt": "2024-08-09T16:51:04.074Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:04.074Z",
+        "firstPublishedAt": "2024-08-09T16:51:04.074Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "methodsCatalogue"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/78d7qRmxYSzox6ccAwoPII"
+      },
+      "fields": {
+        "heading1": {
+          "en-US": "Methods catalogue"
+        },
+        "paragraph": {
+          "en-US": "Here you will discover statistical methods used by the Office for National Statistics."
+        },
+        "detail": {
+          "en-US": "What are method themes and expert groups?"
+        },
+        "detailContent": {
+          "en-US": "Methods are sorted in hierarchical order with expert groups as the top level. For example, within an expert group are different themes, and within the themes are different methods.\n\nTo find out more about expert groups and themes, please visit the [analysis function website.](https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/)"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "3uxHIlnhHqztRAuHNQ0CHA",
+        "type": "Entry",
+        "createdAt": "2024-08-09T16:50:57.797Z",
+        "updatedAt": "2024-08-09T16:51:05.669Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:05.669Z",
+        "firstPublishedAt": "2024-08-09T16:51:05.669Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "catalogueTableOfMethods2"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/3uxHIlnhHqztRAuHNQ0CHA"
+      },
+      "fields": {
+        "id": {
+          "en-US": "winsorisation"
+        },
+        "name": {
+          "en-US": "Winsorisation"
+        },
+        "theme": {
+          "en-US": "Sample Design & Estimation"
+        },
+        "expertGroup": {
+          "en-US": "Sample Design & Estimation"
+        },
+        "language": {
+          "en-US": "Python/PySpark"
+        },
+        "author": {
+          "en-US": "ONS"
+        },
+        "description": {
+          "en-US": "In business surveys, some responses can be very large, and can distort estimates when such a business is selected. Consequently, it is sometimes desirable to reduce the effect of these businesses. This is known as outlier treatment. This SML method applies a technique known as one-sided winsorisation. The objective of the method is to introduce a small bias, while reducing the variance. This is intended to reduce the mean squared error of the total, a measure of overall accuracy. The method works for stratified expansion estimation and combined ratio estimation, which are commonly used in business surveys."
+        },
+        "contactDetails": {
+          "en-US": "smlhelp@ons.gov.uk"
+        },
+        "methodReady": {
+          "en-US": false
+        },
+        "releaseVersion": {
+          "en-US": "Not Released Yet"
+        },
+        "additionalInformation": {
+          "en-US": "Links to the method code and specification are provided for further reading."
+        },
+        "specificationLink": {
+          "en-US": "https://github.com/ONSdigital/Statistical-Method-Specifications/blob/specs_from_current_sml_pages/sample_design_and_estimation/Winsorisation/SML_Winsorization_Specification.docx.rst"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "3nzjuL0uUBerLb5tQYGuq8",
+        "type": "Entry",
+        "createdAt": "2024-08-09T16:50:58.771Z",
+        "updatedAt": "2024-08-09T16:51:09.706Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:09.706Z",
+        "firstPublishedAt": "2024-08-09T16:51:09.706Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2539,14 +2539,174 @@
             "id": "helpCentreInformation"
           }
         },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/37TwJlBJgUvgCRJ7Tq30pt"
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/3nzjuL0uUBerLb5tQYGuq8"
       },
       "fields": {
         "id": {
-          "en-US": "provide-feedback"
+          "en-US": "view-methods"
         },
         "title": {
-          "en-US": "Provide feedback"
+          "en-US": "Find and view methods"
+        },
+        "content": {
+          "en-US": "You can find and view methods within the [methods catalogue](/methods)\n\nWhere available, links to GitHub for source code and specifications will be on the method's details page.\n"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "6WQ6Wtug7CnYQigqvDNH9S",
+        "type": "Entry",
+        "createdAt": "2024-08-09T16:50:58.779Z",
+        "updatedAt": "2024-08-09T16:51:08.685Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:08.685Z",
+        "firstPublishedAt": "2024-08-09T16:51:08.685Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "helpCentreInformation"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/6WQ6Wtug7CnYQigqvDNH9S"
+      },
+      "fields": {
+        "id": {
+          "en-US": "coding-standards"
+        },
+        "title": {
+          "en-US": "Coding standards"
+        },
+        "content": {
+          "en-US": "Code will be written to internationally recognised standards and according to principles set out in these links:-\n\n* [Government Digital Service](https://gds-way.cloudapps.digital/#the-gds-way/)\n* [ONS Quality Assurance for Code and Analysis (Duck book)](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html)\n* [ONS Digital Software Engineering Standards](https://github.com/ONSdigital/software-engineer-community/blob/master/standards/README.md)\n\nFor Python, this means it will adhere to the [PEP8 Python style guide](https://peps.python.org/pep-0008/) and the [GDS Python style guide.](https://gds-way.cloudapps.digital/manuals/programming-languages/python/python.html#content)\n"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "3vD2v4Ma4DoxClPZgeQxdE",
+        "type": "Entry",
+        "createdAt": "2024-08-09T16:50:59.727Z",
+        "updatedAt": "2024-08-09T16:51:10.338Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:10.338Z",
+        "firstPublishedAt": "2024-08-09T16:51:10.338Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "helpCentreInformation"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/3vD2v4Ma4DoxClPZgeQxdE"
+      },
+      "fields": {
+        "id": {
+          "en-US": "report-bug"
+        },
+        "title": {
+          "en-US": "Report a defect or bug"
         },
         "content": {
           "en-US": "Please email [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk)."
@@ -2568,10 +2728,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "1dEel1rXrwQTW8p1DumqQT",
+        "id": "0HJkQZKUd1CyK7UypkxqB",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:25.188Z",
-        "updatedAt": "2024-08-09T11:40:43.077Z",
+        "createdAt": "2024-08-09T16:50:59.738Z",
+        "updatedAt": "2024-08-09T16:51:10.855Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -2579,9 +2739,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:43.077Z",
-        "firstPublishedAt": "2024-05-09T15:45:30.707Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:10.855Z",
+        "firstPublishedAt": "2024-08-09T16:51:10.855Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2596,8 +2756,88 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "helpCentreInformation"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/0HJkQZKUd1CyK7UypkxqB"
+      },
+      "fields": {
+        "id": {
+          "en-US": "troubleshooting"
+        },
+        "title": {
+          "en-US": "Troubleshooting"
+        },
+        "content": {
+          "en-US": "As issues using our methods are raised we will update this section with relevant information to resolve said issue. Providing a resource to help fix these issues as they occur in the future.  \n\n#### Issues accessing a method on GitHub:  \nWhen following the links to the projects stored on GitHub you may receive a 404 error. Please ensure you are logged into\nGitHub.  \n\n#### Pip install issues:  \n\nPlease note all commands in this section should be run in either a terminal(Linux/Mac) or a command prompt(Windows).  \n\nIf you get an error when running pip install and can't immediately see the error try to add the --verbose flag to the\ncommand to see if that offers any more useful information, this can be done by running the command like so:  \n\"pip install {package} --verbose\"  \n\nIf multiple versions of python are installed on your machine it may also be the case that you need to run the command as\nsuch:  \n\"pip3 install {package}\"  \n\nSome other common errors include:  \n\n1. Package name is incorrect, double check that the file path and name that you are giving to the command is correct.\n2. If you have an outdated version of pip this can occasionally cause an issue, try running the below commands:  \n\"python -m pip install --update pip\"  \n\"python -m pip install --update wheel distutils\"  \n3. Permission errors, options here include running as admin/sudo where allowed or run:  \n\"pip install {package} --user\"  \nThis will run pip install defaulting the install location to the users home directory, as opposed to a system directory\nlike it normally would.\n4. Failure during install, on Windows in particular a library can have issues installing due to packages it relies on,\ntry running:  \n\"pip install {package} --prefer-binary\"  \nThis will cause pip to try install binary packages where possible as windows can sometimes throw errors compiling from\nsource\n\n#### Alternatives to pip for installation:  \n\nSome users may be in the scenario that due to user privileges that they are not allowed to use pip on their machines.\nAs an alternative to the .whl file, within a given release there will also be a tar.gz file in the format of\n{LibraryName-version.tar.gz}. Download this file and extract it:  \n\n- On a Unix system (linux/OSX) run the following command in a terminal: \"tar -xf archive.tar.gz\". Substituting archive.tar.gz\nwith the path to the tar.gz file downloaded\n\n- On a Windows system open the file within 7Zip or a similar file archive program and follow the interface to extract the\nfolder.  \n\nNavigate to the extracted folder within a terminal or command prompt and run the following command:    \n\"python setup.py install\".  \n\nOnce this completes the library should now be installed on your machine. Please note on the above command to ensure\nthat you use the correct python command. Particularly for unix users, python V3.0 and higher will often be run as python3\nwithin the terminal. If the previous command failed, it may be that you need to instead substitute it with: \n\"python3 setup.py install\".  \nAlternatively on Windows machine python may sometimes be installed as py so:  \n\"py setup.py install\"."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "1dEel1rXrwQTW8p1DumqQT",
+        "type": "Entry",
+        "createdAt": "2024-08-09T16:50:59.748Z",
+        "updatedAt": "2024-08-09T16:51:07.641Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:07.641Z",
+        "firstPublishedAt": "2024-08-09T16:51:07.641Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2684,10 +2924,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "3cCYV7jPz7iisw87gZvGgK",
+        "id": "37TwJlBJgUvgCRJ7Tq30pt",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:25.191Z",
-        "updatedAt": "2024-08-09T11:40:43.722Z",
+        "createdAt": "2024-08-09T16:50:59.751Z",
+        "updatedAt": "2024-08-09T16:51:06.890Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -2695,9 +2935,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:43.722Z",
-        "firstPublishedAt": "2024-05-09T15:45:31.165Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:06.890Z",
+        "firstPublishedAt": "2024-08-09T16:51:06.890Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2712,8 +2952,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2735,97 +2975,17 @@
             "id": "helpCentreInformation"
           }
         },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/3cCYV7jPz7iisw87gZvGgK"
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/37TwJlBJgUvgCRJ7Tq30pt"
       },
       "fields": {
         "id": {
-          "en-US": "version-methods"
+          "en-US": "provide-feedback"
         },
         "title": {
-          "en-US": "How the methods are versioned"
+          "en-US": "Provide feedback"
         },
         "content": {
-          "en-US": "The Statistical Methods Library (SML) and the associated methods are versioned using semantic versioning comprised of a major, minor and patch release version separated by full stops (e.g 3.5.4). \n\nThere are separate releases of the libraries based on the method implementation, python/pandas or python/pySpark, and each library uses semantic versioning.\n\nThe major version is incremented (and minor and patch releases reset to zero) when backward incompatible changes are made (e.g renaming a pre-existing method function name).\n\nThe minor version is incremented (and the patch version reset to zero) when new features are added without breaking backward compatibility (e.g addition of a new statistical method)\n\nThe patch release version is incremented when backward compatible bugfixes are implemented.\n\nConsult the [SML python/pySpark release history in Github](https://github.com/ONSdigital/statistical-methods-library/releases) for the current and past releases for the python/pySpark methods and the [associated python/pySpark release notes](https://github.com/ONSdigital/statistical-methods-library/tree/main/docs/release-notes) to understand the changes between releases.\n\nConsult the [SML python/pandas release history in Github](https://github.com/ONSdigital/sml-python-small/releases) for the current and past releases for the python/pandas methods and the [associated python/pandas release notes](https://github.com/ONSdigital/sml-python-small/tree/main/docs/release-notes) to understand the changes between releases.\n\nFor further information about semantic versioning read the recommended [semantic versioning guidance](https://semver.org)."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "6WQ6Wtug7CnYQigqvDNH9S",
-        "type": "Entry",
-        "createdAt": "2024-05-09T15:45:25.192Z",
-        "updatedAt": "2024-08-09T11:40:44.302Z",
-        "environment": {
-          "sys": {
-            "id": "dev",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:44.302Z",
-        "firstPublishedAt": "2024-05-09T15:45:31.613Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "publishedCounter": 8,
-        "version": 16,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "helpCentreInformation"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/6WQ6Wtug7CnYQigqvDNH9S"
-      },
-      "fields": {
-        "id": {
-          "en-US": "coding-standards"
-        },
-        "title": {
-          "en-US": "Coding standards"
-        },
-        "content": {
-          "en-US": "Code will be written to internationally recognised standards and according to principles set out in these links:-\n\n* [Government Digital Service](https://gds-way.cloudapps.digital/#the-gds-way/)\n* [ONS Quality Assurance for Code and Analysis (Duck book)](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html)\n* [ONS Digital Software Engineering Standards](https://github.com/ONSdigital/software-engineer-community/blob/master/standards/README.md)\n\nFor Python, this means it will adhere to the [PEP8 Python style guide](https://peps.python.org/pep-0008/) and the [GDS Python style guide.](https://gds-way.cloudapps.digital/manuals/programming-languages/python/python.html#content)\n"
+          "en-US": "Please email [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk)."
         }
       }
     },
@@ -2846,8 +3006,8 @@
         },
         "id": "6FVuaTke9hjBtzWOEuDexR",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:25.200Z",
-        "updatedAt": "2024-08-09T11:40:44.890Z",
+        "createdAt": "2024-08-09T16:50:59.767Z",
+        "updatedAt": "2024-08-09T16:51:09.203Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -2855,9 +3015,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:44.890Z",
-        "firstPublishedAt": "2024-05-09T15:45:32.452Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:09.203Z",
+        "firstPublishedAt": "2024-08-09T16:51:09.203Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2872,8 +3032,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2924,10 +3084,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "3nzjuL0uUBerLb5tQYGuq8",
+        "id": "3cCYV7jPz7iisw87gZvGgK",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:25.202Z",
-        "updatedAt": "2024-08-09T11:40:45.825Z",
+        "createdAt": "2024-08-09T16:50:59.772Z",
+        "updatedAt": "2024-08-09T16:51:08.246Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -2935,9 +3095,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:45.825Z",
-        "firstPublishedAt": "2024-05-09T15:45:32.026Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:08.246Z",
+        "firstPublishedAt": "2024-08-09T16:51:08.246Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2952,8 +3112,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -2975,177 +3135,17 @@
             "id": "helpCentreInformation"
           }
         },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/3nzjuL0uUBerLb5tQYGuq8"
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/3cCYV7jPz7iisw87gZvGgK"
       },
       "fields": {
         "id": {
-          "en-US": "view-methods"
+          "en-US": "version-methods"
         },
         "title": {
-          "en-US": "Find and view methods"
+          "en-US": "How the methods are versioned"
         },
         "content": {
-          "en-US": "You can find and view methods within the [methods catalogue](/methods)\n\nWhere available, links to GitHub for source code and specifications will be on the method's details page.\n"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "3vD2v4Ma4DoxClPZgeQxdE",
-        "type": "Entry",
-        "createdAt": "2024-05-09T15:45:25.349Z",
-        "updatedAt": "2024-08-09T11:40:46.726Z",
-        "environment": {
-          "sys": {
-            "id": "dev",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:46.726Z",
-        "firstPublishedAt": "2024-05-09T15:45:32.856Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "publishedCounter": 8,
-        "version": 16,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "helpCentreInformation"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/3vD2v4Ma4DoxClPZgeQxdE"
-      },
-      "fields": {
-        "id": {
-          "en-US": "report-bug"
-        },
-        "title": {
-          "en-US": "Report a defect or bug"
-        },
-        "content": {
-          "en-US": "Please email [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk)."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "0HJkQZKUd1CyK7UypkxqB",
-        "type": "Entry",
-        "createdAt": "2024-05-09T15:45:26.178Z",
-        "updatedAt": "2024-08-09T11:40:47.271Z",
-        "environment": {
-          "sys": {
-            "id": "dev",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:47.271Z",
-        "firstPublishedAt": "2024-05-09T15:45:34.388Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "publishedCounter": 8,
-        "version": 16,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "helpCentreInformation"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/0HJkQZKUd1CyK7UypkxqB"
-      },
-      "fields": {
-        "id": {
-          "en-US": "troubleshooting"
-        },
-        "title": {
-          "en-US": "Troubleshooting"
-        },
-        "content": {
-          "en-US": "As issues using our methods are raised we will update this section with relevant information to resolve said issue. Providing a resource to help fix these issues as they occur in the future.  \n\n#### Issues accessing a method on GitHub:  \nWhen following the links to the projects stored on GitHub you may receive a 404 error. Please ensure you are logged into\nGitHub.  \n\n#### Pip install issues:  \n\nPlease note all commands in this section should be run in either a terminal(Linux/Mac) or a command prompt(Windows).  \n\nIf you get an error when running pip install and can't immediately see the error try to add the --verbose flag to the\ncommand to see if that offers any more useful information, this can be done by running the command like so:  \n\"pip install {package} --verbose\"  \n\nIf multiple versions of python are installed on your machine it may also be the case that you need to run the command as\nsuch:  \n\"pip3 install {package}\"  \n\nSome other common errors include:  \n\n1. Package name is incorrect, double check that the file path and name that you are giving to the command is correct.\n2. If you have an outdated version of pip this can occasionally cause an issue, try running the below commands:  \n\"python -m pip install --update pip\"  \n\"python -m pip install --update wheel distutils\"  \n3. Permission errors, options here include running as admin/sudo where allowed or run:  \n\"pip install {package} --user\"  \nThis will run pip install defaulting the install location to the users home directory, as opposed to a system directory\nlike it normally would.\n4. Failure during install, on Windows in particular a library can have issues installing due to packages it relies on,\ntry running:  \n\"pip install {package} --prefer-binary\"  \nThis will cause pip to try install binary packages where possible as windows can sometimes throw errors compiling from\nsource\n\n#### Alternatives to pip for installation:  \n\nSome users may be in the scenario that due to user privileges that they are not allowed to use pip on their machines.\nAs an alternative to the .whl file, within a given release there will also be a tar.gz file in the format of\n{LibraryName-version.tar.gz}. Download this file and extract it:  \n\n- On a Unix system (linux/OSX) run the following command in a terminal: \"tar -xf archive.tar.gz\". Substituting archive.tar.gz\nwith the path to the tar.gz file downloaded\n\n- On a Windows system open the file within 7Zip or a similar file archive program and follow the interface to extract the\nfolder.  \n\nNavigate to the extracted folder within a terminal or command prompt and run the following command:    \n\"python setup.py install\".  \n\nOnce this completes the library should now be installed on your machine. Please note on the above command to ensure\nthat you use the correct python command. Particularly for unix users, python V3.0 and higher will often be run as python3\nwithin the terminal. If the previous command failed, it may be that you need to instead substitute it with: \n\"python3 setup.py install\".  \nAlternatively on Windows machine python may sometimes be installed as py so:  \n\"py setup.py install\"."
+          "en-US": "The Statistical Methods Library (SML) and the associated methods are versioned using semantic versioning comprised of a major, minor and patch release version separated by full stops (e.g 3.5.4). \n\nThere are separate releases of the libraries based on the method implementation, python/pandas or python/pySpark, and each library uses semantic versioning.\n\nThe major version is incremented (and minor and patch releases reset to zero) when backward incompatible changes are made (e.g renaming a pre-existing method function name).\n\nThe minor version is incremented (and the patch version reset to zero) when new features are added without breaking backward compatibility (e.g addition of a new statistical method)\n\nThe patch release version is incremented when backward compatible bugfixes are implemented.\n\nConsult the [SML python/pySpark release history in Github](https://github.com/ONSdigital/statistical-methods-library/releases) for the current and past releases for the python/pySpark methods and the [associated python/pySpark release notes](https://github.com/ONSdigital/statistical-methods-library/tree/main/docs/release-notes) to understand the changes between releases.\n\nConsult the [SML python/pandas release history in Github](https://github.com/ONSdigital/sml-python-small/releases) for the current and past releases for the python/pandas methods and the [associated python/pandas release notes](https://github.com/ONSdigital/sml-python-small/tree/main/docs/release-notes) to understand the changes between releases.\n\nFor further information about semantic versioning read the recommended [semantic versioning guidance](https://semver.org)."
         }
       }
     },
@@ -3166,8 +3166,8 @@
         },
         "id": "7ePz4NOKkNuYxTCKGceI0o",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:26.190Z",
-        "updatedAt": "2024-08-09T11:40:48.077Z",
+        "createdAt": "2024-08-09T16:51:00.751Z",
+        "updatedAt": "2024-08-09T16:51:11.388Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -3175,9 +3175,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:48.077Z",
-        "firstPublishedAt": "2024-05-09T15:45:33.587Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:11.388Z",
+        "firstPublishedAt": "2024-08-09T16:51:11.388Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -3192,8 +3192,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -3244,280 +3244,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "51E73QFXqVNxRsoUxzcoSj",
-        "type": "Entry",
-        "createdAt": "2024-05-09T15:45:26.192Z",
-        "updatedAt": "2024-08-09T11:40:48.744Z",
-        "environment": {
-          "sys": {
-            "id": "dev",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:48.744Z",
-        "firstPublishedAt": "2024-05-09T15:45:35.263Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "publishedCounter": 8,
-        "version": 16,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "catalogueTableOfMethods2"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/51E73QFXqVNxRsoUxzcoSj"
-      },
-      "fields": {
-        "id": {
-          "en-US": "thousand-pound-correction"
-        },
-        "name": {
-          "en-US": "Thousand Pound Correction"
-        },
-        "theme": {
-          "en-US": "Editing"
-        },
-        "expertGroup": {
-          "en-US": "Editing & Imputation"
-        },
-        "language": {
-          "en-US": "Python/Pandas"
-        },
-        "author": {
-          "en-US": "ONS"
-        },
-        "description": {
-          "en-US": "The automatic editing method for thousand pounds correction is commonly used across ONS business surveys. It is a generic rule that uses user defined thresholds to automatically detect and correct thousand pounds errors. This is when the respondent should have reported values in thousands of pounds but has reported in actual pounds e.g., returned a value of £56,000 instead of correctly submitting 56.\n\nThe method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent."
-        },
-        "contactDetails": {
-          "en-US": "smlhelp@ons.gov.uk"
-        },
-        "methodReady": {
-          "en-US": true
-        },
-        "releaseVersion": {
-          "en-US": "v1.1.0"
-        },
-        "releaseLink": {
-          "en-US": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0"
-        },
-        "additionalInformation": {
-          "en-US": "No resources are currently available."
-        },
-        "codeLink": {
-          "en-US": "https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/thousand_pounds/thousand_pounds.py"
-        },
-        "specificationLink": {
-          "en-US": "https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/thousand_pounds_correction/thousand_pounds_correction.md"
-        },
-        "userDocumentationLink": {
-          "en-US": "https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/thousand-pound-correction/thousand_pound_correction.md"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "3B4A7Fs3mnyEAzOgTaeHMn",
-        "type": "Entry",
-        "createdAt": "2024-05-09T15:45:26.197Z",
-        "updatedAt": "2024-08-09T11:40:50.318Z",
-        "environment": {
-          "sys": {
-            "id": "dev",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:50.318Z",
-        "firstPublishedAt": "2024-05-09T15:45:35.682Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "publishedCounter": 8,
-        "version": 16,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "privacycontent"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/3B4A7Fs3mnyEAzOgTaeHMn"
-      },
-      "fields": {
-        "privacy_content": {
-          "en-US": "# Privacy and Data Protection\n\nThis information is for visitors to the Statistical Methods Library website.\n\nIf you would like to find out more about how ONS collect and use your personal data, please visit our [data protection page](https://www.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection).\n\n## Links to other websites\n\nThis site contains links to other sites. The ONS is not responsible for the privacy practices or the content of such websites.\n\n### Following a link to another website\n\nIf you go to another website from this one, read the privacy policy on that website to find out what it does with your information.\n\n### Following a link to statisticalmethodslibrary.ons.gov.uk from another website\n\nIf you come to statisticalmethodslibrary.ons.gov.uk from another website, we may receive personal information from the other website.\n\nYou should read the privacy policy of the website you came from to find out more about this.\n\n## Contact us\n\nYou can contact the Data Protection Officer if you:\n\n* have a question about the processing of personal data within the Statistical Methods Library\n* think that your personal data have been misused or mishandled\n\n[DPO@statistics.gov.uk](mailto:DPO@statistics.gov.uk)\n\nTelephone: 0345 601 3034\n\nData Protection Officer  \nOffice for National Statistics  \nSegensworth Road  \nTitchfield  \nFareham  \nHampshire  \nPO15 5RR\n\n## Report a security vulnerability\n\nPlease see our [vulnerability disclosure policy](https://www.ons.gov.uk/help/vulnerabilitydisclosurepolicy) for information on how to report a vulnerability at HackerOne."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "76zlJrhByCFNZlbKVA5AtB",
-        "type": "Entry",
-        "createdAt": "2024-05-09T15:45:26.207Z",
-        "updatedAt": "2024-08-09T11:40:51.096Z",
-        "environment": {
-          "sys": {
-            "id": "dev",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:51.096Z",
-        "firstPublishedAt": "2024-05-09T15:45:34.002Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "publishedCounter": 8,
-        "version": 16,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "helpCentreInformation"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/76zlJrhByCFNZlbKVA5AtB"
-      },
-      "fields": {
-        "id": {
-          "en-US": "expert-groups"
-        },
-        "title": {
-          "en-US": "Get information on expert groups"
-        },
-        "content": {
-          "en-US": "Please visit [Expert groups](https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/)."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
         "id": "5WaengmajUsGSEbXHxhu1r",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:26.211Z",
-        "updatedAt": "2024-08-09T11:40:51.682Z",
+        "createdAt": "2024-08-09T16:51:00.757Z",
+        "updatedAt": "2024-08-09T16:51:13.739Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -3525,9 +3255,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:51.682Z",
-        "firstPublishedAt": "2024-05-09T15:45:34.806Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:13.739Z",
+        "firstPublishedAt": "2024-08-09T16:51:13.739Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -3542,8 +3272,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -3596,8 +3326,8 @@
         },
         "id": "4GwadO5feNlF2biBAAZbfw",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:26.215Z",
-        "updatedAt": "2024-08-09T11:40:52.840Z",
+        "createdAt": "2024-08-09T16:51:00.790Z",
+        "updatedAt": "2024-08-09T16:51:14.240Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -3605,9 +3335,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 22,
-        "publishedAt": "2024-08-09T11:40:52.840Z",
-        "firstPublishedAt": "2024-05-09T15:45:36.075Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:14.240Z",
+        "firstPublishedAt": "2024-08-09T16:51:14.240Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -3622,8 +3352,8 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 10,
-        "version": 23,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -3710,10 +3440,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "3yPRVuZ5tvZdP09NLOauEj",
+        "id": "51E73QFXqVNxRsoUxzcoSj",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:27.189Z",
-        "updatedAt": "2024-08-09T11:40:53.423Z",
+        "createdAt": "2024-08-09T16:51:00.799Z",
+        "updatedAt": "2024-08-09T16:51:11.997Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -3721,9 +3451,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:53.423Z",
-        "firstPublishedAt": "2024-05-09T15:45:37.299Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:11.997Z",
+        "firstPublishedAt": "2024-08-09T16:51:11.997Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -3738,8 +3468,124 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 8,
-        "version": 16,
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "catalogueTableOfMethods2"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/51E73QFXqVNxRsoUxzcoSj"
+      },
+      "fields": {
+        "id": {
+          "en-US": "thousand-pound-correction"
+        },
+        "name": {
+          "en-US": "Thousand Pound Correction"
+        },
+        "theme": {
+          "en-US": "Editing"
+        },
+        "expertGroup": {
+          "en-US": "Editing & Imputation"
+        },
+        "language": {
+          "en-US": "Python/Pandas"
+        },
+        "author": {
+          "en-US": "ONS"
+        },
+        "description": {
+          "en-US": "The automatic editing method for thousand pounds correction is commonly used across ONS business surveys. It is a generic rule that uses user defined thresholds to automatically detect and correct thousand pounds errors. This is when the respondent should have reported values in thousands of pounds but has reported in actual pounds e.g., returned a value of £56,000 instead of correctly submitting 56.\n\nThe method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent."
+        },
+        "contactDetails": {
+          "en-US": "smlhelp@ons.gov.uk"
+        },
+        "methodReady": {
+          "en-US": true
+        },
+        "releaseVersion": {
+          "en-US": "v1.1.0"
+        },
+        "releaseLink": {
+          "en-US": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0"
+        },
+        "additionalInformation": {
+          "en-US": "No resources are currently available."
+        },
+        "codeLink": {
+          "en-US": "https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/thousand_pounds/thousand_pounds.py"
+        },
+        "specificationLink": {
+          "en-US": "https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/thousand_pounds_correction/thousand_pounds_correction.md"
+        },
+        "userDocumentationLink": {
+          "en-US": "https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/thousand-pound-correction/thousand_pound_correction.md"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "3yPRVuZ5tvZdP09NLOauEj",
+        "type": "Entry",
+        "createdAt": "2024-08-09T16:51:00.808Z",
+        "updatedAt": "2024-08-09T16:51:15.313Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:15.313Z",
+        "firstPublishedAt": "2024-08-09T16:51:15.313Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -3796,10 +3642,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "240OpTHU9qKVueslnoYjWy",
+        "id": "3B4A7Fs3mnyEAzOgTaeHMn",
         "type": "Entry",
-        "createdAt": "2024-05-09T15:45:27.191Z",
-        "updatedAt": "2024-08-09T11:40:55.022Z",
+        "createdAt": "2024-08-09T16:51:00.812Z",
+        "updatedAt": "2024-08-09T16:51:12.602Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -3807,9 +3653,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 21,
-        "publishedAt": "2024-08-09T11:40:55.022Z",
-        "firstPublishedAt": "2024-05-09T15:45:36.892Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:12.602Z",
+        "firstPublishedAt": "2024-08-09T16:51:12.602Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -3824,8 +3670,162 @@
             "id": "0RE3J0ImbZ27ZHNVtOJhsd"
           }
         },
-        "publishedCounter": 10,
-        "version": 22,
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "privacycontent"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/3B4A7Fs3mnyEAzOgTaeHMn"
+      },
+      "fields": {
+        "privacy_content": {
+          "en-US": "# Privacy and Data Protection\n\nThis information is for visitors to the Statistical Methods Library website.\n\nIf you would like to find out more about how ONS collect and use your personal data, please visit our [data protection page](https://www.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection).\n\n## Links to other websites\n\nThis site contains links to other sites. The ONS is not responsible for the privacy practices or the content of such websites.\n\n### Following a link to another website\n\nIf you go to another website from this one, read the privacy policy on that website to find out what it does with your information.\n\n### Following a link to statisticalmethodslibrary.ons.gov.uk from another website\n\nIf you come to statisticalmethodslibrary.ons.gov.uk from another website, we may receive personal information from the other website.\n\nYou should read the privacy policy of the website you came from to find out more about this.\n\n## Contact us\n\nYou can contact the Data Protection Officer if you:\n\n* have a question about the processing of personal data within the Statistical Methods Library\n* think that your personal data have been misused or mishandled\n\n[DPO@statistics.gov.uk](mailto:DPO@statistics.gov.uk)\n\nTelephone: 0345 601 3034\n\nData Protection Officer  \nOffice for National Statistics  \nSegensworth Road  \nTitchfield  \nFareham  \nHampshire  \nPO15 5RR\n\n## Report a security vulnerability\n\nPlease see our [vulnerability disclosure policy](https://www.ons.gov.uk/help/vulnerabilitydisclosurepolicy) for information on how to report a vulnerability at HackerOne."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "76zlJrhByCFNZlbKVA5AtB",
+        "type": "Entry",
+        "createdAt": "2024-08-09T16:51:00.814Z",
+        "updatedAt": "2024-08-09T16:51:13.111Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:13.111Z",
+        "firstPublishedAt": "2024-08-09T16:51:13.111Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "helpCentreInformation"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/76zlJrhByCFNZlbKVA5AtB"
+      },
+      "fields": {
+        "id": {
+          "en-US": "expert-groups"
+        },
+        "title": {
+          "en-US": "Get information on expert groups"
+        },
+        "content": {
+          "en-US": "Please visit [Expert groups](https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/)."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "240OpTHU9qKVueslnoYjWy",
+        "type": "Entry",
+        "createdAt": "2024-08-09T16:51:01.703Z",
+        "updatedAt": "2024-08-12T11:12:50.160Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 10,
+        "publishedAt": "2024-08-12T11:12:50.160Z",
+        "firstPublishedAt": "2024-08-09T16:51:15.897Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 11,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -3871,6 +3871,10 @@
                   {
                     "name": "coding-standards",
                     "label": "Coding standards"
+                  },
+                  {
+                    "name": "help-item",
+                    "label": "help item"
                   }
                 ]
               },
@@ -3944,188 +3948,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "5dA4wvX0V2tLHCnwvDEyI2",
-        "type": "Entry",
-        "createdAt": "2024-05-09T15:45:27.204Z",
-        "updatedAt": "2024-08-09T11:40:56.059Z",
-        "environment": {
-          "sys": {
-            "id": "dev",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 15,
-        "publishedAt": "2024-08-09T11:40:56.059Z",
-        "firstPublishedAt": "2024-05-09T15:45:37.695Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "publishedCounter": 8,
-        "version": 16,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "accessibilityPage"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/5dA4wvX0V2tLHCnwvDEyI2"
-      },
-      "fields": {
-        "title": {
-          "en-US": "Accessibility Statement"
-        },
-        "mainContent": {
-          "en-US": "# Accessibility Statement\n\nThis accessibility statement applies to the Office for National Statistics (ONS) Statistical Methods Library.  \n\nWe want as many people as possible to be able to use the website. If you have a disability, [AbilityNet](https://mcmw.abilitynet.org.uk/) has advice on making your device easier to use.\n\n## How accessible the website is\n\nWe are aware that some parts of this website are not fully accessible, and we are working to improve this.\n\n## How to request content in an accessible format\n\nIf you need information from the website in a different format please contact us at [SMLHelp@ons.gov.uk](mailto:SMLHelp@ons.gov.uk) and tell us:\n\n* The web address (URL).\n* Your name and email address.\n* The format you require.\n\nWe’ll reply within ten days to let you know when we will be able to provide the information. We will consider each request but may not be able to provide an alternative accessible format on every occasion.\n\n## Reporting accessibility problems\n\nWe are working to meet accessibility standards across this website. If you experience difficulty in accessing our website please contact us at [SMLHelp@ons.gov.uk](mailto:SMLHelp@ons.gov.uk).\n\n## Enforcement procedure\n\nThe Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the “accessibility regulations”). If you contact us with a complaint and you are not happy with our response contact the [Equality Advisory and Support Service (EASS)](https://www.equalityadvisoryservice.com/).\n\n## Technical information about the website’s accessibility\n\nThe ONS is committed to making this portal accessible, in accordance with the [Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/952/made).\n\n## What we’re doing to improve accessibility\n\nWe are committed to making sure our online services are accessible to all users and comply with level AA of the Web Content Accessibility Guidelines – WCAG 2.1 in line with the Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility regulations 2018, and intend to.\n\nIn order to make sure our online services are accessible to all users, we are working with [The Digital Accessibility Centre (DAC)](http://www.digitalaccessibilitycentre.org/) to carry out WCAG 2.1 AA level technical compliance audits, which will also include testing by users with a wide range of disabilities.\n\n## Preparation of this accessibility statement\n\nThis statement was prepared on 1 February 2023.\n"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "1PQFWq5r92jnyKqZnqtmrk",
-        "type": "Entry",
-        "createdAt": "2024-07-31T15:29:01.104Z",
-        "updatedAt": "2024-08-09T11:40:57.424Z",
-        "environment": {
-          "sys": {
-            "id": "dev",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 21,
-        "publishedAt": "2024-08-09T11:40:57.424Z",
-        "firstPublishedAt": "2024-07-31T15:29:15.970Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "publishedCounter": 11,
-        "version": 22,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "catalogueTableOfMethods2"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/1PQFWq5r92jnyKqZnqtmrk"
-      },
-      "fields": {
-        "id": {
-          "en-US": "cell-key-perturbation"
-        },
-        "name": {
-          "en-US": "Cell Key Perturbation"
-        },
-        "theme": {
-          "en-US": "Statistical Disclosure Control"
-        },
-        "expertGroup": {
-          "en-US": "Statistical Disclosure Control"
-        },
-        "language": {
-          "en-US": "Python & R"
-        },
-        "author": {
-          "en-US": "ONS Community Method"
-        },
-        "description": {
-          "en-US": "Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation. These can also be used to apply rounding, and a threshold for small counts."
-        },
-        "contactDetails": {
-          "en-US": "smlhelp@ons.gov.uk"
-        },
-        "methodReady": {
-          "en-US": false
-        },
-        "releaseVersion": {
-          "en-US": "Not Released Yet"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
         "id": "viM9TL5rdzMZITGCQBIbe",
         "type": "Entry",
-        "createdAt": "2024-08-09T11:40:35.609Z",
-        "updatedAt": "2024-08-09T11:40:56.676Z",
+        "createdAt": "2024-08-09T16:51:01.743Z",
+        "updatedAt": "2024-08-09T16:51:18.163Z",
         "environment": {
           "sys": {
             "id": "dev",
@@ -4134,8 +3960,8 @@
           }
         },
         "publishedVersion": 1,
-        "publishedAt": "2024-08-09T11:40:56.676Z",
-        "firstPublishedAt": "2024-08-09T11:40:56.676Z",
+        "publishedAt": "2024-08-09T16:51:18.163Z",
+        "firstPublishedAt": "2024-08-09T16:51:18.163Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -4211,6 +4037,264 @@
         },
         "specificationLink": {
           "en-US": "https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/mean_of_ratios/technical_specification.md"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "5dA4wvX0V2tLHCnwvDEyI2",
+        "type": "Entry",
+        "createdAt": "2024-08-09T16:51:01.747Z",
+        "updatedAt": "2024-08-09T16:51:17.059Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:17.059Z",
+        "firstPublishedAt": "2024-08-09T16:51:17.059Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "accessibilityPage"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/5dA4wvX0V2tLHCnwvDEyI2"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Accessibility Statement"
+        },
+        "mainContent": {
+          "en-US": "# Accessibility Statement\n\nThis accessibility statement applies to the Office for National Statistics (ONS) Statistical Methods Library.  \n\nWe want as many people as possible to be able to use the website. If you have a disability, [AbilityNet](https://mcmw.abilitynet.org.uk/) has advice on making your device easier to use.\n\n## How accessible the website is\n\nWe are aware that some parts of this website are not fully accessible, and we are working to improve this.\n\n## How to request content in an accessible format\n\nIf you need information from the website in a different format please contact us at [SMLHelp@ons.gov.uk](mailto:SMLHelp@ons.gov.uk) and tell us:\n\n* The web address (URL).\n* Your name and email address.\n* The format you require.\n\nWe’ll reply within ten days to let you know when we will be able to provide the information. We will consider each request but may not be able to provide an alternative accessible format on every occasion.\n\n## Reporting accessibility problems\n\nWe are working to meet accessibility standards across this website. If you experience difficulty in accessing our website please contact us at [SMLHelp@ons.gov.uk](mailto:SMLHelp@ons.gov.uk).\n\n## Enforcement procedure\n\nThe Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the “accessibility regulations”). If you contact us with a complaint and you are not happy with our response contact the [Equality Advisory and Support Service (EASS)](https://www.equalityadvisoryservice.com/).\n\n## Technical information about the website’s accessibility\n\nThe ONS is committed to making this portal accessible, in accordance with the [Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/952/made).\n\n## What we’re doing to improve accessibility\n\nWe are committed to making sure our online services are accessible to all users and comply with level AA of the Web Content Accessibility Guidelines – WCAG 2.1 in line with the Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility regulations 2018, and intend to.\n\nIn order to make sure our online services are accessible to all users, we are working with [The Digital Accessibility Centre (DAC)](http://www.digitalaccessibilitycentre.org/) to carry out WCAG 2.1 AA level technical compliance audits, which will also include testing by users with a wide range of disabilities.\n\n## Preparation of this accessibility statement\n\nThis statement was prepared on 1 February 2023.\n"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "1PQFWq5r92jnyKqZnqtmrk",
+        "type": "Entry",
+        "createdAt": "2024-08-09T16:51:01.751Z",
+        "updatedAt": "2024-08-09T16:51:17.520Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-08-09T16:51:17.520Z",
+        "firstPublishedAt": "2024-08-09T16:51:17.520Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "catalogueTableOfMethods2"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/1PQFWq5r92jnyKqZnqtmrk"
+      },
+      "fields": {
+        "id": {
+          "en-US": "cell-key-perturbation"
+        },
+        "name": {
+          "en-US": "Cell Key Perturbation"
+        },
+        "theme": {
+          "en-US": "Statistical Disclosure Control"
+        },
+        "expertGroup": {
+          "en-US": "Statistical Disclosure Control"
+        },
+        "language": {
+          "en-US": "Python & R"
+        },
+        "author": {
+          "en-US": "ONS Community Method"
+        },
+        "description": {
+          "en-US": "Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation. These can also be used to apply rounding, and a threshold for small counts."
+        },
+        "contactDetails": {
+          "en-US": "smlhelp@ons.gov.uk"
+        },
+        "methodReady": {
+          "en-US": false
+        },
+        "releaseVersion": {
+          "en-US": "Not Released Yet"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "4lLG2IqlKNtIJ8k7svABFo",
+        "type": "Entry",
+        "createdAt": "2024-08-12T11:12:54.629Z",
+        "updatedAt": "2024-08-12T11:13:07.964Z",
+        "environment": {
+          "sys": {
+            "id": "dev",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2024-08-12T11:13:07.964Z",
+        "firstPublishedAt": "2024-08-12T11:13:07.964Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "helpCentreInformation"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/dev/entries/4lLG2IqlKNtIJ8k7svABFo"
+      },
+      "fields": {
+        "id": {
+          "en-US": "help-item"
+        },
+        "title": {
+          "en-US": "help item"
+        },
+        "content": {
+          "en-US": "content"
         }
       }
     }

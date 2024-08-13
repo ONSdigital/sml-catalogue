@@ -1,0 +1,49 @@
+{
+  "sys": {
+    "type": "Changeset",
+    "createdAt": "1723556856603",
+    "space": {
+      "sys": {
+        "id": "h6k5tsc4ytaf",
+        "linkType": "Space",
+        "type": "Link"
+      }
+    },
+    "source": {
+      "sys": {
+        "id": "dev",
+        "linkType": "Environment",
+        "type": "Link"
+      }
+    },
+    "target": {
+      "sys": {
+        "id": "prod",
+        "linkType": "Environment",
+        "type": "Link"
+      }
+    }
+  },
+  "items": [
+    {
+      "changeType": "delete",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "7CSvoQOMazVmMWQLeQQ4CY"
+        }
+      }
+    },
+    {
+      "changeType": "delete",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "6loXRW3wj3OJWBImataNEZ"
+        }
+      }
+    }
+  ]
+}

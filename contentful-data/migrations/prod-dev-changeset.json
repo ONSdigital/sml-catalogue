@@ -1,0 +1,55 @@
+{
+  "sys": {
+    "type": "Changeset",
+    "createdAt": "1723461421319",
+    "space": {
+      "sys": {
+        "id": "h6k5tsc4ytaf",
+        "linkType": "Space",
+        "type": "Link"
+      }
+    },
+    "source": {
+      "sys": {
+        "id": "prod",
+        "linkType": "Environment",
+        "type": "Link"
+      }
+    },
+    "target": {
+      "sys": {
+        "id": "dev",
+        "linkType": "Environment",
+        "type": "Link"
+      }
+    }
+  },
+  "items": [
+    {
+      "changeType": "update",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "240OpTHU9qKVueslnoYjWy"
+        }
+      },
+      "patch": [
+        {
+          "op": "remove",
+          "path": "/fields/structure/en-US/categories/0/subcategories/3"
+        }
+      ]
+    },
+    {
+      "changeType": "delete",
+      "entity": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "4lLG2IqlKNtIJ8k7svABFo"
+        }
+      }
+    }
+  ]
+}
