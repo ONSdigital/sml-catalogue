@@ -34,3 +34,30 @@ Failing command: contentful space migration --space-id $SPACE_ID --management-to
  - Failing command: contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/rollbacks/${target_environment}-export.js 
  - Exit code: 1
 2024.04.12-16.20.01: Performed rollback on environment preprod
+2024.08.09-12.59.19: Migrated content from dev to prod
+2024.08.09-13.01.15: Migrated content from dev to prod
+2024.08.09-13.02.42: Migrated content from dev to prod
+2024.08.09-15.36.44: Migrated content from dev to prod
+2024.08.09-15.38.16: Migrated content from dev to prod
+2024.08.09-17.18.44: Migrated content from prod to dev
+2024.08.09-17.48.59: Migrated content from prod to dev
+2024.08.09-17.51.18: Performed rollback on environment dev
+2024.08.12-11.54.27: Error raised while migrating content from dev to prod 
+ - Failing command: angeset.json 
+ - Exit code: 127
+2024.08.12-11.57.46: Migrated content from dev to prod
+2024.08.12-11.59.38: Performed rollback on environment prod
+2024.08.12-12.08.14: Migrated content from dev to prod
+2024.08.12-12.10.33: Performed rollback on environment prod
+2024.08.12-12.11.57: Migrated content from dev to prod
+2024.08.12-12.13.58: Migrated content from dev to prod
+2024.08.12-12.15.55: Performed rollback on environment prod
+2024.08.12-12.17.28: Migrated content from prod to dev
+2024.08.12-12.20.38: Migrated content from dev to prod
+2024.08.12-12.22.32: Performed rollback on environment prod
+2024.08.12-12.25.18: Migrated content from dev to prod
+2024.08.12-12.28.09: Migrated content from dev to prod
+2024.08.12-12.30.04: Performed rollback on environment prod
+2024.08.12-12.32.00: Migrated content from dev to prod
+2024.08.13-14.46.32: Performed rollback on environment prod
+2024.08.13-14.48.06: Migrated content from dev to prod
