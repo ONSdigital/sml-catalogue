@@ -76,7 +76,10 @@ contentful space export --management-token $CLI_KEY --export-dir ./contentful-da
 # store the migration that would be required to revert the target environment to its original state
 contentful merge export --te $source_environment --se $target_environment --management-token $CLI_KEY --output-file ./contentful-data/rollbacks/${target_environment}-export.js
 
-# migrate content types first
+# delete all entries in target environment using deletion_changeset.py
+python deletion_changeset.py $target_environment ./contentful-data/rollbacks/${target_environment}-export.json
+contentful-merge apply --space $SPACE_ID --environment $target_environment --cma-token $CLI_KEY --file ./contentful-data/migrations/deletion-changeset.json
+# migrate content types
 contentful merge export --te $target_environment --se $source_environment --management-token $CLI_KEY --output-file ./contentful-data/migrations/${source_environment}-export.js
 contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/migrations/${source_environment}-export.js
 
