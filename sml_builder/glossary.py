@@ -1,14 +1,14 @@
 import re
-from json import loads
+from json import loads, dump
 from os import listdir
-
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
 from flask import render_template
-
+from sml_builder.cms import getContent
 from sml_builder import app
-
+from sml_builder.utils import checkEmptyList, get_feature_config
 from .utils import _page_not_found
 
+content_management = get_feature_config("content_management")
 
 @app.template_filter("convert_name")
 def convert_term(value):
@@ -21,6 +21,14 @@ def display_glossary():
     glossary_list = []
     nav_options_list = []
     glossary_dir = "./content/glossary"
+    if content_management["enabled"]:
+        contents = getContent("glossaryEntry")
+        if checkEmptyList(contents["structure"]):
+            _page_not_found("Glossary content not found")
+        for i in contents:
+            with open(f'./contentful_content/glossary/{i["title"]}.jsonnet', 'w') as f:
+                dump(i["glossarycontent"], f)
+        glossary_dir = "./contentful_content/glossary"
     try:
         for file in listdir(glossary_dir):
             glossary_term = loads(evaluate_file(f"{glossary_dir}/{file}"))
