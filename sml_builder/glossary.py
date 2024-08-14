@@ -1,11 +1,14 @@
 import re
-from json import loads, dump
+from json import dump, loads
 from os import listdir
+
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
 from flask import render_template
-from sml_builder.cms import getContent
+
 from sml_builder import app
+from sml_builder.cms import getContent
 from sml_builder.utils import checkEmptyList, get_feature_config
+
 from .utils import _page_not_found
 
 content_management = get_feature_config("content_management")
@@ -27,7 +30,7 @@ def display_glossary():
         if checkEmptyList(contents["structure"]):
             _page_not_found("Glossary content not found")
         for i in contents:
-            with open(f'./contentful_content/glossary/{i["title"]}.jsonnet', "w") as f:
+            with open(f'./contentful_content/glossary/{i["title"]}.jsonnet', "w", encoding='UTF-8') as f:
                 dump(i["glossarycontent"], f)
         glossary_dir = "./contentful_content/glossary"
     try:
