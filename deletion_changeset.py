@@ -1,7 +1,7 @@
-from json import load, dump
 import os
-import time
 import sys
+import time
+from json import dump, load
 
 if __name__ == "__main__":
     allowed_environments = ["dev", "preprod", "prod"]
