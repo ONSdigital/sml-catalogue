@@ -30,7 +30,11 @@ def display_glossary():
         if checkEmptyList(contents["structure"]):
             _page_not_found("Glossary content not found")
         for i in contents:
-            with open(f'./contentful_content/glossary/{i["title"]}.jsonnet', "w", encoding='UTF-8') as f:
+            with open(
+                f'./contentful_content/glossary/{i["title"]}.jsonnet',
+                "w",
+                encoding="UTF-8",
+            ) as f:
                 dump(i["glossarycontent"], f)
         glossary_dir = "./contentful_content/glossary"
     try:
