@@ -27,15 +27,15 @@ def display_glossary():
     glossary_dir = "./content/glossary"
     if content_management["enabled"]:
         contents = getContent("glossaryEntry")
-        if checkEmptyList(contents["glossaryContent"]):
+        if checkEmptyList(contents["glossaryEntry"]):
             _page_not_found("Glossary content not found")
         for i in contents:
             with open(
-                f'./contentful_content/glossary/{i["title"]}.jsonnet',
+                f'./contentful_content/glossary/{i["name"]}.jsonnet',
                 "w",
                 encoding="UTF-8",
             ) as f:
-                dump(i["glossarycontent"], f)
+                dump(i["glossaryEntry"], f)
         glossary_dir = "./contentful_content/glossary"
     try:
         for file in listdir(glossary_dir):
