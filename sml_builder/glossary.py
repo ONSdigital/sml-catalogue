@@ -27,7 +27,7 @@ def display_glossary():
     glossary_dir = "./content/glossary"
     if content_management["enabled"]:
         contents = getContent("glossaryEntry")
-        if checkEmptyList(contents["structure"]):
+        if checkEmptyList(contents["glossaryContent"]):
             _page_not_found("Glossary content not found")
         for i in contents:
             with open(
