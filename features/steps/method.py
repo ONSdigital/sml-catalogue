@@ -58,20 +58,12 @@ def check_dropdown_content(context, text):
 
 
 def extractMethodTableContent(context, table):
-    if table == "ready":
-        methods_catalogue_table = WebDriverWait(driver, timeout=timeout).until(
-            lambda d: d.find_element(By.ID, value="ready-table")
-        )
-        methods_catalogue_table_header = methods_catalogue_table.find_elements(
-            By.CLASS_NAME, "ons-table__header"
-        )
-    elif table == "future":
-        methods_catalogue_table = WebDriverWait(driver, timeout=timeout).until(
-            lambda d: d.find_element(By.ID, value="future-table")
-        )
-        methods_catalogue_table_header = methods_catalogue_table.find_elements(
-            By.CLASS_NAME, "ons-table__header"
-        )
+    methods_catalogue_table = WebDriverWait(driver, timeout=timeout).until(
+        lambda d: d.find_element(By.ID, value=f"{table}-table")
+    )
+    methods_catalogue_table_header = methods_catalogue_table.find_elements(
+        By.CLASS_NAME, "ons-table__header"
+    )
 
     headers = []
     for header in methods_catalogue_table_header:
