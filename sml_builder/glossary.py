@@ -1,6 +1,6 @@
 import re
 from json import dump, loads
-from os import listdir
+from os import listdir, makedirs, path
 
 from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
 from flask import render_template
@@ -27,17 +27,18 @@ def display_glossary():
     glossary_dir = "./content/glossary"
     if content_management["enabled"]:
         contents = getContent("glossaryEntry")
-        if checkEmptyList(contents["meaning"]):
+        if checkEmptyList(contents):
             _page_not_found("Glossary content not found")
-        print(contents)
+        glossary_dir = "./contentful_content/glossary/"
+        makedirs(path.dirname(glossary_dir), exist_ok=True)
         for i in contents:
             with open(
-                f'./contentful_content/glossary/{contents[i]}.jsonnet',
+                f'./contentful_content/glossary/{i["name"]}.jsonnet',
                 "w",
                 encoding="UTF-8",
             ) as f:
-                dump(i, f)
-        glossary_dir = "./contentful_content/glossary"
+                dump(i["glossary_content"], f)
+
     try:
         for file in listdir(glossary_dir):
             glossary_term = loads(evaluate_file(f"{glossary_dir}/{file}"))
