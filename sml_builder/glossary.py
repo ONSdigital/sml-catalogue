@@ -26,13 +26,13 @@ def display_glossary():
     nav_options_list = []
     glossary_dir = "./content/glossary"
     if content_management["enabled"]:
-        contents = getContent("glossaryEntry")
+        contents = getContent("glossaryEntry")["glossary_content"]
         print(contents)
         if checkEmptyList(contents["glossary_content"]):
             _page_not_found("Glossary content not found")
         for i in contents:
             with open(
-                f'./contentful_content/glossary/{i["name"]}.jsonnet',
+                f'./contentful_content/glossary/{i["term"]}.jsonnet',
                 "w",
                 encoding="UTF-8",
             ) as f:
