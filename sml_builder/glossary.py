@@ -27,10 +27,10 @@ def display_glossary():
     glossary_dir = "./content/glossary"
     if content_management["enabled"]:
         contents = getContent("glossaryEntry")["glossary_content"]
-        print(contents)
         if checkEmptyList(contents["meaning"]):
             _page_not_found("Glossary content not found")
         for i in contents:
+            print(i)
             with open(
                 f'./contentful_content/glossary/{i["term"]}.jsonnet',
                 "w",
