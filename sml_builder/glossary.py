@@ -29,10 +29,10 @@ def display_glossary():
         contents = getContent("glossaryEntry")["glossary_content"]
         if checkEmptyList(contents["meaning"]):
             _page_not_found("Glossary content not found")
+        print(contents)
         for i in contents:
-            print(i)
             with open(
-                f'./contentful_content/glossary/{i["term"]}.jsonnet',
+                f'./contentful_content/glossary/{contents[i]}.jsonnet',
                 "w",
                 encoding="UTF-8",
             ) as f:
