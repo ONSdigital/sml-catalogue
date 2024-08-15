@@ -28,7 +28,7 @@ def display_glossary():
     if content_management["enabled"]:
         contents = getContent("glossaryEntry")["glossary_content"]
         print(contents)
-        if checkEmptyList(contents["glossary_content"]):
+        if checkEmptyList(contents["meaning"]):
             _page_not_found("Glossary content not found")
         for i in contents:
             with open(
@@ -36,7 +36,7 @@ def display_glossary():
                 "w",
                 encoding="UTF-8",
             ) as f:
-                dump(i["glossary_content"], f)
+                dump(i, f)
         glossary_dir = "./contentful_content/glossary"
     try:
         for file in listdir(glossary_dir):
