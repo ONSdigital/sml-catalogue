@@ -35,15 +35,12 @@ def display_glossary():
             created_file = {"term": i["term"],
                             "meaning": i["meaning"]
                             }
-            if "related" in i:
-                created_file["related"] = i["related"].split(",")
-                # strip leading/ending whitespace from each list entry
-                for counter, value in enumerate(created_file["related"]):
-                    created_file["related"][counter] = value.strip()
-            if "external_links" in i:
-                created_file["external_links"] = i["external_links"]
-            if "external_link_text" in i:
-                created_file["external_link_text"] = i["external_link_text"]
+            if "relatedlist" in i:
+                created_file["related"] = i["relatedlist"]
+            if "external_url" in i:
+                created_file["external_links"] = i["external_url"]
+            if "external_link_text_short" in i:
+                created_file["external_link_text"] = i["external_link_text_short"]
             with open(
                 f'./contentful_content/glossary/{i["id"]}.jsonnet',
                 "w",
@@ -59,13 +56,20 @@ def display_glossary():
                 if "letter" in glossary_term
                 else glossary_term["term"][0].upper()
             )
-            if "external_links" in glossary_term:
-                external_link = [{"link": glossary_term["external_links"],
-                                "text": glossary_term["external_link_text"]
-                                 }]
-                print(external_link)
+            if content_management["enabled"]:
+                if "external_links" in glossary_term:
+                    print(glossary_term)
+                    external_link = [{"link": glossary_term["external_links"],
+                                    "text": glossary_term["external_link_text"]
+                                     }]
+                else:
+                    external_link = []
             else:
-                external_link = []
+
+                if "external_links" in glossary_term:
+                    external_link = glossary_term["external_links"]
+                else:
+                    external_link =[]
             glossary_list.append(
                 {
                     "term": glossary_term["term"],
