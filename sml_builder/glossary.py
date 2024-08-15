@@ -32,12 +32,19 @@ def display_glossary():
         glossary_dir = "./contentful_content/glossary/"
         makedirs(path.dirname(glossary_dir), exist_ok=True)
         for i in contents:
+            created_file = {"term": i["term"],
+                            "meaning": i["meaning"]
+                            }
+            if "related" in i:
+                created_file["related"] = i["related"]
+            if "external_links" in i:
+                created_file["external_links"] = i["external_links"]
             with open(
-                f'./contentful_content/glossary/{i["name"]}.jsonnet',
+                f'./contentful_content/glossary/{i["id"]}.jsonnet',
                 "w",
                 encoding="UTF-8",
             ) as f:
-                dump(i["glossary_content"], f)
+                dump(created_file, f)
 
     try:
         for file in listdir(glossary_dir):
