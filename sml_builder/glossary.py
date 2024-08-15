@@ -26,7 +26,7 @@ def display_glossary():
     nav_options_list = []
     glossary_dir = "./content/glossary"
     if content_management["enabled"]:
-        contents = getContent("glossaryEntry")["glossary_content"]
+        contents = getContent("glossaryEntry")
         if checkEmptyList(contents["meaning"]):
             _page_not_found("Glossary content not found")
         print(contents)
