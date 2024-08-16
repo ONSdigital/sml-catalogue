@@ -32,9 +32,7 @@ def display_glossary():
         glossary_dir = "./contentful_content/glossary/"
         makedirs(path.dirname(glossary_dir), exist_ok=True)
         for i in contents:
-            created_file = {"term": i["term"],
-                            "meaning": i["meaning"]
-                            }
+            created_file = {"term": i["term"], "meaning": i["meaning"]}
             if "relatedlist" in i:
                 created_file["related"] = i["relatedlist"]
             if "external_url" in i:
@@ -58,18 +56,18 @@ def display_glossary():
             )
             if content_management["enabled"]:
                 if "external_links" in glossary_term:
-                    print(glossary_term)
-                    external_link = [{"link": glossary_term["external_links"],
-                                    "text": glossary_term["external_link_text"]
-                                     }]
+                    external_link = [
+                        {
+                            "link": glossary_term["external_links"],
+                            "text": glossary_term["external_link_text"],
+                        }
+                    ]
                 else:
                     external_link = []
+            elif "external_links" in glossary_term:
+                external_link = glossary_term["external_links"]
             else:
-
-                if "external_links" in glossary_term:
-                    external_link = glossary_term["external_links"]
-                else:
-                    external_link =[]
+                external_link = []
             glossary_list.append(
                 {
                     "term": glossary_term["term"],
