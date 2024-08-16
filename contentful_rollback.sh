@@ -5,6 +5,10 @@
 # Before a migration is completed, the migration script stores a snapshot of the target environment in the `contentful-data/rollbacks` directory.
 # This script will import the snapshot and rollback the target environment to the state it was in before the migration.
 # It is also expected that the files in the contentful-data directory are committed to git.
+# $MASTER_CDA_KEY, $SPACE_ID and $CLI_KEY must be set as environment variables.
+# $MASTER_CDA_KEY is the (read-only) Content Delivery API key which can access all environments.
+# $SPACE_ID is the Contentful space ID.
+# $CLI_KEY is the Contentful management token (sometimes referred to as CMA key).
 
 set -eo pipefail
 
@@ -56,8 +60,15 @@ else
   echo -e "${GREEN}Proceeding with rollback.${NC}"
 fi
 echo "Rolling back content in $target_environment"
-contentful space import --management-token $CLI_KEY --environment-id $target_environment --content-file ./contentful-data/rollbacks/${target_environment}-export.json
+# export the current state of the environment for use in deletion_changeset.py
+contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/content-exports --environment-id $target_environment --content-file ${target_environment}-export.json
+# delete all entries using deletion_changeset.py
+python deletion_changeset.py $target_environment ./contentful-data/content-exports/${target_environment}-export.json
+contentful-merge apply --space $SPACE_ID --environment $target_environment --cma-token $CLI_KEY --file ./contentful-data/migrations/deletion-changeset.json
+# perform any necessary content type changes
 contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/rollbacks/${target_environment}-export.js
+# import the snapshot
+contentful space import --management-token $CLI_KEY --environment-id $target_environment --content-file ./contentful-data/rollbacks/${target_environment}-export.json
 # log the rollback
 timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
 migration_log="${timestamp}: Performed rollback on environment $target_environment"

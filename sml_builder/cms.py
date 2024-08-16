@@ -1,3 +1,5 @@
+# pylint: disable=possibly-used-before-assignment
+
 import os
 
 import contentful
