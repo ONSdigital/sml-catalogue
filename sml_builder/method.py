@@ -95,7 +95,7 @@ def display_search_results():
             "id": [item["id"] for item in data],
             "Name": [item["name"] for item in data],
             "Theme": [item["theme"] for item in data],
-            "Expert Group": [item["expertGroup"] for item in data],
+            "Expert Group": [item["expert_group"] for item in data],
             "Language": [item["language"] for item in data],
         }
 

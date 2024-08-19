@@ -74,7 +74,6 @@ def extractMethodTableContent(context, table):
         lambda d: d.find_elements(By.CLASS_NAME, "ons-table__row")
     )
 
-    # Come up with a better variable name
     methods = []
     for row in methods_catalogue_table_rows:
         cells = row.find_elements(By.CLASS_NAME, "ons-table__cell")
