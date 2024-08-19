@@ -80,28 +80,47 @@ def display_search_results():
     else:
         searchQuery = ""
 
-    methods_dir = "./content/methods/ready-to-use-methods"
-    future_methods_dir = "./content/methods/future-methods"
+    if content_management["enabled"]:
+        content = getContent("methodsCatalogue")
+        getMethodsTableItems = getContent("catalogueTableOfMethods2")
+        if checkEmptyList(getMethodsTableItems) or checkEmptyList(content):
+            _page_not_found("Methods content not found")
+        if checkTypeList(getMethodsTableItems):
+            for method in getMethodsTableItems:
+                data.append(method)
+        else:
+            data.append(getMethodsTableItems)
 
-    # Display results
-    methods = appendRow(methods_dir, filter_methods=None)
-    future_methods = appendRow(future_methods_dir, filter_methods=None)
+        method_data = {
+            "id": [item["id"] for item in data],
+            "Name": [item["name"] for item in data],
+            "Theme": [item["theme"] for item in data],
+            "Expert Group": [item["expertGroup"] for item in data],
+            "Language": [item["language"] for item in data]
+        }
 
-    data = methods + future_methods
+    else:
+        methods_dir = "./content/methods/ready-to-use-methods"
+        future_methods_dir = "./content/methods/future-methods"
 
-    ids = [item["id"] for item in data]
-    names = [item["title"] for item in data]
-    themes = [item["theme"] for item in data]
-    exp_groups = [item["exp_group"] for item in data]
-    languages = [item["language"] for item in data]
+        methods = appendRow(methods_dir, filter_methods=None)
+        future_methods = appendRow(future_methods_dir, filter_methods=None)
 
-    method_data = {
-        "id": ids,
-        "Name": names,
-        "Theme": themes,
-        "Expert Group": exp_groups,
-        "Language": languages,
-    }
+        data = methods + future_methods
+
+        ids = [item["id"] for item in data]
+        names = [item["title"] for item in data]
+        themes = [item["theme"] for item in data]
+        exp_groups = [item["exp_group"] for item in data]
+        languages = [item["language"] for item in data]
+
+        method_data = {
+            "id": ids,
+            "Name": names,
+            "Theme": themes,
+            "Expert Group": exp_groups,
+            "Language": languages,
+        }
 
     # Creating DataFrame
     data_frame = pd.DataFrame(method_data)
@@ -110,10 +129,26 @@ def display_search_results():
     filter_methods = search_results_rows["id"].tolist()
     try:
         # Append methods only if found in search results
-        methods = appendRow(methods_dir, filter_methods=filter_methods)
-        future_methods = appendRow(future_methods_dir, filter_methods=filter_methods)
+        if content_management["enabled"]:
+            if filter_methods is not None:
+                filtered_methods = [
+                    method for method in methods if method["id"] in filter_methods
+                ]
+                methods = filtered_methods
+        else:
+            methods = appendRow(methods_dir, filter_methods=filter_methods)
+            future_methods = appendRow(future_methods_dir, filter_methods=filter_methods)
     except OSError as e:
         _page_not_found(e)
+    if content_management["enabled"]:
+        return render_template(
+            "methods.html",
+            methods=methods,
+            content=content,
+            cms_enabled=content_management["enabled"],
+            method_search=method_search["enabled"],
+            search_results_info_panel=True,
+        )
     return render_template(
         "methods.html",
         page={"rows": methods, "future_rows": future_methods},
