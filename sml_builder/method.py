@@ -132,7 +132,7 @@ def display_search_results():
         if content_management["enabled"]:
             if filter_methods is not None:
                 filtered_methods = [
-                    method for method in methods if method["id"] in filter_methods
+                    method for method in data if method["id"] in filter_methods
                 ]
                 methods = filtered_methods
         else:
