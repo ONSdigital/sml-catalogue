@@ -96,7 +96,7 @@ def display_search_results():
             "Name": [item["name"] for item in data],
             "Theme": [item["theme"] for item in data],
             "Expert Group": [item["expertGroup"] for item in data],
-            "Language": [item["language"] for item in data]
+            "Language": [item["language"] for item in data],
         }
 
     else:
@@ -137,7 +137,9 @@ def display_search_results():
                 methods = filtered_methods
         else:
             methods = appendRow(methods_dir, filter_methods=filter_methods)
-            future_methods = appendRow(future_methods_dir, filter_methods=filter_methods)
+            future_methods = appendRow(
+                future_methods_dir, filter_methods=filter_methods
+            )
     except OSError as e:
         _page_not_found(e)
     if content_management["enabled"]:
