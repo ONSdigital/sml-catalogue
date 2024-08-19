@@ -1,5 +1,15 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.62 (2024-08-19)
+
+### Feature
+
+* User changes to contentful content model ([`111f35e`](https://github.com/ONSdigital/sml-catalogue/commit/111f35e4c071c5f5e543fb814a572eec96ac06f1))
+
+### Fix
+
+* SPP-11899-improve-migration-scripts ([#363](https://github.com/ONSdigital/sml-catalogue/issues/363)) ([`0774bf0`](https://github.com/ONSdigital/sml-catalogue/commit/0774bf0ace989944e03b9e7966267759d7e6108c))
+
 ## v1.5.0-rc.61 (2024-08-08)
 
 ### Feature
