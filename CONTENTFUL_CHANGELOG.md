@@ -540,3 +540,164 @@ userDocumentationLink: https://github.com/ONSdigital/cell-key-perturbation/blob/
 
 — 08/08/2024 at 12:35:15 PM —
 
+# CMS Update: 19/08/2024 at 01:28:09 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 1
+
+Updated At: 2024-08-19T13:28:09.376Z
+
+Content Updated:
+
+```txt
+id: cell-key-perturbation-r
+name: Cell Key Perturbation 
+theme: Statistical Disclosure Control
+expertGroup: Statistical Disclosure Control
+language: R
+author: ONS
+description: Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.
+contactDetails: smlhelp@ons.gov.uk
+methodReady: false
+additionalInformation:  
+```
+
+— 19/08/2024 at 01:28:09 PM —
+
+# CMS Update: 20/08/2024 at 08:21:01 AM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 3
+
+Updated At: 2024-08-20T08:21:01.380Z
+
+Content Updated:
+
+```txt
+id: ratio-of-means
+name: Ratio of Means
+theme: Imputation
+expertGroup: Editing & Imputation
+language: Python/PySpark
+author: ONS
+description: Ratio of means is a standard imputation method used for business surveys. The method imputes for each non-responding contributor a single numeric target variable within the dataset for multiple periods simultaneously. It uses the relationship between the target variable of interest and a predictive value and/or auxiliary variable to inform the imputed value. Due to its robust nature, it does not use any form of trimming or outliering.
+
+As imputation can be carried out for multiple periods simultaneously, the method can apply forward, backward or construction imputation. The type of imputation used will vary for each non-respondent in each period depending on whether data is available in the predictive period.
+contactDetails: smlhelp@ons.gov.uk
+methodReady: false
+releaseVersion: Not Released Yet
+additionalInformation: Links to the method code and specification are provided for further reading.
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/ratio_of_means/methodological_specification.md
+```
+
+— 20/08/2024 at 08:21:01 AM —
+
+# CMS Update: 20/08/2024 at 08:21:01 AM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 19
+
+Updated At: 2024-08-20T08:21:01.332Z
+
+Content Updated:
+
+```txt
+id: mean-of-ratios
+name: Mean of Ratios
+theme: Imputation
+expertGroup: Editing & Imputation
+language: Python/PySpark
+author: ONS
+description: Mean of Ratios imputation is a standard imputation method for business surveys. It can be used to impute value for unit (complete) non-response or item (partial) non-response. There is an option to use trimming as the method can be influenced by extreme values. The method imputes a single numeric variable. It uses the relationship between the variable being imputed and an appropriate predictive or auxiliary variable.
+
+As imputation can be carried out for multiple periods simultaneously, the method can apply forward, backward or construction imputation. The type of imputation used will vary for each non-respondent in each period depending on whether data is available in the predictive period.
+contactDetails: smlhelp@ons.gov.uk
+methodReady: false
+releaseVersion: Not Released Yet
+additionalInformation: Links to the method code and specification are provided for further reading.
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/mean_of_ratios/technical_specification.md
+```
+
+— 20/08/2024 at 08:21:01 AM —
+
+# CMS Update: 20/08/2024 at 11:08:12 AM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 21
+
+Updated At: 2024-08-20T11:08:12.796Z
+
+Content Updated:
+
+```txt
+id: mean-of-ratios
+name: Mean of Ratios
+theme: Imputation
+expertGroup: Editing & Imputation
+language: Python/PySpark
+author: ONS
+description: Mean of Ratios imputation is a standard imputation method for business surveys. It can be used to impute value for unit (complete) non-response or item (partial) non-response. There is an option to use trimming as the method can be influenced by extreme values. The method imputes a single numeric variable. It uses the relationship between the variable being imputed and an appropriate predictive or auxiliary variable.
+
+As imputation can be carried out for multiple periods simultaneously, the method can apply forward, backward or construction imputation. The type of imputation used will vary for each non-respondent in each period depending on whether data is available in the predictive period.
+contactDetails: smlhelp@ons.gov.uk
+methodReady: false
+releaseVersion: Not Released Yet
+additionalInformation: Links to the method code and specification are provided for further reading.
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/mean_of_ratios/technical_specification.md
+```
+
+— 20/08/2024 at 11:08:12 AM —
+
+# CMS Update: 20/08/2024 at 11:13:14 AM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 1
+
+Updated At: 2024-08-20T11:13:14.531Z
+
+Content Updated:
+
+```txt
+id: mean-of-ratios
+name: Mean of Ratios
+theme: Imputation
+expertGroup: Editing & Imputation
+language: Python/PySpark
+author: ONS
+description: Mean of Ratios imputation is a standard imputation method for business surveys. It can be used to impute value for unit (complete) non-response or item (partial) non-response. There is an option to use trimming as the method can be influenced by extreme values. The method imputes a single numeric variable. It uses the relationship between the variable being imputed and an appropriate predictive or auxiliary variable.
+
+As imputation can be carried out for multiple periods simultaneously, the method can apply forward, backward or construction imputation. The type of imputation used will vary for each non-respondent in each period depending on whether data is available in the predictive period.
+contactDetails: smlhelp@ons.gov.uk
+methodReady: false
+releaseVersion: Not Released Yet
+additionalInformation: Links to the method code and specification are provided for further reading.
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/mean_of_ratios/technical_specification.md
+```
+
+— 20/08/2024 at 11:13:14 AM —
+

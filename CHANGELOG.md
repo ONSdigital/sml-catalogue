@@ -1,5 +1,33 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.64 (2024-08-20)
+
+### Feature
+
+* User changes to contentful content model ([`cca8de9`](https://github.com/ONSdigital/sml-catalogue/commit/cca8de9c7d1a368f1f4c0da3360a3f8bc505c89a))
+* User changes to contentful content model ([`af5d21b`](https://github.com/ONSdigital/sml-catalogue/commit/af5d21b1468ea31ddc69ec3e90d3e7ad8efae8c4))
+
+### Fix
+
+* Fix bug when deleting methods in the CMS ([#366](https://github.com/ONSdigital/sml-catalogue/issues/366)) ([`b86b35e`](https://github.com/ONSdigital/sml-catalogue/commit/b86b35e4fb9555e651b9373ee6a1473166008758))
+
+## v1.5.0-rc.63 (2024-08-20)
+
+### Feature
+
+* User changes to contentful content model ([`f8ad299`](https://github.com/ONSdigital/sml-catalogue/commit/f8ad2995b1c2219576f6d1fe85748002ee4f1edf))
+* User changes to contentful content model ([`f509069`](https://github.com/ONSdigital/sml-catalogue/commit/f509069fbc7d5a0c1b105ad45c662f29a04c8539))
+
+## v1.5.0-rc.62 (2024-08-19)
+
+### Feature
+
+* User changes to contentful content model ([`111f35e`](https://github.com/ONSdigital/sml-catalogue/commit/111f35e4c071c5f5e543fb814a572eec96ac06f1))
+
+### Fix
+
+* SPP-11899-improve-migration-scripts ([#363](https://github.com/ONSdigital/sml-catalogue/issues/363)) ([`0774bf0`](https://github.com/ONSdigital/sml-catalogue/commit/0774bf0ace989944e03b9e7966267759d7e6108c))
+
 ## v1.5.0-rc.61 (2024-08-08)
 
 ### Feature
