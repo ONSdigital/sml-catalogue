@@ -53,6 +53,11 @@ elif [ "$BUILD_TYPE" -eq 1 ]; then
   git fetch
   run_linting
   semantic-release publish --prerelease
+elif [ "$BUILD_TYPE" -eq 2 ]; then
+  git fetch
+  mkdir build && cd build
+  wget https://github.com/ONSdigital/sml-catalogue/releases/download/"$ROLLBACK_TAG"/build.zip
+
 else
   git fetch
   run_linting
