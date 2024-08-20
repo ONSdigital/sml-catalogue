@@ -1,5 +1,16 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.64 (2024-08-20)
+
+### Feature
+
+* User changes to contentful content model ([`cca8de9`](https://github.com/ONSdigital/sml-catalogue/commit/cca8de9c7d1a368f1f4c0da3360a3f8bc505c89a))
+* User changes to contentful content model ([`af5d21b`](https://github.com/ONSdigital/sml-catalogue/commit/af5d21b1468ea31ddc69ec3e90d3e7ad8efae8c4))
+
+### Fix
+
+* Fix bug when deleting methods in the CMS ([#366](https://github.com/ONSdigital/sml-catalogue/issues/366)) ([`b86b35e`](https://github.com/ONSdigital/sml-catalogue/commit/b86b35e4fb9555e651b9373ee6a1473166008758))
+
 ## v1.5.0-rc.63 (2024-08-20)
 
 ### Feature
