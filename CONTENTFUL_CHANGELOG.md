@@ -569,3 +569,36 @@ additionalInformation:
 
 — 19/08/2024 at 01:28:09 PM —
 
+# CMS Update: 20/08/2024 at 08:21:01 AM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 3
+
+Updated At: 2024-08-20T08:21:01.380Z
+
+Content Updated:
+
+```txt
+id: ratio-of-means
+name: Ratio of Means
+theme: Imputation
+expertGroup: Editing & Imputation
+language: Python/PySpark
+author: ONS
+description: Ratio of means is a standard imputation method used for business surveys. The method imputes for each non-responding contributor a single numeric target variable within the dataset for multiple periods simultaneously. It uses the relationship between the target variable of interest and a predictive value and/or auxiliary variable to inform the imputed value. Due to its robust nature, it does not use any form of trimming or outliering.
+
+As imputation can be carried out for multiple periods simultaneously, the method can apply forward, backward or construction imputation. The type of imputation used will vary for each non-respondent in each period depending on whether data is available in the predictive period.
+contactDetails: smlhelp@ons.gov.uk
+methodReady: false
+releaseVersion: Not Released Yet
+additionalInformation: Links to the method code and specification are provided for further reading.
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/ratio_of_means/methodological_specification.md
+```
+
+— 20/08/2024 at 08:21:01 AM —
+
