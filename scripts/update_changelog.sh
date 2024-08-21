@@ -122,6 +122,7 @@ space_id="${GITHUB_EVENT_SPACE_ID}"
 user_id="${GITHUB_EVENT_USER_ID}"
 echo "Space ID: $space_id"
 echo "User ID: $user_id"
+echo "Change Type: $GITHUB_EVENT_CHANGE_TYPE"
 
 # Get the full name
 get_user_full_name "$space_id" "$user_id" "$CONTENTFUL_TOKEN"
@@ -130,55 +131,71 @@ get_user_full_name "$space_id" "$user_id" "$CONTENTFUL_TOKEN"
 if [ $? -eq 0 ]; then
     echo "User full name: ${update_details["full_name"]}"
 
-    # Get the entry by ID
-    entry_id="${GITHUB_EVENT_ENTITY_ID}"
-    get_entry_by_id "$space_id" "$environment" "$entry_id" "$CONTENTFUL_CDA_TOKEN"
-
-    # Check the return from the function
-    if [ $? -eq 0 ]; then
-        # Remove milliseconds and 'Z'
-        cleaned_timestamp=$(echo "${update_details["updated_at"]}" | sed -E 's/\.[0-9]{3}Z$//' | sed 's/T/ /')
-
-        # Detect if GNU date is available
-        if date --version &>/dev/null; then
-            # GNU date (Linux)
-            formatted_timestamp=$(date -d "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
-        else
-            # macOS date
-            formatted_timestamp=$(date -j -f "%Y-%m-%d %H:%M:%S" "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
-        fi
-
-        fields=$(echo "${update_details["fields"]}" | jq -r 'to_entries[] | "\(.key): \(.value)"')
-
+    if [ "${GITHUB_EVENT_CHANGE_TYPE}" == "DeletedEntry"]; then
         {
-        echo "# CMS Update: $formatted_timestamp"
+        echo "# CMS Update: Content Deletion"
         echo ""
         echo "Editor: ${update_details["full_name"]}"
         echo ""
-        echo "Environment: ${update_details["environment"]}"
+        echo "Environment: ${environment}"
         echo ""
-        echo "Content Type: ${update_details["content_type"]}"
+        echo "Change Type: ${$GITHUB_EVENT_CHANGE_TYPE}"
         echo ""
-        echo "Revision: ${update_details["revision"]}"
+        echo "Entry ID: ${GITHUB_EVENT_ENTITY_ID}"
         echo ""
-        echo "Updated At: ${update_details["updated_at"]}"
+        echo "This entry was deleted"
         echo ""
-        echo "Content Updated:"
-        echo ""
-        echo '```txt'
-        echo "$fields"
-        echo '```'
-        echo ""
-        echo "— $formatted_timestamp —"
-        echo ""
-
         } >> "$changelog_file"
-
     else
-        echo "Failed to retrieve entry details."
-        exit 1
-    fi
+        # Get the entry by ID
+        entry_id="${GITHUB_EVENT_ENTITY_ID}"
+        get_entry_by_id "$space_id" "$environment" "$entry_id" "$CONTENTFUL_CDA_TOKEN"
 
+        # Check the return from the function
+        if [ $? -eq 0 ]; then
+            # Remove milliseconds and 'Z'
+            cleaned_timestamp=$(echo "${update_details["updated_at"]}" | sed -E 's/\.[0-9]{3}Z$//' | sed 's/T/ /')
+
+            # Detect if GNU date is available
+            if date --version &>/dev/null; then
+                # GNU date (Linux)
+                formatted_timestamp=$(date -d "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
+            else
+                # macOS date
+                formatted_timestamp=$(date -j -f "%Y-%m-%d %H:%M:%S" "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
+            fi
+
+            fields=$(echo "${update_details["fields"]}" | jq -r 'to_entries[] | "\(.key): \(.value)"')
+
+            {
+            echo "# CMS Update: $formatted_timestamp"
+            echo ""
+            echo "Editor: ${update_details["full_name"]}"
+            echo ""
+            echo "Environment: ${update_details["environment"]}"
+            echo ""
+            echo "Content Type: ${update_details["content_type"]}"
+            echo ""
+            echo "Revision: ${update_details["revision"]}"
+            echo ""
+            echo "Updated At: ${update_details["updated_at"]}"
+            echo ""
+            echo "Content Updated:"
+            echo ""
+            echo '```txt'
+            echo "$fields"
+            echo '```'
+            echo ""
+            echo "— $formatted_timestamp —"
+            echo ""
+
+            } >> "$changelog_file"
+
+        else
+            echo "Failed to retrieve entry details."
+            exit 1
+        fi
+    fi
 else
     echo "Failed to retrieve user full name."
     exit 1
