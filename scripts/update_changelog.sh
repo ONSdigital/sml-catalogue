@@ -131,7 +131,7 @@ get_user_full_name "$space_id" "$user_id" "$CONTENTFUL_TOKEN"
 if [ $? -eq 0 ]; then
     echo "User full name: ${update_details["full_name"]}"
 
-    if [ "${GITHUB_EVENT_CHANGE_TYPE}" == "DeletedEntry"]; then
+    if [ "${GITHUB_EVENT_CHANGE_TYPE}" == "DeletedEntry" ]; then
         {
         echo "# CMS Update: Content Deletion"
         echo ""
