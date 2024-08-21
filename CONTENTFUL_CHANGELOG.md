@@ -788,3 +788,15 @@ specificationLink: https://github.com/ONSdigital/Statistical-Method-Specificatio
 
 — 21/08/2024 at 02:59:09 PM —
 
+# CMS Update: Content Deletion
+
+Editor: null null
+
+Environment: preprod
+
+Change Type: DeletedEntry
+
+Entry ID: 1HJAAO0pl0PBHmxrTumJaI
+
+This entry was deleted
+
