@@ -120,9 +120,11 @@ environment="$1"
 # Replace these with actual space and user IDs as necessary
 space_id="${GITHUB_EVENT_SPACE_ID}"
 user_id="${GITHUB_EVENT_USER_ID}"
+change_type="${GITHUB_EVENT_CHANGE_TYPE}"
+entry_id="${GITHUB_EVENT_ENTITY_ID}"
 echo "Space ID: $space_id"
 echo "User ID: $user_id"
-echo "Change Type: $GITHUB_EVENT_CHANGE_TYPE"
+echo "Change Type: $change_type"
 
 # Get the full name
 get_user_full_name "$space_id" "$user_id" "$CONTENTFUL_TOKEN"
@@ -131,24 +133,23 @@ get_user_full_name "$space_id" "$user_id" "$CONTENTFUL_TOKEN"
 if [ $? -eq 0 ]; then
     echo "User full name: ${update_details["full_name"]}"
 
-    if [ "${GITHUB_EVENT_CHANGE_TYPE}" == "DeletedEntry"]; then
+    if [ $change_type == "DeletedEntry" ]; then
         {
         echo "# CMS Update: Content Deletion"
         echo ""
         echo "Editor: ${update_details["full_name"]}"
         echo ""
-        echo "Environment: ${environment}"
+        echo "Environment: $environment"
         echo ""
-        echo "Change Type: ${$GITHUB_EVENT_CHANGE_TYPE}"
+        echo "Change Type: $change_type"
         echo ""
-        echo "Entry ID: ${GITHUB_EVENT_ENTITY_ID}"
+        echo "Entry ID: $entry_id"
         echo ""
         echo "This entry was deleted"
         echo ""
         } >> "$changelog_file"
     else
         # Get the entry by ID
-        entry_id="${GITHUB_EVENT_ENTITY_ID}"
         get_entry_by_id "$space_id" "$environment" "$entry_id" "$CONTENTFUL_CDA_TOKEN"
 
         # Check the return from the function
