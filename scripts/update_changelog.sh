@@ -122,7 +122,7 @@ space_id="${GITHUB_EVENT_SPACE_ID}"
 user_id="${GITHUB_EVENT_USER_ID}"
 echo "Space ID: $space_id"
 echo "User ID: $user_id"
-echo "Change Type: $GITHUB_EVENT_CHANGE_TYPE"
+echo "Change Type: ${GITHUB_EVENT_CHANGE_TYPE}"
 
 # Get the full name
 get_user_full_name "$space_id" "$user_id" "$CONTENTFUL_TOKEN"
@@ -139,7 +139,7 @@ if [ $? -eq 0 ]; then
         echo ""
         echo "Environment: ${environment}"
         echo ""
-        echo "Change Type: ${$GITHUB_EVENT_CHANGE_TYPE}"
+        echo "Change Type: ${GITHUB_EVENT_CHANGE_TYPE}"
         echo ""
         echo "Entry ID: ${GITHUB_EVENT_ENTITY_ID}"
         echo ""
