@@ -701,3 +701,24 @@ specificationLink: https://github.com/ONSdigital/Statistical-Method-Specificatio
 
 — 20/08/2024 at 11:13:14 AM —
 
+# CMS Update: 21/08/2024 at 01:08:49 PM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: heroHomePage
+
+Revision: 31
+
+Updated At: 2024-08-21T13:08:49.789Z
+
+Content Updated:
+
+```txt
+heroTitle: An open source library for statistical code approved by the ONS (rollback testing)
+heroButton: Find methods
+```
+
+— 21/08/2024 at 01:08:49 PM —
+
