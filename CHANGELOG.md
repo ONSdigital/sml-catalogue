@@ -1,5 +1,15 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.66 (2024-08-21)
+
+### Feature
+
+* User changes to contentful content model ([`3a099d7`](https://github.com/ONSdigital/sml-catalogue/commit/3a099d757e8ba79c2924dc08374d24d088a160dd))
+
+### Fix
+
+* SPP-11950 Fix GitHub Actions methods deletion bug ([#368](https://github.com/ONSdigital/sml-catalogue/issues/368)) ([`9a25deb`](https://github.com/ONSdigital/sml-catalogue/commit/9a25debfa6f319d7149a9579f15e2c3649aa2038))
+
 ## v1.5.0-rc.65 (2024-08-21)
 
 ### Feature

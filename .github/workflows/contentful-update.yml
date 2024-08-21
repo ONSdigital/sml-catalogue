@@ -28,6 +28,7 @@ jobs:
           echo "GITHUB_EVENT_SPACE_ID=${{ github.event.client_payload.spaceID }}" >> $GITHUB_ENV
           echo "GITHUB_EVENT_USER_ID=${{ github.event.client_payload.userID }}" >> $GITHUB_ENV
           echo "GITHUB_EVENT_ENTITY_ID=${{ github.event.client_payload.entityID }}" >> $GITHUB_ENV
+          echo "GITHUB_EVENT_CHANGE_TYPE=${{ github.event.client_payload.changeType }}" >> $GITHUB_ENV
 
       - name: Pull latest changes and rebase
         run: |
