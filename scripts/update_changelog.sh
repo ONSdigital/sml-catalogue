@@ -107,6 +107,37 @@ get_entry_by_id() {
     fi
 }
 
+get_deleted_entry_by_id() {
+    local space_id=$1
+    local env=$2
+    local entity_id=$3
+    local cma_token=$4
+
+    response=$(curl --silent --show-error --write-out "HTTPSTATUS:%{http_code}" --request GET "https://api.contentful.com/spaces/${space_id}/environments/${env}/entries/${entity_id}" \
+        -H "Authorization: Bearer ${cma_token}")
+
+    # Extract the body and the status code and remove the status code from the response
+    http_body=$(echo "$response" | sed -e 's/HTTPSTATUS\:.*//g')
+    http_status=$(echo "$response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+
+    echo "Entry by ID (Deletion) HTTP Status: $http_status"
+
+    if [ "$http_status" -eq 200 ]; then
+        # Clean the response
+        # Use sed to escape control characters like newlines if needed
+        cleaned_response=$(echo "$http_body" | tr '\n' ' ')
+
+        update_details["environment"]=$(echo "$cleaned_response" | jq -r '.sys.environment.sys.id')
+        update_details["content_type"]=$(echo "$cleaned_response" | jq -r '.sys.contentType.sys.id')
+        update_details["revision"]=$(echo "$cleaned_response" | jq -r '.sys.revision')
+        update_details["updated_at"]=$(echo "$cleaned_response" | jq -r '.sys.updatedAt')
+        update_details["fields"]=$(echo "$cleaned_response" | jq -r '.fields')
+    else
+        parse_error_response "$http_body" "$http_status"
+        return 1
+    fi
+}
+
 
 # Check if the environment parameter is provided
 if [ -z "$1" ]; then
@@ -134,20 +165,46 @@ if [ $? -eq 0 ]; then
     echo "User full name: ${update_details["full_name"]}"
 
     if [ $change_type == "DeletedEntry" ]; then
-        {
-        echo "# CMS Update: Content Deletion"
-        echo ""
-        echo "Editor: ${update_details["full_name"]}"
-        echo ""
-        echo "Environment: $environment"
-        echo ""
-        echo "Change Type: $change_type"
-        echo ""
-        echo "Entry ID: $entry_id"
-        echo ""
-        echo "This entry was deleted"
-        echo ""
-        } >> "$changelog_file"
+
+        get_deleted_entry_by_id "$space_id" "$environment" "$entry_id" "$CONTENTFUL_TOKEN"
+
+        if [ $? -eq 0 ]; then
+            cleaned_timestamp=$(echo "${update_details["updated_at"]}" | sed -E 's/\.[0-9]{3}Z$//' | sed 's/T/ ')
+            if date --version &>/dev/null; then
+                formatted_timestamp=$(date -d "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
+            else
+                formatted_timestamp=$(date -j -f "%Y-%m-%d %H:%M:%S" "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
+            fi
+
+            fields=$(echo "${update_details["fields"]}" | jq -r 'to_entries[] | "\(.key): \(.value)"')
+
+            {
+            echo "# CMS Update: $formatted_timestamp"
+            echo ""
+            echo "Editor: ${update_details["full_name"]}"
+            echo ""
+            echo "Environment: ${update_details["environment"]}"
+            echo ""
+            echo "Content Type: N/A"
+            echo ""
+            echo "Revision: N/A"
+            echo ""
+            echo "Updated At: ${update_details["updated_at"]}"
+            echo ""
+            echo "Content Updated: entry $entry_id has been deleted."
+            echo ""
+            echo '```txt'
+            echo "$fields"
+            echo '```'
+            echo ""
+            echo "— $formatted_timestamp —"
+            echo ""
+            } >> "$changelog_file"
+
+        else
+            echo "Failed to retrieve entry details."
+            exit 1
+        fi
     else
         # Get the entry by ID
         get_entry_by_id "$space_id" "$environment" "$entry_id" "$CONTENTFUL_CDA_TOKEN"
