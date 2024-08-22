@@ -1,5 +1,16 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.68 (2024-08-22)
+
+### Feature
+
+* User changes to contentful content model ([`fb189e2`](https://github.com/ONSdigital/sml-catalogue/commit/fb189e231304308d19d1bdaa569a65694cc7ff12))
+* User changes to contentful content model ([`ba6604d`](https://github.com/ONSdigital/sml-catalogue/commit/ba6604dc91e9889c0a97bfda5a298a7dd0d5c641))
+
+### Fix
+
+* Use contentful cma when processing deleted entries ([#372](https://github.com/ONSdigital/sml-catalogue/issues/372)) ([`4f93896`](https://github.com/ONSdigital/sml-catalogue/commit/4f93896868db64f826db029eb1e2bf07421ba092))
+
 ## v1.5.0-rc.67 (2024-08-21)
 
 ### Feature
