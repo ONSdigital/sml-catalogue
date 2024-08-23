@@ -132,6 +132,7 @@ get_deleted_entry_by_id() {
         update_details["revision"]=$(echo "$cleaned_response" | jq -r '.sys.revision')
         update_details["updated_at"]=$(echo "$cleaned_response" | jq -r '.sys.updatedAt')
         update_details["fields"]=$(echo "$cleaned_response" | jq -r '.fields')
+        update_details["user_id"]=$(echo "$cleaned_response" | jq -r '.sys.updatedBy.sys.id')
     else
         parse_error_response "$http_body" "$http_status"
         return 1
@@ -169,7 +170,7 @@ if [ $? -eq 0 ]; then
         get_deleted_entry_by_id "$space_id" "$environment" "$entry_id" "$CONTENTFUL_TOKEN"
 
         if [ $? -eq 0 ]; then
-            cleaned_timestamp=$(echo "${update_details["updated_at"]}" | sed -E 's/\.[0-9]{3}Z$//' | sed 's/T/ ')
+            cleaned_timestamp=$(echo "${update_details["updated_at"]}" | sed -E 's/\.[0-9]{3}Z$//' | sed 's/T/ /')
             if date --version &>/dev/null; then
                 formatted_timestamp=$(date -d "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
             else
@@ -177,6 +178,8 @@ if [ $? -eq 0 ]; then
             fi
 
             fields=$(echo "${update_details["fields"]}" | jq -r 'to_entries[] | "\(.key): \(.value)"')
+
+            get_user_full_name "$space_id" "${update_details["user_id"]}" "$CONTENTFUL_TOKEN"
 
             {
             echo "# CMS Update: $formatted_timestamp"
