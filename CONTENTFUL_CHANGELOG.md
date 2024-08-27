@@ -1094,3 +1094,26 @@ specificationLink: https://github.com/ONSdigital/Statistical-Method-Specificatio
 
 — 27/08/2024 at 09:25:29 AM —
 
+# CMS Update: 27/08/2024 at 09:25:32 AM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-08-27T09:25:32.925Z
+
+Content Updated:
+
+```txt
+id: github
+term: GitHub
+meaning: A popular Microsoft-owned service providing hosting for Git repositories, a Web interface to Git, and related services.
+relatedlist: ["Git"]
+```
+
+— 27/08/2024 at 09:25:32 AM —
+
