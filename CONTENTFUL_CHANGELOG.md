@@ -1064,3 +1064,33 @@ For Python, this means it will adhere to the [PEP8 Python style guide](https://p
 
 — 27/08/2024 at 09:25:28 AM —
 
+# CMS Update: 27/08/2024 at 09:25:29 AM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 3
+
+Updated At: 2024-08-27T09:25:29.069Z
+
+Content Updated:
+
+```txt
+id: ht-ratio-estimation
+name: Horvitz-Thompson Ratio Estimator
+theme: Sample Design & Estimation
+expertGroup: Sample Design & Estimation
+language: Python/PySpark
+author: ONS
+description: Sampling in business surveys is often done using stratified simple random sampling without replacement. The largest businesses are usually selected with certainty. This SML method uses two approaches for estimating totals in such cases. The Horvitz-Thompson estimator in this case is known as a stratified expansion estimator, which is the simplest method used. We also use a combined ratio estimator. This is appropriate where there is a linear relationship through the origin between the target variable and an auxiliary variable we know for all units, and the scatter about the line increases with the size of the auxiliary variable.
+contactDetails: smlhelp@ons.gov.uk
+methodReady: false
+releaseVersion: Not Ready Yet
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/sample_design_and_estimation/estimation/ht_estimation.rst
+```
+
+— 27/08/2024 at 09:25:29 AM —
+
