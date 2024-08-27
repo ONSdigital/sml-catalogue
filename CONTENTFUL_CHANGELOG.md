@@ -1185,3 +1185,27 @@ Where available, links to GitHub for source code and specifications will be on t
 
 — 27/08/2024 at 11:50:54 AM —
 
+# CMS Update: 27/08/2024 at 11:51:06 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 2
+
+Updated At: 2024-08-27T11:51:06.786Z
+
+Content Updated: entry 7IvVbD5tUwbzWeWPqwQP5n has been deleted.
+
+```txt
+id: {"en-US":"semantic_versioning"}
+term: {"en-US":"Semantic Versioning"}
+meaning: {"en-US":"A popular scheme for determining version numbers. Consists of three integers, separated by full stops. The first integer is the 'major' version number, the second is the 'minor' version number, and the third is the 'patch' number. The patch number is incremented by 1 when bugfixes are implemented. The minor version is incremented by 1 when new functionality is introduced without affecting compatibility with previous versions. The major version number is incremented by 1 when changes are made that break compatibility with previous versions. See https://semver.org"}
+externalLinkTextShort: {"en-US":"Semantic Versioning"}
+externalUrl: {"en-US":"https://semver.org"}
+```
+
+— 27/08/2024 at 11:51:06 AM —
+
