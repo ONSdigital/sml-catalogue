@@ -1,5 +1,15 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.72 (2024-08-27)
+
+### Feature
+
+* User changes to contentful content model ([`6815014`](https://github.com/ONSdigital/sml-catalogue/commit/6815014c96a7eeba9244f0d5f41d12aeb1f2ff91))
+
+### Fix
+
+* SPP-19950-fix-update_changelog.sh ([#373](https://github.com/ONSdigital/sml-catalogue/issues/373)) ([`5eeb21d`](https://github.com/ONSdigital/sml-catalogue/commit/5eeb21de209fcf4b6392e563a8f4d770a5757fb9))
+
 ## v1.5.0-rc.71 (2024-08-27)
 
 ### Feature
