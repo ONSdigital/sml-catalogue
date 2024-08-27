@@ -1139,3 +1139,25 @@ meaning: A means of tracking changes made to a file or collection of files. Comm
 
 — 27/08/2024 at 09:29:13 AM —
 
+# CMS Update: 27/08/2024 at 09:37:41 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 3
+
+Updated At: 2024-08-27T09:37:41.051Z
+
+Content Updated:
+
+```txt
+id: version_control
+term: Version Control
+meaning: A means of tracking changes made to a file or collection of files. Commonly used to track the development of software projects.
+```
+
+— 27/08/2024 at 09:37:41 AM —
+
