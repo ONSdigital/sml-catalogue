@@ -8,6 +8,11 @@
 # The CONTENTFUL_CDA_TOKEN envvironment variable must be set to the
 # API Token matching the passed environment parameter. 
 
+# This script requires bash 4.x or greater to run as it uses asssociative arrays.
+# The default shell on a mac is zsh so you should install a later version of bash using brew install bash
+# and run the script using:
+# /usr/local/bin/bash scripts/update_changelog.sh <environment - preprod|prod|dev>
+
 # Stop on first error
 set -e
 
@@ -129,9 +134,10 @@ get_deleted_entry_by_id() {
 
         update_details["environment"]=$(echo "$cleaned_response" | jq -r '.sys.environment.sys.id')
         update_details["content_type"]=$(echo "$cleaned_response" | jq -r '.sys.contentType.sys.id')
-        update_details["revision"]=$(echo "$cleaned_response" | jq -r '.sys.revision')
+        update_details["revision"]=$(echo "$cleaned_response" | jq -r '.sys.version')
         update_details["updated_at"]=$(echo "$cleaned_response" | jq -r '.sys.updatedAt')
         update_details["fields"]=$(echo "$cleaned_response" | jq -r '.fields')
+        update_details["user_id"]=$(echo "$cleaned_response" | jq -r '.sys.updatedBy.sys.id')
     else
         parse_error_response "$http_body" "$http_status"
         return 1
@@ -169,7 +175,7 @@ if [ $? -eq 0 ]; then
         get_deleted_entry_by_id "$space_id" "$environment" "$entry_id" "$CONTENTFUL_TOKEN"
 
         if [ $? -eq 0 ]; then
-            cleaned_timestamp=$(echo "${update_details["updated_at"]}" | sed -E 's/\.[0-9]{3}Z$//' | sed 's/T/ ')
+            cleaned_timestamp=$(echo "${update_details["updated_at"]}" | sed -E 's/\.[0-9]{3}Z$//' | sed 's/T/ /')
             if date --version &>/dev/null; then
                 formatted_timestamp=$(date -d "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
             else
@@ -178,6 +184,8 @@ if [ $? -eq 0 ]; then
 
             fields=$(echo "${update_details["fields"]}" | jq -r 'to_entries[] | "\(.key): \(.value)"')
 
+            get_user_full_name "$space_id" "${update_details["user_id"]}" "$CONTENTFUL_TOKEN"
+
             {
             echo "# CMS Update: $formatted_timestamp"
             echo ""
@@ -185,9 +193,9 @@ if [ $? -eq 0 ]; then
             echo ""
             echo "Environment: ${update_details["environment"]}"
             echo ""
-            echo "Content Type: N/A"
+            echo "Content Type: ${update_details["content_type"]}"
             echo ""
-            echo "Revision: N/A"
+            echo "Revision: ${update_details["revision"]}"
             echo ""
             echo "Updated At: ${update_details["updated_at"]}"
             echo ""
