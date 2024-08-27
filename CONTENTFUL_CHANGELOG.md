@@ -1253,3 +1253,27 @@ meaning: 'Data about data', giving information about a product itself, as oppose
 
 — 27/08/2024 at 11:51:04 AM —
 
+# CMS Update: 27/08/2024 at 11:51:01 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-08-27T11:51:01.027Z
+
+Content Updated:
+
+```txt
+id: expert_group
+term: Expert Group
+meaning: A group of ONS employees within the Methodology and Quality Directorate with expertise in a specific area. For a full list, see https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/
+externalLinkTextShort: Expert group
+externalUrl: https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/
+```
+
+— 27/08/2024 at 11:51:01 AM —
+
