@@ -920,3 +920,34 @@ heroButton: Find methods
 
 — 27/08/2024 at 08:39:48 AM —
 
+# CMS Update: 27/08/2024 at 09:02:29 AM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 15
+
+Updated At: 2024-08-27T09:02:29.049Z
+
+Content Updated: entry 1HJAAO0pl0PBHmxrTumJaI has been deleted.
+
+```txt
+id: {"en-US":"mean-of-ratios"}
+name: {"en-US":"Mean of Ratios"}
+theme: {"en-US":"Imputation"}
+expertGroup: {"en-US":"Editing & Imputation"}
+language: {"en-US":"Python/PySpark"}
+author: {"en-US":"ONS"}
+description: {"en-US":"Mean of Ratios imputation is a standard imputation method for business surveys. It can be used to impute value for unit (complete) non-response or item (partial) non-response. There is an option to use trimming as the method can be influenced by extreme values. The method imputes a single numeric variable. It uses the relationship between the variable being imputed and an appropriate predictive or auxiliary variable.\n\nAs imputation can be carried out for multiple periods simultaneously, the method can apply forward, backward or construction imputation. The type of imputation used will vary for each non-respondent in each period depending on whether data is available in the predictive period."}
+contactDetails: {"en-US":"smlhelp@ons.gov.uk"}
+methodReady: {"en-US":false}
+releaseVersion: {"en-US":"Not Released Yet"}
+additionalInformation: {"en-US":"Links to the method code and specification are provided for further reading."}
+specificationLink: {"en-US":"https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/mean_of_ratios/technical_specification.md"}
+```
+
+— 27/08/2024 at 09:02:29 AM —
+
