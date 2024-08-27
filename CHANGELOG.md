@@ -1,5 +1,18 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.73 (2024-08-27)
+
+### Feature
+
+* User changes to contentful content model ([`91a9d1c`](https://github.com/ONSdigital/sml-catalogue/commit/91a9d1c9cce2d3cfe781ed69f35a1b5095e77a01))
+* User changes to contentful content model ([`846b38e`](https://github.com/ONSdigital/sml-catalogue/commit/846b38e35c637c2213295711171fed4efbb2ff42))
+* User changes to contentful content model ([`6bea308`](https://github.com/ONSdigital/sml-catalogue/commit/6bea308b822744f4b7951b8068bb90aaf395c646))
+* User changes to contentful content model ([`55003a8`](https://github.com/ONSdigital/sml-catalogue/commit/55003a8fd7e7445e0c2aead591453ac6ec8fb98b))
+* User changes to contentful content model ([`5b35c87`](https://github.com/ONSdigital/sml-catalogue/commit/5b35c87a9a8d1a7b9c14a0473dfd6c9dd9317fbc))
+* User changes to contentful content model ([`672c946`](https://github.com/ONSdigital/sml-catalogue/commit/672c9460d714f9a34ee54ad89f6e8c55a2ee3f26))
+* User changes to contentful content model ([`1674cf2`](https://github.com/ONSdigital/sml-catalogue/commit/1674cf2ea9a0d15b7bc46aad10acbf8eea819367))
+* Initial test with single glossary entry ([#364](https://github.com/ONSdigital/sml-catalogue/issues/364)) ([`bbd0090`](https://github.com/ONSdigital/sml-catalogue/commit/bbd00901dc883756fd90a681140302a084441f6e))
+
 ## v1.5.0-rc.72 (2024-08-27)
 
 ### Feature
