@@ -1299,3 +1299,25 @@ meaning: Code developed by a wider community of analysts. These methods are held
 
 — 27/08/2024 at 11:51:01 AM —
 
+# CMS Update: 27/08/2024 at 11:51:08 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-08-27T11:51:08.832Z
+
+Content Updated:
+
+```txt
+id: third_party_methods
+term: Third Party Methods
+meaning: Third party methods are defined as those where a package, piece of code or software is developed and maintained outside of the SML strictures. This may include packages developed within ONS but where code is held and managed in a separate repository, or packages developed and maintained externally.
+```
+
+— 27/08/2024 at 11:51:08 AM —
+
