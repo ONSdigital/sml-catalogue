@@ -951,3 +951,25 @@ specificationLink: {"en-US":"https://github.com/ONSdigital/Statistical-Method-Sp
 
 — 27/08/2024 at 09:02:29 AM —
 
+# CMS Update: 27/08/2024 at 09:25:35 AM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-08-27T09:25:35.798Z
+
+Content Updated:
+
+```txt
+id: package
+term: Package
+meaning: An archive containing software and additional metadata that is distributed by a package manager. Sometimes used as a synonym for 'library', but does not always refer to libraries.
+```
+
+— 27/08/2024 at 09:25:35 AM —
+
