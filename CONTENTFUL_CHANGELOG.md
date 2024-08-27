@@ -1231,3 +1231,25 @@ meaning: A popular software tool for version control. Files are stored in reposi
 
 — 27/08/2024 at 11:51:02 AM —
 
+# CMS Update: 27/08/2024 at 11:51:04 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-08-27T11:51:04.847Z
+
+Content Updated:
+
+```txt
+id: metadata
+term: Metadata
+meaning: 'Data about data', giving information about a product itself, as opposed to its contents. In the case of the SML, metadata includes, for example: when a method was onboarded; its development status; by whom it was developed; whether or not it is approved for use in official outputs; etc.
+```
+
+— 27/08/2024 at 11:51:04 AM —
+
