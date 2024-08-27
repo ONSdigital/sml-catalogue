@@ -8,6 +8,11 @@
 # The CONTENTFUL_CDA_TOKEN envvironment variable must be set to the
 # API Token matching the passed environment parameter. 
 
+# This script requires bash 4.x or greater to run as it uses asssociative arrays.
+# The default shell on a mac is zsh so you should install a later version of bash using brew install bash
+# and run the script using:
+# /usr/local/bin/bash scripts/update_changelog.sh <environment - preprod|prod|dev>
+
 # Stop on first error
 set -e
 
@@ -129,7 +134,7 @@ get_deleted_entry_by_id() {
 
         update_details["environment"]=$(echo "$cleaned_response" | jq -r '.sys.environment.sys.id')
         update_details["content_type"]=$(echo "$cleaned_response" | jq -r '.sys.contentType.sys.id')
-        update_details["revision"]=$(echo "$cleaned_response" | jq -r '.sys.revision')
+        update_details["revision"]=$(echo "$cleaned_response" | jq -r '.sys.version')
         update_details["updated_at"]=$(echo "$cleaned_response" | jq -r '.sys.updatedAt')
         update_details["fields"]=$(echo "$cleaned_response" | jq -r '.fields')
         update_details["user_id"]=$(echo "$cleaned_response" | jq -r '.sys.updatedBy.sys.id')
@@ -188,9 +193,9 @@ if [ $? -eq 0 ]; then
             echo ""
             echo "Environment: ${update_details["environment"]}"
             echo ""
-            echo "Content Type: N/A"
+            echo "Content Type: ${update_details["content_type"]}"
             echo ""
-            echo "Revision: N/A"
+            echo "Revision: ${update_details["revision"]}"
             echo ""
             echo "Updated At: ${update_details["updated_at"]}"
             echo ""
