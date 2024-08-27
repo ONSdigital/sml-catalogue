@@ -1161,3 +1161,27 @@ meaning: A means of tracking changes made to a file or collection of files. Comm
 
 — 27/08/2024 at 09:37:41 AM —
 
+# CMS Update: 27/08/2024 at 11:50:54 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: helpCentreInformation
+
+Revision: 1
+
+Updated At: 2024-08-27T11:50:54.277Z
+
+Content Updated:
+
+```txt
+id: view-methods
+title: Find and view methods
+content: You can find and view methods within the [methods catalogue](/methods)
+
+Where available, links to GitHub for source code and specifications will be on the method's details page.
+```
+
+— 27/08/2024 at 11:50:54 AM —
+
