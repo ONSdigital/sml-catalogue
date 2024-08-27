@@ -1,5 +1,91 @@
 <!--next-version-placeholder-->
 
+## v1.5.0-rc.76 (2024-08-27)
+
+### Feature
+
+* User changes to contentful content model ([`fca2f64`](https://github.com/ONSdigital/sml-catalogue/commit/fca2f646459ac9d2d5dfada5fb1ff542969cad25))
+
+## v1.5.0-rc.75 (2024-08-27)
+
+### Feature
+
+* User changes to contentful content model ([`e97d27f`](https://github.com/ONSdigital/sml-catalogue/commit/e97d27f3ce03b975e0e602f2530742d78a4b5cea))
+* User changes to contentful content model ([`dc69a19`](https://github.com/ONSdigital/sml-catalogue/commit/dc69a1986067355bdb28eedfc09d4a3d01b8e3c8))
+* User changes to contentful content model ([`7605bbb`](https://github.com/ONSdigital/sml-catalogue/commit/7605bbbe1721d5077831df04dc4538730bfc7e9d))
+* User changes to contentful content model ([`4f41fd5`](https://github.com/ONSdigital/sml-catalogue/commit/4f41fd519a17296382f7603137af092e68718594))
+* User changes to contentful content model ([`5c430c3`](https://github.com/ONSdigital/sml-catalogue/commit/5c430c373bf9cfab8f2dbca3451fd8a51e538afc))
+* User changes to contentful content model ([`47d703a`](https://github.com/ONSdigital/sml-catalogue/commit/47d703ac246e058327beb77ce8112c60d7a1280e))
+* User changes to contentful content model ([`546a6cd`](https://github.com/ONSdigital/sml-catalogue/commit/546a6cd176cfb1ed179e992472a9ac10c3ee8941))
+
+## v1.5.0-rc.74 (2024-08-27)
+
+### Feature
+
+* User changes to contentful content model ([`4e3b1e5`](https://github.com/ONSdigital/sml-catalogue/commit/4e3b1e58cd4b89f04c83a45cacc8bec565294145))
+
+## v1.5.0-rc.73 (2024-08-27)
+
+### Feature
+
+* User changes to contentful content model ([`91a9d1c`](https://github.com/ONSdigital/sml-catalogue/commit/91a9d1c9cce2d3cfe781ed69f35a1b5095e77a01))
+* User changes to contentful content model ([`846b38e`](https://github.com/ONSdigital/sml-catalogue/commit/846b38e35c637c2213295711171fed4efbb2ff42))
+* User changes to contentful content model ([`6bea308`](https://github.com/ONSdigital/sml-catalogue/commit/6bea308b822744f4b7951b8068bb90aaf395c646))
+* User changes to contentful content model ([`55003a8`](https://github.com/ONSdigital/sml-catalogue/commit/55003a8fd7e7445e0c2aead591453ac6ec8fb98b))
+* User changes to contentful content model ([`5b35c87`](https://github.com/ONSdigital/sml-catalogue/commit/5b35c87a9a8d1a7b9c14a0473dfd6c9dd9317fbc))
+* User changes to contentful content model ([`672c946`](https://github.com/ONSdigital/sml-catalogue/commit/672c9460d714f9a34ee54ad89f6e8c55a2ee3f26))
+* User changes to contentful content model ([`1674cf2`](https://github.com/ONSdigital/sml-catalogue/commit/1674cf2ea9a0d15b7bc46aad10acbf8eea819367))
+* Initial test with single glossary entry ([#364](https://github.com/ONSdigital/sml-catalogue/issues/364)) ([`bbd0090`](https://github.com/ONSdigital/sml-catalogue/commit/bbd00901dc883756fd90a681140302a084441f6e))
+
+## v1.5.0-rc.72 (2024-08-27)
+
+### Feature
+
+* User changes to contentful content model ([`6815014`](https://github.com/ONSdigital/sml-catalogue/commit/6815014c96a7eeba9244f0d5f41d12aeb1f2ff91))
+
+### Fix
+
+* SPP-19950-fix-update_changelog.sh ([#373](https://github.com/ONSdigital/sml-catalogue/issues/373)) ([`5eeb21d`](https://github.com/ONSdigital/sml-catalogue/commit/5eeb21de209fcf4b6392e563a8f4d770a5757fb9))
+
+## v1.5.0-rc.71 (2024-08-27)
+
+### Feature
+
+* User changes to contentful content model ([`cba2c5a`](https://github.com/ONSdigital/sml-catalogue/commit/cba2c5a749401c3df1b446a0ed0f86464b3d8fb5))
+
+## v1.5.0-rc.70 (2024-08-23)
+
+### Feature
+
+* User changes to contentful content model ([`ae10824`](https://github.com/ONSdigital/sml-catalogue/commit/ae10824a71fec7d3d155545ef32d7dfa16427d2d))
+
+## v1.5.0-rc.69 (2024-08-22)
+
+### Feature
+
+* User changes to contentful content model ([`d156aba`](https://github.com/ONSdigital/sml-catalogue/commit/d156abadd0f15df2868aa45fa6ace375d4f27201))
+
+## v1.5.0-rc.68 (2024-08-22)
+
+### Feature
+
+* User changes to contentful content model ([`fb189e2`](https://github.com/ONSdigital/sml-catalogue/commit/fb189e231304308d19d1bdaa569a65694cc7ff12))
+* User changes to contentful content model ([`ba6604d`](https://github.com/ONSdigital/sml-catalogue/commit/ba6604dc91e9889c0a97bfda5a298a7dd0d5c641))
+
+### Fix
+
+* Use contentful cma when processing deleted entries ([#372](https://github.com/ONSdigital/sml-catalogue/issues/372)) ([`4f93896`](https://github.com/ONSdigital/sml-catalogue/commit/4f93896868db64f826db029eb1e2bf07421ba092))
+
+## v1.5.0-rc.67 (2024-08-21)
+
+### Feature
+
+* User changes to contentful content model ([`719c6b4`](https://github.com/ONSdigital/sml-catalogue/commit/719c6b4c3836afad0bdfbf4ab2ba77b82f44eabe))
+
+### Fix
+
+* Fix syntax in update_changelog.sh ([#370](https://github.com/ONSdigital/sml-catalogue/issues/370)) ([`2cfa8f1`](https://github.com/ONSdigital/sml-catalogue/commit/2cfa8f1f256861f898ecd7448b7fe1dc1150efd0))
+
 ## v1.5.0-rc.66 (2024-08-21)
 
 ### Feature

@@ -8,6 +8,11 @@
 # The CONTENTFUL_CDA_TOKEN envvironment variable must be set to the
 # API Token matching the passed environment parameter. 
 
+# This script requires bash 4.x or greater to run as it uses asssociative arrays.
+# The default shell on a mac is zsh so you should install a later version of bash using brew install bash
+# and run the script using:
+# /usr/local/bin/bash scripts/update_changelog.sh <environment - preprod|prod|dev>
+
 # Stop on first error
 set -e
 
@@ -107,6 +112,38 @@ get_entry_by_id() {
     fi
 }
 
+get_deleted_entry_by_id() {
+    local space_id=$1
+    local env=$2
+    local entity_id=$3
+    local cma_token=$4
+
+    response=$(curl --silent --show-error --write-out "HTTPSTATUS:%{http_code}" --request GET "https://api.contentful.com/spaces/${space_id}/environments/${env}/entries/${entity_id}" \
+        -H "Authorization: Bearer ${cma_token}")
+
+    # Extract the body and the status code and remove the status code from the response
+    http_body=$(echo "$response" | sed -e 's/HTTPSTATUS\:.*//g')
+    http_status=$(echo "$response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+
+    echo "Entry by ID (Deletion) HTTP Status: $http_status"
+
+    if [ "$http_status" -eq 200 ]; then
+        # Clean the response
+        # Use sed to escape control characters like newlines if needed
+        cleaned_response=$(echo "$http_body" | tr '\n' ' ')
+
+        update_details["environment"]=$(echo "$cleaned_response" | jq -r '.sys.environment.sys.id')
+        update_details["content_type"]=$(echo "$cleaned_response" | jq -r '.sys.contentType.sys.id')
+        update_details["revision"]=$(echo "$cleaned_response" | jq -r '.sys.version')
+        update_details["updated_at"]=$(echo "$cleaned_response" | jq -r '.sys.updatedAt')
+        update_details["fields"]=$(echo "$cleaned_response" | jq -r '.fields')
+        update_details["user_id"]=$(echo "$cleaned_response" | jq -r '.sys.updatedBy.sys.id')
+    else
+        parse_error_response "$http_body" "$http_status"
+        return 1
+    fi
+}
+
 
 # Check if the environment parameter is provided
 if [ -z "$1" ]; then
@@ -120,9 +157,11 @@ environment="$1"
 # Replace these with actual space and user IDs as necessary
 space_id="${GITHUB_EVENT_SPACE_ID}"
 user_id="${GITHUB_EVENT_USER_ID}"
+change_type="${GITHUB_EVENT_CHANGE_TYPE}"
+entry_id="${GITHUB_EVENT_ENTITY_ID}"
 echo "Space ID: $space_id"
 echo "User ID: $user_id"
-echo "Change Type: $GITHUB_EVENT_CHANGE_TYPE"
+echo "Change Type: $change_type"
 
 # Get the full name
 get_user_full_name "$space_id" "$user_id" "$CONTENTFUL_TOKEN"
@@ -131,24 +170,51 @@ get_user_full_name "$space_id" "$user_id" "$CONTENTFUL_TOKEN"
 if [ $? -eq 0 ]; then
     echo "User full name: ${update_details["full_name"]}"
 
-    if [ "${GITHUB_EVENT_CHANGE_TYPE}" == "DeletedEntry"]; then
-        {
-        echo "# CMS Update: Content Deletion"
-        echo ""
-        echo "Editor: ${update_details["full_name"]}"
-        echo ""
-        echo "Environment: ${environment}"
-        echo ""
-        echo "Change Type: ${$GITHUB_EVENT_CHANGE_TYPE}"
-        echo ""
-        echo "Entry ID: ${GITHUB_EVENT_ENTITY_ID}"
-        echo ""
-        echo "This entry was deleted"
-        echo ""
-        } >> "$changelog_file"
+    if [ $change_type == "DeletedEntry" ]; then
+
+        get_deleted_entry_by_id "$space_id" "$environment" "$entry_id" "$CONTENTFUL_TOKEN"
+
+        if [ $? -eq 0 ]; then
+            cleaned_timestamp=$(echo "${update_details["updated_at"]}" | sed -E 's/\.[0-9]{3}Z$//' | sed 's/T/ /')
+            if date --version &>/dev/null; then
+                formatted_timestamp=$(date -d "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
+            else
+                formatted_timestamp=$(date -j -f "%Y-%m-%d %H:%M:%S" "$cleaned_timestamp" +"%d/%m/%Y at %I:%M:%S %p")
+            fi
+
+            fields=$(echo "${update_details["fields"]}" | jq -r 'to_entries[] | "\(.key): \(.value)"')
+
+            get_user_full_name "$space_id" "${update_details["user_id"]}" "$CONTENTFUL_TOKEN"
+
+            {
+            echo "# CMS Update: $formatted_timestamp"
+            echo ""
+            echo "Editor: ${update_details["full_name"]}"
+            echo ""
+            echo "Environment: ${update_details["environment"]}"
+            echo ""
+            echo "Content Type: ${update_details["content_type"]}"
+            echo ""
+            echo "Revision: ${update_details["revision"]}"
+            echo ""
+            echo "Updated At: ${update_details["updated_at"]}"
+            echo ""
+            echo "Content Updated: entry $entry_id has been deleted."
+            echo ""
+            echo '```txt'
+            echo "$fields"
+            echo '```'
+            echo ""
+            echo "— $formatted_timestamp —"
+            echo ""
+            } >> "$changelog_file"
+
+        else
+            echo "Failed to retrieve entry details."
+            exit 1
+        fi
     else
         # Get the entry by ID
-        entry_id="${GITHUB_EVENT_ENTITY_ID}"
         get_entry_by_id "$space_id" "$environment" "$entry_id" "$CONTENTFUL_CDA_TOKEN"
 
         # Check the return from the function
