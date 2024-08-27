@@ -1209,3 +1209,25 @@ externalUrl: {"en-US":"https://semver.org"}
 
 — 27/08/2024 at 11:51:06 AM —
 
+# CMS Update: 27/08/2024 at 11:51:02 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-08-27T11:51:02.800Z
+
+Content Updated:
+
+```txt
+id: git
+term: Git
+meaning: A popular software tool for version control. Files are stored in repositories (or 'repos'), which can be local or remote, and changes made are committed to a log, allowing files to be reverted to previous versions. A project can have multiple contributing authors and multiple 'branches' (variants) simultaneously, with Git providing tools to merge changes.
+```
+
+— 27/08/2024 at 11:51:02 AM —
+
