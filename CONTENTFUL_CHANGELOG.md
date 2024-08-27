@@ -1117,3 +1117,25 @@ relatedlist: ["Git"]
 
 — 27/08/2024 at 09:25:32 AM —
 
+# CMS Update: 27/08/2024 at 09:29:13 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 2
+
+Updated At: 2024-08-27T09:29:13.030Z
+
+Content Updated:
+
+```txt
+id: version_control
+term: Version Control
+meaning: A means of tracking changes made to a file or collection of files. Commonly used to track the development of software projects. TESTING INTEGRATION
+```
+
+— 27/08/2024 at 09:29:13 AM —
+
