@@ -1373,3 +1373,28 @@ The SML contains many features, including:
 
 — 27/08/2024 at 12:28:04 PM —
 
+# CMS Update: 28/08/2024 at 08:48:33 AM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-08-28T08:48:33.485Z
+
+Content Updated:
+
+```txt
+id: pypi
+term: PyPI
+meaning: The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software.
+relatedlist: ["SML","Package","Repository"]
+externalLinkTextShort: ONS-SML user profile on PyPI
+externalUrl: https://pypi.org/user/ons-sml/
+```
+
+— 28/08/2024 at 08:48:33 AM —
+
