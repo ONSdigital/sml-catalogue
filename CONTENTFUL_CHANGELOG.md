@@ -1398,3 +1398,28 @@ externalUrl: https://pypi.org/user/ons-sml/
 
 — 28/08/2024 at 08:48:33 AM —
 
+# CMS Update: 28/08/2024 at 01:31:54 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 23
+
+Updated At: 2024-08-28T13:31:54.564Z
+
+Content Updated: entry 6WK1Ynt7VFw7lGHiOpJVcg has been deleted.
+
+```txt
+id: {"en-US":"pypi"}
+term: {"en-US":"PyPI"}
+meaning: {"en-US":"The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software."}
+relatedlist: {"en-US":["SML","Package","Repository"]}
+externalLinkTextShort: {"en-US":"ONS-SML user profile on PyPI"}
+externalUrl: {"en-US":"https://pypi.org/user/ons-sml/"}
+```
+
+— 28/08/2024 at 01:31:54 PM —
+
