@@ -18,7 +18,7 @@ python-markdown-math="^0.8"
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"
 behave = "^1.2.6"
-selenium = "^4.23.1"
+selenium = "^4.24.0"
 flake8 = "^7.1.1"
 pylint = "3.2.6"
 bandit = "^1.7.8"
