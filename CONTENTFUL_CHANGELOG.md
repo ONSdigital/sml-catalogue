@@ -1578,3 +1578,33 @@ specificationLink: {"en-US":"https://github.com/ONSdigital/Statistical-Method-Sp
 
 — 03/09/2024 at 02:53:17 PM —
 
+# CMS Update: 03/09/2024 at 02:53:17 PM
+
+Editor: Elinor Everitt
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 3
+
+Updated At: 2024-09-03T14:53:17.093Z
+
+Content Updated: entry 68ETsCxLbjjKpd0j9fuvWk has been deleted.
+
+```txt
+id: {"en-US":"ht-ratio-estimation"}
+name: {"en-US":"Horvitz-Thompson Ratio Estimator"}
+theme: {"en-US":"Sample Design & Estimation"}
+expertGroup: {"en-US":"Sample Design & Estimation"}
+language: {"en-US":"Python/PySpark"}
+author: {"en-US":"ONS"}
+description: {"en-US":"Sampling in business surveys is often done using stratified simple random sampling without replacement. The largest businesses are usually selected with certainty. This SML method uses two approaches for estimating totals in such cases. The Horvitz-Thompson estimator in this case is known as a stratified expansion estimator, which is the simplest method used. We also use a combined ratio estimator. This is appropriate where there is a linear relationship through the origin between the target variable and an auxiliary variable we know for all units, and the scatter about the line increases with the size of the auxiliary variable."}
+contactDetails: {"en-US":"smlhelp@ons.gov.uk"}
+methodReady: {"en-US":false}
+releaseVersion: {"en-US":"Not Ready Yet"}
+specificationLink: {"en-US":"https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/sample_design_and_estimation/estimation/ht_estimation.rst"}
+```
+
+— 03/09/2024 at 02:53:17 PM —
+
