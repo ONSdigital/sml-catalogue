@@ -1840,3 +1840,28 @@ userDocumentationLink: https://github.com/ONSdigital/cell-key-perturbation/blob/
 
 — 03/09/2024 at 04:55:18 PM —
 
+# CMS Update: 04/09/2024 at 01:04:11 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 2
+
+Updated At: 2024-09-04T13:04:11.576Z
+
+Content Updated:
+
+```txt
+id: pypi
+term: PyPI
+meaning: The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software. Test
+relatedlist: ["SML","Package","Repository"]
+externalLinkTextShort: ONS-SML user profile on PyPI
+externalUrl: https://pypi.org/user/ons-sml/
+```
+
+— 04/09/2024 at 01:04:11 PM —
+
