@@ -380,7 +380,7 @@ jobs:
               SPACE_ID: ((contentful_space_id))
               CDA_KEY: ((contentful_delivery_api_key_prod))
               CONTENTFUL_ENVIRONMENT: prod
-              BUILD_TYPE: 2
+              BUILD_TYPE: 3
               GH_TOKEN: ((github_access_token))
               SIGNING_KEY: ((github_ons_spp_machine_user_gpg_key_private))
 
