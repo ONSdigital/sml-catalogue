@@ -1373,3 +1373,570 @@ The SML contains many features, including:
 
 — 27/08/2024 at 12:28:04 PM —
 
+# CMS Update: 28/08/2024 at 08:48:33 AM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-08-28T08:48:33.485Z
+
+Content Updated:
+
+```txt
+id: pypi
+term: PyPI
+meaning: The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software.
+relatedlist: ["SML","Package","Repository"]
+externalLinkTextShort: ONS-SML user profile on PyPI
+externalUrl: https://pypi.org/user/ons-sml/
+```
+
+— 28/08/2024 at 08:48:33 AM —
+
+# CMS Update: 28/08/2024 at 01:31:54 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 23
+
+Updated At: 2024-08-28T13:31:54.564Z
+
+Content Updated: entry 6WK1Ynt7VFw7lGHiOpJVcg has been deleted.
+
+```txt
+id: {"en-US":"pypi"}
+term: {"en-US":"PyPI"}
+meaning: {"en-US":"The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software."}
+relatedlist: {"en-US":["SML","Package","Repository"]}
+externalLinkTextShort: {"en-US":"ONS-SML user profile on PyPI"}
+externalUrl: {"en-US":"https://pypi.org/user/ons-sml/"}
+```
+
+— 28/08/2024 at 01:31:54 PM —
+
+# CMS Update: 28/08/2024 at 02:05:45 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-08-28T14:05:45.688Z
+
+Content Updated:
+
+```txt
+id: pypi
+term: PyPI
+meaning: The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software.
+relatedlist: ["SML","Package","Repository"]
+externalLinkTextShort: ONS-SML user profile on PyPI
+externalUrl: https://pypi.org/user/ons-sml/
+```
+
+— 28/08/2024 at 02:05:45 PM —
+
+# CMS Update: 28/08/2024 at 02:39:01 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 2
+
+Updated At: 2024-08-28T14:39:01.048Z
+
+Content Updated:
+
+```txt
+id: cell-key-perturbation
+name: Cell Key Perturbation
+theme: Statistical Disclosure Control
+expertGroup: Statistical Disclosure Control
+language: Python/PySpark
+author: ONS
+description: Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.
+
+To install and use this method, please see [User Notes](https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md).
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v2.0.0
+releaseLink: https://github.com/ONSdigital/cell-key-perturbation/releases/tag/v2.0.0
+codeLink: https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py
+userDocumentationLink: https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md
+```
+
+— 28/08/2024 at 02:39:01 PM —
+
+# CMS Update: 30/08/2024 at 04:37:31 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 17
+
+Updated At: 2024-08-30T16:37:31.690Z
+
+Content Updated: entry 1PQFWq5r92jnyKqZnqtmrk has been deleted.
+
+```txt
+id: {"en-US":"cell-key-perturbation"}
+name: {"en-US":"Cell Key Perturbation"}
+theme: {"en-US":"Statistical Disclosure Control"}
+expertGroup: {"en-US":"Statistical Disclosure Control"}
+language: {"en-US":"Python/PySpark"}
+author: {"en-US":"ONS"}
+description: {"en-US":"Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.\n\nTo install and use this method, please see [User Notes](https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md)."}
+contactDetails: {"en-US":"smlhelp@ons.gov.uk"}
+methodReady: {"en-US":true}
+releaseVersion: {"en-US":"v2.0.0"}
+releaseLink: {"en-US":"https://github.com/ONSdigital/cell-key-perturbation/releases/tag/v2.0.0"}
+codeLink: {"en-US":"https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py"}
+userDocumentationLink: {"en-US":"https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md"}
+```
+
+— 30/08/2024 at 04:37:31 PM —
+
+# CMS Update: 30/08/2024 at 04:39:18 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 3
+
+Updated At: 2024-08-30T16:39:18.965Z
+
+Content Updated:
+
+```txt
+id: cell-key-perturbation
+name: Cell Key Perturbation
+theme: Statistical Disclosure Control
+expertGroup: Statistical Disclosure Control
+language: Python/PySpark
+author: ONS
+description: Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.
+
+To install and use this method, please see [User Notes](https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md).
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v2.0.0
+releaseLink: https://github.com/ONSdigital/cell-key-perturbation/releases/tag/v2.0.0
+codeLink: https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py
+userDocumentationLink: https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md
+```
+
+— 30/08/2024 at 04:39:18 PM —
+
+# CMS Update: 03/09/2024 at 02:53:17 PM
+
+Editor: Elinor Everitt
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 3
+
+Updated At: 2024-09-03T14:53:17.093Z
+
+Content Updated: entry viM9TL5rdzMZITGCQBIbe has been deleted.
+
+```txt
+id: {"en-US":"mean-of-ratios"}
+name: {"en-US":"Mean of Ratios"}
+theme: {"en-US":"Imputation"}
+expertGroup: {"en-US":"Editing & Imputation"}
+language: {"en-US":"Python/PySpark"}
+author: {"en-US":"ONS"}
+description: {"en-US":"Mean of Ratios imputation is a standard imputation method for business surveys. It can be used to impute value for unit (complete) non-response or item (partial) non-response. There is an option to use trimming as the method can be influenced by extreme values. The method imputes a single numeric variable. It uses the relationship between the variable being imputed and an appropriate predictive or auxiliary variable.\n\nAs imputation can be carried out for multiple periods simultaneously, the method can apply forward, backward or construction imputation. The type of imputation used will vary for each non-respondent in each period depending on whether data is available in the predictive period."}
+contactDetails: {"en-US":"smlhelp@ons.gov.uk"}
+methodReady: {"en-US":false}
+releaseVersion: {"en-US":"Not Released Yet"}
+specificationLink: {"en-US":"https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/imputation/mean_of_ratios/technical_specification.md"}
+```
+
+— 03/09/2024 at 02:53:17 PM —
+
+# CMS Update: 03/09/2024 at 02:53:17 PM
+
+Editor: Elinor Everitt
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 3
+
+Updated At: 2024-09-03T14:53:17.093Z
+
+Content Updated: entry 68ETsCxLbjjKpd0j9fuvWk has been deleted.
+
+```txt
+id: {"en-US":"ht-ratio-estimation"}
+name: {"en-US":"Horvitz-Thompson Ratio Estimator"}
+theme: {"en-US":"Sample Design & Estimation"}
+expertGroup: {"en-US":"Sample Design & Estimation"}
+language: {"en-US":"Python/PySpark"}
+author: {"en-US":"ONS"}
+description: {"en-US":"Sampling in business surveys is often done using stratified simple random sampling without replacement. The largest businesses are usually selected with certainty. This SML method uses two approaches for estimating totals in such cases. The Horvitz-Thompson estimator in this case is known as a stratified expansion estimator, which is the simplest method used. We also use a combined ratio estimator. This is appropriate where there is a linear relationship through the origin between the target variable and an auxiliary variable we know for all units, and the scatter about the line increases with the size of the auxiliary variable."}
+contactDetails: {"en-US":"smlhelp@ons.gov.uk"}
+methodReady: {"en-US":false}
+releaseVersion: {"en-US":"Not Ready Yet"}
+specificationLink: {"en-US":"https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/sample_design_and_estimation/estimation/ht_estimation.rst"}
+```
+
+— 03/09/2024 at 02:53:17 PM —
+
+# CMS Update: 03/09/2024 at 03:36:14 PM
+
+Editor: Elinor Everitt
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 4
+
+Updated At: 2024-09-03T15:36:14.128Z
+
+Content Updated:
+
+```txt
+id: cell-key-perturbation
+name: Cell Key Perturbation
+theme: Statistical Disclosure Control
+expertGroup: Statistical Disclosure Control
+language: Python/Pandas
+author: ONS
+description: Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.
+
+To install and use this method, please see [User Notes](https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md).
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v2.0.0
+releaseLink: https://github.com/ONSdigital/cell-key-perturbation/releases/tag/v2.0.0
+codeLink: https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py
+userDocumentationLink: https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md
+```
+
+— 03/09/2024 at 03:36:14 PM —
+
+# CMS Update: 03/09/2024 at 03:50:12 PM
+
+Editor: Elinor Everitt
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 22
+
+Updated At: 2024-09-03T15:50:12.134Z
+
+Content Updated: entry 1PQFWq5r92jnyKqZnqtmrk has been deleted.
+
+```txt
+id: {"en-US":"cell-key-perturbation"}
+name: {"en-US":"Cell Key Perturbation"}
+theme: {"en-US":"Statistical Disclosure Control"}
+expertGroup: {"en-US":"Statistical Disclosure Control"}
+language: {"en-US":"Python/Pandas"}
+author: {"en-US":"ONS"}
+description: {"en-US":"Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.\n\nTo install and use this method, please see [User Notes](https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md)."}
+contactDetails: {"en-US":"smlhelp@ons.gov.uk"}
+methodReady: {"en-US":true}
+releaseVersion: {"en-US":"v2.0.0"}
+releaseLink: {"en-US":"https://github.com/ONSdigital/cell-key-perturbation/releases/tag/v2.0.0"}
+codeLink: {"en-US":"https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py"}
+userDocumentationLink: {"en-US":"https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md"}
+```
+
+— 03/09/2024 at 03:50:12 PM —
+
+# CMS Update: 03/09/2024 at 03:50:12 PM
+
+Editor: Elinor Everitt
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 5
+
+Updated At: 2024-09-03T15:50:12.134Z
+
+Content Updated:
+
+```txt
+id: cell-key-perturbation
+name: Cell Key Perturbation
+theme: Statistical Disclosure Control
+expertGroup: Statistical Disclosure Control
+language: Python/Pandas
+author: ONS
+description: Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.
+
+To install and use this method, please see [User Notes](https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md).
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v2.0.0
+releaseLink: https://github.com/ONSdigital/cell-key-perturbation/releases/tag/v2.0.0
+codeLink: https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py
+userDocumentationLink: https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md
+```
+
+— 03/09/2024 at 03:50:12 PM —
+
+# CMS Update: 03/09/2024 at 04:00:06 PM
+
+Editor: Elinor Everitt
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 23
+
+Updated At: 2024-09-03T16:00:06.739Z
+
+Content Updated: entry 1PQFWq5r92jnyKqZnqtmrk has been deleted.
+
+```txt
+id: {"en-US":"cell-key-perturbation"}
+name: {"en-US":"Cell Key Perturbation"}
+theme: {"en-US":"Statistical Disclosure Control"}
+expertGroup: {"en-US":"Statistical Disclosure Control"}
+language: {"en-US":"Python/Pandas"}
+author: {"en-US":"ONS"}
+description: {"en-US":"Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.\n\nTo install and use this method, please see [User Notes](https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md)."}
+contactDetails: {"en-US":"smlhelp@ons.gov.uk"}
+methodReady: {"en-US":true}
+releaseVersion: {"en-US":"v2.0.0"}
+releaseLink: {"en-US":"https://github.com/ONSdigital/cell-key-perturbation/releases/tag/v2.0.0"}
+codeLink: {"en-US":"https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py"}
+userDocumentationLink: {"en-US":"https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md"}
+```
+
+— 03/09/2024 at 04:00:06 PM —
+
+# CMS Update: 03/09/2024 at 04:20:20 PM
+
+Editor: Elinor Everitt
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 6
+
+Updated At: 2024-09-03T16:20:20.824Z
+
+Content Updated:
+
+```txt
+id: cell-key-perturbation
+name: Cell Key Perturbation
+theme: Statistical Disclosure Control
+expertGroup: Statistical Disclosure Control
+language: Python
+author: ONS
+description: Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.
+
+To install and use this method, please see [User Notes](https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md).
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v2.0.0
+releaseLink: https://github.com/ONSdigital/cell-key-perturbation/releases/tag/v2.0.0
+codeLink: https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py
+userDocumentationLink: https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md
+```
+
+— 03/09/2024 at 04:20:20 PM —
+
+# CMS Update: 03/09/2024 at 04:36:03 PM
+
+Editor: Elinor Everitt
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 28
+
+Updated At: 2024-09-03T16:36:03.269Z
+
+Content Updated: entry 1PQFWq5r92jnyKqZnqtmrk has been deleted.
+
+```txt
+id: {"en-US":"cell-key-perturbation"}
+name: {"en-US":"Cell Key Perturbation"}
+theme: {"en-US":"Statistical Disclosure Control"}
+expertGroup: {"en-US":"Statistical Disclosure Control"}
+language: {"en-US":"Python"}
+author: {"en-US":"ONS"}
+description: {"en-US":"Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.\n\nTo install and use this method, please see [User Notes](https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md)."}
+contactDetails: {"en-US":"smlhelp@ons.gov.uk"}
+methodReady: {"en-US":true}
+releaseVersion: {"en-US":"v2.0.0"}
+releaseLink: {"en-US":"https://github.com/ONSdigital/cell-key-perturbation/releases/tag/v2.0.0"}
+codeLink: {"en-US":"https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py"}
+userDocumentationLink: {"en-US":"https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md"}
+```
+
+— 03/09/2024 at 04:36:03 PM —
+
+# CMS Update: 03/09/2024 at 04:55:18 PM
+
+Editor: Elinor Everitt
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 7
+
+Updated At: 2024-09-03T16:55:18.182Z
+
+Content Updated:
+
+```txt
+id: cell-key-perturbation
+name: Cell Key Perturbation
+theme: Statistical Disclosure Control
+expertGroup: Statistical Disclosure Control
+language: Python/Pandas
+author: ONS
+description: Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.
+
+To install and use this method, please see [User Notes](https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md).
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v2.0.0
+releaseLink: https://github.com/ONSdigital/cell-key-perturbation/releases/tag/v2.0.0
+codeLink: https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py
+userDocumentationLink: https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md
+```
+
+— 03/09/2024 at 04:55:18 PM —
+
+# CMS Update: 04/09/2024 at 01:04:11 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 2
+
+Updated At: 2024-09-04T13:04:11.576Z
+
+Content Updated:
+
+```txt
+id: pypi
+term: PyPI
+meaning: The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software. Test
+relatedlist: ["SML","Package","Repository"]
+externalLinkTextShort: ONS-SML user profile on PyPI
+externalUrl: https://pypi.org/user/ons-sml/
+```
+
+— 04/09/2024 at 01:04:11 PM —
+
+# CMS Update: 04/09/2024 at 01:05:22 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 4
+
+Updated At: 2024-09-04T13:05:22.151Z
+
+Content Updated:
+
+```txt
+id: pypi
+term: PyPI
+meaning: The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software. test
+relatedlist: ["SML","Package","Repository"]
+externalLinkTextShort: ONS-SML user profile on PyPI test
+externalUrl: https://pypi.org/user/ons-sml/
+```
+
+— 04/09/2024 at 01:05:22 PM —
+
+# CMS Update: 04/09/2024 at 01:05:47 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 5
+
+Updated At: 2024-09-04T13:05:47.796Z
+
+Content Updated:
+
+```txt
+id: pypi
+term: PyPI
+meaning: The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software.
+relatedlist: ["SML","Package","Repository"]
+externalLinkTextShort: ONS-SML user profile on PyPI
+externalUrl: https://pypi.org/user/ons-sml/
+```
+
+— 04/09/2024 at 01:05:47 PM —
+
+# CMS Update: 04/09/2024 at 01:05:47 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 5
+
+Updated At: 2024-09-04T13:05:47.796Z
+
+Content Updated:
+
+```txt
+id: pypi
+term: PyPI
+meaning: The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software.
+relatedlist: ["SML","Package","Repository"]
+externalLinkTextShort: ONS-SML user profile on PyPI
+externalUrl: https://pypi.org/user/ons-sml/
+```
+
+— 04/09/2024 at 01:05:47 PM —
+
