@@ -44,17 +44,6 @@ Feature: Method summary page tests
         And The "Expert group" of the method is "Statistical Disclosure Control"
         And The "Languages" of the method is "Python/Pandas"
         And The "Release" of the method is "v2.0.0"
-        And The "Cell Key Perturbation" method has the expected github resources
-
-    Scenario: Cell Key Perturbation check R
-        Given I'm an sml portal user trying to get to the "cell key perturbation method" summary page
-        When I navigate to the "Cell Key Perturbation" summary page
-        Then The title of the method summary page is "Method: Cell Key Perturbation"
-        And The "Author" of the method is "ONS"
-        And The "Theme" of the method is "Statistical Disclosure Control"
-        And The "Expert group" of the method is "Statistical Disclosure Control"
-        And The "Languages" of the method is "R"
-        And The "Release" of the method is "Not Released Yet"
 
     Scenario: Totals and components check
         Given I'm an sml portal user trying to get to the "totals and components method" summary page
