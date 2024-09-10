@@ -175,7 +175,7 @@ def display_methods():
                 methods.append(method)
         else:
             methods.append(getMethodsTableItems)
-        methods = sorted(methods, key=lambda x: x['name'])
+        methods = sorted(methods, key=lambda x: x["name"])
         return render_template(
             "methods.html",
             methods=methods,
