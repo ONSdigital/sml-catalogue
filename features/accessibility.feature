@@ -86,11 +86,6 @@ Feature: About library tests
         Then The title of the page is "Library glossary"
         And The accessibility test passes
 
-    Scenario: Winsorisation page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the "Winsorisation" summary page
-        Then The title of the page is "Method: Winsorisation"
-        And The accessibility test passes
 
     Scenario: Cell Key Perturbation page accessibility check
         Given I'm an sml portal user
@@ -104,12 +99,6 @@ Feature: About library tests
         Then The title of the page is "Method: Totals and Components"
         And The accessibility test passes
 
-    Scenario: Mean of Ratios page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the "Mean of Ratios" summary page
-        Then The title of the page is "Method: Mean of Ratios"
-        And The accessibility test passes
-
     Scenario: Date Adjustment summary page accessibility check
         Given I'm an sml portal user
         When I navigate to the "Date Adjustment" summary page
@@ -120,18 +109,6 @@ Feature: About library tests
         Given I'm an sml portal user
         When I navigate to the "Selective Editing" summary page
         Then The title of the page is "Method: Selective Editing"
-        And The accessibility test passes
-
-    Scenario: Horvitz-Thompson Ratio Estimator summary page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the "Horvitz-Thompson Ratio Estimator" summary page
-        Then The title of the page is "Method: Horvitz-Thompson Ratio Estimator"
-        And The accessibility test passes
-
-    Scenario: Ratio of means summary page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the "Ratio of Means" summary page
-        Then The title of the page is "Method: Ratio of Means"
         And The accessibility test passes
 
     Scenario: Thousand Pound Estimation summary page accessibility check

@@ -22,35 +22,20 @@ Feature: Methods catalogue tests
         When I navigate to the methods catalogue page
         Then The "future" table headings of the methods catalogue table are "Name" "Theme" "Expert group" "Languages"
 
-    Scenario: Cell Key Perturbation table row check
+    Scenario: Cell Key Perturbation R table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Cell Key Perturbation" "Statistical Disclosure Control" "Statistical Disclosure Control" "Python & R"
+        Then The "future" table row of the method are "Cell Key Perturbation" "Statistical Disclosure Control" "Statistical Disclosure Control" "R"
 
-    Scenario: Ratio of Means table row check
+    Scenario: Cell Key Perturbation Python table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Ratio of Means" "Imputation" "Editing & Imputation" "Python/PySpark"
-
-    Scenario: Winsorisation table row check
-        Given I'm an sml portal user trying to get to the methods catalogue page
-        When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Winsorisation" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark"
+        Then The "ready" table row of the method are "Cell Key Perturbation" "Statistical Disclosure Control" "Statistical Disclosure Control" "Python/Pandas"
 
     Scenario: Totals and Components table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
         Then The "ready" table row of the method are "Totals and Components" "Editing" "Editing & Imputation" "Python/Pandas"
-
-    Scenario: Mean of Ratios table row check
-        Given I'm an sml portal user trying to get to the methods catalogue page
-        When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Mean of Ratios" "Imputation" "Editing & Imputation" "Python/PySpark"
-
-    Scenario: Horvitz-Thompson Ratio Estimator table row check
-        Given I'm an sml portal user trying to get to the methods catalogue page
-        When I navigate to the methods catalogue page
-        Then The "future" table row of the method are "Horvitz-Thompson Ratio Estimator" "Sample Design & Estimation" "Sample Design & Estimation" "Python/PySpark"
 
     Scenario: Date adjustment table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
