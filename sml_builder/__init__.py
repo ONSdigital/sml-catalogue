@@ -10,7 +10,7 @@ Markdown(app)
 app.jinja_env.add_extension("jinja2.ext.do")
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
-app.config['FREEZER_IGNORE_404_NOT_FOUND'] = True
+app.config["FREEZER_IGNORE_404_NOT_FOUND"] = True
 app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
 app.config["FREEZER_DESTINATION"] = "../build"
 
