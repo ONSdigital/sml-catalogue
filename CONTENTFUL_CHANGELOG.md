@@ -1940,3 +1940,174 @@ externalUrl: https://pypi.org/user/ons-sml/
 
 — 04/09/2024 at 01:05:47 PM —
 
+# CMS Update: 16/09/2024 at 08:59:56 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreInformation
+
+Revision: 2
+
+Updated At: 2024-09-16T08:59:56.513Z
+
+Content Updated:
+
+```txt
+id: install-a-method
+title: Install a method
+content: # Install a method
+
+### This page covers the following topics:
+- How to install date adjustment, selective editing, thousand pounds, or totals and components
+- How to install other Python methods
+- How to install R methods
+- Managing package dependencies with SML methods 
+
+**Using a method:** 
+Information on how to use individual methods can be found in the User Documentation. 
+
+You can access the User Documentation from the Method Summary which you find by clicking on the method name in the Method Catalogue.
+
+**Package dependencies:**
+SML methods may require installation of specific versions of Python, R or essential packages. To avoid changing installations in your base environment, we recommend creating a virtual environment (Python) or using renv in an R Studio project. 
+
+If you’d like further guidance on this, please see “Managing package dependencies with SML methods” below. 
+
+## How to install date adjustment, selective editing, thousand pounds, or totals and components
+
+Once you have set up the virtual environment and connected to your IDE (if using), follow the steps below.
+
+1. Check you have installed the correct versions of Python and required packages such as Pandas (see User Documentation).
+
+2.	From your Python environment enter `pip install sml_small`.
+
+3.  To install a specific version enter `pip install sml_small==<version_number>`. For example, `pip install sml_small==1.1.0`. Search "sml_small" on “PyPI · The Python Package Index” for available versions.
+
+4. To use Date Adjustment or Selective Editing run the following: `import sml_small.date_adjustment as date_adjust` or `import sml_small.selective_editing as seled`.  
+
+5. To use Totals and Components or Thousand Pounds run the following: `from sml_small.editing import thousand_pounds` or `from sml_small.editing import totals_and_components`. 
+
+The methods are now available for you to use.
+
+## Installing other Python methods
+
+Once you have set up the virtual environment and connected to an IDE (if using), follow the steps below. 
+
+1.	Check you have installed the correct versions of Python and required packages such as Pandas (see User Documentation)
+
+2.	From your Python environment enter `pip install <method_name>`. For example, the Python version of cell-key-perturbation is installed using `pip install cell_key_perturbation`.
+
+3. To install a specific version enter `pip install <method_name>==<version_number>`. For example, `pip install cell_key_perturbation==1.1.1`. Search the method name on “PyPI · The Python Package Index” for available versions. 
+
+The method is now available for you to import.
+
+## Installing R methods
+
+Once you have created an R Studio project using renv to install required packages, you are ready to download the method. For more guidance on using renv please see 'Managing package dependencies in R Studio with renv' below. 
+
+1)	Install the method in your project using `renv::install("<method_name>")`. For example, if the method was named "aggregate" you would enter `renv::install("aggregate")`. 
+
+2)  To install a specific version use `renv::install("package@version")`. For example, to install "aggregate 1.2.1" you would use `renv::install("aggregate@1.2.1")`. 
+
+The method is now available for you to load. 
+
+## Managing package dependencies with SML methods
+
+This section covers the following topics:
+
+- Managing package dependencies for Python methods using Conda
+-	Connecting Spyder to a virtual environment
+-	Connecting Jupyter Notebook to a virtual environment
+-	Managing package dependencies in R Studio using renv
+
+**Managing package dependencies for Python methods using Conda**
+
+Virtual environments allow you to install specific versions of software in a contained environment. For example, you can install an older version of Python in a virtual environment but continue to use the most recent version of Python in your default environment. 
+
+Please refer to the method User Documentation for information about which version of Python and packages like Pandas as Numpy you need to use for a specific method. You will need this information to correctly set up your environment. 
+
+This guidance uses conda to create a virtual environment on your device. Conda is an open-source environment management system that allows you to create virtual environments.
+
+1)	Search Anaconda Prompt on your device and click to open it (note, this will only work if you have already installed Anaconda or Miniconda).
+
+2)	At the prompt enter `conda create <environment_name>`. You should name your environment something that will help you remember what it’s used for. If prompted, enter 'y' to proceed.
+
+3)	Enter `conda activate <environment_name>`. 
+
+You should now see your environment name to the left of the C:/ prompt. This shows you are working within the virtual environment. To leave the environment at any time enter `conda deactivate`. To come back to your environment later, simply repeat step 3.
+
+5) Consult the User Documentation to identify what version of Python is required and to see what packages (and package versions) are needed. Make note of these.
+
+4) Now, enter `conda install python=<version_number>`. If prompted, enter 'y' to proceed.
+
+Note, Python versions > 3.4 automatically install pip, so that will likely be available to you in this environment after successfully installing Python. If not, enter `conda install pip`.
+
+5)	Install required packages using `pip install <package_name>==<version>`. For example, `pip install pandas==1.5.3`. If you want to check what is currently installed in your environment enter `conda list`. 
+
+If you would like to use the methods from within an IDE like Visual Studio, Spyder, or Jupyter Notebook, then you will need to install the kernels for these in the virtual environment and connect them to your session (see further guidance below)
+
+Your virtual environment is now set up and ready for you to install your chosen SML method. Remember to deactivate your environment when you’re done setting it up by entering “conda deactivate” from the Anaconda prompt window.
+
+The environment does not need to be activated here for you to use it with Spyder or Jupyter Notebook, providing you have followed the steps to connect the environment to these.
+
+**Connecting Spyder to a virtual environment**
+
+1)	Enter `pip install spyder-kernels` (still within Anaconda prompt and your virtual environment). If you have installed an older version of python (e.g., 3.7.1 for use with sml_small) then you need to specify an older version of spyder-kernels. To do this enter `pip install spyder-kernels=1.9.2`. 
+
+2) Open Spyder.
+
+3)	From the top menu, go to `Tools, Preferences, Python Interpreter`.
+
+4)	Select `Use the following Python Interpreter`.
+
+5)	Click on the `select file` icon (to the right of the address bar below).
+
+6)	Navigate to the location of your virtual environment. 
+
+If you’re unsure where this is, go to your Anaconda prompt window and enter `conda list` from within your virtual environment. The file path you need will appear at the top of the list.
+
+7)	Click on the folder to open your virtual environment and scroll down to find and click on the python.exe file. 
+
+8)	Click `Apply` and `OK` to close the Preferences window.
+
+You should see your virtual environment name and the python version it’s running on the bottom of the Spyder window.
+
+9) When you are done working from this environment, go back to steps 3-6 and select the Default interpreter, instead of your virtual environment.
+
+**Connecting Jupyter Notebook to a virtual environment**
+
+1)	Enter `pip install ipykernel` (still within Anaconda prompt and your virtual environment).
+
+2)	Then enter `python -m ipykernel install --name <env_name>`. 
+
+3)	Start Jupyter Notebook.
+
+4)	From the `Files` page (you should be here by default) go to `New`, located in the top right.
+
+5)	Click on `New` and select your virtual environment name.
+
+6)	Your new notebook now will use the Python and package versions installed in this environment.
+
+**Managing package dependencies in R Studio with renv**
+
+1)	Open R Studio and select `File -> New Project`.
+
+2)	Select `New Directory -> New Project` and give your directory a useful name.
+
+3)	Tick `Use renv with this project`.
+
+4)	Consult the User Documentation for details about what packages are required to run a method. Make note of these.
+
+5)	Install required package versions using `renv::install("package@version")`.  For example, to install `devtools 2.4.4` use `renv::install("devtools@2.4.4")`. 
+
+6)	Download and run the chosen SML method within this project environment (see "Installing R Methods" above for more guidance).
+
+Using `renv` will make specified versions of packages available for this project, but will not affect versions installed outside the project. 
+
+You can verify which versions are installed using `sessionInfo()`. 
+```
+
+— 16/09/2024 at 08:59:56 AM —
+
