@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v1.6.0-rc.2 (2024-09-16)
+
+### Fix
+
+* Fixing issues with Email and 404 error with contentful ([#379](https://github.com/ONSdigital/sml-catalogue/issues/379)) ([`38691d1`](https://github.com/ONSdigital/sml-catalogue/commit/38691d14c3391e696486eff24be05559b4e2ca99))
+
 ## v1.6.0-rc.1 (2024-09-16)
 
 ### Feature
