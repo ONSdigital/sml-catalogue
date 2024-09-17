@@ -2111,3 +2111,23 @@ You can verify which versions are installed using `sessionInfo()`.
 
 — 16/09/2024 at 08:59:56 AM —
 
+# CMS Update: 17/09/2024 at 10:04:27 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreStructure
+
+Revision: 2
+
+Updated At: 2024-09-17T10:04:27.120Z
+
+Content Updated:
+
+```txt
+structure: {"categories":[{"name":"information","label":"Information","subcategories":[{"name":"methods-request","label":"Submit a method request"},{"name":"version-methods","label":"How the methods are versioned"},{"name":"coding-standards","label":"Coding standards"}]},{"name":"access","label":"Access (and usage)","subcategories":[{"name":"view-methods","label":"Find and view methods"},{"name":"install-a-method","label":"Install a method"}]},{"name":"feedback","label":"Feedback","subcategories":[{"name":"report-bug","label":"Report a defect or bug"},{"name":"provide-feedback","label":"Provide feedback"}]},{"name":"support","label":"Support","subcategories":[{"name":"support","label":"Get support"},{"name":"expert-groups","label":"Get information on expert groups"},{"name":"troubleshooting","label":"Troubleshooting"},{"name":"github","label":"Using GitHub"}]}]}
+```
+
+— 17/09/2024 at 10:04:27 AM —
+
