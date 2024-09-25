@@ -2473,3 +2473,25 @@ You can verify which versions are installed using <code> sessionInfo() </code>.
 
 — 18/09/2024 at 01:25:15 PM —
 
+# CMS Update: 25/09/2024 at 10:05:49 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 7
+
+Updated At: 2024-09-25T10:05:49.135Z
+
+Content Updated:
+
+```txt
+id: sml
+term: SML
+meaning: The Statistical Methods Library, a centralised collection of methods approved for use by the ONS. Comprises a code library, accessed through GitHub, and a collection of associated documentation, accessed via the SML Portal.
+```
+
+— 25/09/2024 at 10:05:49 AM —
+
