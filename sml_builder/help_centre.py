@@ -194,11 +194,9 @@ def build_help_centre_structure():
         nav["categories"].append(
             {"name": category, "label": category, "subcategories": []}
         )
-    for content in contents:
-        category = content["help_centre_category"]
-        for categories in nav["categories"]:
-            if category == categories["name"]:
-                categories["subcategories"].append(
+        for content in contents:
+            if content["help_centre_category"] == category:
+                nav["categories"][-1]["subcategories"].append(
                     {"name": content["id"], "label": content["title"]}
                 )
     return nav
