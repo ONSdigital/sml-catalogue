@@ -184,5 +184,3 @@ def _help_centre_nav(
             ],
         }
     ]
-
-

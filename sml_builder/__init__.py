@@ -104,5 +104,7 @@ def build_help_centre_structure():
                 )
     nav["categories"] = sorted(nav["categories"], key=lambda x: x["name"])
     for category in nav["categories"]:
-        category["subcategories"] = sorted(category["subcategories"], key=lambda x: x["label"])
-    app.cache['help_centre_nav'] = nav
+        category["subcategories"] = sorted(
+            category["subcategories"], key=lambda x: x["label"]
+        )
+    app.cache["help_centre_nav"] = nav
