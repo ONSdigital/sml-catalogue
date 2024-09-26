@@ -13,6 +13,7 @@ app.jinja_env.lstrip_blocks = True
 app.config["FREEZER_IGNORE_404_NOT_FOUND"] = True
 app.config["FREEZER_DEFAULT_MIMETYPE"] = "text/html"
 app.config["FREEZER_DESTINATION"] = "../build"
+app.cache = {}
 
 # F401 module import but unused
 # We have to import the modules below here and they get
@@ -84,3 +85,22 @@ def set_variables():
     return {
         "docs_integration_active": docs_integration["enabled"],
     }
+
+
+@app.before_request
+def build_help_centre_structure():
+    app.before_request_funcs[None].remove(build_help_centre_structure)
+    nav = {"categories": []}
+    contents = getContent("helpCentreInformation")
+    unique = set(d["help_centre_category"] for d in contents)
+    for category in unique:
+        nav["categories"].append(
+            {"name": category, "label": category, "subcategories": []}
+        )
+        for content in contents:
+            if content["help_centre_category"] == category:
+                nav["categories"][-1]["subcategories"].append(
+                    {"name": content["id"], "label": content["title"]}
+                )
+    nav["categories"] = sorted(nav["categories"], key=lambda x: x["name"])
+    app.cache['help_centre_nav'] = nav

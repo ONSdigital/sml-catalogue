@@ -25,7 +25,7 @@ content_management = get_feature_config("content_management")
 def help_centre(category=None):
     try:
         if content_management["enabled"]:
-            contents = build_help_centre_structure()
+            contents = app.cache["help_centre_nav"]
             if checkEmptyList(contents):
                 _page_not_found(
                     "helpCentreStructure content encountered an error whilst building"
@@ -50,7 +50,7 @@ def guidances(category, sub_category=None):
     help_centre_nav = _help_centre_nav(category)
 
     if content_management["enabled"]:
-        contents = build_help_centre_structure()
+        contents = app.cache["help_centre_nav"]
         if checkEmptyList(contents):
             _page_not_found(
                 "helpCentreStructure content encountered an error whilst building"
@@ -144,7 +144,7 @@ def _help_centre_nav(
     current_category,
 ):
     if content_management["enabled"]:
-        contents = build_help_centre_structure()
+        contents = app.cache["help_centre_nav"]
         if checkEmptyList(contents):
             _page_not_found(
                 "helpCentreStructure content encountered an error whilst building"
@@ -186,17 +186,3 @@ def _help_centre_nav(
     ]
 
 
-def build_help_centre_structure():
-    nav = {"categories": []}
-    contents = getContent("helpCentreInformation")
-    unique = set(d["help_centre_category"] for d in contents)
-    for category in unique:
-        nav["categories"].append(
-            {"name": category, "label": category, "subcategories": []}
-        )
-        for content in contents:
-            if content["help_centre_category"] == category:
-                nav["categories"][-1]["subcategories"].append(
-                    {"name": content["id"], "label": content["title"]}
-                )
-    return nav
