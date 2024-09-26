@@ -25,12 +25,12 @@ content_management = get_feature_config("content_management")
 def help_centre(category=None):
     try:
         if content_management["enabled"]:
-            contents = getContent("helpCentreStructure")["structure"]
+            contents = build_help_centre_structure()
             if checkEmptyList(contents):
-                _page_not_found("helpCentreStructure content not found")
+                _page_not_found("helpCentreStructure content encountered an error whilst building")
         else:
             with open(
-                "./content/help_centre/help_centre.json", encoding="utf-8"
+                    "./content/help_centre/help_centre.json", encoding="utf-8"
             ) as help_contents_file:
                 contents = load(help_contents_file)
         categories = contents_helper(contents, "guidances")
@@ -48,9 +48,9 @@ def guidances(category, sub_category=None):
     help_centre_nav = _help_centre_nav(category)
 
     if content_management["enabled"]:
-        contents = getContent("helpCentreStructure")["structure"]
+        contents = build_help_centre_structure()
         if checkEmptyList(contents):
-            _page_not_found("helpCentreStructure content not found")
+            _page_not_found("helpCentreStructure content encountered an error whilst building")
         category_label, sub_category_label, sub_category = category_labels(
             contents, category, sub_category
         )
@@ -83,8 +83,7 @@ def guidances(category, sub_category=None):
                 _page_not_found(f"Page {sub_category} content not found")
         except OSError as e:
             _page_not_found(e)
-        escaped_text = escape(text)
-        body = Markup(markdown.markdown(escaped_text))
+        body = Markup(markdown.markdown(text))
 
         return render_template(
             "help_category.html",
@@ -99,7 +98,7 @@ def guidances(category, sub_category=None):
 
     try:
         with open(
-            "./content/help_centre/help_centre.json", encoding="utf-8"
+                "./content/help_centre/help_centre.json", encoding="utf-8"
         ) as help_contents_file:
             contents = load(help_contents_file)
         category_label, sub_category_label, sub_category = category_labels(
@@ -111,7 +110,7 @@ def guidances(category, sub_category=None):
     if sub_category not in externallink_help_categories:
         try:
             with open(
-                f"./content/help_centre/{sub_category}.md", "r", encoding="utf-8"
+                    f"./content/help_centre/{sub_category}.md", "r", encoding="utf-8"
             ) as input_file:
                 text = input_file.read()
         except OSError as e:
@@ -137,15 +136,15 @@ def guidances(category, sub_category=None):
 
 
 def _help_centre_nav(
-    current_category,
+        current_category,
 ):
     if content_management["enabled"]:
-        contents = getContent("helpCentreStructure")["structure"]
+        contents = build_help_centre_structure()
         if checkEmptyList(contents):
-            _page_not_found("helpCentreStructure content not found")
+            _page_not_found("helpCentreStructure content encountered an error whilst building")
     else:
         with open(
-            "./content/help_centre/help_centre.json", encoding="utf-8"
+                "./content/help_centre/help_centre.json", encoding="utf-8"
         ) as help_contents_file:
             contents = load(help_contents_file)
     return [
@@ -178,3 +177,22 @@ def _help_centre_nav(
             ],
         }
     ]
+
+
+def build_help_centre_structure():
+    nav = {
+        "categories": []}
+    contents = getContent("helpCentreInformation")
+    unique = set(d['help_centre_category'] for d in contents)
+    for category in unique:
+            nav["categories"].append({"name": category,
+                                  "label": category,
+                                  "subcategories": []})
+    for content in contents:
+        category = content["help_centre_category"]
+        for categories in nav["categories"]:
+            if category == categories["name"]:
+                categories["subcategories"].append({
+                    "name": content["id"],
+                    "label": content["title"]})
+    return nav
