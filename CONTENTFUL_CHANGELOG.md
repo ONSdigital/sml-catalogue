@@ -2517,3 +2517,25 @@ meaning: The Statistical Methods Library, a centralised collection of methods ap
 
 — 25/09/2024 at 10:05:49 AM —
 
+# CMS Update: 26/09/2024 at 01:11:17 PM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 10
+
+Updated At: 2024-09-26T13:11:17.942Z
+
+Content Updated:
+
+```txt
+id: smll
+term: SML
+meaning: The Statistical Methods Library, a centralised collection of methods approved for use by the ONS. Comprises a code library, accessed through GitHub, and a collection of associated documentation, accessed via the SML Portal.
+```
+
+— 26/09/2024 at 01:11:17 PM —
+
