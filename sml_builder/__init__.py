@@ -103,7 +103,7 @@ def build_help_centre_structure():
                 nav["categories"][-1]["subcategories"].append(
                     {"name": content["id"], "label": content["title"]}
                 )
-            if submit_request is not None:
+            if not checkEmptyList(submit_request):
                 if category == "Information":
                     if not any(
                         d["name"] == "methods-request"
