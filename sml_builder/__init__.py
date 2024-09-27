@@ -92,6 +92,7 @@ def build_help_centre_structure():
     app.before_request_funcs[None].remove(build_help_centre_structure)
     nav = {"categories": []}
     contents = getContent("helpCentreInformation")
+    submit_request = getContent("helpCentreMethodRequest")
     unique = set(d["help_centre_category"] for d in contents)
     for category in unique:
         nav["categories"].append(
@@ -102,6 +103,18 @@ def build_help_centre_structure():
                 nav["categories"][-1]["subcategories"].append(
                     {"name": content["id"], "label": content["title"]}
                 )
+            if submit_request is not None:
+                if category == "Information":
+                    if not any(
+                        d["name"] == "methods-request"
+                        for d in nav["categories"][-1]["subcategories"]
+                    ):
+                        nav["categories"][-1]["subcategories"].append(
+                            {
+                                "name": "methods-request",
+                                "label": "Submit a method request",
+                            }
+                        )
     nav["categories"] = sorted(nav["categories"], key=lambda x: x["name"])
     for category in nav["categories"]:
         category["subcategories"] = sorted(
