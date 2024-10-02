@@ -89,11 +89,11 @@ def set_variables():
 
 @app.before_request
 def build_help_centre_structure():
-    category_urls={
+    category_urls = {
         "Information": "information",
         "Access (and usage)": "access",
         "Feedback": "feedback",
-        "Support": "support"
+        "Support": "support",
     }
     app.before_request_funcs[None].remove(build_help_centre_structure)
     nav = {"categories": []}
