@@ -89,6 +89,12 @@ def set_variables():
 
 @app.before_request
 def build_help_centre_structure():
+    category_urls={
+        "Information": "information",
+        "Access (and usage)": "access",
+        "Feedback": "feedback",
+        "Support": "support"
+    }
     app.before_request_funcs[None].remove(build_help_centre_structure)
     nav = {"categories": []}
     contents = getContent("helpCentreInformation")
@@ -96,7 +102,7 @@ def build_help_centre_structure():
     unique = set(d["help_centre_category"] for d in contents)
     for category in unique:
         nav["categories"].append(
-            {"name": category, "label": category, "subcategories": []}
+            {"name": category_urls[category], "label": category, "subcategories": []}
         )
         for content in contents:
             if content["help_centre_category"] == category:
