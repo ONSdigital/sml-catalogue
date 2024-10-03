@@ -87,6 +87,10 @@ def set_variables():
     }
 
 
+# On request the method runs, pulling the help centre pages from contentful and constructs the
+# navigation dictionary which creates the headers and links available on the help centre.
+# On first run it removes itself from the before_request_funcs list to prevent it
+# running on subsequent requests.
 @app.before_request
 def build_help_centre_structure():
     category_urls = {
@@ -95,35 +99,43 @@ def build_help_centre_structure():
         "Feedback": "feedback",
         "Support": "support",
     }
+    # Remove this method from the before_requests_funcs to prevent it from running on every user request
     app.before_request_funcs[None].remove(build_help_centre_structure)
-    nav = {"categories": []}
-    contents = getContent("helpCentreInformation")
-    submit_request = getContent("helpCentreMethodRequest")
-    unique = set(d["help_centre_category"] for d in contents)
-    for category in unique:
-        nav["categories"].append(
-            {"name": category_urls[category], "label": category, "subcategories": []}
-        )
-        for content in contents:
-            if content["help_centre_category"] == category:
-                nav["categories"][-1]["subcategories"].append(
-                    {"name": content["id"], "label": content["title"]}
-                )
-            if not checkEmptyList(submit_request):
-                if category == "Information":
-                    if not any(
-                        d["name"] == "methods-request"
-                        for d in nav["categories"][-1]["subcategories"]
-                    ):
-                        nav["categories"][-1]["subcategories"].append(
-                            {
-                                "name": "methods-request",
-                                "label": "Submit a method request",
-                            }
-                        )
-    nav["categories"] = sorted(nav["categories"], key=lambda x: x["name"])
-    for category in nav["categories"]:
-        category["subcategories"] = sorted(
-            category["subcategories"], key=lambda x: x["label"]
-        )
-    app.cache["help_centre_nav"] = nav
+    if content_management["enabled"]:
+        nav = {"categories": []}
+        contents = getContent("helpCentreInformation")
+        submit_request = getContent("helpCentreMethodRequest")
+        unique = set(d["help_centre_category"] for d in contents)
+        for category in unique:
+            nav["categories"].append(
+                {
+                    "name": category_urls[category],
+                    "label": category,
+                    "subcategories": [],
+                }
+            )
+            for content in contents:
+                if content["help_centre_category"] == category:
+                    nav["categories"][-1]["subcategories"].append(
+                        {"name": content["id"], "label": content["title"]}
+                    )
+                if not checkEmptyList(submit_request):
+                    if category == "Information":
+                        if not any(
+                            d["name"] == "methods-request"
+                            for d in nav["categories"][-1]["subcategories"]
+                        ):
+                            nav["categories"][-1]["subcategories"].append(
+                                {
+                                    "name": "methods-request",
+                                    "label": "Submit a method request",
+                                }
+                            )
+        nav["categories"] = sorted(nav["categories"], key=lambda x: x["name"])
+        # sort headers and links alphabetically, contentful returns content based on last updated date
+        # so order would constantly change
+        for category in nav["categories"]:
+            category["subcategories"] = sorted(
+                category["subcategories"], key=lambda x: x["label"]
+            )
+        app.cache["help_centre_nav"] = nav
