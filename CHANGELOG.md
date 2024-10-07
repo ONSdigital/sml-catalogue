@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v1.7.0-rc.7 (2024-10-07)
+
+### Feature
+
+* User changes to contentful content model ([`543b079`](https://github.com/ONSdigital/sml-catalogue/commit/543b079d8c31a4f4d0932206264fd84699edcd5a))
+
 ## v1.7.0-rc.6 (2024-10-07)
 
 ### Feature
