@@ -4157,3 +4157,25 @@ content: {"en-US":"The Statistical Methods Library (SML) and the associated meth
 
 — 07/10/2024 at 07:17:10 AM —
 
+# CMS Update: 07/10/2024 at 07:17:35 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreInformation
+
+Revision: 3
+
+Updated At: 2024-10-07T07:17:35.675Z
+
+Content Updated: entry 5WaengmajUsGSEbXHxhu1r has been deleted.
+
+```txt
+id: {"en-US":"github"}
+title: {"en-US":"Using GitHub"}
+content: {"en-US":"This section contains useful links for anyone unfamiliar with Github, it provides some pointers to documentation that will help you use and navigate the system.\n\nFor general guidance consult the [Github documentation](https://docs.github.com/en) in the first instance\n#### Releases\n\nConsult the [Github guidance on navigating releases](https://docs.github.com/en/repositories/releasing-projects-on-github/comparing-releases) to get an understanding of identifying where the release information can be found and how to search for a specific release.\n\nView the [Github release comparison documentation](https://docs.github.com/en/repositories/releasing-projects-on-github/comparing-releases) to get information on comparing different release versions and understanding how to use Github to determine the changes between releases.\n"}
+```
+
+— 07/10/2024 at 07:17:35 AM —
+
