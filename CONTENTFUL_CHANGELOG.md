@@ -4223,3 +4223,25 @@ content: {"en-US":"Code will be written to internationally recognised standards 
 
 — 07/10/2024 at 07:18:09 AM —
 
+# CMS Update: 07/10/2024 at 07:18:21 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreInformation
+
+Revision: 3
+
+Updated At: 2024-10-07T07:18:21.402Z
+
+Content Updated: entry 3nzjuL0uUBerLb5tQYGuq8 has been deleted.
+
+```txt
+id: {"en-US":"view-methods"}
+title: {"en-US":"Find and view methods"}
+content: {"en-US":"You can find and view methods within the [methods catalogue](/methods)\n\nWhere available, links to GitHub for source code and specifications will be on the method's details page.\n"}
+```
+
+— 07/10/2024 at 07:18:21 AM —
+
