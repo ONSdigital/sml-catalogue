@@ -4135,3 +4135,25 @@ content: {"en-US":"Please visit [Expert groups](https://analysisfunction.civilse
 
 — 07/10/2024 at 07:16:37 AM —
 
+# CMS Update: 07/10/2024 at 07:17:10 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreInformation
+
+Revision: 3
+
+Updated At: 2024-10-07T07:17:10.991Z
+
+Content Updated: entry 3cCYV7jPz7iisw87gZvGgK has been deleted.
+
+```txt
+id: {"en-US":"version-methods"}
+title: {"en-US":"How the methods are versioned"}
+content: {"en-US":"The Statistical Methods Library (SML) and the associated methods are versioned using semantic versioning comprised of a major, minor and patch release version separated by full stops (e.g 3.5.4). \n\nThere are separate releases of the libraries based on the method implementation, python/pandas or python/pySpark, and each library uses semantic versioning.\n\nThe major version is incremented (and minor and patch releases reset to zero) when backward incompatible changes are made (e.g renaming a pre-existing method function name).\n\nThe minor version is incremented (and the patch version reset to zero) when new features are added without breaking backward compatibility (e.g addition of a new statistical method)\n\nThe patch release version is incremented when backward compatible bugfixes are implemented.\n\nConsult the [SML python/pySpark release history in Github](https://github.com/ONSdigital/statistical-methods-library/releases) for the current and past releases for the python/pySpark methods and the [associated python/pySpark release notes](https://github.com/ONSdigital/statistical-methods-library/tree/main/docs/release-notes) to understand the changes between releases.\n\nConsult the [SML python/pandas release history in Github](https://github.com/ONSdigital/sml-python-small/releases) for the current and past releases for the python/pandas methods and the [associated python/pandas release notes](https://github.com/ONSdigital/sml-python-small/tree/main/docs/release-notes) to understand the changes between releases.\n\nFor further information about semantic versioning read the recommended [semantic versioning guidance](https://semver.org)."}
+```
+
+— 07/10/2024 at 07:17:10 AM —
+
