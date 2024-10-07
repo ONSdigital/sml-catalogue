@@ -4113,3 +4113,25 @@ content: {"en-US":"Please email [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk).
 
 — 07/10/2024 at 07:16:09 AM —
 
+# CMS Update: 07/10/2024 at 07:16:37 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreInformation
+
+Revision: 3
+
+Updated At: 2024-10-07T07:16:37.121Z
+
+Content Updated: entry 76zlJrhByCFNZlbKVA5AtB has been deleted.
+
+```txt
+id: {"en-US":"expert-groups"}
+title: {"en-US":"Get information on expert groups"}
+content: {"en-US":"Please visit [Expert groups](https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/)."}
+```
+
+— 07/10/2024 at 07:16:37 AM —
+
