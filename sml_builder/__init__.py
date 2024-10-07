@@ -120,17 +120,16 @@ def build_help_centre_structure():
                         {"name": content["id"], "label": content["title"]}
                     )
                 if not checkEmptyList(submit_request):
-                    if category == "Information":
-                        if not any(
-                            d["name"] == "methods-request"
-                            for d in nav["categories"][-1]["subcategories"]
-                        ):
-                            nav["categories"][-1]["subcategories"].append(
-                                {
-                                    "name": "methods-request",
-                                    "label": "Submit a method request",
-                                }
-                            )
+                    if category == "Information" and not any(
+                        d["name"] == "methods-request"
+                        for d in nav["categories"][-1]["subcategories"]
+                    ):
+                        nav["categories"][-1]["subcategories"].append(
+                            {
+                                "name": "methods-request",
+                                "label": "Submit a method request",
+                            }
+                        )
         nav["categories"] = sorted(nav["categories"], key=lambda x: x["name"])
         # sort headers and links alphabetically, contentful returns content based on last updated date
         # so order would constantly change
