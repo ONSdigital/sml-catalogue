@@ -4389,3 +4389,23 @@ If you still need assistance or if you have suggestions or other feedback, pleas
 
 — 07/10/2024 at 11:25:44 AM —
 
+# CMS Update: 07/10/2024 at 11:38:53 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreStructure
+
+Revision: 4
+
+Updated At: 2024-10-07T11:38:53.079Z
+
+Content Updated:
+
+```txt
+structure: {"categories":[{"name":"access","label":"Accessing Methods","subcategories":[{"name":"install-a-method","label":"Install a method"}]},{"name":"feedback","label":"Feedback","subcategories":[{"name":"get-in-touch","label":"Get in touch"}]},{"name":"support","label":"Support","subcategories":[{"name":"troubleshooting","label":"Troubleshooting"}]}]}
+```
+
+— 07/10/2024 at 11:38:53 AM —
+
