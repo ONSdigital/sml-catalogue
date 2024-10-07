@@ -4201,3 +4201,25 @@ content: {"en-US":"Please email [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk).
 
 — 07/10/2024 at 07:17:52 AM —
 
+# CMS Update: 07/10/2024 at 07:18:09 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreInformation
+
+Revision: 3
+
+Updated At: 2024-10-07T07:18:09.843Z
+
+Content Updated: entry 6WQ6Wtug7CnYQigqvDNH9S has been deleted.
+
+```txt
+id: {"en-US":"coding-standards"}
+title: {"en-US":"Coding standards"}
+content: {"en-US":"Code will be written to internationally recognised standards and according to principles set out in these links:-\n\n* [Government Digital Service](https://gds-way.cloudapps.digital/#the-gds-way/)\n* [ONS Quality Assurance for Code and Analysis (Duck book)](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html)\n* [ONS Digital Software Engineering Standards](https://github.com/ONSdigital/software-engineer-community/blob/master/standards/README.md)\n\nFor Python, this means it will adhere to the [PEP8 Python style guide](https://peps.python.org/pep-0008/) and the [GDS Python style guide.](https://gds-way.cloudapps.digital/manuals/programming-languages/python/python.html#content)\n"}
+```
+
+— 07/10/2024 at 07:18:09 AM —
+
