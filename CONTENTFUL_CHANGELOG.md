@@ -4361,3 +4361,31 @@ If you need help installing or using a method, make sure you've consulted the He
 
 — 07/10/2024 at 08:09:33 AM —
 
+# CMS Update: 07/10/2024 at 11:25:44 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreInformation
+
+Revision: 3
+
+Updated At: 2024-10-07T11:25:44.443Z
+
+Content Updated:
+
+```txt
+id: get-in-touch
+title: Get in touch
+content: If you'd like to speak to someone on the SML team, please email [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk).
+
+Need help installing a method? Make sure you've consulted the Help Centre "Install a Method" page.
+
+Need help using a method? Make sure you have read the user documentation, which you can find by clicking on the method name in the Method Catalogue.  
+
+If you still need assistance or if you have suggestions or other feedback, please do get in touch with us using the email above.
+```
+
+— 07/10/2024 at 11:25:44 AM —
+
