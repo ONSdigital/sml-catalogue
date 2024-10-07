@@ -4317,3 +4317,23 @@ Alternatively on Windows machine python may sometimes be installed as py so:
 
 — 07/10/2024 at 07:21:02 AM —
 
+# CMS Update: 07/10/2024 at 07:57:23 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreStructure
+
+Revision: 3
+
+Updated At: 2024-10-07T07:57:23.419Z
+
+Content Updated:
+
+```txt
+structure: {"categories":[{"name":"access","label":"Accessing Methods","subcategories":[{"name":"install-a-method","label":"Install a method"}]},{"name":"feedback","label":"Feedback","subcategories":[{"name":"get-in-touch","label":"Get in touch"}]},{"name":"support","label":"Support","subcategories":[{"name":"troubleshooting","label":"Troubleshooting (in development)"}]}]}
+```
+
+— 07/10/2024 at 07:57:23 AM —
+
