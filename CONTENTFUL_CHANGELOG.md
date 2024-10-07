@@ -4337,3 +4337,27 @@ structure: {"categories":[{"name":"access","label":"Accessing Methods","subcateg
 
 — 07/10/2024 at 07:57:23 AM —
 
+# CMS Update: 07/10/2024 at 08:09:33 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreInformation
+
+Revision: 2
+
+Updated At: 2024-10-07T08:09:33.202Z
+
+Content Updated:
+
+```txt
+id: get-in-touch
+title: Get in touch
+content: If you'd like to speak to someone on the SML team, please email [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk).
+
+If you need help installing or using a method, make sure you've consulted the Help Centre "Install a Method" page and have read the relevant user documentation, which you can find with the Method Summary. 
+```
+
+— 07/10/2024 at 08:09:33 AM —
+
