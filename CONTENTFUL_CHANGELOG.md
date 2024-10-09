@@ -4485,3 +4485,25 @@ Our mission is to provide a central resource for consistent and reproducible sta
 
 — 07/10/2024 at 12:42:20 PM —
 
+# CMS Update: 09/10/2024 at 11:22:30 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 2
+
+Updated At: 2024-10-09T11:22:30.231Z
+
+Content Updated:
+
+```txt
+id: sml
+term: SML
+meaning: The Statistical Methods Library, a centralised collection of methods approved for use by the ONS. Comprises a code library, accessed through GitHub, and a collection of associated documentation, accessed via the SML Portal.
+```
+
+— 09/10/2024 at 11:22:30 AM —
+
