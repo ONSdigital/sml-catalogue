@@ -4573,3 +4573,40 @@ userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/ma
 
 — 10/10/2024 at 09:38:17 AM —
 
+# CMS Update: 10/10/2024 at 10:33:32 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 3
+
+Updated At: 2024-10-10T10:33:32.286Z
+
+Content Updated:
+
+```txt
+id: date-adjustment
+name: Date Adjustment
+theme: Editing
+expertGroup: Editing & Imputation
+language: Python/Pandas
+author: ONS
+description: To generate summary and headline statistics for a period, the ONS requires all businesses responses to cover the same period. However, sometimes it is not possible for a business to provide data for the exact period of days required. The responder may specify a different start and end dates for which the response totals cover. Therefore, Date Adjustment methods are required to approximate the values of the data for the required period that are based on the data received.
+
+To install this method, please see Help Centre - [Install a Method](https://statisticalmethodslibrary.ons.gov.uk/help-centre/access/install-a-method).
+
+To use this method, please see [User Notes](https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/date-adjustment/date_adjustment.md). 
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v1.0.0
+releaseLink: https://github.com/ONSdigital/sml-python-small/releases/tag/1.0.0
+codeLink: https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/date_adjustment.py
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/date_adjustment/methodological_specification.md
+userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/date-adjustment/date_adjustment.md
+```
+
+— 10/10/2024 at 10:33:32 AM —
+
