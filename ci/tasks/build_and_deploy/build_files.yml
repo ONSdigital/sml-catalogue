@@ -19,7 +19,4 @@ run:
     - -exc
     - |
       apt-get -y update && apt-get install -y zip zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev build-essential python3-dev 
-      add-apt-repository ppa:deadsnakes/ppa
-      apt-get update
-      apt-get install python3.12.7
       bash ./ci/tasks/build_and_deploy/build_files.sh

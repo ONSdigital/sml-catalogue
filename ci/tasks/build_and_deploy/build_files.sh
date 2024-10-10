@@ -17,7 +17,6 @@ python3 -m venv venv
 source venv/bin/activate
 
 run_linting(){
-  poetry env use python3.12.7
   poetry install --sync
   echo "Check if project toml file and poetry lock file are in sync"
   poetry check
