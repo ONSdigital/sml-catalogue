@@ -80,7 +80,7 @@ def display_search_results():
         }
 
     else:
-        method_data=None
+        method_data = None
     # Creating DataFrame
     data_frame = pd.DataFrame(method_data)
 
@@ -139,8 +139,8 @@ def display_methods():
             cms_enabled=content_management["enabled"],
         )
 
-    #methods_dir = "./content/methods/ready-to-use-methods"
-    #future_methods_dir = "./content/methods/future-methods"
+    # methods_dir = "./content/methods/ready-to-use-methods"
+    # future_methods_dir = "./content/methods/future-methods"
     try:
         methods = None
         future_methods = None
@@ -154,7 +154,6 @@ def display_methods():
         search_results_info_panel=False,
         cms_enabled=content_management["enabled"],
     )
-
 
 
 # def appendRow(methods_dir, filter_methods=None):
