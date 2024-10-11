@@ -820,47 +820,6 @@ MarkupSafe = ">=2.0"
 i18n = ["Babel (>=2.7)"]
 
 [[package]]
-name = "jsonnet-binary"
-version = "0.17.0"
-description = "An UNOFFICIAL Python interface to Jsonnet, available as whl packages for Mac, Linux and Windows."
-optional = false
-python-versions = "*"
-files = [
-    {file = "jsonnet-binary-0.17.0.tar.gz", hash = "sha256:fbadf25f28161b0ccf29e0b72ef689790d14a9b23a681ab6846bd7cb12e17f1d"},
-    {file = "jsonnet_binary-0.17.0-cp35-cp35m-macosx_10_9_x86_64.whl", hash = "sha256:5db15ed838b6e4d1373d5d772a8283cf3a62282056cc5a3643c65bf257efeda4"},
-    {file = "jsonnet_binary-0.17.0-cp35-cp35m-manylinux2010_i686.whl", hash = "sha256:d868f063ea80be0c6b431faf2967e7440260b840374dbe50bae9876e6e36a162"},
-    {file = "jsonnet_binary-0.17.0-cp35-cp35m-manylinux2010_x86_64.whl", hash = "sha256:103c0e58fe79dec930bc5f013832da96cbd41cf0a15cf538027d74cbc22f7414"},
-    {file = "jsonnet_binary-0.17.0-cp35-cp35m-win32.whl", hash = "sha256:af2d6eecb7bcfe0e0e2431b2744361d0cdee3363e634f48960bac79e770a2174"},
-    {file = "jsonnet_binary-0.17.0-cp35-cp35m-win_amd64.whl", hash = "sha256:4cd4ea866afba1937b706eda4821b17a215976b5fdb56939c1bb2f5d4a67189c"},
-    {file = "jsonnet_binary-0.17.0-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:3738ee3992535eaa45d243f95a735c506a3661a910f3e679d0c4393a76823048"},
-    {file = "jsonnet_binary-0.17.0-cp36-cp36m-manylinux2010_i686.whl", hash = "sha256:286592ae705ddee12c44c1ed65efc3b5a238e6c659049cacd82ee84dc379d145"},
-    {file = "jsonnet_binary-0.17.0-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:5a0e737ff3aeae8639ff004e5e57d29f0665621234e43576745a143cd69b8944"},
-    {file = "jsonnet_binary-0.17.0-cp36-cp36m-win32.whl", hash = "sha256:1c2a27c20b34c66d9bb07a8ba019fd4063e46a65d46a652e52feed73b0dad7d3"},
-    {file = "jsonnet_binary-0.17.0-cp36-cp36m-win_amd64.whl", hash = "sha256:4b6479c00e10b15d905364005b9a3a2e87e0f7691cb9e88287cf7b702b278139"},
-    {file = "jsonnet_binary-0.17.0-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:60f8b892e25040a677663a77134b2d8251c965fd1a2007c9baf13f1c0b97523f"},
-    {file = "jsonnet_binary-0.17.0-cp37-cp37m-manylinux2010_i686.whl", hash = "sha256:926fa7a59777d525f3075179d118550ee196f492529a2d10cba65cbacb88de17"},
-    {file = "jsonnet_binary-0.17.0-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:8710353f6018d09edcd90bfa61fbddafa853b2caac51b97d0e760f2c7e65e2de"},
-    {file = "jsonnet_binary-0.17.0-cp37-cp37m-win32.whl", hash = "sha256:0e8f6c03172d84ec4807836f707265d067c4c798a13dbd4818449c37176f38eb"},
-    {file = "jsonnet_binary-0.17.0-cp37-cp37m-win_amd64.whl", hash = "sha256:37462cc8602eb64cffae082c2ed379afc8921a5762261226aeae337f51266ea5"},
-    {file = "jsonnet_binary-0.17.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:d086992e6880900ac33501b7d9744df42a0302ba4c7196a495e812929364e599"},
-    {file = "jsonnet_binary-0.17.0-cp38-cp38-manylinux2010_i686.whl", hash = "sha256:f34fad6492196c5e31f2aee5d6069ec05c335a53f0dbf3a3466722f8c89c4ec1"},
-    {file = "jsonnet_binary-0.17.0-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:19c2bc5509d1e188fd640e96bba28015b5777e7518120b1b772bc2c4b9360274"},
-    {file = "jsonnet_binary-0.17.0-cp38-cp38-win32.whl", hash = "sha256:21e00cfb9c18ccd8fc80739f0429472a6113772e76c0880b49bb8a256fa7af6b"},
-    {file = "jsonnet_binary-0.17.0-cp38-cp38-win_amd64.whl", hash = "sha256:3ad99ce128bbc58fd6b6bbd059224056a72d007ff7997cc9fe856868a7ae8c33"},
-    {file = "jsonnet_binary-0.17.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:783fdb0ebfa307a981385e140c96b932573388018cff5db7658797b17f453ba8"},
-    {file = "jsonnet_binary-0.17.0-cp39-cp39-manylinux2010_i686.whl", hash = "sha256:21bf65ade6fe923ba4c0a6f5dbc1ffc26594be13c3852b5974913c0d57f5ce68"},
-    {file = "jsonnet_binary-0.17.0-cp39-cp39-manylinux2010_x86_64.whl", hash = "sha256:f26b81994ec796d7479e29b8d83fa74a53e5ad4e4c763a77c56e5365ced1e3af"},
-    {file = "jsonnet_binary-0.17.0-cp39-cp39-win32.whl", hash = "sha256:d7003c38ff1478c09cff95990bb2abd3f8473866e99af9c49ac1cc894922bde5"},
-    {file = "jsonnet_binary-0.17.0-cp39-cp39-win_amd64.whl", hash = "sha256:7882e48bcc68424c97721011ef0c41e81bae71a61a7f56187f5c31e6b929381f"},
-    {file = "jsonnet_binary-0.17.0-pp36-pypy36_pp73-macosx_10_9_x86_64.whl", hash = "sha256:e15cd069124c05c3d09b1528a7382a3b52457bcc3499e11129ae71db1a7b3e2e"},
-    {file = "jsonnet_binary-0.17.0-pp36-pypy36_pp73-manylinux2010_x86_64.whl", hash = "sha256:9bd64b4123a9d25a78150344a8b06eeca7139311fa73fe98b7dbfcb2b438ab5b"},
-    {file = "jsonnet_binary-0.17.0-pp36-pypy36_pp73-win32.whl", hash = "sha256:d356ebc6d2ba04f2f97629e8cc1dbe933c27a7da75cfe10098c97d465ae9c700"},
-    {file = "jsonnet_binary-0.17.0-pp37-pypy37_pp73-macosx_10_9_x86_64.whl", hash = "sha256:7a735e8bc0a23f2e6175262670b3fe993a90b3299fdaaffb1599c1146c5702ab"},
-    {file = "jsonnet_binary-0.17.0-pp37-pypy37_pp73-manylinux2010_x86_64.whl", hash = "sha256:febd59e04ea4c2dc93f2c29dbfd03b49c092e6a275188f29639ea009f83696e6"},
-    {file = "jsonnet_binary-0.17.0-pp37-pypy37_pp73-win32.whl", hash = "sha256:846735c55cf704acb071932dd2c4a22afc7cc77b0a90884080e97f58c7df75a0"},
-]
-
-[[package]]
 name = "keyring"
 version = "25.4.1"
 description = "Store and access your passwords safely."
@@ -1310,13 +1269,13 @@ files = [
 
 [[package]]
 name = "pkginfo"
-version = "1.11.1"
+version = "1.11.2"
 description = "Query metadata from sdists / bdists / installed packages."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pkginfo-1.11.1-py3-none-any.whl", hash = "sha256:bfa76a714fdfc18a045fcd684dbfc3816b603d9d075febef17cb6582bea29573"},
-    {file = "pkginfo-1.11.1.tar.gz", hash = "sha256:2e0dca1cf4c8e39644eed32408ea9966ee15e0d324c62ba899a393b3c6b467aa"},
+    {file = "pkginfo-1.11.2-py3-none-any.whl", hash = "sha256:9ec518eefccd159de7ed45386a6bb4c6ca5fa2cb3bd9b71154fae44f6f1b36a3"},
+    {file = "pkginfo-1.11.2.tar.gz", hash = "sha256:c6bc916b8298d159e31f2c216e35ee5b86da7da18874f879798d0a1983537c86"},
 ]
 
 [package.extras]
@@ -2071,4 +2030,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "54002562caf726de6be9509fc71d17960c56be011b822a817b7f5eff1defa125"
+content-hash = "9a4f6a421438a9819e1e15c8df8f7d8dccb37b0266bbf7000747023718f1903c"
