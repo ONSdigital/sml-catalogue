@@ -1,6 +1,3 @@
-from json import loads
-from os import listdir
-
 import pandas as pd  # pylint: disable=no-name-in-module
 from flask import render_template, request
 
@@ -83,7 +80,7 @@ def display_search_results():
         }
 
     else:
-        pass
+        method_data=None
     # Creating DataFrame
     data_frame = pd.DataFrame(method_data)
 
@@ -142,21 +139,22 @@ def display_methods():
             cms_enabled=content_management["enabled"],
         )
 
-    methods_dir = "./content/methods/ready-to-use-methods"
-    future_methods_dir = "./content/methods/future-methods"
-    # try:
-    #    methods = appendRow(methods_dir)
-    #    future_methods = appendRow(future_methods_dir)
+    #methods_dir = "./content/methods/ready-to-use-methods"
+    #future_methods_dir = "./content/methods/future-methods"
+    try:
+        methods = None
+        future_methods = None
 
-    # except OSError as e:
-    #    _page_not_found(e)
-    # return render_template(
-    #    "methods.html",
-    #    page={"rows": methods, "future_rows": future_methods},
-    #    method_search=method_search["enabled"],
-    #    search_results_info_panel=False,
-    #    cms_enabled=content_management["enabled"],
-    # )
+    except OSError as e:
+        _page_not_found(e)
+    return render_template(
+        "methods.html",
+        page={"rows": methods, "future_rows": future_methods},
+        method_search=method_search["enabled"],
+        search_results_info_panel=False,
+        cms_enabled=content_management["enabled"],
+    )
+
 
 
 # def appendRow(methods_dir, filter_methods=None):
