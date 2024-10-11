@@ -53,6 +53,7 @@ def display_method_summary(  # pylint: disable=inconsistent-return-statements
         # resulting dictionary and nested dictionaries alphabetically, this lets us select the desired order when using the
         # onsMetadata component
 
+
 @app.route("/methods/search", methods=["GET", "POST"])
 def display_search_results():
     data = []
@@ -82,7 +83,7 @@ def display_search_results():
         }
 
     else:
-       pass
+        pass
     # Creating DataFrame
     data_frame = pd.DataFrame(method_data)
 
@@ -143,19 +144,19 @@ def display_methods():
 
     methods_dir = "./content/methods/ready-to-use-methods"
     future_methods_dir = "./content/methods/future-methods"
-    #try:
+    # try:
     #    methods = appendRow(methods_dir)
     #    future_methods = appendRow(future_methods_dir)
 
-    #except OSError as e:
+    # except OSError as e:
     #    _page_not_found(e)
-    #return render_template(
+    # return render_template(
     #    "methods.html",
     #    page={"rows": methods, "future_rows": future_methods},
     #    method_search=method_search["enabled"],
     #    search_results_info_panel=False,
     #    cms_enabled=content_management["enabled"],
-    #)
+    # )
 
 
 # def appendRow(methods_dir, filter_methods=None):
