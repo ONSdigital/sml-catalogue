@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v1.8.1-rc.1 (2024-10-15)
+
+### Fix
+
+* Amending Non contentful runs to no longer require jsonnet package and construct those files with Json instead ([#390](https://github.com/ONSdigital/sml-catalogue/issues/390)) ([`ba9b61d`](https://github.com/ONSdigital/sml-catalogue/commit/ba9b61d9000a2717482e040fd2cb7168c609c49b))
+
 ## v1.8.0 (2024-10-15)
 
 ### Fix
