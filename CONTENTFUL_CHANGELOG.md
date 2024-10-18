@@ -4809,3 +4809,25 @@ externalUrl: {"en-US":"https://pypi.org/user/ons-sml/"}
 
 — 18/10/2024 at 01:47:27 PM —
 
+# CMS Update: 18/10/2024 at 01:47:23 PM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 2
+
+Updated At: 2024-10-18T13:47:23.506Z
+
+Content Updated: entry 3MHWfCcqLpDHbc7NLLuNh6 has been deleted.
+
+```txt
+id: {"en-US":"statistical_methods"}
+term: {"en-US":"Statistical Methods"}
+meaning: {"en-US":"Mathematical techniques used to transform, analyse and manipulate data that fall under the remit of one of the expert groups within the Methodology and Quality Directorate of the ONS."}
+```
+
+— 18/10/2024 at 01:47:23 PM —
+
