@@ -4883,3 +4883,25 @@ externalUserContent: Currently we do not accept formal method submissions or cha
 
 — 18/10/2024 at 01:47:31 PM —
 
+# CMS Update: 18/10/2024 at 01:47:31 PM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-10-18T13:47:31.499Z
+
+Content Updated:
+
+```txt
+id: community_methods
+term: Community Methods
+meaning: Code developed by a wider community of analysts. These methods are held in a community code repository to ensure there is a clear distinction in terms of maintenance of the code. After sign-off, any changes to methods held in the SML community repository must be made via the SML governance process to ensure that specifications and documentation are kept up to date and users are informed of changes to the code. The developers of the code would be accountable for making any updates to the code.
+```
+
+— 18/10/2024 at 01:47:31 PM —
+
