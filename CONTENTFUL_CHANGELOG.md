@@ -4853,3 +4853,33 @@ meaning: 'Data about data', giving information about a product itself, as oppose
 
 — 18/10/2024 at 01:47:30 PM —
 
+# CMS Update: 18/10/2024 at 01:47:31 PM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: helpCentreMethodRequest
+
+Revision: 1
+
+Updated At: 2024-10-18T13:47:31.497Z
+
+Content Updated:
+
+```txt
+name: Help Centre Method Request
+internalUserTitle: I am an ONS internal user
+internalUserContent: Method requests can be raised to:
+
+* Have new methods developed for the Statistical Methods Library.
+* Add existing code to the Statistical Methods Library.
+* Change existing methods held within the Statistical Methods Library.
+
+If you would like to make a suggestion for a new method, or to provide feedback about an existing method, please do so by emailing [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk).
+externalUserTitle: I am a user from outside the ONS
+externalUserContent: Currently we do not accept formal method submissions or change requests from external users. In future, we will accept certain method requests via the [Integrated Data Service](https://integrateddataservice.gov.uk/).
+```
+
+— 18/10/2024 at 01:47:31 PM —
+
