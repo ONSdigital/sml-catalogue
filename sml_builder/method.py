@@ -1,8 +1,7 @@
-from json import loads
+from json import load
 from os import listdir
 
-import pandas as pd
-from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
+import pandas as pd  # pylint: disable=no-name-in-module
 from flask import render_template, request
 
 from sml_builder import app
@@ -49,26 +48,27 @@ def display_method_summary(  # pylint: disable=inconsistent-return-statements
             )
         _page_not_found("Method summary content not found")
     else:
-        page_data = loads(
-            evaluate_file(f"./content/methods/{methodState}/{method}.jsonnet")
-        )
-        # Manually sorting the order of the method_metadata dictionary, the jsonnet library automatically sorts the
-        # resulting dictionary and nested dictionaries alphabetically, this lets us select the desired order when using the
-        # onsMetadata component
-
-        sorted_order = [
-            "Author",
-            "Theme",
-            "Expert group",
-            "Languages",
-            "Release",
-        ]
-        page_data["method_metadata"] = {
-            k: page_data["method_metadata"][k] for k in sorted_order
-        }
-        return render_template(
-            "method.html", page=page_data, cms_enabled=content_management["enabled"]
-        )
+        with open(
+            f"./content/methods/{methodState}/{method}.json", encoding="UTF-8"
+        ) as json_data:
+            page_data = load(json_data)
+            json_data.close()
+            # Manually sorting the order of the method_metadata dictionary, the jsonnet library automatically sorts the
+            # resulting dictionary and nested dictionaries alphabetically, this lets us select the desired order when using the
+            # onsMetadata component
+            sorted_order = [
+                "Author",
+                "Theme",
+                "Expert group",
+                "Languages",
+                "Release",
+            ]
+            page_data["method_metadata"] = {
+                k: page_data["method_metadata"][k] for k in sorted_order
+            }
+            return render_template(
+                "method.html", page=page_data, cms_enabled=content_management["enabled"]
+            )
 
 
 @app.route("/methods/search", methods=["GET", "POST"])
@@ -121,7 +121,6 @@ def display_search_results():
             "Expert Group": exp_groups,
             "Language": languages,
         }
-
     # Creating DataFrame
     data_frame = pd.DataFrame(method_data)
 
@@ -136,10 +135,7 @@ def display_search_results():
                 ]
                 methods = filtered_methods
         else:
-            methods = appendRow(methods_dir, filter_methods=filter_methods)
-            future_methods = appendRow(
-                future_methods_dir, filter_methods=filter_methods
-            )
+            pass
     except OSError as e:
         _page_not_found(e)
     if content_management["enabled"]:
@@ -153,7 +149,7 @@ def display_search_results():
         )
     return render_template(
         "methods.html",
-        page={"rows": methods, "future_rows": future_methods},
+        page={"rows": methods, "future_rows": None},
         query=searchQuery,
         method_search=method_search["enabled"],
         search_results_info_panel=True,
@@ -204,7 +200,10 @@ def appendRow(methods_dir, filter_methods=None):
     methods = []
     filtered_methods = []
     for file in listdir(methods_dir):
-        method = loads(evaluate_file(f"{methods_dir}/{file}"))
+        print(file)
+        with open(f"{methods_dir}/{file}", encoding="UTF-8") as json_data:
+            method = load(json_data)
+            json_data.close()
         methods.append(
             {
                 "id": file.split(".")[0],

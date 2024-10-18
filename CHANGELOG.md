@@ -1,5 +1,64 @@
 <!--next-version-placeholder-->
 
+## v1.8.0 (2024-10-15)
+
+### Fix
+
+* Amending Non contentful runs to no longer require jsonnet package and construct those files with Json instead ([#390](https://github.com/ONSdigital/sml-catalogue/issues/390)) ([`ba9b61d`](https://github.com/ONSdigital/sml-catalogue/commit/ba9b61d9000a2717482e040fd2cb7168c609c49b))
+
+## v1.8.1-rc.1 (2024-10-15)
+
+### Fix
+
+* Amending Non contentful runs to no longer require jsonnet package and construct those files with Json instead ([#390](https://github.com/ONSdigital/sml-catalogue/issues/390)) ([`ba9b61d`](https://github.com/ONSdigital/sml-catalogue/commit/ba9b61d9000a2717482e040fd2cb7168c609c49b))
+
+## v1.8.0 (2024-10-15)
+
+### Fix
+
+* Amending Non contentful runs to no longer require jsonnet package and construct those files with Json instead ([#390](https://github.com/ONSdigital/sml-catalogue/issues/390)) ([`ba9b61d`](https://github.com/ONSdigital/sml-catalogue/commit/ba9b61d9000a2717482e040fd2cb7168c609c49b))
+
+## v1.8.0-rc.5 (2024-10-11)
+
+### Feature
+
+* User changes to contentful content model ([`dd6da90`](https://github.com/ONSdigital/sml-catalogue/commit/dd6da9087e949b635a5715444ca5b9d0a6f31153))
+
+## v1.8.0-rc.4 (2024-10-11)
+
+### Feature
+
+* User changes to contentful content model ([`e0fcc92`](https://github.com/ONSdigital/sml-catalogue/commit/e0fcc92f5231071a4671ddca765c91a8c3595922))
+
+## v1.8.0-rc.3 (2024-10-11)
+
+### Feature
+
+* User changes to contentful content model ([`4ed84cc`](https://github.com/ONSdigital/sml-catalogue/commit/4ed84cc9980a9c720683b8ca3fc32f44bc567f5e))
+
+## v1.8.0-rc.2 (2024-10-11)
+
+### Feature
+
+* User changes to contentful content model ([`aaa95f3`](https://github.com/ONSdigital/sml-catalogue/commit/aaa95f3746ae2d1c4514983b0964ccf7fa0217d3))
+
+## v1.8.0-rc.1 (2024-10-11)
+
+### Feature
+
+* User changes to contentful content model ([`48a07c9`](https://github.com/ONSdigital/sml-catalogue/commit/48a07c99a5368f0adcbc4f81ec87cdb47fae3fdf))
+* User changes to contentful content model ([`06d46ed`](https://github.com/ONSdigital/sml-catalogue/commit/06d46ed875814433a7ffeb074ac79e240bc31e8d))
+* User changes to contentful content model ([`bd4e2ad`](https://github.com/ONSdigital/sml-catalogue/commit/bd4e2ad163a7593d166a1f3ab5764b20acb993a0))
+* User changes to contentful content model ([`2d11bb5`](https://github.com/ONSdigital/sml-catalogue/commit/2d11bb53a32a13278a63a599180e2f8d73dd67ab))
+
+### Fix
+
+* Amending installed package list ([#389](https://github.com/ONSdigital/sml-catalogue/issues/389)) ([`2bb1289`](https://github.com/ONSdigital/sml-catalogue/commit/2bb12893ce42b4c093ec46e091c51ab8ca767425))
+
+## v1.7.0 (2024-10-08)
+
+
+
 ## v1.7.0-rc.7 (2024-10-07)
 
 ### Feature

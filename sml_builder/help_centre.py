@@ -25,9 +25,11 @@ content_management = get_feature_config("content_management")
 def help_centre(category=None):
     try:
         if content_management["enabled"]:
-            contents = getContent("helpCentreStructure")["structure"]
+            contents = app.cache["help_centre_nav"]
             if checkEmptyList(contents):
-                _page_not_found("helpCentreStructure content not found")
+                _page_not_found(
+                    "helpCentreStructure content encountered an error whilst building"
+                )
         else:
             with open(
                 "./content/help_centre/help_centre.json", encoding="utf-8"
@@ -48,9 +50,11 @@ def guidances(category, sub_category=None):
     help_centre_nav = _help_centre_nav(category)
 
     if content_management["enabled"]:
-        contents = getContent("helpCentreStructure")["structure"]
+        contents = app.cache["help_centre_nav"]
         if checkEmptyList(contents):
-            _page_not_found("helpCentreStructure content not found")
+            _page_not_found(
+                "helpCentreStructure content encountered an error whilst building"
+            )
         category_label, sub_category_label, sub_category = category_labels(
             contents, category, sub_category
         )
@@ -140,9 +144,11 @@ def _help_centre_nav(
     current_category,
 ):
     if content_management["enabled"]:
-        contents = getContent("helpCentreStructure")["structure"]
+        contents = app.cache["help_centre_nav"]
         if checkEmptyList(contents):
-            _page_not_found("helpCentreStructure content not found")
+            _page_not_found(
+                "helpCentreStructure content encountered an error whilst building"
+            )
     else:
         with open(
             "./content/help_centre/help_centre.json", encoding="utf-8"

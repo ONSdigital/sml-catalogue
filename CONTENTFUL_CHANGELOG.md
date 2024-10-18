@@ -4485,3 +4485,327 @@ Our mission is to provide a central resource for consistent and reproducible sta
 
 — 07/10/2024 at 12:42:20 PM —
 
+# CMS Update: 09/10/2024 at 11:22:30 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 2
+
+Updated At: 2024-10-09T11:22:30.231Z
+
+Content Updated:
+
+```txt
+id: sml
+term: SML
+meaning: The Statistical Methods Library, a centralised collection of methods approved for use by the ONS. Comprises a code library, accessed through GitHub, and a collection of associated documentation, accessed via the SML Portal.
+```
+
+— 09/10/2024 at 11:22:30 AM —
+
+# CMS Update: 10/10/2024 at 09:32:46 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 2
+
+Updated At: 2024-10-10T09:32:46.808Z
+
+Content Updated:
+
+```txt
+id: totals-and-components
+name: Totals and Components
+theme: Editing
+expertGroup: Editing & Imputation
+language: Python/Pandas
+author: ONS
+description: The automatic editing method for totals and components correction is currently used in ONS business surveys to ensure fixed relationships between variables are satisfied. For example, when a total (e.g., total employment) is collected along with the component breakdown (e.g., full-time male, full-time female, part-time male, part-time female). The primary use of the method is to automatically detect and correct errors in respondent data where fixed relationships have not been satisfied to improve the efficiency of the editing process, reduce the burden on respondents and survey validators and improve overall data quality. This method can also be used to ensure fixed relationships between variables are satisfied in other data types such as imputed data to improve overall data quality.
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v1.1.0
+releaseLink: https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0
+codeLink: https://github.com/ONSdigital/sml-python-small/tree/main/sml_small/editing/totals_and_components/totals_and_components.py
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/totals_components/totals_components.md
+userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/totals-and-components/totals-and-components.md
+```
+
+— 10/10/2024 at 09:32:46 AM —
+
+# CMS Update: 10/10/2024 at 09:38:17 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 2
+
+Updated At: 2024-10-10T09:38:17.592Z
+
+Content Updated:
+
+```txt
+id: date-adjustment
+name: Date Adjustment
+theme: Editing
+expertGroup: Editing & Imputation
+language: Python/Pandas
+author: ONS
+description: To generate summary and headline statistics for a period, the ONS requires all businesses responses to cover the same period. However, sometimes it is not possible for a business to provide data for the exact period of days required. The responder may specify a different start and end dates for which the response totals cover. Therefore, Date Adjustment methods are required to approximate the values of the data for the required period that are based on the data received.
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v1.0.0
+releaseLink: https://github.com/ONSdigital/sml-python-small/releases/tag/1.0.0
+codeLink: https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/date_adjustment.py
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/date_adjustment/methodological_specification.md
+userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/date-adjustment/date_adjustment.md
+```
+
+— 10/10/2024 at 09:38:17 AM —
+
+# CMS Update: 10/10/2024 at 10:33:32 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 3
+
+Updated At: 2024-10-10T10:33:32.286Z
+
+Content Updated:
+
+```txt
+id: date-adjustment
+name: Date Adjustment
+theme: Editing
+expertGroup: Editing & Imputation
+language: Python/Pandas
+author: ONS
+description: To generate summary and headline statistics for a period, the ONS requires all businesses responses to cover the same period. However, sometimes it is not possible for a business to provide data for the exact period of days required. The responder may specify a different start and end dates for which the response totals cover. Therefore, Date Adjustment methods are required to approximate the values of the data for the required period that are based on the data received.
+
+To install this method, please see Help Centre - [Install a Method](https://statisticalmethodslibrary.ons.gov.uk/help-centre/access/install-a-method).
+
+To use this method, please see [User Notes](https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/date-adjustment/date_adjustment.md). 
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v1.0.0
+releaseLink: https://github.com/ONSdigital/sml-python-small/releases/tag/1.0.0
+codeLink: https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/date_adjustment.py
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/date_adjustment/methodological_specification.md
+userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/date-adjustment/date_adjustment.md
+```
+
+— 10/10/2024 at 10:33:32 AM —
+
+# CMS Update: 11/10/2024 at 11:21:32 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 4
+
+Updated At: 2024-10-11T11:21:32.705Z
+
+Content Updated:
+
+```txt
+id: date-adjustment
+name: Date Adjustment
+theme: Editing
+expertGroup: Editing & Imputation
+language: Python/Pandas
+author: ONS
+description: To generate summary and headline statistics for a period, the ONS requires all businesses responses to cover the same period. However, sometimes it is not possible for a business to provide data for the exact period of days required. The responder may specify a different start and end dates for which the response totals cover. Therefore, Date Adjustment methods are required to approximate the values of the data for the required period that are based on the data received.
+
+To install this method, please see Help Centre - [Install a Method](https://statisticalmethodslibrary.ons.gov.uk/help-centre/access/install-a-method).
+
+To use this method, please see [User Notes](https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/date-adjustment/date_adjustment.md). 
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v1.1.0
+releaseLink: https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0
+codeLink: https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/date_adjustment.py
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/date_adjustment/methodological_specification.md
+userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/date-adjustment/date_adjustment.md
+```
+
+— 11/10/2024 at 11:21:32 AM —
+
+# CMS Update: 11/10/2024 at 11:33:19 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 2
+
+Updated At: 2024-10-11T11:33:19.756Z
+
+Content Updated:
+
+```txt
+id: selective-editing
+name: Selective Editing
+theme: Editing
+expertGroup: Editing & Imputation
+language: Python/Pandas
+author: ONS
+description: Selective Editing is an internationally recognised editing method where potential errors are prioritised according to their expected effect on key outputs. Only respondents that are having an impact on published estimates will be recontacted.
+
+Selective Editing works by assigning a score to each important variable for a business where, the score reflects the impact that editing the respondent will have on the estimates. Only contributors with a high score are checked, low scoring contributors pass through unchecked.
+
+To install this method, please see Help Centre - [Install a method](https://statisticalmethodslibrary.ons.gov.uk/help-centre/access/install-a-method).
+
+To use this method, please see [User Notes](https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/selective-editing/selective_editing.md). 
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v1.1.0
+releaseLink: https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0
+codeLink: https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/selective_editing.py
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/selective_editing/methodological_specification.md
+userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/selective-editing/selective_editing.md
+```
+
+— 11/10/2024 at 11:33:19 AM —
+
+# CMS Update: 11/10/2024 at 11:42:43 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 2
+
+Updated At: 2024-10-11T11:42:43.777Z
+
+Content Updated:
+
+```txt
+id: thousand-pound-correction
+name: Thousand Pound Correction
+theme: Editing
+expertGroup: Editing & Imputation
+language: Python/Pandas
+author: ONS
+description: The automatic editing method for thousand pounds correction is commonly used across ONS business surveys. It is a generic rule that uses user defined thresholds to automatically detect and correct thousand pounds errors. This is when the respondent should have reported values in thousands of pounds but has reported in actual pounds e.g., returned a value of £56,000 instead of correctly submitting 56.
+
+The method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent.
+
+To install this method, please see Help Centre - [Install a method](https://statisticalmethodslibrary.ons.gov.uk/help-centre/access/install-a-method).
+
+To use this method, please see [User Notes](https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/thousand-pound-correction/thousand_pound_correction.md). 
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v1.1.0
+releaseLink: https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0
+codeLink: https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/thousand_pounds/thousand_pounds.py
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/thousand_pounds_correction/thousand_pounds_correction.md
+userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/thousand-pound-correction/thousand_pound_correction.md
+```
+
+— 11/10/2024 at 11:42:43 AM —
+
+# CMS Update: 11/10/2024 at 11:50:25 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 3
+
+Updated At: 2024-10-11T11:50:25.549Z
+
+Content Updated:
+
+```txt
+id: totals-and-components
+name: Totals and Components
+theme: Editing
+expertGroup: Editing & Imputation
+language: Python/Pandas
+author: ONS
+description: The automatic editing method for totals and components correction is currently used in ONS business surveys to ensure fixed relationships between variables are satisfied. For example, when a total (e.g., total employment) is collected along with the component breakdown (e.g., full-time male, full-time female, part-time male, part-time female). The primary use of the method is to automatically detect and correct errors in respondent data where fixed relationships have not been satisfied to improve the efficiency of the editing process, reduce the burden on respondents and survey validators and improve overall data quality. This method can also be used to ensure fixed relationships between variables are satisfied in other data types such as imputed data to improve overall data quality.
+
+To install this method, please see Help Centre - [Install a Method](https://statisticalmethodslibrary.ons.gov.uk/help-centre/access/install-a-method).
+
+To use this method, please see [User Notes](https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/totals-and-components/totals-and-components.md). 
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v1.1.0
+releaseLink: https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0
+codeLink: https://github.com/ONSdigital/sml-python-small/tree/main/sml_small/editing/totals_and_components/totals_and_components.py
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/totals_components/totals_components.md
+userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/totals-and-components/totals-and-components.md
+```
+
+— 11/10/2024 at 11:50:25 AM —
+
+# CMS Update: 18/10/2024 at 01:47:30 PM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-10-18T13:47:30.515Z
+
+Content Updated:
+
+```txt
+id: metadata
+term: Metadata
+meaning: 'Data about data', giving information about a product itself, as opposed to its contents. In the case of the SML, metadata includes, for example: when a method was onboarded; its development status; by whom it was developed; whether or not it is approved for use in official outputs; etc.
+```
+
+— 18/10/2024 at 01:47:30 PM —
+
+# CMS Update: 18/10/2024 at 01:47:27 PM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 2
+
+Updated At: 2024-10-18T13:47:27.504Z
+
+Content Updated: entry 1blaUAHFEY66NrdCtomp9k has been deleted.
+
+```txt
+id: {"en-US":"pypi"}
+term: {"en-US":"PyPI"}
+meaning: {"en-US":"The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software."}
+relatedlist: {"en-US":["SML","Package","Repository"]}
+externalLinkTextShort: {"en-US":"ONS-SML user profile on PyPI"}
+externalUrl: {"en-US":"https://pypi.org/user/ons-sml/"}
+```
+
+— 18/10/2024 at 01:47:27 PM —
+
