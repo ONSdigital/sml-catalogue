@@ -4784,3 +4784,28 @@ meaning: 'Data about data', giving information about a product itself, as oppose
 
 — 18/10/2024 at 01:47:30 PM —
 
+# CMS Update: 18/10/2024 at 01:47:27 PM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 2
+
+Updated At: 2024-10-18T13:47:27.504Z
+
+Content Updated: entry 1blaUAHFEY66NrdCtomp9k has been deleted.
+
+```txt
+id: {"en-US":"pypi"}
+term: {"en-US":"PyPI"}
+meaning: {"en-US":"The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software."}
+relatedlist: {"en-US":["SML","Package","Repository"]}
+externalLinkTextShort: {"en-US":"ONS-SML user profile on PyPI"}
+externalUrl: {"en-US":"https://pypi.org/user/ons-sml/"}
+```
+
+— 18/10/2024 at 01:47:27 PM —
+
