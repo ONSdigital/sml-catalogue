@@ -1,5 +1,17 @@
 <!--next-version-placeholder-->
 
+## v1.9.0-rc.1 (2024-10-18)
+
+### Feature
+
+* User changes to contentful content model ([`45b0c90`](https://github.com/ONSdigital/sml-catalogue/commit/45b0c9031f28cf983a49ab94d6565c96859dd182))
+* User changes to contentful content model ([`4ee6d35`](https://github.com/ONSdigital/sml-catalogue/commit/4ee6d35588064926a752b11cc666abc6f92ee66f))
+* User changes to contentful content model ([`6134958`](https://github.com/ONSdigital/sml-catalogue/commit/6134958360ab36147d5c10a500e05a68119806d4))
+* User changes to contentful content model ([`31a396d`](https://github.com/ONSdigital/sml-catalogue/commit/31a396dc18ae99753b7d785be7f584e8756bb0ea))
+* User changes to contentful content model ([`3e8ab66`](https://github.com/ONSdigital/sml-catalogue/commit/3e8ab66d3547ecdb0e3a47cdf38a7245988ca670))
+* User changes to contentful content model ([`f9b9653`](https://github.com/ONSdigital/sml-catalogue/commit/f9b9653e12d7784b8305f19d4661072730ef4d88))
+* SPP12087 help centre structure refactor ([#385](https://github.com/ONSdigital/sml-catalogue/issues/385)) ([`827a568`](https://github.com/ONSdigital/sml-catalogue/commit/827a56869281d31c0c6eda20309c72e817321b87))
+
 ## v1.8.0 (2024-10-15)
 
 ### Fix
