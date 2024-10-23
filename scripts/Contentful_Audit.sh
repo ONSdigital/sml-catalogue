@@ -48,23 +48,22 @@ err_handler() {
   timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
   migration_log="${timestamp}: Error raised while auditing content from $base_environment to $compare_environment \n - Failing command: ${1} \n - Exit code: ${2}"
   echo -e $migration_log
-  echo -e $migration_log >> ./contentful-data/migration-log.txt
+  echo -e $migration_log >> ../contentful-data/migration-log.txt
   exit $2
 }
 
 trap 'err_handler "$BASH_COMMAND" "$?"' ERR
 
 export ACTIVE_VALUE=False
-python contentful_webhook.py
+python sub_scripts/contentful_webhook.py
 echo " -- Webhook Disabled"
 contentful merge show --te "$compare_environment" --se "$base_environment" --management-token $CLI_KEY
-contentful merge export --te $compare_environment --se "$base_environment" --management-token $CLI_KEY --output-file ./contentful-data/audits/${compare_environment}-export.js
-contentful-merge create --space $SPACE_ID --source $base_environment --target $compare_environment --cda-token $MASTER_CDA_KEY --output-file ./contentful-data/audits/${base_environment}-${compare_environment}-changeset.json
+contentful merge export --te $compare_environment --se "$base_environment" --management-token $CLI_KEY --output-file ../contentful-data/audits/${compare_environment}-export.js
+contentful-merge create --space $SPACE_ID --source $base_environment --target $compare_environment --cda-token $MASTER_CDA_KEY --output-file ../contentful-data/audits/${base_environment}-${compare_environment}-changeset.json
 export ACTIVE_VALUE=True
-python contentful_webhook.py
+python sub_scripts/contentful_webhook.py
 echo " -- Webhook Enabled"
 
 timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
 migration_log="${timestamp}: Audited content between $base_environment and $compare_environment"
-echo $migration_log
-echo $migration_log >> ./contentful-data/migration-log.txt
+python sub_scripts/Contentful_audit.py ${base_environment}-${compare_environment}-changeset.json ${compare_environment}
