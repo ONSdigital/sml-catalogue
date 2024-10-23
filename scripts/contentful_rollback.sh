@@ -45,7 +45,7 @@ err_handler() {
   timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
   migration_log="${timestamp}: Error raised while rolling back content in $target_environment \n - Failing command: ${1} \n - Exit code: ${2}"
   echo -e $migration_log
-  echo -e $migration_log >> ./contentful-data/migration-log.txt
+  echo -e $migration_log >> ../contentful-data/migration-log.txt
   exit $2
 }
 
@@ -61,16 +61,16 @@ else
 fi
 echo "Rolling back content in $target_environment"
 # export the current state of the environment for use in deletion_changeset.py
-contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/content-exports --environment-id $target_environment --content-file ${target_environment}-export.json
+contentful space export --management-token $CLI_KEY --export-dir ../contentful-data/content-exports --environment-id $target_environment --content-file ${target_environment}-export.json
 # delete all entries using deletion_changeset.py
-python deletion_changeset.py $target_environment ./contentful-data/content-exports/${target_environment}-export.json
-contentful-merge apply --space $SPACE_ID --environment $target_environment --cma-token $CLI_KEY --file ./contentful-data/migrations/deletion-changeset.json
+python sub_scripts/deletion_changeset.py $target_environment ../contentful-data/content-exports/${target_environment}-export.json
+contentful-merge apply --space $SPACE_ID --environment $target_environment --cma-token $CLI_KEY --file ../contentful-data/migrations/deletion-changeset.json
 # perform any necessary content type changes
-contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/rollbacks/${target_environment}-export.js
+contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ../contentful-data/rollbacks/${target_environment}-export.js
 # import the snapshot
-contentful space import --management-token $CLI_KEY --environment-id $target_environment --content-file ./contentful-data/rollbacks/${target_environment}-export.json
+contentful space import --management-token $CLI_KEY --environment-id $target_environment --content-file ../contentful-data/rollbacks/${target_environment}-export.json
 # log the rollback
 timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
 migration_log="${timestamp}: Performed rollback on environment $target_environment"
 echo $migration_log
-echo $migration_log >> ./contentful-data/migration-log.txt
+echo $migration_log >> ../contentful-data/migration-log.txt

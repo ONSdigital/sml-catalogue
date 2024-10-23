@@ -52,7 +52,7 @@ err_handler() {
   timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
   migration_log="${timestamp}: Error raised while migrating content from $source_environment to $target_environment \n - Failing command: ${1} \n - Exit code: ${2}"
   echo -e $migration_log
-  echo -e $migration_log >> ./contentful-data/migration-log.txt
+  echo -e $migration_log >> ../contentful-data/migration-log.txt
   echo "Consider triggering a rollback with the contentful_rollback script:"
   echo "./contentful_rollback.sh -s $source_environment -t $target_environment"
   exit $2
@@ -72,23 +72,23 @@ fi
 echo "Migrating content from $source_environment to $target_environment"
 # create backup files
 # store all the content entries and types in the target environment for rollback
-contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/rollbacks --environment-id $target_environment --content-file ${target_environment}-export.json
+contentful space export --management-token $CLI_KEY --export-dir ../contentful-data/rollbacks --environment-id $target_environment --content-file ${target_environment}-export.json
 # store the migration that would be required to revert the target environment to its original state
-contentful merge export --te $source_environment --se $target_environment --management-token $CLI_KEY --output-file ./contentful-data/rollbacks/${target_environment}-export.js
+contentful merge export --te $source_environment --se $target_environment --management-token $CLI_KEY --output-file ../contentful-data/rollbacks/${target_environment}-export.js
 
 # delete all entries in target environment using deletion_changeset.py
-python deletion_changeset.py $target_environment ./contentful-data/rollbacks/${target_environment}-export.json
-contentful-merge apply --space $SPACE_ID --environment $target_environment --cma-token $CLI_KEY --file ./contentful-data/migrations/deletion-changeset.json
+python sub_scripts/deletion_changeset.py $target_environment ../contentful-data/rollbacks/${target_environment}-export.json
+contentful-merge apply --space $SPACE_ID --environment $target_environment --cma-token $CLI_KEY --file ../contentful-data/migrations/deletion-changeset.json
 # migrate content types
-contentful merge export --te $target_environment --se $source_environment --management-token $CLI_KEY --output-file ./contentful-data/migrations/${source_environment}-export.js
-contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ./contentful-data/migrations/${source_environment}-export.js
+contentful merge export --te $target_environment --se $source_environment --management-token $CLI_KEY --output-file ../contentful-data/migrations/${source_environment}-export.js
+contentful space migration --space-id $SPACE_ID --management-token $CLI_KEY --environment-id $target_environment ../contentful-data/migrations/${source_environment}-export.js
 
 # then merge entries
-contentful-merge create --space $SPACE_ID --source $source_environment --target $target_environment --cda-token $MASTER_CDA_KEY --output-file ./contentful-data/migrations/${source_environment}-${target_environment}-changeset.json
-contentful-merge apply --space $SPACE_ID --environment $target_environment --cma-token $CLI_KEY --file ./contentful-data/migrations/${source_environment}-${target_environment}-changeset.json
+contentful-merge create --space $SPACE_ID --source $source_environment --target $target_environment --cda-token $MASTER_CDA_KEY --output-file ../contentful-data/migrations/${source_environment}-${target_environment}-changeset.json
+contentful-merge apply --space $SPACE_ID --environment $target_environment --cma-token $CLI_KEY --file ../contentful-data/migrations/${source_environment}-${target_environment}-changeset.json
 
 # log the migration
 timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
 migration_log="${timestamp}: Migrated content from $source_environment to $target_environment"
 echo $migration_log
-echo $migration_log >> ./contentful-data/migration-log.txt
+echo $migration_log >> ../contentful-data/migration-log.txt
