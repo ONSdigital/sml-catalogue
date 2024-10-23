@@ -1,8 +1,9 @@
-import json
-from sys import argv
-from contentful import Client
 import difflib
+import json
 import os
+from sys import argv
+
+from contentful import Client
 
 MASTER_CDA_KEY = os.environ.get("MASTER_CDA_KEY")
 SPACE_ID = os.environ.get("SPACE_ID")
