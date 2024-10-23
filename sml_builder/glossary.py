@@ -1,8 +1,7 @@
 import re
-from json import dump, loads
+from json import dump, load
 from os import listdir, makedirs, path
 
-from _jsonnet import evaluate_file  # pylint: disable=no-name-in-module
 from flask import render_template
 
 from sml_builder import app
@@ -40,7 +39,7 @@ def display_glossary():
             if "external_link_text_short" in i:
                 created_file["external_link_text"] = i["external_link_text_short"]
             with open(
-                f'./contentful_content/glossary/{i["id"]}.jsonnet',
+                f'./contentful_content/glossary/{i["id"]}.json',
                 "w",
                 encoding="UTF-8",
             ) as f:
@@ -48,7 +47,9 @@ def display_glossary():
 
     try:
         for file in listdir(glossary_dir):
-            glossary_term = loads(evaluate_file(f"{glossary_dir}/{file}"))
+            with open(f"{glossary_dir}/{file}", encoding="UTF-8") as json_data:
+                glossary_term = load(json_data)
+                json_data.close()
             letter_value = (
                 glossary_term["letter"].upper()
                 if "letter" in glossary_term

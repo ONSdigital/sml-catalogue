@@ -1,5 +1,187 @@
 <!--next-version-placeholder-->
 
+## v1.9.0-rc.1 (2024-10-18)
+
+### Feature
+
+* User changes to contentful content model ([`45b0c90`](https://github.com/ONSdigital/sml-catalogue/commit/45b0c9031f28cf983a49ab94d6565c96859dd182))
+* User changes to contentful content model ([`4ee6d35`](https://github.com/ONSdigital/sml-catalogue/commit/4ee6d35588064926a752b11cc666abc6f92ee66f))
+* User changes to contentful content model ([`6134958`](https://github.com/ONSdigital/sml-catalogue/commit/6134958360ab36147d5c10a500e05a68119806d4))
+* User changes to contentful content model ([`31a396d`](https://github.com/ONSdigital/sml-catalogue/commit/31a396dc18ae99753b7d785be7f584e8756bb0ea))
+* User changes to contentful content model ([`3e8ab66`](https://github.com/ONSdigital/sml-catalogue/commit/3e8ab66d3547ecdb0e3a47cdf38a7245988ca670))
+* User changes to contentful content model ([`f9b9653`](https://github.com/ONSdigital/sml-catalogue/commit/f9b9653e12d7784b8305f19d4661072730ef4d88))
+* SPP12087 help centre structure refactor ([#385](https://github.com/ONSdigital/sml-catalogue/issues/385)) ([`827a568`](https://github.com/ONSdigital/sml-catalogue/commit/827a56869281d31c0c6eda20309c72e817321b87))
+
+## v1.8.0 (2024-10-15)
+
+### Fix
+
+* Amending Non contentful runs to no longer require jsonnet package and construct those files with Json instead ([#390](https://github.com/ONSdigital/sml-catalogue/issues/390)) ([`ba9b61d`](https://github.com/ONSdigital/sml-catalogue/commit/ba9b61d9000a2717482e040fd2cb7168c609c49b))
+
+## v1.8.1-rc.1 (2024-10-15)
+
+### Fix
+
+* Amending Non contentful runs to no longer require jsonnet package and construct those files with Json instead ([#390](https://github.com/ONSdigital/sml-catalogue/issues/390)) ([`ba9b61d`](https://github.com/ONSdigital/sml-catalogue/commit/ba9b61d9000a2717482e040fd2cb7168c609c49b))
+
+## v1.8.0 (2024-10-15)
+
+### Fix
+
+* Amending Non contentful runs to no longer require jsonnet package and construct those files with Json instead ([#390](https://github.com/ONSdigital/sml-catalogue/issues/390)) ([`ba9b61d`](https://github.com/ONSdigital/sml-catalogue/commit/ba9b61d9000a2717482e040fd2cb7168c609c49b))
+
+## v1.8.0-rc.5 (2024-10-11)
+
+### Feature
+
+* User changes to contentful content model ([`dd6da90`](https://github.com/ONSdigital/sml-catalogue/commit/dd6da9087e949b635a5715444ca5b9d0a6f31153))
+
+## v1.8.0-rc.4 (2024-10-11)
+
+### Feature
+
+* User changes to contentful content model ([`e0fcc92`](https://github.com/ONSdigital/sml-catalogue/commit/e0fcc92f5231071a4671ddca765c91a8c3595922))
+
+## v1.8.0-rc.3 (2024-10-11)
+
+### Feature
+
+* User changes to contentful content model ([`4ed84cc`](https://github.com/ONSdigital/sml-catalogue/commit/4ed84cc9980a9c720683b8ca3fc32f44bc567f5e))
+
+## v1.8.0-rc.2 (2024-10-11)
+
+### Feature
+
+* User changes to contentful content model ([`aaa95f3`](https://github.com/ONSdigital/sml-catalogue/commit/aaa95f3746ae2d1c4514983b0964ccf7fa0217d3))
+
+## v1.8.0-rc.1 (2024-10-11)
+
+### Feature
+
+* User changes to contentful content model ([`48a07c9`](https://github.com/ONSdigital/sml-catalogue/commit/48a07c99a5368f0adcbc4f81ec87cdb47fae3fdf))
+* User changes to contentful content model ([`06d46ed`](https://github.com/ONSdigital/sml-catalogue/commit/06d46ed875814433a7ffeb074ac79e240bc31e8d))
+* User changes to contentful content model ([`bd4e2ad`](https://github.com/ONSdigital/sml-catalogue/commit/bd4e2ad163a7593d166a1f3ab5764b20acb993a0))
+* User changes to contentful content model ([`2d11bb5`](https://github.com/ONSdigital/sml-catalogue/commit/2d11bb53a32a13278a63a599180e2f8d73dd67ab))
+
+### Fix
+
+* Amending installed package list ([#389](https://github.com/ONSdigital/sml-catalogue/issues/389)) ([`2bb1289`](https://github.com/ONSdigital/sml-catalogue/commit/2bb12893ce42b4c093ec46e091c51ab8ca767425))
+
+## v1.7.0 (2024-10-08)
+
+
+
+## v1.7.0-rc.7 (2024-10-07)
+
+### Feature
+
+* User changes to contentful content model ([`543b079`](https://github.com/ONSdigital/sml-catalogue/commit/543b079d8c31a4f4d0932206264fd84699edcd5a))
+
+## v1.7.0-rc.6 (2024-10-07)
+
+### Feature
+
+* User changes to contentful content model ([`ac0a74e`](https://github.com/ONSdigital/sml-catalogue/commit/ac0a74e8763b24a6a6e595df54d49ed6963fa1f7))
+
+## v1.7.0-rc.5 (2024-10-07)
+
+### Feature
+
+* User changes to contentful content model ([`df02ea8`](https://github.com/ONSdigital/sml-catalogue/commit/df02ea87d703f3aba77978406fc99c03f805851b))
+
+## v1.7.0-rc.4 (2024-10-07)
+
+### Feature
+
+* User changes to contentful content model ([`56fde60`](https://github.com/ONSdigital/sml-catalogue/commit/56fde600e57426b503cca64e8f06d978a13003ad))
+
+## v1.7.0-rc.3 (2024-10-07)
+
+### Feature
+
+* User changes to contentful content model ([`e4fdf5d`](https://github.com/ONSdigital/sml-catalogue/commit/e4fdf5d21135c1f16bb64417ecf9813bfe3343db))
+
+## v1.7.0-rc.2 (2024-10-07)
+
+### Feature
+
+* User changes to contentful content model ([`b7122a9`](https://github.com/ONSdigital/sml-catalogue/commit/b7122a92888efd97cceb5cd2304caaad7f0f1e24))
+
+## v1.7.0-rc.1 (2024-10-07)
+
+### Feature
+
+* User changes to contentful content model ([`06714f7`](https://github.com/ONSdigital/sml-catalogue/commit/06714f7c6d775980447393e7878921b9dc2e7a7e))
+* User changes to contentful content model ([`3a327ed`](https://github.com/ONSdigital/sml-catalogue/commit/3a327ed857cec2a10aa15f7d284c401d9511b496))
+* User changes to contentful content model ([`38ca928`](https://github.com/ONSdigital/sml-catalogue/commit/38ca92899b5046f0b4eb76ff429cb4768bf49d17))
+* User changes to contentful content model ([`7f730bb`](https://github.com/ONSdigital/sml-catalogue/commit/7f730bb30028f897d5a7af9c0eb4065c2b254dd0))
+* User changes to contentful content model ([`2e07aff`](https://github.com/ONSdigital/sml-catalogue/commit/2e07aff40d60e569bfe38bcb31107ad8f40f3e87))
+* User changes to contentful content model ([`0712734`](https://github.com/ONSdigital/sml-catalogue/commit/0712734473f2edf1b83f765711f59423a9e8fa39))
+* User changes to contentful content model ([`746087d`](https://github.com/ONSdigital/sml-catalogue/commit/746087d112c4f09a0e8048a0d9e03b47390af780))
+* User changes to contentful content model ([`9fb011b`](https://github.com/ONSdigital/sml-catalogue/commit/9fb011b9bc7b6859ec566c00e0f6b419809ec606))
+
+## v1.6.0 (2024-10-04)
+
+
+
+## v1.6.0 (2024-10-04)
+
+
+
+## v1.6.0-rc.14 (2024-10-02)
+
+### Feature
+
+* User changes to contentful content model ([`f602f1b`](https://github.com/ONSdigital/sml-catalogue/commit/f602f1b19ea55b6b3265843e00b40f96753df393))
+
+## v1.6.0-rc.13 (2024-10-01)
+
+### Feature
+
+* User changes to contentful content model ([`179f3df`](https://github.com/ONSdigital/sml-catalogue/commit/179f3dfd70cc6e2c25c25d9071ee52a1b3791d6e))
+
+## v1.6.0-rc.12 (2024-10-01)
+
+### Feature
+
+* User changes to contentful content model ([`4bdd265`](https://github.com/ONSdigital/sml-catalogue/commit/4bdd26583e74026b454f06825839199b5ee9b368))
+
+## v1.6.0-rc.11 (2024-10-01)
+
+### Feature
+
+* User changes to contentful content model ([`e9df78a`](https://github.com/ONSdigital/sml-catalogue/commit/e9df78a26d8ea798c0268626b4e0dc2abe3d3e56))
+
+## v1.6.0-rc.10 (2024-09-30)
+
+### Feature
+
+* User changes to contentful content model ([`bdb9ffe`](https://github.com/ONSdigital/sml-catalogue/commit/bdb9ffed55690d65287dfdc57f1f2e91f308ef08))
+
+## v1.6.0-rc.9 (2024-09-30)
+
+### Feature
+
+* User changes to contentful content model ([`3693bba`](https://github.com/ONSdigital/sml-catalogue/commit/3693bba4d8df3dbc123ba10aef3099f1c7b94691))
+
+## v1.6.0-rc.8 (2024-09-30)
+
+### Feature
+
+* User changes to contentful content model ([`de5722c`](https://github.com/ONSdigital/sml-catalogue/commit/de5722cd78e66a84037423054e92ca991c609af4))
+
+## v1.6.0-rc.7 (2024-09-30)
+
+### Feature
+
+* User changes to contentful content model ([`102d3c0`](https://github.com/ONSdigital/sml-catalogue/commit/102d3c08a1e80d8334a8f115129fb69c1ff1c552))
+
+## v1.6.0-rc.6 (2024-09-26)
+
+### Feature
+
+* User changes to contentful content model ([`ed32260`](https://github.com/ONSdigital/sml-catalogue/commit/ed322600bec645d2ab2c1950b8e65e150ebcc6e5))
+
 ## v1.6.0-rc.5 (2024-09-25)
 
 ### Feature

@@ -95,7 +95,7 @@ def set_variables():
 def build_help_centre_structure():
     category_urls = {
         "Information": "information",
-        "Access (and usage)": "access",
+        "Accessing Methods": "access",
         "Feedback": "feedback",
         "Support": "support",
     }
