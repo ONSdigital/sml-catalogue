@@ -4,5 +4,5 @@ Feature: About library tests
 
     Scenario: Title check
         Given I'm an sml portal user
-        When I navigate to the "about" page
-        Then The title of the page is "About the Statistical Methods Library"
+        When I navigate to the "about-page" page
+        Then The id of the title is "about-page-content"
