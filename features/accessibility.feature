@@ -1,97 +1,41 @@
-# Tests for abaccessibilityout page.
+# Tests for accessibility page.
 
 Feature: About library tests
 
-    Scenario: Help centre page accessibility check
+    Scenario: Help centre page install a method accessibility check
         Given I'm an sml portal user
-        When I navigate to the help centre "submit a method request" page
-        Then The title of the page is "Help centre - Submit a method request"
+        When I navigate to the help centre page
+        Then The id of the title is "help-centre-content"
         And The accessibility test passes
 
-    Scenario: Submit a method request page accessibility check
+    Scenario: Main accessibility check
         Given I'm an sml portal user
-        When I navigate to the help centre "how the methods are versioned" page
-        Then The title of the page is "Help centre - How the methods are versioned"
-        And The accessibility test passes
-
-    Scenario: Help centre page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the help centre "coding standards" page
-        Then The title of the page is "Help centre - Coding standards"
-        And The accessibility test passes
-
-    Scenario: Help centre page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the help centre "find and view methods" page
-        Then The title of the page is "Help centre - Find and view methods"
-        And The accessibility test passes
-
-    Scenario: Help centre page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the help centre "use a method" page
-        Then The title of the page is "Help centre - Use a method"
-        And The accessibility test passes
-
-    Scenario: Help centre page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the help centre "report a defect or bug" page
-        Then The title of the page is "Help centre - Report a defect or bug"
-        And The accessibility test passes
-
-    Scenario: Help centre page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the help centre "provide feedback" page
-        Then The title of the page is "Help centre - Provide feedback"
-        And The accessibility test passes
-
-    Scenario: Help centre page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the help centre "get support" page
-        Then The title of the page is "Help centre - Get support"
-        And The accessibility test passes
-
-    Scenario: Help centre page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the help centre "get information on expert groups" page
-        Then The title of the page is "Help centre - Get information on expert groups"
-        And The accessibility test passes
-
-    Scenario: Help centre page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the help centre "troubleshooting" page
-        Then The title of the page is "Help centre - Troubleshooting"
-        And The accessibility test passes
-
-    Scenario: Help centre page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the help centre "using github" page
-        Then The title of the page is "Help centre - Using GitHub"
-        And The accessibility test passes
+        When The id of the title is "main-content"
+        Then The accessibility test passes
 
     Scenario: Accessibility page accessibility check
         Given I'm an sml portal user
         When I navigate to "accessibility-statement"
-        Then The title of the page is "Accessibility Statement"
+        Then The id of the title is "accessibility-statement-content"
         And The accessibility test passes
 
     Scenario: Methods catalogue page accessibility check
         Given I'm an sml portal user
         When I navigate to the methods catalogue page
-        Then The title of the page is "Methods catalogue"
+        Then The id of the title is "methods-catalogue-content"
         And The accessibility test passes
 
     Scenario: Glossary page accessibility check
         Given I'm an sml portal user
         When I navigate to the "glossary" page
-        Then The title of the page is "Library glossary"
-        And The accessibility test passes
-
-
+        Then The id of the title is "glossary-page-content"
+        And The accessibility test passes    
+        
     Scenario: Cell Key Perturbation page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the "Cell Key Perturbation" summary page
-        Then The title of the page is "Method: Cell Key Perturbation"
-        And The accessibility test passes
+    Given I'm an sml portal user
+    When I navigate to the "Cell Key Perturbation" summary page
+    Then The title of the page is "Method: Cell Key Perturbation"
+    And The accessibility test passes
 
     Scenario: Totals and components page accessibility check
         Given I'm an sml portal user

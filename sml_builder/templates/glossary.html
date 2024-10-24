@@ -7,76 +7,77 @@
 {%- endblock head -%}
 
 {%- block main -%}
+    <div id="glossary-page-content">
+        <h1 class="ons-u-mt-no">Library glossary</h1>
 
-    <h1 class="ons-u-mt-no">Library glossary</h1>
-
-    <p id="page-subtitle">Definitions of words, phrases, and abbreviations used within the Statistical Methods Library</p>
-
-    <hr>
-
-    {%- set nav_options = [] -%}
-    {%- for letter in page.nav_options -%}
-        {%- if nav_options.append({"text": letter, "url": '#' + letter }) -%} {%- endif -%}
-    {%- endfor -%}
-
-    {%- from "components/list/_macro.njk" import onsList -%}
-    {{
-        onsList({
-            "variants": ['bare', 'inline'],
-            "itemsList": nav_options,
-            "classes": "ons-u-mt-l"
-        })
-    }}
-
-    <hr>
-
-    {%- for letter in page.nav_options -%}
-        <h2 class="ons-u-mt-l"><a name="{{ letter }}"></a>{{ letter }}</h2>
-
-        {%- for term in page.glossary -%}
-            {%- if term.letter == letter -%}
-                <div class="ons-u-mb-l">
-                    <h3><a name="{{ term.hash }}"></a>{{ term.term }}</h3>
-                    {{ term.meaning | paras }}
-                    {%- if term.external_links -%}
-                        <p><strong>Further information: </strong>
-                        {%- for link in term.external_links -%}
-                            {%- from "components/external-link/_macro.njk" import onsExternalLink -%}
-                            {{
-                              onsExternalLink({
-                                "url": link['link'],
-                                "linkText": link['text']
-                              })
-                            }}
-                            {{ ", " if not loop.last else "" }}
-                        {%- endfor -%}
-                        </p>
-                    {%- endif -%}
-                    {%- if term.related -%}
-                        <p><strong>See also: </strong>
-                        {% for related in term.related %}
-                            <a href="#{{ related  | convert_name }}">{{ related }}</a>{{ ", " if not loop.last else "" }}
-                        {%- endfor -%}
-                        </p>
-                    {%- endif -%}
-                </div>
-            {%- endif -%}
-        {%- endfor -%}
+        <p>Definitions of words, phrases, and abbreviations used within the Statistical Methods Library</p>
 
         <hr>
-    {%- endfor -%}
 
-    {%- from "components/button/_macro.njk" import onsButton -%}
-    {{
-        onsButton({
-            "text": 'Back to top',
-            "title": 'Go to top',
-            "id": 'topBtn',
-            "url": "#",
-            "iconType": 'arrow-next',
-            "variants": ['secondary']
-        })
-    }}
+        {%- set nav_options = [] -%}
+        {%- for letter in page.nav_options -%}
+            {%- if nav_options.append({"text": letter, "url": '#' + letter }) -%} {%- endif -%}
+        {%- endfor -%}
+
+        {%- from "components/list/_macro.njk" import onsList -%}
+        {{
+            onsList({
+                "variants": ['bare', 'inline'],
+                "itemsList": nav_options,
+                "classes": "ons-u-mt-l"
+            })
+        }}
+
+        <hr>
+
+        {%- for letter in page.nav_options -%}
+            <h2 class="ons-u-mt-l"><a name="{{ letter }}"></a>{{ letter }}</h2>
+
+            {%- for term in page.glossary -%}
+                {%- if term.letter == letter -%}
+                    <div class="ons-u-mb-l">
+                        <h3 id="glossary-page-subtitle"><a name="{{ term.hash }}"></a>{{ term.term }}</h3>
+                        {{ term.meaning | paras }}
+                        {%- if term.external_links -%}
+                            <p><strong>Further information: </strong>
+                            {%- for link in term.external_links -%}
+                                {%- from "components/external-link/_macro.njk" import onsExternalLink -%}
+                                {{
+                                onsExternalLink({
+                                    "url": link['link'],
+                                    "linkText": link['text']
+                                })
+                                }}
+                                {{ ", " if not loop.last else "" }}
+                            {%- endfor -%}
+                            </p>
+                        {%- endif -%}
+                        {%- if term.related -%}
+                            <p><strong>See also: </strong>
+                            {% for related in term.related %}
+                                <a href="#{{ related  | convert_name }}">{{ related }}</a>{{ ", " if not loop.last else "" }}
+                            {%- endfor -%}
+                            </p>
+                        {%- endif -%}
+                    </div>
+                {%- endif -%}
+            {%- endfor -%}
+
+            <hr>
+        {%- endfor -%}
+
+        {%- from "components/button/_macro.njk" import onsButton -%}
+        {{
+            onsButton({
+                "text": 'Back to top',
+                "title": 'Go to top',
+                "id": 'topBtn',
+                "url": "#",
+                "iconType": 'arrow-next',
+                "variants": ['secondary']
+            })
+        }}
+    </div>
 
 {% endblock main -%}
 

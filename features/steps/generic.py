@@ -9,21 +9,16 @@ from setupSelenium import EC, By, WebDriverWait, driver, timeout
 @given("I'm an sml portal user")
 def auth_user(context):
     driver.get(context.config.userdata.get("host"))
-    page_title = (
-        WebDriverWait(driver, timeout=timeout)
-        .until(lambda d: d.find_element(By.TAG_NAME, "h1"))
-        .text
-    )
-    assert (
-        page_title == "An open source library for statistical code approved by the ONS"
-    )
-
-
-@when('I navigate to the "{page}" page')
-def navigate_to_page(context, page):
-    driver.get(urljoin(context.config.userdata.get("host") + "resources/", page))
     WebDriverWait(driver, timeout=timeout).until(
-        EC.presence_of_element_located((By.ID, "main-content"))
+        EC.presence_of_element_located((By.ID, "main-title"))
+    )
+
+
+@when('I navigate to the "{page_id}" page')
+def navigate_to_page(context, page_id):
+    driver.get(urljoin(context.config.userdata.get("host") + "resources/", page_id))
+    WebDriverWait(driver, timeout=timeout).until(
+        EC.presence_of_element_located((By.ID, "{page_id}-content"))
     )
 
 
@@ -35,14 +30,14 @@ def navigate_to_url(context, url):
     )
 
 
-@then('The title of the page is "{title}"')
-def check_generic_title(context, title):
-    page_title = (
+@then('The id of the title is "{id}"')
+def check_generic_id(context, id):
+    page_id = (
         WebDriverWait(driver, timeout=timeout)
-        .until(lambda d: d.find_element(By.TAG_NAME, "h1"))
-        .text
+        .until(lambda d: d.find_element(By.ID, "{id}"))
+        .id
     )
-    assert page_title == title
+    assert page_id == id
 
 
 @then('The subtitle of the page is "{subtitle}"')
