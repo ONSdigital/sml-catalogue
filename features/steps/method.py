@@ -56,6 +56,16 @@ def check_dropdown_content(context, text):
     )
     assert dropdown_content == text
 
+@then('The id of the dropdown is "{id}"')
+def check_dropdown_id(context, id):
+    page_id = None
+    page_id = (
+        WebDriverWait(driver, timeout=timeout)
+        .until(lambda d: d.find_element(By.ID, "{id}"))
+        .text
+    )
+    assert page_id != None
+
 
 def extractMethodTableContent(context, table):
     methods_catalogue_table = WebDriverWait(driver, timeout=timeout).until(

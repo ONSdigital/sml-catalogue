@@ -511,11 +511,29 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dl class=\"ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
+                    "html": "<dl class=\"ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
                     "impact": null,
                     "none": [],
                     "target": [
                         "dl"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-attr",
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\" role=\"img\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-icon--logo"
                     ]
                 }
             ],
@@ -548,6 +566,150 @@
                     "none": [],
                     "target": [
                         ".ons-cookies-banner"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-role",
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon\" viewBox=\"0 0 8 13\" xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" fill=\"currentColor\" role=\"img\" title=\"ons-icon-chevron\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "svg[viewBox=\"\\30 \\ 0\\ 8\\ 13\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-role",
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" aria-hidden=\"true\" role=\"img\" title=\"ons-icon-external-link\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-external-link[href$=\"mailto:smlhelp@ons.gov.uk\"][rel=\"noopener\"] > .ons-external-link__icon > .ons-icon[viewBox=\"\\30 \\ 0\\ 12\\ 12\"][title=\"ons-icon-external-link\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-role",
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" aria-hidden=\"true\" role=\"img\" title=\"ons-icon-external-link\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(12) > .ons-external-link__icon > .ons-icon[viewBox=\"\\30 \\ 0\\ 12\\ 12\"][title=\"ons-icon-external-link\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-role",
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" aria-hidden=\"true\" role=\"img\" title=\"ons-icon-external-link\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(14) > .ons-external-link__icon > .ons-icon[viewBox=\"\\30 \\ 0\\ 12\\ 12\"][title=\"ons-icon-external-link\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-role",
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" aria-hidden=\"true\" role=\"img\" title=\"ons-icon-external-link\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-external-link[rel=\"noopener\"][target=\"_blank\"]:nth-child(16) > .ons-external-link__icon > .ons-icon[viewBox=\"\\30 \\ 0\\ 12\\ 12\"][title=\"ons-icon-external-link\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-role",
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-footer__ogl-img\" xmlns=\"http://www.w3.org/2000/svg\" width=\"50px\" height=\"20px\" viewBox=\"0 0 60 24\" focusable=\"false\" aria-hidden=\"true\" role=\"img\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-footer__ogl-img"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-role",
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" aria-hidden=\"true\" role=\"img\" title=\"ons-icon-external-link\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-footer__license > .ons-external-link[rel=\"noopener\"][target=\"_blank\"] > .ons-external-link__icon > .ons-icon[viewBox=\"\\30 \\ 0\\ 12\\ 12\"][title=\"ons-icon-external-link\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-role",
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\" role=\"img\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-icon--logo"
                     ]
                 }
             ],
@@ -630,6 +792,42 @@
                     "target": [
                         "header"
                     ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-attr",
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon\" viewBox=\"0 0 8 13\" xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" fill=\"currentColor\" role=\"img\" title=\"ons-icon-chevron\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "svg[viewBox=\"\\30 \\ 0\\ 8\\ 13\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-attr",
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\" role=\"img\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-icon--logo"
+                    ]
                 }
             ],
             "tags": [
@@ -680,6 +878,42 @@
                     "target": [
                         "header"
                     ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-children",
+                            "impact": "critical",
+                            "message": "Required ARIA children are present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon\" viewBox=\"0 0 8 13\" xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" fill=\"currentColor\" role=\"img\" title=\"ons-icon-chevron\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "svg[viewBox=\"\\30 \\ 0\\ 8\\ 13\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-children",
+                            "impact": "critical",
+                            "message": "Required ARIA children are present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\" role=\"img\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-icon--logo"
+                    ]
                 }
             ],
             "tags": [
@@ -729,6 +963,42 @@
                     "none": [],
                     "target": [
                         "header"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-parent",
+                            "impact": "critical",
+                            "message": "Required ARIA parent role present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon\" viewBox=\"0 0 8 13\" xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" fill=\"currentColor\" role=\"img\" title=\"ons-icon-chevron\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "svg[viewBox=\"\\30 \\ 0\\ 8\\ 13\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-parent",
+                            "impact": "critical",
+                            "message": "Required ARIA parent role present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\" role=\"img\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".ons-icon--logo"
                     ]
                 }
             ],
@@ -807,6 +1077,70 @@
                     ],
                     "target": [
                         "header"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<svg class=\"ons-icon\" viewBox=\"0 0 8 13\" xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" fill=\"currentColor\" role=\"img\" title=\"ons-icon-chevron\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "invalidrole",
+                            "impact": "critical",
+                            "message": "ARIA role is valid",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "abstractrole",
+                            "impact": "serious",
+                            "message": "Abstract roles are not used",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "unsupportedrole",
+                            "impact": "critical",
+                            "message": "ARIA role is supported",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "svg[viewBox=\"\\30 \\ 0\\ 8\\ 13\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\" role=\"img\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "invalidrole",
+                            "impact": "critical",
+                            "message": "ARIA role is valid",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "abstractrole",
+                            "impact": "serious",
+                            "message": "Abstract roles are not used",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "unsupportedrole",
+                            "impact": "critical",
+                            "message": "ARIA role is supported",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-icon--logo"
                     ]
                 }
             ],
@@ -916,7 +1250,7 @@
                         }
                     ],
                     "any": [],
-                    "html": "<dl class=\"ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
+                    "html": "<dl class=\"ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -941,7 +1275,7 @@
                         }
                     ],
                     "any": [],
-                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\">",
+                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\" role=\"img\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1027,7 +1361,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dl class=\"ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
+                    "html": "<dl class=\"ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1045,7 +1379,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\">",
+                    "html": "<svg class=\"ons-icon--logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"197\" height=\"19\" viewBox=\"33 2 552 60\" aria-labelledby=\"ons-logo-en-footer-alt\" role=\"img\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1591,11 +1925,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                    "html": "<h1 id=\"page-title\" class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h1"
+                        "#page-title"
                     ]
                 },
                 {
@@ -1669,7 +2003,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p>The method checks the ratio of a principal variable\nagainst a suitable predictor variable and makes an automatic correction\nif the calculated ratio is around 1000. The automatic correction is\napplied to all relevant variables for the respondent.\n</p>",
+                    "html": "<p>The method checks the ratio of a principal variable\nagainst a suitable predictor variable and makes an automatic correction\nif the calculated ratio is around 1000. The automatic correction is\napplied to all relevant variables for the respondent.</p>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1747,7 +2081,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Author</dt>",
+                    "html": "<dt class=\"ons-description-list__term ons-grid__col ons-col-3@m\">Author</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1773,7 +2107,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">ONS</dd>",
+                    "html": "<dd class=\"ons-description-list__value ons-grid__col ons-col-9@m\">ONS</dd>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1799,7 +2133,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Theme</dt>",
+                    "html": "<dt class=\"ons-description-list__term ons-grid__col ons-col-3@m\">Theme</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1825,7 +2159,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Editing</dd>",
+                    "html": "<dd class=\"ons-description-list__value ons-grid__col ons-col-9@m\">Editing</dd>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1851,7 +2185,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Expert group</dt>",
+                    "html": "<dt class=\"ons-description-list__term ons-grid__col ons-col-3@m\">Expert group</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1877,7 +2211,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Editing &amp; Imputation</dd>",
+                    "html": "<dd class=\"ons-description-list__value ons-grid__col ons-col-9@m\">Editing &amp; Imputation</dd>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1903,7 +2237,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Languages</dt>",
+                    "html": "<dt class=\"ons-description-list__term ons-grid__col ons-col-3@m\">Languages</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1929,7 +2263,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Python/Pandas</dd>",
+                    "html": "<dd class=\"ons-description-list__value ons-grid__col ons-col-9@m\">Python/Pandas</dd>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -1955,7 +2289,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Release</dt>",
+                    "html": "<dt class=\"ons-description-list__term ons-grid__col ons-col-3@m\">Release</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2033,7 +2367,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p>Links to the method code, specification and user documentation are provided for further reading.\n</p>",
+                    "html": "<p>Links to the method code, specification and user documentation are provided for further reading.</p>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2265,7 +2599,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<dl class=\"ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
+                    "html": "<dl class=\"ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no \" title=\"Method information\" aria-label=\"Method information\">",
                     "impact": null,
                     "none": [
                         {
@@ -2312,7 +2646,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Author</dt>",
+                    "html": "<dt class=\"ons-description-list__term ons-grid__col ons-col-3@m\">Author</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2330,7 +2664,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">ONS</dd>",
+                    "html": "<dd class=\"ons-description-list__value ons-grid__col ons-col-9@m\">ONS</dd>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2348,7 +2682,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Theme</dt>",
+                    "html": "<dt class=\"ons-description-list__term ons-grid__col ons-col-3@m\">Theme</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2366,7 +2700,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Editing</dd>",
+                    "html": "<dd class=\"ons-description-list__value ons-grid__col ons-col-9@m\">Editing</dd>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2384,7 +2718,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Expert group</dt>",
+                    "html": "<dt class=\"ons-description-list__term ons-grid__col ons-col-3@m\">Expert group</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2402,7 +2736,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Editing &amp; Imputation</dd>",
+                    "html": "<dd class=\"ons-description-list__value ons-grid__col ons-col-9@m\">Editing &amp; Imputation</dd>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2420,7 +2754,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Languages</dt>",
+                    "html": "<dt class=\"ons-description-list__term ons-grid__col ons-col-3@m\">Languages</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2438,7 +2772,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">Python/Pandas</dd>",
+                    "html": "<dd class=\"ons-description-list__value ons-grid__col ons-col-9@m\">Python/Pandas</dd>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2456,7 +2790,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dt class=\"ons-metadata__term ons-grid__col ons-col-3@m\">Release</dt>",
+                    "html": "<dt class=\"ons-description-list__term ons-grid__col ons-col-3@m\">Release</dt>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2474,7 +2808,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<dd class=\"ons-metadata__value ons-grid__col ons-col-9@m\">",
+                    "html": "<dd class=\"ons-description-list__value ons-grid__col ons-col-9@m\">",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2662,6 +2996,24 @@
                     "target": [
                         "#main-content"
                     ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "page-title",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h1 id=\"page-title\" class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#page-title"
+                    ]
                 }
             ],
             "tags": [
@@ -2706,11 +3058,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                    "html": "<h1 id=\"page-title\" class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h1"
+                        "#page-title"
                     ]
                 },
                 {
@@ -2809,11 +3161,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                    "html": "<h1 id=\"page-title\" class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "h1"
+                        "#page-title"
                     ]
                 },
                 {
@@ -3380,7 +3732,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>The method checks the ratio of a principal variable\nagainst a suitable predictor variable and makes an automatic correction\nif the calculated ratio is around 1000. The automatic correction is\napplied to all relevant variables for the respondent.\n</p>",
+                    "html": "<p>The method checks the ratio of a principal variable\nagainst a suitable predictor variable and makes an automatic correction\nif the calculated ratio is around 1000. The automatic correction is\napplied to all relevant variables for the respondent.</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3434,7 +3786,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>Links to the method code, specification and user documentation are provided for further reading.\n</p>",
+                    "html": "<p>Links to the method code, specification and user documentation are provided for further reading.</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3627,6 +3979,24 @@
                     ],
                     "target": [
                         ".ons-footer__license > .ons-external-link[rel=\"noopener\"][target=\"_blank\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a class=\"ons-footer__poweredBy-link\" href=\"https://www.ons.gov.uk/\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-footer__poweredBy-link"
                     ]
                 }
             ],
@@ -4362,6 +4732,32 @@
                     "target": [
                         ".ons-footer__license > .ons-external-link[rel=\"noopener\"][target=\"_blank\"]"
                     ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a class=\"ons-footer__poweredBy-link\" href=\"https://www.ons.gov.uk/\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".ons-footer__poweredBy-link"
+                    ]
                 }
             ],
             "tags": [
@@ -4696,9 +5092,9 @@
                             "message": "Page has at least one level-one heading",
                             "relatedNodes": [
                                 {
-                                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                                    "html": "<h1 id=\"page-title\" class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                                     "target": [
-                                        "h1"
+                                        "#page-title"
                                     ]
                                 }
                             ]
@@ -4750,7 +5146,7 @@
             ]
         }
     ],
-    "timestamp": "2024-04-29T16:39:19.774Z",
+    "timestamp": "2024-10-25T11:34:27.968Z",
     "url": "http://127.0.0.1:8000/method/ready-to-use-methods/thousand-pound-correction",
     "violations": [
         {

@@ -28,10 +28,10 @@ def auth_user(context, page):
 @when("I navigate to the help centre page")
 def navigate_to_url(context):
     WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.ID, value="help-centre")
+        lambda d: d.find_element(By.LINK_TEXT, value="Help centre")
     ).click()
     WebDriverWait(driver, timeout=timeout).until(
-        EC.presence_of_element_located((By.ID, "main-content"))
+        EC.presence_of_element_located((By.ID, "help-centre-content"))
     )
 
 
