@@ -1,5 +1,5 @@
 # Tests for the date adjustment link
-# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined, duplicate-code
+# pylint: disable=import-error, undefined-variable, unused-argument, duplicate-code
 
 from setupSelenium import EC, By, WebDriverWait, driver, timeout
 
