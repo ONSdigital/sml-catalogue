@@ -1,5 +1,5 @@
 # Step definitions for methods catalogue page
-# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined, too-many-positional-arguments
+# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined, redefined-builtin
 
 from setupSelenium import EC, By, WebDriverWait, driver, timeout
 
@@ -55,6 +55,7 @@ def check_dropdown_content(context, text):
         "\n", ""
     )
     assert dropdown_content == text
+
 
 @then('The id of the dropdown is "{id}"')
 def check_dropdown_id(context, id):

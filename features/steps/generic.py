@@ -1,5 +1,5 @@
 # Step definitions for about page
-# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined, duplicate-code
+# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined, duplicate-code, redefined-builtin
 
 from urllib.parse import urljoin
 

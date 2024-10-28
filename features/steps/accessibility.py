@@ -1,9 +1,8 @@
 # Tests for the accessibility preferences
 # pylint: disable=import-error, undefined-variable, unused-argument, function-redefined
 
-from urllib.parse import urljoin
 
-from setupSelenium import EC, Axe, By, WebDriverWait, driver, timeout
+from setupSelenium import  Axe, driver
 
 
 @then("The accessibility test passes")
