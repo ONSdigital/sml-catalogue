@@ -54,5 +54,5 @@ Feature: Method summary page tests
         And The "Expert group" of the method is "Editing & Imputation"
         And The "Languages" of the method is "Python/Pandas"
         And The "Release" of the method is "v1.1.0"
-        And The "Selective Editing" method has the expected github resources
+        And The "Totals and Components" method has the expected github resources
         
