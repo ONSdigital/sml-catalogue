@@ -29,7 +29,7 @@ def check_method_summary_title(context, title):
         .until(lambda d: d.find_element(By.TAG_NAME, "h1"))
         .text
     )
-    print('ugyfgjghj,gkuytfjhfmgkuyjg,h', page_title)
+    print("ugyfgjghj,gkuytfjhfmgkuyjg,h", page_title)
     assert page_title == title
 
 

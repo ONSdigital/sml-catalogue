@@ -13,12 +13,13 @@ def auth_user(context):
         EC.presence_of_element_located((By.ID, "main-title"))
     )
 
-@when('The page loads')
+
+@when("The page loads")
 def page_loads(context):
     WebDriverWait(driver, timeout=timeout).until(
         EC.presence_of_element_located((By.ID, "main-title"))
     )
-    
+
 
 @when('I navigate to "{url}"')
 def navigate_to_url(context, url):
@@ -30,10 +31,13 @@ def navigate_to_url(context, url):
 
 @then('The verified id is "{id}"')
 def check_generic_title_id(context, id):
-    verify_id = (WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, id)).get_attribute('id'))
+    verify_id = (
+        WebDriverWait(driver, timeout=timeout)
+        .until(lambda d: d.find_element(By.ID, id))
+        .get_attribute("id")
+    )
     print(verify_id)
     assert verify_id == id
-
 
 
 @then('The title of the page is "{title}"')

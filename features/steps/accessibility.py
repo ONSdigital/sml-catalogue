@@ -2,7 +2,7 @@
 # pylint: disable=import-error, undefined-variable, unused-argument, function-redefined
 
 
-from setupSelenium import  Axe, driver
+from setupSelenium import Axe, driver
 
 
 @then("The accessibility test passes")
