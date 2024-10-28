@@ -12,7 +12,7 @@
         "id": "heroHomePage",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.195Z",
-        "updatedAt": "2024-09-06T11:59:49.591Z",
+        "updatedAt": "2024-10-09T10:57:51.563Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -20,8 +20,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 17,
-        "publishedAt": "2024-09-06T11:59:49.591Z",
+        "publishedVersion": 19,
+        "publishedAt": "2024-10-09T10:57:51.563Z",
         "firstPublishedAt": "2024-05-09T15:45:17.455Z",
         "createdBy": {
           "sys": {
@@ -37,8 +37,8 @@
             "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
-        "publishedCounter": 9,
-        "version": 18,
+        "publishedCounter": 10,
+        "version": 20,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -97,7 +97,7 @@
         "id": "catalogueTableOfMethods2",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.239Z",
-        "updatedAt": "2024-09-06T11:59:50.392Z",
+        "updatedAt": "2024-10-09T10:57:52.197Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -105,8 +105,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 23,
-        "publishedAt": "2024-09-06T11:59:50.392Z",
+        "publishedVersion": 25,
+        "publishedAt": "2024-10-09T10:57:52.197Z",
         "firstPublishedAt": "2024-05-09T15:45:18.379Z",
         "createdBy": {
           "sys": {
@@ -122,8 +122,8 @@
             "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
-        "publishedCounter": 12,
-        "version": 24,
+        "publishedCounter": 13,
+        "version": 26,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -322,7 +322,7 @@
         "id": "methodsCatalogue",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.379Z",
-        "updatedAt": "2024-09-06T11:59:50.895Z",
+        "updatedAt": "2024-10-09T10:57:52.670Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -330,8 +330,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 17,
-        "publishedAt": "2024-09-06T11:59:50.895Z",
+        "publishedVersion": 19,
+        "publishedAt": "2024-10-09T10:57:52.670Z",
         "firstPublishedAt": "2024-05-09T15:45:17.922Z",
         "createdBy": {
           "sys": {
@@ -347,8 +347,8 @@
             "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
-        "publishedCounter": 9,
-        "version": 18,
+        "publishedCounter": 10,
+        "version": 20,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -429,7 +429,7 @@
         "id": "helpCentreInformation",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.403Z",
-        "updatedAt": "2024-09-06T11:59:51.372Z",
+        "updatedAt": "2024-10-18T13:47:12.013Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -437,8 +437,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 16,
-        "publishedAt": "2024-09-06T11:59:51.372Z",
+        "publishedVersion": 26,
+        "publishedAt": "2024-10-18T13:47:12.013Z",
         "firstPublishedAt": "2024-05-09T15:45:19.286Z",
         "createdBy": {
           "sys": {
@@ -454,8 +454,8 @@
             "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
-        "publishedCounter": 8,
-        "version": 17,
+        "publishedCounter": 13,
+        "version": 27,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -507,6 +507,26 @@
           ],
           "disabled": false,
           "omitted": false
+        },
+        {
+          "id": "help_centre_category",
+          "name": "Category",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "in": [
+                "Information",
+                "Feedback",
+                "Support",
+                "Accessing Methods"
+              ],
+              "message": "Please select a category from the drop down menu"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
         }
       ]
     },
@@ -522,7 +542,7 @@
         "id": "privacycontent",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.412Z",
-        "updatedAt": "2024-09-06T11:59:51.928Z",
+        "updatedAt": "2024-10-09T10:57:53.675Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -530,8 +550,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 16,
-        "publishedAt": "2024-09-06T11:59:51.928Z",
+        "publishedVersion": 18,
+        "publishedAt": "2024-10-09T10:57:53.675Z",
         "firstPublishedAt": "2024-05-09T15:45:19.916Z",
         "createdBy": {
           "sys": {
@@ -547,8 +567,8 @@
             "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
-        "publishedCounter": 8,
-        "version": 17,
+        "publishedCounter": 9,
+        "version": 19,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -587,7 +607,7 @@
         "id": "about",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.430Z",
-        "updatedAt": "2024-09-06T11:59:52.438Z",
+        "updatedAt": "2024-10-09T10:57:54.070Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -595,8 +615,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 17,
-        "publishedAt": "2024-09-06T11:59:52.438Z",
+        "publishedVersion": 19,
+        "publishedAt": "2024-10-09T10:57:54.070Z",
         "firstPublishedAt": "2024-05-09T15:45:18.862Z",
         "createdBy": {
           "sys": {
@@ -612,8 +632,8 @@
             "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
-        "publishedCounter": 9,
-        "version": 18,
+        "publishedCounter": 10,
+        "version": 20,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -649,86 +669,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "helpCentreStructure",
-        "type": "ContentType",
-        "createdAt": "2024-05-09T15:45:16.978Z",
-        "updatedAt": "2024-09-06T11:59:52.876Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 16,
-        "publishedAt": "2024-09-06T11:59:52.876Z",
-        "firstPublishedAt": "2024-05-09T15:45:20.279Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 8,
-        "version": 17,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/content_types/helpCentreStructure"
-      },
-      "displayField": "name",
-      "name": "Help Centre Structure",
-      "description": "This is the content model which describes the layout of the help centre landing page.",
-      "fields": [
-        {
-          "id": "name",
-          "name": "name",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [
-          ],
-          "disabled": false,
-          "omitted": true
-        },
-        {
-          "id": "structure",
-          "name": "structure",
-          "type": "Object",
-          "localized": false,
-          "required": true,
-          "validations": [
-          ],
-          "disabled": false,
-          "omitted": false
-        }
-      ]
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
         "id": "accessibilityPage",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:16.988Z",
-        "updatedAt": "2024-09-06T11:59:53.358Z",
+        "updatedAt": "2024-10-09T10:57:55.055Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -736,8 +680,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 16,
-        "publishedAt": "2024-09-06T11:59:53.358Z",
+        "publishedVersion": 18,
+        "publishedAt": "2024-10-09T10:57:55.055Z",
         "firstPublishedAt": "2024-05-09T15:45:21.171Z",
         "createdBy": {
           "sys": {
@@ -753,8 +697,8 @@
             "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
-        "publishedCounter": 8,
-        "version": 17,
+        "publishedCounter": 9,
+        "version": 19,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -804,7 +748,7 @@
         "id": "helpCentreMethodRequest",
         "type": "ContentType",
         "createdAt": "2024-05-09T15:45:17.086Z",
-        "updatedAt": "2024-09-06T11:59:53.766Z",
+        "updatedAt": "2024-10-09T10:57:55.644Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -812,8 +756,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 16,
-        "publishedAt": "2024-09-06T11:59:53.766Z",
+        "publishedVersion": 18,
+        "publishedAt": "2024-10-09T10:57:55.644Z",
         "firstPublishedAt": "2024-05-09T15:45:20.687Z",
         "createdBy": {
           "sys": {
@@ -829,8 +773,8 @@
             "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
-        "publishedCounter": 8,
-        "version": 17,
+        "publishedCounter": 9,
+        "version": 19,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -913,7 +857,7 @@
         "id": "glossaryEntry",
         "type": "ContentType",
         "createdAt": "2024-08-27T09:22:22.840Z",
-        "updatedAt": "2024-09-06T11:59:54.293Z",
+        "updatedAt": "2024-10-09T10:57:56.178Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -921,8 +865,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 11,
-        "publishedAt": "2024-09-06T11:59:54.293Z",
+        "publishedVersion": 13,
+        "publishedAt": "2024-10-09T10:57:56.178Z",
         "firstPublishedAt": "2024-08-27T09:22:23.214Z",
         "createdBy": {
           "sys": {
@@ -938,8 +882,8 @@
             "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
-        "publishedCounter": 6,
-        "version": 12,
+        "publishedCounter": 7,
+        "version": 14,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1041,7 +985,7 @@
             "linkType": "Space"
           }
         },
-        "version": 17,
+        "version": 19,
         "createdAt": "2024-05-09T15:45:17.596Z",
         "createdBy": {
           "sys": {
@@ -1050,7 +994,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-09-06T11:59:56.296Z",
+        "updatedAt": "2024-10-09T10:57:58.844Z",
         "updatedBy": {
           "sys": {
             "id": "7BqQQLssfY5nUeZr8AO3cF",
@@ -1167,7 +1111,7 @@
             "linkType": "Space"
           }
         },
-        "version": 22,
+        "version": 24,
         "createdAt": "2024-05-09T15:45:18.538Z",
         "createdBy": {
           "sys": {
@@ -1176,7 +1120,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-09-06T11:59:56.048Z",
+        "updatedAt": "2024-10-09T10:57:57.987Z",
         "updatedBy": {
           "sys": {
             "id": "7BqQQLssfY5nUeZr8AO3cF",
@@ -1391,7 +1335,7 @@
             "linkType": "Space"
           }
         },
-        "version": 17,
+        "version": 19,
         "createdAt": "2024-05-09T15:45:18.071Z",
         "createdBy": {
           "sys": {
@@ -1400,7 +1344,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-09-06T11:59:57.152Z",
+        "updatedAt": "2024-10-09T10:57:58.693Z",
         "updatedBy": {
           "sys": {
             "id": "7BqQQLssfY5nUeZr8AO3cF",
@@ -1533,7 +1477,7 @@
             "linkType": "Space"
           }
         },
-        "version": 16,
+        "version": 24,
         "createdAt": "2024-05-09T15:45:19.588Z",
         "createdBy": {
           "sys": {
@@ -1542,7 +1486,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-09-06T11:59:56.050Z",
+        "updatedAt": "2024-10-18T13:47:12.814Z",
         "updatedBy": {
           "sys": {
             "id": "7BqQQLssfY5nUeZr8AO3cF",
@@ -1589,6 +1533,11 @@
           },
           "widgetId": "markdown",
           "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "help_centre_category",
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
         }
       ]
     },
@@ -1603,7 +1552,7 @@
             "linkType": "Space"
           }
         },
-        "version": 16,
+        "version": 18,
         "createdAt": "2024-05-09T15:45:19.965Z",
         "createdBy": {
           "sys": {
@@ -1612,7 +1561,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-09-06T11:59:56.295Z",
+        "updatedAt": "2024-10-09T10:57:57.977Z",
         "updatedBy": {
           "sys": {
             "id": "7BqQQLssfY5nUeZr8AO3cF",
@@ -1677,7 +1626,7 @@
             "linkType": "Space"
           }
         },
-        "version": 17,
+        "version": 19,
         "createdAt": "2024-05-09T15:45:18.951Z",
         "createdBy": {
           "sys": {
@@ -1686,7 +1635,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-09-06T11:59:57.152Z",
+        "updatedAt": "2024-10-09T10:57:58.972Z",
         "updatedBy": {
           "sys": {
             "id": "7BqQQLssfY5nUeZr8AO3cF",
@@ -1731,63 +1680,7 @@
             "linkType": "Space"
           }
         },
-        "version": 16,
-        "createdAt": "2024-05-09T15:45:20.382Z",
-        "createdBy": {
-          "sys": {
-            "id": "0RE3J0ImbZ27ZHNVtOJhsd",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "updatedAt": "2024-09-06T11:59:57.021Z",
-        "updatedBy": {
-          "sys": {
-            "id": "7BqQQLssfY5nUeZr8AO3cF",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "id": "helpCentreStructure",
-            "type": "Link",
-            "linkType": "ContentType"
-          }
-        },
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        }
-      },
-      "controls": [
-        {
-          "fieldId": "name",
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "structure",
-          "widgetId": "objectEditor",
-          "widgetNamespace": "builtin"
-        }
-      ]
-    },
-    {
-      "sys": {
-        "id": "default",
-        "type": "EditorInterface",
-        "space": {
-          "sys": {
-            "id": "h6k5tsc4ytaf",
-            "type": "Link",
-            "linkType": "Space"
-          }
-        },
-        "version": 16,
+        "version": 18,
         "createdAt": "2024-05-09T15:45:21.269Z",
         "createdBy": {
           "sys": {
@@ -1796,7 +1689,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-09-06T11:59:57.155Z",
+        "updatedAt": "2024-10-09T10:57:58.975Z",
         "updatedBy": {
           "sys": {
             "id": "7BqQQLssfY5nUeZr8AO3cF",
@@ -1845,7 +1738,7 @@
             "linkType": "Space"
           }
         },
-        "version": 16,
+        "version": 18,
         "createdAt": "2024-05-09T15:45:20.835Z",
         "createdBy": {
           "sys": {
@@ -1854,7 +1747,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-09-06T11:59:57.160Z",
+        "updatedAt": "2024-10-09T10:57:58.988Z",
         "updatedBy": {
           "sys": {
             "id": "7BqQQLssfY5nUeZr8AO3cF",
@@ -1936,7 +1829,7 @@
             "linkType": "Space"
           }
         },
-        "version": 17,
+        "version": 19,
         "createdAt": "2024-08-27T09:22:23.425Z",
         "createdBy": {
           "sys": {
@@ -1945,7 +1838,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2024-09-06T11:59:57.029Z",
+        "updatedAt": "2024-10-09T10:57:57.995Z",
         "updatedBy": {
           "sys": {
             "id": "7BqQQLssfY5nUeZr8AO3cF",
@@ -2018,10 +1911,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "5WYN3VRdVncydnbqCYupCM",
+        "id": "01k3lWZ4f7T6FC6Vogvomn",
         "type": "Entry",
-        "createdAt": "2024-09-06T11:59:57.500Z",
-        "updatedAt": "2024-09-06T12:00:03.961Z",
+        "createdAt": "2024-10-18T13:47:21.536Z",
+        "updatedAt": "2024-10-18T13:47:23.559Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -2030,8 +1923,8 @@
           }
         },
         "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:03.961Z",
-        "firstPublishedAt": "2024-09-06T12:00:03.961Z",
+        "publishedAt": "2024-10-18T13:47:23.559Z",
+        "firstPublishedAt": "2024-10-18T13:47:23.559Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2066,17 +1959,25 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "heroHomePage"
+            "id": "glossaryEntry"
           }
         },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/5WYN3VRdVncydnbqCYupCM"
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/01k3lWZ4f7T6FC6Vogvomn"
       },
       "fields": {
-        "heroTitle": {
-          "en-US": "An open source library for statistical code approved by the ONS"
+        "id": {
+          "en-US": "repository"
         },
-        "heroButton": {
-          "en-US": "Find methods"
+        "term": {
+          "en-US": "Repository"
+        },
+        "meaning": {
+          "en-US": "A directory containing files that are versioned by Git."
+        },
+        "relatedlist": {
+          "en-US": [
+            "Git"
+          ]
         }
       }
     },
@@ -2095,10 +1996,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "240OpTHU9qKVueslnoYjWy",
+        "id": "bGW6DZuAqOTCrASxPzq3c",
         "type": "Entry",
-        "createdAt": "2024-09-06T11:59:57.511Z",
-        "updatedAt": "2024-10-07T11:38:53.079Z",
+        "createdAt": "2024-10-18T13:47:21.551Z",
+        "updatedAt": "2024-10-18T13:47:23.562Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -2106,9 +2007,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 16,
-        "publishedAt": "2024-10-07T11:38:53.079Z",
-        "firstPublishedAt": "2024-09-06T12:00:05.548Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:23.562Z",
+        "firstPublishedAt": "2024-10-18T13:47:23.562Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2120,16 +2021,16 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "0LNbftqFgzDsVvbfITlLuV"
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
-        "publishedCounter": 4,
-        "version": 17,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "0LNbftqFgzDsVvbfITlLuV"
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
         "fieldStatus": {
@@ -2143,50 +2044,500 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "helpCentreStructure"
+            "id": "glossaryEntry"
           }
         },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/240OpTHU9qKVueslnoYjWy"
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/bGW6DZuAqOTCrASxPzq3c"
       },
       "fields": {
-        "name": {
-          "en-US": "Help Centre Structure"
+        "id": {
+          "en-US": "package"
         },
-        "structure": {
-          "en-US": {
-            "categories": [
-              {
-                "name": "access",
-                "label": "Accessing Methods",
-                "subcategories": [
-                  {
-                    "name": "install-a-method",
-                    "label": "Install a method"
-                  }
-                ]
-              },
-              {
-                "name": "feedback",
-                "label": "Feedback",
-                "subcategories": [
-                  {
-                    "name": "get-in-touch",
-                    "label": "Get in touch"
-                  }
-                ]
-              },
-              {
-                "name": "support",
-                "label": "Support",
-                "subcategories": [
-                  {
-                    "name": "troubleshooting",
-                    "label": "Troubleshooting"
-                  }
-                ]
-              }
-            ]
+        "term": {
+          "en-US": "Package"
+        },
+        "meaning": {
+          "en-US": "An archive containing software and additional metadata that is distributed by a package manager. Sometimes used as a synonym for 'library', but does not always refer to libraries."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
           }
+        },
+        "id": "5eYwt4est2ARh3hat0BL3r",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:21.564Z",
+        "updatedAt": "2024-10-18T13:47:23.524Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:23.524Z",
+        "firstPublishedAt": "2024-10-18T13:47:23.524Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/5eYwt4est2ARh3hat0BL3r"
+      },
+      "fields": {
+        "id": {
+          "en-US": "sml"
+        },
+        "term": {
+          "en-US": "SML"
+        },
+        "meaning": {
+          "en-US": "The Statistical Methods Library, a centralised collection of methods approved for use by the ONS. Comprises a code library, accessed through GitHub, and a collection of associated documentation, accessed via the SML Portal."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "3MHWfCcqLpDHbc7NLLuNh6",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:21.567Z",
+        "updatedAt": "2024-10-18T13:47:23.506Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:23.506Z",
+        "firstPublishedAt": "2024-10-18T13:47:23.506Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/3MHWfCcqLpDHbc7NLLuNh6"
+      },
+      "fields": {
+        "id": {
+          "en-US": "statistical_methods"
+        },
+        "term": {
+          "en-US": "Statistical Methods"
+        },
+        "meaning": {
+          "en-US": "Mathematical techniques used to transform, analyse and manipulate data that fall under the remit of one of the expert groups within the Methodology and Quality Directorate of the ONS."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "0HJkQZKUd1CyK7UypkxqB",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:21.573Z",
+        "updatedAt": "2024-10-18T13:47:23.552Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:23.552Z",
+        "firstPublishedAt": "2024-10-18T13:47:23.552Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "helpCentreInformation"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/0HJkQZKUd1CyK7UypkxqB"
+      },
+      "fields": {
+        "id": {
+          "en-US": "troubleshooting"
+        },
+        "title": {
+          "en-US": "Troubleshooting"
+        },
+        "content": {
+          "en-US": "As issues using our methods are raised we will update this section with relevant information to resolve the issue. \n\n#### Pip install issues:  \n\nPlease note all commands in this section should be run in either a terminal(Linux/Mac) or a command prompt(Windows).  \n\nIf you get an error when running pip install and can't immediately see the error try to add the --verbose flag to the\ncommand to see if that offers any more useful information, this can be done by running the command like so:  \n\"pip install {package} --verbose\"  \n\nIf multiple versions of python are installed on your machine it may also be the case that you need to run the command as\nsuch:  \n\"pip3 install {package}\"  \n\nSome other common errors include:  \n\n1. Package name is incorrect, double check that the file path and name that you are giving to the command is correct.\n2. If you have an outdated version of pip this can occasionally cause an issue, try running the below commands:  \n\"python -m pip install --update pip\"  \n\"python -m pip install --update wheel distutils\"  \n3. Permission errors, options here include running as admin/sudo where allowed or run:  \n\"pip install {package} --user\"  \nThis will run pip install defaulting the install location to the users home directory, as opposed to a system directory\nlike it normally would.\n4. Failure during install, on Windows in particular a library can have issues installing due to packages it relies on,\ntry running:  \n\"pip install {package} --prefer-binary\"  \nThis will cause pip to try install binary packages where possible as windows can sometimes throw errors compiling from\nsource\n\n#### Alternatives to pip for installation:  \n\nSome users may be in the scenario that due to user privileges that they are not allowed to use pip on their machines.\nAs an alternative to the .whl file, within a given release there will also be a tar.gz file in the format of\n{LibraryName-version.tar.gz}. Download this file and extract it:  \n\n- On a Unix system (linux/OSX) run the following command in a terminal: \"tar -xf archive.tar.gz\". Substituting archive.tar.gz\nwith the path to the tar.gz file downloaded\n\n- On a Windows system open the file within 7Zip or a similar file archive program and follow the interface to extract the\nfolder.  \n\nNavigate to the extracted folder within a terminal or command prompt and run the following command:    \n\"python setup.py install\".  \n\nOnce this completes the library should now be installed on your machine. Please note on the above command to ensure\nthat you use the correct python command. Particularly for unix users, python V3.0 and higher will often be run as python3\nwithin the terminal. If the previous command failed, it may be that you need to instead substitute it with: \n\"python3 setup.py install\".  \nAlternatively on Windows machine python may sometimes be installed as py so:  \n\"py setup.py install\"."
+        },
+        "help_centre_category": {
+          "en-US": "Support"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "6l2sPkpbSgUyoYr9x1OLX2",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:21.650Z",
+        "updatedAt": "2024-10-18T13:47:23.575Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:23.575Z",
+        "firstPublishedAt": "2024-10-18T13:47:23.575Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/6l2sPkpbSgUyoYr9x1OLX2"
+      },
+      "fields": {
+        "id": {
+          "en-US": "version_control"
+        },
+        "term": {
+          "en-US": "Version Control"
+        },
+        "meaning": {
+          "en-US": "A means of tracking changes made to a file or collection of files. Commonly used to track the development of software projects."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "4GpXwiVIqopHyO33yxnSAA",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:21.662Z",
+        "updatedAt": "2024-10-18T13:47:23.530Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:23.530Z",
+        "firstPublishedAt": "2024-10-18T13:47:23.530Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "about"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/4GpXwiVIqopHyO33yxnSAA"
+      },
+      "fields": {
+        "about": {
+          "en-US": "# About the Statistical Methods Library\n\n## What is the Statistical Methods Library?\n\nThe statistical methods library is a central library for approved statistical methods for use within ONS and wider.\n\n## Overall mission\n\nThe Statistical Methods Library (SML) provides a central resource for consistent and reproducible statistical methods within the ONS and wider. The library ensures that methods for official statistical outputs are fully transparent. It provides proportionate governance and assurance processes, including peer review of methods for statistical production and analysis or exploration.\n\nThe library facilitates continuous improvement by providing users with the ability to add new methods or request changes to existing ones. It contains documentation on method specifications, how-to guidance and contact details for help and support. The SML will allow users to share methods and best practice with other government departments.\n\n## Current objectives\n\n- To act as a shared single point of reference for best practice methods and share methods across government departments.\n- To continuously update methods based on peer reviews, emerging facts and user feedback.\n- To provide clear evidence of audit and quality assurance for approved methods.\n\n## Future objectives\n- To standardise best practice methods across the ONS and government departments.\n- To act as a developmental tool, providing reference material and guides to approved methods.\n- To demonstrate, share and promote innovation in methodological practice across GSS/wider government.\n\n## Further information\nThe SML contains many features, including:\n\n- A catalogue of methods\n- Statistical methods specifications\n- A code repository\n- Downloadable Methods packages\n- Technical methods governance\n- A glossary of terms\n- How-to guidance"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "7ePz4NOKkNuYxTCKGceI0o",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:21.664Z",
+        "updatedAt": "2024-10-18T13:47:23.640Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:23.640Z",
+        "firstPublishedAt": "2024-10-18T13:47:23.640Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "helpCentreInformation"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/7ePz4NOKkNuYxTCKGceI0o"
+      },
+      "fields": {
+        "id": {
+          "en-US": "get-in-touch"
+        },
+        "title": {
+          "en-US": "Get in touch"
+        },
+        "content": {
+          "en-US": "If you'd like to speak to someone on the SML team, please email [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk).\n\nNeed help installing a method? Make sure you've consulted the Help Centre \"Install a Method\" page.\n\nNeed help using a method? Make sure you have read the user documentation, which you can find by clicking on the method name in the Method Catalogue.  \n\nIf you still need assistance or if you have suggestions or other feedback, please do get in touch with us using the email above.\n"
+        },
+        "help_centre_category": {
+          "en-US": "Feedback"
         }
       }
     },
@@ -2207,8 +2558,8 @@
         },
         "id": "6FVuaTke9hjBtzWOEuDexR",
         "type": "Entry",
-        "createdAt": "2024-09-06T11:59:57.512Z",
-        "updatedAt": "2024-10-02T12:00:57.282Z",
+        "createdAt": "2024-10-18T13:47:21.686Z",
+        "updatedAt": "2024-10-18T13:47:23.536Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -2216,9 +2567,9 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 878,
-        "publishedAt": "2024-10-02T12:00:57.282Z",
-        "firstPublishedAt": "2024-09-06T12:00:06.999Z",
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:23.536Z",
+        "firstPublishedAt": "2024-10-18T13:47:23.536Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2230,16 +2581,16 @@
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "0LNbftqFgzDsVvbfITlLuV"
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
-        "publishedCounter": 12,
-        "version": 879,
+        "publishedCounter": 1,
+        "version": 2,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "0LNbftqFgzDsVvbfITlLuV"
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
           }
         },
         "fieldStatus": {
@@ -2267,6 +2618,9 @@
         },
         "content": {
           "en-US": "# This page covers the following topics:\n- How to install date adjustment, selective editing, thousand pounds, or totals and components\n- How to install other Python methods\n- How to install R methods\n- Managing package dependencies with SML methods \n\n**IDS Users:**\nIDS users should follow the IDS guidance for downloading and installing SML methods. \n\n**Using a method:** \nInformation on how to use individual methods can be found in the User Documentation. \n\nYou can access the User Documentation from the Method Summary which you find by clicking on the method name in the Method Catalogue.\n\n**Package dependencies:**\nSML methods may require installation of specific versions of Python, R or essential packages. To avoid changing installations in your base environment, we recommend creating a virtual environment (Python) or using renv in an R Studio project. \n\nIf you’d like further guidance on this, please see “Managing package dependencies with SML methods” below. \n\n## How to install date adjustment, selective editing, thousand pounds, or totals and components\n\nOnce you have set up the virtual environment and connected to your IDE (if using), follow the steps below.\n\n- Check you have installed the correct versions of Python and required packages such as Pandas (see User Documentation).\n\n- From your Python environment enter __pip install sml_small__ \n\n-  To install a specific version enter __pip install sml_small==version_number__, for example: __pip install sml_small==1.1.0__ \n\nSearch \"sml_small\" on “PyPI · The Python Package Index” for available versions.\n\n- To use Date Adjustment or Selective Editing run the following: __import sml_small.date_adjustment as date_adjust__ OR __import sml_small.selective_editing as seled__   \n\n- To use Totals and Components or Thousand Pounds run the following: __from sml_small.editing import thousand_pounds__ OR __from sml_small.editing import totals_and_components__  \n\nThe methods are now available for you to use.\n\n## Installing other Python methods\n\nOnce you have set up the virtual environment and connected to an IDE (if using), follow the steps below.\n\n- Check you have installed the correct versions of Python and required packages such as Pandas (see User Documentation).\n\n- From your Python environment enter __pip install package_name__, for example: the Python version of cell-key-perturbation is installed using __pip install cell_key_perturbation__\n\n- To install a specific version enter __pip install package_name==version_number__, for example: __pip install cell_key_perturbation==1.1.1__\n\nSearch the method name on “PyPI · The Python Package Index” for available versions. \n\nThe method is now available for you to import.\n\n## Installing R methods\n\nOnce you have created an R Studio project using renv to install required packages, you are ready to download the method package. For more guidance on using renv please see 'Managing package dependencies in R Studio with renv' below. \n\n-\tInstall the method package in your project using __renv::install(\"package_name\")__, for example, if the method package was named \"aggregate\" you would enter  __renv::install(\"aggregate\")__\n\n- To install a specific version use __renv::install(\"package_name@version\")__, for example: __renv::install(\"aggregate@1.2.1\")__ \n\nThe method is now available for you to load. \n\n## Managing package dependencies with SML methods\n\nThis section covers the following topics:\n\n- Managing package dependencies for Python methods using Conda\n-\tConnecting Spyder to a virtual environment\n-\tConnecting Jupyter Notebook to a virtual environment\n-\tManaging package dependencies in R Studio using renv\n\n### Managing package dependencies for Python methods using Conda\n\nVirtual environments allow you to install specific versions of software in a contained environment. For example, you can install an older version of Python in a virtual environment but continue to use the most recent version of Python in your default environment. \n\nPlease refer to the method User Documentation for information about which version of Python and packages like Pandas or Numpy you need to use for a specific method. You will need this information to correctly set up your environment. \n\nThis guidance uses conda to create a virtual environment on your device. Conda is an open-source environment management system that allows you to create virtual environments.\n\n- Search Anaconda Prompt on your device and click to open it (note, this will only work if you have already installed Anaconda or Miniconda).\n\n- At the prompt enter __conda create environment_name__, for example, to create and environment called \"test_env\" you would enter __conda create test_env__\n\nYou should name your environment something that will help you remember what it’s used for. If prompted, enter 'y' to proceed.\n\n- Enter __conda activate environment_name__ \n\nYou should now see your environment name to the left of the C:/ prompt. This shows you are working within the virtual environment. \n\nTo leave the environment at any time enter __conda deactivate__ To come back to your environment later, enter __conda activate environment_name__, as before.\n\n- Consult the User Documentation to identify what version of Python is required and to see what packages (and package versions) are needed. Make note of these.\n\n- Now, enter __conda install python=version_number__ If prompted, enter 'y' to proceed.\n\nNote, Python versions > 3.4 automatically install pip, so that will likely be available to you in your environment after successfully installing Python. If not, enter __conda install pip__\n\n- Install required packages using __pip install package_name==version__, for example: __pip install pandas==1.5.3__\n\n- If you want to check what is currently installed in your environment enter __conda list__ \n\n- If you would like to use the methods from within an IDE like Visual Studio, Spyder, or Jupyter Notebook, then you will need to install the kernels for these in the virtual environment and connect them to your session (see further guidance below)\n\nYour virtual environment is now set up and ready for you to install your chosen SML method. Remember to deactivate your environment when you’re done setting it up by entering __conda deactivate__ from the Anaconda prompt window.\n\nThe environment does not need to be activated here for you to use it with Spyder or Jupyter Notebook, providing you have followed the steps to connect the environment to these.\n\n## Connecting Spyder to a virtual environment\n\n- Enter __pip install spyder-kernels__ (still within Anaconda prompt and your virtual environment). If you have installed an older version of python (e.g., 3.7.1 for use with sml_small) then you need to specify an older version of spyder-kernels, e.g., __pip install spyder-kernels=1.9.2__\n\n- Open Spyder.\n\n- From the top menu, go to __Tools -> Preferences -> Python Interpreter__.\n\n- Select __Use the following Python Interpreter__.\n\n- Click on the __select file__ icon (to the right of the address bar below).\n\n- Navigate to the location of your virtual environment. \n\nIf you’re unsure where this is, go to your Anaconda prompt window and enter __conda list__ from within your virtual environment. The file path you need will appear at the top of the list.\n\n- Click on the folder to open your virtual environment and scroll down to find and click on the __python.exe file__. \n\n- Click __Apply__ and __OK__ to close the Preferences window.\n\nYou should see your virtual environment name and the python version it’s running on the bottom of the Spyder window.\n\n- When you are done working from this environment, go back to __Tools -> Preferences-> Python Interpreter__, and select the __Default interpreter__, instead of your virtual environment.\n\n## Connecting Jupyter Notebook to a virtual environment\n\n- Enter __pip install ipykernel__ (still within Anaconda prompt and your virtual environment).\n\n- Then enter __python -m ipykernel install --name env_name__ \n\n- Start Jupyter Notebook.\n\n- From the __Files__ page (you should be here by default) go to __New__, located in the top right.\n\n- Click on __New__ and select your virtual environment name.\n\nYour new notebook now will use the Python and package versions installed in this environment.\n\n## Managing package dependencies in R Studio with renv\n\n- Open R Studio and select __File -> New Project__.\n\n- Select __New Directory -> New Project__ and give your directory a useful name.\n\n- Tick __Use renv with this project__.\n\n- Consult the User Documentation for details about what packages are required to run a method. Make note of these.\n\n- Install required package versions using __renv::install(\"package@version\")__, for example: to install devtools 2.4.4 use __renv::install(\"devtools@2.4.4\")__\n\n- Download and run the chosen SML method within this project environment (see \"Installing R Methods\" above for more guidance).\n\nUsing renv will make specified versions of packages available for this project, but will not affect versions installed outside the project. \n\nYou can verify which versions are installed using __sessionInfo()__ "
+        },
+        "help_centre_category": {
+          "en-US": "Accessing Methods"
         }
       }
     },
@@ -2285,10 +2639,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "7ald28ahkCJgBJu1oKhUmI",
+        "id": "1PQFWq5r92jnyKqZnqtmrk",
         "type": "Entry",
-        "createdAt": "2024-09-06T11:59:57.679Z",
-        "updatedAt": "2024-09-06T12:00:04.966Z",
+        "createdAt": "2024-10-18T13:47:21.689Z",
+        "updatedAt": "2024-10-18T13:47:23.578Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -2297,8 +2651,8 @@
           }
         },
         "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:04.966Z",
-        "firstPublishedAt": "2024-09-06T12:00:04.966Z",
+        "publishedAt": "2024-10-18T13:47:23.578Z",
+        "firstPublishedAt": "2024-10-18T13:47:23.578Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2336,20 +2690,20 @@
             "id": "catalogueTableOfMethods2"
           }
         },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/7ald28ahkCJgBJu1oKhUmI"
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/1PQFWq5r92jnyKqZnqtmrk"
       },
       "fields": {
         "id": {
-          "en-US": "selective-editing"
+          "en-US": "cell-key-perturbation"
         },
         "name": {
-          "en-US": "Selective Editing"
+          "en-US": "Cell Key Perturbation"
         },
         "theme": {
-          "en-US": "Editing"
+          "en-US": "Statistical Disclosure Control"
         },
         "expertGroup": {
-          "en-US": "Editing & Imputation"
+          "en-US": "Statistical Disclosure Control"
         },
         "language": {
           "en-US": "Python/Pandas"
@@ -2358,7 +2712,7 @@
           "en-US": "ONS"
         },
         "description": {
-          "en-US": "Selective Editing is an internationally recognised editing method where potential errors are prioritised according to their expected effect on key outputs. Only respondents that are having an impact on published estimates will be recontacted.\n\nSelective Editing works by assigning a score to each important variable for a business where, the score reflects the impact that editing the respondent will have on the estimates. Only contributors with a high score are checked, low scoring contributors pass through unchecked."
+          "en-US": "Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.\n\nTo install and use this method, please see [User Notes](https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md)."
         },
         "contactDetails": {
           "en-US": "smlhelp@ons.gov.uk"
@@ -2367,19 +2721,16 @@
           "en-US": true
         },
         "releaseVersion": {
-          "en-US": "v1.0.0"
+          "en-US": "v2.0.0"
         },
         "releaseLink": {
-          "en-US": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.0.0"
+          "en-US": "https://github.com/ONSdigital/cell-key-perturbation/releases/tag/v2.0.0"
         },
         "codeLink": {
-          "en-US": "https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/selective_editing.py"
-        },
-        "specificationLink": {
-          "en-US": "https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/selective_editing/methodological_specification.md"
+          "en-US": "https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py"
         },
         "userDocumentationLink": {
-          "en-US": "https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/selective-editing/selective_editing.md"
+          "en-US": "https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md"
         }
       }
     },
@@ -2398,10 +2749,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "78d7qRmxYSzox6ccAwoPII",
+        "id": "1JRjsMT7ZcjUvh0Rua1yJg",
         "type": "Entry",
-        "createdAt": "2024-09-06T11:59:57.684Z",
-        "updatedAt": "2024-09-06T12:00:06.187Z",
+        "createdAt": "2024-10-18T13:47:25.583Z",
+        "updatedAt": "2024-10-18T13:47:27.534Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -2410,8 +2761,8 @@
           }
         },
         "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:06.187Z",
-        "firstPublishedAt": "2024-09-06T12:00:06.187Z",
+        "publishedAt": "2024-10-18T13:47:27.534Z",
+        "firstPublishedAt": "2024-10-18T13:47:27.534Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2446,23 +2797,1696 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "methodsCatalogue"
+            "id": "glossaryEntry"
           }
         },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/78d7qRmxYSzox6ccAwoPII"
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/1JRjsMT7ZcjUvh0Rua1yJg"
       },
       "fields": {
-        "heading1": {
-          "en-US": "Methods catalogue"
+        "id": {
+          "en-US": "third_party_methods"
         },
-        "paragraph": {
-          "en-US": "Here you will discover statistical methods used by the Office for National Statistics."
+        "term": {
+          "en-US": "Third Party Methods"
         },
-        "detail": {
-          "en-US": "What are method themes and expert groups?"
+        "meaning": {
+          "en-US": "Third party methods are defined as those where a package, piece of code or software is developed and maintained outside of the SML strictures. This may include packages developed within ONS but where code is held and managed in a separate repository, or packages developed and maintained externally."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
         },
-        "detailContent": {
-          "en-US": "Methods are sorted in hierarchical order with expert groups as the top level. For example, within an expert group are different themes, and within the themes are different methods.\n\nTo find out more about expert groups and themes, please visit the [analysis function website.](https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/)"
+        "id": "2Oyrzj4Dkqn9LuNDxFZMnh",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:25.591Z",
+        "updatedAt": "2024-10-18T13:47:27.542Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:27.542Z",
+        "firstPublishedAt": "2024-10-18T13:47:27.542Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/2Oyrzj4Dkqn9LuNDxFZMnh"
+      },
+      "fields": {
+        "id": {
+          "en-US": "release"
+        },
+        "term": {
+          "en-US": "Release"
+        },
+        "meaning": {
+          "en-US": "A 'snapshot' of a Git repository marked as being stable. Releases are commonly referred to by a version number. A popular scheme for determining version numbers is semantic versioning."
+        },
+        "relatedlist": {
+          "en-US": [
+            "Git",
+            "Repository",
+            "Semantic Versioning"
+          ]
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "7IvVbD5tUwbzWeWPqwQP5n",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:25.606Z",
+        "updatedAt": "2024-10-18T13:47:27.552Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:27.552Z",
+        "firstPublishedAt": "2024-10-18T13:47:27.552Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/7IvVbD5tUwbzWeWPqwQP5n"
+      },
+      "fields": {
+        "id": {
+          "en-US": "semantic_versioning"
+        },
+        "term": {
+          "en-US": "Semantic Versioning"
+        },
+        "meaning": {
+          "en-US": "A popular scheme for determining version numbers. Consists of three integers, separated by full stops. The first integer is the 'major' version number, the second is the 'minor' version number, and the third is the 'patch' number. The patch number is incremented by 1 when bugfixes are implemented. The minor version is incremented by 1 when new functionality is introduced without affecting compatibility with previous versions. The major version number is incremented by 1 when changes are made that break compatibility with previous versions. See https://semver.org"
+        },
+        "externalLinkTextShort": {
+          "en-US": "Semantic Versioning"
+        },
+        "externalUrl": {
+          "en-US": "https://semver.org"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "6q41cYDJBtyVn44KO4MuQQ",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:25.612Z",
+        "updatedAt": "2024-10-18T13:47:27.533Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:27.533Z",
+        "firstPublishedAt": "2024-10-18T13:47:27.533Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/6q41cYDJBtyVn44KO4MuQQ"
+      },
+      "fields": {
+        "id": {
+          "en-US": "idp"
+        },
+        "term": {
+          "en-US": "Integrated Data Programme (IDP)"
+        },
+        "meaning": {
+          "en-US": "The Integrated Data Programme, the ONS team that provides and adminstrates the Integrated Data Service (IDS)."
+        },
+        "relatedlist": {
+          "en-US": [
+            "Integrated Data Service (IDS)"
+          ]
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "11mx4pNTAuijgoH17sUAa3",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:25.624Z",
+        "updatedAt": "2024-10-18T13:47:27.533Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:27.533Z",
+        "firstPublishedAt": "2024-10-18T13:47:27.533Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/11mx4pNTAuijgoH17sUAa3"
+      },
+      "fields": {
+        "id": {
+          "en-US": "sml_team"
+        },
+        "term": {
+          "en-US": "SML Team"
+        },
+        "meaning": {
+          "en-US": "The team responsible for SML administration and governance."
+        },
+        "relatedlist": {
+          "en-US": [
+            "SML"
+          ]
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "6lYqR80JEilHmlhyWOIpH2",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:25.916Z",
+        "updatedAt": "2024-10-18T13:47:27.542Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:27.542Z",
+        "firstPublishedAt": "2024-10-18T13:47:27.542Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/6lYqR80JEilHmlhyWOIpH2"
+      },
+      "fields": {
+        "id": {
+          "en-US": "github"
+        },
+        "term": {
+          "en-US": "GitHub"
+        },
+        "meaning": {
+          "en-US": "A popular Microsoft-owned service providing hosting for Git repositories, a Web interface to Git, and related services."
+        },
+        "relatedlist": {
+          "en-US": [
+            "Git"
+          ]
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "2EV5TKiycZvUQvjKLpUCY5",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:25.919Z",
+        "updatedAt": "2024-10-18T13:47:27.539Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:27.539Z",
+        "firstPublishedAt": "2024-10-18T13:47:27.539Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/2EV5TKiycZvUQvjKLpUCY5"
+      },
+      "fields": {
+        "id": {
+          "en-US": "sensitive"
+        },
+        "term": {
+          "en-US": "Sensitive"
+        },
+        "meaning": {
+          "en-US": "Data or methods that reveal personal details, and as such requires accreditation to use."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "5jT96XUoyfeVejeaTTKakT",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:25.922Z",
+        "updatedAt": "2024-10-18T13:47:27.556Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:27.556Z",
+        "firstPublishedAt": "2024-10-18T13:47:27.556Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/5jT96XUoyfeVejeaTTKakT"
+      },
+      "fields": {
+        "id": {
+          "en-US": "markdown"
+        },
+        "term": {
+          "en-US": "Markdown"
+        },
+        "meaning": {
+          "en-US": "A popular and simple markup language used across the Web for formatting text. Markdown is the format in which SML specifications are written."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "79mygGJlikbZmNOLp9hU1V",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:25.926Z",
+        "updatedAt": "2024-10-18T13:47:27.537Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:27.537Z",
+        "firstPublishedAt": "2024-10-18T13:47:27.537Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/79mygGJlikbZmNOLp9hU1V"
+      },
+      "fields": {
+        "id": {
+          "en-US": "ids"
+        },
+        "term": {
+          "en-US": "Integrated Data Service (IDS)"
+        },
+        "meaning": {
+          "en-US": "A secure, integrated service providing access to data and tools for analysis and collaboration for Government analysts, devolved administrations and external Accredited Researchers."
+        },
+        "externalLinkTextShort": {
+          "en-US": "Integrated Data Service"
+        },
+        "externalUrl": {
+          "en-US": "https://integrateddataservice.gov.uk/"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "1blaUAHFEY66NrdCtomp9k",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:25.932Z",
+        "updatedAt": "2024-10-18T13:47:27.504Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:27.504Z",
+        "firstPublishedAt": "2024-10-18T13:47:27.504Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/1blaUAHFEY66NrdCtomp9k"
+      },
+      "fields": {
+        "id": {
+          "en-US": "pypi"
+        },
+        "term": {
+          "en-US": "PyPI"
+        },
+        "meaning": {
+          "en-US": "The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software."
+        },
+        "relatedlist": {
+          "en-US": [
+            "SML",
+            "Package",
+            "Repository"
+          ]
+        },
+        "externalLinkTextShort": {
+          "en-US": "ONS-SML user profile on PyPI"
+        },
+        "externalUrl": {
+          "en-US": "https://pypi.org/user/ons-sml/"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "hHSTKE9UpKOiCoB4aGkv5",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:28.496Z",
+        "updatedAt": "2024-10-18T13:47:30.515Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:30.515Z",
+        "firstPublishedAt": "2024-10-18T13:47:30.515Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/hHSTKE9UpKOiCoB4aGkv5"
+      },
+      "fields": {
+        "id": {
+          "en-US": "metadata"
+        },
+        "term": {
+          "en-US": "Metadata"
+        },
+        "meaning": {
+          "en-US": "'Data about data', giving information about a product itself, as opposed to its contents. In the case of the SML, metadata includes, for example: when a method was onboarded; its development status; by whom it was developed; whether or not it is approved for use in official outputs; etc."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "6Benijjye1q8xVSrb6AEG3",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:28.525Z",
+        "updatedAt": "2024-10-18T13:47:30.530Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:30.530Z",
+        "firstPublishedAt": "2024-10-18T13:47:30.530Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/6Benijjye1q8xVSrb6AEG3"
+      },
+      "fields": {
+        "id": {
+          "en-US": "accredited_researcher"
+        },
+        "term": {
+          "en-US": "Accredited Researcher"
+        },
+        "meaning": {
+          "en-US": "Researchers who have special permission from ONS to access personal information to assist in statistical research."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "3yPRVuZ5tvZdP09NLOauEj",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:29.506Z",
+        "updatedAt": "2024-10-18T13:47:31.497Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:31.497Z",
+        "firstPublishedAt": "2024-10-18T13:47:31.497Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "helpCentreMethodRequest"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/3yPRVuZ5tvZdP09NLOauEj"
+      },
+      "fields": {
+        "name": {
+          "en-US": "Help Centre Method Request"
+        },
+        "internalUserTitle": {
+          "en-US": "I am an ONS internal user"
+        },
+        "internalUserContent": {
+          "en-US": "Method requests can be raised to:\n\n* Have new methods developed for the Statistical Methods Library.\n* Add existing code to the Statistical Methods Library.\n* Change existing methods held within the Statistical Methods Library.\n\nIf you would like to make a suggestion for a new method, or to provide feedback about an existing method, please do so by emailing [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk)."
+        },
+        "externalUserTitle": {
+          "en-US": "I am a user from outside the ONS"
+        },
+        "externalUserContent": {
+          "en-US": "Currently we do not accept formal method submissions or change requests from external users. In future, we will accept certain method requests via the [Integrated Data Service](https://integrateddataservice.gov.uk/)."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "5dA4wvX0V2tLHCnwvDEyI2",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:29.510Z",
+        "updatedAt": "2024-10-18T13:47:31.512Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:31.512Z",
+        "firstPublishedAt": "2024-10-18T13:47:31.512Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "accessibilityPage"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/5dA4wvX0V2tLHCnwvDEyI2"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Accessibility Statement"
+        },
+        "mainContent": {
+          "en-US": "# Accessibility Statement\n\nThis accessibility statement applies to the Office for National Statistics (ONS) Statistical Methods Library.  \n\nWe want as many people as possible to be able to use the website. If you have a disability, [AbilityNet](https://mcmw.abilitynet.org.uk/) has advice on making your device easier to use.\n\n## How accessible the website is\n\nWe are aware that some parts of this website are not fully accessible, and we are working to improve this.\n\n## How to request content in an accessible format\n\nIf you need information from the website in a different format please contact us at [SMLHelp@ons.gov.uk](mailto:SMLHelp@ons.gov.uk) and tell us:\n\n* The web address (URL).\n* Your name and email address.\n* The format you require.\n\nWe’ll reply within ten days to let you know when we will be able to provide the information. We will consider each request but may not be able to provide an alternative accessible format on every occasion.\n\n## Reporting accessibility problems\n\nWe are working to meet accessibility standards across this website. If you experience difficulty in accessing our website please contact us at [SMLHelp@ons.gov.uk](mailto:SMLHelp@ons.gov.uk).\n\n## Enforcement procedure\n\nThe Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the “accessibility regulations”). If you contact us with a complaint and you are not happy with our response contact the [Equality Advisory and Support Service (EASS)](https://www.equalityadvisoryservice.com/).\n\n## Technical information about the website’s accessibility\n\nThe ONS is committed to making this portal accessible, in accordance with the [Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/952/made).\n\n## What we’re doing to improve accessibility\n\nWe are committed to making sure our online services are accessible to all users and comply with level AA of the Web Content Accessibility Guidelines – WCAG 2.1 in line with the Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility regulations 2018, and intend to.\n\nIn order to make sure our online services are accessible to all users, we are working with [The Digital Accessibility Centre (DAC)](http://www.digitalaccessibilitycentre.org/) to carry out WCAG 2.1 AA level technical compliance audits, which will also include testing by users with a wide range of disabilities.\n\n## Preparation of this accessibility statement\n\nThis statement was prepared on 1 February 2023.\n"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "6YIFLOQGzh9O370tgeARSq",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:29.514Z",
+        "updatedAt": "2024-10-18T13:47:31.478Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:31.478Z",
+        "firstPublishedAt": "2024-10-18T13:47:31.478Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/6YIFLOQGzh9O370tgeARSq"
+      },
+      "fields": {
+        "id": {
+          "en-US": "release_notes"
+        },
+        "term": {
+          "en-US": "Release Notes"
+        },
+        "meaning": {
+          "en-US": "A file containing notes explaining what changes have been made to a piece of software since the previous release."
+        },
+        "relatedlist": {
+          "en-US": [
+            "Release"
+          ]
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "73KZnVqhnsVFeuLRNMcf3A",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:29.521Z",
+        "updatedAt": "2024-10-18T13:47:31.506Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:31.506Z",
+        "firstPublishedAt": "2024-10-18T13:47:31.506Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/73KZnVqhnsVFeuLRNMcf3A"
+      },
+      "fields": {
+        "id": {
+          "en-US": "expert_group"
+        },
+        "term": {
+          "en-US": "Expert Group"
+        },
+        "meaning": {
+          "en-US": "A group of ONS employees within the Methodology and Quality Directorate with expertise in a specific area. For a full list, see https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/"
+        },
+        "externalLinkTextShort": {
+          "en-US": "Expert group"
+        },
+        "externalUrl": {
+          "en-US": "https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "1KlrkSlWVBd5dxHHcYKHGV",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:29.531Z",
+        "updatedAt": "2024-10-18T13:47:31.499Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:31.499Z",
+        "firstPublishedAt": "2024-10-18T13:47:31.499Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/1KlrkSlWVBd5dxHHcYKHGV"
+      },
+      "fields": {
+        "id": {
+          "en-US": "community_methods"
+        },
+        "term": {
+          "en-US": "Community Methods"
+        },
+        "meaning": {
+          "en-US": "Code developed by a wider community of analysts. These methods are held in a community code repository to ensure there is a clear distinction in terms of maintenance of the code. After sign-off, any changes to methods held in the SML community repository must be made via the SML governance process to ensure that specifications and documentation are kept up to date and users are informed of changes to the code. The developers of the code would be accountable for making any updates to the code."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "1SzvT5lBJvPtZWnnfDbIJ4",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:29.536Z",
+        "updatedAt": "2024-10-18T13:47:31.491Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:31.491Z",
+        "firstPublishedAt": "2024-10-18T13:47:31.491Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/1SzvT5lBJvPtZWnnfDbIJ4"
+      },
+      "fields": {
+        "id": {
+          "en-US": "git"
+        },
+        "term": {
+          "en-US": "Git"
+        },
+        "meaning": {
+          "en-US": "A popular software tool for version control. Files are stored in repositories (or 'repos'), which can be local or remote, and changes made are committed to a log, allowing files to be reverted to previous versions. A project can have multiple contributing authors and multiple 'branches' (variants) simultaneously, with Git providing tools to merge changes."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "3B4A7Fs3mnyEAzOgTaeHMn",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:30.512Z",
+        "updatedAt": "2024-10-18T13:47:32.514Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:32.514Z",
+        "firstPublishedAt": "2024-10-18T13:47:32.514Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "privacycontent"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/3B4A7Fs3mnyEAzOgTaeHMn"
+      },
+      "fields": {
+        "privacy_content": {
+          "en-US": "# Privacy and Data Protection\n\nThis information is for visitors to the Statistical Methods Library website.\n\nIf you would like to find out more about how ONS collect and use your personal data, please visit our [data protection page](https://www.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection).\n\n## Links to other websites\n\nThis site contains links to other sites. The ONS is not responsible for the privacy practices or the content of such websites.\n\n### Following a link to another website\n\nIf you go to another website from this one, read the privacy policy on that website to find out what it does with your information.\n\n### Following a link to statisticalmethodslibrary.ons.gov.uk from another website\n\nIf you come to statisticalmethodslibrary.ons.gov.uk from another website, we may receive personal information from the other website.\n\nYou should read the privacy policy of the website you came from to find out more about this.\n\n## Contact us\n\nYou can contact the Data Protection Officer if you:\n\n* have a question about the processing of personal data within the Statistical Methods Library\n* think that your personal data have been misused or mishandled\n\n[DPO@statistics.gov.uk](mailto:DPO@statistics.gov.uk)\n\nTelephone: 0345 601 3034\n\nData Protection Officer  \nOffice for National Statistics  \nSegensworth Road  \nTitchfield  \nFareham  \nHampshire  \nPO15 5RR\n\n## Report a security vulnerability\n\nPlease see our [vulnerability disclosure policy](https://www.ons.gov.uk/help/vulnerabilitydisclosurepolicy) for information on how to report a vulnerability at HackerOne."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "6oyEIyUgTSadgfgqXcchmR",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:30.538Z",
+        "updatedAt": "2024-10-18T13:47:32.493Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:32.493Z",
+        "firstPublishedAt": "2024-10-18T13:47:32.493Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "glossaryEntry"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/6oyEIyUgTSadgfgqXcchmR"
+      },
+      "fields": {
+        "id": {
+          "en-US": "official_outputs"
+        },
+        "term": {
+          "en-US": "Official Outputs"
+        },
+        "meaning": {
+          "en-US": "Statistics and data analysis officially published by ONS for public consumption."
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "h6k5tsc4ytaf"
+          }
+        },
+        "id": "7gaTewUF0sQXN7T36lIDyX",
+        "type": "Entry",
+        "createdAt": "2024-10-18T13:47:32.504Z",
+        "updatedAt": "2024-10-18T13:47:33.551Z",
+        "environment": {
+          "sys": {
+            "id": "preprod",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2024-10-18T13:47:33.551Z",
+        "firstPublishedAt": "2024-10-18T13:47:33.551Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "7BqQQLssfY5nUeZr8AO3cF"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "catalogueTableOfMethods2"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/7gaTewUF0sQXN7T36lIDyX"
+      },
+      "fields": {
+        "id": {
+          "en-US": "cell-key-perturbation-r"
+        },
+        "name": {
+          "en-US": "Cell Key Perturbation "
+        },
+        "theme": {
+          "en-US": "Statistical Disclosure Control"
+        },
+        "expertGroup": {
+          "en-US": "Statistical Disclosure Control"
+        },
+        "language": {
+          "en-US": "R"
+        },
+        "author": {
+          "en-US": "ONS"
+        },
+        "description": {
+          "en-US": "Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation."
+        },
+        "contactDetails": {
+          "en-US": "smlhelp@ons.gov.uk"
+        },
+        "methodReady": {
+          "en-US": false
+        },
+        "releaseVersion": {
+          "en-US": "Not Released Yet"
         }
       }
     },
@@ -2483,8 +4507,8 @@
         },
         "id": "51E73QFXqVNxRsoUxzcoSj",
         "type": "Entry",
-        "createdAt": "2024-09-06T11:59:58.561Z",
-        "updatedAt": "2024-09-06T12:00:08.765Z",
+        "createdAt": "2024-10-18T13:47:32.518Z",
+        "updatedAt": "2024-10-18T13:47:33.569Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -2493,8 +4517,8 @@
           }
         },
         "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:08.765Z",
-        "firstPublishedAt": "2024-09-06T12:00:08.765Z",
+        "publishedAt": "2024-10-18T13:47:33.569Z",
+        "firstPublishedAt": "2024-10-18T13:47:33.569Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -2594,796 +4618,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "7ePz4NOKkNuYxTCKGceI0o",
-        "type": "Entry",
-        "createdAt": "2024-09-06T11:59:58.568Z",
-        "updatedAt": "2024-10-07T11:25:44.443Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 46,
-        "publishedAt": "2024-10-07T11:25:44.443Z",
-        "firstPublishedAt": "2024-09-06T12:00:09.259Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0LNbftqFgzDsVvbfITlLuV"
-          }
-        },
-        "publishedCounter": 3,
-        "version": 47,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0LNbftqFgzDsVvbfITlLuV"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "helpCentreInformation"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/7ePz4NOKkNuYxTCKGceI0o"
-      },
-      "fields": {
-        "id": {
-          "en-US": "get-in-touch"
-        },
-        "title": {
-          "en-US": "Get in touch"
-        },
-        "content": {
-          "en-US": "If you'd like to speak to someone on the SML team, please email [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk).\n\nNeed help installing a method? Make sure you've consulted the Help Centre \"Install a Method\" page.\n\nNeed help using a method? Make sure you have read the user documentation, which you can find by clicking on the method name in the Method Catalogue.  \n\nIf you still need assistance or if you have suggestions or other feedback, please do get in touch with us using the email above.\n"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "3B4A7Fs3mnyEAzOgTaeHMn",
-        "type": "Entry",
-        "createdAt": "2024-09-06T11:59:58.571Z",
-        "updatedAt": "2024-09-06T12:00:10.051Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:10.051Z",
-        "firstPublishedAt": "2024-09-06T12:00:10.051Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "privacycontent"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/3B4A7Fs3mnyEAzOgTaeHMn"
-      },
-      "fields": {
-        "privacy_content": {
-          "en-US": "# Privacy and Data Protection\n\nThis information is for visitors to the Statistical Methods Library website.\n\nIf you would like to find out more about how ONS collect and use your personal data, please visit our [data protection page](https://www.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection).\n\n## Links to other websites\n\nThis site contains links to other sites. The ONS is not responsible for the privacy practices or the content of such websites.\n\n### Following a link to another website\n\nIf you go to another website from this one, read the privacy policy on that website to find out what it does with your information.\n\n### Following a link to statisticalmethodslibrary.ons.gov.uk from another website\n\nIf you come to statisticalmethodslibrary.ons.gov.uk from another website, we may receive personal information from the other website.\n\nYou should read the privacy policy of the website you came from to find out more about this.\n\n## Contact us\n\nYou can contact the Data Protection Officer if you:\n\n* have a question about the processing of personal data within the Statistical Methods Library\n* think that your personal data have been misused or mishandled\n\n[DPO@statistics.gov.uk](mailto:DPO@statistics.gov.uk)\n\nTelephone: 0345 601 3034\n\nData Protection Officer  \nOffice for National Statistics  \nSegensworth Road  \nTitchfield  \nFareham  \nHampshire  \nPO15 5RR\n\n## Report a security vulnerability\n\nPlease see our [vulnerability disclosure policy](https://www.ons.gov.uk/help/vulnerabilitydisclosurepolicy) for information on how to report a vulnerability at HackerOne."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "0HJkQZKUd1CyK7UypkxqB",
-        "type": "Entry",
-        "createdAt": "2024-09-06T11:59:58.590Z",
-        "updatedAt": "2024-10-07T07:21:02.106Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 4,
-        "publishedAt": "2024-10-07T07:21:02.106Z",
-        "firstPublishedAt": "2024-09-06T12:00:09.679Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0LNbftqFgzDsVvbfITlLuV"
-          }
-        },
-        "publishedCounter": 2,
-        "version": 5,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0LNbftqFgzDsVvbfITlLuV"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "helpCentreInformation"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/0HJkQZKUd1CyK7UypkxqB"
-      },
-      "fields": {
-        "id": {
-          "en-US": "troubleshooting"
-        },
-        "title": {
-          "en-US": "Troubleshooting"
-        },
-        "content": {
-          "en-US": "As issues using our methods are raised we will update this section with relevant information to resolve the issue. \n\n#### Pip install issues:  \n\nPlease note all commands in this section should be run in either a terminal(Linux/Mac) or a command prompt(Windows).  \n\nIf you get an error when running pip install and can't immediately see the error try to add the --verbose flag to the\ncommand to see if that offers any more useful information, this can be done by running the command like so:  \n\"pip install {package} --verbose\"  \n\nIf multiple versions of python are installed on your machine it may also be the case that you need to run the command as\nsuch:  \n\"pip3 install {package}\"  \n\nSome other common errors include:  \n\n1. Package name is incorrect, double check that the file path and name that you are giving to the command is correct.\n2. If you have an outdated version of pip this can occasionally cause an issue, try running the below commands:  \n\"python -m pip install --update pip\"  \n\"python -m pip install --update wheel distutils\"  \n3. Permission errors, options here include running as admin/sudo where allowed or run:  \n\"pip install {package} --user\"  \nThis will run pip install defaulting the install location to the users home directory, as opposed to a system directory\nlike it normally would.\n4. Failure during install, on Windows in particular a library can have issues installing due to packages it relies on,\ntry running:  \n\"pip install {package} --prefer-binary\"  \nThis will cause pip to try install binary packages where possible as windows can sometimes throw errors compiling from\nsource\n\n#### Alternatives to pip for installation:  \n\nSome users may be in the scenario that due to user privileges that they are not allowed to use pip on their machines.\nAs an alternative to the .whl file, within a given release there will also be a tar.gz file in the format of\n{LibraryName-version.tar.gz}. Download this file and extract it:  \n\n- On a Unix system (linux/OSX) run the following command in a terminal: \"tar -xf archive.tar.gz\". Substituting archive.tar.gz\nwith the path to the tar.gz file downloaded\n\n- On a Windows system open the file within 7Zip or a similar file archive program and follow the interface to extract the\nfolder.  \n\nNavigate to the extracted folder within a terminal or command prompt and run the following command:    \n\"python setup.py install\".  \n\nOnce this completes the library should now be installed on your machine. Please note on the above command to ensure\nthat you use the correct python command. Particularly for unix users, python V3.0 and higher will often be run as python3\nwithin the terminal. If the previous command failed, it may be that you need to instead substitute it with: \n\"python3 setup.py install\".  \nAlternatively on Windows machine python may sometimes be installed as py so:  \n\"py setup.py install\"."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "3yPRVuZ5tvZdP09NLOauEj",
-        "type": "Entry",
-        "createdAt": "2024-09-06T11:59:59.517Z",
-        "updatedAt": "2024-09-06T12:00:11.291Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:11.291Z",
-        "firstPublishedAt": "2024-09-06T12:00:11.291Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "helpCentreMethodRequest"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/3yPRVuZ5tvZdP09NLOauEj"
-      },
-      "fields": {
-        "name": {
-          "en-US": "Help Centre Method Request"
-        },
-        "internalUserTitle": {
-          "en-US": "I am an ONS internal user"
-        },
-        "internalUserContent": {
-          "en-US": "Method requests can be raised to:\n\n* Have new methods developed for the Statistical Methods Library.\n* Add existing code to the Statistical Methods Library.\n* Change existing methods held within the Statistical Methods Library.\n\nIf you would like to make a suggestion for a new method, or to provide feedback about an existing method, please do so by emailing [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk)."
-        },
-        "externalUserTitle": {
-          "en-US": "I am a user from outside the ONS"
-        },
-        "externalUserContent": {
-          "en-US": "Currently we do not accept formal method submissions or change requests from external users. In future, we will accept certain method requests via the [Integrated Data Service](https://integrateddataservice.gov.uk/)."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "4GwadO5feNlF2biBAAZbfw",
-        "type": "Entry",
-        "createdAt": "2024-09-06T11:59:59.523Z",
-        "updatedAt": "2024-09-06T12:00:10.886Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:10.886Z",
-        "firstPublishedAt": "2024-09-06T12:00:10.886Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "catalogueTableOfMethods2"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/4GwadO5feNlF2biBAAZbfw"
-      },
-      "fields": {
-        "id": {
-          "en-US": "totals-and-components"
-        },
-        "name": {
-          "en-US": "Totals and Components"
-        },
-        "theme": {
-          "en-US": "Editing"
-        },
-        "expertGroup": {
-          "en-US": "Editing & Imputation"
-        },
-        "language": {
-          "en-US": "Python/Pandas"
-        },
-        "author": {
-          "en-US": "ONS"
-        },
-        "description": {
-          "en-US": "The automatic editing method for totals and components correction is currently used in ONS business surveys to ensure fixed relationships between variables are satisfied. For example, when a total (e.g., total employment) is collected along with the component breakdown (e.g., full-time male, full-time female, part-time male, part-time female). The primary use of the method is to automatically detect and correct errors in respondent data where fixed relationships have not been satisfied to improve the efficiency of the editing process, reduce the burden on respondents and survey validators and improve overall data quality. This method can also be used to ensure fixed relationships between variables are satisfied in other data types such as imputed data to improve overall data quality."
-        },
-        "contactDetails": {
-          "en-US": "smlhelp@ons.gov.uk"
-        },
-        "methodReady": {
-          "en-US": true
-        },
-        "releaseVersion": {
-          "en-US": "v1.1.0"
-        },
-        "releaseLink": {
-          "en-US": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0"
-        },
-        "codeLink": {
-          "en-US": "https://github.com/ONSdigital/sml-python-small/tree/main/sml_small/editing/totals_and_components/totals_and_components.py"
-        },
-        "specificationLink": {
-          "en-US": "https://github.com/ONSdigital/Statistical-Method-Specifications/blob/totals_components/editing_and_imputation/totals_components.md"
-        },
-        "userDocumentationLink": {
-          "en-US": "https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/totals-and-components/totals-and-components.md"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "5dA4wvX0V2tLHCnwvDEyI2",
-        "type": "Entry",
-        "createdAt": "2024-09-06T11:59:59.533Z",
-        "updatedAt": "2024-09-06T12:00:12.513Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:12.513Z",
-        "firstPublishedAt": "2024-09-06T12:00:12.513Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "accessibilityPage"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/5dA4wvX0V2tLHCnwvDEyI2"
-      },
-      "fields": {
-        "title": {
-          "en-US": "Accessibility Statement"
-        },
-        "mainContent": {
-          "en-US": "# Accessibility Statement\n\nThis accessibility statement applies to the Office for National Statistics (ONS) Statistical Methods Library.  \n\nWe want as many people as possible to be able to use the website. If you have a disability, [AbilityNet](https://mcmw.abilitynet.org.uk/) has advice on making your device easier to use.\n\n## How accessible the website is\n\nWe are aware that some parts of this website are not fully accessible, and we are working to improve this.\n\n## How to request content in an accessible format\n\nIf you need information from the website in a different format please contact us at [SMLHelp@ons.gov.uk](mailto:SMLHelp@ons.gov.uk) and tell us:\n\n* The web address (URL).\n* Your name and email address.\n* The format you require.\n\nWe’ll reply within ten days to let you know when we will be able to provide the information. We will consider each request but may not be able to provide an alternative accessible format on every occasion.\n\n## Reporting accessibility problems\n\nWe are working to meet accessibility standards across this website. If you experience difficulty in accessing our website please contact us at [SMLHelp@ons.gov.uk](mailto:SMLHelp@ons.gov.uk).\n\n## Enforcement procedure\n\nThe Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the “accessibility regulations”). If you contact us with a complaint and you are not happy with our response contact the [Equality Advisory and Support Service (EASS)](https://www.equalityadvisoryservice.com/).\n\n## Technical information about the website’s accessibility\n\nThe ONS is committed to making this portal accessible, in accordance with the [Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018](https://www.legislation.gov.uk/uksi/2018/952/made).\n\n## What we’re doing to improve accessibility\n\nWe are committed to making sure our online services are accessible to all users and comply with level AA of the Web Content Accessibility Guidelines – WCAG 2.1 in line with the Public Sector Bodies (Websites and Mobile Applications) (No.2) Accessibility regulations 2018, and intend to.\n\nIn order to make sure our online services are accessible to all users, we are working with [The Digital Accessibility Centre (DAC)](http://www.digitalaccessibilitycentre.org/) to carry out WCAG 2.1 AA level technical compliance audits, which will also include testing by users with a wide range of disabilities.\n\n## Preparation of this accessibility statement\n\nThis statement was prepared on 1 February 2023.\n"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "6Benijjye1q8xVSrb6AEG3",
-        "type": "Entry",
-        "createdAt": "2024-09-06T11:59:59.537Z",
-        "updatedAt": "2024-09-06T12:00:12.105Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:12.105Z",
-        "firstPublishedAt": "2024-09-06T12:00:12.105Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/6Benijjye1q8xVSrb6AEG3"
-      },
-      "fields": {
-        "id": {
-          "en-US": "accredited_researcher"
-        },
-        "term": {
-          "en-US": "Accredited Researcher"
-        },
-        "meaning": {
-          "en-US": "Researchers who have special permission from ONS to access personal information to assist in statistical research."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "1PQFWq5r92jnyKqZnqtmrk",
-        "type": "Entry",
-        "createdAt": "2024-09-06T11:59:59.542Z",
-        "updatedAt": "2024-09-06T12:00:12.944Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:12.944Z",
-        "firstPublishedAt": "2024-09-06T12:00:12.944Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "catalogueTableOfMethods2"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/1PQFWq5r92jnyKqZnqtmrk"
-      },
-      "fields": {
-        "id": {
-          "en-US": "cell-key-perturbation"
-        },
-        "name": {
-          "en-US": "Cell Key Perturbation"
-        },
-        "theme": {
-          "en-US": "Statistical Disclosure Control"
-        },
-        "expertGroup": {
-          "en-US": "Statistical Disclosure Control"
-        },
-        "language": {
-          "en-US": "Python/Pandas"
-        },
-        "author": {
-          "en-US": "ONS"
-        },
-        "description": {
-          "en-US": "Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.\n\nTo install and use this method, please see [User Notes](https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md)."
-        },
-        "contactDetails": {
-          "en-US": "smlhelp@ons.gov.uk"
-        },
-        "methodReady": {
-          "en-US": true
-        },
-        "releaseVersion": {
-          "en-US": "v2.0.0"
-        },
-        "releaseLink": {
-          "en-US": "https://github.com/ONSdigital/cell-key-perturbation/releases/tag/v2.0.0"
-        },
-        "codeLink": {
-          "en-US": "https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py"
-        },
-        "userDocumentationLink": {
-          "en-US": "https://github.com/ONSdigital/cell-key-perturbation/blob/main/documentation/SML_UserDocs_CellKeyPerturbation_Py.md"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "73KZnVqhnsVFeuLRNMcf3A",
-        "type": "Entry",
-        "createdAt": "2024-09-06T11:59:59.549Z",
-        "updatedAt": "2024-09-06T12:00:11.706Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:11.706Z",
-        "firstPublishedAt": "2024-09-06T12:00:11.706Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/73KZnVqhnsVFeuLRNMcf3A"
-      },
-      "fields": {
-        "id": {
-          "en-US": "expert_group"
-        },
-        "term": {
-          "en-US": "Expert Group"
-        },
-        "meaning": {
-          "en-US": "A group of ONS employees within the Methodology and Quality Directorate with expertise in a specific area. For a full list, see https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/"
-        },
-        "externalLinkTextShort": {
-          "en-US": "Expert group"
-        },
-        "externalUrl": {
-          "en-US": "https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
         "id": "6FEY1vfAQ1bNUjOxKoJ6zx",
         "type": "Entry",
-        "createdAt": "2024-09-06T12:00:00.510Z",
-        "updatedAt": "2024-09-06T12:00:14.322Z",
+        "createdAt": "2024-10-18T13:47:33.519Z",
+        "updatedAt": "2024-10-18T13:47:34.493Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -3392,8 +4630,8 @@
           }
         },
         "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:14.322Z",
-        "firstPublishedAt": "2024-09-06T12:00:14.322Z",
+        "publishedAt": "2024-10-18T13:47:34.493Z",
+        "firstPublishedAt": "2024-10-18T13:47:34.493Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -3460,170 +4698,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "1KlrkSlWVBd5dxHHcYKHGV",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:00.512Z",
-        "updatedAt": "2024-09-06T12:00:13.437Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:13.437Z",
-        "firstPublishedAt": "2024-09-06T12:00:13.437Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/1KlrkSlWVBd5dxHHcYKHGV"
-      },
-      "fields": {
-        "id": {
-          "en-US": "community_methods"
-        },
-        "term": {
-          "en-US": "Community Methods"
-        },
-        "meaning": {
-          "en-US": "Code developed by a wider community of analysts. These methods are held in a community code repository to ensure there is a clear distinction in terms of maintenance of the code. After sign-off, any changes to methods held in the SML community repository must be made via the SML governance process to ensure that specifications and documentation are kept up to date and users are informed of changes to the code. The developers of the code would be accountable for making any updates to the code."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "1SzvT5lBJvPtZWnnfDbIJ4",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:00.516Z",
-        "updatedAt": "2024-09-06T12:00:14.872Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:14.872Z",
-        "firstPublishedAt": "2024-09-06T12:00:14.872Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/1SzvT5lBJvPtZWnnfDbIJ4"
-      },
-      "fields": {
-        "id": {
-          "en-US": "git"
-        },
-        "term": {
-          "en-US": "Git"
-        },
-        "meaning": {
-          "en-US": "A popular software tool for version control. Files are stored in repositories (or 'repos'), which can be local or remote, and changes made are committed to a log, allowing files to be reverted to previous versions. A project can have multiple contributing authors and multiple 'branches' (variants) simultaneously, with Git providing tools to merge changes."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
         "id": "1dEel1rXrwQTW8p1DumqQT",
         "type": "Entry",
-        "createdAt": "2024-09-06T12:00:00.534Z",
-        "updatedAt": "2024-09-06T12:00:13.860Z",
+        "createdAt": "2024-10-18T13:47:33.525Z",
+        "updatedAt": "2024-10-18T13:47:35.534Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -3632,8 +4710,8 @@
           }
         },
         "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:13.860Z",
-        "firstPublishedAt": "2024-09-06T12:00:13.860Z",
+        "publishedAt": "2024-10-18T13:47:35.534Z",
+        "firstPublishedAt": "2024-10-18T13:47:35.534Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -3733,10 +4811,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "7gaTewUF0sQXN7T36lIDyX",
+        "id": "4GwadO5feNlF2biBAAZbfw",
         "type": "Entry",
-        "createdAt": "2024-09-06T12:00:00.538Z",
-        "updatedAt": "2024-09-06T12:00:15.338Z",
+        "createdAt": "2024-10-18T13:47:33.530Z",
+        "updatedAt": "2024-10-18T13:47:34.504Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -3745,8 +4823,8 @@
           }
         },
         "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:15.338Z",
-        "firstPublishedAt": "2024-09-06T12:00:15.338Z",
+        "publishedAt": "2024-10-18T13:47:34.504Z",
+        "firstPublishedAt": "2024-10-18T13:47:34.504Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -3784,41 +4862,50 @@
             "id": "catalogueTableOfMethods2"
           }
         },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/7gaTewUF0sQXN7T36lIDyX"
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/4GwadO5feNlF2biBAAZbfw"
       },
       "fields": {
         "id": {
-          "en-US": "cell-key-perturbation-r"
+          "en-US": "totals-and-components"
         },
         "name": {
-          "en-US": "Cell Key Perturbation "
+          "en-US": "Totals and Components"
         },
         "theme": {
-          "en-US": "Statistical Disclosure Control"
+          "en-US": "Editing"
         },
         "expertGroup": {
-          "en-US": "Statistical Disclosure Control"
+          "en-US": "Editing & Imputation"
         },
         "language": {
-          "en-US": "R"
+          "en-US": "Python/Pandas"
         },
         "author": {
           "en-US": "ONS"
         },
         "description": {
-          "en-US": "Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation."
+          "en-US": "The automatic editing method for totals and components correction is currently used in ONS business surveys to ensure fixed relationships between variables are satisfied. For example, when a total (e.g., total employment) is collected along with the component breakdown (e.g., full-time male, full-time female, part-time male, part-time female). The primary use of the method is to automatically detect and correct errors in respondent data where fixed relationships have not been satisfied to improve the efficiency of the editing process, reduce the burden on respondents and survey validators and improve overall data quality. This method can also be used to ensure fixed relationships between variables are satisfied in other data types such as imputed data to improve overall data quality."
         },
         "contactDetails": {
           "en-US": "smlhelp@ons.gov.uk"
         },
         "methodReady": {
-          "en-US": false
+          "en-US": true
         },
         "releaseVersion": {
-          "en-US": "Not Released Yet"
+          "en-US": "v1.1.0"
         },
-        "additionalInformation": {
-          "en-US": " "
+        "releaseLink": {
+          "en-US": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0"
+        },
+        "codeLink": {
+          "en-US": "https://github.com/ONSdigital/sml-python-small/tree/main/sml_small/editing/totals_and_components/totals_and_components.py"
+        },
+        "specificationLink": {
+          "en-US": "https://github.com/ONSdigital/Statistical-Method-Specifications/blob/totals_components/editing_and_imputation/totals_components.md"
+        },
+        "userDocumentationLink": {
+          "en-US": "https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/totals-and-components/totals-and-components.md"
         }
       }
     },
@@ -3837,10 +4924,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "5jT96XUoyfeVejeaTTKakT",
+        "id": "78d7qRmxYSzox6ccAwoPII",
         "type": "Entry",
-        "createdAt": "2024-09-06T12:00:00.549Z",
-        "updatedAt": "2024-09-06T12:00:16.163Z",
+        "createdAt": "2024-10-18T13:47:33.591Z",
+        "updatedAt": "2024-10-18T13:47:34.585Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -3849,8 +4936,8 @@
           }
         },
         "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:16.163Z",
-        "firstPublishedAt": "2024-09-06T12:00:16.163Z",
+        "publishedAt": "2024-10-18T13:47:34.585Z",
+        "firstPublishedAt": "2024-10-18T13:47:34.585Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -3885,20 +4972,23 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "glossaryEntry"
+            "id": "methodsCatalogue"
           }
         },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/5jT96XUoyfeVejeaTTKakT"
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/78d7qRmxYSzox6ccAwoPII"
       },
       "fields": {
-        "id": {
-          "en-US": "markdown"
+        "heading1": {
+          "en-US": "Methods catalogue"
         },
-        "term": {
-          "en-US": "Markdown"
+        "paragraph": {
+          "en-US": "Here you will discover statistical methods used by the Office for National Statistics."
         },
-        "meaning": {
-          "en-US": "A popular and simple markup language used across the Web for formatting text. Markdown is the format in which SML specifications are written."
+        "detail": {
+          "en-US": "What are method themes and expert groups?"
+        },
+        "detailContent": {
+          "en-US": "Methods are sorted in hierarchical order with expert groups as the top level. For example, within an expert group are different themes, and within the themes are different methods.\n\nTo find out more about expert groups and themes, please visit the [analysis function website.](https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/)"
         }
       }
     },
@@ -3917,10 +5007,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "79mygGJlikbZmNOLp9hU1V",
+        "id": "5WYN3VRdVncydnbqCYupCM",
         "type": "Entry",
-        "createdAt": "2024-09-06T12:00:01.527Z",
-        "updatedAt": "2024-09-06T12:00:16.872Z",
+        "createdAt": "2024-10-18T13:47:33.686Z",
+        "updatedAt": "2024-10-18T13:47:34.502Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -3929,8 +5019,8 @@
           }
         },
         "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:16.872Z",
-        "firstPublishedAt": "2024-09-06T12:00:16.872Z",
+        "publishedAt": "2024-10-18T13:47:34.502Z",
+        "firstPublishedAt": "2024-10-18T13:47:34.502Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -3965,26 +5055,17 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "glossaryEntry"
+            "id": "heroHomePage"
           }
         },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/79mygGJlikbZmNOLp9hU1V"
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/5WYN3VRdVncydnbqCYupCM"
       },
       "fields": {
-        "id": {
-          "en-US": "ids"
+        "heroTitle": {
+          "en-US": "An open source library for statistical code approved by the ONS"
         },
-        "term": {
-          "en-US": "Integrated Data Service (IDS)"
-        },
-        "meaning": {
-          "en-US": "A secure, integrated service providing access to data and tools for analysis and collaboration for Government analysts, devolved administrations and external Accredited Researchers."
-        },
-        "externalLinkTextShort": {
-          "en-US": "Integrated Data Service"
-        },
-        "externalUrl": {
-          "en-US": "https://integrateddataservice.gov.uk/"
+        "heroButton": {
+          "en-US": "Find methods"
         }
       }
     },
@@ -4003,10 +5084,10 @@
             "id": "h6k5tsc4ytaf"
           }
         },
-        "id": "6q41cYDJBtyVn44KO4MuQQ",
+        "id": "7ald28ahkCJgBJu1oKhUmI",
         "type": "Entry",
-        "createdAt": "2024-09-06T12:00:01.537Z",
-        "updatedAt": "2024-09-06T12:00:18.769Z",
+        "createdAt": "2024-10-18T13:47:33.769Z",
+        "updatedAt": "2024-10-18T13:47:35.569Z",
         "environment": {
           "sys": {
             "id": "preprod",
@@ -4015,8 +5096,8 @@
           }
         },
         "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:18.769Z",
-        "firstPublishedAt": "2024-09-06T12:00:18.769Z",
+        "publishedAt": "2024-10-18T13:47:35.569Z",
+        "firstPublishedAt": "2024-10-18T13:47:35.569Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -4051,1345 +5132,53 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "glossaryEntry"
+            "id": "catalogueTableOfMethods2"
           }
         },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/6q41cYDJBtyVn44KO4MuQQ"
+        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/7ald28ahkCJgBJu1oKhUmI"
       },
       "fields": {
         "id": {
-          "en-US": "idp"
+          "en-US": "selective-editing"
         },
-        "term": {
-          "en-US": "Integrated Data Programme (IDP)"
+        "name": {
+          "en-US": "Selective Editing"
         },
-        "meaning": {
-          "en-US": "The Integrated Data Programme, the ONS team that provides and adminstrates the Integrated Data Service (IDS)."
+        "theme": {
+          "en-US": "Editing"
         },
-        "relatedlist": {
-          "en-US": [
-            "Integrated Data Service (IDS)"
-          ]
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
+        "expertGroup": {
+          "en-US": "Editing & Imputation"
         },
-        "id": "6YIFLOQGzh9O370tgeARSq",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:01.552Z",
-        "updatedAt": "2024-09-06T12:00:17.836Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
+        "language": {
+          "en-US": "Python/Pandas"
         },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:17.836Z",
-        "firstPublishedAt": "2024-09-06T12:00:17.836Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
+        "author": {
+          "en-US": "ONS"
         },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
+        "description": {
+          "en-US": "Selective Editing is an internationally recognised editing method where potential errors are prioritised according to their expected effect on key outputs. Only respondents that are having an impact on published estimates will be recontacted.\n\nSelective Editing works by assigning a score to each important variable for a business where, the score reflects the impact that editing the respondent will have on the estimates. Only contributors with a high score are checked, low scoring contributors pass through unchecked."
         },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
+        "contactDetails": {
+          "en-US": "smlhelp@ons.gov.uk"
         },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
+        "methodReady": {
+          "en-US": true
         },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
+        "releaseVersion": {
+          "en-US": "v1.0.0"
         },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/6YIFLOQGzh9O370tgeARSq"
-      },
-      "fields": {
-        "id": {
-          "en-US": "release_notes"
+        "releaseLink": {
+          "en-US": "https://github.com/ONSdigital/sml-python-small/releases/tag/1.0.0"
         },
-        "term": {
-          "en-US": "Release Notes"
+        "codeLink": {
+          "en-US": "https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/selective_editing.py"
         },
-        "meaning": {
-          "en-US": "A file containing notes explaining what changes have been made to a piece of software since the previous release."
+        "specificationLink": {
+          "en-US": "https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/selective_editing/methodological_specification.md"
         },
-        "relatedlist": {
-          "en-US": [
-            "Release"
-          ]
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "6oyEIyUgTSadgfgqXcchmR",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:01.762Z",
-        "updatedAt": "2024-09-06T12:00:18.274Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:18.274Z",
-        "firstPublishedAt": "2024-09-06T12:00:18.274Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/6oyEIyUgTSadgfgqXcchmR"
-      },
-      "fields": {
-        "id": {
-          "en-US": "official_outputs"
-        },
-        "term": {
-          "en-US": "Official Outputs"
-        },
-        "meaning": {
-          "en-US": "Statistics and data analysis officially published by ONS for public consumption."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "2EV5TKiycZvUQvjKLpUCY5",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:01.766Z",
-        "updatedAt": "2024-09-06T12:00:19.184Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:19.184Z",
-        "firstPublishedAt": "2024-09-06T12:00:19.184Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/2EV5TKiycZvUQvjKLpUCY5"
-      },
-      "fields": {
-        "id": {
-          "en-US": "sensitive"
-        },
-        "term": {
-          "en-US": "Sensitive"
-        },
-        "meaning": {
-          "en-US": "Data or methods that reveal personal details, and as such requires accreditation to use."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "hHSTKE9UpKOiCoB4aGkv5",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:01.768Z",
-        "updatedAt": "2024-09-06T12:00:17.345Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:17.345Z",
-        "firstPublishedAt": "2024-09-06T12:00:17.345Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/hHSTKE9UpKOiCoB4aGkv5"
-      },
-      "fields": {
-        "id": {
-          "en-US": "metadata"
-        },
-        "term": {
-          "en-US": "Metadata"
-        },
-        "meaning": {
-          "en-US": "'Data about data', giving information about a product itself, as opposed to its contents. In the case of the SML, metadata includes, for example: when a method was onboarded; its development status; by whom it was developed; whether or not it is approved for use in official outputs; etc."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "6lYqR80JEilHmlhyWOIpH2",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:01.774Z",
-        "updatedAt": "2024-09-06T12:00:16.515Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:16.515Z",
-        "firstPublishedAt": "2024-09-06T12:00:16.515Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/6lYqR80JEilHmlhyWOIpH2"
-      },
-      "fields": {
-        "id": {
-          "en-US": "github"
-        },
-        "term": {
-          "en-US": "GitHub"
-        },
-        "meaning": {
-          "en-US": "A popular Microsoft-owned service providing hosting for Git repositories, a Web interface to Git, and related services."
-        },
-        "relatedlist": {
-          "en-US": [
-            "Git"
-          ]
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "1JRjsMT7ZcjUvh0Rua1yJg",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:02.525Z",
-        "updatedAt": "2024-09-06T12:00:19.590Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:19.590Z",
-        "firstPublishedAt": "2024-09-06T12:00:19.590Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/1JRjsMT7ZcjUvh0Rua1yJg"
-      },
-      "fields": {
-        "id": {
-          "en-US": "third_party_methods"
-        },
-        "term": {
-          "en-US": "Third Party Methods"
-        },
-        "meaning": {
-          "en-US": "Third party methods are defined as those where a package, piece of code or software is developed and maintained outside of the SML strictures. This may include packages developed within ONS but where code is held and managed in a separate repository, or packages developed and maintained externally."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "bGW6DZuAqOTCrASxPzq3c",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:02.529Z",
-        "updatedAt": "2024-09-06T12:00:21.649Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:21.649Z",
-        "firstPublishedAt": "2024-09-06T12:00:21.649Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/bGW6DZuAqOTCrASxPzq3c"
-      },
-      "fields": {
-        "id": {
-          "en-US": "package"
-        },
-        "term": {
-          "en-US": "Package"
-        },
-        "meaning": {
-          "en-US": "An archive containing software and additional metadata that is distributed by a package manager. Sometimes used as a synonym for 'library', but does not always refer to libraries."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "2Oyrzj4Dkqn9LuNDxFZMnh",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:02.557Z",
-        "updatedAt": "2024-09-06T12:00:21.223Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:21.223Z",
-        "firstPublishedAt": "2024-09-06T12:00:21.223Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/2Oyrzj4Dkqn9LuNDxFZMnh"
-      },
-      "fields": {
-        "id": {
-          "en-US": "release"
-        },
-        "term": {
-          "en-US": "Release"
-        },
-        "meaning": {
-          "en-US": "A 'snapshot' of a Git repository marked as being stable. Releases are commonly referred to by a version number. A popular scheme for determining version numbers is semantic versioning."
-        },
-        "relatedlist": {
-          "en-US": [
-            "Git",
-            "Repository",
-            "Semantic Versioning"
-          ]
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "6l2sPkpbSgUyoYr9x1OLX2",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:02.579Z",
-        "updatedAt": "2024-09-06T12:00:21.997Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:21.997Z",
-        "firstPublishedAt": "2024-09-06T12:00:21.997Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/6l2sPkpbSgUyoYr9x1OLX2"
-      },
-      "fields": {
-        "id": {
-          "en-US": "version_control"
-        },
-        "term": {
-          "en-US": "Version Control"
-        },
-        "meaning": {
-          "en-US": "A means of tracking changes made to a file or collection of files. Commonly used to track the development of software projects."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "7IvVbD5tUwbzWeWPqwQP5n",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:02.599Z",
-        "updatedAt": "2024-09-06T12:00:20.746Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:20.746Z",
-        "firstPublishedAt": "2024-09-06T12:00:20.746Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/7IvVbD5tUwbzWeWPqwQP5n"
-      },
-      "fields": {
-        "id": {
-          "en-US": "semantic_versioning"
-        },
-        "term": {
-          "en-US": "Semantic Versioning"
-        },
-        "meaning": {
-          "en-US": "A popular scheme for determining version numbers. Consists of three integers, separated by full stops. The first integer is the 'major' version number, the second is the 'minor' version number, and the third is the 'patch' number. The patch number is incremented by 1 when bugfixes are implemented. The minor version is incremented by 1 when new functionality is introduced without affecting compatibility with previous versions. The major version number is incremented by 1 when changes are made that break compatibility with previous versions. See https://semver.org"
-        },
-        "externalLinkTextShort": {
-          "en-US": "Semantic Versioning"
-        },
-        "externalUrl": {
-          "en-US": "https://semver.org"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "11mx4pNTAuijgoH17sUAa3",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:02.606Z",
-        "updatedAt": "2024-09-06T12:00:20.397Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:20.397Z",
-        "firstPublishedAt": "2024-09-06T12:00:20.397Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/11mx4pNTAuijgoH17sUAa3"
-      },
-      "fields": {
-        "id": {
-          "en-US": "sml_team"
-        },
-        "term": {
-          "en-US": "SML Team"
-        },
-        "meaning": {
-          "en-US": "The team responsible for SML administration and governance."
-        },
-        "relatedlist": {
-          "en-US": [
-            "SML"
-          ]
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "01k3lWZ4f7T6FC6Vogvomn",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:02.618Z",
-        "updatedAt": "2024-09-06T12:00:20.015Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:20.015Z",
-        "firstPublishedAt": "2024-09-06T12:00:20.015Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/01k3lWZ4f7T6FC6Vogvomn"
-      },
-      "fields": {
-        "id": {
-          "en-US": "repository"
-        },
-        "term": {
-          "en-US": "Repository"
-        },
-        "meaning": {
-          "en-US": "A directory containing files that are versioned by Git."
-        },
-        "relatedlist": {
-          "en-US": [
-            "Git"
-          ]
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "3MHWfCcqLpDHbc7NLLuNh6",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:03.504Z",
-        "updatedAt": "2024-09-06T12:00:22.854Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:22.854Z",
-        "firstPublishedAt": "2024-09-06T12:00:22.854Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/3MHWfCcqLpDHbc7NLLuNh6"
-      },
-      "fields": {
-        "id": {
-          "en-US": "statistical_methods"
-        },
-        "term": {
-          "en-US": "Statistical Methods"
-        },
-        "meaning": {
-          "en-US": "Mathematical techniques used to transform, analyse and manipulate data that fall under the remit of one of the expert groups within the Methodology and Quality Directorate of the ONS."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "5eYwt4est2ARh3hat0BL3r",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:03.530Z",
-        "updatedAt": "2024-09-26T13:11:17.942Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 19,
-        "publishedAt": "2024-09-26T13:11:17.942Z",
-        "firstPublishedAt": "2024-09-06T12:00:23.262Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 10,
-        "version": 20,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/5eYwt4est2ARh3hat0BL3r"
-      },
-      "fields": {
-        "id": {
-          "en-US": "smll"
-        },
-        "term": {
-          "en-US": "SML"
-        },
-        "meaning": {
-          "en-US": "The Statistical Methods Library, a centralised collection of methods approved for use by the ONS. Comprises a code library, accessed through GitHub, and a collection of associated documentation, accessed via the SML Portal."
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "4GpXwiVIqopHyO33yxnSAA",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:03.544Z",
-        "updatedAt": "2024-10-07T12:42:20.717Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 24,
-        "publishedAt": "2024-10-07T12:42:20.717Z",
-        "firstPublishedAt": "2024-09-06T12:00:22.443Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0LNbftqFgzDsVvbfITlLuV"
-          }
-        },
-        "publishedCounter": 3,
-        "version": 25,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0LNbftqFgzDsVvbfITlLuV"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "about"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/4GpXwiVIqopHyO33yxnSAA"
-      },
-      "fields": {
-        "about": {
-          "en-US": "# About the Statistical Methods Library\n\n## What is the Statistical Methods Library?\n\nThe Statistical Methods Library (SML) is a central library for approved statistical methods, accessible to a wide range of users.\n\n## SML mission\n\nOur mission is to provide a central resource for consistent and reproducible statistical methods and documentation, including a governance process to facilitate quality assurance and adding/updating methods. The SML will allow methods and best practice to be shared across ONS, other government departments and wider. \n\n## Current objectives\n\n- To act as a shared single point of storage and reference for best practice methods and method documentation  \n\n- To ensure methods are available across ONS, other government departments and a wider user base, through a public portal and the Integrated Data Service (IDS). \n\n- To ensure that methods for official statistical outputs are fully transparent. \n\n- To provide clear governance for method quality assurance.  \n"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [
-        ],
-        "concepts": [
-        ]
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "h6k5tsc4ytaf"
-          }
-        },
-        "id": "1blaUAHFEY66NrdCtomp9k",
-        "type": "Entry",
-        "createdAt": "2024-09-06T12:00:03.608Z",
-        "updatedAt": "2024-09-06T12:00:23.717Z",
-        "environment": {
-          "sys": {
-            "id": "preprod",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2024-09-06T12:00:23.717Z",
-        "firstPublishedAt": "2024-09-06T12:00:23.717Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "7BqQQLssfY5nUeZr8AO3cF"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [
-        ],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "glossaryEntry"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/h6k5tsc4ytaf/environments/preprod/entries/1blaUAHFEY66NrdCtomp9k"
-      },
-      "fields": {
-        "id": {
-          "en-US": "pypi"
-        },
-        "term": {
-          "en-US": "PyPI"
-        },
-        "meaning": {
-          "en-US": "The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software."
-        },
-        "relatedlist": {
-          "en-US": [
-            "SML",
-            "Package",
-            "Repository"
-          ]
-        },
-        "externalLinkTextShort": {
-          "en-US": "ONS-SML user profile on PyPI"
-        },
-        "externalUrl": {
-          "en-US": "https://pypi.org/user/ons-sml/"
+        "userDocumentationLink": {
+          "en-US": "https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/selective-editing/selective_editing.md"
         }
       }
     }

@@ -77,6 +77,8 @@ Failing command: contentful space migration --space-id $SPACE_ID --management-to
 2024.08.13-16.51.59: Migrated content from prod to dev
 2024.08.13-16.54.18: Performed rollback on environment dev
 2024.08.13-16.57.36: Migrated content from prod to dev
+2024.10.15-11.35.16: Migrated content from preprod to prod
+2024.10.18-14.47.36: Migrated content from dev to preprod
 2024.08.23-09.45.53: Migrated content from prod to preprod
 2024.08.23-10.00.59: Migrated content from prod to preprod
 2024.08.23-12.21.44: Error raised while auditing content from prod to preprod 
@@ -124,3 +126,19 @@ Failing command: contentful space migration --space-id $SPACE_ID --management-to
 2024.10.09-12.21.08: Audited content between dev and preprod
 2024.10.09-12.21.34: Audited content between preprod and prod
 2024.10.09-12.23.04: Audited content between preprod and prod
+2024.10.23-11.13.19: Audited content between dev and preprod
+2024.10.23-11.22.20: Audited content between dev and preprod
+2024.10.23-13.51.24: Audited content between dev and preprod
+2024.10.23-14.23.53: Error raised while auditing content from dev to preprod 
+ - Failing command: python contentful_webhook.py 
+ - Exit code: 2
+2024.10.23-14.24.35: Error raised while auditing content from dev to preprod 
+ - Failing command: contentful merge export --te $compare_environment --se "$base_environment" --management-token $CLI_KEY --output-file ./contentful-data/audits/${compare_environment}-export.js 
+ - Exit code: 1
+2024.10.23-14.25.11: Error raised while auditing content from dev to preprod 
+ - Failing command: python sub_scripts/Contentful_audit.py ${base_environment}-${compare_environment}-changeset.json ${compare_environment} 
+ - Exit code: 1
+2024.10.23-14.29.42: Error raised while migrating content from dev to preprod 
+ - Failing command: python sub_scripts/deletion_changeset.py $target_environment ../contentful-data/rollbacks/${target_environment}-export.json 
+ - Exit code: 1
+2024.10.23-14.30.36: Migrated content from dev to preprod

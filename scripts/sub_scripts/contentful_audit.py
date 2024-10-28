@@ -86,31 +86,33 @@ def build_report(add, edit, delete, data, name):
     """
 
     with open("../../audit_report.html", "w", encoding="utf-8") as file:
-        name = name.split("-")
+        name = name.split("" "-")
         file.write(html_header)
         file.write(f"{name[0].title()} to {name[1].title()} Audit report:\n\n")
-        file.write(f"Number of Entries added: {add}\n")
+        file.write(f"" f"Number " f"of Entries added: {add}\n")
         file.write(f"Number of Entries edited: {edit}\n")
-        file.write(f"Number of Entries deleted: {delete}\n\n")
+        file.write(f"" f"Number of Entries deleted: {delete}\n\n")
         file.write(
-            "----------------------------------------------------------------\n\n"
+            "--------------------------------------"
+            "--------------------------\n\n"
         )
-        file.write("Summary of contents changed:\n")
+        file.write("" "Summary of contents changed:\n")
         file.write(
             "----------------------------------------------------------------\n\n"
         )
         for count, entry in enumerate(data, start=1):
-            file.write(f"Entry: {count}\n")
+            file.write(f"Entr" f"y: {count}\n")
             file.write(f"{entry}\n\n")
             file.write(
                 "----------------------------------------------------------------\n\n"
             )
-        file.write("End of Report")
+        file.write("End of " "Report")
         file.write(html_footer)
         file.close()
 
 
-def highlight_differences(target_env_string, base_env_string, context=3):
+def highlight_differences(target_env_string,
+                          base_env_string, context=3):
     # context refers to the number of lines to buffer before and after a changed line
     diff = list(
         difflib.ndiff(target_env_string.splitlines(), base_env_string.splitlines())
