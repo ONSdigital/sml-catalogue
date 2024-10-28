@@ -5,30 +5,30 @@ Feature: About library tests
     Scenario: Help centre page install a method accessibility check
         Given I'm an sml portal user
         When I navigate to the help centre page
-        Then The id of the title is "help-centre-content"
+        Then The verified id is "help-centre-content"
         And The accessibility test passes
 
     Scenario: Main accessibility check
         Given I'm an sml portal user
-        When The id of the title is "main-content"
+        When The page loads
         Then The accessibility test passes
 
     Scenario: Accessibility page accessibility check
         Given I'm an sml portal user
         When I navigate to "accessibility-statement"
-        Then The id of the title is "accessibility-statement-content"
+        Then The verified id is "accessibility-statement-content"
         And The accessibility test passes
 
     Scenario: Methods catalogue page accessibility check
         Given I'm an sml portal user
         When I navigate to the methods catalogue page
-        Then The id of the title is "methods-catalogue-content"
+        Then The verified id is "methods-catalogue-page-content"
         And The accessibility test passes
 
     Scenario: Glossary page accessibility check
-        Given I'm an sml portal user
-        When I navigate to the "glossary" page
-        Then The id of the title is "glossary-page-content"
+        Given I'm an sml portal user on the home page
+        When I click the "glossary" link in the header
+        Then The verified id is "glossary-page-content"
         And The accessibility test passes    
         
     Scenario: Cell Key Perturbation page accessibility check

@@ -40,7 +40,7 @@ def navigate_to_url(context):
         lambda d: d.find_element(By.ID, "collapsible")
     ).click()
     WebDriverWait(driver, timeout=timeout).until(
-        EC.presence_of_element_located((By.ID, "collapsible-content"))
+        EC.presence_of_element_located((By.ID, "collapsible"))
     )
 
 
@@ -48,7 +48,7 @@ def navigate_to_url(context):
 def check_dropdown_content(context, text):
     dropdown_content = (
         WebDriverWait(driver, timeout=timeout)
-        .until(lambda d: d.find_element(By.ID, value="collapsible-content"))
+        .until(lambda d: d.find_element(By.ID, value="collapsible"))
         .get_attribute("innerText")
     )
     dropdown_content = dropdown_content.replace("(opens in a new window)", "").replace(
@@ -58,13 +58,7 @@ def check_dropdown_content(context, text):
 
 @then('The id of the dropdown is "{id}"')
 def check_dropdown_id(context, id):
-    page_id = None
-    page_id = (
-        WebDriverWait(driver, timeout=timeout)
-        .until(lambda d: d.find_element(By.ID, "{id}"))
-        .text
-    )
-    assert page_id != None
+    WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, id))
 
 
 def extractMethodTableContent(context, table):

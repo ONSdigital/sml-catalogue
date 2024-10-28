@@ -15,13 +15,10 @@ def navigate_to_the_method(context, method):
         lambda d: d.find_element(By.ID, value="title1")
     ).click()
     WebDriverWait(driver, timeout=timeout).until(
-        EC.presence_of_element_located((By.ID, "collapsible"))
-    )
-    WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.LINK_TEXT, value=method)
+        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=method)
     ).click()
     WebDriverWait(driver, timeout=timeout).until(
-        EC.presence_of_element_located((By.ID, "main-content"))
+        EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, "smlhelp@ons.gov.uk"))
     )
 
 
@@ -32,6 +29,7 @@ def check_method_summary_title(context, title):
         .until(lambda d: d.find_element(By.TAG_NAME, "h1"))
         .text
     )
+    print('ugyfgjghj,gkuytfjhfmgkuyjg,h', page_title)
     assert page_title == title
 
 

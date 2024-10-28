@@ -5,12 +5,12 @@ Feature: Methods catalogue tests
     Scenario: Title check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The id of the title is "methods-catalogue-title"
+        Then The verified id is "methods-catalogue-page-content"
 
     Scenario: Check for dropdown content
         Given I am on the methods catalogue page
         When I click on the collapsible drop down
-        Then The id of the dropdown is "collapsible-content"
+        Then The id of the dropdown is "collapsible"
 
     Scenario: Methods catalogue ready table header check
         Given I'm an sml portal user trying to get to the methods catalogue page

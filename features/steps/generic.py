@@ -13,14 +13,12 @@ def auth_user(context):
         EC.presence_of_element_located((By.ID, "main-title"))
     )
 
-
-@when('I navigate to the "{page_id}" page')
-def navigate_to_page(context, page_id):
-    driver.get(urljoin(context.config.userdata.get("host") + "resources/", page_id))
+@when('The page loads')
+def page_loads(context):
     WebDriverWait(driver, timeout=timeout).until(
-        EC.presence_of_element_located((By.ID, "{page_id}-page-content"))
+        EC.presence_of_element_located((By.ID, "main-title"))
     )
-
+    
 
 @when('I navigate to "{url}"')
 def navigate_to_url(context, url):
@@ -30,32 +28,19 @@ def navigate_to_url(context, url):
     )
 
 
-@then('The id of the title is "{id}"')
-def check_generic_id(context, id):
-    page_id = None
-    page_id = (
-        WebDriverWait(driver, timeout=timeout)
-        .until(lambda d: d.find_element(By.ID, "{id}"))
-        .text
-    )
-    assert page_id != None
+@then('The verified id is "{id}"')
+def check_generic_title_id(context, id):
+    verify_id = (WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, id)).get_attribute('id'))
+    print(verify_id)
+    assert verify_id == id
 
-@when('The id of the title is "{id}"')
-def check_generic_id(context, id):
-    page_id = None
-    page_id = (
-        WebDriverWait(driver, timeout=timeout)
-        .until(lambda d: d.find_element(By.ID, "{id}"))
-        .text
-    )
-    assert page_id != None
 
 
 @then('The title of the page is "{title}"')
 def check_title(context, title):
     page_title = (
         WebDriverWait(driver, timeout=10)
-        .until(lambda d: d.find_element(By.ID, "page-title"))
+        .until(lambda d: d.find_element(By.TAG_NAME, "h1"))
         .text
     )
     assert page_title == title

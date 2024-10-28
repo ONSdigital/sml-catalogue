@@ -3,23 +3,23 @@
 Feature: Home page tests
     Scenario: Check methods catalogue header link works
         Given I'm an sml portal user on the home page
-        When I click the "methods-catalogue" link in the header
-        Then The id of the title is "methods-catalogue-content"
+        When I click the "methods catalogue" link in the header
+        Then The verified id is "methods-catalogue-page-content"
 
     Scenario: Check help centre header link works
         Given I'm an sml portal user on the home page
-        When I click the "help-centre" link in the header
-        Then The id of the title is "help-centre-content"
+        When I click the "help centre" link in the header
+        Then The verified id is "help-centre-content"
 
     Scenario: Check about this library header link works
         Given I'm an sml portal user on the home page
-        When I click the "about" link in the header
-        Then The id of the title is "about-page-content"
+        When I click the "about this library" link in the header
+        Then The verified id is "about-page-content"
 
     Scenario: Check glossary header link works
         Given I'm an sml portal user on the home page
         When I click the "glossary" link in the header
-        Then The id of the title is "glossary-page-content"
+        Then The verified id is "glossary-page-content"
         
     Scenario: Beta banner feedback link check
         Given I'm an sml portal user

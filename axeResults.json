@@ -1925,11 +1925,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1 id=\"page-title\" class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#page-title"
+                        "h1"
                     ]
                 },
                 {
@@ -2003,7 +2003,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<p>The method checks the ratio of a principal variable\nagainst a suitable predictor variable and makes an automatic correction\nif the calculated ratio is around 1000. The automatic correction is\napplied to all relevant variables for the respondent.</p>",
+                    "html": "<p>The method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent.</p>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2315,7 +2315,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n            <span class=\"ons-u-vh\">Release version</span>\n            v1.1.0\n            <span class=\"ons-u-vh\">(opens in a new tab)</span>\n          </a>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
                     "impact": null,
                     "none": [],
                     "target": [
@@ -2346,32 +2346,6 @@
                     "none": [],
                     "target": [
                         "h2:nth-child(10)"
-                    ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": {
-                                "bgColor": "#ffffff",
-                                "contrastRatio": 15.9,
-                                "expectedContrastRatio": "4.5:1",
-                                "fgColor": "#222222",
-                                "fontSize": "13.5pt",
-                                "fontWeight": "normal",
-                                "missingData": null
-                            },
-                            "id": "color-contrast",
-                            "impact": "serious",
-                            "message": "Element has sufficient color contrast of 15.9",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<p>Links to the method code, specification and user documentation are provided for further reading.</p>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "p:nth-child(11)"
                     ]
                 },
                 {
@@ -2996,24 +2970,6 @@
                     "target": [
                         "#main-content"
                     ]
-                },
-                {
-                    "all": [],
-                    "any": [
-                        {
-                            "data": "page-title",
-                            "id": "duplicate-id",
-                            "impact": "minor",
-                            "message": "Document has no static elements that share the same id attribute",
-                            "relatedNodes": []
-                        }
-                    ],
-                    "html": "<h1 id=\"page-title\" class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
-                    "impact": null,
-                    "none": [],
-                    "target": [
-                        "#page-title"
-                    ]
                 }
             ],
             "tags": [
@@ -3058,11 +3014,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1 id=\"page-title\" class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#page-title"
+                        "h1"
                     ]
                 },
                 {
@@ -3161,11 +3117,11 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<h1 id=\"page-title\" class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                     "impact": null,
                     "none": [],
                     "target": [
-                        "#page-title"
+                        "h1"
                     ]
                 },
                 {
@@ -3732,7 +3688,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>The method checks the ratio of a principal variable\nagainst a suitable predictor variable and makes an automatic correction\nif the calculated ratio is around 1000. The automatic correction is\napplied to all relevant variables for the respondent.</p>",
+                    "html": "<p>The method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent.</p>",
                     "impact": null,
                     "none": [
                         {
@@ -3768,7 +3724,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n            <span class=\"ons-u-vh\">Release version</span>\n            v1.1.0\n            <span class=\"ons-u-vh\">(opens in a new tab)</span>\n          </a>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
                     "impact": null,
                     "none": [
                         {
@@ -3786,7 +3742,7 @@
                 {
                     "all": [],
                     "any": [],
-                    "html": "<p>Links to the method code, specification and user documentation are provided for further reading.</p>",
+                    "html": "<p></p>",
                     "impact": null,
                     "none": [
                         {
@@ -4536,7 +4492,7 @@
                             "relatedNodes": []
                         }
                     ],
-                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n            <span class=\"ons-u-vh\">Release version</span>\n            v1.1.0\n            <span class=\"ons-u-vh\">(opens in a new tab)</span>\n          </a>",
+                    "html": "<a href=\"https://github.com/ONSdigital/sml-python-small/releases/tag/1.1.0\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <span class=\"ons-u-vh\">Release version</span>\n        v1.1.0\n        <span class=\"ons-u-vh\">(opens in a new tab)</span>\n      </a>",
                     "impact": null,
                     "none": [
                         {
@@ -5092,9 +5048,9 @@
                             "message": "Page has at least one level-one heading",
                             "relatedNodes": [
                                 {
-                                    "html": "<h1 id=\"page-title\" class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
+                                    "html": "<h1 class=\"ons-u-mt-no\">Method: Thousand Pound Correction</h1>",
                                     "target": [
-                                        "#page-title"
+                                        "h1"
                                     ]
                                 }
                             ]
@@ -5146,8 +5102,8 @@
             ]
         }
     ],
-    "timestamp": "2024-10-25T11:34:27.968Z",
-    "url": "http://127.0.0.1:8000/method/ready-to-use-methods/thousand-pound-correction",
+    "timestamp": "2024-10-28T13:40:37.315Z",
+    "url": "http://127.0.0.1:8000/method/ready-methods/thousand-pound-correction",
     "violations": [
         {
             "description": "Ensures role attribute has an appropriate value for the element",
