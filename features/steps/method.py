@@ -1,5 +1,5 @@
 # Step definitions for methods catalogue page
-# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined, too-many-positional-arguments
+# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined, too-many-positional-arguments, redefined-builtin
 
 from setupSelenium import EC, By, WebDriverWait, driver, timeout
 
