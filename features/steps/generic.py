@@ -17,7 +17,7 @@ def auth_user(context):
 @when("The page loads")
 def page_loads(context):
     WebDriverWait(driver, timeout=timeout).until(
-        EC.presence_of_element_located((By.ID, "main-title"))
+        EC.presence_of_element_located((By.ID, "title1"))
     )
 
 
