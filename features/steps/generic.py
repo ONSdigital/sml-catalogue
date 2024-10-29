@@ -29,7 +29,7 @@ def navigate_to_url(context, url):
     )
 
 
-@then('The verified id is "{id}"')
+@then('The verified id for the page is "{id}"')
 def check_generic_title_id(context, id):
     verify_id = (
         WebDriverWait(driver, timeout=timeout)

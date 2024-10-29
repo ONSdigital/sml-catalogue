@@ -5,7 +5,7 @@ Feature: Methods catalogue tests
     Scenario: Title check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The verified id is "methods-catalogue-page-content"
+        Then The verified id for the page is "methods-catalogue-page-content"
 
     Scenario: Check for dropdown content
         Given I am on the methods catalogue page
