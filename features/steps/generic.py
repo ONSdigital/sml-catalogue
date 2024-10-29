@@ -36,7 +36,6 @@ def check_generic_title_id(context, id):
         .until(lambda d: d.find_element(By.ID, id))
         .get_attribute("id")
     )
-    print(verify_id)
     assert verify_id == id
 
 
