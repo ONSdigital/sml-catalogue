@@ -10,7 +10,7 @@ Feature: Methods catalogue tests
     Scenario: Check for dropdown content
         Given I am on the methods catalogue page
         When I click on the collapsible drop down
-        Then The id of the dropdown is "collapsible"
+        Then The id of the dropdown is "collapsible-content"
 
     Scenario: Methods catalogue ready table header check
         Given I'm an sml portal user trying to get to the methods catalogue page

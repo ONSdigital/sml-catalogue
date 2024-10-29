@@ -44,22 +44,14 @@ def navigate_to_url(context):
     )
 
 
-@then('I see the dropdown content "{text}"')
-def check_dropdown_content(context, text):
-    dropdown_content = (
-        WebDriverWait(driver, timeout=timeout)
-        .until(lambda d: d.find_element(By.ID, value="collapsible"))
-        .get_attribute("innerText")
-    )
-    dropdown_content = dropdown_content.replace("(opens in a new window)", "").replace(
-        "\n", ""
-    )
-    assert dropdown_content == text
-
-
 @then('The id of the dropdown is "{id}"')
 def check_dropdown_id(context, id):
-    WebDriverWait(driver, timeout=timeout).until(lambda d: d.find_element(By.ID, id))
+    dropdown_content_id = (
+        WebDriverWait(driver, timeout=timeout)
+        .until(lambda d: d.find_element(By.ID, id))
+        .get_attribute("id")
+    )
+    assert dropdown_content_id == id
 
 
 def extractMethodTableContent(context, table):
