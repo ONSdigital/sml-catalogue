@@ -5037,3 +5037,24 @@ userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/ma
 
 — 31/10/2024 at 10:34:17 AM —
 
+# CMS Update: 31/10/2024 at 10:34:52 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: heroHomePage
+
+Revision: 2
+
+Updated At: 2024-10-31T10:34:52.313Z
+
+Content Updated:
+
+```txt
+heroTitle: A library for statistical code approved by the ONS
+heroButton: Find methods
+```
+
+— 31/10/2024 at 10:34:52 AM —
+
