@@ -5058,3 +5058,27 @@ heroButton: Find methods
 
 — 31/10/2024 at 10:34:52 AM —
 
+# CMS Update: 31/10/2024 at 10:35:36 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreMethodRequest
+
+Revision: 3
+
+Updated At: 2024-10-31T10:35:36.690Z
+
+Content Updated: entry 3yPRVuZ5tvZdP09NLOauEj has been deleted.
+
+```txt
+name: {"en-US":"Help Centre Method Request"}
+internalUserTitle: {"en-US":"I am an ONS internal user"}
+internalUserContent: {"en-US":"Method requests can be raised to:\n\n* Have new methods developed for the Statistical Methods Library.\n* Add existing code to the Statistical Methods Library.\n* Change existing methods held within the Statistical Methods Library.\n\nIf you would like to make a suggestion for a new method, or to provide feedback about an existing method, please do so by emailing [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk)."}
+externalUserTitle: {"en-US":"I am a user from outside the ONS"}
+externalUserContent: {"en-US":"Currently we do not accept formal method submissions or change requests from external users. In future, we will accept certain method requests via the [Integrated Data Service](https://integrateddataservice.gov.uk/)."}
+```
+
+— 31/10/2024 at 10:35:36 AM —
+
