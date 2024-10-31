@@ -5185,3 +5185,36 @@ userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/ma
 
 — 31/10/2024 at 12:59:55 PM —
 
+# CMS Update: 31/10/2024 at 01:01:12 PM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 3
+
+Updated At: 2024-10-31T13:01:12.781Z
+
+Content Updated:
+
+```txt
+id: totals-and-components
+name: Totals and Components
+theme: Editing
+expertGroup: Editing & Imputation
+language: Python
+author: ONS
+description: The automatic editing method for totals and components correction is currently used in ONS business surveys to ensure fixed relationships between variables are satisfied. For example, when a total (e.g., total employment) is collected along with the component breakdown (e.g., full-time male, full-time female, part-time male, part-time female). The primary use of the method is to automatically detect and correct errors in respondent data where fixed relationships have not been satisfied to improve the efficiency of the editing process, reduce the burden on respondents and survey validators and improve overall data quality. This method can also be used to ensure fixed relationships between variables are satisfied in other data types such as imputed data to improve overall data quality.
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v1.2.1
+releaseLink: https://github.com/ONSdigital/sml-python-small/releases
+codeLink: https://github.com/ONSdigital/sml-python-small/tree/main/sml_small/editing/totals_and_components/totals_and_components.py
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/totals_components/editing_and_imputation/totals_components.md
+userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/totals-and-components/totals-and-components.md
+```
+
+— 31/10/2024 at 01:01:12 PM —
+
