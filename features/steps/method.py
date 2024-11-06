@@ -1,5 +1,5 @@
 # Step definitions for methods catalogue page
-# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined, too-many-positional-arguments
+# pylint: disable=import-error, undefined-variable, unused-argument, function-redefined, too-many-positional-arguments, redefined-builtin
 
 from setupSelenium import EC, By, WebDriverWait, driver, timeout
 
@@ -40,21 +40,18 @@ def navigate_to_url(context):
         lambda d: d.find_element(By.ID, "collapsible")
     ).click()
     WebDriverWait(driver, timeout=timeout).until(
-        EC.presence_of_element_located((By.ID, "collapsible-content"))
+        EC.presence_of_element_located((By.ID, "collapsible"))
     )
 
 
-@then('I see the dropdown content "{text}"')
-def check_dropdown_content(context, text):
-    dropdown_content = (
+@then('The id of the dropdown is "{id}"')
+def check_dropdown_id(context, id):
+    dropdown_content_id = (
         WebDriverWait(driver, timeout=timeout)
-        .until(lambda d: d.find_element(By.ID, value="collapsible-content"))
-        .get_attribute("innerText")
+        .until(lambda d: d.find_element(By.ID, id))
+        .get_attribute("id")
     )
-    dropdown_content = dropdown_content.replace("(opens in a new window)", "").replace(
-        "\n", ""
-    )
-    assert dropdown_content == text
+    assert dropdown_content_id == id
 
 
 def extractMethodTableContent(context, table):

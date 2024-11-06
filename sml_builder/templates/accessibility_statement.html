@@ -17,9 +17,11 @@
 
 {%- from "components/list/_macro.njk" import onsList -%}
 {%- block main -%}
-{% if cms_enabled %}
-    {{ content.main_content | markdown }}
-{% else %}
-    {{ page_body }}
-{% endif %}
+<div id="accessibility-statement-content">
+  {% if cms_enabled %}
+      {{ content.main_content | markdown }}
+  {% else %}
+      {{ page_body }}
+  {% endif %}
+<div id="main-title"> 
 {% endblock main -%}

@@ -17,64 +17,66 @@
 
 {%- from "components/list/_macro.njk" import onsList -%}
 {%- block main -%}
-{% if cms_enabled %}
+<div id="privacy-and-data-protection-page-content">
+  {% if cms_enabled %}
 
-  {{ content.privacy_content | markdown }}
+    {{ content.privacy_content | markdown }}
 
-{% else %}
-  <h1>Privacy and Data Protection</h1>
+  {% else %}
+    <h1>Privacy and Data Protection</h1>
 
-  <p>This information is for visitors to the Statistical Methods Library website.</p>
+    <p>This information is for visitors to the Statistical Methods Library website.</p>
 
-  <p>If you would like to find out more about how ONS collect and use your personal data, please visit our <a href="https://www.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection">data protection page</a>.</p>
+    <p>If you would like to find out more about how ONS collect and use your personal data, please visit our <a href="https://www.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection">data protection page</a>.</p>
 
-  <h2>Links to other websites</h2>
+    <h2>Links to other websites</h2>
 
-  <p>This site contains links to other sites. The ONS is not responsible for the privacy practices or the content of such websites.</p>
+    <p>This site contains links to other sites. The ONS is not responsible for the privacy practices or the content of such websites.</p>
 
-  <h3>Following a link to another website</h3>
+    <h3>Following a link to another website</h3>
 
-  <p>If you go to another website from this one, read the privacy policy on that website to find out what it does with your information.</p>
+    <p>If you go to another website from this one, read the privacy policy on that website to find out what it does with your information.</p>
 
-  <h3>Following a link to statisticalmethodslibrary.ons.gov.uk from another website</h3>
+    <h3>Following a link to statisticalmethodslibrary.ons.gov.uk from another website</h3>
 
-  <p>If you come to statisticalmethodslibrary.ons.gov.uk from another website, we may receive personal information from the other website.</p>
+    <p>If you come to statisticalmethodslibrary.ons.gov.uk from another website, we may receive personal information from the other website.</p>
 
-  <p>You should read the privacy policy of the website you came from to find out more about this.</p>
+    <p>You should read the privacy policy of the website you came from to find out more about this.</p>
 
-  <h2>Contact us</h2>
+    <h2>Contact us</h2>
 
-  <p> You can contact the Data Protection Officer if you:</p>
+    <p> You can contact the Data Protection Officer if you:</p>
 
-  {{
-      onsList({
-          "itemsList": [
-              {
-                  "text": 'have a question about the processing of personal data within the Statistical Methods Library'
-              },
-              {
-                  "text": 'think that your personal data have been misused or mishandled'
-              }
-          ]
-      })
-  }}
+    {{
+        onsList({
+            "itemsList": [
+                {
+                    "text": 'have a question about the processing of personal data within the Statistical Methods Library'
+                },
+                {
+                    "text": 'think that your personal data have been misused or mishandled'
+                }
+            ]
+        })
+    }}
 
-  <p><a href="mailto:DPO@statistics.gov.uk">DPO@statistics.gov.uk</a></p>
+    <p><a href="mailto:DPO@statistics.gov.uk">DPO@statistics.gov.uk</a></p>
 
-  <p>Telephone: 0345 601 3034</p>
+    <p>Telephone: 0345 601 3034</p>
 
-  <p>Data Protection Officer<br>
-  Office for National Statistics<br>
-  Segensworth Road<br>
-  Titchfield<br>
-  Fareham<br>
-  Hampshire<br>
-  PO15 5RR</p>
+    <p>Data Protection Officer<br>
+    Office for National Statistics<br>
+    Segensworth Road<br>
+    Titchfield<br>
+    Fareham<br>
+    Hampshire<br>
+    PO15 5RR</p>
 
-  <h2>Report a security vulnerability</h2>
+    <h2>Report a security vulnerability</h2>
 
-  <p>Please see our <a href="https://www.ons.gov.uk/help/vulnerabilitydisclosurepolicy">vulnerability disclosure policy</a> for information on how to report a vulnerability at HackerOne.</p>
+    <p>Please see our <a href="https://www.ons.gov.uk/help/vulnerabilitydisclosurepolicy">vulnerability disclosure policy</a> for information on how to report a vulnerability at HackerOne.</p>
 
-{% endif %}
+  {% endif %}
+</div>
 
 {% endblock main -%}

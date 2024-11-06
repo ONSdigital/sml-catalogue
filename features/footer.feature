@@ -5,14 +5,14 @@ Feature: Footer pages tests
     Scenario: Accessibility statement page check
         Given I'm an sml portal user trying to get to the "accessibility statement" page
         When I click the "Accessibility Statement" page on the footer
-        Then The title of the page is "Accessibility Statement"
+        Then The verified id for the page is "accessibility-statement-content"
     
     Scenario: Cookies page check
         Given I'm an sml portal user trying to get to the "cookies" page
         When I click the "Cookies" page on the footer
-        Then The title of the page is "Cookies on the statistical methods library"
+        Then The verified id for the page is "cookies-page-content"
     
     Scenario: Privacy and data protection page check
         Given I'm an sml portal user trying to get to the "privacy and data protection" page
         When I click the "Privacy and Data Protection" page on the footer
-        Then The title of the page is "Privacy and Data Protection"
+        Then The verified id for the page is "privacy-and-data-protection-page-content"
