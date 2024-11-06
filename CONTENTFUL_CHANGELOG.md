@@ -5366,3 +5366,42 @@ userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/ma
 
 — 06/11/2024 at 12:15:44 PM —
 
+# CMS Update: 06/11/2024 at 12:24:17 PM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 2
+
+Updated At: 2024-11-06T12:24:17.693Z
+
+Content Updated:
+
+```txt
+id: selective-editing
+name: Selective Editing
+theme: Editing
+expertGroup: Editing & Imputation
+language: Python
+author: ONS
+description: Selective Editing is an internationally recognised editing method where potential errors are prioritised according to their expected effect on key outputs. Only respondents that are having an impact on published estimates will be recontacted.
+
+Selective Editing works by assigning a score to each important variable for a business where, the score reflects the impact that editing the respondent will have on the estimates. Only contributors with a high score are checked, low scoring contributors pass through unchecked.
+
+To install this method, please see Help Centre - [Install a method](https://statisticalmethodslibrary.ons.gov.uk/help-centre/access/install-a-method).
+
+To use this method, please see [User Notes](https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/selective-editing/selective_editing.md).
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: v1.2.2
+releaseLink: https://github.com/ONSdigital/sml-python-small/releases
+codeLink: https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/selective_editing.py
+specificationLink: https://github.com/ONSdigital/Statistical-Method-Specifications/blob/main/editing_and_imputation/editing/selective_editing/methodological_specification.md
+userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/main/method-info/selective-editing/selective_editing.md
+```
+
+— 06/11/2024 at 12:24:17 PM —
+
