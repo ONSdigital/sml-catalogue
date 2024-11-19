@@ -6083,3 +6083,26 @@ api_name: glossary_entry/markdown
 
 — 19/11/2024 at 09:56:12 AM —
 
+# CMS Update: 19/11/2024 at 09:56:15 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-11-19T09:56:15.348Z
+
+Content Updated:
+
+```txt
+id: git
+term: Git
+meaning: A popular software tool for version control. Files are stored in repositories (or 'repos'), which can be local or remote, and changes made are committed to a log, allowing files to be reverted to previous versions. A project can have multiple contributing authors and multiple 'branches' (variants) simultaneously, with Git providing tools to merge changes.
+api_name: glossary_entry/git
+```
+
+— 19/11/2024 at 09:56:15 AM —
+
