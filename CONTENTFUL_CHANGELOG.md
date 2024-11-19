@@ -5874,3 +5874,27 @@ api_name: glossary_entry/expert_group
 
 — 19/11/2024 at 09:49:26 AM —
 
+# CMS Update: 19/11/2024 at 09:49:27 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-11-19T09:49:27.601Z
+
+Content Updated:
+
+```txt
+id: release
+term: Release
+meaning: A 'snapshot' of a Git repository marked as being stable. Releases are commonly referred to by a version number. A popular scheme for determining version numbers is semantic versioning.
+relatedlist: ["Git","Repository","Semantic Versioning"]
+api_name: glossary_entry/release
+```
+
+— 19/11/2024 at 09:49:27 AM —
+
