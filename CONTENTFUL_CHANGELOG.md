@@ -5823,3 +5823,29 @@ api_name: glossary_entry/metadata
 
 — 19/11/2024 at 09:49:29 AM —
 
+# CMS Update: 19/11/2024 at 09:49:23 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-11-19T09:49:23.371Z
+
+Content Updated:
+
+```txt
+id: pypi
+term: PyPI
+meaning: The Python Package Index (PyPI) is a repository of software for the Python programming language. Package authors (such as ONS-SML) use PyPI to distribute their software.
+relatedlist: ["SML","Package","Repository"]
+externalLinkTextShort: ONS-SML user profile on PyPI
+externalUrl: https://pypi.org/user/ons-sml/
+api_name: glossary_entry/pypi
+```
+
+— 19/11/2024 at 09:49:23 AM —
+
