@@ -5800,3 +5800,26 @@ userDocumentationLink: https://github.com/ONSdigital/sml-supporting-info/blob/ma
 
 — 07/11/2024 at 02:17:47 PM —
 
+# CMS Update: 19/11/2024 at 09:49:29 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-11-19T09:49:29.387Z
+
+Content Updated:
+
+```txt
+id: metadata
+term: Metadata
+meaning: 'Data about data', giving information about a product itself, as opposed to its contents. In the case of the SML, metadata includes, for example: when a method was onboarded; its development status; by whom it was developed; whether or not it is approved for use in official outputs; etc.
+api_name: glossary_entry/metadata
+```
+
+— 19/11/2024 at 09:49:29 AM —
+
