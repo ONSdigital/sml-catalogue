@@ -6060,3 +6060,26 @@ api_name: methods_catalogue_page/methods_catalogue
 
 — 19/11/2024 at 09:56:14 AM —
 
+# CMS Update: 19/11/2024 at 09:56:12 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-11-19T09:56:12.345Z
+
+Content Updated:
+
+```txt
+id: markdown
+term: Markdown
+meaning: A popular and simple markup language used across the Web for formatting text. Markdown is the format in which SML specifications are written.
+api_name: glossary_entry/markdown
+```
+
+— 19/11/2024 at 09:56:12 AM —
+
