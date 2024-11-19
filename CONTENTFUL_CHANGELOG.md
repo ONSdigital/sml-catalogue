@@ -5849,3 +5849,28 @@ api_name: glossary_entry/pypi
 
 — 19/11/2024 at 09:49:23 AM —
 
+# CMS Update: 19/11/2024 at 09:49:26 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-11-19T09:49:26.353Z
+
+Content Updated:
+
+```txt
+id: expert_group
+term: Expert Group
+meaning: A group of ONS employees within the Methodology and Quality Directorate with expertise in a specific area. For a full list, see https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/
+externalLinkTextShort: Expert group
+externalUrl: https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/
+api_name: glossary_entry/expert_group
+```
+
+— 19/11/2024 at 09:49:26 AM —
+
