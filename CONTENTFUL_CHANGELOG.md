@@ -6011,3 +6011,26 @@ api_name: accessibility_page/accessibility_statement
 
 — 19/11/2024 at 09:56:03 AM —
 
+# CMS Update: 19/11/2024 at 09:56:03 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2024-11-19T09:56:03.375Z
+
+Content Updated:
+
+```txt
+id: sml
+term: SML
+meaning: The Statistical Methods Library, a centralised collection of methods approved for use by the ONS. Comprises a code library, accessed through GitHub, and a collection of associated documentation, accessed via the SML Portal.
+api_name: glossary_entry/sml
+```
+
+— 19/11/2024 at 09:56:03 AM —
+
