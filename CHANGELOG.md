@@ -16,6 +16,22 @@
 * User changes to contentful content model ([`f76cbe0`](https://github.com/ONSdigital/sml-catalogue/commit/f76cbe0a0c31505f5787f7316c24618d61b03dca))
 * User changes to contentful content model ([`ba6776d`](https://github.com/ONSdigital/sml-catalogue/commit/ba6776d7bbacf3b5be43d6f4831853833b43f598))
 
+## v1.12.0-rc.1 (2024-11-19)
+
+### Feature
+
+* User changes to contentful content model ([`999a3ec`](https://github.com/ONSdigital/sml-catalogue/commit/999a3ec1e3c1c655d8768375a868721e8d2af22e))
+* User changes to contentful content model ([`a747ae1`](https://github.com/ONSdigital/sml-catalogue/commit/a747ae19555bf04787caf5c4617d024fcc0fe3de))
+* User changes to contentful content model ([`877a7a4`](https://github.com/ONSdigital/sml-catalogue/commit/877a7a4b1d440aba31b0c41b2e996793c275c25a))
+* User changes to contentful content model ([`c7b6a49`](https://github.com/ONSdigital/sml-catalogue/commit/c7b6a49dd22437ee4dd7452119f03f8a16f8e1aa))
+* User changes to contentful content model ([`8fbd5d1`](https://github.com/ONSdigital/sml-catalogue/commit/8fbd5d1875a20d75024b4d9e9b3318e52d7539d8))
+* User changes to contentful content model ([`7f5fc1e`](https://github.com/ONSdigital/sml-catalogue/commit/7f5fc1ec1998aadf4bfeee0f07d56733f331eb66))
+* User changes to contentful content model ([`2562a5d`](https://github.com/ONSdigital/sml-catalogue/commit/2562a5d54bd8ad5cddb0070a5175a9f6cfda7fbb))
+* User changes to contentful content model ([`13fdf1a`](https://github.com/ONSdigital/sml-catalogue/commit/13fdf1aec58918e90b9e144e9ab52205826aebda))
+* User changes to contentful content model ([`d30ce43`](https://github.com/ONSdigital/sml-catalogue/commit/d30ce431ae6977774ea86ca1184ab0001ee83332))
+* User changes to contentful content model ([`f76cbe0`](https://github.com/ONSdigital/sml-catalogue/commit/f76cbe0a0c31505f5787f7316c24618d61b03dca))
+* User changes to contentful content model ([`ba6776d`](https://github.com/ONSdigital/sml-catalogue/commit/ba6776d7bbacf3b5be43d6f4831853833b43f598))
+
 ## v1.11.0 (2024-11-07)
 
 
