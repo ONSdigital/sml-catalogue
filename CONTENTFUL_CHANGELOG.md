@@ -5922,3 +5922,27 @@ api_name: {"en-US":"methods_catalogue_page/methods_catalogue"}
 
 — 19/11/2024 at 09:54:41 AM —
 
+# CMS Update: 19/11/2024 at 09:56:10 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: helpCentreInformation
+
+Revision: 2
+
+Updated At: 2024-11-19T09:56:10.371Z
+
+Content Updated: entry 7ePz4NOKkNuYxTCKGceI0o has been deleted.
+
+```txt
+id: {"en-US":"get-in-touch"}
+title: {"en-US":"Get in touch"}
+content: {"en-US":"If you'd like to speak to someone on the SML team, please email [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk).\n\nNeed help installing a method? Make sure you've consulted the Help Centre \"Install a Method\" page.\n\nNeed help using a method? Make sure you have read the user documentation, which you can find by clicking on the method name in the Method Catalogue.  \n\nIf you still need assistance or if you have suggestions or other feedback, please do get in touch with us using the email above.\n"}
+help_centre_category: {"en-US":"Feedback"}
+api_name: {"en-US":"help_centre/get_in_touch"}
+```
+
+— 19/11/2024 at 09:56:10 AM —
+
