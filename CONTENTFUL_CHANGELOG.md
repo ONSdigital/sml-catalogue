@@ -5898,3 +5898,27 @@ api_name: glossary_entry/release
 
 — 19/11/2024 at 09:49:27 AM —
 
+# CMS Update: 19/11/2024 at 09:54:41 AM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: methodsCatalogue
+
+Revision: 1
+
+Updated At: 2024-11-19T09:54:41.177Z
+
+Content Updated: entry 78d7qRmxYSzox6ccAwoPII has been deleted.
+
+```txt
+heading1: {"en-US":"Methods catalogue"}
+paragraph: {"en-US":"Here you will discover statistical methods used by the Office for National Statistics."}
+detail: {"en-US":"What are method themes and expert groups?"}
+detailContent: {"en-US":"Methods are sorted in hierarchical order with expert groups as the top level. For example, within an expert group are different themes, and within the themes are different methods.\n\nTo find out more about expert groups and themes, please visit the [analysis function website.](https://analysisfunction.civilservice.gov.uk/government-statistical-service-and-statistician-group/gss-support/methodology/information-on-specific-methods/)"}
+api_name: {"en-US":"methods_catalogue_page/methods_catalogue"}
+```
+
+— 19/11/2024 at 09:54:41 AM —
+
