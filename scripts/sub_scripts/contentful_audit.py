@@ -112,8 +112,8 @@ def parse_changeset(json_data, target_env, base_env):
                 highlight_text = highlight_differences(entry.fields()[key], value)
                 highlight_text = "\n" + key.title() + "\n" + highlight_text + "\n"
                 final_text += highlight_text
-                json_entry["Change_Summary"]["original_"+key] = entry.fields()[key]
-                json_entry["Change_Summary"]["new_"+key] = value
+                json_entry["Change_Summary"]["original_" + key] = entry.fields()[key]
+                json_entry["Change_Summary"]["new_" + key] = value
             change_data.append(final_text)
             change_dict.append(json_entry)
         elif dictionary["changeType"] == "delete":
