@@ -4,22 +4,22 @@ Feature: Home page tests
     Scenario: Check methods catalogue header link works
         Given I'm an sml portal user on the home page
         When I click the "methods catalogue" link in the header
-        Then The title of this page is "Methods catalogue"
+        Then The verified id for the page is "methods-catalogue-page-content"
 
     Scenario: Check help centre header link works
         Given I'm an sml portal user on the home page
         When I click the "help centre" link in the header
-        Then The title of this page is "Help centre"
+        Then The verified id for the page is "help-centre-content"
 
     Scenario: Check about this library header link works
         Given I'm an sml portal user on the home page
         When I click the "about this library" link in the header
-        Then The title of this page is "About the Statistical Methods Library"
+        Then The verified id for the page is "about-page-content"
 
     Scenario: Check glossary header link works
         Given I'm an sml portal user on the home page
         When I click the "glossary" link in the header
-        Then The title of this page is "Library glossary"
+        Then The verified id for the page is "glossary-page-content"
         
     Scenario: Beta banner feedback link check
         Given I'm an sml portal user
