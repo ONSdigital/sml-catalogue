@@ -156,7 +156,7 @@ def build_json(
         },
         "entries": data,
     }
-    with open("../audit_report.json", "w", encoding="utf-8") as file:
+    with open("audit_report.json", "w", encoding="utf-8") as file:
         json.dump(summary_dictionary, file, indent=4)
         file.close()
 
@@ -186,7 +186,7 @@ def build_html(
     add_string = ", ".join(add_sections)
     edit_string = ", ".join(edit_sections)
     delete_string = ", ".join(delete_sections)
-    with open("../audit_report.html", "w", encoding="utf-8") as file:
+    with open("audit_report.html", "w", encoding="utf-8") as file:
         name = name.split("" "-")
         file.write(html_header+"\n")
         file.write(f"{name[0].title()} to {name[1].title()} Audit report:\n\n")
