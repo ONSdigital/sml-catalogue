@@ -24,7 +24,7 @@ def main(filepath, target_env, base_env):
         change_data,
         change_json,
     ) = parse_changeset(changeset, target_env, base_env)
-    build_report(
+    build_html(
         change_add,
         change_edit,
         change_delete,
@@ -161,7 +161,7 @@ def build_json(
         file.close()
 
 
-def build_report(
+def build_html(
     add, edit, delete, add_sections, edit_sections, delete_sections, data, name
 ):
     # RTF header
@@ -188,7 +188,7 @@ def build_report(
     delete_string = ", ".join(delete_sections)
     with open("../audit_report.html", "w", encoding="utf-8") as file:
         name = name.split("" "-")
-        file.write(html_header)
+        file.write(html_header+"\n")
         file.write(f"{name[0].title()} to {name[1].title()} Audit report:\n\n")
         file.write(f"Number " f"of Entries added: {add}\n")
         file.write(f"Added entries: {add_string}\n\n")
