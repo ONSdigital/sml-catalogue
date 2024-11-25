@@ -66,4 +66,4 @@ echo " -- Webhook Enabled"
 
 timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
 migration_log="${timestamp}: Audited content between $base_environment and $compare_environment"
-python sub_scripts/Contentful_audit.py ${base_environment}-${compare_environment}-changeset.json ${compare_environment}
+python sub_scripts/Contentful_audit.py ${base_environment}-${compare_environment}-changeset.json ${compare_environment} ${base_environment}
