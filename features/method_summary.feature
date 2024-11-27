@@ -9,8 +9,8 @@ Feature: Method summary page tests
         And The "Author" of the method is "ONS"
         And The "Theme" of the method is "Editing"
         And The "Expert group" of the method is "Editing & Imputation"
-        And The "Languages" of the method is "Python/Pandas"
-        And The "Release" of the method is "v1.0.0"
+        And The "Languages" of the method is "Python"
+        And The "Release" of the method is "v1.2.3"
         And The "Date Adjustment" method has the expected github resources
 
     Scenario: Thousand pound correction check
@@ -20,8 +20,8 @@ Feature: Method summary page tests
         And The "Author" of the method is "ONS"
         And The "Theme" of the method is "Editing"
         And The "Expert group" of the method is "Editing & Imputation"
-        And The "Languages" of the method is "Python/Pandas"
-        And The "Release" of the method is "v1.1.0"
+        And The "Languages" of the method is "Python"
+        And The "Release" of the method is "v1.2.3"
         And The "Thousand Pound Correction" method has the expected github resources
 
     Scenario: Selective editing check
@@ -31,8 +31,8 @@ Feature: Method summary page tests
         And The "Author" of the method is "ONS"
         And The "Theme" of the method is "Editing"
         And The "Expert group" of the method is "Editing & Imputation"
-        And The "Languages" of the method is "Python/Pandas"
-        And The "Release" of the method is "v1.0.0"
+        And The "Languages" of the method is "Python"
+        And The "Release" of the method is "v1.2.3"
         And The "Selective Editing" method has the expected github resources
 
     Scenario: Cell Key Perturbation check
@@ -42,7 +42,7 @@ Feature: Method summary page tests
         And The "Author" of the method is "ONS"
         And The "Theme" of the method is "Statistical Disclosure Control"
         And The "Expert group" of the method is "Statistical Disclosure Control"
-        And The "Languages" of the method is "Python/Pandas"
+        And The "Languages" of the method is "Python"
         And The "Release" of the method is "v2.0.0"
     
     Scenario: Totals and Components check
@@ -52,7 +52,7 @@ Feature: Method summary page tests
         And The "Author" of the method is "ONS"
         And The "Theme" of the method is "Editing"
         And The "Expert group" of the method is "Editing & Imputation"
-        And The "Languages" of the method is "Python/Pandas"
-        And The "Release" of the method is "v1.1.0"
+        And The "Languages" of the method is "Python"
+        And The "Release" of the method is "v1.2.3"
         And The "Totals and Components" method has the expected github resources
         

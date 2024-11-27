@@ -140,3 +140,10 @@ lambda_functions/alerter/.DS_Store
 lambda_functions/healthcheck.DS_Store
 content/.DS_Store
 /.idea
+
+# Contentful ignored data
+contentful-data/audits
+contentful-data/content-exports
+contentful-data/migrations
+contentful-data/rollbacks
+contentful-data/migration-log.txt

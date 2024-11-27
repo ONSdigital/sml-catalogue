@@ -77,31 +77,68 @@ Failing command: contentful space migration --space-id $SPACE_ID --management-to
 2024.08.13-16.51.59: Migrated content from prod to dev
 2024.08.13-16.54.18: Performed rollback on environment dev
 2024.08.13-16.57.36: Migrated content from prod to dev
-2024.10.08-10.24.21: Error raised while migrating content from preprod to prod 
- - Failing command: contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/rollbacks --environment-id $target_environment --content-file ${target_environment}-export.json 
+2024.10.15-11.35.16: Migrated content from preprod to prod
+2024.10.18-14.47.36: Migrated content from dev to preprod
+2024.08.23-09.45.53: Migrated content from prod to preprod
+2024.08.23-10.00.59: Migrated content from prod to preprod
+2024.08.23-12.21.44: Error raised while auditing content from prod to preprod 
+ - Failing command: contentful-merge create --space $SPACE_ID --source $base_environment --target $compare_environment --cda-token $MASTER_CDA_KEY --output-file ./contentful-data/migrations/${base_environment}-${compare_environment}-changeset.json 
  - Exit code: 127
-2024.10.08-11.11.53: Error raised while migrating content from preprod to prod 
- - Failing command: contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/rollbacks --environment-id $target_environment --content-file ${target_environment}-export.json 
+2024.08.23-12.38.54: Error raised while auditing content from prod to preprod 
+ - Failing command: contentful-merge create --space $SPACE_ID --source $base_environment --target $compare_environment --cda-token $MASTER_CDA_KEY --output-file ./contentful-data/migrations/${base_environment}-${compare_environment}-changeset.json 
  - Exit code: 127
-2024.10.08-11.13.32: Error raised while migrating content from preprod to prod 
- - Failing command: contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/rollbacks --environment-id $target_environment --content-file ${target_environment}-export.json 
+2024.08.23-12.41.07: Error raised while auditing content from prod to preprod 
+ - Failing command: contentful-merge create --space $SPACE_ID --source $base_environment --target $compare_environment --cda-token $MASTER_CDA_KEY --output-file ./contentful-data/migrations/${base_environment}-${compare_environment}-changeset.json 
  - Exit code: 127
-2024.10.08-11.33.44: Error raised while migrating content from preprod to prod 
- - Failing command: contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/rollbacks --environment-id $target_environment --content-file ${target_environment}-export.json 
- - Exit code: 127
-2024.10.08-11.39.08: Error raised while migrating content from preprod to prod 
- - Failing command: contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/rollbacks --environment-id $target_environment --content-file ${target_environment}-export.json 
- - Exit code: 127
-2024.10.08-14.32.45: Error raised while migrating content from preprod to prod 
- - Failing command: contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/rollbacks --environment-id $target_environment --content-file ${target_environment}-export.json 
+2024.08.23-12.43.10: Migrated content from prod to preprod
+2024.08.23-12.50.04: Migrated content from prod to dev
+2024.08.23-13.01.36: Migrated content from dev to prod
+2024.08.27-10.11.14: Error raised while auditing content from dev to preprod 
+ - Failing command: contentful-merge create --space $SPACE_ID --source $base_environment --target $compare_environment --cda-token $MASTER_CDA_KEY --output-file ./contentful-data/migrations/${base_environment}-${compare_environment}-changeset.json 
+ - Exit code: 2
+2024.08.27-10.14.51: Migrated content from dev to preprod
+2024.08.27-12.43.44: Error raised while auditing content from dev to preprod 
+ - Failing command: contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/rollbacks --environment-id $compare_environment --content-file ${target_environment}-export.json 
  - Exit code: 1
-2024.10.08-14.34.10: Error raised while migrating content from preprod to prod 
- - Failing command: contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/rollbacks --environment-id $target_environment --content-file ${target_environment}-export.json 
+2024.08.27-12.45.14: Error raised while auditing content from dev to preprod 
+ - Failing command: contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/rollbacks --environment-id $compare_environment --content-file ${compare_environment}-export.json 
  - Exit code: 1
-2024.10.08-14.35.19: Error raised while migrating content from preprod to prod 
- - Failing command: contentful space export --management-token $CLI_KEY --export-dir ./contentful-data/rollbacks --environment-id $target_environment --content-file ${target_environment}-export.json 
+2024.08.27-12.49.11: Audited content between dev and preprod
+2024.08.27-12.51.10: Performed rollback on environment preprod
+2024.08.27-12.51.10: Audited content between dev and preprod
+2024.08.27-15.16.56: Performed rollback on environment preprod
+2024.08.27-15.16.56: Audited content between dev and preprod
+2024.08.27-15.37.09: Performed rollback on environment preprod
+2024.08.27-15.37.09: Audited content between dev and preprod
+2024.09.06-12.56.39: Error raised while auditing content from dev to preprod 
+ - Failing command: python contentful_webhook.py 
  - Exit code: 1
-2024.10.08-14.37.16: Error raised while migrating content from preprod to prod 
- - Failing command: contentful-merge apply --space $SPACE_ID --environment $target_environment --cma-token $CLI_KEY --file ./contentful-data/migrations/deletion-changeset.json 
- - Exit code: 127
-2024.10.08-15.14.12: Migrated content from preprod to prod
+2024.09.06-13.00.23: Performed rollback on environment preprod
+2024.09.06-13.00.24: Audited content between dev and preprod
+2024.10.04-10.32.18: Error raised while migrating content from preprod to prod 
+ - Failing command: contentful merge export --te $source_environment --se $target_environment --management-token $CLI_KEY --output-file ./contentful-data/rollbacks/${target_environment}-export.js 
+ - Exit code: 1
+2024.10.04-10.36.20: Migrated content from preprod to prod
+2024.10.09-11.58.22: Performed rollback on environment preprod
+2024.10.09-11.58.23: Audited content between dev and preprod
+2024.10.09-12.14.11: Performed rollback on environment prod
+2024.10.09-12.14.34: Audited content between dev and preprod
+2024.10.09-12.21.08: Audited content between dev and preprod
+2024.10.09-12.21.34: Audited content between preprod and prod
+2024.10.09-12.23.04: Audited content between preprod and prod
+2024.10.23-11.13.19: Audited content between dev and preprod
+2024.10.23-11.22.20: Audited content between dev and preprod
+2024.10.23-13.51.24: Audited content between dev and preprod
+2024.10.23-14.23.53: Error raised while auditing content from dev to preprod 
+ - Failing command: python contentful_webhook.py 
+ - Exit code: 2
+2024.10.23-14.24.35: Error raised while auditing content from dev to preprod 
+ - Failing command: contentful merge export --te $compare_environment --se "$base_environment" --management-token $CLI_KEY --output-file ./contentful-data/audits/${compare_environment}-export.js 
+ - Exit code: 1
+2024.10.23-14.25.11: Error raised while auditing content from dev to preprod 
+ - Failing command: python sub_scripts/Contentful_audit.py ${base_environment}-${compare_environment}-changeset.json ${compare_environment} 
+ - Exit code: 1
+2024.10.23-14.29.42: Error raised while migrating content from dev to preprod 
+ - Failing command: python sub_scripts/deletion_changeset.py $target_environment ../contentful-data/rollbacks/${target_environment}-export.json 
+ - Exit code: 1
+2024.10.23-14.30.36: Migrated content from dev to preprod

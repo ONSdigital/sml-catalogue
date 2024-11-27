@@ -30,24 +30,24 @@ Feature: Methods catalogue tests
     Scenario: Cell Key Perturbation Python table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "ready" table row of the method are "Cell Key Perturbation" "Statistical Disclosure Control" "Statistical Disclosure Control" "Python/Pandas"
+        Then The "ready" table row of the method are "Cell Key Perturbation" "Statistical Disclosure Control" "Statistical Disclosure Control" "Python"
 
     Scenario: Totals and Components table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "ready" table row of the method are "Totals and Components" "Editing" "Editing & Imputation" "Python/Pandas"
+        Then The "ready" table row of the method are "Totals and Components" "Editing" "Editing & Imputation" "Python"
 
     Scenario: Date adjustment table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "ready" table row of the method are "Date Adjustment" "Editing" "Editing & Imputation" "Python/Pandas"
+        Then The "ready" table row of the method are "Date Adjustment" "Editing" "Editing & Imputation" "Python"
     
     Scenario: Selective editing table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "ready" table row of the method are "Selective Editing" "Editing" "Editing & Imputation" "Python/Pandas"
+        Then The "ready" table row of the method are "Selective Editing" "Editing" "Editing & Imputation" "Python"
 
     Scenario: Thousand pound correction table row check
         Given I'm an sml portal user trying to get to the methods catalogue page
         When I navigate to the methods catalogue page
-        Then The "ready" table row of the method are "Thousand Pound Correction" "Editing" "Editing & Imputation" "Python/Pandas"
+        Then The "ready" table row of the method are "Thousand Pound Correction" "Editing" "Editing & Imputation" "Python"
