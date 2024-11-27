@@ -105,7 +105,6 @@ def build_help_centre_structure():
         nav = {"categories": []}
         contents = getContent("helpCentreInformation")
         submit_request = getContent("helpCentreMethodRequest")
-        print(contents)
         unique = set(d["help_centre_category"] for d in contents)
         for category in unique:
             nav["categories"].append(
