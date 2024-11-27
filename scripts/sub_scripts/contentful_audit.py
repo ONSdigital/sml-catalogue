@@ -61,6 +61,7 @@ def parse_changeset(json_data, target_env, base_env):
     items = json_data["items"]
     for dictionary in items:
         match dictionary["changeType"]:
+            # Track number of new entries and names of new entires
             case "add":
                 change_add += 1
                 add_sections.append(
@@ -68,6 +69,7 @@ def parse_changeset(json_data, target_env, base_env):
                         "api_name"
                     ]
                 )
+            # Track number of update entries and names of updated entries
             case "update":
                 change_edit += 1
                 edit_sections.append(
@@ -75,6 +77,7 @@ def parse_changeset(json_data, target_env, base_env):
                         "api_name"
                     ]
                 )
+            # Track number of deleted entries and names of deleted entries
             case "delete":
                 change_delete += 1
                 delete_sections.append(
@@ -82,6 +85,7 @@ def parse_changeset(json_data, target_env, base_env):
                         "api_name"
                     ]
                 )
+        # For new entries, create a dictionary entry using the base environment api, create green html text for report
         if dictionary["changeType"] == "add":
             entry = base_client.entry(dictionary["entity"]["sys"]["id"])
             final_text = "ENTRY TITLE: " + entry.fields()["api_name"].title() + "\n"
@@ -97,6 +101,8 @@ def parse_changeset(json_data, target_env, base_env):
                 json_entry["Change_Summary"][key] = value["en-US"]
             change_data.append(final_text)
             change_dict.append(json_entry)
+        # For updated entries, compare base and target api clients to create a diff of the data, create dict
+        # that shows old vs new data
         elif dictionary["changeType"] == "update":
             entry = target_client.entry(dictionary["entity"]["sys"]["id"])
             base_entry = base_client.entry(dictionary["entity"]["sys"]["id"]).fields()
@@ -116,6 +122,8 @@ def parse_changeset(json_data, target_env, base_env):
                 json_entry["Change_Summary"]["new_" + key] = value
             change_data.append(final_text)
             change_dict.append(json_entry)
+        # For deleted data use target api client to show data that would be deleted and create red html text,
+        # additionally add data to dict for json output
         elif dictionary["changeType"] == "delete":
             entry = target_client.entry(dictionary["entity"]["sys"]["id"])
             final_text = "ENTRY TITLE: " + entry.fields()["api_name"].title() + "\n"
@@ -147,6 +155,7 @@ def build_json(
     add, edit, delete, add_sections, edit_sections, delete_sections, data, name
 ):
     name = name.split("" "-")
+    # create JSON structure to output using data created in parse_changeset
     summary_dictionary = {
         "audit_report": f"{name[0].title()} to {name[1].title()} Audit report",
         "change_summary": {
@@ -164,7 +173,6 @@ def build_json(
 def build_html(
     add, edit, delete, add_sections, edit_sections, delete_sections, data, name
 ):
-    # RTF header
     html_header = """<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -183,6 +191,7 @@ def build_html(
     </body>
     </html>
     """
+    # Take the add, edit and delete lists and create a CSV string for the report
     add_string = ", ".join(add_sections)
     edit_string = ", ".join(edit_sections)
     delete_string = ", ".join(delete_sections)
@@ -216,6 +225,7 @@ def build_html(
 
 def highlight_differences(target_env_string, base_env_string, context=3):
     # context refers to the number of lines to buffer before and after a changed line
+    # Compare both strings and create a delta containing the difference
     diff = list(
         difflib.ndiff(target_env_string.splitlines(), base_env_string.splitlines())
     )
@@ -223,9 +233,12 @@ def highlight_differences(target_env_string, base_env_string, context=3):
     buffer = []
     in_context = False
     unchanged_count = 0
-
+    # Loop through the delta and create a final output
     for line_number, line in enumerate(diff):
         if line.startswith("  "):  # indicates unchanged line
+            # loop through unchanged lines, storing the last x lines where x = context (e.g if context is 3 we only
+            # consider the most recent 3 lines of the diff, allowing us to give useful context i the output without
+            # outputting large text blocks)
             if in_context:
                 buffer.append(line)
                 unchanged_count += 1
@@ -236,6 +249,8 @@ def highlight_differences(target_env_string, base_env_string, context=3):
                 if len(buffer) > context:
                     buffer.pop(0)
         else:
+            # when a changed line is found, take the buffer, add the changed line with the relevant colour, add the 3
+            # lines after the changed line and add this to the final output diff
             if buffer:
                 result.extend(
                     buffer[-context:]
