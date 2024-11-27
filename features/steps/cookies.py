@@ -13,7 +13,7 @@ def auth_user_home_page(context):
         .until(lambda d: d.find_element(By.TAG_NAME, "h1"))
         .text
     )
-    assert banner == "An open source library for statistical code approved by the ONS"
+    assert banner == "A library for statistical code approved by the ONS"
 
 
 @given("I am on the cookies page")

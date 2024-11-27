@@ -17,7 +17,7 @@ if __name__ == "__main__":
         print("Invalid environment. Allowed environments are dev, preprod, prod.")
         sys.exit(1)
     with open(
-        "./contentful-data/migrations/deletion-changeset.json", encoding="utf-8"
+        "../contentful-data/migrations/deletion-changeset.json", encoding="utf-8"
     ) as deletion_changeset_file:
         deletion_changeset = load(deletion_changeset_file)
     with open(
@@ -38,5 +38,5 @@ if __name__ == "__main__":
         for item in target_environment_data["entries"]
         if item["sys"]["environment"]["sys"]["id"] == target_environment
     ]
-    with open("./contentful-data/migrations/deletion-changeset.json", "w") as outfile:
+    with open("../contentful-data/migrations/deletion-changeset.json", "w") as outfile:
         dump(deletion_changeset, outfile)
