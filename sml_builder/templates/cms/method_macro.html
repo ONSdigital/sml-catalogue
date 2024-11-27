@@ -36,15 +36,22 @@
 %}
 {% endfor %}
 {% if params.method_ready %}
-    {% set link = params.release_link %}
-    {% set release_temp=
-      '<span class="ons-status ons-status--' + status + '">
-      <a href='+ link + ' target="_blank" rel="noopener noreferrer">
+    {% if params.release_link %}
+      {% set link = params.release_link %}
+      {% set release_temp=
+        '<span class="ons-status ons-status--' + status + '">
+        <a href='+ link + ' target="_blank" rel="noopener noreferrer">
+          <span class="ons-u-vh">Release version</span>
+          ' + params.release_version + '
+          <span class="ons-u-vh">(opens in a new tab)</span>
+        </a>
+      </span>' %}
+    {% else %}
+      {% set release_temp=
+        '<span class="ons-status ons-status--' + status + '">
         <span class="ons-u-vh">Release version</span>
-        ' + params.release_version + '
-        <span class="ons-u-vh">(opens in a new tab)</span>
-      </a>
-    </span>' %}
+          ' + params.release_version + '</span>' %}
+    {% endif %}
 {% else %}    
   {% set release_temp='<span class="ons-status ons-status--' + status + '">Not Released Yet</span>' %}
 {% endif %}
