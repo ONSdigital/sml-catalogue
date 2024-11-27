@@ -51,6 +51,7 @@
         '<span class="ons-status ons-status--' + status + '">
         <span class="ons-u-vh">Release version</span>
           ' + params.release_version + '</span>' %}
+    {% endif %}
 {% else %}    
   {% set release_temp='<span class="ons-status ons-status--' + status + '">Not Released Yet</span>' %}
 {% endif %}
