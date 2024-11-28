@@ -424,13 +424,13 @@ requests = ">=2.20.0,<3.0"
 
 [[package]]
 name = "contentful-management"
-version = "2.14.2"
+version = "2.14.4"
 description = "Contentful Management API Client"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "contentful_management-2.14.2-py3-none-any.whl", hash = "sha256:38805bbf15beb2322fc625346ed5965550246caad6d1b62645c431d737e71f88"},
-    {file = "contentful_management-2.14.2.tar.gz", hash = "sha256:3c1b1e344bcce4d5469f56bb6df6aef4d7bc03e65231af30ccfc2b836a0c79b3"},
+    {file = "contentful_management-2.14.4-py3-none-any.whl", hash = "sha256:4eb90dab026aaa437c0fe77d3eeeb95b251ee0d6891478c9ed4e5388150b51f0"},
+    {file = "contentful_management-2.14.4.tar.gz", hash = "sha256:8ab5182b8694f9f38146e4c6018afe490319747c4ea1bca3f178373c87d5a61b"},
 ]
 
 [package.dependencies]
