@@ -1,5 +1,12 @@
 <!--next-version-placeholder-->
 
+## v1.12.0-rc.5 (2024-12-04)
+
+### Feature
+
+* User changes to contentful content model ([`2edbf27`](https://github.com/ONSdigital/sml-catalogue/commit/2edbf27eec7742a4b711d78feee23a357e17fd04))
+* Amending method macro to allow no release link ([#399](https://github.com/ONSdigital/sml-catalogue/issues/399)) ([`3ea6b18`](https://github.com/ONSdigital/sml-catalogue/commit/3ea6b186bd1f4ffceb54cb3fa8b11616be2acb12))
+
 ## v1.12.0-rc.4 (2024-11-27)
 
 ### Feature
