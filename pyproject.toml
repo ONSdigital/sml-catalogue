@@ -10,7 +10,7 @@ python = "^3.10"
 frozen-flask = "^1.0"
 markdown = "^3.7"
 flask-markdown = "^0.3"
-contentful = "^2.2.0"
+contentful = "^2.3.0"
 python-markdown-mathjax = "1.0.4"
 python-markdown-math="^0.8"
 
