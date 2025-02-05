@@ -31,8 +31,7 @@ def display_method_summary(  # pylint: disable=inconsistent-return-statements
             for item in getMethodsTableItems:
                 if method == item["id"]:
                     content = item
-                    ext_links = item["urlList"]
-                    link_list = get_external_links(ext_links)
+                    link_list = get_external_links(content)
                     return render_template(
                         "method.html",
                         method=content,
@@ -43,8 +42,7 @@ def display_method_summary(  # pylint: disable=inconsistent-return-statements
 
         elif method == getMethodsTableItems["id"]:
             content = getMethodsTableItems
-            ext_links = getMethodsTableItems["urlList"]
-            link_list = get_external_links(ext_links)
+            link_list = get_external_links(content)
             return render_template(
                 "method.html",
                 method=content,
@@ -227,13 +225,15 @@ def appendRow(methods_dir, filter_methods=None):
     return methods
 
 
-def get_external_links(ext_links):
+def get_external_links(content):
     link_list = []
-    for i in ext_links:
-        # If first character indicates markdown style link, split link from text and add to dictionary
-        if i[:1] == "[":
-            split = i.split("]")
-            link_list.append({split[0].strip("[]"): split[1].strip("()")})
-        else:
-            link_list.append({i: i})
+    if "url_list" in content:
+        ext_links = content["url_list"]
+        for i in ext_links:
+            # If first character indicates markdown style link, split link from text and add to dictionary
+            if i[:1] == "[":
+                split = i.split("]")
+                link_list.append({split[0].strip("[]"): split[1].strip("()")})
+            else:
+                link_list.append({i: i})
     return link_list
