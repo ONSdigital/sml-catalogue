@@ -116,8 +116,8 @@
         {% for key, value in i.items() %}
           {{
               onsExternalLink({
-                "url": key,
-                "linkText": value
+                "url": value,
+                "linkText": key
               })
           }}
             <br>
