@@ -24,7 +24,7 @@
 {%- block main -%}
 
 {% if cms_enabled %}
-  {{ cms_method_macro(method) }}
+  {{ cms_method_macro(method, external_links) }}
 {% else %}
 
     <h1 id="page-title" class="ons-u-mt-no">Method: {{ page.title }}</h1>
@@ -97,19 +97,6 @@
 
 
   {{ page.additional_info | paras }}
-{% if cms_enabled %}
-  {% if external_links != [] %}
-    <h2>External resources</h2>
-      {% for i in external_links %}
-        {{
-            onsExternalLink({
-              "url": i.key,
-              "linkText": i.value
-            })
-        }}
-      {% endfor %}
-  {% endif %}
-{% else %}
   <h2>External resources</h2>
   {% if page.specification_link %}
   {{
@@ -137,7 +124,6 @@
     })
   }}
   {% endif %}
-{% endif %}
 
   <br>
   {% if docs_integration_active == True %}
