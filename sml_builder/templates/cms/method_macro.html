@@ -1,4 +1,4 @@
-{% macro cms_method_macro(params) %}
+{% macro cms_method_macro(params, external_links) %}
 <h1 class="ons-u-mt-no">Method: {{ params.name }}</h1>
 <h2> Method summary </h2>
 {{ params.description | markdown }}
@@ -109,34 +109,20 @@
 
 <hr class="ons-u-mb-m">
 
-<h2>GitHub resources</h2>
 
-{{ params.additional_info | paras}}
-{% if params.specification_link %}
-{{
-  onsExternalLink({
-    "url": params.specification_link,
-    "linkText":"Go to " ~ params.name ~ " specification on GitHub"
-  })
-}}
-<br>
-{% endif %}
-{% if params.code_link %}
-{{
-  onsExternalLink({
-    "url":params.code_link,
-    "linkText":"Go to " ~ params.name ~ " code on GitHub"
-  })
-}}
-<br>
-{% endif %}
-{% if params.user_documentation_link %}
-{{
-  onsExternalLink({
-    "url":params.user_documentation_link,
-    "linkText":"Go to "~ params.name ~" user documentation on GitHub"
-  })
-}}
-{% endif %}
+{% if external_links != [] %}
+    <h2>External resources</h2>
+      {% for i in external_links %}
+        {% for key, value in i.items() %}
+          {{
+              onsExternalLink({
+                "url": value,
+                "linkText": key
+              })
+          }}
+            <br>
+        {% endfor %}
+      {% endfor %}
+  {% endif %}
 
 {% endmacro %}

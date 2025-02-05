@@ -24,7 +24,7 @@
 {%- block main -%}
 
 {% if cms_enabled %}
-  {{ cms_method_macro(method) }}
+  {{ cms_method_macro(method, external_links) }}
 {% else %}
 
     <h1 id="page-title" class="ons-u-mt-no">Method: {{ page.title }}</h1>
@@ -95,8 +95,9 @@
   <hr class="ons-u-mb-m">
 
 
-  <h2>GitHub resources</h2>
+
   {{ page.additional_info | paras }}
+  <h2>External resources</h2>
   {% if page.specification_link %}
   {{
     onsExternalLink({
@@ -123,6 +124,7 @@
     })
   }}
   {% endif %}
+
   <br>
   {% if docs_integration_active == True %}
       {% if page.api_reference %}
