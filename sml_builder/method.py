@@ -31,20 +31,40 @@ def display_method_summary(  # pylint: disable=inconsistent-return-statements
             for item in getMethodsTableItems:
                 if method == item["id"]:
                     content = item
+                    ext_links = item["urlList"]
+                    link_list = []
+                    for i in ext_links:
+                        # If first character indicates markdown style link, split link from text and add to dictionary
+                        if i[:1] == "[":
+                            split = i.split("]")
+                            link_list.append({split[0].strip("[]"): split[1].strip("()")})
+                        else:
+                            link_list.append({i: i})
                     return render_template(
                         "method.html",
                         method=content,
                         methodState=methodState,
                         cms_enabled=content_management["enabled"],
+                        external_links=link_list
                     )
 
         elif method == getMethodsTableItems["id"]:
             content = getMethodsTableItems
+            ext_links = getMethodsTableItems["urlList"]
+            link_list = []
+            for i in ext_links:
+                # If first character indicates markdown style link, split link from text and add to dictionary
+                if i[:1] == "[":
+                    split = i.split("]")
+                    link_list.append({split[0].strip("[]"): split[1].strip("()")})
+                else:
+                    link_list.append({i: i})
             return render_template(
                 "method.html",
                 method=content,
                 methodState=methodState,
                 cms_enabled=content_management["enabled"],
+                external_links=link_list,
             )
         _page_not_found("Method summary content not found")
     else:
