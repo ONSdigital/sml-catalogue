@@ -1,5 +1,15 @@
 <!--next-version-placeholder-->
 
+## v1.13.0-rc.1 (2025-02-10)
+
+### Feature
+
+* Changing method to read new external links list ([#410](https://github.com/ONSdigital/sml-catalogue/issues/410)) ([`dc8d73c`](https://github.com/ONSdigital/sml-catalogue/commit/dc8d73c65b12fcca91ea8e227bad7c9cadb6a543))
+* User changes to contentful content model ([`db7e6b2`](https://github.com/ONSdigital/sml-catalogue/commit/db7e6b25a3150f843cd37218679873270a2dc9fc))
+* User changes to contentful content model ([`99699f4`](https://github.com/ONSdigital/sml-catalogue/commit/99699f41979c8bec0636457559c77a38f93587c0))
+* User changes to contentful content model ([`72ad9ee`](https://github.com/ONSdigital/sml-catalogue/commit/72ad9ee72c499e53c67b122a2fcf745c657692ea))
+* User changes to contentful content model ([`afd5672`](https://github.com/ONSdigital/sml-catalogue/commit/afd5672ee7a5de1b28e09481acb9fbe418f5f085))
+
 ## v1.12.0 (2024-12-11)
 
 
