@@ -1,5 +1,11 @@
 <!--next-version-placeholder-->
 
+## v1.13.0-rc.2 (2025-02-10)
+
+### Fix
+
+* Rebuild preprod ([`da455c4`](https://github.com/ONSdigital/sml-catalogue/commit/da455c4279ffb3c695f071078c8dda355441cde0))
+
 ## v1.13.0-rc.1 (2025-02-10)
 
 ### Feature
