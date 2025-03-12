@@ -7,6 +7,7 @@
 # $SPACE_ID is the Contentful space ID.
 # $CLI_KEY is the Contentful management token (sometimes referred to as CMA key).
 
+# Note: this script requires your current working directory to be ./scripts. 
 
 set -eo pipefail
 
