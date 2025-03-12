@@ -3,7 +3,7 @@
 # This script is used to update the CONTENTFUL_CHANGELOG.md file with the details of the latest Contentful update.
 # Concourse pipeline detects changes to the changelog file to trigger a preprod build for CMS content review.
 # Uage:
-# ./update_changelog.sh <environment - preprod|prod|dev>
+# ./update_changelog.sh <environment - preprod|prod>
 #
 # The CONTENTFUL_CDA_TOKEN envvironment variable must be set to the
 # API Token matching the passed environment parameter. 
@@ -11,7 +11,7 @@
 # This script requires bash 4.x or greater to run as it uses asssociative arrays.
 # The default shell on a mac is zsh so you should install a later version of bash using brew install bash
 # and run the script using:
-# /usr/local/bin/bash scripts/update_changelog.sh <environment - preprod|prod|dev>
+# /usr/local/bin/bash scripts/update_changelog.sh <environment - preprod|prod>
 
 # Stop on first error
 set -e

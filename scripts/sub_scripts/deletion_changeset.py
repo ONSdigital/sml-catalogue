@@ -4,7 +4,7 @@ import time
 from json import dump, load
 
 if __name__ == "__main__":
-    allowed_environments = ["dev", "preprod", "prod"]
+    allowed_environments = ["preprod", "prod"]
     if len(sys.argv) == 3:
         target_environment = sys.argv[1]
         env_export_filepath = sys.argv[2]
@@ -14,7 +14,7 @@ if __name__ == "__main__":
         )
         sys.exit(1)
     if target_environment not in allowed_environments:
-        print("Invalid environment. Allowed environments are dev, preprod, prod.")
+        print("Invalid environment. Allowed environments are preprod or prod.")
         sys.exit(1)
     with open(
         "../contentful-data/migrations/deletion-changeset.json", encoding="utf-8"

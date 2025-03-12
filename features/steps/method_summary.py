@@ -38,13 +38,14 @@ def check_method_summary_title(context, title):
 def check_method_has_github_resources(context, method_name):
     method_name = method_name.strip('"')
 
-    method_spec_link_text = f"Go to {method_name} specification on GitHub"
+    # method_spec_link_text = f"Go to {method_name} specification on GitHub"
     code_link_text = f"Go to {method_name} code on GitHub"
-    user_docs_link_text = f"Go to {method_name} user documentation on GitHub"
+    user_docs_link_text = f"Go to {method_name} User Documentation on GitHub"
 
-    WebDriverWait(driver, timeout=timeout).until(
-        lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=method_spec_link_text)
-    )
+    # removed since the method spec link is no longer present after content type change
+    # WebDriverWait(driver, timeout=timeout).until(
+    #     lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=method_spec_link_text)
+    # )
 
     WebDriverWait(driver, timeout=timeout).until(
         lambda d: d.find_element(By.PARTIAL_LINK_TEXT, value=user_docs_link_text)

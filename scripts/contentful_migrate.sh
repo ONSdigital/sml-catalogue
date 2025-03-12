@@ -1,12 +1,13 @@
 #!/bin/bash
 # Usage: ./contentful_migrate.sh -s <source_environment> -t <target_environment>
-# -- Example: ./contentful_migrate.sh -s dev -t preprod
+# -- Example: ./contentful_migrate.sh -s preprod -t prod
 # Used to migrate content between environments in Contentful (not to be confused with Concourse).
 # $MASTER_CDA_KEY, $SPACE_ID and $CLI_KEY must be set as environment variables.
 # $MASTER_CDA_KEY is the (read-only) Content Delivery API key which can access all environments.
 # $SPACE_ID is the Contentful space ID.
 # $CLI_KEY is the Contentful management token (sometimes referred to as CMA key).
 
+# Note: this script requires your current working directory to be ./scripts. 
 
 set -eo pipefail
 
@@ -29,11 +30,11 @@ while getopts s:t: opt; do
   esac
 done
 
-allowed_envs='^(dev|preprod|prod)$'
+allowed_envs='^(preprod|prod)$'
 
 if  [ -z "$source_environment" ] || [ -z "$target_environment" ]; then
   echo "Usage: ./contentful_migrate.sh -s <source_environment> -t <target_environment>"
-  echo " -- Example: ./contentful_migrate.sh -s dev -t preprod"
+  echo " -- Example: ./contentful_migrate.sh -s preprod -t prod"
   exit 1
 elif [ "$source_environment" == "$target_environment" ]; then
   echo "Usage: ./contentful_migrate.sh -s <source_environment> -t <target_environment>"
@@ -41,7 +42,7 @@ elif [ "$source_environment" == "$target_environment" ]; then
   exit 1
 elif [[ ! "$source_environment" =~ $allowed_envs ]] || [[ ! "$target_environment" =~ $allowed_envs ]]; then
   echo "Usage: ./contenful_migrate.sh -s <source_environment> -t <target_environment>"
-  echo " -- Environment must be one of: dev, preprod, prod"
+  echo " -- Environment must be one of: preprod, prod"
   exit 1
 fi
 
