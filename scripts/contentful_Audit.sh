@@ -24,12 +24,12 @@ while getopts b:c: opt; do
   esac
 done
 
-allowed_envs='^(dev|preprod|prod)$'
+allowed_envs='^(preprod|prod)$'
 
 
 if  [ -z "$base_environment" ] || [ -z "$compare_environment" ]; then
   echo "Usage: ./contentful_audit.sh -b <base_environment> -c <compare_environment>"
-  echo " -- Example: ./contentful_migrate.sh -s dev -t preprod"
+  echo " -- Example: ./contentful_migrate.sh -s preprod -t prod"
   exit 1
 elif [ "$base_environment" == "$compare_environment" ]; then
   echo "Usage: ./contentful_audit.sh -b <base_environment> -c <compare_environment>"
@@ -37,7 +37,7 @@ elif [ "$base_environment" == "$compare_environment" ]; then
   exit 1
 elif [[ ! "$base_environment" =~ $allowed_envs ]] || [[ ! "$compare_environment" =~ $allowed_envs ]]; then
   echo "Usage: ./contentful_audit.sh -b <base_environment> -c <compare_environment>"
-  echo " -- Environment must be one of: dev, preprod, prod"
+  echo " -- Environment must be one of: preprod, prod"
   exit 1
 fi
 

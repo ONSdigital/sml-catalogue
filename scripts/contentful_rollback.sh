@@ -10,6 +10,8 @@
 # $SPACE_ID is the Contentful space ID.
 # $CLI_KEY is the Contentful management token (sometimes referred to as CMA key).
 
+# Note: this script requires your current working directory to be ./scripts.
+
 set -eo pipefail
 
 GREEN="\033[32m"
@@ -28,7 +30,7 @@ while getopts t: opt; do
   esac
 done
 
-allowed_envs='^(dev|preprod|prod)$'
+allowed_envs='^(preprod|prod)$'
 
 if [ -z "$target_environment" ]; then
   echo "Usage: ./contentful_rollback.sh -t <target_environment>"
@@ -36,7 +38,7 @@ if [ -z "$target_environment" ]; then
   exit 1
 elif [[ ! "$target_environment" =~ $allowed_envs ]]; then
   echo "Usage: ./contentful_rollback.sh -t <target_environment>"
-  echo " -- Environment must be one of: dev, preprod, prod"
+  echo " -- Environment must be one of: preprod, prod"
   exit 1
 fi
 
