@@ -426,14 +426,14 @@ markers = {main = "platform_system == \"Windows\""}
 
 [[package]]
 name = "contentful"
-version = "2.3.2"
+version = "2.4.0"
 description = "Contentful Delivery API Client"
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "contentful-2.3.2-py3-none-any.whl", hash = "sha256:684013e5c65b2c6dd33097579d128fbf6b2e95d9c1088041a2861da5aa471460"},
-    {file = "contentful-2.3.2.tar.gz", hash = "sha256:b000e0528c6a144a499c6742c7e2d49098affb07f61dd0c599bc5842f47bc840"},
+    {file = "contentful-2.4.0-py3-none-any.whl", hash = "sha256:d5838da595f49eddb7d14a802d012df9db62878bb570771e313674a2035b6982"},
+    {file = "contentful-2.4.0.tar.gz", hash = "sha256:b6152ee102643fe7e61e0d5752da76d99b27ffe9f84dd576444da7bb95aa49fd"},
 ]
 
 [package.dependencies]
@@ -2164,4 +2164,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "8279117348a493e81a27606ea0a6be15fee174bcbd4757e79bc1420d3695e738"
+content-hash = "6e55f9fd072af7d5c99395879a5557b04ae7861d9497ee1cf0df203e5cb6f090"
