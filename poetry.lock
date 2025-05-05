@@ -1830,14 +1830,14 @@ jeepney = ">=0.6"
 
 [[package]]
 name = "selenium"
-version = "4.30.0"
+version = "4.32.0"
 description = "Official Python bindings for Selenium WebDriver"
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "selenium-4.30.0-py3-none-any.whl", hash = "sha256:90bcd3be86a1762100a093b33e5e4530b328226da94208caadb15ce13243dffd"},
-    {file = "selenium-4.30.0.tar.gz", hash = "sha256:16ab890fc7cb21a01e1b1e9a0fbaa9445fe30837eabc66e90b3bacf12138126a"},
+    {file = "selenium-4.32.0-py3-none-any.whl", hash = "sha256:c4d9613f8a45693d61530c9660560fadb52db7d730237bc788ddedf442391f97"},
+    {file = "selenium-4.32.0.tar.gz", hash = "sha256:b9509bef4056f4083772abb1ae19ff57247d617a29255384b26be6956615b206"},
 ]
 
 [package.dependencies]
@@ -2164,4 +2164,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "8279117348a493e81a27606ea0a6be15fee174bcbd4757e79bc1420d3695e738"
+content-hash = "ea059314b16c2a6e7092109269e8831918f55afc74e42b2b190f2974a265011f"
