@@ -1,5 +1,15 @@
 <!--next-version-placeholder-->
 
+## v1.14.0-rc.2 (2025-05-08)
+
+### Feature
+
+* User changes to contentful content model ([`59a3799`](https://github.com/ONSdigital/sml-catalogue/commit/59a3799e1effc45d5bcdd53401dbc4a9e69cde57))
+
+### Fix
+
+* SPP-12644 remove dev CMS environment references ([#416](https://github.com/ONSdigital/sml-catalogue/issues/416)) ([`43bc2b3`](https://github.com/ONSdigital/sml-catalogue/commit/43bc2b3a494013ffcf2de4330d169ddd0dda3170))
+
 ## v1.14.0-rc.1 (2025-03-12)
 
 ### Feature
