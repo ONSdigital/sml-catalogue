@@ -6948,3 +6948,85 @@ api_name: methods_table_and_summary/totals_and_components
 
 — 08/05/2025 at 12:10:05 PM —
 
+# CMS Update: 09/05/2025 at 07:22:09 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: helpCentreInformation
+
+Revision: 2
+
+Updated At: 2025-05-09T07:22:09.578Z
+
+Content Updated:
+
+```txt
+id: install-a-method
+title: Install a method
+content: # This page covers the following topics:
+- How to install date adjustment, selective editing, thousand pounds, or totals and components
+- How to install other Python methods
+- How to install R methods
+- Managing package dependencies with SML methods 
+
+**IDS Users:**
+IDS users should follow the IDS guidance for downloading and installing SML methods. 
+
+**Using a method:** 
+Information on how to use individual methods can be found in the User Documentation. 
+
+You can access the User Documentation from the Method Summary which you find by clicking on the method name in the Method Catalogue.
+
+**Package dependencies:**
+SML methods may require installation of specific versions of Python, R or essential packages. To avoid changing installations in your base environment, we recommend creating a virtual environment (Python) or using renv in an R Studio project. 
+
+## How to install date adjustment, selective editing, thousand pounds, or totals and components
+
+Once you have set up the virtual environment and connected to your IDE (if using), follow the steps below.
+
+- Check you have installed the correct versions of Python and required packages such as Pandas (see User Documentation).
+
+- From your Python environment enter __pip install sml_small__ 
+
+-  To install a specific version enter __pip install sml_small==version_number__, for example: __pip install sml_small==1.1.0__ 
+
+Search "sml_small" on “PyPI · The Python Package Index” for available versions.
+
+- To use Date Adjustment or Selective Editing run the following: __import sml_small.date_adjustment as date_adjust__ OR __import sml_small.selective_editing as seled__   
+
+- To use Totals and Components or Thousand Pounds run the following: __from sml_small.editing import thousand_pounds__ OR __from sml_small.editing import totals_and_components__  
+
+The methods are now available for you to use.
+
+## Installing other Python methods
+
+Once you have set up the virtual environment and connected to an IDE (if using), follow the steps below.
+
+- Check you have installed the correct versions of Python and required packages such as Pandas (see User Documentation).
+
+- From your Python environment enter __pip install package_name__, for example: the Python version of cell-key-perturbation is installed using __pip install cell_key_perturbation__
+
+- To install a specific version enter __pip install package_name==version_number__, for example: __pip install cell_key_perturbation==1.1.1__
+
+Search the method name on “PyPI · The Python Package Index” for available versions. 
+
+The method is now available for you to import.
+
+## Installing R methods
+
+Once you have created an R Studio project using renv to install required packages, you are ready to download the method package. For more guidance on using renv please see 'Managing package dependencies in R Studio with renv' below. 
+
+-	Install the method package in your project using __renv::install("package_name")__, for example, if the method package was named "aggregate" you would enter  __renv::install("aggregate")__
+
+- To install a specific version use __renv::install("package_name@version")__, for example: __renv::install("aggregate@1.2.1")__ 
+
+The method is now available for you to load. 
+
+help_centre_category: Accessing Methods
+api_name: help_centre/install_a_method
+```
+
+— 09/05/2025 at 07:22:09 AM —
+
