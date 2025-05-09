@@ -1,5 +1,9 @@
 <!--next-version-placeholder-->
 
+## v1.14.0 (2025-05-09)
+
+
+
 ## v1.14.0-rc.8 (2025-05-09)
 
 ### Feature
