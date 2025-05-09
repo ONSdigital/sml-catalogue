@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sml_builder"
-version = "1.14.0-rc.7"
+version = "1.14.0-rc.8"
 description = "This repo contains the build environment and code to generate and upload the Statistical Methods Library (SML) Portal Web Application."
 authors = []
 readme = "README.md"
