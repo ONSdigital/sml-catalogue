@@ -7279,3 +7279,26 @@ api_name: help_centre/get_in_touch
 
 — 30/07/2025 at 04:04:03 PM —
 
+# CMS Update: 30/07/2025 at 04:04:13 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2025-07-30T16:04:13.569Z
+
+Content Updated:
+
+```txt
+id: official_outputs
+term: Official Outputs
+meaning: Statistics and data analysis officially published by ONS for public consumption.
+api_name: glossary_entry/official_outputs
+```
+
+— 30/07/2025 at 04:04:13 PM —
+
