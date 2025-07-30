@@ -7248,3 +7248,34 @@ api_name: {"en-US":"glossary_entry/third_party_methods"}
 
 — 30/07/2025 at 04:03:52 PM —
 
+# CMS Update: 30/07/2025 at 04:04:03 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: helpCentreInformation
+
+Revision: 1
+
+Updated At: 2025-07-30T16:04:03.234Z
+
+Content Updated:
+
+```txt
+id: get-in-touch
+title: Get in touch
+content: If you'd like to speak to someone on the SML team, please email [smlhelp@ons.gov.uk](mailto:smlhelp@ons.gov.uk).
+
+Need help installing a method? Make sure you've consulted the Help Centre "Install a Method" page.
+
+Need help using a method? Make sure you have read the user documentation, which you can find by clicking on the method name in the Method Catalogue.  
+
+If you still need assistance or if you have suggestions or other feedback, please do get in touch with us using the email above.
+
+help_centre_category: Feedback
+api_name: help_centre/get_in_touch
+```
+
+— 30/07/2025 at 04:04:03 PM —
+
