@@ -7225,3 +7225,26 @@ api_name: methods_table_and_summary/date_adjustment
 
 — 30/07/2025 at 04:02:43 PM —
 
+# CMS Update: 30/07/2025 at 04:03:52 PM
+
+Editor: Joseph Percival
+
+Environment: preprod
+
+Content Type: glossaryEntry
+
+Revision: 1
+
+Updated At: 2025-07-30T16:03:52.488Z
+
+Content Updated: entry 1JRjsMT7ZcjUvh0Rua1yJg has been deleted.
+
+```txt
+id: {"en-US":"third_party_methods"}
+term: {"en-US":"Third Party Methods"}
+meaning: {"en-US":"Third party methods are defined as those where a package, piece of code or software is developed and maintained outside of the SML strictures. This may include packages developed within ONS but where code is held and managed in a separate repository, or packages developed and maintained externally."}
+api_name: {"en-US":"glossary_entry/third_party_methods"}
+```
+
+— 30/07/2025 at 04:03:52 PM —
+
