@@ -10,7 +10,7 @@ Feature: Method summary page tests
         And The "Theme" of the method is "Editing"
         And The "Expert group" of the method is "Editing & Imputation"
         And The "Languages" of the method is "Python"
-        And The "Release" of the method is "v1.2.4"
+        And The "Release" of the method is "v1.2.5"
         And The "Date Adjustment" method has the expected github resources
 
     Scenario: Thousand pound correction check
@@ -21,7 +21,7 @@ Feature: Method summary page tests
         And The "Theme" of the method is "Editing"
         And The "Expert group" of the method is "Editing & Imputation"
         And The "Languages" of the method is "Python"
-        And The "Release" of the method is "v1.2.4"
+        And The "Release" of the method is "v1.2.5"
         And The "Thousand Pound Correction" method has the expected github resources
 
     Scenario: Selective editing check
@@ -32,7 +32,7 @@ Feature: Method summary page tests
         And The "Theme" of the method is "Editing"
         And The "Expert group" of the method is "Editing & Imputation"
         And The "Languages" of the method is "Python"
-        And The "Release" of the method is "v1.2.4"
+        And The "Release" of the method is "v1.2.5"
         And The "Selective Editing" method has the expected github resources
 
     Scenario: Cell Key Perturbation check
@@ -53,6 +53,6 @@ Feature: Method summary page tests
         And The "Theme" of the method is "Editing"
         And The "Expert group" of the method is "Editing & Imputation"
         And The "Languages" of the method is "Python"
-        And The "Release" of the method is "v1.2.4"
+        And The "Release" of the method is "v1.2.5"
         And The "Totals and Components" method has the expected github resources
         
