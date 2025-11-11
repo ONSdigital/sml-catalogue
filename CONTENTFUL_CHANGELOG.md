@@ -7302,3 +7302,37 @@ api_name: glossary_entry/official_outputs
 
 — 30/07/2025 at 04:04:13 PM —
 
+# CMS Update: 11/11/2025 at 01:57:59 PM
+
+Editor: Jason Bell
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 7
+
+Updated At: 2025-11-11T13:57:59.963Z
+
+Content Updated:
+
+```txt
+id: cell-key-perturbation
+name: Cell Key Perturbation
+theme: Statistical Disclosure Control
+expertGroup: Statistical Disclosure Control
+language: Python test
+author: ONS
+description: Cell-key Perturbation adds small amounts of noise to frequency tables, to protect against disclosure. Noise is added to change the counts that appear in the frequency table by small amounts, for example a 14 is changed to a 15. This noise introduces uncertainty in the counts and makes it harder to identify individuals, especially when taking the ‘difference’ between two similar tables. An input file called a ‘ptable’ is needed which specifies the level of perturbation.
+
+To install and use this method, please see [User Notes](https://onsdigital.github.io/sml-public/public_guides/CellKeyPerturbation_Py.html).
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: Latest Release
+releaseLink: https://github.com/ONSdigital/cell-key-perturbation/releases
+urlList: ["[Go to Cell Key Perturbation code on GitHub](https://github.com/ONSdigital/cell-key-perturbation/blob/main/cell_key_perturbation/create_perturbed_table.py)","[Go to Cell Key Perturbation user documentation](https://onsdigital.github.io/sml-public/public_guides/CellKeyPerturbation_Py.html)"]
+api_name: methods_table_and_summary/cell_key_perturbation
+```
+
+— 11/11/2025 at 01:57:59 PM —
+
