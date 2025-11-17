@@ -7370,3 +7370,41 @@ api_name: methods_table_and_summary/cell_key_perturbation
 
 — 11/11/2025 at 02:37:01 PM —
 
+# CMS Update: 17/11/2025 at 08:16:38 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 2
+
+Updated At: 2025-11-17T08:16:38.530Z
+
+Content Updated:
+
+```txt
+id: thousand-pound-correction
+name: Thousand Pound Correction
+theme: Editing
+expertGroup: Editing & Imputation
+language: Python
+author: ONS
+description: The automatic editing method for thousand pounds correction is commonly used across ONS business surveys. It is a generic rule that uses user defined thresholds to automatically detect and correct thousand pounds errors. This is when the respondent should have reported values in thousands of pounds but has reported in actual pounds e.g., returned a value of £56,000 instead of correctly submitting 56.
+
+The method checks the ratio of a principal variable against a suitable predictor variable and make an automatic correction if the calculated ratio is around 1000. The automatic correction is applied to all relevant variables for the respondent.
+
+To install this method, please see Help Centre - [Install a Method](https://statisticalmethodslibrary.ons.gov.uk/help-centre/access/install-a-method).
+
+To use this method, please see [User Notes](https://onsdigital.github.io/sml-public/public_guides/ThousandPoundCorrection.html)
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: Latest Release
+releaseLink: https://github.com/ONSdigital/sml-python-small/releases
+urlList: ["[Go to Thousand Pound Correction code on GitHub](https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/thousand_pounds/thousand_pounds.py)","[Go to Thousand Pound Correction user documentation](https://onsdigital.github.io/sml-public/public_guides/ThousandPoundCorrection.html)"]
+api_name: methods_table_and_summary/thousand_pound_correction
+```
+
+— 17/11/2025 at 08:16:38 AM —
+
