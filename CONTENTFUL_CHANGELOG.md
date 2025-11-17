@@ -7555,3 +7555,40 @@ api_name: methods_table_and_summary/totals_and_components
 
 — 17/11/2025 at 11:16:35 AM —
 
+# CMS Update: 17/11/2025 at 12:39:30 PM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: about
+
+Revision: 2
+
+Updated At: 2025-11-17T12:39:30.314Z
+
+Content Updated:
+
+```txt
+about: # About the Statistical Methods Library
+
+The statistical methods library (SML) is a central library for approved statistical methods for use within ONS and wider.
+
+## Overall mission
+
+The SML aims to provide a central resource for consistent and reproducible statistical methods and documentation; with a governance process to facilitate the quality assurance, addition and updating of methods. The SML will allow methods and best practice to be shared across ONS and wider.  
+
+## Objectives
+
+- To act as a shared single point of access and reference for best practice methods and method documentation.  
+
+- To ensure methods are available across ONS and a wider user base. 
+
+- To ensure that methods for official statistical outputs are fully transparent. 
+
+- To provide a clear governance for method quality assurance. 
+api_name: about_page/about_page
+```
+
+— 17/11/2025 at 12:39:30 PM —
+
