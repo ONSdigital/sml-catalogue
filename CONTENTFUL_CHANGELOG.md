@@ -7519,3 +7519,39 @@ api_name: methods_table_and_summary/date_adjustment
 
 — 17/11/2025 at 10:00:21 AM —
 
+# CMS Update: 17/11/2025 at 11:16:35 AM
+
+Editor: Sabrina Golonka
+
+Environment: preprod
+
+Content Type: catalogueTableOfMethods2
+
+Revision: 2
+
+Updated At: 2025-11-17T11:16:35.309Z
+
+Content Updated:
+
+```txt
+id: totals-and-components
+name: Totals and Components
+theme: Editing
+expertGroup: Editing & Imputation
+language: Python
+author: ONS
+description: The automatic editing method for totals and components correction is currently used in ONS business surveys to ensure fixed relationships between variables are satisfied. For example, when a total (e.g., total employment) is collected along with the component breakdown (e.g., full-time male, full-time female, part-time male, part-time female). The primary use of the method is to automatically detect and correct errors in respondent data where fixed relationships have not been satisfied to improve the efficiency of the editing process, reduce the burden on respondents and survey validators and improve overall data quality. This method can also be used to ensure fixed relationships between variables are satisfied in other data types such as imputed data to improve overall data quality.
+
+To install this method, please see Help Centre - [Install a Method](https://statisticalmethodslibrary.ons.gov.uk/help-centre/access/install-a-method).
+
+To use this method, please see [User Notes](https://onsdigital.github.io/sml-public/public_guides/TotalsAndComponents.html).
+contactDetails: smlhelp@ons.gov.uk
+methodReady: true
+releaseVersion: Latest Release
+releaseLink: https://github.com/ONSdigital/sml-python-small/releases
+urlList: ["[Go to Totals and Components code on GitHub](https://github.com/ONSdigital/sml-python-small/tree/main/sml_small/editing/totals_and_components/totals_and_components.py)","[Go to Totals and Components user documentation](https://onsdigital.github.io/sml-public/public_guides/TotalsAndComponents.html)"]
+api_name: methods_table_and_summary/totals_and_components
+```
+
+— 17/11/2025 at 11:16:35 AM —
+
