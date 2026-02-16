@@ -27,6 +27,7 @@ if __name__ == "__main__":
         target_environment_data = load(target_file)
     unix_timestamp = int(time.time() * 1000)
     deletion_changeset["sys"]["createdAt"] = str(unix_timestamp)
+    deletion_changeset["sys"]["source"]["sys"]["id"] = target_environment
     deletion_changeset["sys"]["target"]["sys"]["id"] = target_environment
     deletion_changeset["items"] = [
         {
@@ -39,4 +40,4 @@ if __name__ == "__main__":
         if item["sys"]["environment"]["sys"]["id"] == target_environment
     ]
     with open("../contentful-data/migrations/deletion-changeset.json", "w") as outfile:
-        dump(deletion_changeset, outfile)
+        dump(deletion_changeset, outfile, indent=4)
