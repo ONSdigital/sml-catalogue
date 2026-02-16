@@ -12,7 +12,7 @@ markdown = "^3.7"
 flask-markdown = "^0.3"
 contentful = "^2.3.2"
 python-markdown-mathjax = "1.0.4"
-python-markdown-math="^0.8"
+python-markdown-math="^0.9"
 
 [tool.poetry.group.dev.dependencies]
 black = "^25.1.0"
