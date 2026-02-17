@@ -15,7 +15,7 @@ python-markdown-mathjax = "1.0.4"
 python-markdown-math="^0.9"
 
 [tool.poetry.group.dev.dependencies]
-black = "^25.1.0"
+black = "^26.1.0"
 behave = "^1.2.6"
 selenium = "^4.40.0"
 flake8 = "^7.2.0"
